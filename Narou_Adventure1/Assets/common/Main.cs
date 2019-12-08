@@ -45,12 +45,15 @@ public class Main : MonoBehaviour
     public AbilityResourceCtrl a_rsc;//AbilityResourceCtrlの略
     public ProgressCtrl progressCtrl;
     public ReleaseCtrl releaseCtrl;
+    public ItemCtrl itemCtrl;
     public Announce announce;
     public Focus focus;
+    public DecideParameter decideParameter;
 
     /* プレハブ */
     public PopUp ActionPopUpPre;
     public PopUp AbilityPopUpPre;
+    public PopUp itemPopUpPre;
 
     public EnumCtrl enumCtrl;
 
@@ -78,12 +81,11 @@ public class Main : MonoBehaviour
 
         if (SR.firstPlay)
         {
-            Initialize();//アセンド後に一度だけ呼ぶ関数
             SR.firstPlay = false;
+            decideParameter.Initialize();
         }
 
-        Enum kind;
-        kind = ResourceKind.codices;
+
     }
 
     IEnumerator plusTime()
@@ -93,12 +95,5 @@ public class Main : MonoBehaviour
             allTime++;
             yield return new WaitForSeconds(1.0f);
         }
-    }
-
-    //アセンド後に一度だけ呼ぶ関数
-    void Initialize()
-    {
-        rsc.Regen_Base[(int)ResourceKind.focus] = -0.04;
-        rsc.Max_Base[(int)ResourceKind.focus] = 2;
     }
 }

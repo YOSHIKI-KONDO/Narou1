@@ -48,6 +48,7 @@ public class ProgressCtrl : BASE {
 
     public void ActivatePrevious()
     {
+        if (previousFunction == null) { return; }
         if(previousFunction == restFunction) { return;}
         DeactivateAll();
         ActivateProgress(previousFunction);

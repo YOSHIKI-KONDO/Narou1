@@ -8,7 +8,7 @@ using static UsefulMethod;
 public class AB_Lore : ABILITY {
 
 	// Use this for initialization
-	void Awake () {
+/*	void Awake () {
         AwakeAbility(AbilityKind.lore, 100, 1.5);
         progress.unlockCostList.Add(new Dealing(ResourceKind.mana, Dealing.R_ParaKind.current, -10));
         progress.progressCostList.Add(new Dealing(ResourceKind.mana, Dealing.R_ParaKind.current, -1));
@@ -28,5 +28,5 @@ public class AB_Lore : ABILITY {
     private void FixedUpdate()
     {
         FixedUpdateAbility();
-    }
+    }*/
 }

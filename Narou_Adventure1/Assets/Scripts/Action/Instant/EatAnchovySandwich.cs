@@ -5,19 +5,20 @@ using UnityEngine;
 using UnityEngine.UI;
 using static UsefulMethod;
 
-public class Study : INSTANT_ACTION
+public class EatAnchovySandwich : INSTANT_ACTION
 {
     public override bool Requires()
     {
-        return main.rsc.Value[(int)ResourceKind.codices] >= 10;
+        return main.rsc.Max((int)ResourceKind.stamina) >= 5 &&
+               main.rsc.Value[(int)ResourceKind.anchovy_sandwich] >= 1;
     }
 
     // Use this for initialization
     void Awake()
     {
-        AwakeInstantAction(MainAction.ActionEnum.Instant.study);
-        instant.initCostList.Add(new Dealing(ResourceKind.mana, Dealing.R_ParaKind.current, -1));
-        instant.completeEffectList.Add(new Dealing(ResourceKind.mana, Dealing.R_ParaKind.max, 1));
+        AwakeInstantAction(MainAction.ActionEnum.Instant.eat_anchovy_sandwich);
+        instant.initCostList.Add(new Dealing(ResourceKind.anchovy_sandwich, Dealing.R_ParaKind.current, -1));
+        instant.completeEffectList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, 5));
     }
 
     // Use this for initialization

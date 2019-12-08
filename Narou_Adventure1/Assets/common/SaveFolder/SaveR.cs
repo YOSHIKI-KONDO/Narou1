@@ -16,8 +16,8 @@ public class SaveR
     public double[] current_resource;
     public double[] regen_resource;
 
-    public bool[] released = new bool[4];
-    public bool[] completed = new bool[4];
+    public bool[] released_resource;
+    public bool[] completed_resource;
 
     public bool[] released_instant;
     public bool[] completed_instant;
@@ -42,4 +42,10 @@ public class SaveR
     public int[] maxLevels_ability;
     public bool[] unlocked_ability;
     public double[] trainRate_ability;
+
+    /* Item */
+    public int[] equipNum_Item;
+    public int[] inventoryNum_Item;
+    public bool[] released_Item;
+    public bool[] completed_Item;
 }

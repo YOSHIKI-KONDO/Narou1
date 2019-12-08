@@ -7,7 +7,7 @@ using static UsefulMethod;
 
 public class SlainMaster : UPGRADE_ACTION
 {
-    public override bool Requires()
+/*    public override bool Requires()
     {
         return main.rsc.Value[(int)ResourceKind.codices] >= 10;
     }
@@ -38,5 +38,5 @@ public class SlainMaster : UPGRADE_ACTION
     void FixedUpdate()
     {
         FixedUpdateUpgradeAction();
-    }
+    }*/
 }
