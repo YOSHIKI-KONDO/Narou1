@@ -7,7 +7,7 @@ using static UsefulMethod;
 
 public class EatChildren : LOOP_ACTION
 {
-    public override bool Requires()
+/*    public override bool Requires()
     {
         return main.rsc.Value[(int)ResourceKind.codices] >= 10;
     }
@@ -21,6 +21,8 @@ public class EatChildren : LOOP_ACTION
         progress.completeEffectList.Add(new Dealing(ResourceKind.fire, Dealing.R_ParaKind.max, 100));
         progress.completeEffectList.Add(new Dealing(ResourceKind.water, Dealing.R_ParaKind.regen, 10));
         progress.completeEffectList.Add(new Dealing(AbilityKind.lore, Dealing.A_ParaKind.maxLevel, 1));
+
+        need.AddItemNeed(ItemKind.python);
 	}
 
 	// Use this for initialization
@@ -36,5 +38,5 @@ public class EatChildren : LOOP_ACTION
     void FixedUpdate()
     {
         FixedUpdateLoopAction();
-    }
+    }*/
 }

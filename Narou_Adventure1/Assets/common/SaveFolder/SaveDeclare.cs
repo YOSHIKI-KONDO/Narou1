@@ -25,10 +25,15 @@ public class SaveDeclare : BASE {
     public int num_instantAction = Enum.GetNames(typeof(ActionEnum.Instant)).Length;
     [NonSerialized]
     public int num_ability = Enum.GetNames(typeof(AbilityKind)).Length;
+    [NonSerialized]
+    public int num_item = Enum.GetNames(typeof(ItemKind)).Length;
 
     // Use this for initialization
     void Awake () {
 		StartBASE();
+
+        InitializeArray(ref main.SR.released_resource, num_resource);
+        InitializeArray(ref main.SR.completed_resource, num_resource);
 
         InitializeArray(ref main.SR.released_instant, num_instantAction);
         InitializeArray(ref main.SR.completed_instant, num_instantAction);
@@ -58,6 +63,12 @@ public class SaveDeclare : BASE {
         InitializeArray(ref main.SR.maxLevels_ability, num_ability);
         InitializeArray(ref main.SR.unlocked_ability, num_ability);
         InitializeArray(ref main.SR.trainRate_ability, num_ability);
+
+        /* Item */
+        InitializeArray(ref main.SR.equipNum_Item, num_item);
+        InitializeArray(ref main.SR.inventoryNum_Item, num_item);
+        InitializeArray(ref main.SR.released_Item, num_item);
+        InitializeArray(ref main.SR.completed_Item, num_item);
     }
 
 	// Use this for initialization

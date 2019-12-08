@@ -1,7 +1,6 @@
 ﻿public enum ItemKind
 {
-    nothing,
-    creepingVine,
+    //nothing,
     c,
     java,
     python,

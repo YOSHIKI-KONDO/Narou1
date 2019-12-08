@@ -10,11 +10,11 @@ public class ResourceCtrl : BASE {
     //読み取り用
     public double Max(int index)
     {
-        return Max_Base[index];
+        return Max_Base[index] + main.itemCtrl.R_max[index];
     }
     public double Regen(int index)
     {
-        return Regen_Base[index];
+        return Regen_Base[index] + main.itemCtrl.R_regen[index];
     }
     //読み取り・書き換え可能
     public double[] Value { get => main.SR.current_resource; set => main.SR.current_resource = value; }

@@ -17,8 +17,8 @@ public class sample_release : BASE {
 	// Use this for initialization
 	void Awake () {
 		StartBASE();
-        r_func = gameObject.AddComponent<ReleaseFunction>();
-        r_func.StartFunction(gameObject, x => Sync(ref main.SR.released[index], x), x => Sync(ref main.SR.completed[index], x), x => condition());
+        //r_func = gameObject.AddComponent<ReleaseFunction>();
+        //r_func.StartFunction(gameObject, x => Sync(ref main.SR.released[index], x), x => Sync(ref main.SR.completed[index], x), x => condition());
 	}
 
 	// Use this for initialization
