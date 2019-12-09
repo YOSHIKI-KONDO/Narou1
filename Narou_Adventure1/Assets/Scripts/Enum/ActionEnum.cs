@@ -51,6 +51,10 @@
             buy_wallet,
             study_in_church,
             buy_bag,
+            //少女イベント
+            girl_is_crying,
+            pick_flowers,
+            punish_the_bad_kids,
             //進学
             warrior_school,
             sorcerer_school,

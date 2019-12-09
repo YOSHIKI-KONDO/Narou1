@@ -15,6 +15,7 @@ public class AB_LifeMagic : ABILITY {
         progress.completeEffectList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.max, 5));
         progress.completeEffectList.Add(new Dealing(ResourceKind.paper, Dealing.R_ParaKind.max, 2));
         progress.completeEffectList.Add(new Dealing(ResourceKind.book, Dealing.R_ParaKind.max, 1));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 0.05));
     }
 
 	// Use this for initialization

@@ -9,7 +9,7 @@ public class TamerSchool : UPGRADE_ACTION
 {
     public override bool Requires()
     {
-        return main.a_rsc.MaxLevel((int)AbilityKind.animal_handling) >= 1;
+        return main.a_rsc.MaxLevel((int)AbilityKind.animal_handling) >= 6;
     }
 
     // Use this for initialization

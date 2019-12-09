@@ -154,6 +154,9 @@ public class EnumCtrl : BASE {
         upgradeActions.Add(new template(ActionEnum.Upgrade.buy_wallet, "Buy Wallet", "財布を買う", "nothing", "nothing"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.study_in_church, "Study in Church", "教会で勉強", "nothing", "nothing"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.buy_bag, "Buy Bag", "鞄を買う", "nothing", "nothing"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.girl_is_crying, "Girl is Crying", "少女が泣いている", "nothing", "大切にしていた花を、悪ガキにへし折られてしまってようだ。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.pick_flowers, "Pick Flowers", "花を摘みに行く", "nothing", "少女に新しい花をプレゼントしよう。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.punish_the_bad_kids, "Punish the Bad Kids", "悪ガキをこらしめる", "nothing", "骨と心をへし折ってやろう。"));
         //進学
         upgradeActions.Add(new template(ActionEnum.Upgrade.warrior_school, "Warrior School", "戦士学校", "nothing", "nothing"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.sorcerer_school, "Sorcerer School", "魔法学校", "nothing", "nothing"));
@@ -296,6 +299,17 @@ public class EnumCtrl : BASE {
         items.Add(new template(ItemKind.c, "C", "C言語", "", ""));
         items.Add(new template(ItemKind.java, "Java", "Java", "", ""));
         items.Add(new template(ItemKind.python, "Python", "Python", "", ""));
+          //フェーズ１
+        items.Add(new template(ItemKind.reference_book, "Reference Book", "参考書", "", ""));
+        items.Add(new template(ItemKind.toolbox, "Toolbox", "工具箱", "", ""));
+        items.Add(new template(ItemKind.woodsword, "WoodSword", "木の剣", "", ""));
+        items.Add(new template(ItemKind.woodspear, "WoodSpear", "木の槍", "", ""));
+        items.Add(new template(ItemKind.woodstick, "WoodStick", "木の杖", "", ""));
+        items.Add(new template(ItemKind.fire_orb, "Fire Orb", "ファイアーオーブ", "", "火の魔力を閉じ込めたオーブ。魔法初心者はこれを用いて訓練する。"));
+        items.Add(new template(ItemKind.water_orb, "Water Orb", "ウォーターオーブ", "", "水の魔力を閉じ込めたオーブ。魔法初心者はこれを用いて訓練する。"));
+        items.Add(new template(ItemKind.wind_orb, "Wind Orb", "ウインドオーブ", "", "風の魔力を閉じ込めたオーブ。魔法初心者はこれを用いて訓練する。"));
+        items.Add(new template(ItemKind.earth_orb, "Earth Orb", "アースオーブ", "", "土の魔力を閉じ込めたオーブ。魔法初心者はこれを用いて訓練する。"));
+        items.Add(new template(ItemKind.animalfood, "AnimalFood", "アニマルフード", "", ""));
 
         /* 必要条件 */
         needs.Add(new template(NeedKind.nothing, "nothing", "nothing", "nothing", "nothing"));

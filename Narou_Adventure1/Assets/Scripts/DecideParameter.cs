@@ -23,7 +23,7 @@ public class DecideParameter : BASE {
         /* アビリティのレベルの最大値 */
         for (int i = 0; i < main.SD.num_ability; i++)
         {
-            main.a_rsc.MaxLevels_Base[i] = 0;//最大レベル5でスタート
+            main.a_rsc.MaxLevels_Base[i] = 5;//最大レベル5でスタート
         }
         main.rsc.Regen_Base[(int)ResourceKind.focus] = -0.04;
         main.rsc.Max_Base[(int)ResourceKind.focus] = 2;
