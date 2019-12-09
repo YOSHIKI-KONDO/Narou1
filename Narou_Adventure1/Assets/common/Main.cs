@@ -41,11 +41,12 @@ public class Main : MonoBehaviour
 
     /* Libraryここまで */
     public static bool isJapanese = true;
-    public ResourceCtrl rsc;//resourceCtrlの略
-    public AbilityResourceCtrl a_rsc;//AbilityResourceCtrlの略
+    public ResourceCtrl rsc;            //resourceCtrlの略
+    public AbilityResourceCtrl a_rsc;   //AbilityResourceCtrlの略
     public ProgressCtrl progressCtrl;
     public ReleaseCtrl releaseCtrl;
     public ItemCtrl itemCtrl;
+    public BattleAndSkillCtrl battleCtrl;
     public Announce announce;
     public Focus focus;
     public DecideParameter decideParameter;
@@ -54,6 +55,9 @@ public class Main : MonoBehaviour
     public PopUp ActionPopUpPre;
     public PopUp AbilityPopUpPre;
     public PopUp itemPopUpPre;
+    public PopUp skillPopUp;
+    public PopUp enemyPopUp;
+    public PopUp dungeonPopUp;
 
     public EnumCtrl enumCtrl;
 
