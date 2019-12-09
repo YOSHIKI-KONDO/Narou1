@@ -87,7 +87,7 @@ public class ABILITY : BASE, INeed
     // Use this for initialization
     protected void StartAbility()
     {
-
+        progress.ApplySlider(MaxExp());
     }
 
     // Update is called once per frame

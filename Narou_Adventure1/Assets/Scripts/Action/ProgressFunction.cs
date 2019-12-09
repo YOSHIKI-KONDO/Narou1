@@ -103,6 +103,11 @@ public class ProgressFunction : BASE
             HasPaid(false);
         }
 
+        ApplySlider(Max);
+    }
+    //インスタンス先のclassのスタートなどで呼ぶ
+    public void ApplySlider(double Max)
+    {
         if (slider == null) { return; }
         slider.value = (float)(CurrentValue() / Max);
     }

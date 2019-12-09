@@ -51,4 +51,9 @@ public class Rest : LOOP_ACTION
             }
         }
     }
+
+    private void FixedUpdate()
+    {
+        FixedUpdateLoopAction();
+    }
 }

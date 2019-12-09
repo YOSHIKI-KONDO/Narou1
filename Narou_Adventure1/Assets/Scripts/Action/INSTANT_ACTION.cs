@@ -44,7 +44,7 @@ public class INSTANT_ACTION : ACTION, INeed
     // Use this for initialization
     protected void StartInstantAction()
     {
-
+        
     }
 
     // Update is called once per frame

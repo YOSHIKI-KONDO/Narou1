@@ -53,12 +53,12 @@ public class LOOP_ACTION : ACTION, INeed {
 
     // Use this for initialization
     protected void StartLoopAction() {
-
+        progress.ApplySlider(MaxValue);
     }
 
     // Update is called once per frame
     protected void UpdateLoopAction() {
-
+        
     }
 
     protected void FixedUpdateLoopAction()

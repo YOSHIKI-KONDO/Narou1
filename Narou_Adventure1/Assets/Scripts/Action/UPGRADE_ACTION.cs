@@ -66,7 +66,7 @@ public class UPGRADE_ACTION : ACTION, INeed
     // Use this for initialization
     protected void StartUpgradeAction()
     {
-
+        progress.ApplySlider(MaxValue);
     }
 
     // Update is called once per frame
