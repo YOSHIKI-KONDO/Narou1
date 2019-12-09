@@ -48,4 +48,13 @@ public class SaveR
     public int[] inventoryNum_Item;
     public bool[] released_Item;
     public bool[] completed_Item;
+
+    /* Skill */
+    public bool[] released_Skill;
+    public bool[] completed_Skill;
+    public bool[] learnt_Skill;
+
+    /* Dungeon */
+    public bool[] released_Dungeon;
+    public bool[] completed_Dungeon;
 }

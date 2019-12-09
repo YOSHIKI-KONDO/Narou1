@@ -27,6 +27,11 @@ public class SaveDeclare : BASE {
     public int num_ability = Enum.GetNames(typeof(AbilityKind)).Length;
     [NonSerialized]
     public int num_item = Enum.GetNames(typeof(ItemKind)).Length;
+    [NonSerialized]
+    public int num_skill = Enum.GetNames(typeof(SkillKind)).Length;
+    [NonSerialized]
+    public int num_dungeon = Enum.GetNames(typeof(DungeonKind)).Length;
+
 
     // Use this for initialization
     void Awake () {
@@ -69,6 +74,15 @@ public class SaveDeclare : BASE {
         InitializeArray(ref main.SR.inventoryNum_Item, num_item);
         InitializeArray(ref main.SR.released_Item, num_item);
         InitializeArray(ref main.SR.completed_Item, num_item);
+
+        /* Skill */
+        InitializeArray(ref main.SR.released_Skill, num_skill);
+        InitializeArray(ref main.SR.completed_Skill, num_skill);
+        InitializeArray(ref main.SR.learnt_Skill, num_skill);
+
+        /* Dungeon */
+        InitializeArray(ref main.SR.released_Dungeon, num_dungeon);
+        InitializeArray(ref main.SR.completed_Dungeon, num_dungeon);
     }
 
 	// Use this for initialization
