@@ -14,7 +14,7 @@ public class gitsum : BASE {
 
 	// Use this for initialization
 	void Start () {
-		
+        Debug.Log("Hello, World");
 	}
 	
 	// Update is called once per frame
