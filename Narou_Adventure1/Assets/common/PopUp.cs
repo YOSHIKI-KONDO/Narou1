@@ -41,13 +41,14 @@ public class PopUp : MonoBehaviour
         EventTrigger.Entry entry2 = new EventTrigger.Entry();
         entry.eventID = EventTriggerType.PointerEnter;
         entry2.eventID = EventTriggerType.PointerExit;
+        entry.callback.AddListener((x) => ApplyPosition());
         entry.callback.AddListener((x) => gameObject.SetActive(true));
         entry2.callback.AddListener((x) => gameObject.SetActive(false));
         hoverObject.GetComponent<EventTrigger>().triggers.Add(entry);
         hoverObject.GetComponent<EventTrigger>().triggers.Add(entry2);
     }
 
-    private void Update()
+    void ApplyPosition()
     {
         if (Input.mousePosition.y >= Screen.height / 2 && Input.mousePosition.x >= Screen.width / 2)//第一象限
         {
@@ -65,5 +66,10 @@ public class PopUp : MonoBehaviour
         {
             gameObject.GetComponent<RectTransform>().anchoredPosition = Input.mousePosition + new Vector3(Distance.x, Distance.y);
         }
+    }
+
+    private void Update()
+    {
+        ApplyPosition();
     }
 }
