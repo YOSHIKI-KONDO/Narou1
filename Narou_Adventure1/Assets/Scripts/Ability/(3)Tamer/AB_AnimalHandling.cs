@@ -5,10 +5,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using static UsefulMethod;
 
-public class AB_AnimalHandling : ABILITY {
+public class AB_AnimalHandling : ABILITY
+{
 
-	// Use this for initialization
-	void Awake () {
+    public override bool Requires()
+    {
+        return main.a_rsc.MaxLevel((int)AbilityKind.animal_handling) >= 6;
+    }
+
+    // Use this for initialization
+    void Awake () {
         AwakeAbility(AbilityKind.animal_handling, 50, 1);
         progress.unlockCostList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, -1));
         progress.progressCostList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.5));

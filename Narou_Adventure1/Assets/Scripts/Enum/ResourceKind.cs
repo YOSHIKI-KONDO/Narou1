@@ -5,13 +5,14 @@
     focus,//ここは変えない
     equipSpace,
     inventorySpace,
-
+    //プレイヤーステータス
     strength,           //added
     mentalStrength,     //added
     defense,            //added
     dodge,              //added
     criticalChance,     //added
-
+    exp,                //added
+    //武器
     attack,
     magic_attack,
     //ステータスリソース

@@ -169,15 +169,6 @@ public class ItemCtrl : BASE {
         }
     }
 
-    void ArrayToDefault<T>(T[] ary)
-        where T:struct
-    {
-        for (int i = 0; i < ary.Length; i++)
-        {
-            ary[i] = default(T);
-        }
-    }
-
     void ApplyActive()
     {
         for (int i = 0; i < items.Length; i++)
