@@ -216,24 +216,34 @@ public class SKILL : BASE, INeed
                 popUp.texts[3].text = Need_str;
             }
 
-            if (UseCost_str == "" || UseCost_str == null)
+            if (LearnCost_str == "" || LearnCost_str == null)
             {
                 setFalse(popUp.texts[4].gameObject);
                 setFalse(popUp.texts[5].gameObject);
             }
             else
             {
-                popUp.texts[5].text = UseCost_str;
+                popUp.texts[5].text = LearnCost_str;
+            }
+
+            if (UseCost_str == "" || UseCost_str == null)
+            {
+                setFalse(popUp.texts[6].gameObject);
+                setFalse(popUp.texts[7].gameObject);
+            }
+            else
+            {
+                popUp.texts[7].text = UseCost_str;
             }
 
             if (UseEffect_str == "" || UseEffect_str == null)
             {
-                setFalse(popUp.texts[10].gameObject);
-                setFalse(popUp.texts[11].gameObject);
+                setFalse(popUp.texts[8].gameObject);
+                setFalse(popUp.texts[9].gameObject);
             }
             else
             {
-                popUp.texts[11].text = UseEffect_str;
+                popUp.texts[9].text = UseEffect_str;
             }
         }
     }

@@ -17,6 +17,8 @@ public class BattleAndSkillCtrl : BASE {
     public SKILL[] skills = new SKILL[Enum.GetNames(typeof(SkillKind)).Length];
     [SerializeField]SkillSlot[] slots_ins;//InspectorからAddする
     SkillSlot[,] slots;
+    [SerializeField] GameObject enemysContainer;
+    public ENEMY[] ememys = new ENEMY[Enum.GetNames(typeof(EnemyKind)).Length];
     int currentRow;
 
     public DungeonKind dunKind;
@@ -59,17 +61,18 @@ public class BattleAndSkillCtrl : BASE {
 
                 goNextRow = false;
                 //コストがあれば支払う
-                if (skills[(int)thisKind].CanUse())
+                if (skills[(int)thisKind].PayedCost == false)
                 {
-                    skills[(int)thisKind].PayCost();
-                }
-                else
-                {
-                    if (skills[(int)thisKind].PayedCost == false)
+                    if (skills[(int)thisKind].CanUse())
+                    {
+                        skills[(int)thisKind].PayCost();
+                    }
+                    else
                     {
                         continue;
                     }
                 }
+
                 
                 skills[(int)thisKind].currentValue += 0.1;//0.1秒に0.1ずつ増える
                 if (skills[(int)thisKind].currentValue >= skills[(int)thisKind].Duration())
