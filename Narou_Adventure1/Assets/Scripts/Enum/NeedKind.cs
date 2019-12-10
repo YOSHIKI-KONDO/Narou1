@@ -1,7 +1,24 @@
 ﻿public enum NeedKind
 {
     nothing,
+
+    weapon,
+    armor,
+    goods,
+
+    sword,
+    spear,
+    rod,
+
     fire,
     water,
-    sword,
+    wind,
+    earth,
+    thunder,
+    ice,
+    light,
+    dark,
+    
+    animal,
+
 }

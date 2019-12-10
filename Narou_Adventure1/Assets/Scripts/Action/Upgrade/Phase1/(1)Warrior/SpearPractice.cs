@@ -9,7 +9,7 @@ public class SpearPractice : UPGRADE_ACTION
 {
     public override bool Requires()
     {
-        return main.a_rsc.MaxLevel( (int)AbilityKind.beginner_bojutsu) >= 1;
+        return main.a_rsc.MaxLevel( (int)AbilityKind.beginner_bojutsu) >= 6;
     }
 
     // Use this for initialization

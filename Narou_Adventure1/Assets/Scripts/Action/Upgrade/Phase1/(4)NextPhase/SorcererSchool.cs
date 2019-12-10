@@ -9,7 +9,7 @@ public class SorcererSchool : UPGRADE_ACTION
 {
     public override bool Requires()
     {
-        return main.a_rsc.MaxLevel((int)AbilityKind.primary_wind_magic) >= 1 ||
+        return main.a_rsc.MaxLevel((int)AbilityKind.primary_wind_magic) >= 6 ||
                main.rsc.Value[(int)ResourceKind.research] >= 30;
     }
 

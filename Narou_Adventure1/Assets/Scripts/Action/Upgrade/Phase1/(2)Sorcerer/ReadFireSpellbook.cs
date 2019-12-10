@@ -9,8 +9,8 @@ public class ReadFireSpellbook : UPGRADE_ACTION
 {
     public override bool Requires()
     {
-        return main.a_rsc.MaxLevel( (int)AbilityKind.primary_water_magic) >= 1 &&
-               main.a_rsc.MaxLevel( (int)AbilityKind.primary_earth_magic) >= 1 &&
+        return main.a_rsc.MaxLevel( (int)AbilityKind.primary_water_magic) >= 6 &&
+               main.a_rsc.MaxLevel( (int)AbilityKind.primary_earth_magic) >= 6 &&
                main.rsc.Value[ (int)ResourceKind.research] >= 30;
     }
 

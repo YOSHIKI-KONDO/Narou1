@@ -10,6 +10,8 @@
             eat_anchovy_sandwich,
             writing_paper,
             bind_a_book,
+            split_firewood,
+            sell_firewood,
 
         }
 
@@ -21,6 +23,9 @@
             study,
             //フェーズ１（入学前）
             chores,
+            harvest_wheat,
+            grow_herb,
+            lumberjack,
             //フェーズ２（学校）
             manual_labor,
             desk_work,
@@ -51,6 +56,11 @@
             buy_wallet,
             study_in_church,
             buy_bag,
+            practical_skill,
+            //少女イベント
+            girl_is_crying,
+            pick_flowers,
+            punish_the_bad_kids,
             //進学
             warrior_school,
             sorcerer_school,

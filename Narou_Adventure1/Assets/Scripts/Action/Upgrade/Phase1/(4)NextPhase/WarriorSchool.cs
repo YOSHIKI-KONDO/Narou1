@@ -9,8 +9,8 @@ public class WarriorSchool : UPGRADE_ACTION
 {
     public override bool Requires()
     {
-        return main.a_rsc.MaxLevel((int)AbilityKind.beginner_swordmanship) >= 1 ||
-               main.a_rsc.MaxLevel((int)AbilityKind.beginner_spearmanship) >= 1;
+        return main.a_rsc.MaxLevel((int)AbilityKind.beginner_swordmanship) >= 6 ||
+               main.a_rsc.MaxLevel((int)AbilityKind.beginner_spearmanship) >= 6;
     }
 
     // Use this for initialization
