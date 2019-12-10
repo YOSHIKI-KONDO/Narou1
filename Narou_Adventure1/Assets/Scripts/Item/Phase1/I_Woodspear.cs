@@ -16,7 +16,7 @@ public class I_Woodspear : ITEM
         SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 15));
         EffectLists.Add(new Dealing(ResourceKind.attack, Dealing.R_ParaKind.max, 2));
 
-        SetSource(NeedKind.spear);
+        SetSource(NeedKind.weapon, NeedKind.spear);
     }
 
     // Use this for initialization

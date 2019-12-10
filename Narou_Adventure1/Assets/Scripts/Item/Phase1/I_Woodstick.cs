@@ -16,7 +16,7 @@ public class I_Woodstick : ITEM
         SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 10));
         EffectLists.Add(new Dealing(ResourceKind.attack, Dealing.R_ParaKind.max, 1));
 
-        SetSource(NeedKind.rod);
+        SetSource(NeedKind.weapon, NeedKind.rod);
     }
 
     // Use this for initialization

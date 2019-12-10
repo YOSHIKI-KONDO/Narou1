@@ -16,7 +16,7 @@ public class I_WaterOrb : ITEM
         SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 25));
         EffectLists.Add(new Dealing(ResourceKind.magic_attack, Dealing.R_ParaKind.max, 2));
 
-        SetSource(NeedKind.water);
+        SetSource(NeedKind.goods, NeedKind.water);
     }
 
     // Use this for initialization

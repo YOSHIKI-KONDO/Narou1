@@ -16,10 +16,7 @@ public class I_ReferenceBook : ITEM
         SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 10));
         EffectLists.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.max, 10));
 
-        SetSource(NeedKind.fire, NeedKind.water);
-
-        need.AddItemNeed(ItemKind.c);
-        need.AddSourceNeed(NeedKind.sword);
+        SetSource(NeedKind.goods);
     }
 
     // Use this for initialization

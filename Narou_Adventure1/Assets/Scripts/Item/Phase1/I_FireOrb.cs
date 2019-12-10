@@ -16,7 +16,7 @@ public class I_FireOrb : ITEM
         SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 25));
         EffectLists.Add(new Dealing(ResourceKind.magic_attack, Dealing.R_ParaKind.max, 2));
 
-        SetSource(NeedKind.fire);
+        SetSource(NeedKind.goods, NeedKind.fire);
     }
 
     // Use this for initialization

@@ -16,7 +16,7 @@ public class I_Animalfood : ITEM
         SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 15));
         EffectLists.Add(new Dealing(ResourceKind.attack, Dealing.R_ParaKind.max, 2));
 
-        SetSource(NeedKind.animal);
+        SetSource(NeedKind.goods,NeedKind.animal);
     }
 
     // Use this for initialization
