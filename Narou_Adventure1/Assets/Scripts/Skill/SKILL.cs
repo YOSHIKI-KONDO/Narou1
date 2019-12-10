@@ -14,12 +14,18 @@ public class SKILL : BASE, INeed
     public NeedFunciton need;
     SkillComponents components;
 
+    public bool PayedCost;   //コストを払ったかどうか
+    public bool equipped;    //設置してあるかどうか
     public bool casted;     //使用されたかどうか
     public double currentValue;
     double init_maxValue;
     public double Duration()
     {
         return init_maxValue;
+    }
+    public float sliderValue()
+    {
+        return (float)(currentValue / Duration());
     }
     public List<Dealing> useCosts = new List<Dealing>();
     public List<Dealing> useEffects = new List<Dealing>();
@@ -44,19 +50,42 @@ public class SKILL : BASE, INeed
         return CanPurchase(useCosts);
     }
 
-    public void Use()           //リソース系ならこれでいい
+    public void PayCost()
     {
-        if (CanPurchase(useCosts))
-        {
-            Calculate(useCosts, false);
-            Calculate(useEffects, false);
-            casted = true;
-        }
+        Calculate(useCosts, false);
+        PayedCost = true;
     }
+
+    public void Produce()
+    {
+        Calculate(useEffects, false);//リソース系
+    }
+
+    public double WarriorDamage()
+    {
+        double sum = 0;
+        foreach (var atk in warriorAtks)
+        {
+            sum += atk.damage;
+        }
+        return sum;
+    }
+
+    public double SorcererDamage()
+    {
+        double sum = 0;
+        foreach (var atk in sorcererAtks)
+        {
+            sum += atk.damage;
+        }
+        return sum;
+    }
+
+
 
     public void Equip()
     {
-        Use();
+        main.battleCtrl.skillKind = kind;
     }
 
     string WarriorDetail()
@@ -98,9 +127,7 @@ public class SKILL : BASE, INeed
         release.StartFunction(gameObject, x => Sync(ref main.SR.released_Skill[(int)kind], x), x => Sync(ref main.SR.completed_Skill[(int)kind], x), x => Requires());
         learnF = gameObject.AddComponent<InstantFunction>();
         learnF.StartInstant(components.LearnBtnObj, Need);
-        learnF.CompleteAction = Learn;      //added
-
-        /* Debug */
+        learnF.CompleteAction = Learn;
         components.setButton.onClick.AddListener(Equip);
     }
 
@@ -133,6 +160,7 @@ public class SKILL : BASE, INeed
             //learn後
             setFalse(components.LearnBtnObj);
             setActive(components.setButton.gameObject);
+            components.setButton.interactable = !equipped;
         }
         else
         {
@@ -188,24 +216,34 @@ public class SKILL : BASE, INeed
                 popUp.texts[3].text = Need_str;
             }
 
-            if (UseCost_str == "" || UseCost_str == null)
+            if (LearnCost_str == "" || LearnCost_str == null)
             {
                 setFalse(popUp.texts[4].gameObject);
                 setFalse(popUp.texts[5].gameObject);
             }
             else
             {
-                popUp.texts[5].text = UseCost_str;
+                popUp.texts[5].text = LearnCost_str;
+            }
+
+            if (UseCost_str == "" || UseCost_str == null)
+            {
+                setFalse(popUp.texts[6].gameObject);
+                setFalse(popUp.texts[7].gameObject);
+            }
+            else
+            {
+                popUp.texts[7].text = UseCost_str;
             }
 
             if (UseEffect_str == "" || UseEffect_str == null)
             {
-                setFalse(popUp.texts[10].gameObject);
-                setFalse(popUp.texts[11].gameObject);
+                setFalse(popUp.texts[8].gameObject);
+                setFalse(popUp.texts[9].gameObject);
             }
             else
             {
-                popUp.texts[11].text = UseEffect_str;
+                popUp.texts[9].text = UseEffect_str;
             }
         }
     }

@@ -868,6 +868,15 @@ public class UsefulMethod : MonoBehaviour
         return ((d_obj / d_canvas) * ui_x / target_x, (d_obj / d_canvas) * ui_y / target_y);
     }
 
+    public static void ArrayToDefault<T>(T[] ary)
+        where T : struct
+    {
+        for (int i = 0; i < ary.Length; i++)
+        {
+            ary[i] = default(T);
+        }
+    }
+
     // Use this for initialization
     void Start()
     {
