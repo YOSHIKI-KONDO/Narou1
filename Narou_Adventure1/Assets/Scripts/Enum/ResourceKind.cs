@@ -5,6 +5,12 @@
     focus,//ここは変えない
     equipSpace,
     inventorySpace,
+
+    strength,           //added
+    mentalStrength,     //added
+    defense,            //added
+    dodge,              //added
+    criticalChance,     //added
     //ステータスリソース
     stamina,
     hp,

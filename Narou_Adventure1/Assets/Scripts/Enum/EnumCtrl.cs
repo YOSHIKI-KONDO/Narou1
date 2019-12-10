@@ -43,6 +43,9 @@ public class EnumCtrl : BASE {
     public List<template> abilitys = new List<template>();
     public List<template> items = new List<template>();
     public List<template> needs = new List<template>();
+    public List<template> skills = new List<template>();
+    public List<template> enemys = new List<template>();
+    public List<template> dungeons = new List<template>();
 
     // Use this for initialization
     void Awake () {
@@ -53,7 +56,12 @@ public class EnumCtrl : BASE {
         resources.Add(new template(ResourceKind.focus, "focus", "フォーカス", "", ""));
         resources.Add(new template(ResourceKind.equipSpace, "Equip", "装備", "", ""));
         resources.Add(new template(ResourceKind.inventorySpace, "Inventory", "インベントリ", "", ""));
-            //ステータスリソース
+        resources.Add(new template(ResourceKind.strength, "Strength", "筋力", "", ""));
+        resources.Add(new template(ResourceKind.mentalStrength, "MentalStrength", "精神力", "", ""));
+        resources.Add(new template(ResourceKind.defense, "Defense", "防御力", "", ""));
+        resources.Add(new template(ResourceKind.dodge, "Dodge Chance", "回避率", "", ""));
+        resources.Add(new template(ResourceKind.criticalChance, "Critical Chance", "会心率", "", ""));
+        //ステータスリソース
         resources.Add(new template(ResourceKind.stamina, "Stamina", "スタミナ", "use for everything", "あらゆる行動に使います"));
         resources.Add(new template(ResourceKind.hp, "HP", "HP", "use for everything", "あらゆる行動に使います"));
         resources.Add(new template(ResourceKind.mp, "MP", "MP", "use for everything", "あらゆる行動に使います"));
@@ -317,6 +325,21 @@ public class EnumCtrl : BASE {
         needs.Add(new template(NeedKind.water, "water", "", "", ""));
         needs.Add(new template(NeedKind.sword, "sword", "", "", ""));
 
+        /* スキル */
+        skills.Add(new template(SkillKind.nothing, "nothing", "nothing", "nothing", "nothing"));
+        skills.Add(new template(SkillKind.thuderBolt, "Thunder Bolt", "サンダーボルト", "", ""));
+        skills.Add(new template(SkillKind.meteor, "Meteor", "メテオ", "", ""));
+
+        /* 敵 */
+        enemys.Add(new template(EnemyKind.nothing, "nothing", "nothing", "nothing", "nothing"));
+        enemys.Add(new template(EnemyKind.slime, "Slime", "スライム", "", ""));
+        enemys.Add(new template(EnemyKind.goblin, "Goblin", "ゴブリン", "", ""));
+
+        /* ダンジョン */
+        dungeons.Add(new template(DungeonKind.nothing, "nothing", "nothing", "nothing", "nothing"));
+        dungeons.Add(new template(DungeonKind.firstDungeon, "firstDungeon", "firstDungeon", "", ""));
+        dungeons.Add(new template(DungeonKind.second, "second", "second", "", ""));
+
         //テスト
         TestAll();
     }
@@ -330,6 +353,9 @@ public class EnumCtrl : BASE {
         TestOneList<AbilityKind>(abilitys);
         TestOneList<ItemKind>(items);
         TestOneList<NeedKind>(needs);
+        TestOneList<SkillKind>(skills);
+        TestOneList<EnemyKind>(enemys);
+        TestOneList<DungeonKind>(dungeons);
     }
 
     public void TestOneList<T>(List<template> templates)
