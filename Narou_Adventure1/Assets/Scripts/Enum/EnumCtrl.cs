@@ -65,7 +65,7 @@ public class EnumCtrl : BASE {
         resources.Add(new template(ResourceKind.exp, "Exp", "経験値", "", ""));
           //武器
         resources.Add(new template(ResourceKind.attack, "Attack", "攻撃力", "", ""));
-        resources.Add(new template(ResourceKind.attack, "Magic Attack", "魔法攻撃力", "", ""));
+        resources.Add(new template(ResourceKind.magic_attack, "Magic Attack", "魔法攻撃力", "", ""));
           //ステータスリソース
         resources.Add(new template(ResourceKind.stamina, "Stamina", "スタミナ", "use for everything", "あらゆる行動に使います"));
         resources.Add(new template(ResourceKind.hp, "HP", "HP", "use for everything", "あらゆる行動に使います"));
@@ -335,9 +335,21 @@ public class EnumCtrl : BASE {
 
         /* 必要条件 */
         needs.Add(new template(NeedKind.nothing, "nothing", "nothing", "nothing", "nothing"));
-        needs.Add(new template(NeedKind.fire, "fire", "", "", ""));
-        needs.Add(new template(NeedKind.water, "water", "", "", ""));
-        needs.Add(new template(NeedKind.sword, "sword", "", "", ""));
+        needs.Add(new template(NeedKind.weapon, "weapon", "weapon", "", ""));
+        needs.Add(new template(NeedKind.armor, "armor", "armor", "", ""));
+        needs.Add(new template(NeedKind.goods, "goods", "goods", "", ""));
+        needs.Add(new template(NeedKind.sword, "sword", "sword", "", ""));
+        needs.Add(new template(NeedKind.spear, "spear", "spear", "", ""));
+        needs.Add(new template(NeedKind.rod, "rod", "rod", "", ""));
+        needs.Add(new template(NeedKind.fire, "fire", "fire", "", ""));
+        needs.Add(new template(NeedKind.water, "water", "water", "", ""));
+        needs.Add(new template(NeedKind.wind, "wind", "wind", "", ""));
+        needs.Add(new template(NeedKind.earth, "earth", "earth", "", ""));
+        needs.Add(new template(NeedKind.thunder, "thunder", "thunder", "", ""));
+        needs.Add(new template(NeedKind.ice, "ice", "ice", "", ""));
+        needs.Add(new template(NeedKind.light, "light", "light", "", ""));
+        needs.Add(new template(NeedKind.dark, "dark", "dark", "", ""));
+        needs.Add(new template(NeedKind.animal, "animal", "animal", "", ""));
 
         /* スキル */
         skills.Add(new template(SkillKind.nothing, "nothing", "nothing", "nothing", "nothing"));

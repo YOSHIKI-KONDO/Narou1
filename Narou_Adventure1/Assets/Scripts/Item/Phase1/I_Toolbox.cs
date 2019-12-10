@@ -16,6 +16,8 @@ public class I_Toolbox : ITEM
         SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 20));
         EffectLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.max, 5));
         EffectLists.Add(new Dealing(AbilityKind.use_tools, Dealing.A_ParaKind.maxLevel, 1));
+
+        SetSource(NeedKind.goods);
     }
 
     // Use this for initialization

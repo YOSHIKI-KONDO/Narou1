@@ -16,7 +16,7 @@ public class I_WindOrb : ITEM
         SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 25));
         EffectLists.Add(new Dealing(ResourceKind.magic_attack, Dealing.R_ParaKind.max, 2));
 
-        SetSource(NeedKind.wind);
+        SetSource(NeedKind.goods, NeedKind.wind);
     }
 
     // Use this for initialization
