@@ -11,6 +11,7 @@
     defense,            //added
     dodge,              //added
     criticalChance,     //added
+    exp,                //added
     //ステータスリソース
     stamina,
     hp,

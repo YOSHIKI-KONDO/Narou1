@@ -61,6 +61,7 @@ public class EnumCtrl : BASE {
         resources.Add(new template(ResourceKind.defense, "Defense", "防御力", "", ""));
         resources.Add(new template(ResourceKind.dodge, "Dodge Chance", "回避率", "", ""));
         resources.Add(new template(ResourceKind.criticalChance, "Critical Chance", "会心率", "", ""));
+        resources.Add(new template(ResourceKind.exp, "Exp", "経験値", "", ""));
         //ステータスリソース
         resources.Add(new template(ResourceKind.stamina, "Stamina", "スタミナ", "use for everything", "あらゆる行動に使います"));
         resources.Add(new template(ResourceKind.hp, "HP", "HP", "use for everything", "あらゆる行動に使います"));
