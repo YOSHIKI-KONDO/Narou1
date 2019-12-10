@@ -11,6 +11,9 @@
     defense,            //added
     dodge,              //added
     criticalChance,     //added
+
+    attack,
+    magic_attack,
     //ステータスリソース
     stamina,
     hp,

@@ -7091,6 +7091,11 @@ MonoBehaviour:
     inventoryNum_Item: 
     released_Item: 
     completed_Item: 
+    released_Skill: 
+    completed_Skill: 
+    learnt_Skill: 
+    released_Dungeon: 
+    completed_Dungeon: 
   S:
     lastTime: 
     birthDate: 
@@ -7110,6 +7115,7 @@ MonoBehaviour:
   progressCtrl: {fileID: 1329275260}
   releaseCtrl: {fileID: 1329275261}
   itemCtrl: {fileID: 1329275264}
+  battleCtrl: {fileID: 0}
   announce: {fileID: 434298069}
   focus: {fileID: 2822668639949457068}
   decideParameter: {fileID: 1329275265}
@@ -7119,6 +7125,9 @@ MonoBehaviour:
     type: 3}
   itemPopUpPre: {fileID: 7993348671439776045, guid: 65d09e47936eb48f9be88dfd9515b371,
     type: 3}
+  skillPopUp: {fileID: 0}
+  enemyPopUp: {fileID: 0}
+  dungeonPopUp: {fileID: 0}
   enumCtrl: {fileID: 1329275262}
 --- !u!114 &1329275255
 MonoBehaviour:

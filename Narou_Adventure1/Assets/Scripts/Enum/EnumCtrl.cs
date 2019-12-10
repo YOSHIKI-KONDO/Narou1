@@ -61,6 +61,9 @@ public class EnumCtrl : BASE {
         resources.Add(new template(ResourceKind.defense, "Defense", "防御力", "", ""));
         resources.Add(new template(ResourceKind.dodge, "Dodge Chance", "回避率", "", ""));
         resources.Add(new template(ResourceKind.criticalChance, "Critical Chance", "会心率", "", ""));
+
+        resources.Add(new template(ResourceKind.attack, "Attack", "攻撃力", "", ""));
+        resources.Add(new template(ResourceKind.attack, "Magic Attack", "魔法攻撃力", "", ""));
         //ステータスリソース
         resources.Add(new template(ResourceKind.stamina, "Stamina", "スタミナ", "use for everything", "あらゆる行動に使います"));
         resources.Add(new template(ResourceKind.hp, "HP", "HP", "use for everything", "あらゆる行動に使います"));
@@ -136,7 +139,9 @@ public class EnumCtrl : BASE {
         loopActions.Add(new template(ActionEnum.Loop.study, "Study", "勉強", "nothing", "nothing"));
           //フェーズ１（入学前）
         loopActions.Add(new template(ActionEnum.Loop.chores, "Chores", "雑用", "nothing", "nothing"));
-          //フェーズ２（学校）
+        loopActions.Add(new template(ActionEnum.Loop.harvest_wheat, "Harvest Wheat", "小麦の収穫", "nothing", "nothing"));
+        loopActions.Add(new template(ActionEnum.Loop.grow_herb, "Grow Herb", "ハーブ栽培", "nothing", "nothing"));
+        //フェーズ２（学校）
         loopActions.Add(new template(ActionEnum.Loop.manual_labor, "Manual Labor", "肉体労働", "nothing", "nothing"));
         loopActions.Add(new template(ActionEnum.Loop.desk_work, "Desk Work", "デスクワーク", "nothing", "nothing"));
         loopActions.Add(new template(ActionEnum.Loop.service_trade, "Service Trade", "サービス業", "nothing", "nothing"));

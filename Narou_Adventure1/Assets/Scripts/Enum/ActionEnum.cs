@@ -21,6 +21,8 @@
             study,
             //フェーズ１（入学前）
             chores,
+            harvest_wheat,
+            grow_herb,
             //フェーズ２（学校）
             manual_labor,
             desk_work,

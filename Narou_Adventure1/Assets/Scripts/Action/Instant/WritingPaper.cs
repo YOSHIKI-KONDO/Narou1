@@ -9,7 +9,8 @@ public class WritingPaper : INSTANT_ACTION
 {
     public override bool Requires()
     {
-        return main.a_rsc.CurrentLevels[(int)AbilityKind.life_magic] >= 3;
+        return main.a_rsc.CurrentLevels[(int)AbilityKind.use_tools] >= 2 ||
+               main.a_rsc.CurrentLevels[(int)AbilityKind.life_magic] >= 2;
     }
 
     // Use this for initialization
