@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 2934587385069295760}
   - component: {fileID: 7198563675024707844}
   - component: {fileID: 5419893181146360937}
-  - component: {fileID: 2934587385069295764}
-  - component: {fileID: 2934587385069295766}
   m_Layer: 5
   m_Name: '[Dungeon]Template'
   m_TagString: Untagged
@@ -79,50 +77,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &2934587385069295764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2934587385069295767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6fd1a6070a47480894ae9db5824e67f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  main: {fileID: 0}
-  LearnBtnObj: {fileID: 9090352025978199028}
-  setButton: {fileID: 0}
-  nameText: {fileID: 2232230017608664069}
---- !u!114 &2934587385069295766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2934587385069295767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1957a62474a4c419c948a67325305816, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  main: {fileID: 0}
-  kind: 0
-  popUp: {fileID: 0}
-  release: {fileID: 0}
-  learnF: {fileID: 0}
-  need: {fileID: 0}
-  PayedCost: 0
-  equipped: 0
-  casted: 0
-  currentValue: 0
-  Name_str: 
-  Description_str: 
-  Need_str: 
-  LearnCost_str: 
-  UseCost_str: 
-  UseEffect_str: 
 --- !u!1 &4977441370523112296
 GameObject:
   m_ObjectHideFlags: 0

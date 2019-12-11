@@ -318,9 +318,6 @@ public class EnumCtrl : BASE {
         abilitys.Add(new template(AbilityKind.high_enchanter, "High Enchanter", "ハイエンチャンター", "nothing", "nothing"));
 
         /* アイテム */
-        items.Add(new template(ItemKind.c, "C", "C言語", "", ""));
-        items.Add(new template(ItemKind.java, "Java", "Java", "", ""));
-        items.Add(new template(ItemKind.python, "Python", "Python", "", ""));
           //フェーズ１
         items.Add(new template(ItemKind.reference_book, "Reference Book", "参考書", "", ""));
         items.Add(new template(ItemKind.toolbox, "Toolbox", "工具箱", "", ""));

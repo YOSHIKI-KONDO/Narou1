@@ -6,21 +6,39 @@ using UnityEngine.UI;
 using static UsefulMethod;
 
 public class ENEMY : BASE {
-    public EnemyKind kind;
+    [NonSerialized]public EnemyKind kind;
+    [NonSerialized]public double maxHp;
+    [NonSerialized]public float interval;
+    [NonSerialized]public double defense;
+    [NonSerialized]public double attack;
+    public List<Drop> drops = new List<Drop>();
 
-	// Use this for initialization
-	void Awake () {
-		StartBASE();
-        main.battleCtrl.ememys[(int)kind] = this;
-	}
+    public void AwakeEnemy(EnemyKind kind, double maxHp, float interval, double attack, double defense, int gold, int exp)
+    {
+        StartBASE();
+        this.kind = kind;
+        main.battleCtrl.enemys[(int)kind] = this;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        this.maxHp = maxHp;
+        this.interval = interval;
+        this.attack = attack;
+        this.defense = defense;
+        drops.Add(new Drop(ResourceKind.gold, gold, 100));
+        drops.Add(new Drop(ResourceKind.exp, exp, 100));
+    }
+
+    public void StartEnemy()
+    {
+
+    }
+
+    public void UpdateEnemy()
+    {
+
+    }
+
+    public void FixedUpdateEnemy()
+    {
+
+    }
 }

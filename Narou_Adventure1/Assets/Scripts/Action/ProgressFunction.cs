@@ -11,15 +11,8 @@ using static UsefulMethod;
 /// Progress
 /// CheckButton
 /// </summary>
-public class ProgressFunction : BASE
+public class ProgressFunction : OnlyAction
 {
-    public bool isOn;
-    //public enum ParaKind
-    //{
-    //    current,
-    //    max,
-    //    regen,
-    //}
     public delegate bool Condition();
     public Condition Need;
     public delegate bool BoolSync(bool? x = null);
@@ -27,8 +20,7 @@ public class ProgressFunction : BASE
     public delegate double DoubleSync(double? x = null);
     public DoubleSync CurrentValue;
     public Action CompleteAction;
-    protected Button button;
-    Slider slider;
+    public Slider slider;
 
     public List<Dealing> initCostList = new List<Dealing>();
     public List<Dealing> progressCostList = new List<Dealing>();
@@ -36,23 +28,13 @@ public class ProgressFunction : BASE
     public List<Dealing> completeEffectList = new List<Dealing>();
 
 
-    private void Awake()
-    {
-        StartBASE();
-        main.progressCtrl.list.Add(this);
-    }
-
     /// <summary>
     /// 初期設定。Obj以外は、無ければnullでいい。
     /// ObjにはgameObjectを入れる。
     /// </summary>
     public virtual void StartProgress(GameObject Obj, Condition Need, Slider slider, BoolSync hasPaid, DoubleSync currentValue)
     {
-        if(Obj != null)
-        {
-            button = Obj.GetComponent<Button>();
-            button.onClick.AddListener(SwitchProgress);
-        }
+        AwakeOnlyAction(Obj.GetComponent<Button>());
         this.Need = Need;
         this.slider = slider;
         HasPaid = hasPaid;
@@ -106,15 +88,10 @@ public class ProgressFunction : BASE
         ApplySlider(Max);
     }
     //インスタンス先のclassのスタートなどで呼ぶ
-    public void ApplySlider(double Max)
+    public virtual void ApplySlider(double Max)
     {
         if (slider == null) { return; }
         slider.value = (float)(CurrentValue() / Max);
-    }
-
-    public void SwitchProgress()
-    {
-        main.progressCtrl.SwitchProgress(this);
     }
 
     protected virtual void CheckButton()

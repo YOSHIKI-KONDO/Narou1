@@ -40,7 +40,7 @@ public class Main : MonoBehaviour
 
 
     /* Libraryここまで */
-    public static bool isJapanese = true;
+    public static bool isJapanese = false;
     public ResourceCtrl rsc;            //resourceCtrlの略
     public AbilityResourceCtrl a_rsc;   //AbilityResourceCtrlの略
     public ProgressCtrl progressCtrl;

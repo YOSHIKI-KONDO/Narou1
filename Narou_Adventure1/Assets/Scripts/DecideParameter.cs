@@ -27,6 +27,7 @@ public class DecideParameter : BASE {
         }
         main.rsc.Regen_Base[(int)ResourceKind.focus] = -0.04;
         main.rsc.Max_Base[(int)ResourceKind.focus] = 2;
+        main.SR.released_resource[(int)ResourceKind.focus] = true;
 
         main.rsc.Max_Base[(int)ResourceKind.inventorySpace] = 0;
         main.rsc.Max_Base[(int)ResourceKind.equipSpace] = 0;

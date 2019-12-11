@@ -108,7 +108,7 @@ public class SKILL : BASE, INeed
         return sum_str;
     }
 
-    public string Name_str, Description_str, Need_str,LearnCost_str, UseCost_str, UseEffect_str;
+    public string Name_str, Description_str, Need_str,LearnCost_str, UseCost_str, UseEffect_str, Interval_str;
 
     // Use this for initialization
     protected void AwakeSkill(SkillKind Kind, double init_maxValue)
@@ -183,6 +183,7 @@ public class SKILL : BASE, INeed
             UseEffect_str = WarriorDetail();
             UseEffect_str += SorcererDetail();
             UseEffect_str += ProgressDetail(useEffects);
+            Interval_str = tDigit(Duration(),1) + "s";
 
             //needが設定されている場合にのみ書き換える。
             //そのため、ない場合は手動でNeed_strを変えることが可能。
@@ -244,6 +245,16 @@ public class SKILL : BASE, INeed
             else
             {
                 popUp.texts[9].text = UseEffect_str;
+            }
+
+            if (Interval_str == "" || Interval_str == null)
+            {
+                setFalse(popUp.texts[10].gameObject);
+                setFalse(popUp.texts[11].gameObject);
+            }
+            else
+            {
+                popUp.texts[11].text = Interval_str;
             }
         }
     }

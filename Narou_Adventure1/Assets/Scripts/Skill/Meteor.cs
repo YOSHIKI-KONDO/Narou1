@@ -11,7 +11,7 @@ public class Meteor : SKILL
     // Use this for initialization
     void Awake()
     {
-        AwakeSkill(SkillKind.meteor, 10);
+        AwakeSkill(SkillKind.meteor, 2);
         learnF.initCostList.Add(new Dealing(ResourceKind.mp, Dealing.R_ParaKind.current, -10));
         useCosts.Add(new Dealing(ResourceKind.mp, Dealing.R_ParaKind.current, -1));
         useEffects.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 10));
