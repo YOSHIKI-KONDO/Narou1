@@ -15,6 +15,7 @@ public class Focus : BASE {
 
     public void Activate()
     {
+        Debug.Log("Called.");
         setActive(obj);
     }
 
@@ -28,4 +29,13 @@ public class Focus : BASE {
 		StartBASE();
         button.onClick.AddListener(DoFocus);
 	}
+
+    private void Start()
+    {
+        if (GetComponent<ReleaseFunction>())
+        {
+            GetComponent<ReleaseFunction>().RemoveRelease();
+            Destroy(GetComponent<ReleaseFunction>());
+        }
+    }
 }

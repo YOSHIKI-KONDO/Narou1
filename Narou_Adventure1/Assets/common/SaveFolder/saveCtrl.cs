@@ -56,6 +56,7 @@ public class saveCtrl : BASE
             yield return new WaitForSeconds(1.0f);
             main.lastTime = DateTime.Now;
             setSaveKey();
+            main.battleCtrl.Save();
         }
     }
 }

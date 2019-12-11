@@ -79,10 +79,13 @@ public class SaveDeclare : BASE {
         InitializeArray(ref main.SR.released_Skill, num_skill);
         InitializeArray(ref main.SR.completed_Skill, num_skill);
         InitializeArray(ref main.SR.learnt_Skill, num_skill);
+        InitializeArray(ref main.SR.slotKinds, main.battleCtrl.ROW_SLOT * main.battleCtrl.COLUMN_SLOT);
 
         /* Dungeon */
         InitializeArray(ref main.SR.released_Dungeon, num_dungeon);
         InitializeArray(ref main.SR.completed_Dungeon, num_dungeon);
+        InitializeArray(ref main.SR.currentFloor_Dungeon, num_dungeon);
+        InitializeArray(ref main.SR.clearNum_Dungeon, num_dungeon);
     }
 
 	// Use this for initialization

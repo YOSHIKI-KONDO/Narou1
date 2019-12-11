@@ -35,6 +35,14 @@ public class ReleaseFunction : BASE {
         if (Released()) { Activate(); }
     }
 
+    public void RemoveRelease()
+    {
+        if(main.releaseCtrl.list.IndexOf(this) >= 0)
+        {
+            main.releaseCtrl.list.Remove(this);
+        }
+    }
+
     public void UpdateFunction()
     {
         if (Completed()) { Deactivate(); return; }

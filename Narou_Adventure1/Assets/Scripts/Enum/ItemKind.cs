@@ -1,9 +1,6 @@
 ﻿public enum ItemKind
 {
     //nothing,
-    c,
-    java,
-    python,
 
     reference_book,
     toolbox,

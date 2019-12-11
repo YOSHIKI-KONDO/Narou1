@@ -12,6 +12,17 @@ public class BASE : MonoBehaviour
         main = UsefulMethod.GetMain();
     }
 
+    public string DropsDetail(List<Drop> drops)
+    {
+        string sum = "";
+        foreach (var drop in drops)
+        {
+            if (sum != "") { sum += "\n"; }
+            sum += main.enumCtrl.resources[(int)drop.kind].Name() + ":" + tDigit(drop.amount) + " ... " + drop.probability.ToString("F0") + "%";
+        }
+        return sum;
+    }
+
     /// <summary>
     /// listの全てのコストが足りているかどうかを返す
     /// </summary>

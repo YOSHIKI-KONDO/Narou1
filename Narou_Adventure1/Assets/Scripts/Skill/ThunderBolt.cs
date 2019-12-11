@@ -9,11 +9,11 @@ public class ThunderBolt : SKILL {
 
 	// Use this for initialization
 	void Awake () {
-		AwakeSkill(SkillKind.thuderBolt, 10);
+		AwakeSkill(SkillKind.thuderBolt, 2);
         learnF.initCostList.Add(new Dealing(ResourceKind.mp, Dealing.R_ParaKind.current, -10));
         useCosts.Add(new Dealing(ResourceKind.mp, Dealing.R_ParaKind.current, -1));
         useEffects.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 10));
-        warriorAtks.Add(new WarriorAttack(1));
+        warriorAtks.Add(new WarriorAttack(10));
         sorcererAtks.Add(new SorcererAttack(2));
     }
 

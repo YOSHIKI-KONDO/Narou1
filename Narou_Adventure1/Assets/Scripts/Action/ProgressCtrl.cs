@@ -6,12 +6,12 @@ using UnityEngine.UI;
 using static UsefulMethod;
 
 public class ProgressCtrl : BASE {
-    public List<ProgressFunction> list = new List<ProgressFunction>();
-    public ProgressFunction restFunction;
-    public ProgressFunction previousFunction;
-    public ProgressFunction currentFunction;
-    //progressFunctionから呼ぶ
-    public void SwitchProgress(ProgressFunction function)
+    public List<OnlyAction> list = new List<OnlyAction>();
+    public OnlyAction restFunction;
+    public OnlyAction previousFunction;
+    public OnlyAction currentFunction;
+    //OnlyActionから呼ぶ
+    public void SwitchProgress(OnlyAction function)
     {
         DeactivateAll();
         ActivateProgress(function); 
@@ -26,7 +26,7 @@ public class ProgressCtrl : BASE {
         }
     }
 
-    public void ActivateProgress(ProgressFunction function)
+    public void ActivateProgress(OnlyAction function)
     {
         foreach (var p in list)
         {
@@ -38,6 +38,7 @@ public class ProgressCtrl : BASE {
                 ApplyFocus();
             }
         }
+        currentFunction.SelectedAction?.Invoke();
     }
 
     public void Rest()
@@ -60,6 +61,7 @@ public class ProgressCtrl : BASE {
     {
         if (currentFunction is AbilityFunction)
         {
+            Debug.Log(currentFunction.name);
             main.focus.Activate();
         }
         else
