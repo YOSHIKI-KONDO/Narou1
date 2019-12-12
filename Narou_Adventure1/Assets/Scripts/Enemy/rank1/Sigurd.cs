@@ -5,12 +5,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using static UsefulMethod;
 
-public class Goblin : ENEMY
+public class Sigurd : ENEMY
 {
     // Use this for initialization
     void Awake()
     {
-        AwakeEnemy(EnemyKind.goblin, 10, 5, 1, 0, 1, 1);
+        AwakeEnemy(EnemyKind.sigurd, 10, 4, 4, 0, 5, 5);
+        drops.Add(new Drop(ResourceKind.anchovy_sandwich, 1, 5));
     }
 
     // Use this for initialization
