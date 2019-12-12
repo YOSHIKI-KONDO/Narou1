@@ -5,6 +5,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using static UsefulMethod;
 
+/// <summary>
+/// アビリティの値を増やしたり減らしたりするクラス
+/// </summary>
 public class AbilityResourceCtrl : BASE {
     public int MaxLevel(int index)
     {

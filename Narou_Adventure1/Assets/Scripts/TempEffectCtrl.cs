@@ -18,6 +18,10 @@ public class TempEffectCtrl : BASE {
     // Use this for initialization
     void Awake () {
 		StartBASE();
+
+        Regens = new double[Enum.GetNames(typeof(ResourceKind)).Length];
+        TRates = new double[Enum.GetNames(typeof(AbilityKind)).Length];
+
         StartCoroutine(EffectCalculateCor());
 	}
 

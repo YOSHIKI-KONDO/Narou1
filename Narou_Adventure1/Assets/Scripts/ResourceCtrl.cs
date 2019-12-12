@@ -5,6 +5,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using static UsefulMethod;
 
+/// <summary>
+/// リソースを増やしたり減らしたりするクラス
+/// </summary>
 public class ResourceCtrl : BASE {
 
     //読み取り用

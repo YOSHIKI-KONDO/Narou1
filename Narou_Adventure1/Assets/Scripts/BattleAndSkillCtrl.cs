@@ -4,6 +4,16 @@ using UnityEngine;
 using static UsefulMethod;
 using UnityEngine.UI;
 
+/// <summary>
+/// slotKinds  ...２次元配列で、現在のスロットに格納されているスキルを格納している。
+/// skills     ...SKILLの配列。長さは種類の数。
+/// dungeons   ...DUNGEONの配列。長さは種類の数。
+/// enemys     ...ENEMYの配列。長さは種類の数。
+/// currentEnemys ...現在出現している敵の配列。
+/// enemysCmps ...ゲーム上に存在するSliderなどのオブジェクトをまとめた配列。
+///               currentEnemysと同期させている。
+/// dunKind       ...現在の
+/// </summary>
 public class BattleAndSkillCtrl : BASE {
     /// <summary>
     /// [0,0], [1,0], [2,0], [3,0],
@@ -42,7 +52,12 @@ public class BattleAndSkillCtrl : BASE {
 
     // Use this for initialization
     void Awake () {
-		StartBASE();
+        StartBASE();
+        /* コンストラクタで配列を初期化しても反映されない */
+        skills = new SKILL[main.SD.num_skill];
+        dungeons = new DUNGEON[main.SD.num_dungeon];
+        enemys = new ENEMY[Enum.GetNames(typeof(EnemyKind)).Length];
+
         InitializeSlots();
         fleeButton.onClick.AddListener(FleeFromDungeon);
 	}
