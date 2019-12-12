@@ -58,7 +58,7 @@ public class SKILL : BASE, INeed
 
     public void Produce()
     {
-        Calculate(useEffects, false);//リソース系
+        Calculate(useEffects, false, kind.ToString());//リソース系
     }
 
     public double WarriorDamage()

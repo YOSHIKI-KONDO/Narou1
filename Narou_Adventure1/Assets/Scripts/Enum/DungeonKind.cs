@@ -5,8 +5,8 @@
     second,
     edge_of_town,
     small_hill,
-    plain,
+    /*plain,
     lost_forest,
     sewer,
-    swamp,
+    swamp,*/
 }

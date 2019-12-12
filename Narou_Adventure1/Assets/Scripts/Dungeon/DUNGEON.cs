@@ -12,7 +12,7 @@ public class DUNGEON : BASE {
     public ReleaseFunction release;
     public NeedFunciton need;
     [NonSerialized]public Button button;
-    Text text;
+    Text text, sliderText;
     Slider slider;
 
     public List<EnemyKind[]> enemyList = new List<EnemyKind[]>(); //Enemyの配列のList
@@ -49,13 +49,14 @@ public class DUNGEON : BASE {
         this.kind = kind;
         main.battleCtrl.dungeons[(int)kind] = this;
 
-        button = GetComponentInChildren<Button>();      //UI関連
-        text = GetComponentInChildren<Text>();          //UI関連
-        slider = GetComponentInChildren<Slider>();      //UI関連
+        button = GetComponentInChildren<Button>();            //UI関連
+        text = GetComponentsInChildren<Text>()[0];            //UI関連
+        sliderText = GetComponentsInChildren<Text>()[1];      //UI関連
+        slider = GetComponentInChildren<Slider>();            //UI関連
         button.onClick.AddListener(Enter);
 
         progress = gameObject.AddComponent<DungeonFunction>();
-        progress.AwakeDungeon(button);
+        progress.AwakeDungeon(button, main.enumCtrl.dungeons[(int)kind].Name());
         progress.SelectedAction = Enter;
         popUp = main.dungeonPopUp.StartPopUp(gameObject, main.windowShowCanvas);
         need = gameObject.AddComponent<NeedFunciton>();
@@ -65,7 +66,7 @@ public class DUNGEON : BASE {
 
     // Use this for initialization
     public void StartDungeon () {
-        
+        ApplySlider();   
 	}
 
     // Update is called once per frame
@@ -83,6 +84,21 @@ public class DUNGEON : BASE {
             release.Completed(true);
             setFalse(popUp.gameObject);
         }
+
+        if (progress.isOn)
+        {
+            ApplySlider();
+        }
+    }
+
+    void ApplySlider()
+    {
+        progress.sliderValue = (float)currentFloor / (float)MaxFloor();
+        if(slider != null)
+        {
+            slider.value = progress.sliderValue;
+            sliderText.text = currentFloor.ToString() + " / " + MaxFloor().ToString();
+        }
     }
 
 
@@ -95,10 +111,11 @@ public class DUNGEON : BASE {
         }
         if (popUp.gameObject.activeSelf)
         {
+            ApplySlider();//本来はここじゃない
             //自動でコストの文章を生成
+            Floor_str = currentFloor.ToString() + "/" + MaxFloor().ToString();
             Description_str = main.enumCtrl.dungeons[(int)kind].Description();
             ProgressCost_str = progress.ProgressDetail(progressCost);
-            Floor_str = currentFloor.ToString() + "/" + MaxFloor().ToString();
             Drops_str = DropsDetail(drops);
 
             //needが設定されている場合にのみ書き換える。

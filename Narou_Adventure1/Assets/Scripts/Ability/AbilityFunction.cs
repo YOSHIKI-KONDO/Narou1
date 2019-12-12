@@ -17,13 +17,13 @@ public class AbilityFunction : ProgressFunction {
         main.progressCtrl.list.Add(this);
     }
 
-    public void StartAbility(GameObject Obj, Button unlockButton, Condition Need, Condition IsMax, BoolSync UnLocked, Slider slider, BoolSync hasPaid, DoubleSync currentValue)
+    public void StartAbility(GameObject Obj, Button unlockButton, Condition Need, Condition IsMax, BoolSync UnLocked, Slider slider, BoolSync hasPaid, DoubleSync currentValue, string actionName)
     {
         this.IsMax = IsMax;
         this.UnLocked = UnLocked;
         this.unlockButton = unlockButton;
         unlockButton.onClick.AddListener(Unlock);
-        StartProgress(Obj, Need, slider, hasPaid, currentValue);
+        StartProgress(Obj, Need, slider, hasPaid, currentValue, actionName);
     }
 
     protected override void CheckButton()

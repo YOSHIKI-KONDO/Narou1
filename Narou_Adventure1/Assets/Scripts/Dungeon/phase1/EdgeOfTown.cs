@@ -7,25 +7,22 @@ using static UsefulMethod;
 using static DungeonKind;
 using static EnemyKind;
 
-public class SmallHill : DUNGEON
+public class EdgeOfTown : DUNGEON
 {
-    public override bool Requires()
+    /*public override bool Requires()
     {
-        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.pick_flowers] >= 1;
-    }
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.punish_the_bad_kids] >= 1;
+    }*/
 
     // Use this for initialization
     void Awake () {
-        AwakeDungeon(small_hill);
-        enemyList.Add(new EnemyKind[] { slime });
-        enemyList.Add(new EnemyKind[] { slime, slime });
-        enemyList.Add(new EnemyKind[] { bat });
-        enemyList.Add(new EnemyKind[] { slime, bat });
-        enemyList.Add(new EnemyKind[] { wolf, wolf });
+        AwakeDungeon(edge_of_town);
+        enemyList.Add(new EnemyKind[] { sigurd });
+        enemyList.Add(new EnemyKind[] { askr, embla });
 
         progressCost.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.5f));
 
-        drops.Add(new Drop(ResourceKind.gold, 5, 100));
+        drops.Add(new Drop(ResourceKind.gold, 15, 100));
         drops.Add(new Drop(ResourceKind.filet_o_fish, 1, 100));
     }
 

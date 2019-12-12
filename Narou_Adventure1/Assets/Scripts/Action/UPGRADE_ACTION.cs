@@ -59,7 +59,8 @@ public class UPGRADE_ACTION : ACTION, INeed
         release = gameObject.AddComponent<ReleaseFunction>();
         release.StartFunction(gameObject, x => Sync(ref main.SR.released_upgrade[(int)kind], x), x => Sync(ref main.SR.completed_upgrade[(int)kind], x), x => Requires());
         progress = gameObject.AddComponent<ProgressFunction>();
-        progress.StartProgress(gameObject, Need, slider, x => Sync(ref main.SR.paid_upgrade[(int)kind], x), x => Sync(ref main.SR.currentValue_upgrade[(int)kind], x));
+        progress.StartProgress(gameObject, Need, slider, x => Sync(ref main.SR.paid_upgrade[(int)kind], x), x => Sync(ref main.SR.currentValue_upgrade[(int)kind], x),
+            main.enumCtrl.upgradeActions[(int)kind].Name());
         progress.CompleteAction = AddClerNum;//回数を増やす処理
     }
 

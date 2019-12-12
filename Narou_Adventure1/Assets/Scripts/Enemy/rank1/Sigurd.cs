@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using static UsefulMethod;
 
-public class Siguld : ENEMY
+public class Sigurd : ENEMY
 {
     // Use this for initialization
     void Awake()

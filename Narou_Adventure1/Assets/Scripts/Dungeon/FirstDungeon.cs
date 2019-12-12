@@ -22,6 +22,8 @@ public class FirstDungeon : DUNGEON {
 
         drops.Add(new Drop(ResourceKind.gold, 3, 100));
         drops.Add(new Drop(ResourceKind.herb, 3, 50));
+        drops.Add(new Item_Drop(ItemKind.woodspear, 100));
+        drops.Add(new Item_Drop(ItemKind.earth_orb, 10));
     }
 
 	// Use this for initialization

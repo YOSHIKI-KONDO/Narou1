@@ -11,7 +11,7 @@ public class Bird : ENEMY
     void Awake()
     {
         AwakeEnemy(EnemyKind.bird, 4, 3, 1, 0, 1, 2);
-        drops.Add(new Drop(ResourceKind.wood, 1, 3));
+        drops.Add(new Item_Drop(ItemKind.animalfood, 3));
     }
 
     // Use this for initialization

@@ -15,6 +15,7 @@ public class BattleAndSkillCtrl : BASE {
     public SkillKind[,] slotKinds;
     public SKILL[] skills = new SKILL[Enum.GetNames(typeof(SkillKind)).Length];
     [SerializeField]SkillSlot[] slots_ins;//InspectorからAddする
+    [SerializeField] SkillSlot[] slots_menu;//menuに常に出ているスロット
     SkillSlot[,] slots;
     int currentRow;
 
@@ -110,9 +111,9 @@ public class BattleAndSkillCtrl : BASE {
                     if (dunKind != DungeonKind.nothing)
                     {
                         //剣士系の攻撃
-                        AttackToEnemys(skills[(int)thisKind].WarriorDamage() * (main.rsc.Max((int)ResourceKind.strength) + main.rsc.Max((int)ResourceKind.attack)));
+                        AttackToEnemys(skills[(int)thisKind].WarriorDamage() * main.status.Attack);
                         //魔法系の攻撃
-                        AttackToEnemys(skills[(int)thisKind].SorcererDamage() * (main.rsc.Max((int)ResourceKind.mentalStrength) + main.rsc.Max((int)ResourceKind.magic_attack)));
+                        AttackToEnemys(skills[(int)thisKind].SorcererDamage() * main.status.MagicAttack);
                     }
 
                     skills[(int)thisKind].casted = true;
@@ -169,6 +170,12 @@ public class BattleAndSkillCtrl : BASE {
                     skills[(int)slotKinds[i_r, i_c]].equipped = true;
                 }
             }
+        }
+
+        //menu
+        for (int i = 0; i < slots_menu.Length; i++)
+        {
+            slots_menu[i].CopyValue(slots_ins[i]);
         }
     }
 
@@ -262,15 +269,27 @@ public class BattleAndSkillCtrl : BASE {
             currentEnemys[i].ApplyAlive();
             if(currentEnemys[i].alive == false)
             {
-                //報酬
+                //報酬(敵)
                 for (int i_d = 0; i_d < currentEnemys[i].drops.Count; i_d++)
                 {
                     //乱数を生成してヒットしたらドロップ
                     if(UnityEngine.Random.Range(0f,100f) < currentEnemys[i].drops[i_d].probability)
                     {
-                        main.announce.Add("LOOT(" + main.enumCtrl.enemys[(int)currentEnemys[i].kind].Name() + ") : " + main.enumCtrl.resources[(int)currentEnemys[i].drops[i_d].kind].Name() + " + " +
-                            tDigit(currentEnemys[i].drops[i_d].amount));
-                        main.rsc.Value[(int)currentEnemys[i].drops[i_d].kind] += currentEnemys[i].drops[i_d].amount;
+                        //もしもアイテムだったら
+                        if (currentEnemys[i].drops[i_d] is Item_Drop)
+                        {
+                            bool couldGet = main.itemCtrl.Drop_Inventory(((currentEnemys[i].drops[i_d] as Item_Drop).itemKind));
+                            string additive = couldGet ? "" : " (but Inventory is full)";
+                            main.announce.Add("LOOT [" + main.enumCtrl.enemys[(int)currentEnemys[i].kind].Name() + "] : "
+                                + main.enumCtrl.items[(int)(currentEnemys[i].drops[i_d] as Item_Drop).itemKind].Name()
+                                + additive); 
+                        }
+                        else
+                        {
+                            main.announce.Add("LOOT [" + main.enumCtrl.enemys[(int)currentEnemys[i].kind].Name() + "] : " + main.enumCtrl.resources[(int)currentEnemys[i].drops[i_d].kind].Name() + " + " +
+                                tDigit(currentEnemys[i].drops[i_d].amount));
+                            main.rsc.Value[(int)currentEnemys[i].drops[i_d].kind] += currentEnemys[i].drops[i_d].amount;
+                        }
                     }
                 }
                 currentEnemys.Remove(currentEnemys[i]);
@@ -287,15 +306,28 @@ public class BattleAndSkillCtrl : BASE {
                 main.announce.Add("Dungeon Clear!!!");
                 main.SR.clearNum_Dungeon[(int)dunKind]++;
 
-                //報酬
+                //報酬(ダンジョン)
                 for (int i_d = 0; i_d < dungeons[(int)dunKind].drops.Count; i_d++)
                 {
                     //乱数を生成してヒットしたらドロップ
                     if (UnityEngine.Random.Range(0f, 100f) < dungeons[(int)dunKind].drops[i_d].probability)
                     {
-                        main.announce.Add("LOOT(" + main.enumCtrl.dungeons[(int)dunKind].Name() + ") : " + main.enumCtrl.resources[(int)dungeons[(int)dunKind].drops[i_d].kind].Name() + " + " +
-                            tDigit(dungeons[(int)dunKind].drops[i_d].amount));
-                        main.rsc.Value[(int)dungeons[(int)dunKind].drops[i_d].kind] += dungeons[(int)dunKind].drops[i_d].amount;
+                        //もしもアイテムだったら
+                        if (dungeons[(int)dunKind].drops[i_d] is Item_Drop)
+                        {
+                            bool couldGet = main.itemCtrl.Drop_Inventory((dungeons[(int)dunKind].drops[i_d] as Item_Drop).itemKind);
+                            string additive = couldGet ? "" : " (but Inventory is full)";
+                            main.announce.Add("LOOT [" + main.enumCtrl.dungeons[(int)dunKind].Name() + "] : "
+                                + main.enumCtrl.items[(int)(dungeons[(int)dunKind].drops[i_d] as Item_Drop).itemKind].Name()
+                                + additive);
+                            
+                        }
+                        else
+                        {
+                            main.announce.Add("LOOT [" + main.enumCtrl.dungeons[(int)dunKind].Name() + "] : " + main.enumCtrl.resources[(int)dungeons[(int)dunKind].drops[i_d].kind].Name() + " + " +
+                                tDigit(dungeons[(int)dunKind].drops[i_d].amount));
+                            main.rsc.Value[(int)dungeons[(int)dunKind].drops[i_d].kind] += dungeons[(int)dunKind].drops[i_d].amount;
+                        }
                     }
                 }
 
@@ -344,7 +376,9 @@ public class BattleAndSkillCtrl : BASE {
     {
         if (dunKind == DungeonKind.nothing) { return; }
         if (dungeons[(int)dunKind].currentFloor >= dungeons[(int)dunKind].enemyList.Count) { return; }
-        currentEnemys = new List<InnerEnemy>(); //重いため普段は呼ばない
+        if (currentEnemys.Count > 0) { return; }
+        //currentEnemys = new List<InnerEnemy>(); //重いため普段は呼ばない
+        //↑上に Count > 0 を追加したのでコメントアウト
         DUNGEON thisD = dungeons[(int)dunKind];
         for (int i = 0; i < thisD.enemyList[thisD.currentFloor].Length; i++)
         {
@@ -363,7 +397,7 @@ public class BattleAndSkillCtrl : BASE {
             currentEnemys[i].currentInterval += 0.1f;//0.1秒に0.1ずつ増える
             if(currentEnemys[i].currentInterval >= currentEnemys[i].interval)
             {
-                main.rsc.Value[(int)ResourceKind.hp] -= currentEnemys[i].attack;
+                main.rsc.Value[(int)ResourceKind.hp] -= CalDmg(currentEnemys[i].attack, main.status.Defense);
                 currentEnemys[i].currentInterval = 0;
             }
         }
@@ -399,6 +433,10 @@ public class BattleAndSkillCtrl : BASE {
     public void FleeFromDungeon()
     {
         dunKind = DungeonKind.nothing;
+        if (currentEnemys.Count > 0)
+        {
+            currentEnemys = new List<InnerEnemy>();
+        }
     }
 
     //一つしか選択できないというOnlyActionとこのスクリプトを対応させる
@@ -414,7 +452,7 @@ public class BattleAndSkillCtrl : BASE {
     void AttackToEnemys(double dmg)
     {
         if (currentEnemys.Count == 0) { return; }
-        currentEnemys[0].currentHp -= dmg;
+        currentEnemys[0].currentHp -= CalDmg(dmg, currentEnemys[0].defense);
     }
 
     void TestEnemys()

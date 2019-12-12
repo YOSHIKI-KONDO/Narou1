@@ -358,24 +358,25 @@ public class EnumCtrl : BASE {
         //ランク1
         enemys.Add(new template(EnemyKind.slime, "Slime", "スライム", "", ""));
         enemys.Add(new template(EnemyKind.goblin, "Goblin", "ゴブリン", "", ""));
+        enemys.Add(new template(EnemyKind.rat, "Rat", "ラット", "nothing", "nothing"));
         enemys.Add(new template(EnemyKind.bird, "Bird", "バード", "nothing", "nothing"));
         enemys.Add(new template(EnemyKind.bat, "Bat", "バット", "nothing", "nothing"));
         enemys.Add(new template(EnemyKind.wolf, "Wolf", "ウルフ", "nothing", "nothing"));
         enemys.Add(new template(EnemyKind.snake, "Snake", "スネーク", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.demonic, "Demonic", "魔人", "nothing", "nothing"));
+        enemys.Add(new template(EnemyKind.demonic, "Demonic", "魔族", "nothing", "nothing"));
         //ランク1人物
         enemys.Add(new template(EnemyKind.sigurd, "Sigurd", "シグルズ", "nothing", "nothing"));
         enemys.Add(new template(EnemyKind.askr, "Askr", "アスク", "nothing", "nothing"));
         enemys.Add(new template(EnemyKind.embla, "Embla", "エムブラ", "nothing", "nothing"));
         //ランク2
-        enemys.Add(new template(EnemyKind.red_slime, "Red Slime", "レッドスライム", "nothing", "nothing"));
+        /*enemys.Add(new template(EnemyKind.red_slime, "Red Slime", "レッドスライム", "nothing", "nothing"));
         enemys.Add(new template(EnemyKind.orc, "Orc", "オーク", "nothing", "nothing"));
         enemys.Add(new template(EnemyKind.poison_rat, "Poison Rat", "ポイズンラット", "nothing", "nothing"));
         enemys.Add(new template(EnemyKind.harpy, "Harpy", "ハーピィ", "nothing", "nothing"));
         enemys.Add(new template(EnemyKind.ghoul, "Ghoul", "グール", "nothing", "nothing"));
         enemys.Add(new template(EnemyKind.werewolf, "Werewolf", "ウェアウルフ", "nothing", "nothing"));
         enemys.Add(new template(EnemyKind.lizard_man, "Lizard Man", "リザードマン", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.demonic_warrior, "Demonic Warrior", "魔人の戦士", "nothing", "nothing"));
+        enemys.Add(new template(EnemyKind.demonic_warrior, "Demonic Warrior", "魔族の戦士", "nothing", "nothing"));
         //ランク3
         enemys.Add(new template(EnemyKind.element_slime, "Element Slime", "エレメントスライム", "nothing", "nothing"));
         enemys.Add(new template(EnemyKind.ogre, "Ogre", "オーガ", "nothing", "nothing"));
@@ -384,7 +385,7 @@ public class EnumCtrl : BASE {
         enemys.Add(new template(EnemyKind.vampire, "Vampire", "ヴァンパイア", "nothing", "nothing"));
         enemys.Add(new template(EnemyKind.hati, "Hati", "ハティ", "nothing", "nothing"));
         enemys.Add(new template(EnemyKind.nidhogg, "Nidhogg", "ニーズヘッグ", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.demonic_guards, "Demonic Guards", "魔人の近衛兵", "nothing", "nothing"));
+        enemys.Add(new template(EnemyKind.demonic_guards, "Demonic Guards", "魔族の近衛兵", "nothing", "nothing"));
         enemys.Add(new template(EnemyKind.angel, "Angel", "エンジェル", "nothing", "nothing"));
         //ランク4
         enemys.Add(new template(EnemyKind.aqua_element,"Aqua Element", "アクアエレメント", "nothing", "nothing"));
@@ -422,18 +423,18 @@ public class EnumCtrl : BASE {
         //ランク7
         enemys.Add(new template(EnemyKind.odin, "Odin", "オーディン", "nothing", "nothing"));
         enemys.Add(new template(EnemyKind.hel, "Hel", "ヘル", "nothing", "nothing"));
-
+        */
         /* ダンジョン */
         dungeons.Add(new template(DungeonKind.nothing, "nothing", "nothing", "nothing", "nothing"));
         dungeons.Add(new template(DungeonKind.firstDungeon, "firstDungeon", "firstDungeon", "", ""));
         dungeons.Add(new template(DungeonKind.second, "second", "second", "", ""));
         dungeons.Add(new template(DungeonKind.edge_of_town, "Edge of Town", "村の外れ", "nothing", "悪ガキを呼び出した。"));
         dungeons.Add(new template(DungeonKind.small_hill, "Small Hill", "小高い丘", "nothing", "丘の頂上に綺麗な花が咲いているらしい。"));
-        dungeons.Add(new template(DungeonKind.plain, "Plain", "平原", "nothing", "都市へ向かうには平原を超える必要がある。"));
+        /*dungeons.Add(new template(DungeonKind.plain, "Plain", "平原", "nothing", "都市へ向かうには平原を超える必要がある。"));
         dungeons.Add(new template(DungeonKind.lost_forest, "Lost Forest", "迷いの森", "nothing", "毎年、そこそこの人がそこそこ迷うらしい。と、噂で聞いた気がする。"));
         dungeons.Add(new template(DungeonKind.sewer, "Sewer", "下水道", "nothing", "むぅ、臭い。"));
         dungeons.Add(new template(DungeonKind.swamp, "Swamp", "沼地", "nothing", "足場に気を付けて進もう。"));
-
+        */
         //テスト
         TestAll();
     }

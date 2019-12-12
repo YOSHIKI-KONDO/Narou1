@@ -15,7 +15,7 @@
     askr,               //無
     embla,              //無
     //ランク2
-    red_slime,          //水
+    /*red_slime,          //水
     orc,                //土
     poison_rat,         //雷
     harpy,              //風
@@ -68,5 +68,5 @@
     jormungandr,        //闇
     //ランク7
     odin,               //光
-    hel,                //闇
+    hel,*/                //闇
 }
