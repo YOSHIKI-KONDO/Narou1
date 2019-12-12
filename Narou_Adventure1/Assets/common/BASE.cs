@@ -18,7 +18,15 @@ public class BASE : MonoBehaviour
         foreach (var drop in drops)
         {
             if (sum != "") { sum += "\n"; }
-            sum += main.enumCtrl.resources[(int)drop.kind].Name() + ":" + tDigit(drop.amount) + " ... " + drop.probability.ToString("F0") + "%";
+            //itemチェック
+            if (drop is Item_Drop)
+            {
+                sum += main.enumCtrl.items[(int)((Item_Drop)drop).itemKind].Name() + " ... " + drop.probability.ToString("F0") + "%";
+            }
+            else
+            {
+                sum += main.enumCtrl.resources[(int)drop.kind].Name() + ":" + tDigit(drop.amount) + " ... " + drop.probability.ToString("F0") + "%";
+            }
         }
         return sum;
     }
@@ -30,12 +38,24 @@ public class BASE : MonoBehaviour
     {
         foreach (var deal in dealings)
         {
+            //Temporary Effectの判定
+            //いつも購入可能
+            if(deal is Temp_Regen_Deal || deal is Temp_TRate_Deal)
+            {
+                return true;
+            }
             if (deal.rscKind is ResourceKind)
             {
                 /* リソース */
                 if ((deal.paraKind is Dealing.R_ParaKind) == false)
                 {
                     throw new Exception("増減させる項目の種類と内容が違います。");
+                }
+                /* ステータス */
+                if ((IsStatus((ResourceKind)deal.rscKind) == true  && (Dealing.R_ParaKind)deal.paraKind != Dealing.R_ParaKind.status) ||
+                    (IsStatus((ResourceKind)deal.rscKind) == false && (Dealing.R_ParaKind)deal.paraKind == Dealing.R_ParaKind.status))
+                {
+                    throw new Exception("ステータスの設定が間違っています。");
                 }
                 switch ((Dealing.R_ParaKind)deal.paraKind)
                 {
@@ -46,6 +66,9 @@ public class BASE : MonoBehaviour
                         if (main.rsc.Max_Base[(int)(ResourceKind)deal.rscKind] + deal.Value < 0) { return false; }
                         break;
                     case Dealing.R_ParaKind.regen:
+                        //判定
+                        break;
+                    case Dealing.R_ParaKind.status:
                         //判定
                         break;
                     case Dealing.R_ParaKind.effect:
@@ -86,13 +109,37 @@ public class BASE : MonoBehaviour
     }
 
     /// <summary>
-    /// 実際にコストの計算をする
+    /// 実際にコストの計算をする。
+    /// specificNameはtemporaryEffectの計算をする時のみ必要。
     /// </summary>
-    protected void Calculate(List<Dealing> dealings, bool isProgress)
+    protected void Calculate(List<Dealing> dealings, bool isProgress, string specificName = "")
     {
         float mag = isProgress ? Time.fixedDeltaTime : 1f;
         foreach (var deal in dealings)
         {
+            //Temporary Effectの判定
+            if (deal is Temp_Regen_Deal)
+            {
+                main.tempEffectsCtrl.AddRegen(
+                    new TempRegen((deal as Temp_Regen_Deal).resourceKind,
+                                  (deal as Temp_Regen_Deal).resourceKind.ToString() + specificName,
+                                   ((Temp_Regen_Deal)deal).duration,
+                                   deal.Value));
+                continue; //次のループへ
+            }
+            if (deal is Temp_TRate_Deal)
+            {
+                main.tempEffectsCtrl.AddTrainRate(
+                    new TempTrainRate((deal as Temp_TRate_Deal).abilityKind,
+                                  (deal as Temp_TRate_Deal).abilityKind.ToString() + specificName,
+                                   ((Temp_TRate_Deal)deal).duration,
+                                   deal.Value));
+                continue; //次のループへ
+            }
+
+
+
+            // 普通の処理。上の条件に該当しなかった時呼ばれる。
             if (deal.rscKind is ResourceKind)
             {
                 /* リソース */
@@ -100,6 +147,13 @@ public class BASE : MonoBehaviour
                 {
                     throw new Exception("増減させる項目の種類と内容が違います。");
                 }
+                /* ステータス */
+                if ((IsStatus((ResourceKind)deal.rscKind) == true && (Dealing.R_ParaKind)deal.paraKind != Dealing.R_ParaKind.status) ||
+                    (IsStatus((ResourceKind)deal.rscKind) == false && (Dealing.R_ParaKind)deal.paraKind == Dealing.R_ParaKind.status))
+                {
+                    throw new Exception("ステータスの設定が間違っています。");
+                }
+
                 switch ((Dealing.R_ParaKind)deal.paraKind)
                 {
                     case Dealing.R_ParaKind.current:
@@ -109,6 +163,9 @@ public class BASE : MonoBehaviour
                         main.rsc.Max_Base[(int)(ResourceKind)deal.rscKind] += deal.Value * mag;//計算
                         break;
                     case Dealing.R_ParaKind.regen:
+                        main.rsc.Regen_Base[(int)(ResourceKind)deal.rscKind] += deal.Value * mag;//計算
+                        break;
+                    case Dealing.R_ParaKind.status:
                         main.rsc.Regen_Base[(int)(ResourceKind)deal.rscKind] += deal.Value * mag;//計算
                         break;
                     case Dealing.R_ParaKind.effect:
@@ -156,6 +213,28 @@ public class BASE : MonoBehaviour
         foreach (var deal in dealings)
         {
             if (sum_str != "") { sum_str += "\n"; }
+            //Temporary Effectの判定
+            if (deal is Temp_Regen_Deal)
+            {
+                if (IsStatus((deal as Temp_Regen_Deal).resourceKind))
+                {
+                    sum_str += main.enumCtrl.resources[(int)(deal as Temp_Regen_Deal).resourceKind].Name() + ":" + tDigit(deal.Value, 1) + " (" + (deal as Temp_Regen_Deal).duration.ToString("F1") + "s)";
+                }
+                else
+                {
+                    sum_str += main.enumCtrl.resources[(int)(deal as Temp_Regen_Deal).resourceKind].Name() + " rate:" + tDigit(deal.Value, 1) + "/s (" + (deal as Temp_Regen_Deal).duration.ToString("F1") + "s)";
+                }
+                continue; //次のループへ
+            }
+            if (deal is Temp_TRate_Deal)
+            {
+                sum_str += main.enumCtrl.abilitys[(int)(deal as Temp_TRate_Deal).abilityKind].Name() + " train rate:" + tDigit(deal.Value, 1) + "/s (" + (deal as Temp_TRate_Deal).duration.ToString("F1") + "s)";
+                continue; //次のループへ
+            }
+
+
+
+            // 普通の処理。上の条件に該当しなかった時呼ばれる。
             if (deal.rscKind is ResourceKind)
             {
                 /* リソース */
@@ -163,6 +242,13 @@ public class BASE : MonoBehaviour
                 {
                     throw new Exception("増減させる項目の種類と内容が違います。");
                 }
+                /* ステータス */
+                if ((IsStatus((ResourceKind)deal.rscKind) == true && (Dealing.R_ParaKind)deal.paraKind != Dealing.R_ParaKind.status) ||
+                    (IsStatus((ResourceKind)deal.rscKind) == false && (Dealing.R_ParaKind)deal.paraKind == Dealing.R_ParaKind.status))
+                {
+                    throw new Exception("ステータスの設定が間違っています。");
+                }
+
                 switch ((Dealing.R_ParaKind)deal.paraKind)
                 {
                     case Dealing.R_ParaKind.current:
@@ -173,6 +259,9 @@ public class BASE : MonoBehaviour
                         break;
                     case Dealing.R_ParaKind.regen:
                         sum_str += main.enumCtrl.resources[(int)(ResourceKind)deal.rscKind].Name() + " rate:" + tDigit(deal.Value,1) + "/s";
+                        break;
+                    case Dealing.R_ParaKind.status:
+                        sum_str += main.enumCtrl.resources[(int)(ResourceKind)deal.rscKind].Name() + ":" + tDigit(deal.Value, 1);
                         break;
                     case Dealing.R_ParaKind.effect:
                         throw new Exception("まだ対応してないお♡");
@@ -208,5 +297,17 @@ public class BASE : MonoBehaviour
             }
         }
         return sum_str;
+    }
+
+
+    public bool IsStatus(ResourceKind kind)
+    {
+        if (kind == ResourceKind.strength || kind == ResourceKind.mentalStrength || kind == ResourceKind.defense
+            || kind == ResourceKind.dodge || kind == ResourceKind.criticalChance || kind == ResourceKind.attack
+            || kind == ResourceKind.magic_attack)
+        {
+            return true;
+        }
+        return false;
     }
 }

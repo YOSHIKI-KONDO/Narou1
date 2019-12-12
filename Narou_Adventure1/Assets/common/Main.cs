@@ -47,6 +47,8 @@ public class Main : MonoBehaviour
     public ReleaseCtrl releaseCtrl;
     public ItemCtrl itemCtrl;
     public BattleAndSkillCtrl battleCtrl;
+    public StatusCtrl status;
+    public TempEffectCtrl tempEffectsCtrl;
     public Announce announce;
     public Focus focus;
     public DecideParameter decideParameter;

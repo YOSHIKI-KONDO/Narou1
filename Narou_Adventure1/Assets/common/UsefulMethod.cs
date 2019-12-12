@@ -877,6 +877,12 @@ public class UsefulMethod : MonoBehaviour
         }
     }
 
+    public static double CalDmg(double dmg, double def)
+    {
+        if(dmg - def >= 1) { return dmg - def; }
+        else { return 1; }
+    }
+
     // Use this for initialization
     void Start()
     {

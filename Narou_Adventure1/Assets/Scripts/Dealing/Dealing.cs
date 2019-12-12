@@ -7,6 +7,7 @@ public class Dealing
         current,
         max,
         regen,
+        status,
         effect,//一括で変わる仕様なら楽
     }
 

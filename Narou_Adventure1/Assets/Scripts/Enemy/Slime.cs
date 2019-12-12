@@ -12,6 +12,8 @@ public class Slime : ENEMY
     {
         AwakeEnemy(EnemyKind.slime, 10, 5, 1, 0, 1, 1);
         drops.Add(new Drop(ResourceKind.anchovy_sandwich, 1, 20));
+        drops.Add(new Item_Drop(ItemKind.animalfood, 100));
+        drops.Add(new Item_Drop(ItemKind.fire_orb, 10));
     }
 
     // Use this for initialization
