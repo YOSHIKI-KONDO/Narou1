@@ -12,7 +12,7 @@ public class AbilityResourceCtrl : BASE {
     }
     public double TrainRate(int index)
     {
-        return TrainRate_Base[index] + main.itemCtrl.A_trainRate[index];
+        return TrainRate_Base[index] + main.itemCtrl.A_trainRate[index] + main.tempEffectsCtrl.TRates[index];
     }
     public double[] CurrentExp { get => main.SR.currentValue_ability; set => main.SR.currentValue_ability = value; }
 

@@ -10,6 +10,10 @@ public class ProgressCtrl : BASE {
     public OnlyAction restFunction;
     public OnlyAction previousFunction;
     public OnlyAction currentFunction;
+
+    //UI
+    public Text text;
+
     //OnlyActionから呼ぶ
     public void SwitchProgress(OnlyAction function)
     {
@@ -79,5 +83,14 @@ public class ProgressCtrl : BASE {
     private void Start()
     {
         ApplyFocus();
+    }
+
+    private void Update()
+    {
+        if(currentFunction != null)
+        {
+            text.text = currentFunction.actionName;
+            text.text += "(" + (currentFunction.sliderValue * 100).ToString("F0") + "%)";
+        }
     }
 }

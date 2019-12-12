@@ -12,6 +12,12 @@ public class SkillSlot : BASE {
     public Button button;
     public Text text;
 
+    public void CopyValue(SkillSlot slot)
+    {
+        slider.value = slot.slider.value;
+        text.text = slot.text.text;
+    }
+
 	// Use this for initialization
 	void Awake () {
 		StartBASE();

@@ -96,7 +96,7 @@ public class ItemCtrl : BASE {
         {
             currentNum_I += items[i].size * InventoryNum[i];
             currentNum_E += items[i].size * equipNum[i];
-            CalculateItemEffect(items[i].EffectLists, equipNum[i]);//effect計算
+            CalculateItemEffect(items[i].EffectLists, equipNum[i], items[i].kind);//effect計算
 
             foreach (var src in items[i].sources)
             {
@@ -114,7 +114,7 @@ public class ItemCtrl : BASE {
     /// <summary>
     /// エフェクトの計算。0にした後加算する書き方をしている。
     /// </summary>
-    void CalculateItemEffect(List<Dealing> dealings, int num)
+    void CalculateItemEffect(List<Dealing> dealings, int num, ItemKind kind)
     {
         foreach (var deal in dealings)
         {
@@ -125,6 +125,12 @@ public class ItemCtrl : BASE {
                 {
                     throw new Exception("増減させる項目の種類と内容が違います。");
                 }
+                /* ステータス */
+                if ((IsStatus((ResourceKind)deal.rscKind) == true && (Dealing.R_ParaKind)deal.paraKind != Dealing.R_ParaKind.status) ||
+                    (IsStatus((ResourceKind)deal.rscKind) == false && (Dealing.R_ParaKind)deal.paraKind == Dealing.R_ParaKind.status))
+                {
+                    throw new Exception("ステータスの設定が間違っています。(" + kind.ToString() + ")");
+                }
                 switch ((Dealing.R_ParaKind)deal.paraKind)
                 {
                     case Dealing.R_ParaKind.current:
@@ -133,6 +139,9 @@ public class ItemCtrl : BASE {
                         R_max[(int)(ResourceKind)deal.rscKind] += deal.Value * num;//計算
                         break;
                     case Dealing.R_ParaKind.regen:
+                        R_regen[(int)(ResourceKind)deal.rscKind] += deal.Value * num;//計算
+                        break;
+                    case Dealing.R_ParaKind.status:
                         R_regen[(int)(ResourceKind)deal.rscKind] += deal.Value * num;//計算
                         break;
                     case Dealing.R_ParaKind.effect:
@@ -331,6 +340,23 @@ public class ItemCtrl : BASE {
         {
             Calculate(items[(int)kind].SellLists, false);
             equipNum[(int)kind]--;
+        }
+    }
+
+    /// <summary>
+    /// インベントリーが空いていたら入手してtrueを返す。
+    /// 空いていなければfalseを返す。
+    /// </summary>
+    public bool Drop_Inventory(ItemKind kind)
+    {
+        if (CanGetInventory(kind))
+        {
+            GetItem(kind);
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }
