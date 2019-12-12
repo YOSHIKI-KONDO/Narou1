@@ -5,6 +5,17 @@ using UnityEngine;
 using UnityEngine.UI;
 using static UsefulMethod;
 
+/// <summary>
+/// items        ...ショップのITEMの配列。処理は全てこの配列から参照する。
+/// equips       ...itemsの数分だけ装備にインスタンティエイト。
+/// inventorys   ...itemsの数分だけインベントリにインスタンティエイト。
+/// equipNum     ...int[]で、アイテムの個数を格納。
+/// inventoryNum ...int[]で、アイテムの個数を格納。
+/// R_max, R_regen, A_maxLevel, A_trainRate
+///              ...リソースとアビリティに反映させる値。
+///
+/// equipNumの配列の分だけ R_max などを更新している。
+/// </summary>
 [DefaultExecutionOrder(-1)]
 public class ItemCtrl : BASE {
     public int currentNum_I;

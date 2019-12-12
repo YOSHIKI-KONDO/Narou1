@@ -5,6 +5,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using static UsefulMethod;
 
+/// <summary>
+/// OnlyActionのListを持っている。これは、各OnlyActionが生成された時に自動で追加されることになっている。
+/// OnlyActionにSwitchProgressを持たせることで、同時に一つまでしか操作できないようにしている。
+/// </summary>
 public class ProgressCtrl : BASE {
     public List<OnlyAction> list = new List<OnlyAction>();
     public OnlyAction restFunction;
