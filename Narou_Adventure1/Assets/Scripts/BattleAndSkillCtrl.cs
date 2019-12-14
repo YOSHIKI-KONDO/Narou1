@@ -5,14 +5,15 @@ using static UsefulMethod;
 using UnityEngine.UI;
 
 /// <summary>
-/// slotKinds  ...２次元配列で、現在のスロットに格納されているスキルを格納している。
-/// skills     ...SKILLの配列。長さは種類の数。
-/// dungeons   ...DUNGEONの配列。長さは種類の数。
-/// enemys     ...ENEMYの配列。長さは種類の数。
+/// slotKinds  　　...２次元配列で、現在のスロットに格納されているスキルを格納している。
+/// skills     　　...SKILLの配列。長さは種類の数。
+/// dungeons   　　...DUNGEONの配列。長さは種類の数。
+/// enemys     　　...ENEMYの配列。長さは種類の数。
 /// currentEnemys ...現在出現している敵の配列。
-/// enemysCmps ...ゲーム上に存在するSliderなどのオブジェクトをまとめた配列。
-///               currentEnemysと同期させている。
-/// dunKind       ...現在の
+/// enemysCmps 　　...ゲーム上に存在するSliderなどのオブジェクトをまとめた配列。
+///                  currentEnemysと同期させている。
+/// dunKind       ...現在のダンジョンの種類。
+/// skillKind     ...現在選択しているスキルの種類。
 /// </summary>
 public class BattleAndSkillCtrl : BASE {
     /// <summary>
@@ -39,6 +40,7 @@ public class BattleAndSkillCtrl : BASE {
     public List<InnerEnemy> currentEnemys = new List<InnerEnemy>();
     public BattleComponents heroCmp;                   //Object
     public BattleComponents[] enemysCmps;              //Object
+    public BattleComponents[] allysCmps;               //Object
     public SlideSetActive battleScreen;
 
 
@@ -69,7 +71,7 @@ public class BattleAndSkillCtrl : BASE {
 
         TestEnemys();
         TestDungeons();
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -86,6 +88,7 @@ public class BattleAndSkillCtrl : BASE {
         CheckFault();
 
         PlaySkills();
+        PlayNpcSkills();
 
         EnemysAction();
     }
@@ -150,6 +153,25 @@ public class BattleAndSkillCtrl : BASE {
                         skill.casted = false;
                     }
                 }
+            }
+        }
+    }
+
+    //味方の攻撃
+    void PlayNpcSkills()
+    {
+        for (int i = 0; i < main.SD.num_ally; i++)
+        {
+            if (i == 0) { continue; }
+            if (main.npcSkillCtrl.npcs[i] == null) { continue; }
+            if(main.npcSkillCtrl.canFightAllys.Contains((AllyKind)i) == false) { continue; }
+            SKILL thisSkill = main.npcSkillCtrl.npcs[i].Cast();
+            if (thisSkill != null && dunKind != DungeonKind.nothing)
+            {
+                AttackToEnemys(thisSkill.WarriorDamage() * main.npcSkillCtrl.npcs[i].Attack);
+                AttackToEnemys(thisSkill.SorcererDamage() * main.npcSkillCtrl.npcs[i].MagicAttack);
+                thisSkill.Produce();
+                main.announce.Add(main.enumCtrl.allys[i].Name() + " casted " + main.enumCtrl.skills[(int)thisSkill.kind].Name());
             }
         }
     }
@@ -380,11 +402,32 @@ public class BattleAndSkillCtrl : BASE {
                 );
         }
 
-        // 味方のComponent更新
+        // 主人公のComponent更新
         heroCmp.ApplyNormalObj("Hero", tDigit(main.rsc.Value[(int)ResourceKind.hp]) + "/" + tDigit(main.rsc.Max((int)ResourceKind.hp)),
             "",
             (float)(main.rsc.Value[(int)ResourceKind.hp] / main.rsc.Max((int)ResourceKind.hp)),
             1f);
+
+        if (allysCmps.Length < main.SD.num_ally)
+        {
+            throw new Exception("シーンにより多くの味方のプレハブを配置してください");
+        }
+        // NpcのComponent更新
+        for (int i = 0; i < allysCmps.Length; i++)
+        {
+            if(main.npcSkillCtrl.canFightAllys.IndexOf((AllyKind)i) >= 0)
+            {
+                setActive(allysCmps[i].gameObject);
+                allysCmps[i].ApplyNormalObj(main.enumCtrl.allys[(int)i].Name(), tDigit(main.npcSkillCtrl.npcs[i].currentHp) + "/" + tDigit(main.npcSkillCtrl.npcs[i].Hp),
+                    "Atk:" + tDigit(main.npcSkillCtrl.npcs[i].Attack) + "/MAtk:" + tDigit(main.npcSkillCtrl.npcs[i].MagicAttack),
+                    main.npcSkillCtrl.npcs[i].HpSliderValue(),
+                main.npcSkillCtrl.npcs[i].IntervalSliderValue());
+            }
+            else
+            {
+                setFalse(allysCmps[i].gameObject);
+            }
+        }
     }
 
     public void Summon()
@@ -403,6 +446,12 @@ public class BattleAndSkillCtrl : BASE {
         thisD.summonedEnemy = true;
     }
 
+    public void EnterDungeon()
+    {
+        main.npcSkillCtrl.InitFight();
+        Summon();
+    }
+
     //Called in FixedUpdate
     void EnemysAction()
     {
@@ -412,7 +461,24 @@ public class BattleAndSkillCtrl : BASE {
             currentEnemys[i].currentInterval += 0.1f;//0.1秒に0.1ずつ増える
             if(currentEnemys[i].currentInterval >= currentEnemys[i].interval)
             {
-                main.rsc.Value[(int)ResourceKind.hp] -= CalDmg(currentEnemys[i].attack, main.status.Defense);
+                int target = UnityEngine.Random.Range(0, main.npcSkillCtrl.canFightAllys.Count + 1);
+                if (target == 0)
+                {
+                    //プレイヤーだったら
+                    main.rsc.Value[(int)ResourceKind.hp] -= CalDmg(currentEnemys[i].attack, main.status.Defense);
+                }
+                else
+                {
+                    //味方だったら
+                    main.npcSkillCtrl.npcs[(int)main.npcSkillCtrl.canFightAllys[target-1]].currentHp
+                        -= CalDmg(currentEnemys[i].attack, main.npcSkillCtrl.npcs[(int)main.npcSkillCtrl.canFightAllys[target - 1]].Defense);
+                    //やられたらcanFightから外す
+                    if(main.npcSkillCtrl.npcs[(int)main.npcSkillCtrl.canFightAllys[target - 1]].currentHp <= 0)
+                    {
+                        main.npcSkillCtrl.npcs[(int)main.npcSkillCtrl.canFightAllys[target - 1]].currentHp = 0;
+                        main.npcSkillCtrl.LeaveFight(main.npcSkillCtrl.npcs[target - 1].kind);
+                    }
+                }
                 currentEnemys[i].currentInterval = 0;
             }
         }
@@ -467,7 +533,8 @@ public class BattleAndSkillCtrl : BASE {
     void AttackToEnemys(double dmg)
     {
         if (currentEnemys.Count == 0) { return; }
-        currentEnemys[0].currentHp -= CalDmg(dmg, currentEnemys[0].defense);
+        int target = UnityEngine.Random.Range(0, currentEnemys.Count); //ランダムな敵にダメージ
+        currentEnemys[target].currentHp -= CalDmg(dmg, currentEnemys[target].defense);
     }
 
     void TestEnemys()
