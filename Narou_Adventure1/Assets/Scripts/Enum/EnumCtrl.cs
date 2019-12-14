@@ -80,17 +80,18 @@ public class EnumCtrl : BASE {
         resources.Add(new template(ResourceKind.dark, "Dark", "闇", "use for everything", "あらゆる行動に使います"));
             //物資リソース
         resources.Add(new template(ResourceKind.gold, "Gold", "Gold", "nothing", "nothing"));
-        resources.Add(new template(ResourceKind.research, "Research", "リサーチ", "nothing", "nothing"));
-        resources.Add(new template(ResourceKind.paper, "Paper", "用紙", "nothing", "nothing"));
-        resources.Add(new template(ResourceKind.book, "Book", "本", "nothing", "nothing"));
-        resources.Add(new template(ResourceKind.dictionary, "Dictionary", "辞典", "nothing", "nothing"));
+        resources.Add(new template(ResourceKind.research, "Destiny", "運命", "nothing", "nothing"));
+        resources.Add(new template(ResourceKind.paper, "Rune", "ルーン", "nothing", "nothing"));
+        resources.Add(new template(ResourceKind.book, "Rune Stone", "ルーン石碑", "nothing", "nothing"));
+        resources.Add(new template(ResourceKind.dictionary, "Gospel", "福音書", "nothing", "nothing"));
         resources.Add(new template(ResourceKind.herb, "Herb", "ハーブ", "nothing", "nothing"));
         resources.Add(new template(ResourceKind.medicine, "Medicine", "薬", "nothing", "nothing"));
         resources.Add(new template(ResourceKind.potion, "Potion", "ポーション", "nothing", "nothing"));
         resources.Add(new template(ResourceKind.wood, "Wood", "木", "nothing", "nothing"));
         resources.Add(new template(ResourceKind.firewood, "Firewood", "薪", "nothing", "nothing"));
         resources.Add(new template(ResourceKind.charcoal, "Charcoal", "木炭", "nothing", "nothing"));
-            //食べ物
+        resources.Add(new template(ResourceKind.flower, "Flower", "花", "nothing", "nothing"));
+        //食べ物
         resources.Add(new template(ResourceKind.wheat, "Wheat", "小麦", "nothing", "nothing"));
         resources.Add(new template(ResourceKind.bread, "Bread", "パン", "nothing", "nothing"));
         resources.Add(new template(ResourceKind.fish, "Fish", "魚", "nothing", "nothing"));
@@ -132,8 +133,8 @@ public class EnumCtrl : BASE {
           //フェーズ１（入学前）
         instantActions.Add(new template(ActionEnum.Instant.weeding, "Weeding", "草むしり", "nothing", "アルバイト。たまにハーブが生えている。"));
         instantActions.Add(new template(ActionEnum.Instant.eat_anchovy_sandwich, "Eat Anchovy Sandwich", "アンチョビサンドを食べる", "nothing", "母の味。"));
-        instantActions.Add(new template(ActionEnum.Instant.writing_paper, "Writing Paper", "執筆", "nothing", "nothing"));
-        instantActions.Add(new template(ActionEnum.Instant.bind_a_book, "Bind a Book", "本を綴じる", "nothing", "nothing"));
+        instantActions.Add(new template(ActionEnum.Instant.rune_generation, "Rune Generation", "ルーン生成", "nothing", "運命の力でルーンを得る。"));
+        instantActions.Add(new template(ActionEnum.Instant.runic_carving, "Runic Carving", "ルーンを刻む", "nothing", "ルーンを石碑に刻み、更なる運命を得る。"));
         instantActions.Add(new template(ActionEnum.Instant.split_firewood, "Split Firewood", "薪割り", "nothing", "nothing"));
         instantActions.Add(new template(ActionEnum.Instant.sell_firewood, "Sell Firewood", "薪を売る", "nothing", "nothing"));
 
@@ -141,7 +142,7 @@ public class EnumCtrl : BASE {
         loopActions.Add(new template(ActionEnum.Loop.nothing, "nothing", "nothing", "nothing", "nothing"));
             //常用
         loopActions.Add(new template(ActionEnum.Loop.rest, "Rest", "休憩", "nothing", "nothing"));
-        loopActions.Add(new template(ActionEnum.Loop.study, "Study", "勉強", "nothing", "nothing"));
+        loopActions.Add(new template(ActionEnum.Loop.pray, "Pray", "祈る", "nothing", "nothing"));
           //フェーズ１（入学前）
         loopActions.Add(new template(ActionEnum.Loop.chores, "Chores", "雑用", "nothing", "nothing"));
         loopActions.Add(new template(ActionEnum.Loop.harvest_wheat, "Harvest Wheat", "小麦の収穫", "nothing", "nothing"));
@@ -352,7 +353,41 @@ public class EnumCtrl : BASE {
         skills.Add(new template(SkillKind.nothing, "nothing", "nothing", "nothing", "nothing"));
         skills.Add(new template(SkillKind.thuderBolt, "Thunder Bolt", "サンダーボルト", "", ""));
         skills.Add(new template(SkillKind.meteor, "Meteor", "メテオ", "", ""));
-
+        //戦士
+        skills.Add(new template(SkillKind.right_slash, "Right Slash", "袈裟斬り", "", ""));
+        skills.Add(new template(SkillKind.left_upper_slash, "Left Upper Slash", "左斬上げ", "", ""));
+        skills.Add(new template(SkillKind.stab, "Stab", "突き", "", ""));
+        skills.Add(new template(SkillKind.upper_slash, "Upper Slash", "斬上げ", "", ""));
+        skills.Add(new template(SkillKind.left_small_swing, "Left Small Swing", "左小振り", "", ""));
+        skills.Add(new template(SkillKind.parry, "Parry", "受け流し", "", ""));
+        /*skills.Add(new template(SkillKind.helm_splitter, "Helm Splitter", "兜割り", "", ""));
+        skills.Add(new template(SkillKind.left_whirlslash, "Left Whirlslash", "左回転斬り", "", ""));
+        skills.Add(new template(SkillKind.guard, "Guard", "ガード", "", ""));
+        skills.Add(new template(SkillKind.absolute_defense, "Absolute Defense", "絶対防御", "", ""));
+        skills.Add(new template(SkillKind.dodge_step, "Dodge Step", "ステップ", "", ""));
+        skills.Add(new template(SkillKind.right_spinkick, "Right Spinkick", "右回し蹴り", "", ""));
+        */
+        //魔導士
+        skills.Add(new template(SkillKind.fireball, "Fireball", "ファイアーボール", "", ""));
+        skills.Add(new template(SkillKind.hot_body, "Hot Body", "ホットボディ", "", ""));
+        skills.Add(new template(SkillKind.waterball, "Waterball", "ウォーターボール", "", ""));
+        skills.Add(new template(SkillKind.cure_water, "Cure Water", "キュアウォーター", "", ""));
+        skills.Add(new template(SkillKind.air_cutter, "Air Cutter", "エアーカッター", "", ""));
+        skills.Add(new template(SkillKind.wind_step, "Wind Step", "ウインドステップ", "", ""));
+        skills.Add(new template(SkillKind.stone_bullet, "Stone Bullet", "ストーンバレット", "", ""));
+        skills.Add(new template(SkillKind.earth_wall, "Earth Wall", "アースウォール", "", ""));
+        /*skills.Add(new template(SkillKind.electric_arrow, "Electric Arrow", "エレクトリックアロー", "", ""));
+        skills.Add(new template(SkillKind.electric_step, "Electric Step", "エレクトリックステップ", "", ""));
+        skills.Add(new template(SkillKind.ice_arrow, "Ice Arrow", "アイスアロー", "", ""));
+        skills.Add(new template(SkillKind.ice_shell, "Ice Shell", "アイスシェル", "", ""));
+        skills.Add(new template(SkillKind.holy_circle, "Holy Circle", "ホーリーサークル", "", ""));
+        skills.Add(new template(SkillKind.dark_wave, "Dark Wave", "ダークウェーブ", "", ""));
+        */
+        //テイマー
+        skills.Add(new template(SkillKind.animal_attack, "Animal Attack", "アニマルアタック", "", ""));
+        skills.Add(new template(SkillKind.picking_up_coins, "Picking up Coins", "小銭拾い", "", ""));
+        /*skills.Add(new template(SkillKind.throwing, "Throwing", "投てき", "", ""));
+        */
         /* 敵 */
         enemys.Add(new template(EnemyKind.nothing, "nothing", "nothing", "nothing", "nothing"));
         //ランク1
@@ -369,7 +404,7 @@ public class EnumCtrl : BASE {
         enemys.Add(new template(EnemyKind.askr, "Askr", "アスク", "nothing", "nothing"));
         enemys.Add(new template(EnemyKind.embla, "Embla", "エムブラ", "nothing", "nothing"));
         //ランク2
-        /*enemys.Add(new template(EnemyKind.red_slime, "Red Slime", "レッドスライム", "nothing", "nothing"));
+        enemys.Add(new template(EnemyKind.red_slime, "Red Slime", "レッドスライム", "nothing", "nothing"));
         enemys.Add(new template(EnemyKind.orc, "Orc", "オーク", "nothing", "nothing"));
         enemys.Add(new template(EnemyKind.poison_rat, "Poison Rat", "ポイズンラット", "nothing", "nothing"));
         enemys.Add(new template(EnemyKind.harpy, "Harpy", "ハーピィ", "nothing", "nothing"));
@@ -378,7 +413,7 @@ public class EnumCtrl : BASE {
         enemys.Add(new template(EnemyKind.lizard_man, "Lizard Man", "リザードマン", "nothing", "nothing"));
         enemys.Add(new template(EnemyKind.demonic_warrior, "Demonic Warrior", "魔族の戦士", "nothing", "nothing"));
         //ランク3
-        enemys.Add(new template(EnemyKind.element_slime, "Element Slime", "エレメントスライム", "nothing", "nothing"));
+        /*enemys.Add(new template(EnemyKind.element_slime, "Element Slime", "エレメントスライム", "nothing", "nothing"));
         enemys.Add(new template(EnemyKind.ogre, "Ogre", "オーガ", "nothing", "nothing"));
         enemys.Add(new template(EnemyKind.electric_rat, "Electric Rat", "エレクトリックラット", "nothing", "nothing"));
         enemys.Add(new template(EnemyKind.griffon, "Griffon", "グリフォン", "nothing", "nothing"));
@@ -430,8 +465,8 @@ public class EnumCtrl : BASE {
         dungeons.Add(new template(DungeonKind.second, "second", "second", "", ""));
         dungeons.Add(new template(DungeonKind.edge_of_town, "Edge of Town", "村の外れ", "nothing", "悪ガキを呼び出した。"));
         dungeons.Add(new template(DungeonKind.small_hill, "Small Hill", "小高い丘", "nothing", "丘の頂上に綺麗な花が咲いているらしい。"));
-        /*dungeons.Add(new template(DungeonKind.plain, "Plain", "平原", "nothing", "都市へ向かうには平原を超える必要がある。"));
-        dungeons.Add(new template(DungeonKind.lost_forest, "Lost Forest", "迷いの森", "nothing", "毎年、そこそこの人がそこそこ迷うらしい。と、噂で聞いた気がする。"));
+        dungeons.Add(new template(DungeonKind.plain, "Plain", "平原", "nothing", "都市へ向かうには平原を超える必要がある。"));
+        /*dungeons.Add(new template(DungeonKind.lost_forest, "Lost Forest", "迷いの森", "nothing", "毎年、そこそこの人がそこそこ迷うらしい。と、噂で聞いた気がする。"));
         dungeons.Add(new template(DungeonKind.sewer, "Sewer", "下水道", "nothing", "むぅ、臭い。"));
         dungeons.Add(new template(DungeonKind.swamp, "Swamp", "沼地", "nothing", "足場に気を付けて進もう。"));
         */

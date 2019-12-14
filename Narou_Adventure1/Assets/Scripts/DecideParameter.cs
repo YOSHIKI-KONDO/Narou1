@@ -37,6 +37,8 @@ public class DecideParameter : BASE {
         main.rsc.Value[(int)ResourceKind.hp] = 1;
         main.rsc.Max_Base[(int)ResourceKind.gold] = 20;
         main.rsc.Max_Base[(int)ResourceKind.research] = 30;
+        main.rsc.Max_Base[(int)ResourceKind.paper] = 10;
+        main.rsc.Max_Base[(int)ResourceKind.paper] = 5;
         main.rsc.Max_Base[(int)ResourceKind.herb] = 5;
         main.rsc.Max_Base[(int)ResourceKind.bread] = 10;
         main.rsc.Max_Base[(int)ResourceKind.anchovy_sandwich] = 3;

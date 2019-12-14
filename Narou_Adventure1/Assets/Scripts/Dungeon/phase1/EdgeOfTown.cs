@@ -9,10 +9,10 @@ using static EnemyKind;
 
 public class EdgeOfTown : DUNGEON
 {
-    /*public override bool Requires()
+    public override bool Requires()
     {
         return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.punish_the_bad_kids] >= 1;
-    }*/
+    }
 
     // Use this for initialization
     void Awake () {
@@ -20,7 +20,7 @@ public class EdgeOfTown : DUNGEON
         enemyList.Add(new EnemyKind[] { sigurd });
         enemyList.Add(new EnemyKind[] { askr, embla });
 
-        progressCost.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.5f));
+        progressCost.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.2f));
 
         drops.Add(new Drop(ResourceKind.gold, 15, 100));
         drops.Add(new Drop(ResourceKind.filet_o_fish, 1, 100));

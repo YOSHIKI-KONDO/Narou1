@@ -9,7 +9,7 @@ public class RodPractice : UPGRADE_ACTION
 {
     public override bool Requires()
     {
-        return main.rsc.Max( (int)ResourceKind.stamina) >= 5;
+        return main.a_rsc.CurrentLevels[ (int)AbilityKind.use_tools] >= 1 ;
     }
 
     // Use this for initialization

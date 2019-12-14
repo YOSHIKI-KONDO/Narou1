@@ -9,10 +9,10 @@ using static EnemyKind;
 
 public class SmallHill : DUNGEON
 {
-    /*public override bool Requires()
+    public override bool Requires()
     {
         return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.pick_flowers] >= 1;
-    }*/
+    }
 
     // Use this for initialization
     void Awake () {
@@ -23,7 +23,7 @@ public class SmallHill : DUNGEON
         enemyList.Add(new EnemyKind[] { slime, bat });
         enemyList.Add(new EnemyKind[] { wolf, wolf });
 
-        progressCost.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.5f));
+        progressCost.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.2f));
 
         drops.Add(new Drop(ResourceKind.gold, 5, 100));
         drops.Add(new Drop(ResourceKind.filet_o_fish, 1, 100));

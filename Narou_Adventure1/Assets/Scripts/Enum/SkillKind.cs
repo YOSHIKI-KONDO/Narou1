@@ -3,4 +3,39 @@
     nothing,
     thuderBolt,
     meteor,
+    //戦士
+    right_slash,
+    left_upper_slash,
+    stab,
+    upper_slash,
+    left_small_swing,
+    parry,
+    /*helm_splitter,
+    left_whirlslash,
+    guard,
+    absolute_defense,
+    dodge_step,
+    right_spinkick,
+    */
+    //魔導士
+    fireball,
+    hot_body,
+    waterball,
+    cure_water,
+    air_cutter,
+    wind_step,
+    stone_bullet,
+    earth_wall,
+    /*electric_arrow,
+    electric_step,
+    ice_arrow,
+    ice_shell,
+    holy_circle,
+    dark_wave,
+    */
+    //テイマー
+    animal_attack,
+    picking_up_coins,
+    /*throwing,
+     */
 }

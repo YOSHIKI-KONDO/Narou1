@@ -15,7 +15,7 @@
     askr,               //無
     embla,              //無
     //ランク2
-    /*red_slime,          //水
+    red_slime,          //水
     orc,                //土
     poison_rat,         //雷
     harpy,              //風
@@ -24,7 +24,7 @@
     lizard_man,         //火
     demonic_warrior,    //無
     //ランク3
-    element_slime,      //水
+    /*element_slime,      //水
     ogre,               //土
     electric_rat,       //雷
     griffon,            //風
