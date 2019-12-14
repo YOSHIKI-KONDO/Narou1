@@ -21,6 +21,8 @@ public class PopUp : MonoBehaviour
     public TextMeshProUGUI[] textPros;
     [NonSerialized]
     public Vector3 Distance = new Vector3(150.0f, 75.0f);
+    public Action EnterAction;
+    public Action ExitAction;
 
     public PopUp StartPopUp(GameObject hoverObject, Transform parent)
     {
@@ -43,7 +45,9 @@ public class PopUp : MonoBehaviour
         entry2.eventID = EventTriggerType.PointerExit;
         entry.callback.AddListener((x) => ApplyPosition());
         entry.callback.AddListener((x) => gameObject.SetActive(true));
+        entry.callback.AddListener((x) => EnterAction?.Invoke());
         entry2.callback.AddListener((x) => gameObject.SetActive(false));
+        entry2.callback.AddListener((x) => ExitAction?.Invoke());
         hoverObject.GetComponent<EventTrigger>().triggers.Add(entry);
         hoverObject.GetComponent<EventTrigger>().triggers.Add(entry2);
     }

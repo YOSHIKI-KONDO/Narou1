@@ -10,6 +10,7 @@ public class ResourceTextControll : BASE {
     public ResourceText normalPre;
     public ResourceText energyPre;
     public Transform parent;
+    public RESOURCE_EFFECT[] effectAry;
 
     void Initialize()
     {
@@ -29,19 +30,35 @@ public class ResourceTextControll : BASE {
             {
                 var energy = Instantiate(energyPre, parent);
                 energy.kind = k;
+                if (effectAry[i] != null)
+                {
+                    energy.effects = effectAry[i].effects;
+                }
                 continue;
             }
 
             // 普通のリソース
             var resource = Instantiate(normalPre, parent);
             resource.kind = k;
+            if (effectAry[i] != null)
+            {
+                resource.effects = effectAry[i].effects;
+            }
         }
+    }
+
+    public void InitializeArray()
+    {
+        //if (effectAry != null) { return; }
+        if (effectAry.Length != 0) { return; }
+        effectAry = new RESOURCE_EFFECT[Enum.GetNames(typeof(ResourceKind)).Length];
     }
 
 	// Use this for initialization
 	void Awake () {
 		StartBASE();
-	}
+        InitializeArray();
+    }
 
 	// Use this for initialization
 	void Start () {

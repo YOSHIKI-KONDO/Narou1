@@ -66,6 +66,7 @@ public class ABILITY : BASE, INeed
         this.bottom_exp = bottomExp;
 
         popUp = main.AbilityPopUpPre.StartPopUp(gameObject, main.windowShowCanvas);
+        popUp.EnterAction = ApplyPopUp;
         need = gameObject.AddComponent<NeedFunciton>();
         release = gameObject.AddComponent<ReleaseFunction>();
         release.StartFunction(gameObject, x => Sync(ref main.SR.released_ability[(int)kind], x), x => Sync(ref main.SR.completed_ability[(int)kind], x), x => Requires());
