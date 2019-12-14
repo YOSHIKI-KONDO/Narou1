@@ -123,6 +123,7 @@ public class SKILL : BASE, INeed
 
         need = gameObject.AddComponent<NeedFunciton>();
         popUp = main.skillPopUp.StartPopUp(gameObject, main.windowShowCanvas);
+        popUp.EnterAction = ApplyPopUp;
         release = gameObject.AddComponent<ReleaseFunction>();
         release.StartFunction(gameObject, x => Sync(ref main.SR.released_Skill[(int)kind], x), x => Sync(ref main.SR.completed_Skill[(int)kind], x), x => Requires());
         learnF = gameObject.AddComponent<InstantFunction>();

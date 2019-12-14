@@ -59,6 +59,7 @@ public class DUNGEON : BASE {
         progress.AwakeDungeon(button, main.enumCtrl.dungeons[(int)kind].Name());
         progress.SelectedAction = Enter;
         popUp = main.dungeonPopUp.StartPopUp(gameObject, main.windowShowCanvas);
+        popUp.EnterAction = ApplyPopUp;
         need = gameObject.AddComponent<NeedFunciton>();
         release = gameObject.AddComponent<ReleaseFunction>();
         release.StartFunction(gameObject, x => Sync(ref main.SR.released_Dungeon[(int)kind], x), x => Sync(ref main.SR.completed_Dungeon[(int)kind], x), x => Requires());
