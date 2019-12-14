@@ -51,7 +51,7 @@ public class ABILITY : BASE, INeed
         {
             level = MaxLevel;
             progress.CurrentValue(0);
-            main.progressCtrl.Rest();
+            main.progressCtrl.SwitchProgress(main.progressCtrl.restFunction);
         }
     }
 

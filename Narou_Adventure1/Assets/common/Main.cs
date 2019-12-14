@@ -49,6 +49,7 @@ public class Main : MonoBehaviour
     public BattleAndSkillCtrl battleCtrl;
     public StatusCtrl status;
     public TempEffectCtrl tempEffectsCtrl;
+    public NpcSkillCtrl npcSkillCtrl;
     public Announce announce;
     public Focus focus;
     public DecideParameter decideParameter;

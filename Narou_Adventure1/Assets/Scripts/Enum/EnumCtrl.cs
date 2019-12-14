@@ -6,6 +6,10 @@ using UnityEngine.UI;
 using static UsefulMethod;
 using MainAction;
 
+/// <summary>
+/// 全てのEnumの表示名と概要を記述するクラス。
+/// それぞれのクラスから参照しているので、漏れがあるとエラーが出る。
+/// </summary>
 public class EnumCtrl : BASE {
 
     public class template
@@ -46,6 +50,7 @@ public class EnumCtrl : BASE {
     public List<template> skills = new List<template>();
     public List<template> enemys = new List<template>();
     public List<template> dungeons = new List<template>();
+    public List<template> allys = new List<template>();
 
     // Use this for initialization
     void Awake () {
@@ -435,6 +440,13 @@ public class EnumCtrl : BASE {
         dungeons.Add(new template(DungeonKind.sewer, "Sewer", "下水道", "nothing", "むぅ、臭い。"));
         dungeons.Add(new template(DungeonKind.swamp, "Swamp", "沼地", "nothing", "足場に気を付けて進もう。"));
         */
+
+        /* 味方 */
+        allys.Add(new template(AllyKind.nothing, "nothing", "nothing", "nothing", "nothing"));
+        allys.Add(new template(AllyKind.npcA, "Norn", "ノルン", "nothing", "nothing"));
+        allys.Add(new template(AllyKind.npcB, "Stela", "ステラ", "nothing", "nothing"));
+        allys.Add(new template(AllyKind.npcB, "Kashima", "鹿島", "nothing", "nothing"));
+
         //テスト
         TestAll();
     }
