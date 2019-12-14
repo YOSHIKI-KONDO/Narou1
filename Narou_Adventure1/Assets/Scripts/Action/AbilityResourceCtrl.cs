@@ -11,11 +11,11 @@ using static UsefulMethod;
 public class AbilityResourceCtrl : BASE {
     public int MaxLevel(int index)
     {
-        return MaxLevels_Base[index] + main.itemCtrl.A_maxLevel[index];
+        return MaxLevels_Base[index] + main.itemCtrl.A_maxLevel[index] + main.rsc.A_maxLevel[index];
     }
     public double TrainRate(int index)
     {
-        return TrainRate_Base[index] + main.itemCtrl.A_trainRate[index] + main.tempEffectsCtrl.TRates[index];
+        return TrainRate_Base[index] + main.itemCtrl.A_trainRate[index] + main.tempEffectsCtrl.TRates[index] + main.rsc.A_trainRate[index];
     }
     public double[] CurrentExp { get => main.SR.currentValue_ability; set => main.SR.currentValue_ability = value; }
 

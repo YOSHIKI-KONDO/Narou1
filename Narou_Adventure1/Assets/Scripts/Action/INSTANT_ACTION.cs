@@ -35,6 +35,7 @@ public class INSTANT_ACTION : ACTION, INeed
 
         need = gameObject.AddComponent<NeedFunciton>();
         popUp = main.ActionPopUpPre.StartPopUp(gameObject, main.windowShowCanvas);
+        popUp.EnterAction = ApplyPopUp;
         release = gameObject.AddComponent<ReleaseFunction>();
         release.StartFunction(gameObject, x => Sync(ref main.SR.released_instant[(int)kind], x), x => Sync(ref main.SR.completed_instant[(int)kind], x), x => Requires());
         instant = gameObject.AddComponent<InstantFunction>();

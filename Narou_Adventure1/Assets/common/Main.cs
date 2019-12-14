@@ -50,6 +50,7 @@ public class Main : MonoBehaviour
     public StatusCtrl status;
     public TempEffectCtrl tempEffectsCtrl;
     public NpcSkillCtrl npcSkillCtrl;
+    public ResourceTextControll resourceTextCtrl;
     public Announce announce;
     public Focus focus;
     public DecideParameter decideParameter;
@@ -61,6 +62,7 @@ public class Main : MonoBehaviour
     public PopUp skillPopUp;
     public PopUp enemyPopUp;
     public PopUp dungeonPopUp;
+    public PopUp resourcePopUp;
 
     public EnumCtrl enumCtrl;
 

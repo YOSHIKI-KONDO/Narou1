@@ -55,6 +55,7 @@ public class UPGRADE_ACTION : ACTION, INeed
 
         
         popUp = main.ActionPopUpPre.StartPopUp(gameObject, main.windowShowCanvas);
+        popUp.EnterAction = ApplyPopUp;
         need = gameObject.AddComponent<NeedFunciton>();
         release = gameObject.AddComponent<ReleaseFunction>();
         release.StartFunction(gameObject, x => Sync(ref main.SR.released_upgrade[(int)kind], x), x => Sync(ref main.SR.completed_upgrade[(int)kind], x), x => Requires());

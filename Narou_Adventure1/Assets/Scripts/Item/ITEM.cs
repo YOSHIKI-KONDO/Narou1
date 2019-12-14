@@ -67,6 +67,7 @@ public class ITEM : BASE, INeed
         this.MaxEquip = max;
         main.itemCtrl.items[(int)kind] = this;
         popUp = main.itemPopUpPre.StartPopUp(gameObject, main.windowShowCanvas);
+        popUp.EnterAction = ApplyPopUp;
         release = gameObject.AddComponent<ReleaseFunction>();
         release.StartFunction(gameObject, x => Sync(ref main.SR.released_Item[(int)kind], x), x => Sync(ref main.SR.completed_Item[(int)kind], x), x => Requires());
         need = gameObject.AddComponent<NeedFunciton>();

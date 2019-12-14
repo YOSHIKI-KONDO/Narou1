@@ -258,7 +258,7 @@ public class BASE : MonoBehaviour
                         sum_str += main.enumCtrl.resources[(int)(ResourceKind)deal.rscKind].Name() + " max:" + tDigit(deal.Value,1);
                         break;
                     case Dealing.R_ParaKind.regen:
-                        sum_str += main.enumCtrl.resources[(int)(ResourceKind)deal.rscKind].Name() + " rate:" + tDigit(deal.Value,1) + "/s";
+                        sum_str += main.enumCtrl.resources[(int)(ResourceKind)deal.rscKind].Name() + " rate:" + tDigit(deal.Value,2) + "/s";
                         break;
                     case Dealing.R_ParaKind.status:
                         sum_str += main.enumCtrl.resources[(int)(ResourceKind)deal.rscKind].Name() + ":" + tDigit(deal.Value, 1);
