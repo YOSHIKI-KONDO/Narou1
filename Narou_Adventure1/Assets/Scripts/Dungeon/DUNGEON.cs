@@ -38,7 +38,7 @@ public class DUNGEON : BASE {
         }
         main.announce.Add("You entered " + main.enumCtrl.dungeons[(int)kind].Name());
         main.battleCtrl.dunKind = kind;
-        main.battleCtrl.Summon();
+        main.battleCtrl.EnterDungeon();
     }
 
     public string Name_str, Description_str, Need_str, Floor_str, ProgressCost_str, Drops_str;

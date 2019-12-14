@@ -6,6 +6,10 @@ using UnityEngine.UI;
 using static UsefulMethod;
 
 /// <summary>
+/// regens      ...regenerationを一定時間増加させるクラスを格納。(TempRegen)
+/// trainRates  ...TrainRateを一定時間増加させるクラスを格納。(TempTrainRate)
+/// Regens      ...計算したRegenを格納。公開用。
+/// TRates      ...計算したTrain Rateを格納。公開用。
 /// main.tickの影響を受ける
 /// </summary>
 public class TempEffectCtrl : BASE {

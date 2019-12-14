@@ -62,4 +62,9 @@ public class SaveR
     public bool[] completed_Dungeon;
     public int[] currentFloor_Dungeon;
     public int[] clearNum_Dungeon;
+
+    /* Ally */
+    public List<AllyKind> allyKinds = new List<AllyKind>();
+    public int[] levels_Ally;
+    public bool released_Norn;
 }

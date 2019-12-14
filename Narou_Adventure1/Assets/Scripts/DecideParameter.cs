@@ -35,6 +35,15 @@ public class DecideParameter : BASE {
         main.rsc.Value[(int)ResourceKind.stamina]=1;
         main.rsc.Max_Base[(int)ResourceKind.hp] = 1;
         main.rsc.Value[(int)ResourceKind.hp] = 1;
+        main.rsc.Regen_Base[(int)ResourceKind.mp] = 0.1;
+        main.rsc.Regen_Base[(int)ResourceKind.fire] = 0.1;
+        main.rsc.Regen_Base[(int)ResourceKind.water] = 0.1;
+        main.rsc.Regen_Base[(int)ResourceKind.wind] = 0.1;
+        main.rsc.Regen_Base[(int)ResourceKind.earth] = 0.1;
+        main.rsc.Regen_Base[(int)ResourceKind.thunder] = 0.1;
+        main.rsc.Regen_Base[(int)ResourceKind.ice] = 0.1;
+        main.rsc.Regen_Base[(int)ResourceKind.light] = 0.1;
+        main.rsc.Regen_Base[(int)ResourceKind.dark] = 0.1;
         main.rsc.Max_Base[(int)ResourceKind.gold] = 20;
         main.rsc.Max_Base[(int)ResourceKind.research] = 30;
         main.rsc.Max_Base[(int)ResourceKind.paper] = 10;
