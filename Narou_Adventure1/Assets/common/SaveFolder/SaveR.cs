@@ -51,6 +51,9 @@ public class SaveR
     public bool[] released_Item;
     public bool[] completed_Item;
 
+    /* Need */
+    public int[] needLimits;
+
     /* Skill */
     public bool[] released_Skill;
     public bool[] completed_Skill;

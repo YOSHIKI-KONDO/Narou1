@@ -52,9 +52,16 @@ public class ITEM : BASE, INeed
 
     public virtual bool Requires() { return true; }           //表示されるための条件
     public virtual bool CompleteCondition() { return false; } //もう表示しなくなる条件
-    public virtual bool Need()                                //表示した後で設置したりするための条件
+    public virtual bool Need()                                //表示した後で設置したりするための条件(trueなら置ける)
     {
-        if (need.hasNeeds) { return need.TemplateNeed(); }
+        // need(tag)が設定してあり、かつ満たしていなければfalseを返す
+        if (need.hasNeeds)
+        {
+            if(need.TemplateNeed() == false)
+            {
+                return false;
+            }
+        }
         return true;
     }               
 
@@ -219,6 +226,36 @@ public class ITEM : BASE, INeed
             {
                 popUp.texts[10].text = Sell_str;
             }
+        }
+    }
+
+    //アイテムのNeed(タグ)の数が上限に達していたらtrue
+    public bool IsMaxNeed()
+    {
+        bool IsMax = false;
+        foreach (var Tag in sources)
+        {
+            //無制限に置けるtagだったら続行
+            if(LimitNum(Tag) == null) { continue; }
+            if(LimitNum(Tag) <= main.itemCtrl.exitSourceNums[(int)Tag])
+            {
+                IsMax = true;
+            }
+        }
+        return IsMax;
+    }
+
+
+    //数が0ならnullを返し、違えばその数を返す
+    public int? LimitNum(NeedKind kind)
+    {
+        if (main.SR.needLimits[(int)kind] <= 0)
+        {
+            return null;
+        }
+        else
+        {
+            return main.SR.needLimits[(int)kind];
         }
     }
 }
