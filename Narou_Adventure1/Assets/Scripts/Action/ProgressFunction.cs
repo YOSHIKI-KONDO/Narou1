@@ -20,6 +20,7 @@ public class ProgressFunction : OnlyAction
     public delegate double DoubleSync(double? x = null);
     public DoubleSync CurrentValue;
     public Action CompleteAction;
+    public Action CompleteActionForSub; //サブクラスのためのcompleteアクション
     public Slider slider;
 
     public List<Dealing> initCostList = new List<Dealing>();
@@ -81,6 +82,7 @@ public class ProgressFunction : OnlyAction
             //完了した時の処理
             Calculate(completeEffectList, false);
             CompleteAction?.Invoke();//upgradeの回数などを増やす
+            CompleteActionForSub?.Invoke();
             CurrentValue(0);
             HasPaid(false);
         }

@@ -129,9 +129,9 @@ public class BattleAndSkillCtrl : BASE {
                     if (dunKind != DungeonKind.nothing)
                     {
                         //剣士系の攻撃
-                        AttackToEnemys(skills[(int)thisKind].WarriorDamage() * main.status.Attack);
+                        AttackToEnemys(skills[(int)thisKind].WarriorDamage() * main.status.Attack, "You");
                         //魔法系の攻撃
-                        AttackToEnemys(skills[(int)thisKind].SorcererDamage() * main.status.MagicAttack);
+                        AttackToEnemys(skills[(int)thisKind].SorcererDamage() * main.status.MagicAttack, "You");
                     }
 
                     skills[(int)thisKind].casted = true;
@@ -164,14 +164,15 @@ public class BattleAndSkillCtrl : BASE {
         {
             if (i == 0) { continue; }
             if (main.npcSkillCtrl.npcs[i] == null) { continue; }
-            if(main.npcSkillCtrl.canFightAllys.Contains((AllyKind)i) == false) { continue; }
+            if (main.npcSkillCtrl.canFightAllys.Contains((AllyKind)i) == false) { continue; }
+            if (main.npcSkillCtrl.npcs[i].isDead) { continue; }
             SKILL thisSkill = main.npcSkillCtrl.npcs[i].Cast();
             if (thisSkill != null && dunKind != DungeonKind.nothing)
             {
-                AttackToEnemys(thisSkill.WarriorDamage() * main.npcSkillCtrl.npcs[i].Attack);
-                AttackToEnemys(thisSkill.SorcererDamage() * main.npcSkillCtrl.npcs[i].MagicAttack);
+                AttackToEnemys(thisSkill.WarriorDamage() * main.npcSkillCtrl.npcs[i].Attack, main.enumCtrl.allys[i].Name());
+                AttackToEnemys(thisSkill.SorcererDamage() * main.npcSkillCtrl.npcs[i].MagicAttack, main.enumCtrl.allys[i].Name());
                 thisSkill.Produce();
-                main.announce.Add(main.enumCtrl.allys[i].Name() + " casted " + main.enumCtrl.skills[(int)thisSkill.kind].Name());
+                main.announce_d.Add(main.enumCtrl.allys[i].Name() + " casted " + main.enumCtrl.skills[(int)thisSkill.kind].Name());
             }
         }
     }
@@ -265,7 +266,7 @@ public class BattleAndSkillCtrl : BASE {
         {
             for (int i_r = 0; i_r < ROW_SLOT; i_r++)
             {
-                slotKinds[i_r, i_c] = main.SR.slotKinds[COLUMN_SLOT * i_c + i_r];
+                slotKinds[i_r, i_c] = main.SR.slotKinds[ROW_SLOT * i_c + i_r];
             }
         }
     }
@@ -277,7 +278,7 @@ public class BattleAndSkillCtrl : BASE {
         {
             for (int i_r = 0; i_r < ROW_SLOT; i_r++)
             {
-                main.SR.slotKinds[COLUMN_SLOT * i_c + i_r] = slotKinds[i_r, i_c];
+                main.SR.slotKinds[ROW_SLOT * i_c + i_r] = slotKinds[i_r, i_c];
             }
         }
     }
@@ -293,7 +294,7 @@ public class BattleAndSkillCtrl : BASE {
         }
         else
         {
-            battleScreen.ResetPosition();//戦闘中ならアクティブ
+            battleScreen.ResetPosition();  //戦闘中ならアクティブ
             //UI
             dungenNameText.text = main.enumCtrl.dungeons[(int)dunKind].Name();
             floorText.text = dungeons[(int)dunKind].currentFloor.ToString() + " / " + dungeons[(int)dunKind].MaxFloor().ToString();
@@ -312,18 +313,21 @@ public class BattleAndSkillCtrl : BASE {
                     //乱数を生成してヒットしたらドロップ
                     if(UnityEngine.Random.Range(0f,100f) < currentEnemys[i].drops[i_d].probability)
                     {
+                        /*
+                         * パーティを組んでいたら経験値を折半
+                         */
                         //もしもアイテムだったら
                         if (currentEnemys[i].drops[i_d] is Item_Drop)
                         {
                             bool couldGet = main.itemCtrl.Drop_Inventory(((currentEnemys[i].drops[i_d] as Item_Drop).itemKind));
                             string additive = couldGet ? "" : " (but Inventory is full)";
-                            main.announce.Add("LOOT [" + main.enumCtrl.enemys[(int)currentEnemys[i].kind].Name() + "] : "
+                            main.announce_d.Add("LOOT [" + main.enumCtrl.enemys[(int)currentEnemys[i].kind].Name() + "] : "
                                 + main.enumCtrl.items[(int)(currentEnemys[i].drops[i_d] as Item_Drop).itemKind].Name()
                                 + additive); 
                         }
                         else
                         {
-                            main.announce.Add("LOOT [" + main.enumCtrl.enemys[(int)currentEnemys[i].kind].Name() + "] : " + main.enumCtrl.resources[(int)currentEnemys[i].drops[i_d].kind].Name() + " + " +
+                            main.announce_d.Add("LOOT [" + main.enumCtrl.enemys[(int)currentEnemys[i].kind].Name() + "] : " + main.enumCtrl.resources[(int)currentEnemys[i].drops[i_d].kind].Name() + " + " +
                                 tDigit(currentEnemys[i].drops[i_d].amount));
                             main.rsc.Value[(int)currentEnemys[i].drops[i_d].kind] += currentEnemys[i].drops[i_d].amount;
                         }
@@ -340,7 +344,7 @@ public class BattleAndSkillCtrl : BASE {
             dungeons[(int)dunKind].currentFloor++;
             if (dungeons[(int)dunKind].currentFloor >= dungeons[(int)dunKind].MaxFloor())
             {
-                main.announce.Add("Dungeon Clear!!!");
+                main.announce_d.Add("Dungeon Clear!!!");
                 main.SR.clearNum_Dungeon[(int)dunKind]++;
 
                 //報酬(ダンジョン)
@@ -354,19 +358,45 @@ public class BattleAndSkillCtrl : BASE {
                         {
                             bool couldGet = main.itemCtrl.Drop_Inventory((dungeons[(int)dunKind].drops[i_d] as Item_Drop).itemKind);
                             string additive = couldGet ? "" : " (but Inventory is full)";
-                            main.announce.Add("LOOT [" + main.enumCtrl.dungeons[(int)dunKind].Name() + "] : "
+                            main.announce_d.Add("LOOT [" + main.enumCtrl.dungeons[(int)dunKind].Name() + "] : "
                                 + main.enumCtrl.items[(int)(dungeons[(int)dunKind].drops[i_d] as Item_Drop).itemKind].Name()
                                 + additive);
                             
                         }
                         else
                         {
-                            main.announce.Add("LOOT [" + main.enumCtrl.dungeons[(int)dunKind].Name() + "] : " + main.enumCtrl.resources[(int)dungeons[(int)dunKind].drops[i_d].kind].Name() + " + " +
+                            main.announce_d.Add("LOOT [" + main.enumCtrl.dungeons[(int)dunKind].Name() + "] : " + main.enumCtrl.resources[(int)dungeons[(int)dunKind].drops[i_d].kind].Name() + " + " +
                                 tDigit(dungeons[(int)dunKind].drops[i_d].amount));
                             main.rsc.Value[(int)dungeons[(int)dunKind].drops[i_d].kind] += dungeons[(int)dunKind].drops[i_d].amount;
                         }
                     }
                 }
+
+                // First Clear Bonus
+                if (main.SR.clearNum_Dungeon[(int)dunKind] == 1)//直前で1増やしているので
+                {
+                    dungeons[(int)dunKind].FirstClearAction();
+                    for (int i_d = 0; i_d < dungeons[(int)dunKind].firstDrops.Count; i_d++)
+                    {
+                        //もしもアイテムだったら
+                        if (dungeons[(int)dunKind].firstDrops[i_d] is Item_Drop)
+                        {
+                            bool couldGet = main.itemCtrl.Drop_Inventory((dungeons[(int)dunKind].firstDrops[i_d] as Item_Drop).itemKind);
+                            string additive = couldGet ? "" : " (but Inventory is full)";
+                            main.announce_d.Add("LOOT [" + main.enumCtrl.dungeons[(int)dunKind].Name() + "] : "
+                                + main.enumCtrl.items[(int)(dungeons[(int)dunKind].firstDrops[i_d] as Item_Drop).itemKind].Name()
+                                + additive);
+
+                        }
+                        else
+                        {
+                            main.announce_d.Add("LOOT [" + main.enumCtrl.dungeons[(int)dunKind].Name() + "] : " + main.enumCtrl.resources[(int)dungeons[(int)dunKind].firstDrops[i_d].kind].Name() + " + " +
+                                tDigit(dungeons[(int)dunKind].firstDrops[i_d].amount));
+                            main.rsc.Value[(int)dungeons[(int)dunKind].firstDrops[i_d].kind] += dungeons[(int)dunKind].firstDrops[i_d].amount;
+                        }
+                    }
+                }
+                
 
                 dunKind = DungeonKind.nothing;
                 FleeFromDungeon();
@@ -415,7 +445,7 @@ public class BattleAndSkillCtrl : BASE {
         // NpcのComponent更新
         for (int i = 0; i < allysCmps.Length; i++)
         {
-            if(main.npcSkillCtrl.canFightAllys.IndexOf((AllyKind)i) >= 0)
+            if(main.npcSkillCtrl.allyKinds.IndexOf((AllyKind)i) >= 0)
             {
                 setActive(allysCmps[i].gameObject);
                 allysCmps[i].ApplyNormalObj(main.enumCtrl.allys[(int)i].Name(), tDigit(main.npcSkillCtrl.npcs[i].currentHp) + "/" + tDigit(main.npcSkillCtrl.npcs[i].Hp),
@@ -461,22 +491,28 @@ public class BattleAndSkillCtrl : BASE {
             currentEnemys[i].currentInterval += 0.1f;//0.1秒に0.1ずつ増える
             if(currentEnemys[i].currentInterval >= currentEnemys[i].interval)
             {
-                int target = UnityEngine.Random.Range(0, main.npcSkillCtrl.canFightAllys.Count + 1);
+                int target = UnityEngine.Random.Range(0, main.npcSkillCtrl.CalCanFightNum() + 1);
                 if (target == 0)
                 {
                     //プレイヤーだったら
-                    main.rsc.Value[(int)ResourceKind.hp] -= CalDmg(currentEnemys[i].attack, main.status.Defense);
+                    var cal_dmg = CalDmg(currentEnemys[i].attack, main.status.Defense);
+                    main.rsc.Value[(int)ResourceKind.hp] -= cal_dmg;
+                    main.announce_d.Add(main.enumCtrl.enemys[i].Name() + " has attacked you for " + tDigit(cal_dmg) + " damages");
                 }
                 else
                 {
                     //味方だったら
-                    main.npcSkillCtrl.npcs[(int)main.npcSkillCtrl.canFightAllys[target-1]].currentHp
-                        -= CalDmg(currentEnemys[i].attack, main.npcSkillCtrl.npcs[(int)main.npcSkillCtrl.canFightAllys[target - 1]].Defense);
+                    AllyKind target_npc = main.npcSkillCtrl.LivingAlly(target);
+                    var cal_dmg = CalDmg(currentEnemys[i].attack, main.npcSkillCtrl.npcs[(int)target_npc].Defense);
+                    main.npcSkillCtrl.npcs[(int)target_npc].currentHp -= cal_dmg;
+                    main.announce_d.Add(main.enumCtrl.enemys[i].Name() + " has attacked " + main.enumCtrl.allys[(int)target_npc].Name() + " for " + tDigit(cal_dmg) + " damages");
                     //やられたらcanFightから外す
-                    if(main.npcSkillCtrl.npcs[(int)main.npcSkillCtrl.canFightAllys[target - 1]].currentHp <= 0)
+                    if (main.npcSkillCtrl.npcs[(int)target_npc].currentHp <= 0)
                     {
-                        main.npcSkillCtrl.npcs[(int)main.npcSkillCtrl.canFightAllys[target - 1]].currentHp = 0;
-                        main.npcSkillCtrl.LeaveFight(main.npcSkillCtrl.npcs[target - 1].kind);
+                        main.npcSkillCtrl.npcs[(int)target_npc].currentHp = 0;
+                        main.npcSkillCtrl.npcs[(int)target_npc].isDead = true;
+                        main.announce_d.Add(main.enumCtrl.allys[(int)target_npc].Name() + " has been defeated");
+                        //main.npcSkillCtrl.LeaveFight(main.npcSkillCtrl.canFightAllys[target -1 ]);
                     }
                 }
                 currentEnemys[i].currentInterval = 0;
@@ -530,11 +566,16 @@ public class BattleAndSkillCtrl : BASE {
     }
 
     //PlaySkillsで呼ばれる
-    void AttackToEnemys(double dmg)
+    void AttackToEnemys(double dmg, string actor = "")
     {
         if (currentEnemys.Count == 0) { return; }
         int target = UnityEngine.Random.Range(0, currentEnemys.Count); //ランダムな敵にダメージ
-        currentEnemys[target].currentHp -= CalDmg(dmg, currentEnemys[target].defense);
+        var cal_dmg = CalDmg(dmg, currentEnemys[target].defense);
+        currentEnemys[target].currentHp -= cal_dmg;
+        if(actor != "")
+        {
+            main.announce_d.Add(actor + " has attacked " + main.enumCtrl.enemys[target].Name() + " for " + tDigit(cal_dmg) + " damages");
+        }
     }
 
     void TestEnemys()

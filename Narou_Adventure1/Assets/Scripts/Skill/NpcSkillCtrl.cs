@@ -34,6 +34,7 @@ public class NpcSkillCtrl : BASE {
         double initCriticalC, plusCriticalC;
         double initCriticalD, plusCriticalD;
 
+        public bool isDead;
         public double currentHp;
         double current_time;
         bool casted;
@@ -105,6 +106,7 @@ public class NpcSkillCtrl : BASE {
             currentHp = Hp;
             current_time = 0;
             casted = false;
+            isDead = false;
         }
     }
 
@@ -134,6 +136,12 @@ public class NpcSkillCtrl : BASE {
     {
         canFightAllys = new List<AllyKind>();
         canFightAllys.AddRange(allyKinds);
+
+        foreach (var npc in npcs)
+        {
+            if(npc == null) { continue; }
+            npc.Initialize();
+        }
     }
 
     public void LeaveFight(AllyKind kind)
@@ -143,6 +151,39 @@ public class NpcSkillCtrl : BASE {
         {
             canFightAllys.Remove(kind);
         }
+    }
+
+    //CanFightAllysの中で、生きているnpcの数を返す
+    public int CalCanFightNum()
+    {
+        int sum = 0;
+        foreach (var kind in canFightAllys)
+        {
+            if (npcs[(int)kind].isDead)
+                continue;
+
+            sum++;
+        }
+        return sum;
+    }
+
+    //canFightAllysで「何番目のNPCか」を渡された時に、そのEnumを返す関数
+    public AllyKind LivingAlly(int index)
+    {
+        int sum = 0;
+        for (int i = 0; i < canFightAllys.Count; i++)
+        {
+            if (npcs[(int)canFightAllys[i]] == null) { continue; }
+            if (npcs[(int)canFightAllys[i]].isDead == false)
+            {
+                sum++;
+            }
+            if(sum == index)
+            {
+                return canFightAllys[i];
+            }
+        }
+        return AllyKind.nothing;
     }
 
 	// Use this for initialization
