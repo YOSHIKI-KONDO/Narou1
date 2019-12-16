@@ -9,8 +9,13 @@ using static EnemyKind;
 
 public class FirstDungeon : DUNGEON {
 
-	// Use this for initialization
-	void Awake () {
+    public override void FirstClearAction()
+    {
+        main.announce.Add("This is first time to clear this dungeon!");
+    }
+
+    // Use this for initialization
+    void Awake () {
         AwakeDungeon(firstDungeon);
         enemyList.Add(new EnemyKind[] { slime });
         enemyList.Add(new EnemyKind[] { slime, slime });
@@ -24,6 +29,9 @@ public class FirstDungeon : DUNGEON {
         drops.Add(new Drop(ResourceKind.herb, 3, 50));
         drops.Add(new Item_Drop(ItemKind.woodspear, 100));
         drops.Add(new Item_Drop(ItemKind.earth_orb, 10));
+
+        firstDrops.Add(new Drop(ResourceKind.bread, 1, 100));
+        firstDrops.Add(new Item_Drop(ItemKind.toolbox, 100));
     }
 
 	// Use this for initialization

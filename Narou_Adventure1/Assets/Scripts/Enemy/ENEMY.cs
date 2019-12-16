@@ -23,8 +23,8 @@ public class ENEMY : BASE {
         this.interval = interval;
         this.attack = attack;
         this.defense = defense;
-        drops.Add(new Drop(ResourceKind.gold, gold, 100));
         drops.Add(new Drop(ResourceKind.exp, exp, 100));
+        drops.Add(new Drop(ResourceKind.gold, gold, 100));
     }
 
     public void StartEnemy()

@@ -14,7 +14,6 @@ public class RESOURCE_EFFECT : BASE {
 		StartBASE();
         this.kind = kind;
         main.resourceTextCtrl.InitializeArray();
-        Debug.Log(main.resourceTextCtrl.effectAry.Length);
         main.resourceTextCtrl.effectAry[(int)kind] = this;
 	}
 }

@@ -48,7 +48,9 @@ public class ResourceCtrl : BASE {
 	// Use this for initialization
 	void Start () {
         index_exp = (int)ResourceKind.exp;
-	}
+
+        CalculateAllEffect();
+    }
 
     // Update is called once per frame
     private void LateUpdate()
@@ -67,18 +69,7 @@ public class ResourceCtrl : BASE {
             Truncate();
         }
 
-        //Effectの計算
-        //0にした後加算する書き方をしている。
-        ArrayToDefault(R_max);
-        ArrayToDefault(R_regen);
-        ArrayToDefault(A_maxLevel);
-        ArrayToDefault(A_trainRate);
-        for (int i = 0; i < main.SD.num_resource; i++)
-        {
-            if (i == 0) { continue; }
-            if (main.resourceTextCtrl.effectAry[i] == null) { continue; }
-            CalculateResourceEffect(main.resourceTextCtrl.effectAry[i].effects, (int)Value[i], (ResourceKind)i);
-        }
+        CalculateAllEffect();
     }
 
     void Truncate()
@@ -104,7 +95,21 @@ public class ResourceCtrl : BASE {
         }
     }
 
-
+    //Effectの計算
+    //0にした後加算する書き方をしている。
+    void CalculateAllEffect()
+    {
+        ArrayToDefault(R_max);
+        ArrayToDefault(R_regen);
+        ArrayToDefault(A_maxLevel);
+        ArrayToDefault(A_trainRate);
+        for (int i = 0; i < main.SD.num_resource; i++)
+        {
+            if (i == 0) { continue; }
+            if (main.resourceTextCtrl.effectAry[i] == null) { continue; }
+            CalculateResourceEffect(main.resourceTextCtrl.effectAry[i].effects, (int)Value[i], (ResourceKind)i);
+        }
+    }
 
     /// <summary>
     /// エフェクトの計算。

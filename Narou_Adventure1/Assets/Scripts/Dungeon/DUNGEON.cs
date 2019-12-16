@@ -17,6 +17,7 @@ public class DUNGEON : BASE {
 
     public List<EnemyKind[]> enemyList = new List<EnemyKind[]>(); //Enemyの配列のList
     public List<Drop> drops = new List<Drop>(); //ドロップ品
+    public List<Drop> firstDrops = new List<Drop>(); //ファーストクリアボーナス
     public List<Dealing> progressCost = new List<Dealing>();
     public int MaxFloor() { return enemyList.Count; }
     public int currentFloor { get => main.SR.currentFloor_Dungeon[(int)kind]; set => main.SR.currentFloor_Dungeon[(int)kind] = value; }//save
@@ -29,6 +30,7 @@ public class DUNGEON : BASE {
         if (need.hasNeeds) { return need.TemplateNeed(); }
         return true;
     }
+    public virtual void FirstClearAction() { } //最初にクリアした時に呼ばれる関数
 
     void Enter()
     {
@@ -36,12 +38,12 @@ public class DUNGEON : BASE {
         {
             currentFloor = 0;
         }
-        main.announce.Add("You entered " + main.enumCtrl.dungeons[(int)kind].Name());
+        main.announce_d.Add("You entered " + main.enumCtrl.dungeons[(int)kind].Name());
         main.battleCtrl.dunKind = kind;
         main.battleCtrl.EnterDungeon();
     }
 
-    public string Name_str, Description_str, Need_str, Floor_str, ProgressCost_str, Drops_str;
+    public string Name_str, Description_str, Need_str, Floor_str, ProgressCost_str, Drops_str, FirstDrops_str;
 
     // Use this for initialization
     public void AwakeDungeon (DungeonKind kind) {
@@ -53,7 +55,7 @@ public class DUNGEON : BASE {
         text = GetComponentsInChildren<Text>()[0];            //UI関連
         sliderText = GetComponentsInChildren<Text>()[1];      //UI関連
         slider = GetComponentInChildren<Slider>();            //UI関連
-        button.onClick.AddListener(Enter);
+        //button.onClick.AddListener(Enter);
 
         progress = gameObject.AddComponent<DungeonFunction>();
         progress.AwakeDungeon(button, main.enumCtrl.dungeons[(int)kind].Name());
@@ -86,10 +88,10 @@ public class DUNGEON : BASE {
             setFalse(popUp.gameObject);
         }
 
-        if (progress.isOn)
-        {
+        //if (progress.isOn)
+        //{
             ApplySlider();
-        }
+        //}
     }
 
     void ApplySlider()
@@ -118,6 +120,7 @@ public class DUNGEON : BASE {
             Description_str = main.enumCtrl.dungeons[(int)kind].Description();
             ProgressCost_str = progress.ProgressDetail(progressCost);
             Drops_str = DropsDetail(drops);
+            FirstDrops_str = DropsDetail(firstDrops);
 
             //needが設定されている場合にのみ書き換える。
             //そのため、ない場合は手動でNeed_strを変えることが可能。
@@ -180,6 +183,16 @@ public class DUNGEON : BASE {
             else
             {
                 popUp.texts[9].text = Drops_str;
+            }
+
+            if (FirstDrops_str == "" || FirstDrops_str == null)
+            {
+                setFalse(popUp.texts[10].gameObject);
+                setFalse(popUp.texts[11].gameObject);
+            }
+            else
+            {
+                popUp.texts[11].text = FirstDrops_str;
             }
         }
     }

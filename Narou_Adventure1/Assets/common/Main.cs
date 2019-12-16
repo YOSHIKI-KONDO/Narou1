@@ -52,6 +52,7 @@ public class Main : MonoBehaviour
     public NpcSkillCtrl npcSkillCtrl;
     public ResourceTextControll resourceTextCtrl;
     public Announce announce;
+    public Announce announce_d; //dungeon
     public Focus focus;
     public DecideParameter decideParameter;
 
