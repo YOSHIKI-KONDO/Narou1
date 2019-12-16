@@ -39,7 +39,7 @@ public class NeedFunciton : BASE {
         }
         foreach (var sourceKind in sourceKinds)
         {
-            if (main.itemCtrl.exitSources[(int)sourceKind] == false)
+            if (main.itemCtrl.exitSourceNums[(int)sourceKind] <= 0)
             {
                 all_true = false;
                 break;

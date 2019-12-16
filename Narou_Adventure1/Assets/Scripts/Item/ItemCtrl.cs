@@ -30,7 +30,7 @@ public class ItemCtrl : BASE {
     public Transform inventoryTra, equipTra;
     public int[] InventoryNum { get => main.SR.inventoryNum_Item; set => main.SR.inventoryNum_Item = value; }
     public int[] equipNum { get => main.SR.equipNum_Item; set => main.SR.equipNum_Item = value; }
-    public bool[] exitSources; //sourceがあればtrue
+    public int[] exitSourceNums; //sourceがあればtrue
 
     public double[] R_max;//リソースに加算
     public double[] R_regen;//リソースに加算
@@ -48,7 +48,7 @@ public class ItemCtrl : BASE {
         R_regen = new double[Enum.GetNames(typeof(ResourceKind)).Length];
         A_maxLevel = new int[Enum.GetNames(typeof(AbilityKind)).Length];
         A_trainRate = new double[Enum.GetNames(typeof(AbilityKind)).Length];
-        exitSources = new bool[Enum.GetNames(typeof(NeedKind)).Length];
+        exitSourceNums = new int[Enum.GetNames(typeof(NeedKind)).Length];
     }
 
     // Use this for initialization
@@ -102,7 +102,7 @@ public class ItemCtrl : BASE {
         ArrayToDefault(R_regen);
         ArrayToDefault(A_maxLevel);
         ArrayToDefault(A_trainRate);
-        ArrayToDefault(exitSources);
+        ArrayToDefault(exitSourceNums);
         for (int i = 0; i < items.Length; i++)
         {
             currentNum_I += items[i].size * InventoryNum[i];
@@ -114,7 +114,7 @@ public class ItemCtrl : BASE {
                 if (src == NeedKind.nothing) { continue; }
                 if (equipNum[i] > 0)
                 {
-                    exitSources[(int)src] = true;
+                    exitSourceNums[(int)src] += equipNum[i];
                 }
             }
         }
@@ -265,7 +265,7 @@ public class ItemCtrl : BASE {
     }
     public bool CanEquip(ItemKind kind)
     {
-        return CanGetEquip(kind);
+        return CanGetEquip(kind) && items[(int)kind].IsMaxNeed() == false; //上限に達していない必要がある
     }
 
     public bool CanSell_Inventory(ItemKind kind)
