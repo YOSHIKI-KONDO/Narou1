@@ -9,7 +9,7 @@ public class PlayWithCat : UPGRADE_ACTION
 {
     public override bool Requires()
     {
-        return main.rsc.Max((int)ResourceKind.stamina) >= 5;
+        return main.rsc.Value[(int)ResourceKind.research] >= 1;
     }
 
     // Use this for initialization

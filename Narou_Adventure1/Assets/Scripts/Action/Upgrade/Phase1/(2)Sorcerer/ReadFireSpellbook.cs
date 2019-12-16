@@ -11,7 +11,7 @@ public class ReadFireSpellbook : UPGRADE_ACTION
     {
         return main.a_rsc.MaxLevel( (int)AbilityKind.primary_water_magic) >= 6 &&
                main.a_rsc.MaxLevel( (int)AbilityKind.primary_earth_magic) >= 6 &&
-               main.rsc.Value[ (int)ResourceKind.research] >= 30;
+               main.rsc.Value[ (int)ResourceKind.research] >= 40;
     }
 
     // Use this for initialization

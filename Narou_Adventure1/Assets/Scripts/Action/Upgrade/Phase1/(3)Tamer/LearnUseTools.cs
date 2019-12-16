@@ -9,7 +9,7 @@ public class LearnUseTools : UPGRADE_ACTION
 {
     public override bool Requires()
     {
-        return main.rsc.Value[(int)ResourceKind.research] >= 5;
+        return main.rsc.Value[(int)ResourceKind.research] >= 3;
     }
 
     // Use this for initialization

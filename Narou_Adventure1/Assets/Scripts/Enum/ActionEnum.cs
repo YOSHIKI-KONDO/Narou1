@@ -8,8 +8,8 @@
             //フェーズ１（入学前）
             weeding,
             eat_anchovy_sandwich,
-            writing_paper,
-            bind_a_book,
+            rune_generation,
+            runic_carving,
             split_firewood,
             sell_firewood,
 
@@ -20,7 +20,7 @@
             nothing,
             //常用
             rest,
-            study,
+            pray,
             //フェーズ１（入学前）
             chores,
             harvest_wheat,

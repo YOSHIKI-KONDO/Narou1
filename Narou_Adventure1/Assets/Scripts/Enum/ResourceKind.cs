@@ -39,6 +39,7 @@
     wood,
     firewood,
     charcoal,
+    flower,
     //食べ物
     wheat,
     bread,

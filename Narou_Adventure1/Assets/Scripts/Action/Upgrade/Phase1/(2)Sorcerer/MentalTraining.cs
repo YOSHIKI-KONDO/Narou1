@@ -9,7 +9,7 @@ public class MentalTraining : UPGRADE_ACTION
 {
     public override bool Requires()
     {
-        return main.rsc.Value[(int)ResourceKind.research] >= 2;
+        return main.rsc.Value[(int)ResourceKind.research] >= 5;
     }
 
     // Use this for initialization

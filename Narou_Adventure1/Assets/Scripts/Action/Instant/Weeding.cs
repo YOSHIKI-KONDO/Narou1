@@ -9,7 +9,8 @@ public class Weeding : INSTANT_ACTION
 {
     public override bool Requires()
     {
-        return main.rsc.Max((int)ResourceKind.stamina) >= 5;
+        return main.rsc.Value[(int)ResourceKind.research] >= 5 &&
+               main.rsc.Value[(int)ResourceKind.mp] >= 1;
     }
 
     // Use this for initialization
@@ -17,7 +18,7 @@ public class Weeding : INSTANT_ACTION
     {
         AwakeInstantAction(MainAction.ActionEnum.Instant.weeding);
         instant.initCostList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.4));
-        instant.completeEffectList.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 1));
+        instant.completeEffectList.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 0.5));
         instant.completeEffectList.Add(new Dealing(ResourceKind.herb, Dealing.R_ParaKind.current, 0.05));
     }
 
