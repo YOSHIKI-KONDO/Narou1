@@ -29,6 +29,7 @@ public class UPGRADE_ACTION : ACTION, INeed
         if (need.hasNeeds) { return need.TemplateNeed(); }
         return true;
     }
+    public virtual void CompleteAction() { }
 
     public string Name_str, Description_str, Need_str, Cost_str, ProgressCost_str, ProgressEffect_str, CompleteEffect_str;
 
@@ -63,6 +64,7 @@ public class UPGRADE_ACTION : ACTION, INeed
         progress.StartProgress(gameObject, Need, slider, x => Sync(ref main.SR.paid_upgrade[(int)kind], x), x => Sync(ref main.SR.currentValue_upgrade[(int)kind], x),
             main.enumCtrl.upgradeActions[(int)kind].Name());
         progress.CompleteAction = AddClerNum;//回数を増やす処理
+        progress.CompleteActionForSub = CompleteAction;
     }
 
     // Use this for initialization
