@@ -24,7 +24,7 @@ public class BattleAndSkillCtrl : BASE {
     public readonly int ROW_SLOT = 4;
     public readonly int COLUMN_SLOT = 3;
     public SkillKind[,] slotKinds;
-    public SKILL[] skills = new SKILL[Enum.GetNames(typeof(SkillKind)).Length];
+    public SKILL[] skills;// = new SKILL[Enum.GetNames(typeof(SkillKind)).Length];
     [SerializeField]SkillSlot[] slots_ins;//InspectorからAddする
     [SerializeField] SkillSlot[] slots_menu;//menuに常に出ているスロット
     SkillSlot[,] slots;
@@ -35,7 +35,7 @@ public class BattleAndSkillCtrl : BASE {
 
 
     /* battle */
-    public DUNGEON[] dungeons = new DUNGEON[Enum.GetNames(typeof(DungeonKind)).Length];
+    public DUNGEON[] dungeons;// = new DUNGEON[Enum.GetNames(typeof(DungeonKind)).Length];
     public ENEMY[] enemys = new ENEMY[Enum.GetNames(typeof(EnemyKind)).Length];
     public List<InnerEnemy> currentEnemys = new List<InnerEnemy>();
     public BattleComponents heroCmp;                   //Object
@@ -313,9 +313,29 @@ public class BattleAndSkillCtrl : BASE {
                     //乱数を生成してヒットしたらドロップ
                     if(UnityEngine.Random.Range(0f,100f) < currentEnemys[i].drops[i_d].probability)
                     {
-                        /*
-                         * パーティを組んでいたら経験値を折半
-                         */
+                        if(i_d == 0)
+                        {
+                            //味方がいるときは経験値を分ける
+                            currentEnemys[i].drops[0].amount /= (main.npcSkillCtrl.allyKinds.Count + 1);
+                            foreach (var npc_kind in main.npcSkillCtrl.allyKinds)
+                            {
+                                //経験値を足す
+                                main.npcSkillCtrl.npcs[(int)npc_kind].currentExp(main.npcSkillCtrl.npcs[(int)npc_kind].currentExp()
+                                    + currentEnemys[i].drops[i_d].amount);
+                                //Announce
+                                main.announce_d.Add("LOOT [" + main.enumCtrl.enemys[(int)currentEnemys[i].kind].Name() + "] : "
+                                    + main.enumCtrl.allys[(int)npc_kind].Name() + " gained "
+                                    + main.enumCtrl.resources[(int)currentEnemys[i].drops[i_d].kind].Name() + " + "
+                                    + tDigit(currentEnemys[i].drops[i_d].amount)); 
+                            }
+                            //自分(普通のドロップの書き方と同じ)
+                            main.rsc.Value[(int)currentEnemys[i].drops[i_d].kind] += currentEnemys[i].drops[i_d].amount;
+                            //Announce
+                            main.announce_d.Add("LOOT [" + main.enumCtrl.enemys[(int)currentEnemys[i].kind].Name() + "] : " + main.enumCtrl.resources[(int)currentEnemys[i].drops[i_d].kind].Name() + " + " +
+                            tDigit(currentEnemys[i].drops[i_d].amount)); 
+
+                            continue; //※
+                        }
                         //もしもアイテムだったら
                         if (currentEnemys[i].drops[i_d] is Item_Drop)
                         {

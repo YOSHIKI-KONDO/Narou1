@@ -17285,6 +17285,7 @@ MonoBehaviour:
     allyKinds: 
     levels_Ally: 
     released_Norn: 0
+    exps_Ally: []
   S:
     lastTime: 
     birthDate: 

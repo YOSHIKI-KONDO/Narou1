@@ -15,6 +15,7 @@ public class NpcSkillCtrl : BASE {
         public List<SkillKind> skills = new List<SkillKind>();
         Main main;
         public delegate int IntSync(int? x = null);
+        public delegate double DoubleSync(double? x = null);
         public IntSync level;
         public double Hp { get => initHp + plusHp * level(); }
         public double Strength { get => initStrength + plusStrength * level(); }
@@ -25,6 +26,8 @@ public class NpcSkillCtrl : BASE {
         public double DodgeChance { get => initDodge + plusDodge * level(); }
         public double CriticalChance { get => initCriticalC + plusCriticalC * level(); }
         public double CriticalFactor { get => initCriticalD + plusCriticalD * level(); }
+        public double MaxExp { get => CashMaxExp ?? CalculateMaxExp(); }
+        public DoubleSync currentExp;
 
         int initHp, plusHp;
         int initStrength, plusStrength;
@@ -33,16 +36,20 @@ public class NpcSkillCtrl : BASE {
         double initDodge, plusDodge;
         double initCriticalC, plusCriticalC;
         double initCriticalD, plusCriticalD;
+        double initExp, powerExp;
+        double? CashMaxExp = null; //levelupした時にnullにする
 
         public bool isDead;
         public double currentHp;
+        
         double current_time;
         bool casted;
         SKILL thisSkill;
 
         public Npc(AllyKind kind, IntSync level, Main main, int initHp, int plusHp, int initStrength, int plusStrength,
             int initMStrength, int plusMStrength, int initDefense, int plusDefense, int initDodge, int plusDodge,
-            int initCriticalC, int plusCriticalC, int initCriticalD, int plusCriticalD)
+            int initCriticalC, int plusCriticalC, int initCriticalD, int plusCriticalD, double initExp, double powerExp,
+            DoubleSync currentExp)
         {
             this.kind = kind;
             this.level = level;
@@ -61,8 +68,30 @@ public class NpcSkillCtrl : BASE {
             this.plusCriticalC  = plusCriticalC;
             this.initCriticalD  = initCriticalD;
             this.plusCriticalD  = plusCriticalD;
+            this.initExp = initExp;
+            this.powerExp = powerExp;
+            this.currentExp = currentExp;
 
             Initialize();
+        }
+
+        //最大値の計算
+        double CalculateMaxExp()
+        {
+            CashMaxExp = initExp * Math.Pow(level(), powerExp);
+            return (double)CashMaxExp;
+        }
+
+        public void CheckLevelUp()
+        {
+            while(currentExp() >= MaxExp)
+            {
+                currentExp(currentExp() - MaxExp);
+                level(level() + 1);
+                CashMaxExp = null;
+                CalculateMaxExp();
+                main.announce.Add(main.enumCtrl.allys[(int)kind].Name() + " Level UP! (" + (level() - 1).ToString() + "→" + level() + ")");
+            }
         }
         
 
@@ -186,8 +215,18 @@ public class NpcSkillCtrl : BASE {
         return AllyKind.nothing;
     }
 
-	// Use this for initialization
-	void Awake () {
+    //レベルアップの確認
+    void CheckLevelUp()
+    {
+        foreach (var npc in npcs)
+        {
+            if(npc == null) { continue; }
+            npc.CheckLevelUp();
+        }
+    }
+
+    // Use this for initialization
+    void Awake () {
 		StartBASE();
 
         npcs = new Npc[main.SD.num_ally];
@@ -199,7 +238,9 @@ public class NpcSkillCtrl : BASE {
             0, 1,
             0, 0,
             0, 0,
-            2, 0);
+            2, 0,
+            10, 2.5,
+            x=>Sync(ref main.SR.exps_Ally[(int)AllyKind.npcA],x));
         npcs[(int)AllyKind.npcA].skills.AddRange(new List<SkillKind> { SkillKind.meteor, SkillKind.thuderBolt });
 	}
 
@@ -212,4 +253,9 @@ public class NpcSkillCtrl : BASE {
 	void Update () {
 		
 	}
+
+    private void FixedUpdate()
+    {
+        CheckLevelUp();
+    }
 }
