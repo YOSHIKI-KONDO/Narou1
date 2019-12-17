@@ -883,6 +883,21 @@ public class UsefulMethod : MonoBehaviour
         else { return 1; }
     }
 
+    public static void ChangeTextAdaptive(string sentense, Text text, params GameObject[] objects)
+    {
+        if (sentense == "" || sentense == null)
+        {
+            foreach (var obj in objects)
+            {
+                setFalse(obj);
+            }
+        }
+        else
+        {
+            text.text = sentense;
+        }
+    }
+
     // Use this for initialization
     void Start()
     {

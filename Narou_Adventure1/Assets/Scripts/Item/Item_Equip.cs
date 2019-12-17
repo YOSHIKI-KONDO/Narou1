@@ -88,72 +88,13 @@ public class Item_Equip : BASE {
             Cost_str = ProgressDetail(main.itemCtrl.items[(int)kind].BuyLists);
             //needいらない
 
-            if (Name_str == "" || Name_str == null)
-            {
-                setFalse(popUp.texts[0].gameObject);
-            }
-            else
-            {
-                popUp.texts[0].text = Name_str;
-            }
-
-            if (Description_str == "" || Description_str == null)
-            {
-                setFalse(popUp.texts[1].gameObject);
-            }
-            else
-            {
-                popUp.texts[1].text = Description_str;
-            }
-
-            if (Max_Str == "" || Max_Str == null)
-            {
-                setFalse(popUp.texts[2].gameObject);
-            }
-            else
-            {
-                popUp.texts[2].text = Max_Str;
-            }
-
-            if (Need_str == "" || Need_str == null)
-            {
-                setFalse(popUp.texts[3].gameObject);
-                setFalse(popUp.texts[4].gameObject);
-            }
-            else
-            {
-                popUp.texts[4].text = Need_str;
-            }
-
-            if (Effect_str == "" || Effect_str == null)
-            {
-                setFalse(popUp.texts[5].gameObject);
-                setFalse(popUp.texts[6].gameObject);
-            }
-            else
-            {
-                popUp.texts[6].text = Effect_str;
-            }
-
-            if (Cost_str == "" || Cost_str == null)
-            {
-                setFalse(popUp.texts[7].gameObject);
-                setFalse(popUp.texts[8].gameObject);
-            }
-            else
-            {
-                popUp.texts[8].text = Cost_str;
-            }
-
-            if (Sell_str == "" || Sell_str == null)
-            {
-                setFalse(popUp.texts[9].gameObject);
-                setFalse(popUp.texts[10].gameObject);
-            }
-            else
-            {
-                popUp.texts[10].text = Sell_str;
-            }
+            ChangeTextAdaptive(Name_str, popUp.texts[0], popUp.texts[0].gameObject);
+            ChangeTextAdaptive(Description_str, popUp.texts[1], popUp.texts[1].gameObject);
+            ChangeTextAdaptive(Max_Str, popUp.texts[2], popUp.texts[2].gameObject);
+            ChangeTextAdaptive(Need_str, popUp.texts[4], popUp.texts[3].gameObject, popUp.texts[4].gameObject);
+            ChangeTextAdaptive(Effect_str, popUp.texts[6], popUp.texts[5].gameObject, popUp.texts[6].gameObject);
+            ChangeTextAdaptive(Cost_str, popUp.texts[8], popUp.texts[7].gameObject, popUp.texts[8].gameObject);
+            ChangeTextAdaptive(Sell_str, popUp.texts[10], popUp.texts[9].gameObject, popUp.texts[10].gameObject);
         }
     }
 }
