@@ -88,53 +88,11 @@ public class INSTANT_ACTION : ACTION, INeed
             setFalse(popUp.texts[8].gameObject);
             setFalse(popUp.texts[9].gameObject);
 
-            if (Name_str == "" || Name_str == null)
-            {
-                setFalse(popUp.texts[0].gameObject);
-            }
-            else
-            {
-                popUp.texts[0].text = Name_str;
-            }
-
-            if (Description_str == "" || Description_str == null)
-            {
-                setFalse(popUp.texts[1].gameObject);
-            }
-            else
-            {
-                popUp.texts[1].text = Description_str;
-            }
-
-            if (Need_str == "" || Need_str == null)
-            {
-                setFalse(popUp.texts[2].gameObject);
-                setFalse(popUp.texts[3].gameObject);
-            }
-            else
-            {
-                popUp.texts[3].text = Need_str;
-            }
-
-            if (Cost_str == "" || Cost_str == null)
-            {
-                setFalse(popUp.texts[4].gameObject);
-                setFalse(popUp.texts[5].gameObject);
-            }
-            else
-            {
-                popUp.texts[5].text = Cost_str;
-            }
-
-            if (CompleteEffect_str == "" || CompleteEffect_str == null)
-            {
-                setFalse(popUp.texts[10].gameObject);
-                setFalse(popUp.texts[11].gameObject);
-            }
-            else
-            {
-                popUp.texts[11].text = CompleteEffect_str;
-            }
+            ChangeTextAdaptive(Name_str, popUp.texts[0], popUp.texts[0].gameObject);
+            ChangeTextAdaptive(Description_str, popUp.texts[1], popUp.texts[1].gameObject);
+            ChangeTextAdaptive(Need_str, popUp.texts[3], popUp.texts[2].gameObject, popUp.texts[3].gameObject);
+            ChangeTextAdaptive(Cost_str, popUp.texts[5], popUp.texts[4].gameObject, popUp.texts[5].gameObject);
+            ChangeTextAdaptive(CompleteEffect_str, popUp.texts[11], popUp.texts[10].gameObject, popUp.texts[11].gameObject);
         }
     }
 }

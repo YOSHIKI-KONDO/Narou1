@@ -127,73 +127,13 @@ public class DUNGEON : BASE {
             if (need.hasNeeds) { Need_str = need.Detail(); }
 
 
-            if (Name_str == "" || Name_str == null)
-            {
-                setFalse(popUp.texts[0].gameObject);
-            }
-            else
-            {
-                popUp.texts[0].text = Name_str;
-            }
-
-            if (Description_str == "" || Description_str == null)
-            {
-                setFalse(popUp.texts[1].gameObject);
-            }
-            else
-            {
-                popUp.texts[1].text = Description_str;
-            }
-
-            if (Need_str == "" || Need_str == null)
-            {
-                setFalse(popUp.texts[2].gameObject);
-                setFalse(popUp.texts[3].gameObject);
-            }
-            else
-            {
-                popUp.texts[3].text = Need_str;
-            }
-
-            if (Floor_str == "" || Floor_str == null)
-            {
-                setFalse(popUp.texts[4].gameObject);
-                setFalse(popUp.texts[5].gameObject);
-            }
-            else
-            {
-                popUp.texts[5].text = Floor_str;
-            }
-
-            if (ProgressCost_str == "" || ProgressCost_str == null)
-            {
-                setFalse(popUp.texts[6].gameObject);
-                setFalse(popUp.texts[7].gameObject);
-            }
-            else
-            {
-                popUp.texts[7].text = ProgressCost_str;
-            }
-
-            if (Drops_str == "" || Drops_str == null)
-            {
-                setFalse(popUp.texts[8].gameObject);
-                setFalse(popUp.texts[9].gameObject);
-            }
-            else
-            {
-                popUp.texts[9].text = Drops_str;
-            }
-
-            if (FirstDrops_str == "" || FirstDrops_str == null)
-            {
-                setFalse(popUp.texts[10].gameObject);
-                setFalse(popUp.texts[11].gameObject);
-            }
-            else
-            {
-                popUp.texts[11].text = FirstDrops_str;
-            }
+            ChangeTextAdaptive(Name_str, popUp.texts[0], popUp.texts[0].gameObject);
+            ChangeTextAdaptive(Description_str, popUp.texts[1], popUp.texts[1].gameObject);
+            ChangeTextAdaptive(Need_str, popUp.texts[3], popUp.texts[2].gameObject, popUp.texts[3].gameObject);
+            ChangeTextAdaptive(Floor_str, popUp.texts[5], popUp.texts[4].gameObject, popUp.texts[5].gameObject);
+            ChangeTextAdaptive(ProgressCost_str, popUp.texts[7], popUp.texts[6].gameObject, popUp.texts[7].gameObject);
+            ChangeTextAdaptive(Drops_str, popUp.texts[9], popUp.texts[8].gameObject, popUp.texts[9].gameObject);
+            ChangeTextAdaptive(FirstDrops_str, popUp.texts[10], popUp.texts[10].gameObject, popUp.texts[11].gameObject);
         }
     }
 }
