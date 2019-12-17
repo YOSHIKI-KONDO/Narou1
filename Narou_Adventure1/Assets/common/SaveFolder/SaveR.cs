@@ -70,4 +70,5 @@ public class SaveR
     public List<AllyKind> allyKinds = new List<AllyKind>();
     public int[] levels_Ally;
     public bool released_Norn;
+    public double[] exps_Ally;
 }

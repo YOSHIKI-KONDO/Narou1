@@ -30,7 +30,7 @@ public class SaveDeclare : BASE {
     [NonSerialized]
     public int num_skill = Enum.GetNames(typeof(SkillKind)).Length;
     [NonSerialized]
-    public int num_dungeon = Enum.GetNames(typeof(DungeonKind)).Length;
+    public int num_dungeon =  Enum.GetNames(typeof(DungeonKind)).Length;
     [NonSerialized]
     public int num_ally = Enum.GetNames(typeof(AllyKind)).Length;
     [NonSerialized]
@@ -96,6 +96,7 @@ public class SaveDeclare : BASE {
 
         /* Npc */
         InitializeArray(ref main.SR.levels_Ally, num_ally);
+        InitializeArray(ref main.SR.exps_Ally, num_ally);
     }
 
 	// Use this for initialization
