@@ -55,6 +55,12 @@ public class ProgressCtrl : BASE {
         ActivateProgress(restFunction);
     }
 
+    public void DontDoAnything()
+    {
+        DeactivateAll();
+        currentFunction = null;
+    }
+
     public void ActivatePrevious()
     {
         if (previousFunction == null) { return; }
@@ -95,6 +101,10 @@ public class ProgressCtrl : BASE {
         {
             text.text = currentFunction.actionName;
             text.text += "(" + (currentFunction.sliderValue * 100).ToString("F0") + "%)";
+        }
+        else
+        {
+            text.text = "None";
         }
     }
 }

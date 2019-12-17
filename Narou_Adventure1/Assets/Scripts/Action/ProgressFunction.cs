@@ -86,6 +86,11 @@ public class ProgressFunction : OnlyAction
             CurrentValue(0);
             HasPaid(false);
         }
+        //もしもいっぱいだったら 止まる
+        if (EffectIsCompleted(progressEffectList) && EffectIsCompleted(completeEffectList))
+        {
+            main.progressCtrl.DontDoAnything();
+        }
 
         ApplySlider(Max);
     }
@@ -93,8 +98,8 @@ public class ProgressFunction : OnlyAction
     public virtual void ApplySlider(double Max)
     {
         if (slider == null) { return; }
-        slider.value = (float)(CurrentValue() / Max);
-        sliderValue = slider.value;
+        sliderValue = (float)(CurrentValue() / Max);
+        slider.value = sliderValue;
     }
 
     protected virtual void CheckButton()

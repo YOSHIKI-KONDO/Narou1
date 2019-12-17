@@ -299,6 +299,32 @@ public class BASE : MonoBehaviour
         return sum_str;
     }
 
+    //List<Dealing>が全てリソースで、現在値を増やす場合で、かつ満タンの時にtrueを返す。
+    public bool EffectIsCompleted(List<Dealing> dealings)
+    {
+        bool isCompleted = true;
+        foreach (var deal in dealings)
+        {
+            if (deal is Temp_Regen_Deal || deal is Temp_TRate_Deal)
+            {
+                return false; //終わりということはありません
+            }
+            if(deal.rscKind is AbilityKind)
+            {
+                return false; //終わりということはありません
+            }
+            if(deal.rscKind is ResourceKind)
+            {
+                if((Dealing.R_ParaKind)deal.paraKind != Dealing.R_ParaKind.current) { continue; } //max, regenに終わりはない
+                if(main.rsc.Value[(int)(ResourceKind)deal.rscKind] < main.rsc.Max((int)(ResourceKind)deal.rscKind))
+                {
+                    isCompleted = false;
+                }
+            }
+        }
+        return isCompleted;
+    }
+
 
     public bool IsStatus(ResourceKind kind)
     {

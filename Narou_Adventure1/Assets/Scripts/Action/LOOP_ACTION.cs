@@ -98,10 +98,10 @@ public class LOOP_ACTION : ACTION, INeed {
             ChangeTextAdaptive(Name_str, popUp.texts[0], popUp.texts[0].gameObject);
             ChangeTextAdaptive(Description_str, popUp.texts[1], popUp.texts[1].gameObject);
             ChangeTextAdaptive(Need_str, popUp.texts[3], popUp.texts[2].gameObject, popUp.texts[3].gameObject);
-            ChangeTextAdaptive(Need_str, popUp.texts[5], popUp.texts[4].gameObject, popUp.texts[5].gameObject);
-            ChangeTextAdaptive(Need_str, popUp.texts[7], popUp.texts[6].gameObject, popUp.texts[7].gameObject);
-            ChangeTextAdaptive(Need_str, popUp.texts[9], popUp.texts[8].gameObject, popUp.texts[9].gameObject);
-            ChangeTextAdaptive(Need_str, popUp.texts[11], popUp.texts[10].gameObject, popUp.texts[11].gameObject);
+            ChangeTextAdaptive(Cost_str, popUp.texts[5], popUp.texts[4].gameObject, popUp.texts[5].gameObject);
+            ChangeTextAdaptive(ProgressCost_str, popUp.texts[7], popUp.texts[6].gameObject, popUp.texts[7].gameObject);
+            ChangeTextAdaptive(ProgressEffect_str, popUp.texts[9], popUp.texts[8].gameObject, popUp.texts[9].gameObject);
+            ChangeTextAdaptive(CompleteEffect_str, popUp.texts[11], popUp.texts[10].gameObject, popUp.texts[11].gameObject);
         }
     }
 }
