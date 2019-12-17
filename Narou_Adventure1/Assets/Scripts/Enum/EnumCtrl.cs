@@ -51,6 +51,7 @@ public class EnumCtrl : BASE {
     public List<template> enemys = new List<template>();
     public List<template> dungeons = new List<template>();
     public List<template> allys = new List<template>();
+    public List<template> attributes = new List<template>();
 
     // Use this for initialization
     void Awake () {
@@ -481,6 +482,11 @@ public class EnumCtrl : BASE {
         allys.Add(new template(AllyKind.npcA, "Norn", "ノルン", "nothing", "nothing"));
         allys.Add(new template(AllyKind.npcB, "Stela", "ステラ", "nothing", "nothing"));
         allys.Add(new template(AllyKind.npcB, "Kashima", "鹿島", "nothing", "nothing"));
+
+        /* スキルの属性 */
+        attributes.Add(new template(AttributeKind.nothing, "nothing", "nothing", "nothing", "nothing"));
+        attributes.Add(new template(AttributeKind.fireMagic, "Fire Magic", "火炎魔法", "nothing", "nothing"));
+        attributes.Add(new template(AttributeKind.waterSword, "Water Sword", "火炎斬り", "nothing", "nothing"));
 
         //テスト
         TestAll();
