@@ -61,8 +61,8 @@ public class StatusCtrl : BASE {
         heroCmps.txt_Value_Attack.text = Attack.ToString();
         heroCmps.txt_Value_MAttack.text = MagicAttack.ToString();
         heroCmps.txt_Value_Defense.text = Defense.ToString();
-        heroCmps.txt_Value_Dodge.text = DodgeChance.ToString();
-        heroCmps.txt_Value_CriticalC.text = CriticalChance.ToString();
+        heroCmps.txt_Value_Dodge.text = DodgeChance.ToString("F1") + "%";
+        heroCmps.txt_Value_CriticalC.text = CriticalChance.ToString("F1") + "%";
 
         //Norn
         nornCmps.txt_Name_Level.text = "Level";
@@ -86,8 +86,8 @@ public class StatusCtrl : BASE {
         nornCmps.txt_Value_Attack.text = main.npcSkillCtrl.npcs[(int)AllyKind.npcA].Attack.ToString();
         nornCmps.txt_Value_MAttack.text = main.npcSkillCtrl.npcs[(int)AllyKind.npcA].MagicAttack.ToString();
         nornCmps.txt_Value_Defense.text = main.npcSkillCtrl.npcs[(int)AllyKind.npcA].Defense.ToString();
-        nornCmps.txt_Value_Dodge.text = main.npcSkillCtrl.npcs[(int)AllyKind.npcA].DodgeChance.ToString();
-        nornCmps.txt_Value_CriticalC.text = main.npcSkillCtrl.npcs[(int)AllyKind.npcA].CriticalChance.ToString();
+        nornCmps.txt_Value_Dodge.text = main.npcSkillCtrl.npcs[(int)AllyKind.npcA].DodgeChance.ToString("F1") + "%";
+        nornCmps.txt_Value_CriticalC.text = main.npcSkillCtrl.npcs[(int)AllyKind.npcA].CriticalChance.ToString("F1") + "%";
 
     }
 

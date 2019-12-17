@@ -128,10 +128,18 @@ public class BattleAndSkillCtrl : BASE {
 
                     if (dunKind != DungeonKind.nothing)
                     {
+                        //会心攻撃かどうか
+                        double criticalFactor = 1f;
+                        string criticalSentense = "";
+                        if(UnityEngine.Random.Range(0f,100f) < main.status.CriticalChance)
+                        {
+                            criticalFactor *= main.status.CriticalFactor;
+                            criticalSentense = " (Critical)";
+                        }
                         //剣士系の攻撃
-                        AttackToEnemys(skills[(int)thisKind].WarriorDamage() * main.status.Attack, "You");
+                        AttackToEnemys(skills[(int)thisKind].WarriorDamage() * main.status.Attack * criticalFactor, "You", criticalSentense);
                         //魔法系の攻撃
-                        AttackToEnemys(skills[(int)thisKind].SorcererDamage() * main.status.MagicAttack, "You");
+                        AttackToEnemys(skills[(int)thisKind].SorcererDamage() * main.status.MagicAttack * criticalFactor, "You", criticalSentense);
                     }
 
                     skills[(int)thisKind].casted = true;
@@ -169,8 +177,18 @@ public class BattleAndSkillCtrl : BASE {
             SKILL thisSkill = main.npcSkillCtrl.npcs[i].Cast();
             if (thisSkill != null && dunKind != DungeonKind.nothing)
             {
-                AttackToEnemys(thisSkill.WarriorDamage() * main.npcSkillCtrl.npcs[i].Attack, main.enumCtrl.allys[i].Name());
-                AttackToEnemys(thisSkill.SorcererDamage() * main.npcSkillCtrl.npcs[i].MagicAttack, main.enumCtrl.allys[i].Name());
+                //会心攻撃かどうか
+                double criticalFactor = 1f;
+                string criticalSentense = "";
+                if (UnityEngine.Random.Range(0f, 100f) < main.npcSkillCtrl.npcs[i].CriticalChance)
+                {
+                    criticalFactor *= main.npcSkillCtrl.npcs[i].CriticalFactor;
+                    criticalSentense = " (Critical)";
+                }
+                AttackToEnemys(thisSkill.WarriorDamage() * main.npcSkillCtrl.npcs[i].Attack * criticalFactor
+                    , main.enumCtrl.allys[i].Name(), criticalSentense);
+                AttackToEnemys(thisSkill.SorcererDamage() * main.npcSkillCtrl.npcs[i].MagicAttack * criticalFactor
+                    , main.enumCtrl.allys[i].Name(), criticalSentense);
                 thisSkill.Produce();
                 main.announce_d.Add(main.enumCtrl.allys[i].Name() + " casted " + main.enumCtrl.skills[(int)thisSkill.kind].Name());
             }
@@ -516,23 +534,44 @@ public class BattleAndSkillCtrl : BASE {
                 {
                     //プレイヤーだったら
                     var cal_dmg = CalDmg(currentEnemys[i].attack, main.status.Defense);
-                    main.rsc.Value[(int)ResourceKind.hp] -= cal_dmg;
-                    main.announce_d.Add(main.enumCtrl.enemys[i].Name() + " has attacked you for " + tDigit(cal_dmg) + " damages");
+                    //避けるか判定
+                    if (UnityEngine.Random.Range(0f, 100f) < main.status.DodgeChance)
+                    {
+                        //避けた
+                        main.announce_d.Add("You dodged " + main.enumCtrl.enemys[i].Name() + "'s attack");
+                    }
+                    else
+                    {
+                        //当たった
+                        main.rsc.Value[(int)ResourceKind.hp] -= cal_dmg;
+                        main.announce_d.Add(main.enumCtrl.enemys[i].Name() + " has attacked you for " + tDigit(cal_dmg) + " damages");
+                    }
                 }
                 else
                 {
                     //味方だったら
                     AllyKind target_npc = main.npcSkillCtrl.LivingAlly(target);
-                    var cal_dmg = CalDmg(currentEnemys[i].attack, main.npcSkillCtrl.npcs[(int)target_npc].Defense);
-                    main.npcSkillCtrl.npcs[(int)target_npc].currentHp -= cal_dmg;
-                    main.announce_d.Add(main.enumCtrl.enemys[i].Name() + " has attacked " + main.enumCtrl.allys[(int)target_npc].Name() + " for " + tDigit(cal_dmg) + " damages");
-                    //やられたらcanFightから外す
-                    if (main.npcSkillCtrl.npcs[(int)target_npc].currentHp <= 0)
+                    //避けるか判定
+                    if (UnityEngine.Random.Range(0f, 100f) < main.npcSkillCtrl.npcs[(int)target_npc].DodgeChance)
                     {
-                        main.npcSkillCtrl.npcs[(int)target_npc].currentHp = 0;
-                        main.npcSkillCtrl.npcs[(int)target_npc].isDead = true;
-                        main.announce_d.Add(main.enumCtrl.allys[(int)target_npc].Name() + " has been defeated");
-                        //main.npcSkillCtrl.LeaveFight(main.npcSkillCtrl.canFightAllys[target -1 ]);
+                        //避けた
+                        main.announce_d.Add(main.enumCtrl.allys[(int)target_npc].Name()  + " dodged "
+                            + main.enumCtrl.enemys[i].Name() + "'s attack");
+                    }
+                    else
+                    {
+                        //当たった
+                        var cal_dmg = CalDmg(currentEnemys[i].attack, main.npcSkillCtrl.npcs[(int)target_npc].Defense);
+                        main.npcSkillCtrl.npcs[(int)target_npc].currentHp -= cal_dmg;
+                        main.announce_d.Add(main.enumCtrl.enemys[i].Name() + " has attacked " + main.enumCtrl.allys[(int)target_npc].Name() + " for " + tDigit(cal_dmg) + " damages");
+                        //やられたらcanFightから外す
+                        if (main.npcSkillCtrl.npcs[(int)target_npc].currentHp <= 0)
+                        {
+                            main.npcSkillCtrl.npcs[(int)target_npc].currentHp = 0;
+                            main.npcSkillCtrl.npcs[(int)target_npc].isDead = true;
+                            main.announce_d.Add(main.enumCtrl.allys[(int)target_npc].Name() + " has been defeated");
+                            //main.npcSkillCtrl.LeaveFight(main.npcSkillCtrl.canFightAllys[target -1 ]);
+                        }
                     }
                 }
                 currentEnemys[i].currentInterval = 0;
@@ -586,7 +625,7 @@ public class BattleAndSkillCtrl : BASE {
     }
 
     //PlaySkillsで呼ばれる
-    void AttackToEnemys(double dmg, string actor = "")
+    void AttackToEnemys(double dmg, string actor = "", string lastSentense = "")
     {
         if (currentEnemys.Count == 0) { return; }
         int target = UnityEngine.Random.Range(0, currentEnemys.Count); //ランダムな敵にダメージ
@@ -594,7 +633,7 @@ public class BattleAndSkillCtrl : BASE {
         currentEnemys[target].currentHp -= cal_dmg;
         if(actor != "")
         {
-            main.announce_d.Add(actor + " has attacked " + main.enumCtrl.enemys[target].Name() + " for " + tDigit(cal_dmg) + " damages");
+            main.announce_d.Add(actor + " has attacked " + main.enumCtrl.enemys[target].Name() + " for " + tDigit(cal_dmg) + " damages" + lastSentense);
         }
     }
 
