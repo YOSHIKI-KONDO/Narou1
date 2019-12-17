@@ -27,6 +27,7 @@ public class SKILL : BASE, INeed
     {
         return (float)(currentValue / Duration());
     }
+    public List<AttributeKind> attributes = new List<AttributeKind>(); //属性
     public List<Dealing> useCosts = new List<Dealing>();
     public List<Dealing> useEffects = new List<Dealing>();
     public List<WarriorAttack> warriorAtks = new List<WarriorAttack>();//剣士攻撃
@@ -171,14 +172,25 @@ public class SKILL : BASE, INeed
         }
     }
 
+    string AttributeDetail()
+    {
+        string sum = "";
+        foreach (var attribute in attributes)
+        {
+            if (sum != "") { sum += ", "; }
+            sum += main.enumCtrl.attributes[(int)attribute].Name();
+        }
+        return sum;
+    }
+
     void ApplyPopUp()
     {
         //自動でコストの文章を生成
         Name_str = main.enumCtrl.skills[(int)kind].Name();
         if (popUp.gameObject.activeSelf)
         {
-            //自動でコストの文章を生成
-            Description_str = main.enumCtrl.skills[(int)kind].Description();
+            //とりあえず今はdescriptionの部分に追加する
+            Description_str = AttributeDetail();//Description_str = main.enumCtrl.skills[(int)kind].Description();
             LearnCost_str = learnF.ProgressDetail(learnF.initCostList);
             UseCost_str = ProgressDetail(useCosts);
             UseEffect_str = WarriorDetail();

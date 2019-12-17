@@ -137,9 +137,9 @@ public class BattleAndSkillCtrl : BASE {
                             criticalSentense = " (Critical)";
                         }
                         //剣士系の攻撃
-                        AttackToEnemys(skills[(int)thisKind].WarriorDamage() * main.status.Attack * criticalFactor, "You", criticalSentense);
+                        AttackToEnemys(thisKind, skills[(int)thisKind].WarriorDamage() * main.status.Attack * criticalFactor, "You", criticalSentense);
                         //魔法系の攻撃
-                        AttackToEnemys(skills[(int)thisKind].SorcererDamage() * main.status.MagicAttack * criticalFactor, "You", criticalSentense);
+                        AttackToEnemys(thisKind, skills[(int)thisKind].SorcererDamage() * main.status.MagicAttack * criticalFactor, "You", criticalSentense);
                     }
 
                     skills[(int)thisKind].casted = true;
@@ -185,9 +185,9 @@ public class BattleAndSkillCtrl : BASE {
                     criticalFactor *= main.npcSkillCtrl.npcs[i].CriticalFactor;
                     criticalSentense = " (Critical)";
                 }
-                AttackToEnemys(thisSkill.WarriorDamage() * main.npcSkillCtrl.npcs[i].Attack * criticalFactor
+                AttackToEnemys(thisSkill.kind, thisSkill.WarriorDamage() * main.npcSkillCtrl.npcs[i].Attack * criticalFactor
                     , main.enumCtrl.allys[i].Name(), criticalSentense);
-                AttackToEnemys(thisSkill.SorcererDamage() * main.npcSkillCtrl.npcs[i].MagicAttack * criticalFactor
+                AttackToEnemys(thisSkill.kind, thisSkill.SorcererDamage() * main.npcSkillCtrl.npcs[i].MagicAttack * criticalFactor
                     , main.enumCtrl.allys[i].Name(), criticalSentense);
                 thisSkill.Produce();
                 main.announce_d.Add(main.enumCtrl.allys[i].Name() + " casted " + main.enumCtrl.skills[(int)thisSkill.kind].Name());
@@ -331,7 +331,7 @@ public class BattleAndSkillCtrl : BASE {
                     //乱数を生成してヒットしたらドロップ
                     if(UnityEngine.Random.Range(0f,100f) < currentEnemys[i].drops[i_d].probability)
                     {
-                        if(i_d == 0)
+                        if (i_d == 0)
                         {
                             //味方がいるときは経験値を分ける
                             currentEnemys[i].drops[0].amount /= (main.npcSkillCtrl.allyKinds.Count + 1);
@@ -344,35 +344,129 @@ public class BattleAndSkillCtrl : BASE {
                                 main.announce_d.Add("LOOT [" + main.enumCtrl.enemys[(int)currentEnemys[i].kind].Name() + "] : "
                                     + main.enumCtrl.allys[(int)npc_kind].Name() + " gained "
                                     + main.enumCtrl.resources[(int)currentEnemys[i].drops[i_d].kind].Name() + " + "
-                                    + tDigit(currentEnemys[i].drops[i_d].amount)); 
+                                    + tDigit(currentEnemys[i].drops[i_d].amount));
                             }
                             //自分(普通のドロップの書き方と同じ)
-                            main.rsc.Value[(int)currentEnemys[i].drops[i_d].kind] += currentEnemys[i].drops[i_d].amount;
-                            //Announce
-                            main.announce_d.Add("LOOT [" + main.enumCtrl.enemys[(int)currentEnemys[i].kind].Name() + "] : " + main.enumCtrl.resources[(int)currentEnemys[i].drops[i_d].kind].Name() + " + " +
-                            tDigit(currentEnemys[i].drops[i_d].amount)); 
+                            //main.rsc.Value[(int)currentEnemys[i].drops[i_d].kind] += currentEnemys[i].drops[i_d].amount;
+                            ////Announce
+                            //main.announce_d.Add("LOOT [" + main.enumCtrl.enemys[(int)currentEnemys[i].kind].Name() + "] : " + main.enumCtrl.resources[(int)currentEnemys[i].drops[i_d].kind].Name() + " + " +
+                            //tDigit(currentEnemys[i].drops[i_d].amount));
+                            GetDrops(currentEnemys[i], currentEnemys[i].drops[i_d]);
 
                             continue; //※
                         }
-                        //もしもアイテムだったら
-                        if (currentEnemys[i].drops[i_d] is Item_Drop)
-                        {
-                            bool couldGet = main.itemCtrl.Drop_Inventory(((currentEnemys[i].drops[i_d] as Item_Drop).itemKind));
-                            string additive = couldGet ? "" : " (but Inventory is full)";
-                            main.announce_d.Add("LOOT [" + main.enumCtrl.enemys[(int)currentEnemys[i].kind].Name() + "] : "
-                                + main.enumCtrl.items[(int)(currentEnemys[i].drops[i_d] as Item_Drop).itemKind].Name()
-                                + additive); 
-                        }
                         else
                         {
-                            main.announce_d.Add("LOOT [" + main.enumCtrl.enemys[(int)currentEnemys[i].kind].Name() + "] : " + main.enumCtrl.resources[(int)currentEnemys[i].drops[i_d].kind].Name() + " + " +
-                                tDigit(currentEnemys[i].drops[i_d].amount));
-                            main.rsc.Value[(int)currentEnemys[i].drops[i_d].kind] += currentEnemys[i].drops[i_d].amount;
+                            GetDrops(currentEnemys[i], currentEnemys[i].drops[i_d]);
                         }
+                        ////もしもアイテムだったら
+                        //if (currentEnemys[i].drops[i_d] is Item_Drop)
+                        //{
+                        //    bool couldGet = main.itemCtrl.Drop_Inventory(((currentEnemys[i].drops[i_d] as Item_Drop).itemKind));
+                        //    string additive = couldGet ? "" : " (but Inventory is full)";
+                        //    main.announce_d.Add("LOOT [" + main.enumCtrl.enemys[(int)currentEnemys[i].kind].Name() + "] : "
+                        //        + main.enumCtrl.items[(int)(currentEnemys[i].drops[i_d] as Item_Drop).itemKind].Name()
+                        //        + additive);
+
+                        //    //特殊な報酬
+                        //}
+                        //else
+                        //{
+                        //    switch (currentEnemys[i].drops[i_d].dropKind)
+                        //    {
+                        //        case Drop.DropKind.normal://普通の報酬
+                        //            GetResourceDrops(currentEnemys[i], currentEnemys[i].drops[i_d]);
+                        //            break;
+
+                        //        case Drop.DropKind.oneShot://一撃の報酬
+                        //            if (currentEnemys[i].match_oneShot == false) { break; }
+                        //            GetResourceDrops(currentEnemys[i], currentEnemys[i].drops[i_d]);
+
+                        //            break;
+                        //        case Drop.DropKind.skill_and://特定のスキルで倒された場合の報酬(AND)
+                        //            if (currentEnemys[i].match_skill_AND == false) { break; }
+                        //            GetResourceDrops(currentEnemys[i], currentEnemys[i].drops[i_d]);
+                        //            break;
+
+                        //        case Drop.DropKind.skill_or://特定のスキルで倒された場合の報酬(OR)
+                        //            if (currentEnemys[i].match_skill_OR == false) { break; }
+                        //            GetResourceDrops(currentEnemys[i], currentEnemys[i].drops[i_d]);
+                        //            break;
+
+                        //        case Drop.DropKind.attribute_and://属性の報酬(AND)
+                        //            if (currentEnemys[i].match_atr_AND == false) { break; }
+                        //            GetResourceDrops(currentEnemys[i], currentEnemys[i].drops[i_d]);
+                        //            break;
+
+                        //        case Drop.DropKind.attribute_or://属性の報酬(OR)
+                        //            if (currentEnemys[i].match_atr_OR == false) { break; }
+                        //            GetResourceDrops(currentEnemys[i], currentEnemys[i].drops[i_d]);
+                        //            break;
+
+                        //        default:
+                        //            break;
+                        //    }
+                        //}
                     }
                 }
                 currentEnemys.Remove(currentEnemys[i]);
             }
+        }
+
+        //報酬を入手する関数
+        void GetDrops(InnerEnemy innerEnemy, Drop drop)
+        {
+            switch (drop.dropKind)
+            {
+                case Drop.DropKind.normal://普通の報酬
+                    GetResourceDrops(innerEnemy, drop);
+                    break;
+
+                case Drop.DropKind.oneShot://一撃の報酬
+                    if (innerEnemy.match_oneShot == false) { break; }
+                    GetResourceDrops(innerEnemy, drop);
+
+                    break;
+                case Drop.DropKind.skill_and://特定のスキルで倒された場合の報酬(AND)
+                    if (innerEnemy.match_skill_AND == false) { break; }
+                    GetResourceDrops(innerEnemy, drop);
+                    break;
+
+                case Drop.DropKind.skill_or://特定のスキルで倒された場合の報酬(OR)
+                    if (innerEnemy.match_skill_OR == false) { break; }
+                    GetResourceDrops(innerEnemy, drop);
+                    break;
+
+                case Drop.DropKind.attribute_and://属性の報酬(AND)
+                    if (innerEnemy.match_atr_AND == false) { break; }
+                    GetResourceDrops(innerEnemy, drop);
+                    break;
+
+                case Drop.DropKind.attribute_or://属性の報酬(OR)
+                    if (innerEnemy.match_atr_OR == false) { break; }
+                    GetResourceDrops(innerEnemy, drop);
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        //リソースの報酬を入手する関数
+        void GetResourceDrops(InnerEnemy innerEnemy, Drop drop)
+        {
+            if (drop is Item_Drop)
+            {
+                bool couldGet = main.itemCtrl.Drop_Inventory(((drop as Item_Drop).itemKind));
+                string additive = couldGet ? "" : " (but Inventory is full)";
+                main.announce_d.Add("LOOT [" + main.enumCtrl.enemys[(int)innerEnemy.kind].Name() + "] : "
+                    + main.enumCtrl.items[(int)(drop as Item_Drop).itemKind].Name()
+                    + additive);
+            }
+
+            main.announce_d.Add("LOOT [" + main.enumCtrl.enemys[(int)innerEnemy.kind].Name() + "] : " + main.enumCtrl.resources[(int)drop.kind].Name() + " + " +
+                                tDigit(drop.amount));
+            main.rsc.Value[(int)drop.kind] += drop.amount;
         }
 
 
@@ -625,17 +719,67 @@ public class BattleAndSkillCtrl : BASE {
     }
 
     //PlaySkillsで呼ばれる
-    void AttackToEnemys(double dmg, string actor = "", string lastSentense = "")
+    void AttackToEnemys(SkillKind attackSkillKind, double dmg, string actor = "", string lastSentense = "")
     {
         if (currentEnemys.Count == 0) { return; }
         int target = UnityEngine.Random.Range(0, currentEnemys.Count); //ランダムな敵にダメージ
         var cal_dmg = CalDmg(dmg, currentEnemys[target].defense);
         currentEnemys[target].currentHp -= cal_dmg;
+        //特定の倒し方のフラグを変更
+        //一撃
+        if(currentEnemys[target].hasAttacked == false && currentEnemys[target].currentHp <= 0)
+        {
+            currentEnemys[target].match_oneShot = true;
+        }
+        currentEnemys[target].hasAttacked = true;
+
+        //特定のスキル、属性
+        foreach (var drop in currentEnemys[target].drops)
+        {
+            switch (drop.dropKind)
+            {
+                case Drop.DropKind.skill_and:
+                    if (drop.skill_AND != attackSkillKind)
+                    {
+                        currentEnemys[target].match_skill_AND = false;
+                    }
+                    break;
+                case Drop.DropKind.skill_or:
+                    if (drop.skill_OR == attackSkillKind)
+                    {
+                        currentEnemys[target].match_skill_OR = true;
+                    }
+                    break;
+                case Drop.DropKind.attribute_and:
+                    foreach (var attribute in skills[(int)attackSkillKind].attributes)
+                    {
+                        if (attribute != drop.attributes_AND)
+                        {
+                            currentEnemys[target].match_atr_AND = false;
+                        }
+                    }
+                    break;
+                case Drop.DropKind.attribute_or:
+                    foreach (var attribute in skills[(int)attackSkillKind].attributes)
+                    {
+                        if (attribute == drop.attributes_OR)
+                        {
+                            currentEnemys[target].match_atr_OR = true;
+                        }
+                    }
+                    break;
+                default:
+                    break;
+            }
+            
+        }
+
         if(actor != "")
         {
             main.announce_d.Add(actor + " has attacked " + main.enumCtrl.enemys[target].Name() + " for " + tDigit(cal_dmg) + " damages" + lastSentense);
         }
     }
+
 
     void TestEnemys()
     {

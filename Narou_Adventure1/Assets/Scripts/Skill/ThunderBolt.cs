@@ -18,6 +18,8 @@ public class ThunderBolt : SKILL {
         useEffects.Add(new Temp_TRate_Deal(AbilityKind.advanced_battleaxe, 10, 10));
         warriorAtks.Add(new WarriorAttack(10));
         sorcererAtks.Add(new SorcererAttack(2));
+
+        attributes.Add(AttributeKind.fireMagic);
     }
 
 	// Use this for initialization
