@@ -17,6 +17,9 @@ public class Meteor : SKILL
         useEffects.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 10));
         warriorAtks.Add(new WarriorAttack(10));
         sorcererAtks.Add(new SorcererAttack(5));
+
+        attributes.Add(AttributeKind.fireMagic);    //add
+        attributes.Add(AttributeKind.waterSword);   //add
     }
 
     // Use this for initialization

@@ -898,6 +898,15 @@ public class UsefulMethod : MonoBehaviour
         }
     }
 
+    //必要な時にのみ初期化する関数。軽量化用
+    public static void InitializeList<T>(ref List<T> list)
+    {
+        if (list == null)
+        {
+            list = new List<T>();
+        }
+    }
+
     // Use this for initialization
     void Start()
     {
