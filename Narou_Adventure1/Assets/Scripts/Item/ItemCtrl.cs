@@ -18,10 +18,12 @@ using static UsefulMethod;
 /// </summary>
 [DefaultExecutionOrder(-1)]
 public class ItemCtrl : BASE {
-    public int currentNum_I;
-    public int maxNum_I;
-    public int currentNum_E;
-    public int maxNum_E;
+    public int currentNum_I;                                    //現在使用しているインベントリの数
+    public int maxNum_I;                                        //インベントリの最大の数
+    public int currentNum_E;                                    //現在使用している装備の数
+    public int maxNum_E;                                        //装備の最大の数
+    public int RestNum_I { get => maxNum_I - currentNum_I; }    //インベントリの残りの数
+    public int RestNum_E { get => maxNum_E - currentNum_E; }    //装備の残りの数
     public ITEM[] items;
     public Item_Inventory[] inventorys;
     public Item_Equip[] equips;
@@ -219,8 +221,10 @@ public class ItemCtrl : BASE {
     /* bool関数
        1.CanGetInventory 2.CanGetEquipを用いて
        1.CanBuy 2.CanRemove 3.CanEquipを作っている
-       (Sellは別)*/
-    private bool CanGetInventory(ItemKind kind)
+       (Sellは別)
+       CanGetInventoryをDealingの判定にも使う
+         */
+    public bool CanGetInventory(ItemKind kind)
     {
         //残りの数
         if ((maxNum_I - currentNum_I) < items[(int)kind].size)
@@ -357,6 +361,7 @@ public class ItemCtrl : BASE {
     /// <summary>
     /// インベントリーが空いていたら入手してtrueを返す。
     /// 空いていなければfalseを返す。
+    /// (Dealingでも一箇所のみ使う)
     /// </summary>
     public bool Drop_Inventory(ItemKind kind)
     {

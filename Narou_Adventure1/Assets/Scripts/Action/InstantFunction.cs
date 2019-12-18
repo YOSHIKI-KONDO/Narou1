@@ -62,7 +62,7 @@ public class InstantFunction : BASE
     void CheckButton()
     {
         bool condition = Need == null || Need();
-        if (condition && (CanPurchase(initCostList)))
+        if (condition && (CanPurchase(initCostList) && !EffectIsCompleted(completeEffectList)))
         {
             button.interactable = true;
         }
