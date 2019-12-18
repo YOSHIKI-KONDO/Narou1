@@ -15,9 +15,9 @@ public class ProgressFunction : OnlyAction
 {
     public delegate bool Condition();
     public Condition Need;
-    public delegate bool BoolSync(bool? x = null);
+    //public delegate bool BoolSync(bool? x = null);
     public BoolSync HasPaid;
-    public delegate double DoubleSync(double? x = null);
+    //public delegate double DoubleSync(double? x = null);
     public DoubleSync CurrentValue;
     public Action CompleteAction;
     public Action CompleteActionForSub; //サブクラスのためのcompleteアクション
@@ -33,9 +33,9 @@ public class ProgressFunction : OnlyAction
     /// 初期設定。Obj以外は、無ければnullでいい。
     /// ObjにはgameObjectを入れる。
     /// </summary>
-    public virtual void StartProgress(GameObject Obj, Condition Need, Slider slider, BoolSync hasPaid, DoubleSync currentValue, string actionName)
+    public virtual void StartProgress(GameObject Obj, Condition Need, Slider slider, BoolSync hasPaid, DoubleSync currentValue, BoolSync watched, string actionName)
     {
-        AwakeOnlyAction(Obj.GetComponent<Button>(), actionName);
+        AwakeOnlyAction(Obj.GetComponent<Button>(), actionName, watched);
         this.Need = Need;
         this.slider = slider;
         HasPaid = hasPaid;
@@ -87,7 +87,7 @@ public class ProgressFunction : OnlyAction
             HasPaid(false);
         }
         //もしもいっぱいだったら 止まる
-        if (EffectIsCompleted(progressEffectList) && EffectIsCompleted(completeEffectList))
+        if (EffectIsCompleted(progressEffectList) && EffectIsCompleted(completeEffectList) && this != main.progressCtrl.restFunction)
         {
             main.progressCtrl.DontDoAnything();
         }

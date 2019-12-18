@@ -11,7 +11,8 @@ public class DemonicCellar : DUNGEON
 {
     public override bool Requires()
     {
-        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.pick_flowers] >= 1;
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.norns_room] >= 1 &
+               main.SR.clearNum_Dungeon[(int)DungeonKind.hoarding_house] >= 1;
     }
 
     // Use this for initialization

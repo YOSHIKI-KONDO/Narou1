@@ -11,7 +11,7 @@ public class Moor : DUNGEON
 {
     public override bool Requires()
     {
-        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.pick_flowers] >= 1;
+        return main.SR.clearNum_Dungeon[(int)DungeonKind.oak_forest] >= 1;
     }
 
     // Use this for initialization

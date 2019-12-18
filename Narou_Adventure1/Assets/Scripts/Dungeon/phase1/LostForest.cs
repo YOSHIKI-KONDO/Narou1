@@ -11,7 +11,7 @@ public class LostForest : DUNGEON
 {
     public override bool Requires()
     {
-        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.pick_flowers] >= 1;
+        return main.SR.clearNum_Dungeon[(int)DungeonKind.plain] >= 1;
     }
 
     // Use this for initialization

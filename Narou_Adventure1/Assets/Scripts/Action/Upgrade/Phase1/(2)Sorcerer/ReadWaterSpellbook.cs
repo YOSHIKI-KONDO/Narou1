@@ -11,6 +11,10 @@ public class ReadWaterSpellbook : UPGRADE_ACTION
     {
         return main.rsc.Max( (int)ResourceKind.mp) >= 5;
     }
+    public override bool CompleteCondition()
+    {
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.academic_city] >= 1;
+    }
 
     // Use this for initialization
     void Awake () {

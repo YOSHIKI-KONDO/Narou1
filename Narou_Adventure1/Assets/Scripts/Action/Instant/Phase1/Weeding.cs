@@ -12,6 +12,10 @@ public class Weeding : INSTANT_ACTION
         return main.rsc.Value[(int)ResourceKind.research] >= 5 &&
                main.rsc.Value[(int)ResourceKind.mp] >= 1;
     }
+    public override bool CompleteCondition()
+    {
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.academic_city] >= 1;
+    }
 
     // Use this for initialization
     void Awake()

@@ -11,6 +11,10 @@ public class LearnUseTools : UPGRADE_ACTION
     {
         return main.rsc.Value[(int)ResourceKind.research] >= 3;
     }
+    public override bool CompleteCondition()
+    {
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.academic_city] >= 1;
+    }
 
     // Use this for initialization
     void Awake () {

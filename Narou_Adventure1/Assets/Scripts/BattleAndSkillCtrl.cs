@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UsefulMethod;
 using UnityEngine.UI;
+using UnityEngine.Analytics;
 
 /// <summary>
 /// slotKinds  　　...２次元配列で、現在のスロットに格納されているスキルを格納している。
@@ -347,10 +348,6 @@ public class BattleAndSkillCtrl : BASE {
                                     + tDigit(currentEnemys[i].drops[i_d].amount));
                             }
                             //自分(普通のドロップの書き方と同じ)
-                            //main.rsc.Value[(int)currentEnemys[i].drops[i_d].kind] += currentEnemys[i].drops[i_d].amount;
-                            ////Announce
-                            //main.announce_d.Add("LOOT [" + main.enumCtrl.enemys[(int)currentEnemys[i].kind].Name() + "] : " + main.enumCtrl.resources[(int)currentEnemys[i].drops[i_d].kind].Name() + " + " +
-                            //tDigit(currentEnemys[i].drops[i_d].amount));
                             GetDrops(currentEnemys[i], currentEnemys[i].drops[i_d]);
 
                             continue; //※
@@ -359,54 +356,6 @@ public class BattleAndSkillCtrl : BASE {
                         {
                             GetDrops(currentEnemys[i], currentEnemys[i].drops[i_d]);
                         }
-                        ////もしもアイテムだったら
-                        //if (currentEnemys[i].drops[i_d] is Item_Drop)
-                        //{
-                        //    bool couldGet = main.itemCtrl.Drop_Inventory(((currentEnemys[i].drops[i_d] as Item_Drop).itemKind));
-                        //    string additive = couldGet ? "" : " (but Inventory is full)";
-                        //    main.announce_d.Add("LOOT [" + main.enumCtrl.enemys[(int)currentEnemys[i].kind].Name() + "] : "
-                        //        + main.enumCtrl.items[(int)(currentEnemys[i].drops[i_d] as Item_Drop).itemKind].Name()
-                        //        + additive);
-
-                        //    //特殊な報酬
-                        //}
-                        //else
-                        //{
-                        //    switch (currentEnemys[i].drops[i_d].dropKind)
-                        //    {
-                        //        case Drop.DropKind.normal://普通の報酬
-                        //            GetResourceDrops(currentEnemys[i], currentEnemys[i].drops[i_d]);
-                        //            break;
-
-                        //        case Drop.DropKind.oneShot://一撃の報酬
-                        //            if (currentEnemys[i].match_oneShot == false) { break; }
-                        //            GetResourceDrops(currentEnemys[i], currentEnemys[i].drops[i_d]);
-
-                        //            break;
-                        //        case Drop.DropKind.skill_and://特定のスキルで倒された場合の報酬(AND)
-                        //            if (currentEnemys[i].match_skill_AND == false) { break; }
-                        //            GetResourceDrops(currentEnemys[i], currentEnemys[i].drops[i_d]);
-                        //            break;
-
-                        //        case Drop.DropKind.skill_or://特定のスキルで倒された場合の報酬(OR)
-                        //            if (currentEnemys[i].match_skill_OR == false) { break; }
-                        //            GetResourceDrops(currentEnemys[i], currentEnemys[i].drops[i_d]);
-                        //            break;
-
-                        //        case Drop.DropKind.attribute_and://属性の報酬(AND)
-                        //            if (currentEnemys[i].match_atr_AND == false) { break; }
-                        //            GetResourceDrops(currentEnemys[i], currentEnemys[i].drops[i_d]);
-                        //            break;
-
-                        //        case Drop.DropKind.attribute_or://属性の報酬(OR)
-                        //            if (currentEnemys[i].match_atr_OR == false) { break; }
-                        //            GetResourceDrops(currentEnemys[i], currentEnemys[i].drops[i_d]);
-                        //            break;
-
-                        //        default:
-                        //            break;
-                        //    }
-                        //}
                     }
                 }
                 currentEnemys.Remove(currentEnemys[i]);
@@ -478,6 +427,7 @@ public class BattleAndSkillCtrl : BASE {
             {
                 main.announce_d.Add("Dungeon Clear!!!");
                 main.SR.clearNum_Dungeon[(int)dunKind]++;
+                AnalyticsEvent.LevelComplete(dunKind.ToString());
 
                 //報酬(ダンジョン)
                 for (int i_d = 0; i_d < dungeons[(int)dunKind].drops.Count; i_d++)
@@ -612,6 +562,7 @@ public class BattleAndSkillCtrl : BASE {
     {
         main.npcSkillCtrl.InitFight();
         Summon();
+        AnalyticsEvent.LevelStart(dunKind.ToString());
     }
 
     //Called in FixedUpdate

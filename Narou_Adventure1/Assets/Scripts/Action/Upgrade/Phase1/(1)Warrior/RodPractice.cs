@@ -11,6 +11,10 @@ public class RodPractice : UPGRADE_ACTION
     {
         return main.a_rsc.CurrentLevels[ (int)AbilityKind.use_tools] >= 1 ;
     }
+    public override bool CompleteCondition()
+    {
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.academic_city] >= 1;
+    }
 
     // Use this for initialization
     void Awake () {

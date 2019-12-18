@@ -12,15 +12,18 @@ public class WarriorSchool : UPGRADE_ACTION
         return main.a_rsc.MaxLevel((int)AbilityKind.beginner_swordmanship) >= 6 ||
                main.a_rsc.MaxLevel((int)AbilityKind.beginner_spearmanship) >= 6;
     }
+    public override bool CompleteCondition()
+    {
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.sorcerer_school] >= 1 ||
+               main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.tamer_school] >= 1;
+    }
 
     // Use this for initialization
     void Awake () {
         AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.warrior_school, 1,0,0);
-        progress.initCostList.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -90));
-        progress.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -30));
-        progress.completeEffectList.Add(new Dealing(AbilityKind.beginner_swordmanship, Dealing.A_ParaKind.maxLevel, 1));
-        progress.completeEffectList.Add(new Dealing(AbilityKind.beginner_spearmanship, Dealing.A_ParaKind.maxLevel, 1));
-        progress.completeEffectList.Add(new Dealing(AbilityKind.beginner_bojutsu, Dealing.A_ParaKind.maxLevel, 1));
+        progress.initCostList.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -80));
+        progress.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -80));
+        progress.completeEffectList.Add(new Item_Dealing(ItemKind.warrior_textbook));
     }
 
 	// Use this for initialization

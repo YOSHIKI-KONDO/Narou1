@@ -12,6 +12,10 @@ public class BASE : MonoBehaviour
         main = UsefulMethod.GetMain();
     }
 
+    public delegate int IntSync(int? x = null);
+    public delegate double DoubleSync(double? x = null);
+    public delegate bool BoolSync(bool? x = null);
+
     public string DropsDetail(List<Drop> drops)
     {
         string sum = "";
@@ -43,6 +47,12 @@ public class BASE : MonoBehaviour
             if(deal is Temp_Regen_Deal || deal is Temp_TRate_Deal)
             {
                 return true;
+            }
+            //Itemの場合の判定
+            if(deal is Item_Dealing)
+            {
+                //今の所確率100%、数1のみ
+                throw new Exception("アイテムはコストに選択できません。");
             }
             if (deal.rscKind is ResourceKind)
             {
@@ -136,7 +146,13 @@ public class BASE : MonoBehaviour
                                    deal.Value));
                 continue; //次のループへ
             }
-
+            //Itemの場合の判定
+            if (deal is Item_Dealing)
+            {
+                //今の所確率100%、数1のみ
+                main.itemCtrl.Drop_Inventory((deal as Item_Dealing).itemKind);
+                continue; //次のループへ
+            }
 
 
             // 普通の処理。上の条件に該当しなかった時呼ばれる。
@@ -231,6 +247,13 @@ public class BASE : MonoBehaviour
                 sum_str += main.enumCtrl.abilitys[(int)(deal as Temp_TRate_Deal).abilityKind].Name() + " train rate:" + tDigit(deal.Value, 1) + "/s (" + (deal as Temp_TRate_Deal).duration.ToString("F1") + "s)";
                 continue; //次のループへ
             }
+            //Itemの場合の判定
+            if (deal is Item_Dealing)
+            {
+                //今の所確率100%、数1のみ
+                sum_str += main.enumCtrl.items[(int)(deal as Item_Dealing).itemKind].Name();
+                continue; //次のループへ
+            }
 
 
 
@@ -302,12 +325,16 @@ public class BASE : MonoBehaviour
     //List<Dealing>が全てリソースで、現在値を増やす場合で、かつ満タンの時にtrueを返す。
     public bool EffectIsCompleted(List<Dealing> dealings)
     {
-        bool isCompleted = true;
+        bool isCompleted = false;
         foreach (var deal in dealings)
         {
             if (deal is Temp_Regen_Deal || deal is Temp_TRate_Deal)
             {
                 return false; //終わりということはありません
+            }
+            if(deal is Item_Dealing)
+            {
+                return !main.itemCtrl.CanGetInventory((deal as Item_Dealing).itemKind);//「ゲットできる」の反対を返す
             }
             if(deal.rscKind is AbilityKind)
             {
@@ -315,10 +342,10 @@ public class BASE : MonoBehaviour
             }
             if(deal.rscKind is ResourceKind)
             {
-                if((Dealing.R_ParaKind)deal.paraKind != Dealing.R_ParaKind.current) { continue; } //max, regenに終わりはない
-                if(main.rsc.Value[(int)(ResourceKind)deal.rscKind] < main.rsc.Max((int)(ResourceKind)deal.rscKind))
+                if((Dealing.R_ParaKind)deal.paraKind != Dealing.R_ParaKind.current) { return false; } //max, regenに終わりはない
+                if(main.rsc.Value[(int)(ResourceKind)deal.rscKind] >= main.rsc.Max((int)(ResourceKind)deal.rscKind))
                 {
-                    isCompleted = false;
+                    isCompleted = true;
                 }
             }
         }

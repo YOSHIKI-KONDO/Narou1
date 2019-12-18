@@ -5,23 +5,19 @@ using UnityEngine;
 using UnityEngine.UI;
 using static UsefulMethod;
 
-public class Chores : LOOP_ACTION
+public class DeskWork : LOOP_ACTION
 {
     public override bool Requires()
     {
-        return main.rsc.Value[(int)ResourceKind.research] >= 1;
-    }
-    public override bool CompleteCondition()
-    {
-        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.academic_city] >= 1;
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.into_a_dormitory] >= 1;
     }
 
     // Use this for initialization
     void Awake () {
-        AwakeLoopAction(MainAction.ActionEnum.Loop.chores, 20);
+        AwakeLoopAction(MainAction.ActionEnum.Loop.desk_work, 10,0);
         progress.progressCostList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.4));
-        progress.progressEffectList.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 0.5));
-        progress.completeEffectList.Add(new Dealing(ResourceKind.anchovy_sandwich, Dealing.R_ParaKind.current, 1));
+        progress.progressCostList.Add(new Dealing(ResourceKind.mp, Dealing.R_ParaKind.current, -0.4));
+        progress.progressEffectList.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 0.6));
     }
 
 	// Use this for initialization

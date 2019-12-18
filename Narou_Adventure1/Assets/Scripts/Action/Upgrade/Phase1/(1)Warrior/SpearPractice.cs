@@ -11,6 +11,10 @@ public class SpearPractice : UPGRADE_ACTION
     {
         return main.a_rsc.MaxLevel( (int)AbilityKind.beginner_bojutsu) >= 6;
     }
+    public override bool CompleteCondition()
+    {
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.academic_city] >= 1;
+    }
 
     // Use this for initialization
     void Awake () {
