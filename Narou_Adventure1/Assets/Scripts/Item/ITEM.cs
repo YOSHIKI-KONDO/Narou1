@@ -23,6 +23,7 @@ public class ITEM : BASE, INeed
     PopUp popUp;
     ReleaseFunction release;
     public NeedFunciton need;
+    public bool Watched { get => main.SR.watched_Item[(int)kind]; set => main.SR.watched_Item[(int)kind] = value; }
     public string Name_str, Description_str, Max_Str, Need_str, Effect_str, Cost_str, Sell_str;
 
     public int[] InventoryNum { get => main.SR.inventoryNum_Item; set => main.SR.inventoryNum_Item = value; }
@@ -85,6 +86,7 @@ public class ITEM : BASE, INeed
         nameText = GetComponentsInChildren<Text>()[1];
         numText = GetComponentsInChildren<Text>()[2];
         buyButton.onClick.AddListener(() => main.itemCtrl.Buy(kind));
+        buyButton.onClick.AddListener(() => { Watched = true; }); //watchedをtrueにする処理をbuybuttonに追加
         sellButton.onClick.AddListener(() => main.itemCtrl.Sell_Shop(kind));
     }
 

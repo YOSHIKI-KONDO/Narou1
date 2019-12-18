@@ -128,7 +128,7 @@ public class SKILL : BASE, INeed
         release = gameObject.AddComponent<ReleaseFunction>();
         release.StartFunction(gameObject, x => Sync(ref main.SR.released_Skill[(int)kind], x), x => Sync(ref main.SR.completed_Skill[(int)kind], x), x => Requires());
         learnF = gameObject.AddComponent<InstantFunction>();
-        learnF.StartInstant(components.LearnBtnObj, Need);
+        learnF.StartInstant(components.LearnBtnObj, Need, x => Sync(ref main.SR.watched_Skill[(int)kind], x));
         learnF.CompleteAction = Learn;
         components.setButton.onClick.AddListener(Equip);
     }

@@ -12,17 +12,21 @@ public class OnlyAction : BASE {
     public string actionName;
     public float sliderValue;
 
+    public BoolSync Watched;
+
     // Use this for initialization
-    public void AwakeOnlyAction(Button button, string ActionName) {
+    public void AwakeOnlyAction(Button button, string ActionName, BoolSync Watched) {
 		StartBASE();
         this.button = button;
         this.actionName = ActionName;
+        this.Watched = Watched;
         button.onClick.AddListener(SwitchProgress);
         main.progressCtrl.list.Add(this);
     }
 
     public void SwitchProgress()
     {
+        Watched?.Invoke(true); //watchedが設定されていれば、それをtrueにする
         main.progressCtrl.SwitchProgress(this);
     }
 }

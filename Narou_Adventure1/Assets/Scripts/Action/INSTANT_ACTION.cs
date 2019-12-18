@@ -39,7 +39,7 @@ public class INSTANT_ACTION : ACTION, INeed
         release = gameObject.AddComponent<ReleaseFunction>();
         release.StartFunction(gameObject, x => Sync(ref main.SR.released_instant[(int)kind], x), x => Sync(ref main.SR.completed_instant[(int)kind], x), x => Requires());
         instant = gameObject.AddComponent<InstantFunction>();
-        instant.StartInstant(gameObject, Need);
+        instant.StartInstant(gameObject, Need, x => Sync(ref main.SR.watched_instant[(int)kind], x));
     }
 
     // Use this for initialization
