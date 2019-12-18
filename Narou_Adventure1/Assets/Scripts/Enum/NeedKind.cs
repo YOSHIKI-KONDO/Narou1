@@ -9,6 +9,8 @@
     sword,
     spear,
     rod,
+    shield,
+    axe,
 
     fire,
     water,
@@ -20,5 +22,5 @@
     dark,
     
     animal,
-
+    medic,
 }
