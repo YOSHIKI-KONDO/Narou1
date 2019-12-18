@@ -12,6 +12,10 @@ public class ReadWindSpellbook : UPGRADE_ACTION
         return main.a_rsc.MaxLevel( (int)AbilityKind.primary_water_magic) >= 6 &&
                main.a_rsc.MaxLevel( (int)AbilityKind.primary_earth_magic) >= 6;
     }
+    public override bool CompleteCondition()
+    {
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.academic_city] >= 1;
+    }
 
     // Use this for initialization
     void Awake () {

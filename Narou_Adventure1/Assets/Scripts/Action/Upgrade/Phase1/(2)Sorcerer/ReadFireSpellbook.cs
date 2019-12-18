@@ -13,6 +13,10 @@ public class ReadFireSpellbook : UPGRADE_ACTION
                main.a_rsc.MaxLevel( (int)AbilityKind.primary_earth_magic) >= 6 &&
                main.rsc.Value[ (int)ResourceKind.research] >= 40;
     }
+    public override bool CompleteCondition()
+    {
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.academic_city] >= 1;
+    }
 
     // Use this for initialization
     void Awake () {

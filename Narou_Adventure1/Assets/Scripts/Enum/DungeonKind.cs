@@ -1,12 +1,14 @@
 ﻿public enum DungeonKind
 {
     nothing,
-    firstDungeon,
-    second,
     edge_of_town,
     small_hill,
     plain,
-    /*lost_forest,
+    lost_forest,
+    oak_forest,
+    moor,
+    hoarding_house,
     sewer,
-    swamp,*/
+    bog,
+    demonic_cellar,
 }

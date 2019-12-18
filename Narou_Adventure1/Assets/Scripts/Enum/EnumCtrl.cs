@@ -191,9 +191,19 @@ public class EnumCtrl : BASE {
         upgradeActions.Add(new template(ActionEnum.Upgrade.sorcerer_school, "Sorcerer School", "魔法学校", "nothing", "nothing"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.tamer_school, "Tamer School", "テイマー学校", "nothing", "nothing"));
 
-          //フェーズ２（学校）
-        
-            //戦士
+        //フェーズ２（学校）
+        upgradeActions.Add(new template(ActionEnum.Upgrade.academic_city, "Academic City", "学園都市へ向かう", "nothing", "少女が付いてくると言って聞かない。二人分の荷物を用意しよう。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.into_a_dormitory, "Into_a Dormitory", "学生寮に入る", "nothing", "同行者と別れ、寮に入る。また後で、落ち着いたら挨拶に来てね。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.norns_room, "Norn's room", "ノルンの部屋に行く", "nothing", "しかし、中には誰もいない。争った形跡がある。攫われた母のことを思い出し、胸が高鳴った。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.rumor, "Rumor", "ウワサ", "nothing", "近頃、悪評高いゴミ屋敷には魔物が住み着いている。下水道でもないのに魔物が住み着くなんてよほど汚いみたいだ。"));
+        //フリークエスト
+        upgradeActions.Add(new template(ActionEnum.Upgrade.delivery_of_fur, "Delivery of fur", "毛皮の納品", "nothing", "ウルフを倒すと手に入る、毛皮を納品してくれ。商品なんだから傷は少なめで頼むよ。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.house_clean_up, "House clean up", "ゴミ屋敷の掃除", "nothing", "家主は何をしているんだ？近所迷惑だから誰でもいい、掃除してくれ！"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.get_rid_of_rat, "Get rid of rat", "ネズミ退治", "nothing", "下水道に発生したポイズンラットを定期的に駆除しないといけない。不人気な依頼。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.collect_sword, "Collect sword", "剣を集める", "nothing", "木の剣、石の剣、鉄の剣を納品して頂戴。褒美は弾みましてよ。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.in_cellar, "In cellar", "地下室へ", "nothing", "ゴミ屋敷から、地下へと続くあなぐらが掘られていた。足元には花びらが散乱している。"));
+
+        //戦士
         upgradeActions.Add(new template(ActionEnum.Upgrade.apprentice_warrior, "Apprentice Warrior", "戦士見習い", "nothing", "nothing"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.warrior, "Warrior", "ウォーリアー", "nothing", "nothing"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.soldier, "Soldierg", "ソルジャー", "nothing", "nothing"));
@@ -328,23 +338,48 @@ public class EnumCtrl : BASE {
           //フェーズ１
         items.Add(new template(ItemKind.reference_book, "Reference Book", "参考書", "", ""));
         items.Add(new template(ItemKind.toolbox, "Toolbox", "工具箱", "", ""));
-        items.Add(new template(ItemKind.woodsword, "WoodSword", "木の剣", "", ""));
-        items.Add(new template(ItemKind.woodspear, "WoodSpear", "木の槍", "", ""));
-        items.Add(new template(ItemKind.woodstick, "WoodStick", "木の杖", "Stick made of wood", ""));
+        items.Add(new template(ItemKind.woodsword, "Wood Sword", "木の剣", "", ""));
+        items.Add(new template(ItemKind.woodspear, "Wood Spear", "木の槍", "", ""));
+        items.Add(new template(ItemKind.woodstick, "Wood Stick", "木の杖", "Stick made of wood", ""));
         items.Add(new template(ItemKind.fire_orb, "Fire Orb", "ファイアーオーブ", "", "火の魔力を閉じ込めたオーブ。魔法初心者はこれを用いて訓練する。"));
         items.Add(new template(ItemKind.water_orb, "Water Orb", "ウォーターオーブ", "", "水の魔力を閉じ込めたオーブ。魔法初心者はこれを用いて訓練する。"));
         items.Add(new template(ItemKind.wind_orb, "Wind Orb", "ウインドオーブ", "", "風の魔力を閉じ込めたオーブ。魔法初心者はこれを用いて訓練する。"));
         items.Add(new template(ItemKind.earth_orb, "Earth Orb", "アースオーブ", "", "土の魔力を閉じ込めたオーブ。魔法初心者はこれを用いて訓練する。"));
-        items.Add(new template(ItemKind.animalfood, "AnimalFood", "アニマルフード", "", ""));
+        items.Add(new template(ItemKind.animalfood, "Animal Food", "アニマルフード", "", ""));
+          //Phase2
+        items.Add(new template(ItemKind.stone_sword, "Stone Sword", "石の剣", "", ""));
+        items.Add(new template(ItemKind.stone_spear, "Stone Spear", "石の槍", "", ""));
+        items.Add(new template(ItemKind.fire_rod, "Fire Rod", "火の魔杖", "", ""));
+        items.Add(new template(ItemKind.water_rod, "Water Rod", "水の魔杖", "", ""));
+        items.Add(new template(ItemKind.wind_rod, "Wind Rod", "風の魔杖", "", ""));
+        items.Add(new template(ItemKind.earth_rod, "Earth Rod", "地の魔杖", "", ""));
+        items.Add(new template(ItemKind.stone_axe, "Stone Axe", "石の斧", "", ""));
+        items.Add(new template(ItemKind.stone_shield, "Stone Shield", "石の盾", "", ""));
+        items.Add(new template(ItemKind.leather_vest, "Leather Vest", "レザーベスト", "", ""));
+        items.Add(new template(ItemKind.plate_mail, "Plate Mail", "プレートメイル", "", ""));
+        items.Add(new template(ItemKind.fire_ruby, "Fire Ruby", "ファイアールビー", "", ""));
+        items.Add(new template(ItemKind.sea_breeze_amulet, "Sea Breeze Amulet", "潮風のお守り", "", ""));
+        items.Add(new template(ItemKind.rosary, "Rosary", "ロザリオ", "", ""));
+        items.Add(new template(ItemKind.pouch, "Pouch", "ポーチ", "", ""));
+        items.Add(new template(ItemKind.small_basket, "Small Basket", "スモールバスケット", "", ""));
+        items.Add(new template(ItemKind.medicine_box, "Medicine Box", "薬箱", "", ""));
+        items.Add(new template(ItemKind.warrior_textbook, "Warrior Textbook", "戦士教本", "", ""));
+        items.Add(new template(ItemKind.sorcerer_textbook, "Sorcerer Textbook", "魔術士教本", "", ""));
+        items.Add(new template(ItemKind.tamer_textbook, "Tamer Textbook", "テイマー教本", "", ""));
+        items.Add(new template(ItemKind.umbrella, "Umbrella", "傘", "", "物心ついた少年が手にする、伝説の武器。"));
 
         /* 必要条件 */
         needs.Add(new template(NeedKind.nothing, "nothing", "nothing", "nothing", "nothing"));
         needs.Add(new template(NeedKind.weapon, "weapon", "weapon", "", ""));
         needs.Add(new template(NeedKind.armor, "armor", "armor", "", ""));
         needs.Add(new template(NeedKind.goods, "goods", "goods", "", ""));
+
         needs.Add(new template(NeedKind.sword, "sword", "sword", "", ""));
         needs.Add(new template(NeedKind.spear, "spear", "spear", "", ""));
         needs.Add(new template(NeedKind.rod, "rod", "rod", "", ""));
+        needs.Add(new template(NeedKind.shield, "shield", "shield", "", ""));
+        needs.Add(new template(NeedKind.axe, "axe", "axe", "", ""));
+
         needs.Add(new template(NeedKind.fire, "fire", "fire", "", ""));
         needs.Add(new template(NeedKind.water, "water", "water", "", ""));
         needs.Add(new template(NeedKind.wind, "wind", "wind", "", ""));
@@ -353,7 +388,9 @@ public class EnumCtrl : BASE {
         needs.Add(new template(NeedKind.ice, "ice", "ice", "", ""));
         needs.Add(new template(NeedKind.light, "light", "light", "", ""));
         needs.Add(new template(NeedKind.dark, "dark", "dark", "", ""));
+
         needs.Add(new template(NeedKind.animal, "animal", "animal", "", ""));
+        needs.Add(new template(NeedKind.medic, "medic", "medic", "", ""));
 
         /* スキル */
         skills.Add(new template(SkillKind.nothing, "nothing", "nothing", "nothing", "nothing"));
@@ -467,15 +504,16 @@ public class EnumCtrl : BASE {
         */
         /* ダンジョン */
         dungeons.Add(new template(DungeonKind.nothing, "nothing", "nothing", "nothing", "nothing"));
-        dungeons.Add(new template(DungeonKind.firstDungeon, "firstDungeon", "firstDungeon", "", ""));
-        dungeons.Add(new template(DungeonKind.second, "second", "second", "", ""));
         dungeons.Add(new template(DungeonKind.edge_of_town, "Edge of Town", "村の外れ", "nothing", "悪ガキを呼び出した。"));
         dungeons.Add(new template(DungeonKind.small_hill, "Small Hill", "小高い丘", "nothing", "丘の頂上に綺麗な花が咲いているらしい。"));
         dungeons.Add(new template(DungeonKind.plain, "Plain", "平原", "nothing", "都市へ向かうには平原を超える必要がある。"));
-        /*dungeons.Add(new template(DungeonKind.lost_forest, "Lost Forest", "迷いの森", "nothing", "毎年、そこそこの人がそこそこ迷うらしい。と、噂で聞いた気がする。"));
+        dungeons.Add(new template(DungeonKind.lost_forest, "Lost Forest", "迷いの森", "nothing", "毎年、そこそこの人がそこそこ迷うらしい。と、噂で聞いた気がする。"));
+        dungeons.Add(new template(DungeonKind.oak_forest, "Oak Forest", "オークの森", "Orc doesn't live here.", "楢の森。オークは住んでいない。"));
+        dungeons.Add(new template(DungeonKind.moor, "Moor", "湿原", "nothing", ""));
+        dungeons.Add(new template(DungeonKind.hoarding_house, "Hoarding House", "ゴミ屋敷", "nothing", "都内で噂のゴミ屋敷。"));
         dungeons.Add(new template(DungeonKind.sewer, "Sewer", "下水道", "nothing", "むぅ、臭い。"));
-        dungeons.Add(new template(DungeonKind.swamp, "Swamp", "沼地", "nothing", "足場に気を付けて進もう。"));
-        */
+        dungeons.Add(new template(DungeonKind.bog, "Bog", "沼地", "nothing", "足場に気を付けて進もう。"));
+        dungeons.Add(new template(DungeonKind.demonic_cellar, "Demonic Cellar", "魔族のあなぐら", "nothing", "ゴミ屋敷の下に地下室があった。"));
 
         /* 味方 */
         allys.Add(new template(AllyKind.nothing, "nothing", "nothing", "nothing", "nothing"));

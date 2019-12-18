@@ -87,7 +87,7 @@ public class ProgressFunction : OnlyAction
             HasPaid(false);
         }
         //もしもいっぱいだったら 止まる
-        if (EffectIsCompleted(progressEffectList) && EffectIsCompleted(completeEffectList))
+        if (EffectIsCompleted(progressEffectList) && EffectIsCompleted(completeEffectList) && this != main.progressCtrl.restFunction)
         {
             main.progressCtrl.DontDoAnything();
         }

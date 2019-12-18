@@ -11,15 +11,18 @@ public class TamerSchool : UPGRADE_ACTION
     {
         return main.a_rsc.MaxLevel((int)AbilityKind.animal_handling) >= 6;
     }
+    public override bool CompleteCondition()
+    {
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.warrior_school] >= 1 ||
+               main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.sorcerer_school] >= 1;
+    }
 
     // Use this for initialization
     void Awake () {
         AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.tamer_school, 1,0,0);
-        progress.initCostList.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -80));
-        progress.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -40));
-        progress.completeEffectList.Add(new Dealing(AbilityKind.animal_handling, Dealing.A_ParaKind.maxLevel, 1));
-        progress.completeEffectList.Add(new Dealing(AbilityKind.use_tools, Dealing.A_ParaKind.maxLevel, 1));
-        progress.completeEffectList.Add(new Dealing(AbilityKind.life_magic, Dealing.A_ParaKind.maxLevel, 1));
+        progress.initCostList.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -70));
+        progress.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -90));
+        progress.completeEffectList.Add(new Item_Dealing(ItemKind.tamer_textbook));
     }
 
 	// Use this for initialization

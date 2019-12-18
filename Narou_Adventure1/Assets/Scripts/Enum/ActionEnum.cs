@@ -67,7 +67,17 @@
             tamer_school,
 
             //フェーズ２（学校）
-            
+            academic_city,
+            into_a_dormitory,
+            norns_room,
+            rumor,
+            //フリークエスト
+            delivery_of_fur,
+            house_clean_up,
+            get_rid_of_rat,
+            collect_sword,
+            in_cellar,
+
             //戦士
             apprentice_warrior,
             warrior,
