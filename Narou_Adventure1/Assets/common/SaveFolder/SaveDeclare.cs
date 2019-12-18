@@ -46,6 +46,7 @@ public class SaveDeclare : BASE {
 
         InitializeArray(ref main.SR.released_instant, num_instantAction);
         InitializeArray(ref main.SR.completed_instant, num_instantAction);
+        InitializeArray(ref main.SR.watched_instant, num_instantAction);
 
         InitializeArray(ref main.SR.max_resource, num_resource);
         InitializeArray(ref main.SR.current_resource, num_resource);
@@ -56,12 +57,14 @@ public class SaveDeclare : BASE {
         InitializeArray(ref main.SR.completed_loop, num_loopAction);
         InitializeArray(ref main.SR.currentValue_loop, num_loopAction);
         InitializeArray(ref main.SR.paid_loop, num_loopAction);
+        InitializeArray(ref main.SR.watched_loop, num_loopAction);
 
         InitializeArray(ref main.SR.released_upgrade, num_upgradeAction);
         InitializeArray(ref main.SR.completed_upgrade, num_upgradeAction);
         InitializeArray(ref main.SR.currentValue_upgrade, num_upgradeAction);
         InitializeArray(ref main.SR.paid_upgrade, num_upgradeAction);
         InitializeArray(ref main.SR.clearNum_upgrade, num_upgradeAction);
+        InitializeArray(ref main.SR.watched_upgrade, num_upgradeAction);
 
         /* Ability */
         InitializeArray(ref main.SR.released_ability, num_ability);
@@ -72,12 +75,14 @@ public class SaveDeclare : BASE {
         InitializeArray(ref main.SR.maxLevels_ability, num_ability);
         InitializeArray(ref main.SR.unlocked_ability, num_ability);
         InitializeArray(ref main.SR.trainRate_ability, num_ability);
+        InitializeArray(ref main.SR.watched_ability, num_ability);
 
         /* Item */
         InitializeArray(ref main.SR.equipNum_Item, num_item);
         InitializeArray(ref main.SR.inventoryNum_Item, num_item);
         InitializeArray(ref main.SR.released_Item, num_item);
         InitializeArray(ref main.SR.completed_Item, num_item);
+        InitializeArray(ref main.SR.watched_Item, num_item);
 
         /* Need */
         InitializeArray(ref main.SR.needLimits, num_need);
@@ -87,12 +92,14 @@ public class SaveDeclare : BASE {
         InitializeArray(ref main.SR.completed_Skill, num_skill);
         InitializeArray(ref main.SR.learnt_Skill, num_skill);
         InitializeArray(ref main.SR.slotKinds, main.battleCtrl.ROW_SLOT * main.battleCtrl.COLUMN_SLOT);
+        InitializeArray(ref main.SR.watched_Skill, num_skill);
 
         /* Dungeon */
         InitializeArray(ref main.SR.released_Dungeon, num_dungeon);
         InitializeArray(ref main.SR.completed_Dungeon, num_dungeon);
         InitializeArray(ref main.SR.currentFloor_Dungeon, num_dungeon);
         InitializeArray(ref main.SR.clearNum_Dungeon, num_dungeon);
+        InitializeArray(ref main.SR.watched_Dungeon, num_dungeon);
 
         /* Npc */
         InitializeArray(ref main.SR.levels_Ally, num_ally);

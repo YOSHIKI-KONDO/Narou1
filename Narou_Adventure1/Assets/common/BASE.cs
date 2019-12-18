@@ -12,6 +12,10 @@ public class BASE : MonoBehaviour
         main = UsefulMethod.GetMain();
     }
 
+    public delegate int IntSync(int? x = null);
+    public delegate double DoubleSync(double? x = null);
+    public delegate bool BoolSync(bool? x = null);
+
     public string DropsDetail(List<Drop> drops)
     {
         string sum = "";

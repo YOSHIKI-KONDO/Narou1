@@ -4,6 +4,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using static UsefulMethod;
+using UnityEngine.Analytics;
 
 /// <summary>
 /// リソースを増やしたり減らしたりするクラス
@@ -92,6 +93,7 @@ public class ResourceCtrl : BASE {
             Value[index_exp] -= Max(index_exp);
             main.SR.level++;
             main.announce.Add("Level UP! (" + (main.SR.level - 1).ToString() + "→" + main.SR.level.ToString() + ")");
+            AnalyticsEvent.LevelUp(main.SR.level); //レベルを送信
         }
     }
 

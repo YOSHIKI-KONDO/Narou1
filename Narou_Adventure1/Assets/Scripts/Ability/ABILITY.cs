@@ -79,6 +79,7 @@ public class ABILITY : BASE, INeed
             components.slider,
             x => Sync(ref main.SR.paid_ability[(int)kind], x),
             x => Sync(ref main.SR.currentValue_ability[(int)kind], x),
+            x => Sync(ref main.SR.watched_ability[(int)kind],x),
             main.enumCtrl.abilitys[(int)kind].Name());
         progress.CompleteAction = LevelUp;//回数を増やす処理
         progress.IsMax = () => { return level >= MaxLevel; };

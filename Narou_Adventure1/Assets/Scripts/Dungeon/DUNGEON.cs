@@ -58,7 +58,7 @@ public class DUNGEON : BASE {
         //button.onClick.AddListener(Enter);
 
         progress = gameObject.AddComponent<DungeonFunction>();
-        progress.AwakeDungeon(button, main.enumCtrl.dungeons[(int)kind].Name());
+        progress.AwakeDungeon(button, main.enumCtrl.dungeons[(int)kind].Name(), x => Sync(ref main.SR.watched_Dungeon[(int)kind], x));
         progress.SelectedAction = Enter;
         popUp = main.dungeonPopUp.StartPopUp(gameObject, main.windowShowCanvas);
         popUp.EnterAction = ApplyPopUp;
