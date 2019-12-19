@@ -257,6 +257,7 @@ public class BattleAndSkillCtrl : BASE {
                     //スキルが設置してあったら、equipedをtrueにする
                     skills[(int)slotKinds[i_r, i_c]].equipped = true;
                 }
+                slots[i_r, i_c].kind = slotKinds[i_r, i_c]; //kind設定
             }
         }
 

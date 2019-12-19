@@ -35,7 +35,8 @@ public class ResourceText : BASE {
     private void FixedUpdate()
     {
         nameText.text = main.enumCtrl.resources[(int)kind].Name();
-        numText.text = tDigit(main.rsc.Value[(int)kind], 1) + "/" + tDigit(main.rsc.Max((int)kind), 1);
+        numText.text = tDigit(main.rsc.Value[(int)kind], main.resourceTextCtrl.points[(int)kind].current) + "/"
+            + tDigit(main.rsc.Max((int)kind), main.resourceTextCtrl.points[(int)kind].max);
         if (slider != null)
         {
             slider.value = (float)(main.rsc.Value[(int)kind] / main.rsc.Max((int)kind));
@@ -52,46 +53,13 @@ public class ResourceText : BASE {
         {
             //自動でコストの文章を生成
             Description_str = main.enumCtrl.resources[(int)kind].Description();
-            Regen_str = "Regeneration : " + tDigit(main.rsc.Regen((int)kind),2) + "/s";
+            Regen_str = "Regeneration : " + tDigit(main.rsc.Regen((int)kind), main.resourceTextCtrl.points[(int)kind].regen) + "/s";
             Effect_str = ProgressDetail(effects);
 
-            if (Name_str == "" || Name_str == null)
-            {
-                setFalse(popUp.texts[0].gameObject);
-            }
-            else
-            {
-                popUp.texts[0].text = Name_str;
-            }
-
-            if (Description_str == "" || Description_str == null)
-            {
-                setFalse(popUp.texts[1].gameObject);
-            }
-            else
-            {
-                popUp.texts[1].text = Description_str;
-            }
-
-            if (Regen_str == "" || Regen_str == null)
-            {
-                setFalse(popUp.texts[2].gameObject);
-            }
-            else
-            {
-                popUp.texts[2].text = Regen_str;
-            }
-
-            if (Effect_str == "" || Effect_str == null)
-            {
-                setFalse(popUp.texts[3].gameObject);
-                setFalse(popUp.texts[4].gameObject);
-            }
-            else
-            {
-                popUp.texts[4].text = Effect_str;
-            }
-
+            ChangeTextAdaptive(Name_str, popUp.texts[0], popUp.texts[0].gameObject);
+            ChangeTextAdaptive(Description_str, popUp.texts[1], popUp.texts[1].gameObject);
+            ChangeTextAdaptive(Regen_str, popUp.texts[2], popUp.texts[2].gameObject);
+            ChangeTextAdaptive(Effect_str, popUp.texts[4], popUp.texts[3].gameObject, popUp.texts[4].gameObject);
         }
     }
 }
