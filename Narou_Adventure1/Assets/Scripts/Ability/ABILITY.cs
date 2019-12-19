@@ -30,8 +30,8 @@ public class ABILITY : BASE, INeed
     {
         return 1 * Mul_Rate() + Add_Rate();
     }
-    public virtual double Add_Rate() { return main.rsc.Value[(int)ResourceKind.focus]; }//加算
-    public virtual double Mul_Rate() { return 1; }//乗算
+    public virtual double Add_Rate() { return 0; /* main.rsc.Value[(int)ResourceKind.focus];*/ }//加算
+    public virtual double Mul_Rate() { return main.focus.FocusFactor(); }//乗算
 
     public virtual bool Requires() { return true; }
     public virtual bool CompleteCondition() { return false; }

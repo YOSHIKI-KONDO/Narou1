@@ -87,7 +87,7 @@ public class LOOP_ACTION : ACTION, INeed {
         }
         else
         {
-            return (double)PlusValue + main.rsc.Value[(int)ResourceKind.focus];
+            return (double)PlusValue * main.focus.FocusFactor();
         }
     }
 
