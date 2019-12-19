@@ -427,7 +427,8 @@ public class BattleAndSkillCtrl : BASE {
             {
                 main.announce_d.Add("Dungeon Clear!!!");
                 main.SR.clearNum_Dungeon[(int)dunKind]++;
-                AnalyticsEvent.LevelComplete(dunKind.ToString());
+                //AnalyticsEvent.LevelComplete(dunKind.ToString());
+                main.analytics.DungeonComplete(dunKind);
 
                 //報酬(ダンジョン)
                 for (int i_d = 0; i_d < dungeons[(int)dunKind].drops.Count; i_d++)
@@ -562,7 +563,8 @@ public class BattleAndSkillCtrl : BASE {
     {
         main.npcSkillCtrl.InitFight();
         Summon();
-        AnalyticsEvent.LevelStart(dunKind.ToString());
+        //AnalyticsEvent.LevelStart(dunKind.ToString());
+        main.analytics.DungeonEnter(dunKind);
     }
 
     //Called in FixedUpdate

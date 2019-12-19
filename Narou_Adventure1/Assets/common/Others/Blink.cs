@@ -9,7 +9,7 @@ using UnityEngine.UI;
 /// </summary>
 public class Blink : MonoBehaviour
 {
-    Image thisImage;
+    public Image thisImage;
     public float deltaValue = 0.05f;
     public bool canBlink = true;
     /// <summary>
@@ -19,7 +19,7 @@ public class Blink : MonoBehaviour
     public bool initAlfa = false;
     bool isPlus;
     public bool isMap;
-    Color thisColor;
+    public Color thisColor;
 
     private void Awake()
     {
