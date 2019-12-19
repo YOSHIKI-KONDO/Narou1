@@ -46,6 +46,7 @@ public class BattleAndSkillCtrl : BASE {
     float Interval_normalAttack = 3.0f;               //通常攻撃のインターバル
     float currentInterval_normalAttack;               //通常攻撃のインターバルのたまり具合
     double attack_normalAttack = 1d;                  //通常攻撃の攻撃力
+    int targetEnemy_index;
 
 
     /* UI */
@@ -550,6 +551,9 @@ public class BattleAndSkillCtrl : BASE {
                 (float)(currentEnemys[i].currentHp / currentEnemys[i].maxHp),
                 (float)(currentEnemys[i].currentInterval / currentEnemys[i].interval)
                 );
+
+            //ターゲットインデックスを更新
+            if (enemysCmps[i].targetToggle.isOn) { targetEnemy_index = i; }
         }
 
         // 主人公のComponent更新
@@ -710,10 +714,16 @@ public class BattleAndSkillCtrl : BASE {
     }
 
     //PlaySkillsで呼ばれる
+    //target に targetEnemy_index を代入して使っている
     void AttackToEnemys(SkillKind attackSkillKind, double dmg, string actor = "", string lastSentense = "")
     {
         if (currentEnemys.Count == 0) { return; }
-        int target = UnityEngine.Random.Range(0, currentEnemys.Count); //ランダムな敵にダメージ
+        int target = targetEnemy_index;
+        if (target < 0 || target >= currentEnemys.Count)
+        {
+            target = UnityEngine.Random.Range(0, currentEnemys.Count); //ランダムな敵にダメージ
+        }
+        
         var cal_dmg = CalDmg(dmg, currentEnemys[target].defense);
         currentEnemys[target].currentHp -= cal_dmg;
         //特定の倒し方のフラグを変更
