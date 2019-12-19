@@ -9,7 +9,7 @@ public class SpearPractice : UPGRADE_ACTION
 {
     public override bool Requires()
     {
-        return main.a_rsc.MaxLevel( (int)AbilityKind.beginner_bojutsu) >= 6;
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.rune_augmentation] >= 1;
     }
     public override bool CompleteCondition()
     {
@@ -22,6 +22,7 @@ public class SpearPractice : UPGRADE_ACTION
         progress.progressCostList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.7));
         progress.completeEffectList.Add(new Dealing(AbilityKind.beginner_spearmanship, Dealing.A_ParaKind.maxLevel, 1));
         progress.completeEffectList.Add(new Dealing(ResourceKind.hp, Dealing.R_ParaKind.max, 1));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, 5));
     }
 
 	// Use this for initialization

@@ -20,10 +20,9 @@ public class EdgeOfTown : DUNGEON
         enemyList.Add(new EnemyKind[] { sigurd });
         enemyList.Add(new EnemyKind[] { askr, embla });
 
-        progressCost.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.2f));
-
-        drops.Add(new Drop(ResourceKind.gold, 15, 100));
-        drops.Add(new Drop(ResourceKind.filet_o_fish, 1, 100));
+        drops.Add(new Drop(ResourceKind.research, 20, 100));
+        firstDrops.Add(new Drop(ResourceKind.gold, 15, 100));
+        firstDrops.Add(new Drop(ResourceKind.filet_o_fish, 1, 100));
     }
 
 	// Use this for initialization

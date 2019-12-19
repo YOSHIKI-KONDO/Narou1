@@ -9,7 +9,7 @@ public class MentalTraining : UPGRADE_ACTION
 {
     public override bool Requires()
     {
-        return main.rsc.Value[(int)ResourceKind.research] >= 5;
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.talk_fatherA] >= 1;
     }
     public override bool CompleteCondition()
     {
@@ -22,6 +22,7 @@ public class MentalTraining : UPGRADE_ACTION
         progress.progressCostList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.4));
         progress.completeEffectList.Add(new Dealing(ResourceKind.mp, Dealing.R_ParaKind.max, 1));
         progress.completeEffectList.Add(new Dealing(ResourceKind.hp, Dealing.R_ParaKind.max, 0.2));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, 1));
     }
 
 	// Use this for initialization

@@ -9,7 +9,7 @@ public class Chores : LOOP_ACTION
 {
     public override bool Requires()
     {
-        return main.rsc.Value[(int)ResourceKind.research] >= 1;
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.talk_fatherB] >= 1;
     }
     public override bool CompleteCondition()
     {

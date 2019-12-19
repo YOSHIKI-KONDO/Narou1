@@ -22,6 +22,7 @@ public class SwordPractice : UPGRADE_ACTION
         progress.progressCostList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.7));
         progress.completeEffectList.Add(new Dealing(AbilityKind.beginner_swordmanship, Dealing.A_ParaKind.maxLevel, 1));
         progress.completeEffectList.Add(new Dealing(ResourceKind.hp, Dealing.R_ParaKind.max, 1));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, 5));
     }
 
 	// Use this for initialization

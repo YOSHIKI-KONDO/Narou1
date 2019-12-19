@@ -5,22 +5,23 @@ using UnityEngine;
 using UnityEngine.UI;
 using static UsefulMethod;
 
-public class PunishTheBadKids : UPGRADE_ACTION
+public class TalkFatherB : UPGRADE_ACTION
 {
     public override bool Requires()
     {
-        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.girl_is_crying] >=1 ;
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.talk_fatherA] >= 1;
     }
     public override bool CompleteCondition()
     {
-        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.pick_flowers] >= 1;
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.academic_city] >= 1;
     }
 
     // Use this for initialization
     void Awake () {
-        AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.punish_the_bad_kids, 1,0,0);
-        progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 0.5));
-	}
+        AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.talk_fatherB, 1,0,0);
+        progress.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -10));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.max, 5));
+    }
 
 	// Use this for initialization
 	void Start () {

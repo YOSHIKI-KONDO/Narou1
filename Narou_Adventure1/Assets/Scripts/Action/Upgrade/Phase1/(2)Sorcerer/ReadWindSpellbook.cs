@@ -9,8 +9,7 @@ public class ReadWindSpellbook : UPGRADE_ACTION
 {
     public override bool Requires()
     {
-        return main.a_rsc.MaxLevel( (int)AbilityKind.primary_water_magic) >= 6 &&
-               main.a_rsc.MaxLevel( (int)AbilityKind.primary_earth_magic) >= 6;
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.rune_augmentation] >= 1;
     }
     public override bool CompleteCondition()
     {
@@ -23,6 +22,7 @@ public class ReadWindSpellbook : UPGRADE_ACTION
         progress.progressCostList.Add(new Dealing(ResourceKind.mp, Dealing.R_ParaKind.current, -0.9));
         progress.completeEffectList.Add(new Dealing(AbilityKind.primary_wind_magic, Dealing.A_ParaKind.maxLevel, 1));
         progress.completeEffectList.Add(new Dealing(AbilityKind.primary_wind_magic, Dealing.A_ParaKind.trainRate, 0.5));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, 5));
     }
 
 	// Use this for initialization

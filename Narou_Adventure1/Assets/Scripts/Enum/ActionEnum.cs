@@ -8,6 +8,7 @@
             //フェーズ１（入学前）
             weeding,
             eat_anchovy_sandwich,
+            drink_herb_tea,
             rune_generation,
             runic_carving,
             split_firewood,
@@ -37,6 +38,10 @@
         {
             nothing,
             //フェーズ１（入学前）
+            talk_fatherA,
+            talk_fatherB,
+            talk_fatherC,
+            talk_fatherD,
             //父の道場
             training,
             sword_practice,
@@ -52,15 +57,19 @@
             play_with_cat,
             learn_use_tools,
             succession_life_magic,
-
+            //純アップグレード
             buy_wallet,
             study_in_church,
             buy_bag,
             practical_skill,
+            rune_augmentation,
+            buy_fire_spellbook,
             //少女イベント
             girl_is_crying,
             pick_flowers,
             punish_the_bad_kids,
+            thank_you,
+            ill_get_you_for_this,
             //進学
             warrior_school,
             sorcerer_school,
