@@ -509,7 +509,7 @@ public class EnumCtrl : BASE {
         dungeons.Add(new template(DungeonKind.plain, "Plain", "平原", "nothing", "都市へ向かうには平原を超える必要がある。"));
         dungeons.Add(new template(DungeonKind.lost_forest, "Lost Forest", "迷いの森", "nothing", "毎年、そこそこの人がそこそこ迷うらしい。と、噂で聞いた気がする。"));
         dungeons.Add(new template(DungeonKind.oak_forest, "Oak Forest", "オークの森", "Orc doesn't live here.", "楢の森。オークは住んでいない。"));
-        dungeons.Add(new template(DungeonKind.moor, "Moor", "湿原", "nothing", ""));
+        dungeons.Add(new template(DungeonKind.moor, "Moor", "湿原", "nothing", "オークの森を抜けた先にある湿原"));
         dungeons.Add(new template(DungeonKind.hoarding_house, "Hoarding House", "ゴミ屋敷", "nothing", "都内で噂のゴミ屋敷。"));
         dungeons.Add(new template(DungeonKind.sewer, "Sewer", "下水道", "nothing", "むぅ、臭い。"));
         dungeons.Add(new template(DungeonKind.bog, "Bog", "沼地", "nothing", "足場に気を付けて進もう。"));
