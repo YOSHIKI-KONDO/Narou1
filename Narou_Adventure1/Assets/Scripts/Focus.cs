@@ -10,6 +10,7 @@ public class Focus : BASE {
     public GameObject obj;
     double Remain { get => main.rsc.Value[(int)ResourceKind.focus]; set => main.rsc.Value[(int)ResourceKind.focus] = value; }
     double Max { get => main.rsc.Max((int)ResourceKind.focus); }
+    ResourceText resourceText;
 
     public double FocusFactor()
     {
@@ -33,7 +34,6 @@ public class Focus : BASE {
 
     public void Activate()
     {
-        Debug.Log("Called.");
         setActive(obj);
     }
 
@@ -53,6 +53,8 @@ public class Focus : BASE {
         {
             Remain = 1;
         }
+
+        resourceText.Others_str = "Current : " + (FocusFactor() * 100).ToString("F0") + "%";
     }
 
     // Use this for initialization
@@ -70,6 +72,8 @@ public class Focus : BASE {
             GetComponent<ReleaseFunction>().RemoveRelease();
             Destroy(GetComponent<ReleaseFunction>());
         }
+
+        resourceText = GetComponent<ResourceText>();
     }
 
     private void FixedUpdate()
