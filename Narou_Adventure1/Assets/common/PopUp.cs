@@ -72,8 +72,17 @@ public class PopUp : MonoBehaviour
         }
     }
 
+    void ApplyActive()
+    {
+        if(hoverObject.activeSelf == false)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
     private void Update()
     {
         ApplyPosition();
+        ApplyActive();
     }
 }

@@ -56,7 +56,7 @@ public class DUNGEON : BASE {
         sliderText = GetComponentsInChildren<Text>()[1];      //UI関連
         slider = GetComponentInChildren<Slider>();            //UI関連
         //button.onClick.AddListener(Enter);
-
+        
         progress = gameObject.AddComponent<DungeonFunction>();
         progress.AwakeDungeon(button, main.enumCtrl.dungeons[(int)kind].Name(), x => Sync(ref main.SR.watched_Dungeon[(int)kind], x));
         progress.SelectedAction = Enter;

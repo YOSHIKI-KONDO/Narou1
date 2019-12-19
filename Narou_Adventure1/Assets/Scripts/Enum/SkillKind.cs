@@ -1,8 +1,7 @@
 ﻿public enum SkillKind
 {
     nothing,
-    thuderBolt,
-    meteor,
+    normalAttack,
     //戦士
     right_slash,
     left_upper_slash,
