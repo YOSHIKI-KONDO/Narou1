@@ -40,7 +40,7 @@ public class Main : MonoBehaviour
 
 
     /* Libraryここまで */
-    public static bool isJapanese = false;
+    public static bool isJapanese = true;
     public ResourceCtrl rsc;            //resourceCtrlの略
     public AbilityResourceCtrl a_rsc;   //AbilityResourceCtrlの略
     public ProgressCtrl progressCtrl;
@@ -51,6 +51,7 @@ public class Main : MonoBehaviour
     public TempEffectCtrl tempEffectsCtrl;
     public NpcSkillCtrl npcSkillCtrl;
     public ResourceTextControll resourceTextCtrl;
+    public AnalyticsCtrl analytics;
     public Announce announce;
     public Announce announce_d; //dungeon
     public Focus focus;

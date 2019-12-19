@@ -23724,6 +23724,7 @@ GameObject:
   - component: {fileID: 1329275268}
   - component: {fileID: 1329275269}
   - component: {fileID: 1329275270}
+  - component: {fileID: 1329275271}
   m_Layer: 0
   m_Name: MainController
   m_TagString: mainCtrl
@@ -23958,6 +23959,7 @@ MonoBehaviour:
   tempEffectsCtrl: {fileID: 1329275269}
   npcSkillCtrl: {fileID: 1329275270}
   resourceTextCtrl: {fileID: 1329275268}
+  analytics: {fileID: 1329275271}
   announce: {fileID: 434298069}
   announce_d: {fileID: 1128537655}
   focus: {fileID: 2822668639949457068}
@@ -24433,6 +24435,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   main: {fileID: 0}
   canFightAllys: 
+--- !u!114 &1329275271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329275250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fee78ed355cbc44ada65ed551bbcdbdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  main: {fileID: 0}
 --- !u!1001 &1345242289
 PrefabInstance:
   m_ObjectHideFlags: 0
