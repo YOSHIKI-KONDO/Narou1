@@ -96,7 +96,7 @@ public class EnumCtrl : BASE {
         resources.Add(new template(ResourceKind.wood, "Wood", "木", "nothing", "nothing"));
         resources.Add(new template(ResourceKind.firewood, "Firewood", "薪", "nothing", "nothing"));
         resources.Add(new template(ResourceKind.charcoal, "Charcoal", "木炭", "nothing", "nothing"));
-        resources.Add(new template(ResourceKind.flower, "Flower", "花", "nothing", "nothing"));
+        resources.Add(new template(ResourceKind.flower, "Flower", "花", "nothing", "ユグドラシルの花と呼ばれている。強い生命力を感じる。"));
         //食べ物
         resources.Add(new template(ResourceKind.wheat, "Wheat", "小麦", "nothing", "nothing"));
         resources.Add(new template(ResourceKind.bread, "Bread", "パン", "nothing", "nothing"));
@@ -139,6 +139,7 @@ public class EnumCtrl : BASE {
           //フェーズ１（入学前）
         instantActions.Add(new template(ActionEnum.Instant.weeding, "Weeding", "草むしり", "nothing", "アルバイト。たまにハーブが生えている。"));
         instantActions.Add(new template(ActionEnum.Instant.eat_anchovy_sandwich, "Eat Anchovy Sandwich", "アンチョビサンドを食べる", "nothing", "母の味。"));
+        instantActions.Add(new template(ActionEnum.Instant.drink_herb_tea, "Drink Herb tea", "ハーブティー", "nothing", "神聖な味がする。"));
         instantActions.Add(new template(ActionEnum.Instant.rune_generation, "Rune Generation", "ルーン生成", "nothing", "運命の力でルーンを得る。"));
         instantActions.Add(new template(ActionEnum.Instant.runic_carving, "Runic Carving", "ルーンを刻む", "nothing", "ルーンを石碑に刻み、更なる運命を得る。"));
         instantActions.Add(new template(ActionEnum.Instant.split_firewood, "Split Firewood", "薪割り", "nothing", "nothing"));
@@ -154,7 +155,7 @@ public class EnumCtrl : BASE {
         loopActions.Add(new template(ActionEnum.Loop.harvest_wheat, "Harvest Wheat", "小麦の収穫", "nothing", "nothing"));
         loopActions.Add(new template(ActionEnum.Loop.grow_herb, "Grow Herb", "ハーブ栽培", "nothing", "nothing"));
         loopActions.Add(new template(ActionEnum.Loop.lumberjack, "Lumberjack", "木こり", "nothing", "手斧の扱いをマスターした。"));
-        //フェーズ２（学校）
+          //フェーズ２（学校）
         loopActions.Add(new template(ActionEnum.Loop.manual_labor, "Manual Labor", "肉体労働", "nothing", "nothing"));
         loopActions.Add(new template(ActionEnum.Loop.desk_work, "Desk Work", "デスクワーク", "nothing", "nothing"));
         loopActions.Add(new template(ActionEnum.Loop.service_trade, "Service Trade", "サービス業", "nothing", "nothing"));
@@ -162,7 +163,11 @@ public class EnumCtrl : BASE {
         /* アップグレードアクション */
         upgradeActions.Add(new template(ActionEnum.Upgrade.nothing, "nothing", "nothing", "nothing", "nothing"));
           //フェーズ１（入学前）
-            //父の道場
+        upgradeActions.Add(new template(ActionEnum.Upgrade.talk_fatherA, "Talk Father", "父の話を聞く", "nothing", "息子よ、強くなるのだ。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.talk_fatherB, "Talk Father", "父の話を聞く", "nothing", "お前の母は魔王に連れ去られた。助け出して欲しい。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.talk_fatherC, "Talk Father", "父の話を聞く", "nothing", "私は抵抗したが力及ばず、右腕を失ってしまった。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.talk_fatherD, "Talk Father", "父の話を聞く", "nothing", "学校に行くと良い。私では教えられないことを学べる。"));
+        //父の道場
         upgradeActions.Add(new template(ActionEnum.Upgrade.training, "Training", "トレーニング", "nothing", "nothing"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.sword_practice, "Sword Practice", "剣の稽古", "nothing", "nothing"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.spear_practice, "Spear Practice", "槍の稽古", "nothing", "nothing"));
@@ -177,16 +182,20 @@ public class EnumCtrl : BASE {
         upgradeActions.Add(new template(ActionEnum.Upgrade.play_with_cat, "Play With Cat", "猫と遊ぶ", "nothing", "nothing"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.learn_use_tools, "Learn Use Tools", "道具の使い方を教わる", "nothing", "nothing"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.succession_life_magic, "Succession Life Magic", "生活魔法継承", "nothing", "nothing"));
-
+            //純アップグレード
         upgradeActions.Add(new template(ActionEnum.Upgrade.buy_wallet, "Buy Wallet", "財布を買う", "nothing", "nothing"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.study_in_church, "Study in Church", "教会で勉強", "nothing", "nothing"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.buy_bag, "Buy Bag", "鞄を買う", "nothing", "nothing"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.practical_skill, "Practical Skill", "実技訓練", "nothing", "nothing"));
-            //少女イベント
+        upgradeActions.Add(new template(ActionEnum.Upgrade.rune_augmentation, "Rune Augmentation", "ルーン増強", "nothing", "nothing"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.buy_fire_spellbook, "Buy Fire Spellbook,", "火の魔導書を買う", "nothing", "nothing"));
+        //少女イベント
         upgradeActions.Add(new template(ActionEnum.Upgrade.girl_is_crying, "Girl is Crying", "少女が泣いている", "nothing", "大切にしていた花を、悪ガキにへし折られてしまってようだ。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.pick_flowers, "Pick Flowers", "花を摘みに行く", "nothing", "少女に新しい花をプレゼントしよう。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.punish_the_bad_kids, "Punish the Bad Kids", "悪ガキをこらしめる", "nothing", "骨と心をへし折ってやろう。"));
-            //進学
+        upgradeActions.Add(new template(ActionEnum.Upgrade.thank_you, "Thank you", "ありがとう", "nothing", "少女は花を優しく握りしめ、頬を薄く赤色に染めながら、はにかみながら笑った。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.ill_get_you_for_this, "I'll get you for this!", "覚えておけよ！", "nothing", "悪ガキは涙目になりながら走り去っていった。これで一安心だ。"));
+        //進学
         upgradeActions.Add(new template(ActionEnum.Upgrade.warrior_school, "Warrior School", "戦士学校", "nothing", "nothing"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.sorcerer_school, "Sorcerer School", "魔法学校", "nothing", "nothing"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.tamer_school, "Tamer School", "テイマー学校", "nothing", "nothing"));
@@ -508,7 +517,7 @@ public class EnumCtrl : BASE {
         dungeons.Add(new template(DungeonKind.plain, "Plain", "平原", "nothing", "都市へ向かうには平原を超える必要がある。"));
         dungeons.Add(new template(DungeonKind.lost_forest, "Lost Forest", "迷いの森", "nothing", "毎年、そこそこの人がそこそこ迷うらしい。と、噂で聞いた気がする。"));
         dungeons.Add(new template(DungeonKind.oak_forest, "Oak Forest", "オークの森", "Orc doesn't live here.", "楢の森。オークは住んでいない。"));
-        dungeons.Add(new template(DungeonKind.moor, "Moor", "湿原", "nothing", ""));
+        dungeons.Add(new template(DungeonKind.moor, "Moor", "湿原", "nothing", "オークの森を抜けた先にある湿原"));
         dungeons.Add(new template(DungeonKind.hoarding_house, "Hoarding House", "ゴミ屋敷", "nothing", "都内で噂のゴミ屋敷。"));
         dungeons.Add(new template(DungeonKind.sewer, "Sewer", "下水道", "nothing", "むぅ、臭い。"));
         dungeons.Add(new template(DungeonKind.bog, "Bog", "沼地", "nothing", "足場に気を付けて進もう。"));
