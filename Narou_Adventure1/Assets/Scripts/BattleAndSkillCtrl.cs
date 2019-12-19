@@ -43,6 +43,9 @@ public class BattleAndSkillCtrl : BASE {
     public BattleComponents[] enemysCmps;              //Object
     public BattleComponents[] allysCmps;               //Object
     public SlideSetActive battleScreen;
+    float Interval_normalAttack = 3.0f;               //通常攻撃のインターバル
+    float currentInterval_normalAttack;               //通常攻撃のインターバルのたまり具合
+    double attack_normalAttack = 1d;                  //通常攻撃の攻撃力
 
 
     /* UI */
@@ -90,6 +93,7 @@ public class BattleAndSkillCtrl : BASE {
 
         PlaySkills();
         PlayNpcSkills();
+        NormalAttack();
 
         EnemysAction();
     }
@@ -138,9 +142,15 @@ public class BattleAndSkillCtrl : BASE {
                             criticalSentense = " (Critical)";
                         }
                         //剣士系の攻撃
-                        AttackToEnemys(thisKind, skills[(int)thisKind].WarriorDamage() * main.status.Attack * criticalFactor, "You", criticalSentense);
+                        if (skills[(int)thisKind].warriorAtks.Count > 0)
+                        {
+                            AttackToEnemys(thisKind, skills[(int)thisKind].WarriorDamage() * main.status.Attack * criticalFactor, "You", criticalSentense);
+                        }
                         //魔法系の攻撃
-                        AttackToEnemys(thisKind, skills[(int)thisKind].SorcererDamage() * main.status.MagicAttack * criticalFactor, "You", criticalSentense);
+                        if (skills[(int)thisKind].sorcererAtks.Count > 0)
+                        {
+                            AttackToEnemys(thisKind, skills[(int)thisKind].SorcererDamage() * main.status.MagicAttack * criticalFactor, "You", criticalSentense);
+                        }
                     }
 
                     skills[(int)thisKind].casted = true;
@@ -191,8 +201,28 @@ public class BattleAndSkillCtrl : BASE {
                 AttackToEnemys(thisSkill.kind, thisSkill.SorcererDamage() * main.npcSkillCtrl.npcs[i].MagicAttack * criticalFactor
                     , main.enumCtrl.allys[i].Name(), criticalSentense);
                 thisSkill.Produce();
-                main.announce_d.Add(main.enumCtrl.allys[i].Name() + " casted " + main.enumCtrl.skills[(int)thisSkill.kind].Name());
+                main.announce_d.Add(main.enumCtrl.allys[i].Name() + " used " + main.enumCtrl.skills[(int)thisSkill.kind].Name());
             }
+        }
+    }
+
+    //主人公の通常攻撃
+    //Called in FixedUpdate
+    void NormalAttack()
+    {
+        if(dunKind == DungeonKind.nothing) { return; }
+        currentInterval_normalAttack += 0.1f; //0.1廟に0.1ずつ増える
+        if (currentInterval_normalAttack >= Interval_normalAttack)
+        {
+            currentInterval_normalAttack = 0;
+            double criticalFactor = 1f;
+            string criticalSentense = "";
+            if (UnityEngine.Random.Range(0f, 100f) < main.status.CriticalChance)
+            {
+                criticalFactor *= main.status.CriticalFactor;
+                criticalSentense = " (Critical)";
+            }
+            AttackToEnemys(SkillKind.normalAttack, attack_normalAttack * main.status.Attack * criticalFactor, "You", criticalSentense);
         }
     }
 
@@ -490,17 +520,24 @@ public class BattleAndSkillCtrl : BASE {
         }
 
         // Componentを更新
+        ApplyComponents();
+    }
+
+
+    // Called in ControllsBattle
+    void ApplyComponents()
+    {
         DUNGEON thisD = dungeons[(int)dunKind];
         for (int i = 0; i < enemysCmps.Length; i++)
         {
-            if(thisD.currentFloor >= thisD.enemyList.Count)
+            if (thisD.currentFloor >= thisD.enemyList.Count)
             {
                 Debug.Log("currentFloorが想定よりも大きいです");
                 continue;
             }
             //もしも現在のフロアの敵の数が、componentsの数よりも小さければcomponentsをfalse ||
             //今見ている敵が死んでいたらfalse
-            if(thisD.enemyList[thisD.currentFloor].Length <= i ||
+            if (thisD.enemyList[thisD.currentFloor].Length <= i ||
                 currentEnemys.Count <= i)
             {
                 setFalse(enemysCmps[i].gameObject);
@@ -519,7 +556,7 @@ public class BattleAndSkillCtrl : BASE {
         heroCmp.ApplyNormalObj("Hero", tDigit(main.rsc.Value[(int)ResourceKind.hp]) + "/" + tDigit(main.rsc.Max((int)ResourceKind.hp)),
             "",
             (float)(main.rsc.Value[(int)ResourceKind.hp] / main.rsc.Max((int)ResourceKind.hp)),
-            1f);
+            currentInterval_normalAttack / Interval_normalAttack);//ここにインターバル
 
         if (allysCmps.Length < main.SD.num_ally)
         {
@@ -528,7 +565,7 @@ public class BattleAndSkillCtrl : BASE {
         // NpcのComponent更新
         for (int i = 0; i < allysCmps.Length; i++)
         {
-            if(main.npcSkillCtrl.allyKinds.IndexOf((AllyKind)i) >= 0)
+            if (main.npcSkillCtrl.allyKinds.IndexOf((AllyKind)i) >= 0)
             {
                 setActive(allysCmps[i].gameObject);
                 allysCmps[i].ApplyNormalObj(main.enumCtrl.allys[(int)i].Name(), tDigit(main.npcSkillCtrl.npcs[i].currentHp) + "/" + tDigit(main.npcSkillCtrl.npcs[i].Hp),
@@ -563,6 +600,7 @@ public class BattleAndSkillCtrl : BASE {
     {
         main.npcSkillCtrl.InitFight();
         Summon();
+        currentInterval_normalAttack = 0;
         //AnalyticsEvent.LevelStart(dunKind.ToString());
         main.analytics.DungeonEnter(dunKind);
     }
@@ -632,7 +670,7 @@ public class BattleAndSkillCtrl : BASE {
         if (dunKind == DungeonKind.nothing) { return; }
 
         // HP判定
-        if (main.rsc.Value[(int)ResourceKind.hp] <= 0)
+        if (main.rsc.Value[(int)ResourceKind.hp] < 0.001d)
         {
             main.progressCtrl.Rest();
             FleeFromDungeon();
@@ -727,9 +765,11 @@ public class BattleAndSkillCtrl : BASE {
             
         }
 
+        string have = actor == "You" ? "have" : "has";
+
         if(actor != "")
         {
-            main.announce_d.Add(actor + " has attacked " + main.enumCtrl.enemys[target].Name() + " for " + tDigit(cal_dmg) + " damages" + lastSentense);
+            main.announce_d.Add(actor + " " + have + " attacked " + main.enumCtrl.enemys[target].Name() + " for " + tDigit(cal_dmg) + " damages" + lastSentense);
         }
     }
 
