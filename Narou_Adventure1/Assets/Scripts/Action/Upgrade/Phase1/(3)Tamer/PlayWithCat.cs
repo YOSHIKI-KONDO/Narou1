@@ -9,7 +9,7 @@ public class PlayWithCat : UPGRADE_ACTION
 {
     public override bool Requires()
     {
-        return main.rsc.Value[(int)ResourceKind.research] >= 1;
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.talk_fatherC] >= 1;
     }
     public override bool CompleteCondition()
     {
@@ -21,7 +21,8 @@ public class PlayWithCat : UPGRADE_ACTION
         AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.play_with_cat, 1,10);
         progress.progressCostList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.5));
         progress.completeEffectList.Add(new Dealing(AbilityKind.animal_handling, Dealing.A_ParaKind.maxLevel, 1));
-	}
+        progress.completeEffectList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, 5));
+    }
 
 	// Use this for initialization
 	void Start () {

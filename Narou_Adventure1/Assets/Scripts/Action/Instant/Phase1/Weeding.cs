@@ -9,7 +9,7 @@ public class Weeding : INSTANT_ACTION
 {
     public override bool Requires()
     {
-        return main.rsc.Value[(int)ResourceKind.research] >= 5 &&
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.talk_fatherB] >= 1 &&
                main.rsc.Value[(int)ResourceKind.mp] >= 1;
     }
     public override bool CompleteCondition()

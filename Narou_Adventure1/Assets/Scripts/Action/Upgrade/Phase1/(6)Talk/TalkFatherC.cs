@@ -5,11 +5,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using static UsefulMethod;
 
-public class LearnUseTools : UPGRADE_ACTION
+public class TalkFatherC : UPGRADE_ACTION
 {
     public override bool Requires()
     {
-        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.talk_fatherA] >= 1;
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.talk_fatherB] >= 1;
     }
     public override bool CompleteCondition()
     {
@@ -18,10 +18,9 @@ public class LearnUseTools : UPGRADE_ACTION
 
     // Use this for initialization
     void Awake () {
-        AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.learn_use_tools, 1,20);
-        progress.progressCostList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.4));
-        progress.completeEffectList.Add(new Dealing(AbilityKind.use_tools, Dealing.A_ParaKind.maxLevel, 1));
-        progress.completeEffectList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, 5));
+        AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.talk_fatherC, 1,0,0);
+        progress.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -15));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.max, 5));
     }
 
 	// Use this for initialization

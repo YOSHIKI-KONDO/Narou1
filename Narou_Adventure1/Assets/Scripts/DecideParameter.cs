@@ -48,17 +48,19 @@ public class DecideParameter : BASE {
         main.rsc.Regen_Base[(int)ResourceKind.dark] = 0.1;
         //リソース
         main.rsc.Max_Base[(int)ResourceKind.gold] = 20;
-        main.rsc.Max_Base[(int)ResourceKind.research] = 30;
-        main.rsc.Max_Base[(int)ResourceKind.paper] = 10;
+        main.rsc.Max_Base[(int)ResourceKind.research] = 10;
         main.rsc.Max_Base[(int)ResourceKind.paper] = 5;
+        main.rsc.Max_Base[(int)ResourceKind.book] = 1;
         main.rsc.Max_Base[(int)ResourceKind.herb] = 5;
         main.rsc.Max_Base[(int)ResourceKind.bread] = 10;
         main.rsc.Max_Base[(int)ResourceKind.anchovy_sandwich] = 3;
-        main.rsc.Max_Base[(int)ResourceKind.filet_o_fish] = 5;
+        main.rsc.Max_Base[(int)ResourceKind.filet_o_fish] = 3;
+        main.rsc.Max_Base[(int)ResourceKind.flower] = 1;
         main.rsc.Max_Base[(int)ResourceKind.ap] = 999;
         //装備アイテム：種類毎の上限(0ならば上限なし、無限)
         main.SR.needLimits[(int)NeedKind.weapon] = 1;
         main.SR.needLimits[(int)NeedKind.armor] = 1;
+        main.SR.needLimits[(int)NeedKind.shield] = 1;
     }
 
     // Use this for initialization

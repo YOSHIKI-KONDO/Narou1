@@ -38,10 +38,8 @@ public class LostForest : DUNGEON
         enemyList.Add(new EnemyKind[] { wolf, wolf, wolf });
         enemyList.Add(new EnemyKind[] { werewolf });//20
 
-        progressCost.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.3f));
-
-        drops.Add(new Drop(ResourceKind.gold, 5, 100));
-        drops.Add(new Drop(ResourceKind.filet_o_fish, 1, 100));
+        drops.Add(new Drop(ResourceKind.wood, 3, 100));
+        firstDrops.Add(new Drop(ResourceKind.research, 20, 100));
     }
 
 	// Use this for initialization

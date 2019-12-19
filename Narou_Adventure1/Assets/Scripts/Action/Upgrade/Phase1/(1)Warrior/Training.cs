@@ -18,10 +18,11 @@ public class Training : UPGRADE_ACTION
 
     // Use this for initialization
     void Awake () {
-        AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.training, 4,12);
+        AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.training, 4,5);
         progress.progressCostList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.2));
         progress.completeEffectList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.max, 1));
         progress.completeEffectList.Add(new Dealing(ResourceKind.hp, Dealing.R_ParaKind.max, 1));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, 1));
     }
 
 	// Use this for initialization

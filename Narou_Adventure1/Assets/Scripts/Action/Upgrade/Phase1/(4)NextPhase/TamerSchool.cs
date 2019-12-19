@@ -23,6 +23,7 @@ public class TamerSchool : UPGRADE_ACTION
         progress.initCostList.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -70));
         progress.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -90));
         progress.completeEffectList.Add(new Item_Dealing(ItemKind.tamer_textbook));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 2));
     }
 
 	// Use this for initialization

@@ -24,6 +24,7 @@ public class SorcererSchool : UPGRADE_ACTION
         progress.initCostList.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -60));
         progress.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -100));
         progress.completeEffectList.Add(new Item_Dealing(ItemKind.sorcerer_textbook));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 2));
     }
 
 	// Use this for initialization

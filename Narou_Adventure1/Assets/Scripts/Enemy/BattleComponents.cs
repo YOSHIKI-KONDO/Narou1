@@ -11,6 +11,7 @@ public class BattleComponents : BASE {
     public Text atk_text;
     public Slider hp_slider;
     public Slider int_slider;
+    public Toggle targetToggle; //enemyの時のみ使う
 
     private void Awake()
     {
@@ -19,6 +20,11 @@ public class BattleComponents : BASE {
         atk_text = GetComponentsInChildren<Text>()[2];
         hp_slider = GetComponentsInChildren<Slider>()[0];
         int_slider = GetComponentsInChildren<Slider>()[1];
+        targetToggle = GetComponentInChildren<Toggle>();
+        if(targetToggle != null)
+        {
+            targetToggle.group = targetToggle.GetComponentInParent<ToggleGroup>();
+        }
     }
 
     public void ApplyNormalObj(string Name, string hp, string atk, float hp_sliderValue, float int_sliderValue)
