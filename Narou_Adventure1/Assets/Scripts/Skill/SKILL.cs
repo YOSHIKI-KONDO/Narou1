@@ -136,7 +136,7 @@ public class SKILL : BASE, INeed
     // Use this for initialization
     protected void StartSkill()
     {
-
+        ApplyPopUp();
     }
 
     // Update is called once per frame
@@ -149,7 +149,7 @@ public class SKILL : BASE, INeed
     {
         learnF.FixedUpdateInstant();
         components.nameText.text = Name_str;
-        ApplyPopUp();
+        if (popUp.gameObject.activeSelf) { ApplyPopUp(); }
 
         if (CompleteCondition())//条件を満たしたらもう出なくなる
         {
@@ -185,90 +185,26 @@ public class SKILL : BASE, INeed
 
     void ApplyPopUp()
     {
-        //自動でコストの文章を生成
+        //とりあえず今はdescriptionの部分に追加する
         Name_str = main.enumCtrl.skills[(int)kind].Name();
-        if (popUp.gameObject.activeSelf)
-        {
-            //とりあえず今はdescriptionの部分に追加する
-            Description_str = AttributeDetail();//Description_str = main.enumCtrl.skills[(int)kind].Description();
-            LearnCost_str = learnF.ProgressDetail(learnF.initCostList);
-            UseCost_str = ProgressDetail(useCosts);
-            UseEffect_str = WarriorDetail();
-            UseEffect_str += SorcererDetail();
-            UseEffect_str += ProgressDetail(useEffects);
-            Interval_str = tDigit(Duration(),1) + "s";
+        Description_str = AttributeDetail();//Description_str = main.enumCtrl.skills[(int)kind].Description();
+        UseCost_str = ProgressDetail(useCosts);
+        UseEffect_str = WarriorDetail();
+        UseEffect_str += SorcererDetail();
+        UseEffect_str += ProgressDetail(useEffects);
+        Interval_str = tDigit(Duration(),1) + "s";
+        LearnCost_str = main.SR.learnt_Skill[(int)kind] ? "" : learnF.ProgressDetail(learnF.initCostList);
 
-            //needが設定されている場合にのみ書き換える。
-            //そのため、ない場合は手動でNeed_strを変えることが可能。
-            if (need.hasNeeds) { Need_str = need.Detail(); }
-
-            if (Name_str == "" || Name_str == null)
-            {
-                setFalse(popUp.texts[0].gameObject);
-            }
-            else
-            {
-                popUp.texts[0].text = Name_str;
-            }
-
-            if (Description_str == "" || Description_str == null)
-            {
-                setFalse(popUp.texts[1].gameObject);
-            }
-            else
-            {
-                popUp.texts[1].text = Description_str;
-            }
-
-            if (Need_str == "" || Need_str == null)
-            {
-                setFalse(popUp.texts[2].gameObject);
-                setFalse(popUp.texts[3].gameObject);
-            }
-            else
-            {
-                popUp.texts[3].text = Need_str;
-            }
-
-            if (LearnCost_str == "" || LearnCost_str == null)
-            {
-                setFalse(popUp.texts[4].gameObject);
-                setFalse(popUp.texts[5].gameObject);
-            }
-            else
-            {
-                popUp.texts[5].text = LearnCost_str;
-            }
-
-            if (UseCost_str == "" || UseCost_str == null)
-            {
-                setFalse(popUp.texts[6].gameObject);
-                setFalse(popUp.texts[7].gameObject);
-            }
-            else
-            {
-                popUp.texts[7].text = UseCost_str;
-            }
-
-            if (UseEffect_str == "" || UseEffect_str == null)
-            {
-                setFalse(popUp.texts[8].gameObject);
-                setFalse(popUp.texts[9].gameObject);
-            }
-            else
-            {
-                popUp.texts[9].text = UseEffect_str;
-            }
-
-            if (Interval_str == "" || Interval_str == null)
-            {
-                setFalse(popUp.texts[10].gameObject);
-                setFalse(popUp.texts[11].gameObject);
-            }
-            else
-            {
-                popUp.texts[11].text = Interval_str;
-            }
-        }
+        //needが設定されている場合にのみ書き換える。
+        //そのため、ない場合は手動でNeed_strを変えることが可能。
+        if (need.hasNeeds) { Need_str = need.Detail(); }
+            
+        ChangeTextAdaptive(Name_str, popUp.texts[0], popUp.texts[0].gameObject);
+        ChangeTextAdaptive(Description_str, popUp.texts[1], popUp.texts[1].gameObject);
+        ChangeTextAdaptive(Need_str, popUp.texts[3], popUp.texts[2].gameObject, popUp.texts[3].gameObject);
+        ChangeTextAdaptive(LearnCost_str, popUp.texts[5], popUp.texts[4].gameObject, popUp.texts[5].gameObject);
+        ChangeTextAdaptive(UseCost_str, popUp.texts[7], popUp.texts[6].gameObject, popUp.texts[7].gameObject);
+        ChangeTextAdaptive(UseEffect_str, popUp.texts[9], popUp.texts[8].gameObject, popUp.texts[9].gameObject);
+        ChangeTextAdaptive(Interval_str, popUp.texts[11], popUp.texts[10].gameObject, popUp.texts[11].gameObject);
     }
 }

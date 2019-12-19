@@ -120,6 +120,10 @@ public class ResourceCtrl : BASE {
     {
         foreach (var deal in dealings)
         {
+            if(deal is Temp_Regen_Deal || deal is Temp_TRate_Deal || deal is Item_Dealing)
+            {
+                throw new Exception("対応していない項目です。");
+            }
             if (deal.rscKind is ResourceKind)
             {
                 /* リソース */

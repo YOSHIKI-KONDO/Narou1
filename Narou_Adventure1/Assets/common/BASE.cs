@@ -275,13 +275,13 @@ public class BASE : MonoBehaviour
                 switch ((Dealing.R_ParaKind)deal.paraKind)
                 {
                     case Dealing.R_ParaKind.current:
-                        sum_str += main.enumCtrl.resources[(int)(ResourceKind)deal.rscKind].Name() + ":" + tDigit(deal.Value,1);
+                        sum_str += main.enumCtrl.resources[(int)(ResourceKind)deal.rscKind].Name() + ":" + tDigit(deal.Value, main.resourceTextCtrl.points[(int)(ResourceKind)deal.rscKind].current_deal);
                         break;
                     case Dealing.R_ParaKind.max:
-                        sum_str += main.enumCtrl.resources[(int)(ResourceKind)deal.rscKind].Name() + " max:" + tDigit(deal.Value,1);
+                        sum_str += main.enumCtrl.resources[(int)(ResourceKind)deal.rscKind].Name() + " max:" + tDigit(deal.Value, main.resourceTextCtrl.points[(int)(ResourceKind)deal.rscKind].max_deal);
                         break;
                     case Dealing.R_ParaKind.regen:
-                        sum_str += main.enumCtrl.resources[(int)(ResourceKind)deal.rscKind].Name() + " rate:" + tDigit(deal.Value,2) + "/s";
+                        sum_str += main.enumCtrl.resources[(int)(ResourceKind)deal.rscKind].Name() + " rate:" + tDigit(deal.Value, main.resourceTextCtrl.points[(int)(ResourceKind)deal.rscKind].regen_deal) + "/s";
                         break;
                     case Dealing.R_ParaKind.status:
                         sum_str += main.enumCtrl.resources[(int)(ResourceKind)deal.rscKind].Name() + ":" + tDigit(deal.Value, 1);

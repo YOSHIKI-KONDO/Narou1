@@ -194,7 +194,8 @@ public class UsefulMethod : MonoBehaviour
         }
 
         switch(j){
-
+            case 0:
+                return i.ToString("F0");
             case 1:
             return i.ToString("F1");
             case 2:
@@ -250,7 +251,8 @@ public class UsefulMethod : MonoBehaviour
 
         switch (j)
         {
-
+            case 0:
+                return i.ToString("F0");
             case 1:
                 return i.ToString("F1");
             case 2:
