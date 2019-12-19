@@ -43,7 +43,7 @@ public class ProgressCtrl : BASE {
                 p.isOn = true;
                 currentFunction = p;
                 //Focus関連
-                ApplyFocus();
+                //ApplyFocus(); //常に出しておく
             }
         }
         currentFunction.SelectedAction?.Invoke();

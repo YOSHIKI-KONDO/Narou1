@@ -17,7 +17,7 @@ public class LOOP_ACTION : ACTION, INeed {
 
     public double MaxValue;
     public double CurrentValue;
-    public double PlusValue;
+    public double? PlusValue;
 
     public virtual bool Requires() { return true; }
     public virtual bool CompleteCondition() { return false; }
@@ -31,7 +31,7 @@ public class LOOP_ACTION : ACTION, INeed {
 
     // Use this for initialization
     protected void AwakeLoopAction(ActionEnum.Loop Kind,
-        double maxValue = 60, double plusValue = 1) {
+        double maxValue = 60, double? plusValue = 1) {
         StartBASE();
         text = GetComponentInChildren<Text>();
         if(GetComponentInChildren<Slider>() != null)
@@ -68,7 +68,7 @@ public class LOOP_ACTION : ACTION, INeed {
 
     protected void FixedUpdateLoopAction()
     {
-        progress.Progress(PlusValue, MaxValue);
+        progress.Progress(CalPlusValue(), MaxValue);
         ApplyPopUp();
         text.text = Name_str;
 
@@ -76,6 +76,18 @@ public class LOOP_ACTION : ACTION, INeed {
         {
             release.Completed(true);
             setFalse(popUp.gameObject);
+        }
+    }
+
+    double CalPlusValue()
+    {
+        if(PlusValue == null)
+        {
+            return 0;
+        }
+        else
+        {
+            return (double)PlusValue + main.rsc.Value[(int)ResourceKind.focus];
         }
     }
 

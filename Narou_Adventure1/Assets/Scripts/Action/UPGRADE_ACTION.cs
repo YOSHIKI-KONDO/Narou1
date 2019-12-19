@@ -18,7 +18,7 @@ public class UPGRADE_ACTION : ACTION, INeed
 
     public double MaxValue;
     public double CurrentValue;
-    public double PlusValue;
+    public double? PlusValue;
     public int maxNum;
     public int ClearNum { get => main.SR.clearNum_upgrade[(int)kind]; set => main.SR.clearNum_upgrade[(int)kind] = value; }
 
@@ -40,7 +40,7 @@ public class UPGRADE_ACTION : ACTION, INeed
 
     // Use this for initialization
     protected void AwakeUpgradeAction(ActionEnum.Upgrade Kind,
-        int maxNum = 1, double maxValue = 60, double plusValue = 1)
+        int maxNum = 1, double maxValue = 60, double? plusValue = 1)
     {
         StartBASE();
         text = GetComponentInChildren<Text>();
@@ -84,7 +84,7 @@ public class UPGRADE_ACTION : ACTION, INeed
 
     protected void FixedUpdateUpgradeAction()
     {
-        progress.Progress(PlusValue, MaxValue);
+        progress.Progress(CalPlusValue(), MaxValue);
         text.text = Name_str;
         ApplyPopUp();
 
@@ -92,6 +92,18 @@ public class UPGRADE_ACTION : ACTION, INeed
         {
             release.Completed(true);
             setFalse(popUp.gameObject);
+        }
+    }
+
+    double CalPlusValue()
+    {
+        if (PlusValue == null)
+        {
+            return 0;
+        }
+        else
+        {
+            return (double)PlusValue + main.rsc.Value[(int)ResourceKind.focus];
         }
     }
 
