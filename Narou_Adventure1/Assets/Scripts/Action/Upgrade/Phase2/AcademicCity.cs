@@ -13,7 +13,10 @@ public class AcademicCity : UPGRADE_ACTION
                main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.sorcerer_school] >= 1 ||
                main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.tamer_school] >= 1;
     }
-
+    public override void CompleteAction()
+    {
+        main.SR.released_Norn = true;
+    }
     // Use this for initialization
     void Awake () {
         AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.academic_city, 1,0,0);
