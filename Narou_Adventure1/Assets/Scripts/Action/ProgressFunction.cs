@@ -81,7 +81,7 @@ public class ProgressFunction : OnlyAction
         if (CanPurchase(progressCostList))
         {
             Calculate(progressCostList, true);
-            Calculate(progressEffectList, true);
+            Calculate(progressEffectList, true, (float)main.focus.FocusFactor());
         }
         else
         {
