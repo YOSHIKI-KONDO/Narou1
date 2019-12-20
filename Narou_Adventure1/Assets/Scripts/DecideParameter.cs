@@ -25,9 +25,8 @@ public class DecideParameter : BASE {
         {
             main.a_rsc.MaxLevels_Base[i] = 5;//最大レベル5でスタート
         }
-        main.rsc.Regen_Base[(int)ResourceKind.focus] = -0.04;
-        main.rsc.Max_Base[(int)ResourceKind.focus] = 2;
-        main.SR.released_resource[(int)ResourceKind.focus] = true;
+        main.SR.released_element[(int)ElementKind.main] = true;     //要素、タブの解放
+        main.SR.released_element[(int)ElementKind.status] = true;   //要素、タブの解放
 
         main.rsc.Max_Base[(int)ResourceKind.inventorySpace] = 0;
         main.rsc.Max_Base[(int)ResourceKind.equipSpace] = 0;

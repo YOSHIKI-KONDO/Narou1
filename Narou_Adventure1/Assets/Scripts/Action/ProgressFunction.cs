@@ -33,13 +33,18 @@ public class ProgressFunction : OnlyAction
     /// 初期設定。Obj以外は、無ければnullでいい。
     /// ObjにはgameObjectを入れる。
     /// </summary>
-    public virtual void StartProgress(GameObject Obj, Condition Need, Slider slider, BoolSync hasPaid, DoubleSync currentValue, BoolSync watched, string actionName)
+    public virtual void StartProgress(GameObject Obj, Condition Need, Slider slider, BoolSync hasPaid, DoubleSync currentValue, BoolSync watched, string actionName, bool addCtrl = true)
     {
-        AwakeOnlyAction(Obj.GetComponent<Button>(), actionName, watched);
+        AwakeOnlyAction(Obj.GetComponent<Button>(), actionName, watched, addCtrl);
         this.Need = Need;
         this.slider = slider;
         HasPaid = hasPaid;
         CurrentValue = currentValue;
+
+        if(addCtrl == false)
+        {
+            Obj.GetComponent<Button>().onClick.AddListener(() => ProgressContent(0, 0));
+        }
     }
 
     /// <summary>
@@ -50,6 +55,14 @@ public class ProgressFunction : OnlyAction
     {
         CheckButton();
         if(isOn == false) { return; }//falseだったら抜ける
+        ProgressContent(plusValue, Max);
+    }
+
+    //実際の処理の内容。
+    //loopするものならfixedUpdateで呼ばれるし、
+    //買い切りのものなら一度だけ呼ばれる。
+    void ProgressContent(double plusValue, double Max)
+    {
         if (HasPaid() == false)
         {
             //コストを支払う。無ければ抜ける。
@@ -94,6 +107,7 @@ public class ProgressFunction : OnlyAction
 
         ApplySlider(Max);
     }
+
     //インスタンス先のclassのスタートなどで呼ぶ
     public virtual void ApplySlider(double Max)
     {

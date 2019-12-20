@@ -21,17 +21,19 @@ public class ABILITY : BASE, INeed
     double bottom_exp;
 
     public int level { get => main.SR.levels_ability[(int)kind]; set => main.SR.levels_ability[(int)kind] = value; }
-    public int MaxLevel { get => main.SR.maxLevels_ability[(int)kind]; set => main.SR.maxLevels_ability[(int)kind] = value; }
+    //public int MaxLevel { get => main.SR.maxLevels_ability[(int)kind]; set => main.SR.maxLevels_ability[(int)kind] = value; }
+    public int MaxLevel { get => main.a_rsc.MaxLevel((int)kind); }
     public double MaxExp()
     {
         return init_exp * Math.Pow(bottom_exp, level);
     }
-    public virtual double AbilityRate()//毎秒上がる量
-    {
-        return 1 * Mul_Rate() + Add_Rate();
-    }
-    public virtual double Add_Rate() { return 0; /* main.rsc.Value[(int)ResourceKind.focus];*/ }//加算
-    public virtual double Mul_Rate() { return main.focus.FocusFactor(); }//乗算
+    public virtual double AbilityRate() { return main.a_rsc.TrainRate((int)kind); }
+    //public virtual double AbilityRate()//毎秒上がる量
+    //{
+    //    return 1 * Mul_Rate() + Add_Rate();
+    //}
+    //public virtual double Add_Rate() { return 0; /* main.rsc.Value[(int)ResourceKind.focus];*/ }//加算
+    //public virtual double Mul_Rate() { return main.focus.FocusFactor(); }//乗算
 
     public virtual bool Requires() { return true; }
     public virtual bool CompleteCondition() { return false; }
@@ -83,8 +85,6 @@ public class ABILITY : BASE, INeed
             main.enumCtrl.abilitys[(int)kind].Name());
         progress.CompleteAction = LevelUp;//回数を増やす処理
         progress.IsMax = () => { return level >= MaxLevel; };
-
-        if (!main.S.isContinuePlay) { MaxLevel = 5; }//最大値の初期値
     }
 
     // Use this for initialization

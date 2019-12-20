@@ -14,6 +14,7 @@ public class Focus : BASE {
 
     public double FocusFactor()
     {
+        if (Remain <= 1) { return 1; }
         return 0.01d * (25 * Remain + 75);
     }
 
@@ -22,8 +23,8 @@ public class Focus : BASE {
         double sub = Max - Remain;
         if(sub > main.rsc.Value[(int)ResourceKind.mp])
         {
-            Remain += main.rsc.Value[(int)ResourceKind.mp];
-            main.rsc.Value[(int)ResourceKind.mp] = 0;
+            Remain += main.rsc.Value[(int)ResourceKind.mp] - 0.1d; //若干残さないとrestに入ってしまう
+            main.rsc.Value[(int)ResourceKind.mp] = 0.1d;
         }
         else
         {
@@ -53,8 +54,6 @@ public class Focus : BASE {
         {
             Remain = 1;
         }
-
-        resourceText.Others_str = "Current : " + (FocusFactor() * 100).ToString("F0") + "%";
     }
 
     // Use this for initialization
@@ -79,5 +78,7 @@ public class Focus : BASE {
     private void FixedUpdate()
     {
         Decline();
+        resourceText.Others_str = "Current Bonus : " + (FocusFactor() * 100).ToString("F0") + "%";
+        main.rsc.Max_Base[(int)ResourceKind.focus] = main.rsc.Max_Base[(int)ResourceKind.mp];
     }
 }

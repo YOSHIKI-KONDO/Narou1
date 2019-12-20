@@ -39,8 +39,12 @@ public class UPGRADE_ACTION : ACTION, INeed
     }
 
     // Use this for initialization
+    /// <summary>
+    /// maxValueがnullだと、押してもループアクションだと認識されない。
+    /// plusVaueがnullだと、focusの値が反映されない。
+    /// </summary>
     protected void AwakeUpgradeAction(ActionEnum.Upgrade Kind,
-        int maxNum = 1, double maxValue = 60, double? plusValue = 1)
+        int maxNum = 1, double maxValue = 60, double? plusValue = 1, bool onSlider = true, bool addCtrl = true)
     {
         StartBASE();
         text = GetComponentInChildren<Text>();
@@ -48,13 +52,14 @@ public class UPGRADE_ACTION : ACTION, INeed
         {
             slider = GetComponentInChildren<Slider>();
         }
+        if(onSlider == false) { setFalse(slider.gameObject); }
 
         this.kind = Kind;
         this.maxNum = maxNum;
-        MaxValue = maxValue;
         PlusValue = plusValue;
+        MaxValue = maxValue;
 
-        
+
         popUp = main.ActionPopUpPre.StartPopUp(gameObject, main.windowShowCanvas);
         popUp.EnterAction = ApplyPopUp;
         need = gameObject.AddComponent<NeedFunciton>();
@@ -65,7 +70,8 @@ public class UPGRADE_ACTION : ACTION, INeed
             x => Sync(ref main.SR.paid_upgrade[(int)kind], x),
             x => Sync(ref main.SR.currentValue_upgrade[(int)kind], x),
             x => Sync(ref main.SR.watched_upgrade[(int)kind], x),
-            main.enumCtrl.upgradeActions[(int)kind].Name());
+            main.enumCtrl.upgradeActions[(int)kind].Name(),
+            addCtrl);
         progress.CompleteAction = AddClerNum;//回数を増やす処理
         progress.CompleteActionForSub = CompleteAction;
     }

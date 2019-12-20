@@ -29,6 +29,8 @@ public class BattleAndSkillCtrl : BASE {
     [SerializeField]SkillSlot[] slots_ins;//InspectorからAddする
     [SerializeField] SkillSlot[] slots_menu;//menuに常に出ているスロット
     SkillSlot[,] slots;
+    public Toggle skillActiveToggle;
+    public Toggle skillDungeonToggle;
     int currentRow;
 
     public DungeonKind dunKind;
@@ -102,6 +104,8 @@ public class BattleAndSkillCtrl : BASE {
     //Called in Fixed Update
     void PlaySkills()
     {
+        if (skillActiveToggle.isOn == false) { return; }
+        if (skillDungeonToggle.isOn && dunKind == DungeonKind.nothing) { return; }
         for (int i_r = 0; i_r < ROW_SLOT; i_r++)
         {
             if(currentRow != i_r) { continue; }//現在の行の時のみ実行する
