@@ -122,9 +122,10 @@ public class BASE : MonoBehaviour
     /// 実際にコストの計算をする。
     /// specificNameはtemporaryEffectの計算をする時のみ必要。
     /// </summary>
-    protected void Calculate(List<Dealing> dealings, bool isProgress, string specificName = "")
+    protected void Calculate(List<Dealing> dealings, bool isProgress, float factor = 1, string specificName = "")
     {
         float mag = isProgress ? Time.fixedDeltaTime : 1f;
+        mag *= factor;
         foreach (var deal in dealings)
         {
             //Temporary Effectの判定
