@@ -35,7 +35,8 @@ public class SaveDeclare : BASE {
     public int num_ally = Enum.GetNames(typeof(AllyKind)).Length;
     [NonSerialized]
     public int num_need = Enum.GetNames(typeof(NeedKind)).Length;
-
+    [NonSerialized]
+    public int num_element = Enum.GetNames(typeof(ElementKind)).Length;
 
     // Use this for initialization
     void Awake () {
@@ -104,6 +105,10 @@ public class SaveDeclare : BASE {
         /* Npc */
         InitializeArray(ref main.SR.levels_Ally, num_ally);
         InitializeArray(ref main.SR.exps_Ally, num_ally);
+
+        /* 要素 */
+        InitializeArray(ref main.SR.released_element, num_element);
+        InitializeArray(ref main.SR.completed_element, num_element);
     }
 
 	// Use this for initialization

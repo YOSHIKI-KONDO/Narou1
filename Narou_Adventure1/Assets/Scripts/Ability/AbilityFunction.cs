@@ -42,7 +42,17 @@ public class AbilityFunction : ProgressFunction {
         {
             setActive(unlockButton.gameObject);
             setFalse(button.gameObject);
-            unlockButton.interactable = CanPurchase(unlockCostList);
+            //unlockButton.interactable = CanPurchase(unlockCostList);
+        }
+
+        //unlockButtonにもneedを反映させる
+        if ((Need == null || Need()) && CanPurchase(unlockCostList))
+        {
+            unlockButton.interactable = true;
+        }
+        else
+        {
+            unlockButton.interactable = false;
         }
         /* ******** */
         if (condition && CanPurchase(initCostList) && CanPurchase(progressCostList))

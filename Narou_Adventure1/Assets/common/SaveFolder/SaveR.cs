@@ -78,4 +78,8 @@ public class SaveR
     public int[] levels_Ally;
     public bool released_Norn;
     public double[] exps_Ally;
+
+    /* タブや項目 */
+    public bool[] released_element;
+    public bool[] completed_element;
 }

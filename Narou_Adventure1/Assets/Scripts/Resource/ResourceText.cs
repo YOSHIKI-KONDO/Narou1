@@ -11,8 +11,9 @@ public class ResourceText : BASE {
     public Slider slider;
     Text nameText, numText;
     ReleaseFunction release;//added
-    PopUp popUp;
+    public PopUp popUp;
     string Name_str, Description_str, Regen_str, Effect_str;
+    public string Others_str;
     public List<Dealing> effects = new List<Dealing>();
 
     bool Requires()
@@ -60,6 +61,7 @@ public class ResourceText : BASE {
             ChangeTextAdaptive(Description_str, popUp.texts[1], popUp.texts[1].gameObject);
             ChangeTextAdaptive(Regen_str, popUp.texts[2], popUp.texts[2].gameObject);
             ChangeTextAdaptive(Effect_str, popUp.texts[4], popUp.texts[3].gameObject, popUp.texts[4].gameObject);
+            ChangeTextAdaptive(Others_str, popUp.texts[5], popUp.texts[5].gameObject);
         }
     }
 }

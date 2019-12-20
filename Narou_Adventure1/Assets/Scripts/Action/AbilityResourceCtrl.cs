@@ -11,12 +11,26 @@ using static UsefulMethod;
 public class AbilityResourceCtrl : BASE {
     public int MaxLevel(int index)
     {
-        return MaxLevels_Base[index] + main.itemCtrl.A_maxLevel[index] + main.rsc.A_maxLevel[index];
+        return Add_MaxLevel(index) * Mul_MaxLevel(index);
     }
     public double TrainRate(int index)
     {
+        return Add_TrainRate(index) * Mul_TrainRate(index);
+    }
+
+    int Add_MaxLevel(int index)
+    {
+        return MaxLevels_Base[index] + main.itemCtrl.A_maxLevel[index] + main.rsc.A_maxLevel[index];
+    }
+    int Mul_MaxLevel(int index) { return 1; }
+
+    double Add_TrainRate(int index)
+    {
         return TrainRate_Base[index] + main.itemCtrl.A_trainRate[index] + main.tempEffectsCtrl.TRates[index] + main.rsc.A_trainRate[index];
     }
+    double Mul_TrainRate(int index) { return main.focus.FocusFactor(); }
+
+
     public double[] CurrentExp { get => main.SR.currentValue_ability; set => main.SR.currentValue_ability = value; }
 
     public int[] MaxLevels_Base { get => main.SR.maxLevels_ability; set => main.SR.maxLevels_ability = value; }

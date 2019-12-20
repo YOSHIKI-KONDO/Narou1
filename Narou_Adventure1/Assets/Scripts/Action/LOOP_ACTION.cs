@@ -17,7 +17,7 @@ public class LOOP_ACTION : ACTION, INeed {
 
     public double MaxValue;
     public double CurrentValue;
-    public double PlusValue;
+    public double? PlusValue;
 
     public virtual bool Requires() { return true; }
     public virtual bool CompleteCondition() { return false; }
@@ -30,18 +30,23 @@ public class LOOP_ACTION : ACTION, INeed {
     public string Name_str, Description_str, Need_str, Cost_str, ProgressCost_str, ProgressEffect_str, CompleteEffect_str;
 
     // Use this for initialization
+    /// <summary>
+    /// maxValueがnullだと、押してもループアクションだと認識されない。
+    /// plusVaueがnullだと、focusの値が反映されない。
+    /// </summary>
     protected void AwakeLoopAction(ActionEnum.Loop Kind,
-        double maxValue = 60, double plusValue = 1) {
+        double maxValue = 60, double? plusValue = 1, bool onSlider = true, bool addCtrl = true) {
         StartBASE();
         text = GetComponentInChildren<Text>();
         if(GetComponentInChildren<Slider>() != null)
         {
             slider = GetComponentInChildren<Slider>();
         }
+        if (onSlider == false) { setFalse(slider.gameObject); }
 
         this.kind = Kind;
-        MaxValue = maxValue;
         PlusValue = plusValue;
+        MaxValue = maxValue;
 
         popUp = main.ActionPopUpPre.StartPopUp(gameObject, main.windowShowCanvas);
         popUp.EnterAction = ApplyPopUp;
@@ -53,7 +58,8 @@ public class LOOP_ACTION : ACTION, INeed {
             x => Sync(ref main.SR.paid_loop[(int)kind], x),
             x => Sync(ref main.SR.currentValue_loop[(int)kind], x),
             x => Sync(ref main.SR.watched_loop[(int)kind], x),
-            main.enumCtrl.loopActions[(int)kind].Name());
+            main.enumCtrl.loopActions[(int)kind].Name(),
+            addCtrl);
     }
 
     // Use this for initialization
@@ -68,7 +74,7 @@ public class LOOP_ACTION : ACTION, INeed {
 
     protected void FixedUpdateLoopAction()
     {
-        progress.Progress(PlusValue, MaxValue);
+        progress.Progress(CalPlusValue(), MaxValue);
         ApplyPopUp();
         text.text = Name_str;
 
@@ -76,6 +82,18 @@ public class LOOP_ACTION : ACTION, INeed {
         {
             release.Completed(true);
             setFalse(popUp.gameObject);
+        }
+    }
+
+    double CalPlusValue()
+    {
+        if(PlusValue == null)
+        {
+            return 0;
+        }
+        else
+        {
+            return (double)PlusValue * main.focus.FocusFactor();
         }
     }
 
