@@ -84,7 +84,7 @@
             warrior_school,
             sorcerer_school,
             tamer_school,
-
+            leave_the_town,
             //フェーズ２（学校）
             academic_city,
             into_a_dormitory,

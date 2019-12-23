@@ -80,12 +80,12 @@ public class StatusCtrl : BASE {
         nornCmps.txt_Value_Level.text = main.npcSkillCtrl.npcs[(int)AllyKind.npcA].level().ToString();
         nornCmps.txt_Value_Exp.text = tDigit(main.npcSkillCtrl.npcs[(int)AllyKind.npcA].currentExp())
             + "/" + tDigit(main.npcSkillCtrl.npcs[(int)AllyKind.npcA].MaxExp);
-        nornCmps.txt_Value_Hp.text = main.npcSkillCtrl.npcs[(int)AllyKind.npcA].Hp.ToString();
-        nornCmps.txt_Value_Strength.text = main.npcSkillCtrl.npcs[(int)AllyKind.npcA].Strength.ToString();
-        nornCmps.txt_Value_MStrength.text = main.npcSkillCtrl.npcs[(int)AllyKind.npcA].MentalStrength.ToString();
-        nornCmps.txt_Value_Attack.text = main.npcSkillCtrl.npcs[(int)AllyKind.npcA].Attack.ToString();
-        nornCmps.txt_Value_MAttack.text = main.npcSkillCtrl.npcs[(int)AllyKind.npcA].MagicAttack.ToString();
-        nornCmps.txt_Value_Defense.text = main.npcSkillCtrl.npcs[(int)AllyKind.npcA].Defense.ToString();
+        nornCmps.txt_Value_Hp.text = main.npcSkillCtrl.npcs[(int)AllyKind.npcA].Hp.ToString("F0");
+        nornCmps.txt_Value_Strength.text = main.npcSkillCtrl.npcs[(int)AllyKind.npcA].Strength.ToString("F0");
+        nornCmps.txt_Value_MStrength.text = main.npcSkillCtrl.npcs[(int)AllyKind.npcA].MentalStrength.ToString("F0");
+        nornCmps.txt_Value_Attack.text = main.npcSkillCtrl.npcs[(int)AllyKind.npcA].Attack.ToString("F0");
+        nornCmps.txt_Value_MAttack.text = main.npcSkillCtrl.npcs[(int)AllyKind.npcA].MagicAttack.ToString("F0");
+        nornCmps.txt_Value_Defense.text = main.npcSkillCtrl.npcs[(int)AllyKind.npcA].Defense.ToString("F0");
         nornCmps.txt_Value_Dodge.text = main.npcSkillCtrl.npcs[(int)AllyKind.npcA].DodgeChance.ToString("F1") + "%";
         nornCmps.txt_Value_CriticalC.text = main.npcSkillCtrl.npcs[(int)AllyKind.npcA].CriticalChance.ToString("F1") + "%";
 

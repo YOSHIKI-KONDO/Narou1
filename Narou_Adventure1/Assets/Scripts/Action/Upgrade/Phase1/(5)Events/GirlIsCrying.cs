@@ -9,14 +9,17 @@ public class GirlIsCrying : UPGRADE_ACTION
 {
     public override bool Requires()
     {
-        return main.a_rsc.CurrentLevels[(int)AbilityKind.beginner_swordmanship] >= 1 ||
+        return (main.a_rsc.CurrentLevels[(int)AbilityKind.beginner_swordmanship] >= 1 ||
                main.a_rsc.CurrentLevels[(int)AbilityKind.beginner_spearmanship] >= 1 ||
                main.a_rsc.CurrentLevels[(int)AbilityKind.beginner_bojutsu] >= 1 ||
                main.a_rsc.CurrentLevels[(int)AbilityKind.primary_fire_magic] >= 1 ||
                main.a_rsc.CurrentLevels[(int)AbilityKind.primary_water_magic] >= 1 ||
                main.a_rsc.CurrentLevels[(int)AbilityKind.primary_wind_magic] >= 1 ||
                main.a_rsc.CurrentLevels[(int)AbilityKind.primary_earth_magic] >= 1 ||
-               main.a_rsc.CurrentLevels[(int)AbilityKind.animal_handling] >= 1;
+               main.a_rsc.CurrentLevels[(int)AbilityKind.animal_handling] >= 1) ||
+               (main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.warrior_school] >= 1 ||
+               main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.sorcerer_school] >= 1 ||
+               main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.tamer_school] >= 1);
     }
 
     // Use this for initialization

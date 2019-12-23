@@ -56,6 +56,7 @@ public class UICtrl : BASE {
     {
         apText.text = "AP : " + tDigit(main.rsc.Value[(int)ResourceKind.ap], 2);
         inventoryText.text = "Equipment:" + main.rsc.Value[(int)ResourceKind.equipSpace].ToString() + " / " + main.rsc.Max((int)ResourceKind.equipSpace).ToString() +
-            ",  Inventory:" + main.rsc.Value[(int)ResourceKind.inventorySpace].ToString() + " / " + main.rsc.Max((int)ResourceKind.inventorySpace).ToString();
+            ",  Inventory:" + main.rsc.Value[(int)ResourceKind.inventorySpace].ToString() + " / " + main.rsc.Max((int)ResourceKind.inventorySpace).ToString()+
+            ", Item point1:" + main.rsc.Value[(int)ResourceKind.itemPoint1].ToString() + " / " + main.rsc.Max((int)ResourceKind.itemPoint1).ToString();
     }
 }
