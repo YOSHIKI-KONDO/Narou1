@@ -9,7 +9,7 @@ public class Lumberjack : LOOP_ACTION
 {
     public override bool Requires()
     {
-        return main.a_rsc.CurrentLevels[(int)AbilityKind.use_tools] >= 5;
+        return main.a_rsc.CurrentLevels[(int)AbilityKind.use_tools] >= 3;
     }
 
     // Use this for initialization

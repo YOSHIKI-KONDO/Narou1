@@ -20,7 +20,7 @@ public class BuyFireSpellbook : UPGRADE_ACTION
 
     // Use this for initialization
     void Awake () {
-        AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.buy_fire_spellbook, 1,0,0);
+        AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.buy_fire_spellbook, 1, 0, null, false, false);
         progress.initCostList.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -40));
     }
 

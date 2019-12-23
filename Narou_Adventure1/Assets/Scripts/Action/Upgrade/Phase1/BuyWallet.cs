@@ -14,7 +14,7 @@ public class BuyWallet : UPGRADE_ACTION
 
     // Use this for initialization
     void Awake () {
-        AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.buy_wallet, 2, 0, null, false, false);
+        AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.buy_wallet, 2,0,null,false,false);
         progress.initCostList.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -15));
         progress.completeEffectList.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.max, 30));
 	}

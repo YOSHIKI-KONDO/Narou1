@@ -33,6 +33,7 @@
             harvest_wheat,
             grow_herb,
             lumberjack,
+            craft_magi_stone,
             //フェーズ２（学校）
             manual_labor,
             desk_work,
@@ -88,10 +89,6 @@
             academic_city,
             into_a_dormitory,
             entrance_ceremony,
-            //進学１
-            warrior_apprentice,
-            sorcerer_apprentice,
-            tamer_apprentice,
             //攫われイベント
             norns_room,
             desolate_room,

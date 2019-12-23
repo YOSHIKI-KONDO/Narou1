@@ -34,10 +34,11 @@ public class DUNGEON : BASE {
 
     void Enter()
     {
-        if(currentFloor >= MaxFloor())
-        {
-            currentFloor = 0;
-        }
+        currentFloor = 0;
+        //if(currentFloor >= MaxFloor())
+        //{
+        //    currentFloor = 0;
+        //}
         main.announce_d.Add("You entered " + main.enumCtrl.dungeons[(int)kind].Name());
         main.battleCtrl.dunKind = kind;
         main.battleCtrl.EnterDungeon();

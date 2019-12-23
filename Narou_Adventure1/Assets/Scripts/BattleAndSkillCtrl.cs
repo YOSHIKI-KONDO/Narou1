@@ -47,7 +47,7 @@ public class BattleAndSkillCtrl : BASE {
     public SlideSetActive battleScreen;
     float Interval_normalAttack = 3.0f;               //通常攻撃のインターバル
     float currentInterval_normalAttack;               //通常攻撃のインターバルのたまり具合
-    double attack_normalAttack = 1d;                  //通常攻撃の攻撃力
+    //double attack_normalAttack = 1d;                  //通常攻撃の攻撃力
     int targetEnemy_index;
 
 
@@ -57,6 +57,12 @@ public class BattleAndSkillCtrl : BASE {
     public Slider floorSlider;
     public Button fleeButton;
     /******/
+
+
+    public double DamageCalculate(double skill_atk, double atk, double criticalFactor)
+    {
+        return atk * (1d + skill_atk / 10) * criticalFactor;
+    }
 
 
     // Use this for initialization
@@ -149,12 +155,14 @@ public class BattleAndSkillCtrl : BASE {
                         //剣士系の攻撃
                         if (skills[(int)thisKind].warriorAtks.Count > 0)
                         {
-                            AttackToEnemys(thisKind, skills[(int)thisKind].WarriorDamage() * main.status.Attack * criticalFactor, "You", criticalSentense);
+                            //AttackToEnemys(thisKind, skills[(int)thisKind].WarriorDamage() * main.status.Attack * criticalFactor, "You", criticalSentense);
+                            AttackToEnemys(thisKind,DamageCalculate(skills[(int)thisKind].WarriorDamage(), main.status.Attack, criticalFactor), "You", criticalSentense);
                         }
                         //魔法系の攻撃
                         if (skills[(int)thisKind].sorcererAtks.Count > 0)
                         {
-                            AttackToEnemys(thisKind, skills[(int)thisKind].SorcererDamage() * main.status.MagicAttack * criticalFactor, "You", criticalSentense);
+                            //AttackToEnemys(thisKind, skills[(int)thisKind].SorcererDamage() * main.status.MagicAttack * criticalFactor, "You", criticalSentense);
+                            AttackToEnemys(thisKind,DamageCalculate(skills[(int)thisKind].SorcererDamage(), main.status.MagicAttack, criticalFactor), "You", criticalSentense);
                         }
                     }
 
@@ -201,10 +209,20 @@ public class BattleAndSkillCtrl : BASE {
                     criticalFactor *= main.npcSkillCtrl.npcs[i].CriticalFactor;
                     criticalSentense = " (Critical)";
                 }
-                AttackToEnemys(thisSkill.kind, thisSkill.WarriorDamage() * main.npcSkillCtrl.npcs[i].Attack * criticalFactor
-                    , main.enumCtrl.allys[i].Name(), criticalSentense);
-                AttackToEnemys(thisSkill.kind, thisSkill.SorcererDamage() * main.npcSkillCtrl.npcs[i].MagicAttack * criticalFactor
-                    , main.enumCtrl.allys[i].Name(), criticalSentense);
+                if (thisSkill.warriorAtks.Count > 0)
+                {
+                    //AttackToEnemys(thisSkill.kind, thisSkill.WarriorDamage() * main.npcSkillCtrl.npcs[i].Attack * criticalFactor
+                    //    , main.enumCtrl.allys[i].Name(), criticalSentense);
+                    AttackToEnemys(thisSkill.kind, DamageCalculate(thisSkill.WarriorDamage(), main.npcSkillCtrl.npcs[i].Attack, criticalFactor)
+                        , main.enumCtrl.allys[i].Name(), criticalSentense);
+                }
+                if (thisSkill.sorcererAtks.Count > 0)
+                {
+                    //AttackToEnemys(thisSkill.kind, thisSkill.SorcererDamage() * main.npcSkillCtrl.npcs[i].MagicAttack * criticalFactor
+                    //    , main.enumCtrl.allys[i].Name(), criticalSentense);
+                    AttackToEnemys(thisSkill.kind, DamageCalculate(thisSkill.SorcererDamage(), main.npcSkillCtrl.npcs[i].MagicAttack, criticalFactor)
+                        , main.enumCtrl.allys[i].Name(), criticalSentense);
+                }
                 thisSkill.Produce();
                 main.announce_d.Add(main.enumCtrl.allys[i].Name() + " used " + main.enumCtrl.skills[(int)thisSkill.kind].Name());
             }
@@ -227,7 +245,8 @@ public class BattleAndSkillCtrl : BASE {
                 criticalFactor *= main.status.CriticalFactor;
                 criticalSentense = " (Critical)";
             }
-            AttackToEnemys(SkillKind.normalAttack, attack_normalAttack * main.status.Attack * criticalFactor, "You", criticalSentense);
+            //AttackToEnemys(SkillKind.normalAttack, main.status.Attack * criticalFactor, "You", criticalSentense);
+            AttackToEnemys(SkillKind.normalAttack, DamageCalculate(skills[(int)SkillKind.normalAttack].WarriorDamage(), main.status.Attack, criticalFactor), "You", criticalSentense);
         }
     }
 

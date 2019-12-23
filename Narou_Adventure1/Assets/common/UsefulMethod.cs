@@ -882,7 +882,7 @@ public class UsefulMethod : MonoBehaviour
     public static double CalDmg(double dmg, double def)
     {
         if(dmg - def >= 1) { return dmg - def; }
-        else { return 1; }
+        else { return 0;/* 1;*/ }
     }
 
     public static void ChangeTextAdaptive(string sentense, Text text, params GameObject[] objects)

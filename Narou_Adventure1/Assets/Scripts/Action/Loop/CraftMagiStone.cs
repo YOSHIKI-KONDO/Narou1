@@ -5,20 +5,20 @@ using UnityEngine;
 using UnityEngine.UI;
 using static UsefulMethod;
 
-public class DeskWork : LOOP_ACTION
+public class CraftMagiStone : LOOP_ACTION
 {
     public override bool Requires()
     {
-        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.into_a_dormitory] >= 1 &&
-               main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.sorcerer_school] >= 1;
+        return main.a_rsc.CurrentLevels[(int)AbilityKind.use_tools] >= 8;
     }
 
     // Use this for initialization
     void Awake () {
-        AwakeLoopAction(MainAction.ActionEnum.Loop.desk_work, 10,0);
-        progress.progressCostList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.4));
+        AwakeLoopAction(MainAction.ActionEnum.Loop.craft_magi_stone, 10,1);
+        progress.initCostList.Add(new Dealing(ResourceKind.stone, Dealing.R_ParaKind.current, -1));
+        progress.progressCostList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.3));
         progress.progressCostList.Add(new Dealing(ResourceKind.mp, Dealing.R_ParaKind.current, -0.4));
-        progress.progressEffectList.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 0.6));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.magi_stone, Dealing.R_ParaKind.current, 1));
     }
 
 	// Use this for initialization

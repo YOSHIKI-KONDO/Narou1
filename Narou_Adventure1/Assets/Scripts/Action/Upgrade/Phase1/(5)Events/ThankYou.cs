@@ -18,7 +18,7 @@ public class ThankYou : UPGRADE_ACTION
 
     // Use this for initialization
     void Awake () {
-        AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.thank_you, 1,0,0);
+        AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.thank_you, 1, 0, null, false, false);
         progress.initCostList.Add(new Dealing(ResourceKind.flower, Dealing.R_ParaKind.current, -1));
         progress.completeEffectList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, 30));
     }

@@ -18,7 +18,6 @@ public class AcademicCity : UPGRADE_ACTION
         main.SR.released_Norn = true;
     }
 
-    // Use this for initialization
     void Awake () {
         AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.academic_city, 1,0,0);
         progress.initCostList.Add(new Dealing(ResourceKind.anchovy_sandwich, Dealing.R_ParaKind.current, -2));
