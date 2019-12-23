@@ -35,6 +35,16 @@ public class DecideParameter : BASE {
         main.rsc.Value[(int)ResourceKind.stamina]=1;
         main.rsc.Max_Base[(int)ResourceKind.hp] = 1;
         main.rsc.Value[(int)ResourceKind.hp] = 1;
+        main.rsc.Max_Base[(int)ResourceKind.itemPoint1] = 20;
+        main.rsc.Max_Base[(int)ResourceKind.itemPoint2] = 20;
+        main.rsc.Max_Base[(int)ResourceKind.itemPoint3] = 20;
+        main.rsc.Max_Base[(int)ResourceKind.itemPoint4] = 20;
+        main.rsc.Max_Base[(int)ResourceKind.itemPoint5] = 20;
+        main.rsc.Max_Base[(int)ResourceKind.itemPoint6] = 20;
+        main.rsc.Max_Base[(int)ResourceKind.itemPoint7] = 20;
+        main.rsc.Max_Base[(int)ResourceKind.itemPoint8] = 20;
+        main.rsc.Max_Base[(int)ResourceKind.itemPoint9] = 20;
+        main.rsc.Max_Base[(int)ResourceKind.itemPoint10] = 20;
         //MP回復
         main.rsc.Regen_Base[(int)ResourceKind.mp] = 0.1;
         main.rsc.Regen_Base[(int)ResourceKind.fire] = 0.1;
