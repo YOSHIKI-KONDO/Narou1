@@ -17,7 +17,7 @@ public class ITEM : BASE, INeed
     public List<Dealing> BuyLists = new List<Dealing>();
     public List<Dealing> SellLists = new List<Dealing>();
     public List<Dealing> EffectLists = new List<Dealing>();
-    public Button buyButton, sellButton;
+    public Button buyButton, sellButton, levelUpButton;
     public Text spaceText, nameText, numText;
     Text text;
     PopUp popUp;
@@ -28,6 +28,21 @@ public class ITEM : BASE, INeed
 
     public int[] InventoryNum { get => main.SR.inventoryNum_Item; set => main.SR.inventoryNum_Item = value; }
     public int[] equipNum { get => main.SR.equipNum_Item; set => main.SR.equipNum_Item = value; }
+    public int level { get => main.SR.level_Item[(int)kind]; set => main.SR.level_Item[(int)kind] = value; }
+    public int maxLevel = 30;
+    public double level_power;
+    public double LevelFactor() { return levelFactor_cash ?? CalculateLFactor(); }
+    double? levelFactor_cash;//レベルアップしたときにnullを入れる
+    public void LevelUp() { level++; levelFactor_cash = null; }
+    double CalculateLFactor()
+    {
+        levelFactor_cash = Math.Pow(level, level_power);
+        if(level >= maxLevel)
+        {
+            levelFactor_cash += 0.5;//50%する
+        }
+        return (double)levelFactor_cash;
+    }
 
     public bool haveSource;
     public void SetSource(params NeedKind[] sourceKinds)
@@ -82,18 +97,21 @@ public class ITEM : BASE, INeed
 
         buyButton = gameObject.GetComponentsInChildren<Button>()[0];
         sellButton = gameObject.GetComponentsInChildren<Button>()[1];
+        levelUpButton = gameObject.GetComponentsInChildren<Button>()[2];
         spaceText = GetComponentsInChildren<Text>()[0];
         nameText = GetComponentsInChildren<Text>()[1];
         numText = GetComponentsInChildren<Text>()[2];
         buyButton.onClick.AddListener(() => main.itemCtrl.Buy(kind));
         buyButton.onClick.AddListener(() => { Watched = true; }); //watchedをtrueにする処理をbuybuttonに追加
         sellButton.onClick.AddListener(() => main.itemCtrl.Sell_Shop(kind));
+        levelUpButton.onClick.AddListener(() => main.itemCtrl.LevelUp(kind));
     }
 
     // Use this for initialization
     public void StartItem () {
-		
-	}
+        if (level <= 0) { level = 1; }//レベルは0以上でなければならない
+        level_power = CalculatePower(30, 2);
+    }
 
     // Update is called once per frame
     public void UpdateItem () {
@@ -111,6 +129,11 @@ public class ITEM : BASE, INeed
             setFalse(popUp.gameObject);
         }
         text.text = Name_str;
+    }
+
+    double CalculatePower(int _maxLevel, double objective)
+    {
+        return Math.Log(objective, _maxLevel);
     }
 
     void ApplyTexts()
@@ -140,6 +163,15 @@ public class ITEM : BASE, INeed
         {
             sellButton.interactable = false;
         }
+        //levelUP
+        if (main.itemCtrl.CanLevelUp(kind))
+        {
+            levelUpButton.interactable = true;
+        }
+        else
+        {
+            levelUpButton.interactable = false;
+        }
     }
 
     void ApplyPopUp()
@@ -153,7 +185,7 @@ public class ITEM : BASE, INeed
             Description_str = main.enumCtrl.items[(int)kind].Description();
             if (haveSource) { Description_str += Description_str == "" ? SourceDetail() : "\n" + SourceDetail(); }
             Max_Str = "Max:" + ((MaxEquip == null) ? "∞" : MaxEquip.ToString());
-            Effect_str = ProgressDetail(EffectLists);
+            Effect_str = ProgressDetail(EffectLists, LevelFactor());
             Cost_str = ProgressDetail(BuyLists);
             Sell_str = ProgressDetail(SellLists);
             Cost_str = ProgressDetail(BuyLists);

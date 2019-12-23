@@ -55,6 +55,7 @@ public class SaveR
     public bool[] released_Item;
     public bool[] completed_Item;
     public bool[] watched_Item;
+    public int[] level_Item;
 
     /* Need */
     public int[] needLimits;
