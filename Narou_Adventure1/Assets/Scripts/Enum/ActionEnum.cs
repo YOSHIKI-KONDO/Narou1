@@ -13,6 +13,11 @@
             runic_carving,
             split_firewood,
             sell_firewood,
+            //フェーズ２（学校）
+            //アビリティアクション
+            mugged,
+            devotion,
+            take_medicine,
 
         }
 
@@ -31,6 +36,9 @@
             manual_labor,
             desk_work,
             service_trade,
+            //アビリティアクション
+            pickpocket,
+            dispense_medicines,
 
         }
 
@@ -78,7 +86,14 @@
             //フェーズ２（学校）
             academic_city,
             into_a_dormitory,
+            entrance_ceremony,
+            //進学１
+            warrior_apprentice,
+            sorcerer_apprentice,
+            tamer_apprentice,
+            //攫われイベント
             norns_room,
+            desolate_room,
             rumor,
             //フリークエスト
             delivery_of_fur,

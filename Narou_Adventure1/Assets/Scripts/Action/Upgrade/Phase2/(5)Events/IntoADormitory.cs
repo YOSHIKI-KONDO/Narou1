@@ -11,14 +11,17 @@ public class IntoADormitory : UPGRADE_ACTION
     {
         return main.SR.clearNum_Dungeon[(int)DungeonKind.lost_forest] >= 1;
     }
+    public override void CompleteAction()
+    {
+        main.SR.released_Norn = false;
+    }
 
     // Use this for initialization
     void Awake () {
         AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.into_a_dormitory, 1,0,0);
         progress.initCostList.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -10));
-        progress.completeEffectList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, 20));
         progress.completeEffectList.Add(new Dealing(ResourceKind.equipSpace, Dealing.R_ParaKind.max, 5));
-        progress.completeEffectList.Add(new Dealing(ResourceKind.inventorySpace, Dealing.R_ParaKind.max, 5));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.inventorySpace, Dealing.R_ParaKind.max, 4));
     }
 
 	// Use this for initialization

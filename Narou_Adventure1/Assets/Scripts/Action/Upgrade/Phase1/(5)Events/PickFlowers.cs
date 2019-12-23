@@ -15,6 +15,12 @@ public class PickFlowers : UPGRADE_ACTION
     {
         return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.punish_the_bad_kids] >= 1;
     }
+    public override void CompleteAction()
+    {
+        main.SR.released_element[(int)ElementKind.dungeon] = true;
+        main.SR.released_element[(int)ElementKind.skill] = true;
+        main.SR.released_element[(int)ElementKind.status] = true;
+    }
 
     // Use this for initialization
     void Awake () {

@@ -9,11 +9,16 @@ public class SwordPractice : UPGRADE_ACTION
 {
     public override bool Requires()
     {
-        return main.a_rsc.MaxLevel( (int)AbilityKind.beginner_bojutsu) >= 6;
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.talk_fatherD] >= 1;
     }
     public override bool CompleteCondition()
     {
         return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.academic_city] >= 1;
+    }
+    public override void CompleteAction()
+    {
+        main.SR.released_element[(int)ElementKind.main] = true;
+        main.SR.released_element[(int)ElementKind.ability] = true;
     }
 
     // Use this for initialization

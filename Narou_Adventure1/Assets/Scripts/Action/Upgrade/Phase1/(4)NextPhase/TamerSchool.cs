@@ -22,6 +22,7 @@ public class TamerSchool : UPGRADE_ACTION
         AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.tamer_school, 1,0,0);
         progress.initCostList.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -70));
         progress.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -90));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.inventorySpace, Dealing.R_ParaKind.max, 1));
         progress.completeEffectList.Add(new Item_Dealing(ItemKind.tamer_textbook));
         progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 2));
     }

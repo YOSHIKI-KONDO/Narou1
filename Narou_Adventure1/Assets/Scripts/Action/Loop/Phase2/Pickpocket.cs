@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using static UsefulMethod;
 
-public class NornsRoom : UPGRADE_ACTION
+public class Pickpocket : LOOP_ACTION
 {
     public override bool Requires()
     {
@@ -14,22 +14,23 @@ public class NornsRoom : UPGRADE_ACTION
 
     // Use this for initialization
     void Awake () {
-        AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.norns_room, 1,0,0);
-        progress.completeEffectList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.max, 20));
+        AwakeLoopAction(MainAction.ActionEnum.Loop.pickpocket, 1,0);
+        progress.progressCostList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.6));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 1));
     }
 
 	// Use this for initialization
 	void Start () {
-        StartUpgradeAction();
+        StartLoopAction();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        UpdateUpgradeAction();
+        UpdateLoopAction();
 	}
 
     void FixedUpdate()
     {
-        FixedUpdateUpgradeAction();
+        FixedUpdateLoopAction();
     }
 }

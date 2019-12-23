@@ -11,6 +11,10 @@ public class BuyBag : UPGRADE_ACTION
     {
         return main.a_rsc.CurrentLevels[(int)AbilityKind.use_tools] >= 1 || main.a_rsc.CurrentLevels[(int)AbilityKind.animal_handling] >= 1;
     }
+    public override void CompleteAction()
+    {
+        main.SR.released_element[(int)ElementKind.item] = true;
+    }
 
     // Use this for initialization
     void Awake () {

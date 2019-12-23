@@ -16,6 +16,11 @@ public class ReadEarthSpellbook : UPGRADE_ACTION
     {
         return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.academic_city] >= 1;
     }
+    public override void CompleteAction()
+    {
+        main.SR.released_element[(int)ElementKind.main] = true;
+        main.SR.released_element[(int)ElementKind.ability] = true;
+    }
 
     // Use this for initialization
     void Awake () {

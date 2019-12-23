@@ -23,6 +23,7 @@ public class WarriorSchool : UPGRADE_ACTION
         AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.warrior_school, 1,0,0);
         progress.initCostList.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -80));
         progress.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -80));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.inventorySpace, Dealing.R_ParaKind.max, 1));
         progress.completeEffectList.Add(new Item_Dealing(ItemKind.warrior_textbook));
         progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 2));
     }
