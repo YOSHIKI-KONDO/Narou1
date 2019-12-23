@@ -8,6 +8,7 @@
             //フェーズ１（入学前）
             weeding,
             eat_anchovy_sandwich,
+            eat_filet_o_fish,
             drink_herb_tea,
             rune_generation,
             runic_carving,
@@ -28,7 +29,7 @@
             rest,
             pray,
             //フェーズ１（入学前）
-            chores,
+            farmwork,
             harvest_wheat,
             grow_herb,
             lumberjack,
@@ -99,7 +100,7 @@
             delivery_of_fur,
             house_clean_up,
             get_rid_of_rat,
-            collect_sword,
+            wholesaler_of_drugs,
             in_cellar,
 
             //戦士

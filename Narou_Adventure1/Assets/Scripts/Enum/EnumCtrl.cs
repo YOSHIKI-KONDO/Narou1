@@ -139,7 +139,8 @@ public class EnumCtrl : BASE {
         instantActions.Add(new template(ActionEnum.Instant.nothing, "nothing", "nothing", "nothing", "nothing"));
           //フェーズ１（入学前）
         instantActions.Add(new template(ActionEnum.Instant.weeding, "Weeding", "草むしり", "nothing", "アルバイト。たまにハーブが生えている。"));
-        instantActions.Add(new template(ActionEnum.Instant.eat_anchovy_sandwich, "Eat Anchovy Sandwich", "アンチョビサンドを食べる", "nothing", "母の味。"));
+        instantActions.Add(new template(ActionEnum.Instant.eat_anchovy_sandwich, "Eat Anchovy Sandwich", "アンチョビサンド", "nothing", "母の味。"));
+        instantActions.Add(new template(ActionEnum.Instant.eat_filet_o_fish, "Eat Filet-O-Fish", "フィレオフィッシュ", "nothing", "一口噛むと、ふっくらとしたバンズに挟まれたフィッシュフライの油がほとばしる。"));
         instantActions.Add(new template(ActionEnum.Instant.drink_herb_tea, "Drink Herb tea", "ハーブティー", "nothing", "神聖な味がする。"));
         instantActions.Add(new template(ActionEnum.Instant.rune_generation, "Rune Generation", "ルーン生成", "nothing", "運命の力でルーンを得る。"));
         instantActions.Add(new template(ActionEnum.Instant.runic_carving, "Runic Carving", "ルーンを刻む", "nothing", "ルーンを石碑に刻み、更なる運命を得る。"));
@@ -147,7 +148,7 @@ public class EnumCtrl : BASE {
         instantActions.Add(new template(ActionEnum.Instant.sell_firewood, "Sell Firewood", "薪を売る", "nothing", "nothing"));
           //フェーズ２（学校）
             //アビリティアクション
-        instantActions.Add(new template(ActionEnum.Instant.mugged, "Mugged", "カツアゲ", "nothing", "お金を巻き上げろ！"));
+        instantActions.Add(new template(ActionEnum.Instant.mugged, "Mugged", "カツアゲ", "nothing", "お金を巻き上げろ！１クリック１パンチ！"));
         instantActions.Add(new template(ActionEnum.Instant.devotion, "Devotion", "祈祷", "nothing", "nothing"));
         instantActions.Add(new template(ActionEnum.Instant.take_medicine, "Take Medicine", "薬を飲む", "nothing", "nothing"));
         /* ループアクション */
@@ -156,7 +157,7 @@ public class EnumCtrl : BASE {
         loopActions.Add(new template(ActionEnum.Loop.rest, "Rest", "休憩", "nothing", "nothing"));
         loopActions.Add(new template(ActionEnum.Loop.pray, "Pray", "祈る", "nothing", "nothing"));
           //フェーズ１（入学前）
-        loopActions.Add(new template(ActionEnum.Loop.chores, "Chores", "雑用", "nothing", "nothing"));
+        loopActions.Add(new template(ActionEnum.Loop.farmwork, "Farmwork", "農作業", "nothing", "nothing"));
         loopActions.Add(new template(ActionEnum.Loop.harvest_wheat, "Harvest Wheat", "小麦の収穫", "nothing", "nothing"));
         loopActions.Add(new template(ActionEnum.Loop.grow_herb, "Grow Herb", "ハーブ栽培", "nothing", "nothing"));
         loopActions.Add(new template(ActionEnum.Loop.lumberjack, "Lumberjack", "木こり", "nothing", "手斧の扱いをマスターした。"));
@@ -224,7 +225,7 @@ public class EnumCtrl : BASE {
         upgradeActions.Add(new template(ActionEnum.Upgrade.delivery_of_fur, "Delivery of fur", "毛皮の納品", "nothing", "ウルフを倒すと手に入る、毛皮を納品してくれ。商品なんだから傷は少なめで頼むよ。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.house_clean_up, "House clean up", "ゴミ屋敷の掃除", "nothing", "家主は何をしているんだ？近所迷惑だから誰でもいい、掃除してくれ！"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.get_rid_of_rat, "Get rid of rat", "ネズミ退治", "nothing", "下水道に発生したポイズンラットを定期的に駆除しないといけない。不人気な依頼。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.collect_sword, "Collect sword", "剣を集める", "nothing", "木の剣、石の剣、鉄の剣を納品して頂戴。褒美は弾みましてよ。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.wholesaler_of_drugs, "Wholesaler of Drugs,", "医薬品卸", "nothing", "薬はいくつあっても安心だ。市場に回すため引き取らせてもらいたい。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.in_cellar, "In cellar", "地下室へ", "nothing", "ゴミ屋敷から、地下へと続くあなぐらが掘られていた。足元には花びらが散乱している。"));
 
             //戦士

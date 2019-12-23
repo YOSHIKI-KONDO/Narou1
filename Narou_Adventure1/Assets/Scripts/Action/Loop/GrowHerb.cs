@@ -14,7 +14,7 @@ public class GrowHerb : LOOP_ACTION
 
     // Use this for initialization
     void Awake () {
-        AwakeLoopAction(MainAction.ActionEnum.Loop.grow_herb, 4);
+        AwakeLoopAction(MainAction.ActionEnum.Loop.grow_herb, 4,1);
         progress.progressCostList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.2));
         progress.progressCostList.Add(new Dealing(ResourceKind.mp, Dealing.R_ParaKind.current, -0.25));
         progress.completeEffectList.Add(new Dealing(ResourceKind.herb, Dealing.R_ParaKind.current, 1));

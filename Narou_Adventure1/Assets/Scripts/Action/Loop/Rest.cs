@@ -14,7 +14,7 @@ public class Rest : LOOP_ACTION
 
     // Use this for initialization
     void Awake () {
-        AwakeLoopAction(MainAction.ActionEnum.Loop.rest, 10, null, false);
+        AwakeLoopAction(MainAction.ActionEnum.Loop.rest, 10, null, false, false);
         progress.progressEffectList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, 1));
         progress.progressEffectList.Add(new Dealing(ResourceKind.hp, Dealing.R_ParaKind.current, 1));
         progress.progressEffectList.Add(new Dealing(ResourceKind.mp, Dealing.R_ParaKind.current, 0.5));

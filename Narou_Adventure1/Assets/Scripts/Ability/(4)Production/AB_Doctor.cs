@@ -10,12 +10,13 @@ public class AB_Doctor : ABILITY
 
     public override bool Requires()
     {
-        return main.itemCtrl.exitSourceNums[(int)NeedKind.medic] > 0;
+        return main.a_rsc.MaxLevel((int)AbilityKind.doctor) >= 6 ||
+               main.itemCtrl.exitSourceNums[(int)NeedKind.medic] > 0;
     }
 
     // Use this for initialization
     void Awake () {
-        AwakeAbility(AbilityKind.doctor, 50, 1.5);
+        AwakeAbility(AbilityKind.doctor, 50, 1.2);
         progress.unlockCostList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, -1));
         progress.progressCostList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.4));
         progress.completeEffectList.Add(new Dealing(ResourceKind.herb, Dealing.R_ParaKind.max, 1));

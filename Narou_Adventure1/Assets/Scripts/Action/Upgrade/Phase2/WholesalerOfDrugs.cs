@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using static UsefulMethod;
 
-public class CollectSword : UPGRADE_ACTION
+public class WholesalerOfDrugs : UPGRADE_ACTION
 {
     public override bool Requires()
     {
@@ -14,7 +14,7 @@ public class CollectSword : UPGRADE_ACTION
 
     // Use this for initialization
     void Awake () {
-        AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.collect_sword, 1,0,0);
+        AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.wholesaler_of_drugs, 1,0,0);
         progress.initCostList.Add(new Dealing(ResourceKind.filet_o_fish, Dealing.R_ParaKind.current, -1));
         progress.completeEffectList.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 40));
     }

@@ -9,7 +9,9 @@ public class Rumor : UPGRADE_ACTION
 {
     public override bool Requires()
     {
-        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Loop.service_trade] >= 1;
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.get_rid_of_rat] >= 1 ||
+               main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.house_clean_up] >= 1 ||
+               main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.delivery_of_fur] >= 1;
     }
 
     // Use this for initialization

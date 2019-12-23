@@ -10,15 +10,15 @@ public class AB_Believer : ABILITY
 
     public override bool Requires()
     {
-        return //main.itemCtrl.exitSourceNums[(int)ItemKind.rosary] > 0 ||
-               main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.pick_flowers] >= 1 &&
+        return main.a_rsc.MaxLevel((int)AbilityKind.believer) >= 6 ||
+               (main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.pick_flowers] >= 1 &&
                main.rsc.Max( (int)ResourceKind.research) >= 150 &&
-               main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.entrance_ceremony] >= 1;
+               main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.entrance_ceremony] >= 1);
     }
 
     // Use this for initialization
     void Awake () {
-        AwakeAbility(AbilityKind.believer, 50, 1.5);
+        AwakeAbility(AbilityKind.believer, 50, 1.2);
         progress.unlockCostList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, -1));
         progress.progressCostList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.4));
         progress.completeEffectList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.max, 4));

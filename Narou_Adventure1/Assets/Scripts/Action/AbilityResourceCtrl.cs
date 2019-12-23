@@ -26,7 +26,7 @@ public class AbilityResourceCtrl : BASE {
 
     double Add_TrainRate(int index)
     {
-        return TrainRate_Base[index] + main.itemCtrl.A_trainRate[index] + main.tempEffectsCtrl.TRates[index] + main.rsc.A_trainRate[index];
+        return 1 + TrainRate_Base[index] + main.itemCtrl.A_trainRate[index] + main.tempEffectsCtrl.TRates[index] + main.rsc.A_trainRate[index];
     }
     double Mul_TrainRate(int index) { return main.focus.FocusFactor(); }
 

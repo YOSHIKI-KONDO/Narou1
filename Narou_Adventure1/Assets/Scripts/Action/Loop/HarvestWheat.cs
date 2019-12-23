@@ -14,9 +14,8 @@ public class HarvestWheat : LOOP_ACTION
 
     // Use this for initialization
     void Awake () {
-        AwakeLoopAction(MainAction.ActionEnum.Loop.harvest_wheat, 5);
+        AwakeLoopAction(MainAction.ActionEnum.Loop.harvest_wheat, 3,1);
         progress.progressCostList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.5));
-        progress.progressEffectList.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 0.1));
         progress.completeEffectList.Add(new Dealing(ResourceKind.wheat, Dealing.R_ParaKind.current, 1));
     }
 

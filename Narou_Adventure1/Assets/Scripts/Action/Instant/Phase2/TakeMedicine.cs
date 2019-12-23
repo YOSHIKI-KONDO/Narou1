@@ -9,7 +9,7 @@ public class TakeMedicine : INSTANT_ACTION
 {
     public override bool Requires()
     {
-        return main.a_rsc.CurrentLevels[(int)AbilityKind.doctor] >=1;
+        return main.rsc.Value[(int)ResourceKind.medicine] >= 1;
     }
 
     // Use this for initialization
