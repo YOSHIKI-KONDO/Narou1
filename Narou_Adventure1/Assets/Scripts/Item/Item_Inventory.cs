@@ -7,7 +7,7 @@ using static UsefulMethod;
 
 public class Item_Inventory : BASE {
     public ItemKind kind;
-    public Button equipButton, sellButtion;
+    public Button equipButton, sellButtion, levelUpButton;
     public Text spaceText, nameText, numText;
     public PopUp popUp;
     public string Name_str, Description_str, Max_Str, Need_str, Effect_str, Cost_str, Sell_str;
@@ -22,6 +22,7 @@ public class Item_Inventory : BASE {
 
         equipButton.onClick.AddListener(() => main.itemCtrl.Equip(kind));
         sellButtion.onClick.AddListener(() => main.itemCtrl.Sell_Inventory(kind));
+        levelUpButton.onClick.AddListener(() => main.itemCtrl.LevelUp(kind));
     }
 
 	// Use this for initialization
@@ -68,6 +69,15 @@ public class Item_Inventory : BASE {
         {
             sellButtion.interactable = false;
         }
+        //levelUP
+        if (main.itemCtrl.CanLevelUp(kind))
+        {
+            levelUpButton.interactable = true;
+        }
+        else
+        {
+            levelUpButton.interactable = false;
+        }
     }
 
     //NOTE:ItemCtrlで一括管理したい
@@ -80,7 +90,7 @@ public class Item_Inventory : BASE {
             Description_str = main.enumCtrl.items[(int)kind].Description();
             if (main.itemCtrl.items[(int)kind].haveSource) { Description_str += Description_str == "" ? main.itemCtrl.items[(int)kind].SourceDetail() : "\n" + main.itemCtrl.items[(int)kind].SourceDetail(); }
             Max_Str = "Max:" + ((main.itemCtrl.items[(int)kind].MaxEquip == null) ? "∞" : main.itemCtrl.items[(int)kind].MaxEquip.ToString());
-            Effect_str = ProgressDetail(main.itemCtrl.items[(int)kind].EffectLists);
+            Effect_str = ProgressDetail(main.itemCtrl.items[(int)kind].EffectLists, main.itemCtrl.items[(int)kind].LevelFactor());
             Cost_str = ProgressDetail(main.itemCtrl.items[(int)kind].BuyLists);
             Sell_str = ProgressDetail(main.itemCtrl.items[(int)kind].SellLists);
             Cost_str = ProgressDetail(main.itemCtrl.items[(int)kind].BuyLists);

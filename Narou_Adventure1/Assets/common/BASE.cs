@@ -223,8 +223,9 @@ public class BASE : MonoBehaviour
 
     /// <summary>
     /// popUpに表示しやすいようなstringを出力する
+    /// NOTE:factorは現状、リソースのstatus,regen,max アビリティのmax, trainrateにしか反映させていない(アイテムでそこしかあげないため)
     /// </summary>
-    public string ProgressDetail(List<Dealing> dealings)
+    public string ProgressDetail(List<Dealing> dealings, double factor = 1)
     {
         string sum_str = "";
         foreach (var deal in dealings)
@@ -279,13 +280,13 @@ public class BASE : MonoBehaviour
                         sum_str += main.enumCtrl.resources[(int)(ResourceKind)deal.rscKind].Name() + ":" + tDigit(deal.Value, main.resourceTextCtrl.points[(int)(ResourceKind)deal.rscKind].current_deal);
                         break;
                     case Dealing.R_ParaKind.max:
-                        sum_str += main.enumCtrl.resources[(int)(ResourceKind)deal.rscKind].Name() + " max:" + tDigit(deal.Value, main.resourceTextCtrl.points[(int)(ResourceKind)deal.rscKind].max_deal);
+                        sum_str += main.enumCtrl.resources[(int)(ResourceKind)deal.rscKind].Name() + " max:" + tDigit(deal.Value * factor, main.resourceTextCtrl.points[(int)(ResourceKind)deal.rscKind].max_deal);
                         break;
                     case Dealing.R_ParaKind.regen:
-                        sum_str += main.enumCtrl.resources[(int)(ResourceKind)deal.rscKind].Name() + " rate:" + tDigit(deal.Value, main.resourceTextCtrl.points[(int)(ResourceKind)deal.rscKind].regen_deal) + "/s";
+                        sum_str += main.enumCtrl.resources[(int)(ResourceKind)deal.rscKind].Name() + " rate:" + tDigit(deal.Value * factor, main.resourceTextCtrl.points[(int)(ResourceKind)deal.rscKind].regen_deal) + "/s";
                         break;
                     case Dealing.R_ParaKind.status:
-                        sum_str += main.enumCtrl.resources[(int)(ResourceKind)deal.rscKind].Name() + ":" + tDigit(deal.Value, 1);
+                        sum_str += main.enumCtrl.resources[(int)(ResourceKind)deal.rscKind].Name() + ":" + tDigit(deal.Value * factor, 1);
                         break;
                     case Dealing.R_ParaKind.effect:
                         throw new Exception("まだ対応してないお♡");
@@ -303,10 +304,10 @@ public class BASE : MonoBehaviour
                 switch ((Dealing.A_ParaKind)deal.paraKind)
                 {
                     case Dealing.A_ParaKind.maxLevel:
-                        sum_str += main.enumCtrl.abilitys[(int)(AbilityKind)deal.rscKind].Name() + " max:" + tDigit(deal.Value);
+                        sum_str += main.enumCtrl.abilitys[(int)(AbilityKind)deal.rscKind].Name() + " max:" + tDigit(deal.Value * factor);
                         break;
                     case Dealing.A_ParaKind.trainRate:
-                        sum_str += main.enumCtrl.abilitys[(int)(AbilityKind)deal.rscKind].Name() + " train rate:" + tDigit(deal.Value,1) + "/s";
+                        sum_str += main.enumCtrl.abilitys[(int)(AbilityKind)deal.rscKind].Name() + " train rate:" + tDigit(deal.Value * factor, 1) + "/s";
                         break;
                     case Dealing.A_ParaKind.currentExp:
                         sum_str += main.enumCtrl.abilitys[(int)(AbilityKind)deal.rscKind].Name() + " exp:" + tDigit(deal.Value);

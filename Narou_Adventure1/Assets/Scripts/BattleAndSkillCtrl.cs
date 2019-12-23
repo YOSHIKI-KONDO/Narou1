@@ -538,7 +538,8 @@ public class BattleAndSkillCtrl : BASE {
 
                 dunKind = DungeonKind.nothing;
                 FleeFromDungeon();
-                main.progressCtrl.SwitchProgress(main.progressCtrl.restFunction); //こう書いておくことで１周以上しなくなる
+                //main.progressCtrl.SwitchProgress(main.progressCtrl.restFunction); //こう書いておくことで１周以上しなくなる
+                main.progressCtrl.Rest();//ループする
                 return;
             }
             Summon();

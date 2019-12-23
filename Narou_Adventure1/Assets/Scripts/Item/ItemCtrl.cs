@@ -148,14 +148,14 @@ public class ItemCtrl : BASE {
                 {
                     case Dealing.R_ParaKind.current:
                         throw new Exception("対応していない項目です。");
-                    case Dealing.R_ParaKind.max:
-                        R_max[(int)(ResourceKind)deal.rscKind] += deal.Value * num;//計算
+                    case Dealing.R_ParaKind.max:// * items[(int)(ResourceKind)deal.rscKind].LevelFactor()は長いので新たに関数で宣言してもいいかもしれない
+                        R_max[(int)(ResourceKind)deal.rscKind] += deal.Value * items[(int)kind].LevelFactor() * num;//計算
                         break;
                     case Dealing.R_ParaKind.regen:
-                        R_regen[(int)(ResourceKind)deal.rscKind] += deal.Value * num;//計算
+                        R_regen[(int)(ResourceKind)deal.rscKind] += deal.Value * items[(int)kind].LevelFactor() * num;//計算
                         break;
                     case Dealing.R_ParaKind.status:
-                        R_regen[(int)(ResourceKind)deal.rscKind] += deal.Value * num;//計算
+                        R_regen[(int)(ResourceKind)deal.rscKind] += deal.Value * items[(int)kind].LevelFactor() * num;//計算
                         break;
                     case Dealing.R_ParaKind.effect:
                         throw new Exception("まだ対応してないお♡");
@@ -172,11 +172,11 @@ public class ItemCtrl : BASE {
                 }
                 switch ((Dealing.A_ParaKind)deal.paraKind)
                 {
-                    case Dealing.A_ParaKind.maxLevel:
-                        A_maxLevel[(int)(ResourceKind)deal.rscKind] += (int)deal.Value * num;//計算
+                    case Dealing.A_ParaKind.maxLevel://NOTE:doubleにしたい
+                        A_maxLevel[(int)(ResourceKind)deal.rscKind] += (int)deal.Value * (int)items[(int)kind].LevelFactor() * num;//計算
                         break;
                     case Dealing.A_ParaKind.trainRate:
-                        A_trainRate[(int)(ResourceKind)deal.rscKind] += deal.Value * num;//計算
+                        A_trainRate[(int)(ResourceKind)deal.rscKind] += deal.Value * items[(int)kind].LevelFactor() * num;//計算
                         break;
                     case Dealing.A_ParaKind.currentExp:
                         throw new Exception("対応していない項目です。");
@@ -293,6 +293,21 @@ public class ItemCtrl : BASE {
         return CanSell_Inventory(kind) || CanSell_Equip(kind);
     }
 
+    public bool CanLevelUp(ItemKind kind)//各レア度で分岐
+    {
+        //アイテムポイントがあるかどうか
+        if (main.rsc.Value[(int)ResourceKind.itemPoint1] < 1)
+        {
+            return false;
+        }
+        //最大レベルに達していないか
+        if(items[(int)kind].level >= items[(int)kind].maxLevel)
+        {
+            return false;
+        }
+        return true;
+    }
+
     /* void関数
        1.GetItem 2.ThrowAwayItemを用いて
        1.Buy 2.Sell 3.Equip 4.Removeを作っている
@@ -355,6 +370,15 @@ public class ItemCtrl : BASE {
         {
             Calculate(items[(int)kind].SellLists, false);
             equipNum[(int)kind]--;
+        }
+    }
+
+    public void LevelUp(ItemKind kind)//レア度で分岐
+    {
+        if (CanLevelUp(kind))
+        {
+            main.rsc.Value[(int)ResourceKind.itemPoint1] -= 1;
+            items[(int)kind].LevelUp();
         }
     }
 
