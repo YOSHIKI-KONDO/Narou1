@@ -19,7 +19,7 @@ public class NormalAttack : SKILL {
         //learnF.initCostList.Add(new Dealing(ResourceKind.mp, Dealing.R_ParaKind.current, -10));
         //useCosts.Add(new Dealing(ResourceKind.mp, Dealing.R_ParaKind.current, -1));
         //useEffects.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 10));
-        warriorAtks.Add(new WarriorAttack(1));
+        warriorAtks.Add(new WarriorAttack(0));
         //sorcererAtks.Add(new SorcererAttack(5));
 
         //attributes.Add(AttributeKind.fireMagic);    //add

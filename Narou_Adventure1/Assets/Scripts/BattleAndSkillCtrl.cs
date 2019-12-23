@@ -570,8 +570,8 @@ public class BattleAndSkillCtrl : BASE {
             }
             setActive(enemysCmps[i].gameObject);
             enemysCmps[i].ApplyNormalObj(main.enumCtrl.enemys[(int)thisD.enemyList[thisD.currentFloor][i]].Name(),
-                tDigit(currentEnemys[i].currentHp) + "/" + tDigit(currentEnemys[i].maxHp),
-                "Atk : " + tDigit(currentEnemys[i].attack),
+                tDigit(currentEnemys[i].currentHp,1) + "/" + tDigit(currentEnemys[i].maxHp,1),
+                "Atk : " + tDigit(currentEnemys[i].attack,1),
                 (float)(currentEnemys[i].currentHp / currentEnemys[i].maxHp),
                 (float)(currentEnemys[i].currentInterval / currentEnemys[i].interval)
                 );
@@ -581,10 +581,11 @@ public class BattleAndSkillCtrl : BASE {
         }
 
         // 主人公のComponent更新
-        heroCmp.ApplyNormalObj("Hero", tDigit(main.rsc.Value[(int)ResourceKind.hp]) + "/" + tDigit(main.rsc.Max((int)ResourceKind.hp)),
+        heroCmp.ApplyNormalObj("Hero Lv" + main.SR.level.ToString() + " (" + main.rsc.Value[(int)ResourceKind.exp].ToString("F1") + "/" + main.rsc.Max((int)ResourceKind.exp).ToString("F1") + ")"
+            , tDigit(main.rsc.Value[(int)ResourceKind.hp], 1) + "/" + tDigit(main.rsc.Max((int)ResourceKind.hp), 1),
             "",
             (float)(main.rsc.Value[(int)ResourceKind.hp] / main.rsc.Max((int)ResourceKind.hp)),
-            currentInterval_normalAttack / Interval_normalAttack);//ここにインターバル
+            currentInterval_normalAttack / Interval_normalAttack) ;//ここにインターバル
 
         if (allysCmps.Length < main.SD.num_ally)
         {
@@ -596,8 +597,8 @@ public class BattleAndSkillCtrl : BASE {
             if (main.npcSkillCtrl.allyKinds.IndexOf((AllyKind)i) >= 0)
             {
                 setActive(allysCmps[i].gameObject);
-                allysCmps[i].ApplyNormalObj(main.enumCtrl.allys[(int)i].Name(), tDigit(main.npcSkillCtrl.npcs[i].currentHp) + "/" + tDigit(main.npcSkillCtrl.npcs[i].Hp),
-                    "Atk:" + tDigit(main.npcSkillCtrl.npcs[i].Attack) + "/MAtk:" + tDigit(main.npcSkillCtrl.npcs[i].MagicAttack),
+                allysCmps[i].ApplyNormalObj(main.enumCtrl.allys[(int)i].Name(), tDigit(main.npcSkillCtrl.npcs[i].currentHp,1) + "/" + tDigit(main.npcSkillCtrl.npcs[i].Hp,1),
+                    "Atk:" + tDigit(main.npcSkillCtrl.npcs[i].Attack,1) + "/MAtk:" + tDigit(main.npcSkillCtrl.npcs[i].MagicAttack,1),
                     main.npcSkillCtrl.npcs[i].HpSliderValue(),
                 main.npcSkillCtrl.npcs[i].IntervalSliderValue());
             }
@@ -657,7 +658,7 @@ public class BattleAndSkillCtrl : BASE {
                     {
                         //当たった
                         main.rsc.Value[(int)ResourceKind.hp] -= cal_dmg;
-                        main.announce_d.Add(main.enumCtrl.enemys[i].Name() + " has attacked you for " + tDigit(cal_dmg) + " damages");
+                        main.announce_d.Add(main.enumCtrl.enemys[i].Name() + " has attacked you for " + tDigit(cal_dmg, 1) + " damages");
                     }
                 }
                 else
@@ -739,7 +740,7 @@ public class BattleAndSkillCtrl : BASE {
 
     //PlaySkillsで呼ばれる
     //target に targetEnemy_index を代入して使っている
-    void AttackToEnemys(SkillKind attackSkillKind, double dmg, string actor = "", string lastSentense = "")
+    void AttackToEnemys(SkillKind attackSkillKind, double dmg, string actor = "", string _lastSentense = "")
     {
         if (currentEnemys.Count == 0) { return; }
         int target = targetEnemy_index;
@@ -800,11 +801,15 @@ public class BattleAndSkillCtrl : BASE {
         }
 
         string have = actor == "You" ? "have" : "has";
-
-        if(actor != "")
+        string lastSentense = _lastSentense;
+        //last sentense にスキルの名前を増やす
+        if(attackSkillKind != SkillKind.normalAttack)
         {
-            main.announce_d.Add(actor + " " + have + " attacked " + main.enumCtrl.enemys[target].Name() + " for " + tDigit(cal_dmg) + " damages" + lastSentense);
+            lastSentense = " using " + main.enumCtrl.skills[(int)attackSkillKind].Name() + lastSentense;
         }
+
+        if (actor == "") { return; }
+        main.announce_d.Add(actor + " " + have + " attacked " + main.enumCtrl.enemys[target].Name() + " for " + tDigit(cal_dmg, 1) + " damages" + lastSentense);
     }
 
 
