@@ -77,7 +77,8 @@ public class ResourceTextControll : BASE {
             // 表示しないリソース
             ResourceKind k = (ResourceKind)i;
             if (k == focus || k==equipSpace || k == inventorySpace || k == strength || k==mentalStrength||k==defense||k==dodge||k==criticalChance||
-                k == exp || k == attack || k == magic_attack || k == ap)
+                k == exp || k == attack || k == magic_attack || k == ap || k == itemPoint1 || k == itemPoint2 || k == itemPoint3 || k == itemPoint4
+                 || k == itemPoint5 || k == itemPoint6 || k == itemPoint7 || k == itemPoint8 || k == itemPoint9 || k == itemPoint10)
             {
                 continue;
             }

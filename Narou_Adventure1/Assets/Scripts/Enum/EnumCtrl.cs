@@ -70,7 +70,17 @@ public class EnumCtrl : BASE {
         resources.Add(new template(ResourceKind.dodge, "Dodge Chance", "回避率", "", ""));
         resources.Add(new template(ResourceKind.criticalChance, "Critical Chance", "会心率", "", ""));
         resources.Add(new template(ResourceKind.exp, "Exp", "経験値", "", ""));
-          //武器
+        resources.Add(new template(ResourceKind.itemPoint1, "Item Point1", "アイテムP1", "Use for Item level up", "アイテムのレベルアップに使用します。"));
+        resources.Add(new template(ResourceKind.itemPoint2, "Item Point2", "アイテムP2", "Use for Item level up", "アイテムのレベルアップに使用します。"));
+        resources.Add(new template(ResourceKind.itemPoint3, "Item Point3", "アイテムP3", "Use for Item level up", "アイテムのレベルアップに使用します。"));
+        resources.Add(new template(ResourceKind.itemPoint4, "Item Point4", "アイテムP4", "Use for Item level up", "アイテムのレベルアップに使用します。"));
+        resources.Add(new template(ResourceKind.itemPoint5, "Item Point5", "アイテムP5", "Use for Item level up", "アイテムのレベルアップに使用します。"));
+        resources.Add(new template(ResourceKind.itemPoint6, "Item Point6", "アイテムP6", "Use for Item level up", "アイテムのレベルアップに使用します。"));
+        resources.Add(new template(ResourceKind.itemPoint7, "Item Point7", "アイテムP7", "Use for Item level up", "アイテムのレベルアップに使用します。"));
+        resources.Add(new template(ResourceKind.itemPoint8, "Item Point8", "アイテムP8", "Use for Item level up", "アイテムのレベルアップに使用します。"));
+        resources.Add(new template(ResourceKind.itemPoint9, "Item Point9", "アイテムP9", "Use for Item level up", "アイテムのレベルアップに使用します。"));
+        resources.Add(new template(ResourceKind.itemPoint10, "Item Point10", "アイテムP10", "Use for Item level up", "アイテムのレベルアップに使用します。"));
+        //武器
         resources.Add(new template(ResourceKind.attack, "Attack", "攻撃力", "", ""));
         resources.Add(new template(ResourceKind.magic_attack, "Magic Attack", "魔法攻撃力", "", ""));
           //ステータスリソース

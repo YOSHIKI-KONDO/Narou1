@@ -6,12 +6,22 @@
     equipSpace,
     inventorySpace,
     //プレイヤーステータス
-    strength,           //added
-    mentalStrength,     //added
-    defense,            //added
-    dodge,              //added
-    criticalChance,     //added
-    exp,                //added
+    strength,           
+    mentalStrength,     
+    defense,            
+    dodge,              
+    criticalChance,     
+    exp,                
+    itemPoint1,        //added
+    itemPoint2,        //added
+    itemPoint3,        //added
+    itemPoint4,        //added
+    itemPoint5,        //added
+    itemPoint6,        //added
+    itemPoint7,        //added
+    itemPoint8,        //added
+    itemPoint9,        //added
+    itemPoint10,       //added
     //武器
     attack,
     magic_attack,
