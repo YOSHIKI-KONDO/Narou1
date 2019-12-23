@@ -10,7 +10,7 @@ public class EatFiletOFish : INSTANT_ACTION
     public override bool Requires()
     {
         return main.rsc.Max((int)ResourceKind.stamina) >= 5 &&
-               main.rsc.Value[(int)ResourceKind.anchovy_sandwich] >= 1;
+               main.rsc.Value[(int)ResourceKind.filet_o_fish] >= 1;
     }
 
     // Use this for initialization

@@ -10,7 +10,7 @@ public class Wolf : ENEMY
     // Use this for initialization
     void Awake()
     {
-        AwakeEnemy(EnemyKind.wolf, 6, 4, 3, 0, 1, 3);
+        AwakeEnemy(EnemyKind.wolf, 15, 2, 1.7, 0, 1, 5);
         drops.Add(new Item_Drop(ItemKind.animalfood, 1));
     }
 

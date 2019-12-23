@@ -145,6 +145,10 @@ public class EnumCtrl : BASE {
           //アビリティポイント
         resources.Add(new template(ResourceKind.ap, "AP", "AP", "nothing", "nothing"));
 
+            //モンスター素材
+        resources.Add(new template(ResourceKind.fur, "Fur", "獣の皮", "nothing", "獣から剥ぎ取った毛皮。"));
+        resources.Add(new template(ResourceKind.premium_fur, "Premium Fur", "上質な皮", "nothing", "傷一つついていない、上質な毛皮。"));
+
         /* インスタントアクション */
         instantActions.Add(new template(ActionEnum.Instant.nothing, "nothing", "nothing", "nothing", "nothing"));
           //フェーズ１（入学前）

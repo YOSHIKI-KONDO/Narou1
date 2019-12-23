@@ -10,7 +10,7 @@ public class ReadEarthSpellbook : UPGRADE_ACTION
     public override bool Requires()
     {
         return main.rsc.Max( (int)ResourceKind.mp) >= 5 &&
-               main.rsc.Value[ (int)ResourceKind.herb] >= 10;
+               main.rsc.Value[ (int)ResourceKind.herb] >= 7;
     }
     public override bool CompleteCondition()
     {

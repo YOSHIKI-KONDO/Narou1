@@ -9,7 +9,7 @@ public class CraftMagiStone : LOOP_ACTION
 {
     public override bool Requires()
     {
-        return main.a_rsc.CurrentLevels[(int)AbilityKind.use_tools] >= 8;
+        return main.a_rsc.CurrentLevels[(int)AbilityKind.use_tools] >= 9;
     }
 
     // Use this for initialization

@@ -9,7 +9,8 @@ public class BuyBag : UPGRADE_ACTION
 {
     public override bool Requires()
     {
-        return main.a_rsc.CurrentLevels[(int)AbilityKind.use_tools] >= 1 || main.a_rsc.CurrentLevels[(int)AbilityKind.animal_handling] >= 1;
+        return main.a_rsc.CurrentLevels[(int)AbilityKind.use_tools] >= 1 ||
+               main.a_rsc.CurrentLevels[(int)AbilityKind.life_magic] >= 1;
     }
     public override void CompleteAction()
     {

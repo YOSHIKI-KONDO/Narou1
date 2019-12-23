@@ -19,7 +19,7 @@ public class IllGetYouForThis : UPGRADE_ACTION
     // Use this for initialization
     void Awake () {
         AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.ill_get_you_for_this, 1, 0, null, false, false);
-        progress.completeEffectList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, 30));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.max, 10));
 	}
 
 	// Use this for initialization

@@ -9,9 +9,8 @@ public class BuyFireSpellbook : UPGRADE_ACTION
 {
     public override bool Requires()
     {
-        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.rune_augmentation] >= 1 &&
-               main.a_rsc.MaxLevel( (int)AbilityKind.primary_water_magic) >= 6 &&
-               main.rsc.Value[ (int)ResourceKind.firewood] >= 10;
+        return main.a_rsc.MaxLevel( (int)AbilityKind.primary_water_magic) >= 6 &&
+               main.rsc.Value[ (int)ResourceKind.firewood] >= 8;
     }
     public override bool CompleteCondition()
     {

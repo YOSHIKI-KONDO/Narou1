@@ -9,8 +9,7 @@ public class SuccessionLiifeMagic : UPGRADE_ACTION
 {
     public override bool Requires()
     {
-        return main.rsc.Max((int)ResourceKind.mp) >= 3 &&
-               main.rsc.Value[(int)ResourceKind.research] >= 15;
+        return main.rsc.Max((int)ResourceKind.mp) >= 5;
     }
     public override bool CompleteCondition()
     {
