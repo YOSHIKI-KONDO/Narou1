@@ -14,7 +14,7 @@ public class RuneAugmentation : UPGRADE_ACTION
 
     // Use this for initialization
     void Awake () {
-        AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.rune_augmentation, 1,0,0);
+        AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.rune_augmentation, 1, 0, null, false, false);
         progress.initCostList.Add(new Dealing(ResourceKind.paper, Dealing.R_ParaKind.current, -5));
         progress.completeEffectList.Add(new Dealing(ResourceKind.paper, Dealing.R_ParaKind.max, 5));
         progress.completeEffectList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, 30));

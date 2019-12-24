@@ -85,5 +85,8 @@
     orichalcum,
     //アビリティポイント
     ap,
+    //モンスター素材
+    fur,
+    premium_fur,
 
 }

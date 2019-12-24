@@ -5,16 +5,18 @@ using UnityEngine;
 using UnityEngine.UI;
 using static UsefulMethod;
 
-public class Rumor : UPGRADE_ACTION
+public class NornsRoom : UPGRADE_ACTION
 {
     public override bool Requires()
     {
-        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Loop.service_trade] >= 1;
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.into_a_dormitory] >= 1;
     }
 
     // Use this for initialization
     void Awake () {
-        AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.rumor, 1,0,0);
+        AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.norns_room, 1,0,0);
+        progress.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -5));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.max, 5));
     }
 
 	// Use this for initialization

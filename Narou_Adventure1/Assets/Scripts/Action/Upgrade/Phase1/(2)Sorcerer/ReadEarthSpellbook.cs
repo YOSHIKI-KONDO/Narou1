@@ -10,11 +10,16 @@ public class ReadEarthSpellbook : UPGRADE_ACTION
     public override bool Requires()
     {
         return main.rsc.Max( (int)ResourceKind.mp) >= 5 &&
-               main.rsc.Value[ (int)ResourceKind.herb] >= 10;
+               main.rsc.Value[ (int)ResourceKind.herb] >= 7;
     }
     public override bool CompleteCondition()
     {
         return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.academic_city] >= 1;
+    }
+    public override void CompleteAction()
+    {
+        main.SR.released_element[(int)ElementKind.main] = true;
+        main.SR.released_element[(int)ElementKind.ability] = true;
     }
 
     // Use this for initialization

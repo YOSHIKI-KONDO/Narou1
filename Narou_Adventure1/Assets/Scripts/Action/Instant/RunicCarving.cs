@@ -9,7 +9,7 @@ public class RunicCarving : INSTANT_ACTION
 {
     public override bool Requires()
     {
-        return main.a_rsc.CurrentLevels[(int)AbilityKind.life_magic] >= 7;
+        return main.a_rsc.CurrentLevels[(int)AbilityKind.life_magic] >= 8;
     }
 
     // Use this for initialization

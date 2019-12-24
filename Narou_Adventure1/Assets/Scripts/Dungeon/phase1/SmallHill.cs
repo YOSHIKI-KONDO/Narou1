@@ -23,7 +23,7 @@ public class SmallHill : DUNGEON
         enemyList.Add(new EnemyKind[] { slime, bat });
         enemyList.Add(new EnemyKind[] { wolf, wolf });
 
-        drops.Add(new Drop(ResourceKind.research, 20, 100));
+        drops.Add(new Drop(ResourceKind.stone, 1, 100));
         firstDrops.Add(new Drop(ResourceKind.flower, 1, 100));
     }
 

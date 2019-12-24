@@ -23,8 +23,14 @@ public class SorcererSchool : UPGRADE_ACTION
         AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.sorcerer_school, 1,0,0);
         progress.initCostList.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -60));
         progress.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -100));
-        progress.completeEffectList.Add(new Item_Dealing(ItemKind.sorcerer_textbook));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.mp, Dealing.R_ParaKind.max, 1));
+        progress.completeEffectList.Add(new Dealing(AbilityKind.primary_fire_magic, Dealing.A_ParaKind.trainRate, 0.5));
+        progress.completeEffectList.Add(new Dealing(AbilityKind.primary_water_magic, Dealing.A_ParaKind.trainRate, 0.5));
+        progress.completeEffectList.Add(new Dealing(AbilityKind.primary_wind_magic, Dealing.A_ParaKind.trainRate, 0.5));
+        progress.completeEffectList.Add(new Dealing(AbilityKind.primary_earth_magic, Dealing.A_ParaKind.trainRate, 0.5));
         progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 2));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.inventorySpace, Dealing.R_ParaKind.max, 1));
+        progress.completeEffectList.Add(new Item_Dealing(ItemKind.sorcerer_textbook));
     }
 
 	// Use this for initialization

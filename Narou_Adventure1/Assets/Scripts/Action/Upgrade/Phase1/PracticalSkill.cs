@@ -15,7 +15,7 @@ public class PracticalSkill : UPGRADE_ACTION
 
     // Use this for initialization
     void Awake () {
-        AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.practical_skill, 1,0,0);
+        AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.practical_skill, 1, 0, null, false, false);
         progress.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -20));
         progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 1));
 	}

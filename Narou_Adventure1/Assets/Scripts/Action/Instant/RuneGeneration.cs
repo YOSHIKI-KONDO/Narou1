@@ -9,7 +9,7 @@ public class RuneGeneration : INSTANT_ACTION
 {
     public override bool Requires()
     {
-        return main.a_rsc.CurrentLevels[(int)AbilityKind.use_tools] >= 2 ||
+        return main.a_rsc.CurrentLevels[(int)AbilityKind.use_tools] >= 6 ||
                main.a_rsc.CurrentLevels[(int)AbilityKind.life_magic] >= 2;
     }
 

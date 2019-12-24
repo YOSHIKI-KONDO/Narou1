@@ -8,11 +8,17 @@
             //フェーズ１（入学前）
             weeding,
             eat_anchovy_sandwich,
+            eat_filet_o_fish,
             drink_herb_tea,
             rune_generation,
             runic_carving,
             split_firewood,
             sell_firewood,
+            //フェーズ２（学校）
+            //アビリティアクション
+            mugged,
+            devotion,
+            take_medicine,
 
         }
 
@@ -23,14 +29,18 @@
             rest,
             pray,
             //フェーズ１（入学前）
-            chores,
+            farmwork,
             harvest_wheat,
             grow_herb,
             lumberjack,
+            craft_magi_stone,
             //フェーズ２（学校）
             manual_labor,
             desk_work,
             service_trade,
+            //アビリティアクション
+            pickpocket,
+            dispense_medicines,
 
         }
 
@@ -74,17 +84,20 @@
             warrior_school,
             sorcerer_school,
             tamer_school,
-
+            leave_the_town,
             //フェーズ２（学校）
             academic_city,
             into_a_dormitory,
+            entrance_ceremony,
+            //攫われイベント
             norns_room,
+            desolate_room,
             rumor,
             //フリークエスト
             delivery_of_fur,
             house_clean_up,
             get_rid_of_rat,
-            collect_sword,
+            wholesaler_of_drugs,
             in_cellar,
 
             //戦士

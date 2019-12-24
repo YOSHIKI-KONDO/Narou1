@@ -11,7 +11,7 @@ public class HoardingHouse : DUNGEON
 {
     public override bool Requires()
     {
-        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.into_a_dormitory] >= 1;
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.house_clean_up] >= 1;
     }
 
     // Use this for initialization
@@ -32,6 +32,7 @@ public class HoardingHouse : DUNGEON
 
         drops.Add(new Drop(ResourceKind.gold, 5, 100));
         drops.Add(new Drop(ResourceKind.filet_o_fish, 1, 100));
+        firstDrops.Add(new Drop(ResourceKind.gold, 60, 100));
     }
 
 	// Use this for initialization
