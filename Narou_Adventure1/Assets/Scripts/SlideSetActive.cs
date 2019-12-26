@@ -5,16 +5,16 @@ using System;
 
 public class SlideSetActive : MonoBehaviour
 {
-    public bool LimitedFlg;
+    public bool LimitedFlg = true;
     [SerializeField]
-    private int leftLimit;
+    private int leftLimit = 1;
     public int LeftLimit { get { return leftLimit; } set { LimitedFlg = true; leftLimit = value; } }
 
     //インスタンス化直後から移動している設定。インスペクターからのみ設定できる。
     [SerializeField]
-    private bool InitSlideFlg;
+    private bool InitSlideFlg = true;
     [SerializeField]
-    private int InitLeftSlide;
+    private int InitLeftSlide = 1;
 
     public (int x, int y) currentPage;
     RectTransform rectTransform;
@@ -43,6 +43,11 @@ public class SlideSetActive : MonoBehaviour
         {
             Left(1);
         }
+    }
+
+    public void LeftForToggle_Reverse(bool isOn)
+    {
+        LeftForToggle(!isOn);
     }
 
     public void Left(int Page = 1)

@@ -909,6 +909,14 @@ public class UsefulMethod : MonoBehaviour
         }
     }
 
+    //boolを引数にとり、active状態を反転させる関数。インスペクターでボタンに設定して使う
+    public static void SwitchActive(GameObject obj)
+    {
+        obj.SetActive(!obj.activeSelf);
+    }
+
+
+
     // Use this for initialization
     void Start()
     {

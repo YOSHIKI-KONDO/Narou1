@@ -34,7 +34,10 @@ public class Announce : BASE {
             colorString = ColorUtility.ToHtmlStringRGB((Color)Clr);
         }
 
-        announceTextShort.text = "<color=#"+ colorString + ">" + Txt + "</color>";
+        if (announceTextShort != null)
+        {
+            announceTextShort.text = "<color=#" + colorString + ">" + Txt + "</color>";
+        }
         announceTextLong.text = announceTextLong.text + "\n" + "<color=#" + colorString + ">"+ Txt + "</color>";
         SubstringLongText();
     }
@@ -55,7 +58,7 @@ public class Announce : BASE {
 
 	// Use this for initialization
 	void Start () {
-        switchButton.onClick.AddListener(SwitchPanel);
+        switchButton?.onClick.AddListener(SwitchPanel);
         baseColor = ColorUtility.ToHtmlStringRGB(Color.white);
 	}
 	

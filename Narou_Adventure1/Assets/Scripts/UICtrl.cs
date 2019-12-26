@@ -8,6 +8,8 @@ using static UsefulMethod;
 public class UICtrl : BASE {
     public Text apText;
     public Text inventoryText;
+    public Text equipText;
+    public Text ipText1, ipText2, ipText3, ipText4, ipText5;
     public Toggle mainToggle, abilityToggle, itemToggle, skillToggle, dungeonToggle, statusToggle;
     public GameObject skill_menu;
 
@@ -55,8 +57,12 @@ public class UICtrl : BASE {
     private void FixedUpdate()
     {
         apText.text = "AP : " + tDigit(main.rsc.Value[(int)ResourceKind.ap], 2);
-        inventoryText.text = "Equipment:" + main.rsc.Value[(int)ResourceKind.equipSpace].ToString() + " / " + main.rsc.Max((int)ResourceKind.equipSpace).ToString() +
-            ",  Inventory:" + main.rsc.Value[(int)ResourceKind.inventorySpace].ToString() + " / " + main.rsc.Max((int)ResourceKind.inventorySpace).ToString()+
-            ", Item point1:" + main.rsc.Value[(int)ResourceKind.itemPoint1].ToString() + " / " + main.rsc.Max((int)ResourceKind.itemPoint1).ToString();
+        equipText.text = "Equipment:" + main.rsc.Value[(int)ResourceKind.equipSpace].ToString() + " / " + main.rsc.Max((int)ResourceKind.equipSpace).ToString();
+        inventoryText.text = "Inventory:" + main.rsc.Value[(int)ResourceKind.inventorySpace].ToString() + " / " + main.rsc.Max((int)ResourceKind.inventorySpace).ToString();
+        ipText1.text = "Item point1:" + main.rsc.Value[(int)ResourceKind.itemPoint1].ToString() + " / " + main.rsc.Max((int)ResourceKind.itemPoint1).ToString();
+        ipText2.text = "Item point2:" + main.rsc.Value[(int)ResourceKind.itemPoint2].ToString() + " / " + main.rsc.Max((int)ResourceKind.itemPoint2).ToString();
+        ipText3.text = "Item point3:" + main.rsc.Value[(int)ResourceKind.itemPoint3].ToString() + " / " + main.rsc.Max((int)ResourceKind.itemPoint3).ToString();
+        ipText4.text = "Item point4:" + main.rsc.Value[(int)ResourceKind.itemPoint4].ToString() + " / " + main.rsc.Max((int)ResourceKind.itemPoint4).ToString();
+        ipText5.text = "Item point5:" + main.rsc.Value[(int)ResourceKind.itemPoint5].ToString() + " / " + main.rsc.Max((int)ResourceKind.itemPoint5).ToString();
     }
 }
