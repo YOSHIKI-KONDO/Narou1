@@ -16,11 +16,12 @@ using System;
 /// </summary>
 public class PopUp : MonoBehaviour
 {
+    public bool on_GetComponents = true;
     GameObject hoverObject;
     public Text[] texts;
     public TextMeshProUGUI[] textPros;
     [NonSerialized]
-    public Vector3 Distance = new Vector3(150.0f, 75.0f);
+    public Vector3 Distance = new Vector3(200.0f, 100.0f);
     public Action EnterAction;
     public Action ExitAction;
 
@@ -28,16 +29,18 @@ public class PopUp : MonoBehaviour
     {
         var tmp_PopUp = Instantiate(this, parent);
         tmp_PopUp.hoverObject = hoverObject;
-        tmp_PopUp.Initialize();
+        if (tmp_PopUp.on_GetComponents)
+        {
+            tmp_PopUp.GetTexts();
+        }
+        tmp_PopUp.InitializeTrigger();
+        
 
         return tmp_PopUp;
     }
 
-    void Initialize()
+    void InitializeTrigger()
     {
-        texts = GetComponentsInChildren<Text>();
-        textPros = GetComponentsInChildren<TextMeshProUGUI>();
-
         hoverObject.AddComponent<EventTrigger>().triggers = new List<EventTrigger.Entry>();
         EventTrigger.Entry entry = new EventTrigger.Entry();
         EventTrigger.Entry entry2 = new EventTrigger.Entry();
@@ -50,6 +53,12 @@ public class PopUp : MonoBehaviour
         entry2.callback.AddListener((x) => ExitAction?.Invoke());
         hoverObject.GetComponent<EventTrigger>().triggers.Add(entry);
         hoverObject.GetComponent<EventTrigger>().triggers.Add(entry2);
+    }
+
+    void GetTexts()
+    {
+        texts = GetComponentsInChildren<Text>();
+        textPros = GetComponentsInChildren<TextMeshProUGUI>();
     }
 
     void ApplyPosition()
