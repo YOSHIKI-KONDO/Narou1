@@ -9,7 +9,8 @@ using static ResourceKind;
 public class ResourceTextControll : BASE {
     public ResourceText normalPre;
     public ResourceText energyPre;
-    public Transform parent;
+    public Transform parent_energy;
+    public Transform parent_normal;
     public RESOURCE_EFFECT[] effectAry;
     public DecimalPoint_Resource[] points;
 
@@ -86,7 +87,7 @@ public class ResourceTextControll : BASE {
             // エナジー
             if (energies.Contains(k))
             {
-                var energy = Instantiate(energyPre, parent);
+                var energy = Instantiate(energyPre, parent_energy);
                 energy.kind = k;
                 if (effectAry[i] != null)
                 {
@@ -96,7 +97,7 @@ public class ResourceTextControll : BASE {
             }
 
             // 普通のリソース
-            var resource = Instantiate(normalPre, parent);
+            var resource = Instantiate(normalPre, parent_normal);
             resource.kind = k;
             if (effectAry[i] != null)
             {
