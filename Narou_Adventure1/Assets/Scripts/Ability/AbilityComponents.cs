@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class AbilityComponents : MonoBehaviour
 {
+    public Text newText;
+    public Transform attributesParent;
+
     public GameObject TrainBtnObj;
     public Button unlockButton;
     public Slider slider;
