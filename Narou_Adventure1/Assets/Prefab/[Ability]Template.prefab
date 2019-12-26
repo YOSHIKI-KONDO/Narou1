@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73f70a25063f541b88ca54c10617c789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newText: {fileID: 7157505774110997485}
+  newText: {fileID: 348584111492170726}
   attributesParent: {fileID: 4378992120094471239}
   TrainBtnObj: {fileID: 1296234027384605954}
   unlockButton: {fileID: 1296234027695821151}

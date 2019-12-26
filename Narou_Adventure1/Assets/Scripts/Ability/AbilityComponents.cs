@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class AbilityComponents : MonoBehaviour
 {
-    public Text newText;
+    public GameObject newText;
     public Transform attributesParent;
 
     public GameObject TrainBtnObj;
