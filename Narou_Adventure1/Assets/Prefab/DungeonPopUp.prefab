@@ -204,6 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66ecbf9cde86b4f9cb1845d309d4b269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  on_GetComponents: 1
   texts: []
   textPros: []
 --- !u!1 &249946822918470145

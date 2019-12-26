@@ -11,9 +11,9 @@ public class DUNGEON : BASE {
     public DungeonFunction progress; //AddComponentだけして、行動選択とする
     public ReleaseFunction release;
     public NeedFunciton need;
-    [NonSerialized]public Button button;
-    Text text, sliderText;
-    Slider slider;
+    DungeonComponents components;
+    [NonSerialized]public Button enterButton;
+    Text nameText;
 
     public List<EnemyKind[]> enemyList = new List<EnemyKind[]>(); //Enemyの配列のList
     public List<Drop> drops = new List<Drop>(); //ドロップ品
@@ -52,14 +52,13 @@ public class DUNGEON : BASE {
         this.kind = kind;
         main.battleCtrl.dungeons[(int)kind] = this;
 
-        button = GetComponentInChildren<Button>();            //UI関連
-        text = GetComponentsInChildren<Text>()[0];            //UI関連
-        sliderText = GetComponentsInChildren<Text>()[1];      //UI関連
-        slider = GetComponentInChildren<Slider>();            //UI関連
+        components = GetComponent<DungeonComponents>();
+        enterButton = components.enterButton;            //UI関連
+        nameText = components.nameText;                  //UI関連
         //button.onClick.AddListener(Enter);
         
         progress = gameObject.AddComponent<DungeonFunction>();
-        progress.AwakeDungeon(button, main.enumCtrl.dungeons[(int)kind].Name(), x => Sync(ref main.SR.watched_Dungeon[(int)kind], x));
+        progress.AwakeDungeon(enterButton, main.enumCtrl.dungeons[(int)kind].Name(), x => Sync(ref main.SR.watched_Dungeon[(int)kind], x));
         progress.SelectedAction = Enter;
         popUp = main.dungeonPopUp.StartPopUp(gameObject, main.windowShowCanvas);
         popUp.EnterAction = ApplyPopUp;
@@ -80,7 +79,7 @@ public class DUNGEON : BASE {
 
     public void FixedUpdateDungeon()
     {
-        text.text = Name_str;
+        nameText.text = Name_str;
         ApplyPopUp();
 
         if (CompleteCondition())//条件を満たしたらもう出なくなる
@@ -98,11 +97,11 @@ public class DUNGEON : BASE {
     void ApplySlider()
     {
         progress.sliderValue = (float)currentFloor / (float)MaxFloor();
-        if(slider != null)
-        {
-            slider.value = progress.sliderValue;
-            sliderText.text = currentFloor.ToString() + " / " + MaxFloor().ToString();
-        }
+        //if(slider != null)
+        //{
+        //    slider.value = progress.sliderValue;
+        //    sliderText.text = currentFloor.ToString() + " / " + MaxFloor().ToString();
+        //}
     }
 
 

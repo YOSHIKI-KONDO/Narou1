@@ -17,9 +17,10 @@ public class ITEM : BASE, INeed
     public List<Dealing> BuyLists = new List<Dealing>();
     public List<Dealing> SellLists = new List<Dealing>();
     public List<Dealing> EffectLists = new List<Dealing>();
+    ItemComponents components;
+    //newやlockなども宣言する
     public Button buyButton, sellButton, levelUpButton;
     public Text spaceText, nameText, numText;
-    Text text;
     PopUp popUp;
     ReleaseFunction release;
     public NeedFunciton need;
@@ -84,7 +85,6 @@ public class ITEM : BASE, INeed
     // Use this for initialization
     public void AwakeItem (ItemKind kind, int size, int? max = null) {
 		StartBASE();
-        text = GetComponentInChildren<Text>();
         this.kind = kind;
         this.size = size;
         this.MaxEquip = max;
@@ -95,12 +95,14 @@ public class ITEM : BASE, INeed
         release.StartFunction(gameObject, x => Sync(ref main.SR.released_Item[(int)kind], x), x => Sync(ref main.SR.completed_Item[(int)kind], x), x => Requires());
         need = gameObject.AddComponent<NeedFunciton>();
 
-        buyButton = gameObject.GetComponentsInChildren<Button>()[0];
-        sellButton = gameObject.GetComponentsInChildren<Button>()[1];
-        levelUpButton = gameObject.GetComponentsInChildren<Button>()[2];
-        spaceText = GetComponentsInChildren<Text>()[0];
-        nameText = GetComponentsInChildren<Text>()[1];
-        numText = GetComponentsInChildren<Text>()[2];
+        //アイテムコンポーネントから参照をコピー
+        components = GetComponent<ItemComponents>();
+        buyButton = components.buyButton;
+        sellButton = components.sellButton;
+        levelUpButton = components.levelUpButton;
+        spaceText = components.spaceText;
+        nameText = components.nameText;
+        numText = components.numText;
         buyButton.onClick.AddListener(() => main.itemCtrl.Buy(kind));
         buyButton.onClick.AddListener(() => { Watched = true; }); //watchedをtrueにする処理をbuybuttonに追加
         sellButton.onClick.AddListener(() => main.itemCtrl.Sell_Shop(kind));
@@ -128,7 +130,7 @@ public class ITEM : BASE, INeed
             release.Completed(true);
             setFalse(popUp.gameObject);
         }
-        text.text = Name_str;
+        nameText.text = Name_str;
     }
 
     double CalculatePower(int _maxLevel, double objective)
