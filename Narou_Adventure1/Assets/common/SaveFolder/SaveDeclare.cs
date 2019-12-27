@@ -86,6 +86,7 @@ public class SaveDeclare : BASE {
         InitializeArray(ref main.SR.watched_Shop, num_item);
         InitializeArray(ref main.SR.watched_Inventory, num_item);
         InitializeArray(ref main.SR.level_Item, num_item);
+        InitializeArray(ref main.SR.locked_Item, num_item);
 
         /* Need */
         InitializeArray(ref main.SR.needLimits, num_need);

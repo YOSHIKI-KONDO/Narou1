@@ -274,6 +274,9 @@ public class ItemCtrl : BASE {
 
     public bool CanSell_Inventory(ItemKind kind)
     {
+        //lockされていたらfalseを返す
+        if (items[(int)kind].lockToggle.isOn) { return false; }
+
         if (InventoryNum[(int)kind] > 0)
         {
             return true;
@@ -282,6 +285,9 @@ public class ItemCtrl : BASE {
     }
     public bool CanSell_Equip(ItemKind kind)
     {
+        //lockされていたらfalseを返す
+        if (items[(int)kind].lockToggle.isOn) { return false; }
+
         if (equipNum[(int)kind] > 0)
         {
             return true;
@@ -290,6 +296,9 @@ public class ItemCtrl : BASE {
     }
     public bool CanSell_Shop(ItemKind kind)
     {
+        //lockされていたらfalseを返す
+        if (items[(int)kind].lockToggle.isOn) { return false; }
+
         return CanSell_Inventory(kind) || CanSell_Equip(kind);
     }
 
@@ -401,5 +410,16 @@ public class ItemCtrl : BASE {
         {
             return false;
         }
+    }
+
+    /// <summary>
+    /// 全てのトグルを同期させる。セーブもする。
+    /// </summary>
+    public void SynchronizeLock(bool isOn, ItemKind kind)
+    {
+        items[(int)kind].lockToggle.isOn = isOn;
+        equips[(int)kind].lockToggle.isOn = isOn;
+        inventorys[(int)kind].lockToggle.isOn = isOn;
+        main.SR.locked_Item[(int)kind] = isOn;
     }
 }

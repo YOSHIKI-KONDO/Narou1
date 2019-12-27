@@ -8,7 +8,8 @@ using static UsefulMethod;
 public class Item_Equip : BASE {
     public ItemKind kind;
     public Button removeButton, sellButtion, levelUpButton;
-    public Text spaceText, nameText, numText;
+    public Text spaceText, nameText, numText, rarityText;
+    public Toggle lockToggle;
     public PopUp popUp;
     public string Name_str, Description_str, Max_Str, Need_str, Effect_str, Cost_str, Sell_str;
 
@@ -34,7 +35,12 @@ public class Item_Equip : BASE {
     // Use this for initialization
     void Start()
     {
+        //星で表記
+        rarityText.text = main.itemCtrl.items[(int)kind].StarFromRarity(main.itemCtrl.items[(int)kind].rarity);
 
+        //lock toggle
+        lockToggle.onValueChanged.AddListener(x => main.itemCtrl.SynchronizeLock(x, kind));
+        lockToggle.isOn = main.SR.locked_Item[(int)kind];//セーブを代入
     }
 
     // Update is called once per frame

@@ -14,13 +14,15 @@ public class ITEM : BASE, INeed
     public List<NeedKind> sources = new List<NeedKind>();
     public int size;
     public int? MaxEquip;
+    public int rarity;
     public List<Dealing> BuyLists = new List<Dealing>();
     public List<Dealing> SellLists = new List<Dealing>();
     public List<Dealing> EffectLists = new List<Dealing>();
     ItemComponents components;
     //newやlockなども宣言する
-    public Button buyButton, sellButton, levelUpButton;
-    public Text spaceText, nameText, numText;
+    Button buyButton, sellButton, levelUpButton;
+    Text spaceText, nameText, numText, rarityText;
+    public Toggle lockToggle;
     GameObject newObject;
     PopUp popUp;
     ReleaseFunction release;
@@ -83,11 +85,12 @@ public class ITEM : BASE, INeed
     }               
 
     // Use this for initialization
-    public void AwakeItem (ItemKind kind, int size, int? max = null) {
+    public void AwakeItem (ItemKind kind, int size, int? max = null, int rarity = 1) {
 		StartBASE();
         this.kind = kind;
         this.size = size;
         this.MaxEquip = max;
+        this.rarity = rarity;
         main.itemCtrl.items[(int)kind] = this;
 
 
@@ -100,9 +103,13 @@ public class ITEM : BASE, INeed
         nameText = components.nameText;
         numText = components.numText;
         newObject = components.newObj;
+        rarityText = components.rarityText;
+        lockToggle = components.lockToggle;
         buyButton.onClick.AddListener(() => main.itemCtrl.Buy(kind));
         sellButton.onClick.AddListener(() => main.itemCtrl.Sell_Shop(kind));
         levelUpButton.onClick.AddListener(() => main.itemCtrl.LevelUp(kind));
+        rarityText.text = StarFromRarity(rarity);
+        lockToggle.onValueChanged.AddListener(x => main.itemCtrl.SynchronizeLock(x, kind));
 
 
         popUp = main.itemPopUpPre.StartPopUp(gameObject, main.windowShowCanvas);
@@ -120,6 +127,10 @@ public class ITEM : BASE, INeed
     public void StartItem () {
         if (level <= 0) { level = 1; }//レベルは0以上でなければならない
         level_power = CalculatePower(30, 2);
+
+        //lock toggle
+        lockToggle.onValueChanged.AddListener(x => main.itemCtrl.SynchronizeLock(x, kind));
+        lockToggle.isOn = main.SR.locked_Item[(int)kind];//セーブを代入
     }
 
     // Update is called once per frame
@@ -138,6 +149,16 @@ public class ITEM : BASE, INeed
             setFalse(popUp.gameObject);
         }
         nameText.text = Name_str;
+    }
+
+    public string StarFromRarity(int Rarity)
+    {
+        string sum = "";
+        for (int i = 0; i < Rarity; i++)
+        {
+            sum += "★";
+        }
+        return sum;
     }
 
     double CalculatePower(int _maxLevel, double objective)

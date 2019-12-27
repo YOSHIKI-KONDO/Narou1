@@ -57,6 +57,7 @@ public class SaveR
     public bool[] watched_Shop;
     public bool[] watched_Inventory;
     public int[] level_Item;
+    public bool[] locked_Item;
 
     /* Need */
     public int[] needLimits;
