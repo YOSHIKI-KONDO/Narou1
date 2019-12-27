@@ -218,6 +218,7 @@ MonoBehaviour:
   LearnBtnObj: {fileID: 7400567439713948376}
   setButton: {fileID: 5662465804135128381}
   nameText: {fileID: 461912250413829417}
+  newObject: {fileID: 8859189320415745744}
 --- !u!1 &4771778132960442222
 GameObject:
   m_ObjectHideFlags: 0

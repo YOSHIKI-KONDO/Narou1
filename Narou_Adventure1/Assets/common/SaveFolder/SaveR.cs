@@ -54,7 +54,8 @@ public class SaveR
     public int[] inventoryNum_Item;
     public bool[] released_Item;
     public bool[] completed_Item;
-    public bool[] watched_Item;
+    public bool[] watched_Shop;
+    public bool[] watched_Inventory;
     public int[] level_Item;
 
     /* Need */

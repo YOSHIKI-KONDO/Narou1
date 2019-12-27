@@ -766,6 +766,7 @@ MonoBehaviour:
   spaceText: {fileID: 4472498151561895287}
   nameText: {fileID: 8598412330286135552}
   numText: {fileID: 5379539199582481270}
+  newObject: {fileID: 7812755203726120867}
   popUp: {fileID: 0}
   Name_str: 
   Description_str: 

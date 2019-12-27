@@ -13,8 +13,10 @@ public class UPGRADE_ACTION : ACTION, INeed
     public ReleaseFunction release;
     public ProgressFunction progress;
     public NeedFunciton need;
+    ActionComponents components;
     public Slider slider;
     Text text;
+    GameObject newObject;
 
     public double MaxValue;
     public double CurrentValue;
@@ -47,12 +49,14 @@ public class UPGRADE_ACTION : ACTION, INeed
         int maxNum = 1, double maxValue = 60, double? plusValue = 1, bool onSlider = true, bool addCtrl = true)
     {
         StartBASE();
-        text = GetComponentInChildren<Text>();
-        if (GetComponentInChildren<Slider>() != null)
+        components = GetComponent<ActionComponents>();
+        text = components.text;
+        newObject = components.newObject;
+        if (components.slider != null)
         {
-            slider = GetComponentInChildren<Slider>();
+            slider = components.slider;
         }
-        if(onSlider == false) { setFalse(slider.gameObject); }
+        if (onSlider == false) { setFalse(slider.gameObject); }
 
         this.kind = Kind;
         this.maxNum = maxNum;
@@ -64,12 +68,15 @@ public class UPGRADE_ACTION : ACTION, INeed
         popUp.EnterAction = ApplyPopUp;
         need = gameObject.AddComponent<NeedFunciton>();
         release = gameObject.AddComponent<ReleaseFunction>();
-        release.StartFunction(gameObject, x => Sync(ref main.SR.released_upgrade[(int)kind], x), x => Sync(ref main.SR.completed_upgrade[(int)kind], x), x => Requires());
+        release.StartFunction(gameObject, x => Sync(ref main.SR.released_upgrade[(int)kind], x),
+            x => Sync(ref main.SR.completed_upgrade[(int)kind], x),
+            x => Requires(),
+            x => Sync(ref main.SR.watched_upgrade[(int)kind], x),
+            newObject);
         progress = gameObject.AddComponent<ProgressFunction>();
         progress.StartProgress(gameObject, Need, slider,
             x => Sync(ref main.SR.paid_upgrade[(int)kind], x),
             x => Sync(ref main.SR.currentValue_upgrade[(int)kind], x),
-            x => Sync(ref main.SR.watched_upgrade[(int)kind], x),
             main.enumCtrl.upgradeActions[(int)kind].Name(),
             addCtrl);
         progress.CompleteAction = AddClerNum;//回数を増やす処理

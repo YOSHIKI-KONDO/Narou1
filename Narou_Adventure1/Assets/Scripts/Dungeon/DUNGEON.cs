@@ -14,6 +14,7 @@ public class DUNGEON : BASE {
     DungeonComponents components;
     [NonSerialized]public Button enterButton;
     Text nameText;
+    GameObject newObject;
 
     public List<EnemyKind[]> enemyList = new List<EnemyKind[]>(); //Enemyの配列のList
     public List<Drop> drops = new List<Drop>(); //ドロップ品
@@ -55,16 +56,21 @@ public class DUNGEON : BASE {
         components = GetComponent<DungeonComponents>();
         enterButton = components.enterButton;            //UI関連
         nameText = components.nameText;                  //UI関連
+        newObject = components.new_star_obj;
         //button.onClick.AddListener(Enter);
         
         progress = gameObject.AddComponent<DungeonFunction>();
-        progress.AwakeDungeon(enterButton, main.enumCtrl.dungeons[(int)kind].Name(), x => Sync(ref main.SR.watched_Dungeon[(int)kind], x));
+        progress.AwakeDungeon(enterButton, main.enumCtrl.dungeons[(int)kind].Name());
         progress.SelectedAction = Enter;
         popUp = main.dungeonPopUp.StartPopUp(gameObject, main.windowShowCanvas);
         popUp.EnterAction = ApplyPopUp;
         need = gameObject.AddComponent<NeedFunciton>();
         release = gameObject.AddComponent<ReleaseFunction>();
-        release.StartFunction(gameObject, x => Sync(ref main.SR.released_Dungeon[(int)kind], x), x => Sync(ref main.SR.completed_Dungeon[(int)kind], x), x => Requires());
+        release.StartFunction(gameObject, x => Sync(ref main.SR.released_Dungeon[(int)kind], x),
+            x => Sync(ref main.SR.completed_Dungeon[(int)kind], x),
+            x => Requires(),
+            x => Sync(ref main.SR.watched_Dungeon[(int)kind], x),
+            newObject);
     }
 
     // Use this for initialization

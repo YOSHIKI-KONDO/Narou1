@@ -13,6 +13,7 @@ public class SKILL : BASE, INeed
     public InstantFunction learnF;
     public NeedFunciton need;
     SkillComponents components;
+    GameObject newObject;
 
     public bool PayedCost;   //コストを払ったかどうか
     public bool equipped;    //設置してあるかどうか
@@ -117,6 +118,7 @@ public class SKILL : BASE, INeed
         StartBASE();
         components = GetComponent<SkillComponents>();
         components.nameText.text = Name_str;
+        newObject = components.newObject;
 
         this.kind = Kind;
         this.init_maxValue = init_maxValue;
@@ -126,9 +128,13 @@ public class SKILL : BASE, INeed
         popUp = main.skillPopUp.StartPopUp(gameObject, main.windowShowCanvas);
         popUp.EnterAction = ApplyPopUp;
         release = gameObject.AddComponent<ReleaseFunction>();
-        release.StartFunction(gameObject, x => Sync(ref main.SR.released_Skill[(int)kind], x), x => Sync(ref main.SR.completed_Skill[(int)kind], x), x => Requires());
+        release.StartFunction(gameObject, x => Sync(ref main.SR.released_Skill[(int)kind], x),
+            x => Sync(ref main.SR.completed_Skill[(int)kind], x),
+            x => Requires(),
+            x => Sync(ref main.SR.watched_Skill[(int)kind], x),
+            newObject);
         learnF = gameObject.AddComponent<InstantFunction>();
-        learnF.StartInstant(components.LearnBtnObj, Need, x => Sync(ref main.SR.watched_Skill[(int)kind], x));
+        learnF.StartInstant(components.LearnBtnObj, Need);
         learnF.CompleteAction = Learn;
         components.setButton.onClick.AddListener(Equip);
     }

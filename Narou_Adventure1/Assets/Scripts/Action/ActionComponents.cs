@@ -5,9 +5,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using static UsefulMethod;
 
-public class SkillComponents : BASE {
-    public GameObject LearnBtnObj;
-    public Button setButton;
-    public Text nameText;
+public class ActionComponents : BASE {
+    public Text text;
+    public Slider slider;
     public GameObject newObject;
 }

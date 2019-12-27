@@ -33991,7 +33991,8 @@ MonoBehaviour:
     inventoryNum_Item: 
     released_Item: 
     completed_Item: 
-    watched_Item: 
+    watched_Shop: 
+    watched_Inventory: 
     level_Item: 
     needLimits: 
     released_Skill: 

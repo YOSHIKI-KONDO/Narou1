@@ -6,8 +6,8 @@ using UnityEngine.UI;
 using static UsefulMethod;
 
 public class DungeonFunction : OnlyAction {
-    public void AwakeDungeon(Button button, string actionName, BoolSync watched)
+    public void AwakeDungeon(Button button, string actionName)
     {
-        AwakeOnlyAction(button, actionName, watched);
+        AwakeOnlyAction(button, actionName);
     }
 }

@@ -13,7 +13,9 @@ public class INSTANT_ACTION : ACTION, INeed
     public ReleaseFunction release;
     public InstantFunction instant;
     public NeedFunciton need;
+    ActionComponents components;
     Text text;
+    GameObject newObject;
 
     public virtual bool Requires() { return true; }
     public virtual bool CompleteCondition() { return false; }
@@ -29,7 +31,10 @@ public class INSTANT_ACTION : ACTION, INeed
     protected void AwakeInstantAction(ActionEnum.Instant Kind)
     {
         StartBASE();
-        text = GetComponentInChildren<Text>();
+        components = GetComponent<ActionComponents>();
+        text = components.text;
+        newObject = components.newObject;
+        
 
         this.kind = Kind;
 
@@ -37,9 +42,13 @@ public class INSTANT_ACTION : ACTION, INeed
         popUp = main.ActionPopUpPre.StartPopUp(gameObject, main.windowShowCanvas);
         popUp.EnterAction = ApplyPopUp;
         release = gameObject.AddComponent<ReleaseFunction>();
-        release.StartFunction(gameObject, x => Sync(ref main.SR.released_instant[(int)kind], x), x => Sync(ref main.SR.completed_instant[(int)kind], x), x => Requires());
+        release.StartFunction(gameObject, x => Sync(ref main.SR.released_instant[(int)kind], x),
+            x => Sync(ref main.SR.completed_instant[(int)kind], x),
+            x => Requires(),
+            x => Sync(ref main.SR.watched_instant[(int)kind], x),
+            newObject);
         instant = gameObject.AddComponent<InstantFunction>();
-        instant.StartInstant(gameObject, Need, x => Sync(ref main.SR.watched_instant[(int)kind], x));
+        instant.StartInstant(gameObject, Need);
     }
 
     // Use this for initialization

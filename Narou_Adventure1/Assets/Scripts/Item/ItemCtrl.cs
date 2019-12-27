@@ -322,6 +322,7 @@ public class ItemCtrl : BASE {
         {
             Calculate(items[(int)kind].BuyLists, false);
             GetItem(kind);
+            inventorys[(int)kind].Watched = false;//未読に
         }
     }
     public void Equip(ItemKind kind)
@@ -330,6 +331,7 @@ public class ItemCtrl : BASE {
         {
             equipNum[(int)kind]++;
             InventoryNum[(int)kind]--;
+            inventorys[(int)kind].Watched = true;//既読に
         }
     }
     public void Remove(ItemKind kind)
@@ -392,6 +394,7 @@ public class ItemCtrl : BASE {
         if (CanGetInventory(kind))
         {
             GetItem(kind);
+            inventorys[(int)kind].Watched = false;//未読に
             return true;
         }
         else

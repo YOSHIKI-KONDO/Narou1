@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using static UsefulMethod;
 
 /// <summary>
@@ -11,11 +12,13 @@ using static UsefulMethod;
 /// conditionを満たすと自動でreleasedがtrueとなる。
 /// また、外からcompletedに代入した変数を変更すると自動でcompletedも変更される。
 /// </summary>
-public class ReleaseFunction : BASE {
+public class ReleaseFunction : BASE, IPointerDownHandler{
     public delegate bool FlagDelegate(bool? x = null);
     public FlagDelegate Released;
     public FlagDelegate Completed;
     public FlagDelegate ReleaseCondition;
+    public FlagDelegate Watched;
+    public GameObject newObject;
     GameObject Obj;
 
     private void Awake()
@@ -23,12 +26,14 @@ public class ReleaseFunction : BASE {
         StartBASE();
     }
 
-    public void StartFunction(GameObject obj, FlagDelegate released, FlagDelegate completed, FlagDelegate releaseCondition)
+    public void StartFunction(GameObject obj, FlagDelegate released, FlagDelegate completed, FlagDelegate releaseCondition, FlagDelegate watched, GameObject newObject)
     {
         Obj = obj;
         Released = released;
         Completed = completed;
         ReleaseCondition = releaseCondition;
+        Watched = watched;
+        this.newObject = newObject;
         main.releaseCtrl.list.Add(this);//ReleaseCtrlから一括でUpdateFunctionを回す。
 
         if (Completed()) { Deactivate(); return; }
@@ -45,8 +50,19 @@ public class ReleaseFunction : BASE {
 
     public void UpdateFunction()
     {
+        //アクティブにしたりする処理
         if (Completed()) { Deactivate(); return; }
-        if (Released()) { Activate(); return; }
+        if (Released())
+        {
+            Activate();
+            //毎フレーム実行する処理をここに書く
+            ApplyNewObj();
+
+
+
+            //毎フレーム実行する処理ここまで
+            return;
+        }
 
         if (ReleaseCondition())
         {
@@ -58,6 +74,27 @@ public class ReleaseFunction : BASE {
         {
             Deactivate();
         }
+    }
+
+    //見られていたらnewをfalseにする。
+    void ApplyNewObj()
+    {
+        if (Watched != null)
+        {
+            if (Watched())
+            {
+                setFalse(newObject);
+            }
+            else
+            {
+                setActive(newObject);
+            }
+        }
+    }
+
+    void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
+    {
+        Watched?.Invoke(true);  //もしもwatchedがあればtrueにする。
     }
 
     public void Activate()

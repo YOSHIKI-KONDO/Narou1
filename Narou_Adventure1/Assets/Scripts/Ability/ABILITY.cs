@@ -16,6 +16,7 @@ public class ABILITY : BASE, INeed
     public AbilityFunction progress;
     public NeedFunciton need;
     AbilityComponents components;
+    GameObject newObject;
 
     double init_exp;
     double bottom_exp;
@@ -62,6 +63,7 @@ public class ABILITY : BASE, INeed
     {
         StartBASE();
         components = GetComponent<AbilityComponents>();
+        newObject = components.newText;
 
         this.kind = Kind;
         this.init_exp = initExp;
@@ -71,7 +73,11 @@ public class ABILITY : BASE, INeed
         popUp.EnterAction = ApplyPopUp;
         need = gameObject.AddComponent<NeedFunciton>();
         release = gameObject.AddComponent<ReleaseFunction>();
-        release.StartFunction(gameObject, x => Sync(ref main.SR.released_ability[(int)kind], x), x => Sync(ref main.SR.completed_ability[(int)kind], x), x => Requires());
+        release.StartFunction(gameObject, x => Sync(ref main.SR.released_ability[(int)kind], x),
+            x => Sync(ref main.SR.completed_ability[(int)kind], x),
+            x => Requires(),
+            x => Sync(ref main.SR.watched_ability[(int)kind], x),
+            newObject);
         progress = gameObject.AddComponent<AbilityFunction>();
         progress.StartAbility(components.TrainBtnObj,
             components.unlockButton,
@@ -81,7 +87,6 @@ public class ABILITY : BASE, INeed
             components.slider,
             x => Sync(ref main.SR.paid_ability[(int)kind], x),
             x => Sync(ref main.SR.currentValue_ability[(int)kind], x),
-            x => Sync(ref main.SR.watched_ability[(int)kind],x),
             main.enumCtrl.abilitys[(int)kind].Name());
         progress.CompleteAction = LevelUp;//回数を増やす処理
         progress.IsMax = () => { return level >= MaxLevel; };

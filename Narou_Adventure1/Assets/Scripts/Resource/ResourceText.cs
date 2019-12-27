@@ -28,7 +28,10 @@ public class ResourceText : BASE {
         numText = GetComponentsInChildren<Text>()[1];
 
         release = gameObject.AddComponent<ReleaseFunction>();
-        release.StartFunction(gameObject, x => Sync(ref main.SR.released_resource[(int)kind], x), x => Sync(ref main.SR.completed_resource[(int)kind], x), x => Requires());
+        release.StartFunction(gameObject, x => Sync(ref main.SR.released_resource[(int)kind], x),
+            x => Sync(ref main.SR.completed_resource[(int)kind], x),
+            x => Requires(),
+            null, null);
         popUp = main.resourcePopUp.StartPopUp(gameObject, main.windowShowCanvas);
         popUp.EnterAction = ApplyPopUp;
     }
