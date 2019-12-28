@@ -49,6 +49,8 @@ public class BattleAndSkillCtrl : BASE {
     float currentInterval_normalAttack;               //通常攻撃のインターバルのたまり具合
     //double attack_normalAttack = 1d;                  //通常攻撃の攻撃力
     int targetEnemy_index;
+    WaitForNum waitFloor = new WaitForNum();
+    WaitForNum waitDungeon = new WaitForNum();
 
 
     /* UI */
@@ -94,7 +96,8 @@ public class BattleAndSkillCtrl : BASE {
         ApplySkillSlots();
 
         ControllBattle();
-	}
+        ApplyComponents(); // Componentを更新
+    }
 
     private void FixedUpdate()
     {
@@ -211,15 +214,11 @@ public class BattleAndSkillCtrl : BASE {
                 }
                 if (thisSkill.warriorAtks.Count > 0)
                 {
-                    //AttackToEnemys(thisSkill.kind, thisSkill.WarriorDamage() * main.npcSkillCtrl.npcs[i].Attack * criticalFactor
-                    //    , main.enumCtrl.allys[i].Name(), criticalSentense);
                     AttackToEnemys(thisSkill.kind, DamageCalculate(thisSkill.WarriorDamage(), main.npcSkillCtrl.npcs[i].Attack, criticalFactor)
                         , main.enumCtrl.allys[i].Name(), criticalSentense);
                 }
                 if (thisSkill.sorcererAtks.Count > 0)
                 {
-                    //AttackToEnemys(thisSkill.kind, thisSkill.SorcererDamage() * main.npcSkillCtrl.npcs[i].MagicAttack * criticalFactor
-                    //    , main.enumCtrl.allys[i].Name(), criticalSentense);
                     AttackToEnemys(thisSkill.kind, DamageCalculate(thisSkill.SorcererDamage(), main.npcSkillCtrl.npcs[i].MagicAttack, criticalFactor)
                         , main.enumCtrl.allys[i].Name(), criticalSentense);
                 }
@@ -371,8 +370,8 @@ public class BattleAndSkillCtrl : BASE {
             battleScreen.ResetPosition();  //戦闘中ならアクティブ
             //UI
             dungenNameText.text = main.enumCtrl.dungeons[(int)dunKind].Name();
-            floorText.text = dungeons[(int)dunKind].currentFloor.ToString() + " / " + dungeons[(int)dunKind].MaxFloor().ToString();
-            floorSlider.value = ((float)dungeons[(int)dunKind].currentFloor / (float)dungeons[(int)dunKind].MaxFloor());
+            floorText.text = (dungeons[(int)dunKind].currentFloor + 1).ToString() + " / " + dungeons[(int)dunKind].MaxFloor().ToString();
+            floorSlider.value = (((float)dungeons[(int)dunKind].currentFloor + 1f) / (float)dungeons[(int)dunKind].MaxFloor());
         }
 
         // 生死判定 => もしも死んでいたらListから削除
@@ -473,12 +472,11 @@ public class BattleAndSkillCtrl : BASE {
             main.rsc.Value[(int)drop.kind] += drop.amount;
         }
 
-
         // 全滅判定
         if (currentEnemys.Count == 0)
         {
-            dungeons[(int)dunKind].currentFloor++;
-            if (dungeons[(int)dunKind].currentFloor >= dungeons[(int)dunKind].MaxFloor())
+            //クリア判定
+            if (dungeons[(int)dunKind].currentFloor + 1 >= dungeons[(int)dunKind].MaxFloor())
             {
                 main.announce_d.Add("Dungeon Clear!!!");
                 main.SR.clearNum_Dungeon[(int)dunKind]++;
@@ -539,20 +537,37 @@ public class BattleAndSkillCtrl : BASE {
                 dunKind = DungeonKind.nothing;
                 FleeFromDungeon();
                 //main.progressCtrl.SwitchProgress(main.progressCtrl.restFunction); //こう書いておくことで１周以上しなくなる
-                main.progressCtrl.Rest();//ループする
+                StartCoroutine(NewInvokeCor(() => main.progressCtrl.Rest(), 3.0f)); //ループする
                 return;
+            }
+            /* クリア判定ここまで */
+
+
+            // 待つ
+            waitFloor.Wait(100);
+            if (waitFloor.Waiting)
+            {
+                return; //待っていたら関数そのものから抜ける ***
+            }
+            else
+            {
+                waitFloor.Reset();
+            }
+            //フロアの更新
+            dungeons[(int)dunKind].currentFloor++;
+            if (dungeons[(int)dunKind].maxFloor < dungeons[(int)dunKind].currentFloor)
+            {
+                dungeons[(int)dunKind].maxFloor = dungeons[(int)dunKind].currentFloor;
             }
             Summon();
         }
-
-        // Componentを更新
-        ApplyComponents();
     }
 
 
-    // Called in ControllsBattle
+    // Called in Update
     void ApplyComponents()
     {
+        if(dunKind == DungeonKind.nothing) { return; }
         DUNGEON thisD = dungeons[(int)dunKind];
         for (int i = 0; i < enemysCmps.Length; i++)
         {
@@ -563,15 +578,21 @@ public class BattleAndSkillCtrl : BASE {
             }
             //もしも現在のフロアの敵の数が、componentsの数よりも小さければcomponentsをfalse ||
             //今見ている敵が死んでいたらfalse
-            if (thisD.enemyList[thisD.currentFloor].Length <= i ||
-                currentEnemys.Count <= i)
+            if (thisD.enemyList[thisD.currentFloor].Length <= i)
             {
                 setFalse(enemysCmps[i].gameObject);
                 continue;
             }
+            if(currentEnemys.Count <= i)
+            {
+                enemysCmps[i].hp_slider.value = 0f;
+                enemysCmps[i].int_slider.value = 0f;
+                enemysCmps[i].hp_text.text = "0/" + enemysCmps[i].maxHp;
+                continue;
+            }
             setActive(enemysCmps[i].gameObject);
             enemysCmps[i].ApplyNormalObj(main.enumCtrl.enemys[(int)thisD.enemyList[thisD.currentFloor][i]].Name(),
-                tDigit(currentEnemys[i].currentHp,1) + "/" + tDigit(currentEnemys[i].maxHp,1),
+                tDigit(currentEnemys[i].currentHp,1), tDigit(currentEnemys[i].maxHp,1),
                 "Atk : " + tDigit(currentEnemys[i].attack,1),
                 (float)(currentEnemys[i].currentHp / currentEnemys[i].maxHp),
                 (float)(currentEnemys[i].currentInterval / currentEnemys[i].interval)
@@ -583,7 +604,7 @@ public class BattleAndSkillCtrl : BASE {
 
         // 主人公のComponent更新
         heroCmp.ApplyNormalObj("Hero Lv" + main.SR.level.ToString() + " (" + main.rsc.Value[(int)ResourceKind.exp].ToString("F1") + "/" + main.rsc.Max((int)ResourceKind.exp).ToString("F1") + ")"
-            , tDigit(main.rsc.Value[(int)ResourceKind.hp], 1) + "/" + tDigit(main.rsc.Max((int)ResourceKind.hp), 1),
+            , tDigit(main.rsc.Value[(int)ResourceKind.hp], 1), tDigit(main.rsc.Max((int)ResourceKind.hp), 1),
             "",
             (float)(main.rsc.Value[(int)ResourceKind.hp] / main.rsc.Max((int)ResourceKind.hp)),
             currentInterval_normalAttack / Interval_normalAttack) ;//ここにインターバル
@@ -598,7 +619,8 @@ public class BattleAndSkillCtrl : BASE {
             if (main.npcSkillCtrl.allyKinds.IndexOf((AllyKind)i) >= 0)
             {
                 setActive(allysCmps[i].gameObject);
-                allysCmps[i].ApplyNormalObj(main.enumCtrl.allys[(int)i].Name(), tDigit(main.npcSkillCtrl.npcs[i].currentHp,1) + "/" + tDigit(main.npcSkillCtrl.npcs[i].Hp,1),
+                allysCmps[i].ApplyNormalObj(main.enumCtrl.allys[(int)i].Name() + " Lv" + main.npcSkillCtrl.npcs[i].level().ToString(),
+                    tDigit(main.npcSkillCtrl.npcs[i].currentHp,1), tDigit(main.npcSkillCtrl.npcs[i].Hp,1),
                     "Atk:" + tDigit(main.npcSkillCtrl.npcs[i].Attack,1) + "/MAtk:" + tDigit(main.npcSkillCtrl.npcs[i].MagicAttack,1),
                     main.npcSkillCtrl.npcs[i].HpSliderValue(),
                 main.npcSkillCtrl.npcs[i].IntervalSliderValue());
@@ -624,6 +646,7 @@ public class BattleAndSkillCtrl : BASE {
             currentEnemys.Add(new InnerEnemy(enemys[(int)thisD.enemyList[thisD.currentFloor][i]]));
         }
         thisD.summonedEnemy = true;
+        waitFloor.Reset(); //フロアの待ち時間のカウントをリセット
     }
 
     public void EnterDungeon()

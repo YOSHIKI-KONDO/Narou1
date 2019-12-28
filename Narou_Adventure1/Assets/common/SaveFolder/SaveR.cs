@@ -75,6 +75,7 @@ public class SaveR
     public int[] currentFloor_Dungeon;
     public int[] clearNum_Dungeon;
     public bool[] watched_Dungeon;
+    public int[] maxFloor_Dungeon;
 
     /* Ally */
     public List<AllyKind> allyKinds = new List<AllyKind>();

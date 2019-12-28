@@ -13,8 +13,8 @@ public class DUNGEON : BASE {
     public NeedFunciton need;
     DungeonComponents components;
     [NonSerialized]public Button enterButton;
-    Text nameText;
-    GameObject newObject;
+    Text nameText, floorText;
+    GameObject newObj, completeObj;
 
     public List<EnemyKind[]> enemyList = new List<EnemyKind[]>(); //Enemyの配列のList
     public List<Drop> drops = new List<Drop>(); //ドロップ品
@@ -22,6 +22,7 @@ public class DUNGEON : BASE {
     public List<Dealing> progressCost = new List<Dealing>();
     public int MaxFloor() { return enemyList.Count; }
     public int currentFloor { get => main.SR.currentFloor_Dungeon[(int)kind]; set => main.SR.currentFloor_Dungeon[(int)kind] = value; }//save
+    public int maxFloor { get => main.SR.maxFloor_Dungeon[(int)kind]; set => main.SR.maxFloor_Dungeon[(int)kind] = value; }            //save
     public bool summonedEnemy;
 
     public virtual bool Requires() { return true; }
@@ -56,7 +57,9 @@ public class DUNGEON : BASE {
         components = GetComponent<DungeonComponents>();
         enterButton = components.enterButton;            //UI関連
         nameText = components.nameText;                  //UI関連
-        newObject = components.new_star_obj;
+        newObj = components.newObj;
+        completeObj = components.completeObj;
+        floorText = components.floorText;
         //button.onClick.AddListener(Enter);
         
         progress = gameObject.AddComponent<DungeonFunction>();
@@ -70,7 +73,7 @@ public class DUNGEON : BASE {
             x => Sync(ref main.SR.completed_Dungeon[(int)kind], x),
             x => Requires(),
             x => Sync(ref main.SR.watched_Dungeon[(int)kind], x),
-            newObject);
+            newObj);
     }
 
     // Use this for initialization
@@ -86,6 +89,7 @@ public class DUNGEON : BASE {
     public void FixedUpdateDungeon()
     {
         nameText.text = Name_str;
+        floorText.text = maxFloor.ToString() + "/" + MaxFloor().ToString();
         ApplyPopUp();
 
         if (CompleteCondition())//条件を満たしたらもう出なくなる
@@ -116,7 +120,8 @@ public class DUNGEON : BASE {
         Name_str = main.enumCtrl.dungeons[(int)kind].Name();
         if(main.SR.clearNum_Dungeon[(int)kind] > 0)
         {
-            Name_str += " (Cleared)";
+            //Name_str += " (Cleared)";
+            setActive(completeObj);
         }
         if (popUp.gameObject.activeSelf)
         {

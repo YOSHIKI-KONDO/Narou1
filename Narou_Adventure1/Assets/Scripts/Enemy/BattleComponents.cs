@@ -13,6 +13,9 @@ public class BattleComponents : BASE {
     public Slider int_slider;
     public Toggle targetToggle; //enemyの時のみ使う
 
+    public string maxHp;
+    public string currentHp;
+
     private void Awake()
     {
         Name_text = GetComponentsInChildren<Text>()[0];
@@ -27,10 +30,12 @@ public class BattleComponents : BASE {
         }
     }
 
-    public void ApplyNormalObj(string Name, string hp, string atk, float hp_sliderValue, float int_sliderValue)
+    public void ApplyNormalObj(string Name, string currentHp, string maxHp, string atk, float hp_sliderValue, float int_sliderValue)
     {
+        this.maxHp = maxHp;
+        this.currentHp = currentHp;
         if (Name_text != null) { Name_text.text = Name; }
-        if (hp_text != null) { hp_text.text = hp; }
+        if (hp_text != null) { hp_text.text = this.currentHp + "/" + this.maxHp; }
         if (atk_text != null) { atk_text.text = atk; }
         if (hp_slider != null) { hp_slider.value = hp_sliderValue; }
         if (int_slider != null) { int_slider.value = int_sliderValue; }
