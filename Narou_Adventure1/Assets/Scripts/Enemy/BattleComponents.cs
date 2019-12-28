@@ -34,10 +34,12 @@ public class BattleComponents : BASE {
     {
         this.maxHp = maxHp;
         this.currentHp = currentHp;
+        float sqrt_int_sliderValue = Mathf.Sqrt(int_sliderValue);
+
         if (Name_text != null) { Name_text.text = Name; }
         if (hp_text != null) { hp_text.text = this.currentHp + "/" + this.maxHp; }
         if (atk_text != null) { atk_text.text = atk; }
         if (hp_slider != null) { hp_slider.value = hp_sliderValue; }
-        if (int_slider != null) { int_slider.value = int_sliderValue; }
+        if (int_slider != null) { int_slider.value = sqrt_int_sliderValue; }
     }
 }

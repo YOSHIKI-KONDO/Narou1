@@ -50,7 +50,7 @@ public class BattleAndSkillCtrl : BASE {
     //double attack_normalAttack = 1d;                  //通常攻撃の攻撃力
     int targetEnemy_index;
     WaitForNum waitFloor = new WaitForNum();
-    WaitForNum waitDungeon = new WaitForNum();
+    public Toggle loopToggle;
 
 
     /* UI */
@@ -536,8 +536,14 @@ public class BattleAndSkillCtrl : BASE {
 
                 dunKind = DungeonKind.nothing;
                 FleeFromDungeon();
-                //main.progressCtrl.SwitchProgress(main.progressCtrl.restFunction); //こう書いておくことで１周以上しなくなる
-                StartCoroutine(NewInvokeCor(() => main.progressCtrl.Rest(), 3.0f)); //ループする
+                if (loopToggle.isOn)
+                {
+                    StartCoroutine(NewInvokeCor(() => main.progressCtrl.Rest(), 3.0f)); //ループする
+                }
+                else
+                {
+                    main.progressCtrl.SwitchProgress(main.progressCtrl.restFunction); //こう書いておくことで１周以上しなくなる
+                }
                 return;
             }
             /* クリア判定ここまで */
