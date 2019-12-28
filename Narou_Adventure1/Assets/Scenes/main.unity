@@ -3026,6 +3026,7 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  isCombo: 0
   PayedCost: 0
   equipped: 0
   casted: 0
@@ -11303,6 +11304,7 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  isCombo: 0
   PayedCost: 0
   equipped: 0
   casted: 0
@@ -13605,6 +13607,7 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  isCombo: 0
   PayedCost: 0
   equipped: 0
   casted: 0
@@ -14240,6 +14243,7 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  isCombo: 0
   PayedCost: 0
   equipped: 0
   casted: 0
@@ -17101,6 +17105,7 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  isCombo: 0
   PayedCost: 0
   equipped: 0
   casted: 0
@@ -18046,6 +18051,7 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  isCombo: 0
   PayedCost: 0
   equipped: 0
   casted: 0
@@ -18551,6 +18557,7 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  isCombo: 0
   PayedCost: 0
   equipped: 0
   casted: 0
@@ -19409,6 +19416,7 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  isCombo: 0
   PayedCost: 0
   equipped: 0
   casted: 0
@@ -20830,6 +20838,7 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  isCombo: 0
   PayedCost: 0
   equipped: 0
   casted: 0
@@ -22043,6 +22052,7 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  isCombo: 0
   PayedCost: 0
   equipped: 0
   casted: 0
@@ -27612,6 +27622,7 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  isCombo: 0
   PayedCost: 0
   equipped: 0
   casted: 0
@@ -38830,6 +38841,7 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  isCombo: 0
   PayedCost: 0
   equipped: 0
   casted: 0
@@ -41104,6 +41116,7 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  isCombo: 0
   PayedCost: 0
   equipped: 0
   casted: 0
@@ -44403,6 +44416,7 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  isCombo: 0
   PayedCost: 0
   equipped: 0
   casted: 0
@@ -50971,6 +50985,7 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  isCombo: 0
   PayedCost: 0
   equipped: 0
   casted: 0
@@ -52368,6 +52383,7 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  isCombo: 0
   PayedCost: 0
   equipped: 0
   casted: 0
@@ -52790,6 +52806,7 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  isCombo: 0
   PayedCost: 0
   equipped: 0
   casted: 0
@@ -55103,6 +55120,7 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  isCombo: 0
   PayedCost: 0
   equipped: 0
   casted: 0

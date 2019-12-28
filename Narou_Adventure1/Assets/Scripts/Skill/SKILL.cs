@@ -15,6 +15,7 @@ public class SKILL : BASE, INeed
     SkillComponents components;
     GameObject newObject;
 
+    public bool isCombo;    //コンボが発生しているかどうか
     public bool PayedCost;   //コストを払ったかどうか
     public bool equipped;    //設置してあるかどうか
     public bool casted;     //使用されたかどうか
@@ -22,13 +23,14 @@ public class SKILL : BASE, INeed
     double init_maxValue;
     public double Duration()
     {
-        return init_maxValue;
+        return init_maxValue * comboFactor_interval();
     }
     public float sliderValue()
     {
         return (float)(currentValue / Duration());
     }
     public List<AttributeKind> attributes = new List<AttributeKind>(); //属性
+    public SKILL_COMBO combo; //直前のスキルによるコンボ
     public List<Dealing> useCosts = new List<Dealing>();
     public List<Dealing> useEffects = new List<Dealing>();
     public List<WarriorAttack> warriorAtks = new List<WarriorAttack>();//剣士攻撃
@@ -40,6 +42,30 @@ public class SKILL : BASE, INeed
     {
         if (need.hasNeeds) { return need.TemplateNeed(); }
         return true;
+    }
+
+
+
+
+    float comboFactor_effect()
+    {
+        if (isCombo == false) { return 1f; }
+        if(combo is Effect_SC == false) { return 1f; }
+        return combo.magnification;
+    }
+
+    float comboFactor_cost()
+    {
+        if (isCombo == false) { return 1f; }
+        if (combo is Cost_SC == false) { return 1f; }
+        return combo.magnification;
+    }
+
+    float comboFactor_interval()
+    {
+        if (isCombo == false) { return 1f; }
+        if (combo is Interval_SC == false) { return 1f; }
+        return combo.magnification;
     }
 
     void Learn()
@@ -54,13 +80,13 @@ public class SKILL : BASE, INeed
 
     public void PayCost()
     {
-        Calculate(useCosts, false);
+        Calculate(useCosts, false, comboFactor_cost());
         PayedCost = true;
     }
 
     public void Produce()
     {
-        Calculate(useEffects, false, 1, kind.ToString());//リソース系
+        Calculate(useEffects, false, comboFactor_effect(), kind.ToString());//リソース系
     }
 
     public double WarriorDamage()
@@ -68,7 +94,7 @@ public class SKILL : BASE, INeed
         double sum = 0;
         foreach (var atk in warriorAtks)
         {
-            sum += atk.damage;
+            sum += atk.damage * comboFactor_effect();
         }
         return sum;
     }
@@ -78,11 +104,10 @@ public class SKILL : BASE, INeed
         double sum = 0;
         foreach (var atk in sorcererAtks)
         {
-            sum += atk.damage;
+            sum += atk.damage * comboFactor_effect();
         }
         return sum;
     }
-
 
 
     public void Equip()
@@ -95,7 +120,7 @@ public class SKILL : BASE, INeed
         string sum_str = "";
         foreach (var atk in warriorAtks)
         {
-            sum_str += "damage(W):" + tDigit(atk.damage) + "\n";
+            sum_str += "damage(W):" + tDigit(atk.damage * comboFactor_effect()) + "\n";
         }
         return sum_str;
     }
@@ -105,7 +130,7 @@ public class SKILL : BASE, INeed
         string sum_str = "";
         foreach (var atk in sorcererAtks)
         {
-            sum_str += "damage(S):" + tDigit(atk.damage) + "\n";
+            sum_str += "damage(S):" + tDigit(atk.damage * comboFactor_effect()) + "\n";
         }
         return sum_str;
     }
@@ -194,12 +219,38 @@ public class SKILL : BASE, INeed
         //とりあえず今はdescriptionの部分に追加する
         Name_str = main.enumCtrl.skills[(int)kind].Name();
         Description_str = AttributeDetail();//Description_str = main.enumCtrl.skills[(int)kind].Description();
-        UseCost_str = ProgressDetail(useCosts);
+        UseCost_str = ProgressDetail(useCosts, comboFactor_cost());
         UseEffect_str = WarriorDetail();
         UseEffect_str += SorcererDetail();
-        UseEffect_str += ProgressDetail(useEffects);
+        UseEffect_str += ProgressDetail(useEffects, comboFactor_effect());
         Interval_str = tDigit(Duration(),1) + "s";
         LearnCost_str = main.SR.learnt_Skill[(int)kind] ? "" : learnF.ProgressDetail(learnF.initCostList);
+
+        //色変更
+        if (combo != null)
+        {
+            if (isCombo)
+            {
+                if (combo is Effect_SC)
+                {
+                    popUp.texts[9].color = Color.green;
+                }
+                if (combo is Cost_SC)
+                {
+                    popUp.texts[7].color = Color.green;
+                }
+                if (combo is Interval_SC)
+                {
+                    popUp.texts[11].color = Color.green;
+                }
+            }
+            else
+            {
+                popUp.texts[9].color = Color.black;
+                popUp.texts[7].color = Color.black;
+                popUp.texts[11].color = Color.black;
+            }
+        }
 
         //needが設定されている場合にのみ書き換える。
         //そのため、ない場合は手動でNeed_strを変えることが可能。

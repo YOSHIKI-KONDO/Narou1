@@ -109,6 +109,7 @@ public class BattleAndSkillCtrl : BASE {
         NormalAttack();
 
         EnemysAction();
+        JudgeCombo();
     }
 
     //Called in Fixed Update
@@ -247,6 +248,57 @@ public class BattleAndSkillCtrl : BASE {
             }
             //AttackToEnemys(SkillKind.normalAttack, main.status.Attack * criticalFactor, "You", criticalSentense);
             AttackToEnemys(SkillKind.normalAttack, DamageCalculate(skills[(int)SkillKind.normalAttack].WarriorDamage(), main.status.Attack, criticalFactor), "You", criticalSentense);
+        }
+    }
+
+    //コンボの判定
+    void JudgeCombo()
+    {
+        for (int i_r = 1; i_r < ROW_SLOT; i_r++)
+        {
+            for (int i_c = 0; i_c < COLUMN_SLOT; i_c++)
+            {
+                //明らかにfalseなものは先に判定してfalseを入れた後continue
+                if (slotKinds[i_r, i_c] == SkillKind.nothing)
+                {
+                    //skills[(int)slotKinds[i_r, i_c]].isCombo = false;
+                    continue;
+                }
+                if(slotKinds[i_r - 1, i_c] == SkillKind.nothing)
+                {
+                    skills[(int)slotKinds[i_r, i_c]].isCombo = false;
+                    continue;
+                }
+                if (skills[(int)slotKinds[i_r, i_c]].combo == null)
+                {
+                    skills[(int)slotKinds[i_r, i_c]].isCombo = false;
+                    continue;
+                }
+                if (skills[(int)slotKinds[i_r - 1, i_c]].attributes.Count == 0)
+                {
+                    skills[(int)slotKinds[i_r, i_c]].isCombo = false;
+                    continue;
+                }
+
+                //判定
+                if (skills[(int)slotKinds[i_r - 1, i_c]].attributes.Contains(skills[(int)slotKinds[i_r, i_c]].combo.kind))
+                {
+                    skills[(int)slotKinds[i_r, i_c]].isCombo = true;
+                }
+                else
+                {
+                    skills[(int)slotKinds[i_r, i_c]].isCombo = false;
+                }
+            }
+        }
+
+        //装備されていなければ問答無用でfalse
+        for (int i = 1; i < skills.Length; i++)
+        {
+            if(skills[i].equipped == false)
+            {
+                skills[i].isCombo = false;
+            }
         }
     }
 
