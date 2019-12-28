@@ -431,6 +431,7 @@ public class EnumCtrl : BASE {
         /* スキル */
         skills.Add(new template(SkillKind.nothing, "nothing", "nothing", "nothing", "nothing"));
         skills.Add(new template(SkillKind.normalAttack, "Normal Attack", "通常攻撃", "", ""));
+        skills.Add(new template(SkillKind.normalAttack_npc1, "Normal Attack", "通常攻撃", "", ""));
         //戦士
         skills.Add(new template(SkillKind.right_slash, "Right Slash", "袈裟斬り", "", ""));
         skills.Add(new template(SkillKind.left_upper_slash, "Left Upper Slash", "左斬上げ", "", ""));

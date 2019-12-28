@@ -2,6 +2,7 @@
 {
     nothing,
     normalAttack,
+    normalAttack_npc1,
     //戦士
     right_slash,
     left_upper_slash,

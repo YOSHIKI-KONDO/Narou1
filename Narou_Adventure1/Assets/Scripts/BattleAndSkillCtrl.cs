@@ -51,6 +51,7 @@ public class BattleAndSkillCtrl : BASE {
     int targetEnemy_index;
     WaitForNum waitFloor = new WaitForNum();
     public Toggle loopToggle;
+    public ToggleGroup targetToggleGroup;
 
 
     /* UI */
@@ -413,7 +414,8 @@ public class BattleAndSkillCtrl : BASE {
                     }
                 }
                 currentEnemys.Remove(currentEnemys[i]);
-            }
+                enemysCmps[0].targetToggle.isOn = true;
+}
         }
 
         //報酬を入手する関数
