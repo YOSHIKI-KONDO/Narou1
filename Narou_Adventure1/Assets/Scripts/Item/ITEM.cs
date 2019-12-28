@@ -21,7 +21,7 @@ public class ITEM : BASE, INeed
     ItemComponents components;
     //newやlockなども宣言する
     Button buyButton, sellButton, levelUpButton;
-    Text spaceText, nameText, numText, rarityText;
+    Text spaceText, nameText, numText, rarityText, levelText;
     public Toggle lockToggle;
     GameObject newObject;
     PopUp popUp;
@@ -85,13 +85,16 @@ public class ITEM : BASE, INeed
     }               
 
     // Use this for initialization
-    public void AwakeItem (ItemKind kind, int size, int? max = null, int rarity = 1) {
+    public void AwakeItem (ItemKind kind, int size, int? max = null, int rarity = 1, int maxLevel = 30, int maxLevelMag = 2) {
 		StartBASE();
         this.kind = kind;
         this.size = size;
         this.MaxEquip = max;
         this.rarity = rarity;
+        this.maxLevel = maxLevel;
         main.itemCtrl.items[(int)kind] = this;
+        if (level <= 0) { level = 1; }//レベルは0以上でなければならない
+        level_power = CalculatePower(maxLevel, maxLevelMag);
 
 
         //アイテムコンポーネントから参照をコピー
@@ -102,6 +105,7 @@ public class ITEM : BASE, INeed
         spaceText = components.spaceText;
         nameText = components.nameText;
         numText = components.numText;
+        levelText = components.levelText;
         newObject = components.newObj;
         rarityText = components.rarityText;
         lockToggle = components.lockToggle;
@@ -125,9 +129,6 @@ public class ITEM : BASE, INeed
 
     // Use this for initialization
     public void StartItem () {
-        if (level <= 0) { level = 1; }//レベルは0以上でなければならない
-        level_power = CalculatePower(30, 2);
-
         //lock toggle
         lockToggle.onValueChanged.AddListener(x => main.itemCtrl.SynchronizeLock(x, kind));
         lockToggle.isOn = main.SR.locked_Item[(int)kind];//セーブを代入
@@ -171,6 +172,7 @@ public class ITEM : BASE, INeed
         spaceText.text = main.itemCtrl.items[(int)kind].size.ToString();
         nameText.text = main.enumCtrl.items[(int)kind].Name();
         numText.text = main.itemCtrl.equipNum[(int)kind].ToString() + "/" + (main.itemCtrl.equipNum[(int)kind] + main.itemCtrl.InventoryNum[(int)kind]).ToString();
+        levelText.text = level >= maxLevel ? "Lv Max" : "Lv" + level.ToString() + "/" + maxLevel.ToString();
     }
 
     public void CheckButton()

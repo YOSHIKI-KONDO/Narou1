@@ -304,8 +304,29 @@ public class ItemCtrl : BASE {
 
     public bool CanLevelUp(ItemKind kind)//各レア度で分岐
     {
+        double itemPoint = 0;
         //アイテムポイントがあるかどうか
-        if (main.rsc.Value[(int)ResourceKind.itemPoint1] < 1)
+        switch (items[(int)kind].rarity)
+        {
+            case 1:
+                itemPoint = main.rsc.Value[(int)ResourceKind.itemPoint1];
+                break;
+            case 2:
+                itemPoint = main.rsc.Value[(int)ResourceKind.itemPoint2];
+                break;
+            case 3:
+                itemPoint = main.rsc.Value[(int)ResourceKind.itemPoint3];
+                break;
+            case 4:
+                itemPoint = main.rsc.Value[(int)ResourceKind.itemPoint4];
+                break;
+            case 5:
+                itemPoint = main.rsc.Value[(int)ResourceKind.itemPoint5];
+                break;
+            default:
+                break;
+        }
+        if (itemPoint < 1)
         {
             return false;
         }
@@ -388,7 +409,26 @@ public class ItemCtrl : BASE {
     {
         if (CanLevelUp(kind))
         {
-            main.rsc.Value[(int)ResourceKind.itemPoint1] -= 1;
+            switch (items[(int)kind].rarity)
+            {
+                case 1:
+                    main.rsc.Value[(int)ResourceKind.itemPoint1] -= 1;
+                    break;
+                case 2:
+                    main.rsc.Value[(int)ResourceKind.itemPoint2] -= 1;
+                    break;
+                case 3:
+                    main.rsc.Value[(int)ResourceKind.itemPoint3] -= 1;
+                    break;
+                case 4:
+                    main.rsc.Value[(int)ResourceKind.itemPoint4] -= 1;
+                    break;
+                case 5:
+                    main.rsc.Value[(int)ResourceKind.itemPoint5] -= 1;
+                    break;
+                default:
+                    break;
+            }
             items[(int)kind].LevelUp();
         }
     }

@@ -8,7 +8,7 @@ using static UsefulMethod;
 public class Item_Equip : BASE {
     public ItemKind kind;
     public Button removeButton, sellButtion, levelUpButton;
-    public Text spaceText, nameText, numText, rarityText;
+    public Text spaceText, nameText, numText, rarityText, levelText;
     public Toggle lockToggle;
     public PopUp popUp;
     public string Name_str, Description_str, Max_Str, Need_str, Effect_str, Cost_str, Sell_str;
@@ -56,6 +56,9 @@ public class Item_Equip : BASE {
         spaceText.text = main.itemCtrl.items[(int)kind].size.ToString();
         nameText.text = main.enumCtrl.items[(int)kind].Name();
         numText.text = main.itemCtrl.equipNum[(int)kind].ToString() + "/" + (main.itemCtrl.equipNum[(int)kind] + main.itemCtrl.InventoryNum[(int)kind]).ToString();
+        levelText.text = main.itemCtrl.items[(int)kind].level >= main.itemCtrl.items[(int)kind].maxLevel ?
+            "Lv Max" :
+            "Lv" + main.itemCtrl.items[(int)kind].level.ToString() + "/" + main.itemCtrl.items[(int)kind].maxLevel.ToString();
     }
 
     void CheckButton()

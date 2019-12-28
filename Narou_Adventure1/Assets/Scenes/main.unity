@@ -10532,7 +10532,7 @@ GameObject:
   - component: {fileID: 469832172}
   - component: {fileID: 469832171}
   m_Layer: 5
-  m_Name: '[Button]Flee'
+  m_Name: '[Button]Quit'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46669,7 +46669,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Flee
+  m_Text: Quit
 --- !u!222 &1840405481
 CanvasRenderer:
   m_ObjectHideFlags: 0

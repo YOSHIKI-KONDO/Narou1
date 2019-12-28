@@ -767,6 +767,7 @@ MonoBehaviour:
   nameText: {fileID: 8598412330286135552}
   numText: {fileID: 5379539199582481270}
   rarityText: {fileID: 2217658165680811130}
+  levelText: {fileID: 6368795487137255233}
   lockToggle: {fileID: 3080156033376535260}
   newObject: {fileID: 7812755203726120867}
   popUp: {fileID: 0}

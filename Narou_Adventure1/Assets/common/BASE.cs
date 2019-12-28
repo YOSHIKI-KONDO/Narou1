@@ -246,7 +246,7 @@ public class BASE : MonoBehaviour
             }
             if (deal is Temp_TRate_Deal)
             {
-                sum_str += main.enumCtrl.abilitys[(int)(deal as Temp_TRate_Deal).abilityKind].Name() + " train rate:" + tDigit(deal.Value, 1) + "/s (" + (deal as Temp_TRate_Deal).duration.ToString("F1") + "s)";
+                sum_str += main.enumCtrl.abilitys[(int)(deal as Temp_TRate_Deal).abilityKind].Name() + " exp rate:" + tDigit(deal.Value, 1) + "/s (" + (deal as Temp_TRate_Deal).duration.ToString("F1") + "s)";
                 continue; //次のループへ
             }
             //Itemの場合の判定
@@ -307,7 +307,7 @@ public class BASE : MonoBehaviour
                         sum_str += main.enumCtrl.abilitys[(int)(AbilityKind)deal.rscKind].Name() + " max:" + tDigit(deal.Value * factor);
                         break;
                     case Dealing.A_ParaKind.trainRate:
-                        sum_str += main.enumCtrl.abilitys[(int)(AbilityKind)deal.rscKind].Name() + " train rate:" + tDigit(deal.Value * factor, 1) + "/s";
+                        sum_str += main.enumCtrl.abilitys[(int)(AbilityKind)deal.rscKind].Name() + " exp rate:" + tDigit(deal.Value * factor, 1) + "/s";
                         break;
                     case Dealing.A_ParaKind.currentExp:
                         sum_str += main.enumCtrl.abilitys[(int)(AbilityKind)deal.rscKind].Name() + " exp:" + tDigit(deal.Value);
