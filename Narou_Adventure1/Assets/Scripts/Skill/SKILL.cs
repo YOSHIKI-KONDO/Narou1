@@ -157,7 +157,8 @@ public class SKILL : BASE, INeed
             x => Sync(ref main.SR.completed_Skill[(int)kind], x),
             x => Requires(),
             x => Sync(ref main.SR.watched_Skill[(int)kind], x),
-            newObject);
+            newObject,
+            main.enumCtrl.skills[(int)kind].Name() + "(Skill)");
         learnF = gameObject.AddComponent<InstantFunction>();
         learnF.StartInstant(components.LearnBtnObj, Need);
         learnF.CompleteAction = Learn;

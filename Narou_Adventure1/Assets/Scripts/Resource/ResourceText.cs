@@ -10,7 +10,7 @@ public class ResourceText : BASE {
     public ResourceKind kind;
     public Slider slider;
     Text nameText, numText;
-    ReleaseFunction release;//added
+    public ReleaseFunction release;//added
     public PopUp popUp;
     string Name_str, Description_str, Regen_str, Effect_str;
     public string Others_str;
@@ -26,12 +26,18 @@ public class ResourceText : BASE {
 		StartBASE();
         nameText = GetComponentsInChildren<Text>()[0];
         numText = GetComponentsInChildren<Text>()[1];
+    }
 
+    //resourceTextControllでInstanntiateし直後にkindを変更している。
+    //releaseでkindのnameを入れる必要があるためstartに分割して書く。
+    private void Start()
+    {
         release = gameObject.AddComponent<ReleaseFunction>();
         release.StartFunction(gameObject, x => Sync(ref main.SR.released_resource[(int)kind], x),
             x => Sync(ref main.SR.completed_resource[(int)kind], x),
             x => Requires(),
-            null, null);
+            null, null,
+            main.enumCtrl.resources[(int)kind].Name() + "(Resource)");
         popUp = main.resourcePopUp.StartPopUp(gameObject, main.windowShowCanvas);
         popUp.EnterAction = ApplyPopUp;
     }

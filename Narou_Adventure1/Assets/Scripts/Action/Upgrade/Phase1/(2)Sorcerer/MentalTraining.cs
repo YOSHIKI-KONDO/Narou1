@@ -16,6 +16,16 @@ public class MentalTraining : UPGRADE_ACTION
         return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.academic_city] >= 1;
     }
 
+    public override void CompleteAction()
+    {
+        //フォーカス解放
+        if (main.SR.released_resource[(int)ResourceKind.focus] == false)
+        {
+            main.rsc.Max_Base[(int)ResourceKind.focus] = 1;
+            main.rsc.Value[(int)ResourceKind.focus] = 1;
+        }
+    }
+
     // Use this for initialization
     void Awake () {
         AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.mental_training, 5,10);

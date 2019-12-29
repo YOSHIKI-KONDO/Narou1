@@ -77,7 +77,8 @@ public class ABILITY : BASE, INeed
             x => Sync(ref main.SR.completed_ability[(int)kind], x),
             x => Requires(),
             x => Sync(ref main.SR.watched_ability[(int)kind], x),
-            newObject);
+            newObject,
+            main.enumCtrl.abilitys[(int)kind].Name() + "(Ability)");
         progress = gameObject.AddComponent<AbilityFunction>();
         progress.StartAbility(components.TrainBtnObj,
             components.unlockButton,

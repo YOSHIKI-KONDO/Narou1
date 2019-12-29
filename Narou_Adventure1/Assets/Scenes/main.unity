@@ -55483,6 +55483,7 @@ MonoBehaviour:
   main: {fileID: 0}
   kind: 1
   slider: {fileID: 2822668640948195757}
+  release: {fileID: 0}
   popUp: {fileID: 0}
   Others_str: 
 --- !u!114 &2822668639949457062

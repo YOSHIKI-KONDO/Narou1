@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using static UsefulMethod;
 
-public class Item_Inventory : BASE, IPointerDownHandler{
+public class Item_Inventory : BASE{
     public ItemKind kind;
     public Button equipButton, sellButtion, levelUpButton;
     public Text spaceText, nameText, numText, rarityText, levelText;
@@ -15,6 +15,8 @@ public class Item_Inventory : BASE, IPointerDownHandler{
     public PopUp popUp;
     public string Name_str, Description_str, Max_Str, Need_str, Effect_str, Cost_str, Sell_str;
     public bool Watched { get => main.SR.watched_Inventory[(int)kind]; set => main.SR.watched_Inventory[(int)kind] = value; }
+    bool hovered;
+    EnterExitEvent eeevent;
 
     //ItemCtrlから呼ぶ
     public void StartInventory(ItemKind kind)
@@ -32,6 +34,9 @@ public class Item_Inventory : BASE, IPointerDownHandler{
 	// Use this for initialization
 	void Awake () {
         StartBASE();
+        eeevent = gameObject.AddComponent<EnterExitEvent>();
+        eeevent.EnterEvent = () => { hovered = true; };
+        eeevent.ExitEvent = () => { hovered = false; };
     }
 
 	// Use this for initialization
@@ -55,6 +60,14 @@ public class Item_Inventory : BASE, IPointerDownHandler{
     //見られていたらnewをfalseにする。
     void ApplyNewObj()
     {
+        if (hovered)
+        {
+            if (Input.GetMouseButton(0))
+            {
+                Watched = true;
+            }
+        }
+
         if (Watched)
         {
             setFalse(newObject);
@@ -63,11 +76,6 @@ public class Item_Inventory : BASE, IPointerDownHandler{
         {
             setActive(newObject);
         }
-    }
-
-    void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
-    {
-        Watched = true;
     }
 
     void ApplyTexts()

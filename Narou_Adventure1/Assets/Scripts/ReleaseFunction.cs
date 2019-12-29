@@ -12,21 +12,27 @@ using static UsefulMethod;
 /// conditionを満たすと自動でreleasedがtrueとなる。
 /// また、外からcompletedに代入した変数を変更すると自動でcompletedも変更される。
 /// </summary>
-public class ReleaseFunction : BASE, IPointerDownHandler{
+public class ReleaseFunction : BASE{
     public delegate bool FlagDelegate(bool? x = null);
     public FlagDelegate Released;
     public FlagDelegate Completed;
     public FlagDelegate ReleaseCondition;
     public FlagDelegate Watched;
     public GameObject newObject;
+    public string announceSentense;
     GameObject Obj;
+    EnterExitEvent eeevent;
+    bool hovered;
 
     private void Awake()
     {
         StartBASE();
+        eeevent = gameObject.AddComponent<EnterExitEvent>();
+        eeevent.EnterEvent = () => { hovered = true; };       //hoverのフラグ切り替え
+        eeevent.ExitEvent = () => { hovered = false; };       //hoverのフラグ切り替え
     }
 
-    public void StartFunction(GameObject obj, FlagDelegate released, FlagDelegate completed, FlagDelegate releaseCondition, FlagDelegate watched, GameObject newObject)
+    public void StartFunction(GameObject obj, FlagDelegate released, FlagDelegate completed, FlagDelegate releaseCondition, FlagDelegate watched, GameObject newObject, string announceSentense)
     {
         Obj = obj;
         Released = released;
@@ -34,6 +40,7 @@ public class ReleaseFunction : BASE, IPointerDownHandler{
         ReleaseCondition = releaseCondition;
         Watched = watched;
         this.newObject = newObject;
+        this.announceSentense = announceSentense;
         main.releaseCtrl.list.Add(this);//ReleaseCtrlから一括でUpdateFunctionを回す。
 
         if (Completed()) { Deactivate(); return; }
@@ -57,7 +64,7 @@ public class ReleaseFunction : BASE, IPointerDownHandler{
             Activate();
             //毎フレーム実行する処理をここに書く
             ApplyNewObj();
-
+            
 
 
             //毎フレーム実行する処理ここまで
@@ -67,7 +74,10 @@ public class ReleaseFunction : BASE, IPointerDownHandler{
         if (ReleaseCondition())
         {
             Activate();
-            main.announce.Add(Obj.name + " has been released.");
+            if (announceSentense != "")
+            {
+                main.announce.Add(announceSentense + " has been unlocked.");
+            }
             Released(true);
         }
         else
@@ -76,11 +86,20 @@ public class ReleaseFunction : BASE, IPointerDownHandler{
         }
     }
 
+    //どこかをクリックされたら既読にする
     //見られていたらnewをfalseにする。
     void ApplyNewObj()
     {
         if (Watched != null)
         {
+            if (hovered)
+            {
+                if (Input.GetMouseButton(0))
+                {
+                    Watched?.Invoke(true); //watcehdが設定されていたらtrueにする。
+                }
+            }
+
             if (Watched())
             {
                 setFalse(newObject);
@@ -90,11 +109,6 @@ public class ReleaseFunction : BASE, IPointerDownHandler{
                 setActive(newObject);
             }
         }
-    }
-
-    void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
-    {
-        Watched?.Invoke(true);  //もしもwatchedがあればtrueにする。
     }
 
     public void Activate()

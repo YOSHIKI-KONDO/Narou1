@@ -34,6 +34,7 @@ public class INSTANT_ACTION : ACTION, INeed
         components = GetComponent<ActionComponents>();
         text = components.text;
         newObject = components.newObject;
+        setFalse(components.slider.gameObject);
         
 
         this.kind = Kind;
@@ -46,7 +47,8 @@ public class INSTANT_ACTION : ACTION, INeed
             x => Sync(ref main.SR.completed_instant[(int)kind], x),
             x => Requires(),
             x => Sync(ref main.SR.watched_instant[(int)kind], x),
-            newObject);
+            newObject,
+            main.enumCtrl.instantActions[(int)kind].Name() + "(Action)");
         instant = gameObject.AddComponent<InstantFunction>();
         instant.StartInstant(gameObject, Need);
     }

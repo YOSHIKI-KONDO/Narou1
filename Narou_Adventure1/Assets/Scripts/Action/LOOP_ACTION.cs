@@ -58,9 +58,10 @@ public class LOOP_ACTION : ACTION, INeed {
         release = gameObject.AddComponent<ReleaseFunction>();
         release.StartFunction(gameObject, x => Sync(ref main.SR.released_loop[(int)kind], x),
         x => Sync(ref main.SR.completed_loop[(int)kind], x),
-        x => Sync(ref main.SR.watched_loop[(int)kind], x),
         x => Requires(),
-        newObject);
+        x => Sync(ref main.SR.watched_loop[(int)kind], x),
+        newObject,
+        main.enumCtrl.loopActions[(int)kind].Name() + "(Loop Action)");
         progress = gameObject.AddComponent<ProgressFunction>();
         progress.StartProgress(gameObject, Need, slider,
             x => Sync(ref main.SR.paid_loop[(int)kind], x),

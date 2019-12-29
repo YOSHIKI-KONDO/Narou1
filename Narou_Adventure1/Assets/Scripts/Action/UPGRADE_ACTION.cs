@@ -72,7 +72,8 @@ public class UPGRADE_ACTION : ACTION, INeed
             x => Sync(ref main.SR.completed_upgrade[(int)kind], x),
             x => Requires(),
             x => Sync(ref main.SR.watched_upgrade[(int)kind], x),
-            newObject);
+            newObject,
+            main.enumCtrl.upgradeActions[(int)kind].Name() + "(Upgrade Action)");
         progress = gameObject.AddComponent<ProgressFunction>();
         progress.StartProgress(gameObject, Need, slider,
             x => Sync(ref main.SR.paid_upgrade[(int)kind], x),

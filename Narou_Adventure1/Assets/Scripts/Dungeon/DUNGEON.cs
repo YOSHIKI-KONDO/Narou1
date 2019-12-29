@@ -37,10 +37,6 @@ public class DUNGEON : BASE {
     void Enter()
     {
         currentFloor = 0;
-        //if(currentFloor >= MaxFloor())
-        //{
-        //    currentFloor = 0;
-        //}
         main.announce_d.Add("You entered " + main.enumCtrl.dungeons[(int)kind].Name());
         main.battleCtrl.dunKind = kind;
         main.battleCtrl.EnterDungeon();
@@ -73,7 +69,8 @@ public class DUNGEON : BASE {
             x => Sync(ref main.SR.completed_Dungeon[(int)kind], x),
             x => Requires(),
             x => Sync(ref main.SR.watched_Dungeon[(int)kind], x),
-            newObj);
+            newObj,
+            main.enumCtrl.dungeons[(int)kind].Name() + "(Dungeon)");
     }
 
     // Use this for initialization

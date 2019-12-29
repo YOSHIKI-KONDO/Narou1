@@ -123,7 +123,8 @@ public class ITEM : BASE, INeed
             x => Sync(ref main.SR.completed_Item[(int)kind], x),
             x => Requires(),
             x => Sync(ref main.SR.watched_Shop[(int)kind], x),
-            newObject);
+            newObject,
+            main.enumCtrl.items[(int)kind].Name() + "(Shop)");
         need = gameObject.AddComponent<NeedFunciton>();
     }
 

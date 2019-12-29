@@ -326,10 +326,11 @@ public class BASE : MonoBehaviour
     }
 
     //List<Dealing>が全てリソースで、現在値を増やす場合で、かつ満タンの時にtrueを返す。
+    //要素が0の時の挙動。loopActionではtrueを返したい。Abilityではおそらくfalseを返したい。
     public bool EffectIsCompleted(List<Dealing> dealings)
     {
         bool isCompleted = true;
-        if(dealings.Count == 0) { return false; }
+        if(dealings.Count == 0) { return true; }
         foreach (var deal in dealings)
         {
             if (deal is Temp_Regen_Deal || deal is Temp_TRate_Deal)

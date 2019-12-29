@@ -66,12 +66,11 @@ public class Focus : BASE {
 
     private void Start()
     {
-        if (GetComponent<ReleaseFunction>())
-        {
-            GetComponent<ReleaseFunction>().RemoveRelease();
-            Destroy(GetComponent<ReleaseFunction>());
-        }
-
+        //if (GetComponent<ReleaseFunction>())
+        //{
+        //    GetComponent<ReleaseFunction>().RemoveRelease();
+        //    Destroy(GetComponent<ReleaseFunction>());
+        //}
         resourceText = GetComponent<ResourceText>();
     }
 
