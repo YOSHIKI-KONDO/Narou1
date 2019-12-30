@@ -45,7 +45,7 @@ public class DUNGEON : BASE {
     public string Name_str, Description_str, Need_str, Floor_str, ProgressCost_str, Drops_str, FirstDrops_str;
 
     // Use this for initialization
-    public void AwakeDungeon (DungeonKind kind) {
+    public void AwakeDungeon (DungeonKind kind, ResourceKind itemPoint) {
 		StartBASE();
         this.kind = kind;
         main.battleCtrl.dungeons[(int)kind] = this;
@@ -71,6 +71,8 @@ public class DUNGEON : BASE {
             x => Sync(ref main.SR.watched_Dungeon[(int)kind], x),
             newObj,
             main.enumCtrl.dungeons[(int)kind].Name() + "(Dungeon)");
+
+        drops.Add(new Drop(itemPoint, 1, 100)); //アイテムポイントを1つ追加
     }
 
     // Use this for initialization
@@ -141,7 +143,7 @@ public class DUNGEON : BASE {
             ChangeTextAdaptive(Floor_str, popUp.texts[5], popUp.texts[4].gameObject, popUp.texts[5].gameObject);
             ChangeTextAdaptive(ProgressCost_str, popUp.texts[7], popUp.texts[6].gameObject, popUp.texts[7].gameObject);
             ChangeTextAdaptive(Drops_str, popUp.texts[9], popUp.texts[8].gameObject, popUp.texts[9].gameObject);
-            ChangeTextAdaptive(FirstDrops_str, popUp.texts[10], popUp.texts[10].gameObject, popUp.texts[11].gameObject);
+            ChangeTextAdaptive(FirstDrops_str, popUp.texts[11], popUp.texts[10].gameObject, popUp.texts[11].gameObject);
         }
     }
 }

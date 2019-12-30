@@ -16,7 +16,7 @@ public class Sewer : DUNGEON
 
     // Use this for initialization
     void Awake () {
-        AwakeDungeon(sewer);
+        AwakeDungeon(sewer, ResourceKind.itemPoint1);
         enemyList.Add(new EnemyKind[] { rat, rat, rat, rat });
         enemyList.Add(new EnemyKind[] { red_slime });//2
         enemyList.Add(new EnemyKind[] { bat, bat });

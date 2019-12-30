@@ -16,7 +16,7 @@ public class Plain : DUNGEON
 
     // Use this for initialization
     void Awake () {
-        AwakeDungeon(plain);
+        AwakeDungeon(plain, ResourceKind.itemPoint1);
         enemyList.Add(new EnemyKind[] { slime });
         enemyList.Add(new EnemyKind[] { bird, slime });
         enemyList.Add(new EnemyKind[] { goblin });

@@ -537,6 +537,9 @@ public class BattleAndSkillCtrl : BASE {
                 //AnalyticsEvent.LevelComplete(dunKind.ToString());
                 main.analytics.DungeonComplete(dunKind);
 
+                //最高到達フロア更新
+                dungeons[(int)dunKind].maxFloor = dungeons[(int)dunKind].MaxFloor();
+
                 //報酬(ダンジョン)
                 for (int i_d = 0; i_d < dungeons[(int)dunKind].drops.Count; i_d++)
                 {
@@ -550,7 +553,7 @@ public class BattleAndSkillCtrl : BASE {
                             string additive = couldGet ? "" : " (but Inventory is full)";
                             main.announce_d.Add("LOOT [" + main.enumCtrl.dungeons[(int)dunKind].Name() + "] : "
                                 + main.enumCtrl.items[(int)(dungeons[(int)dunKind].drops[i_d] as Item_Drop).itemKind].Name()
-                                + additive);
+                                + additive, Color.green);
                             
                         }
                         else
@@ -575,7 +578,7 @@ public class BattleAndSkillCtrl : BASE {
                             string additive = couldGet ? "" : " (but Inventory is full)";
                             main.announce_d.Add("LOOT [" + main.enumCtrl.dungeons[(int)dunKind].Name() + "] : "
                                 + main.enumCtrl.items[(int)(dungeons[(int)dunKind].firstDrops[i_d] as Item_Drop).itemKind].Name()
-                                + additive);
+                                + additive, Color.green);
 
                         }
                         else

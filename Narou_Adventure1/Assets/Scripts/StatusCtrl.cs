@@ -12,8 +12,8 @@ using static UsefulMethod;
 public class StatusCtrl : BASE {
     public int Level { get => main.SR.level; }
     public double Hp { get => main.rsc.Max((int)ResourceKind.hp); }
-    public double Strength { get => 4d + main.rsc.Regen((int)ResourceKind.strength) + Level * 1; }
-    public double MentalStrength { get => 4d + main.rsc.Regen((int)ResourceKind.mentalStrength) + Level * 1; }
+    public double Strength { get => 0d + main.rsc.Regen((int)ResourceKind.strength) + Level * 1; }
+    public double MentalStrength { get => 0d + main.rsc.Regen((int)ResourceKind.mentalStrength) + Level * 1; }
     public double Attack { get => (Strength + main.rsc.Regen((int)ResourceKind.attack)); }
     public double MagicAttack { get => (MentalStrength + main.rsc.Regen((int)ResourceKind.magic_attack)); }
     public double Defense { get => -0.5d + main.rsc.Regen((int)ResourceKind.defense) + Level * 0.5d; }
@@ -55,12 +55,12 @@ public class StatusCtrl : BASE {
         
         heroCmps.txt_Value_Level.text = Level.ToString();
         heroCmps.txt_Value_Exp.text = tDigit(main.rsc.Value[(int)ResourceKind.exp]) + " / " + tDigit(main.rsc.Max((int)ResourceKind.exp));
-        heroCmps.txt_Value_Hp.text = Hp.ToString();
-        heroCmps.txt_Value_Strength.text = Strength.ToString();
-        heroCmps.txt_Value_MStrength.text = MentalStrength.ToString();
-        heroCmps.txt_Value_Attack.text = Attack.ToString();
-        heroCmps.txt_Value_MAttack.text = MagicAttack.ToString();
-        heroCmps.txt_Value_Defense.text = Defense.ToString();
+        heroCmps.txt_Value_Hp.text = Hp.ToString("F0");
+        heroCmps.txt_Value_Strength.text = Strength.ToString("F0");
+        heroCmps.txt_Value_MStrength.text = MentalStrength.ToString("F0");
+        heroCmps.txt_Value_Attack.text = Attack.ToString("F0");
+        heroCmps.txt_Value_MAttack.text = MagicAttack.ToString("F0");
+        heroCmps.txt_Value_Defense.text = Defense.ToString("F0");
         heroCmps.txt_Value_Dodge.text = DodgeChance.ToString("F1") + "%";
         heroCmps.txt_Value_CriticalC.text = CriticalChance.ToString("F1") + "%";
 

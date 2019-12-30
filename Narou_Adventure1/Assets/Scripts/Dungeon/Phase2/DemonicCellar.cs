@@ -17,7 +17,7 @@ public class DemonicCellar : DUNGEON
 
     // Use this for initialization
     void Awake () {
-        AwakeDungeon(demonic_cellar);
+        AwakeDungeon(demonic_cellar, ResourceKind.itemPoint1);
         enemyList.Add(new EnemyKind[] { lizard_man });//1
         enemyList.Add(new EnemyKind[] { bat, bat });
         enemyList.Add(new EnemyKind[] { rat, rat, rat });

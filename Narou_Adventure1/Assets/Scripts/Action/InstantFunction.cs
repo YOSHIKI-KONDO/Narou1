@@ -69,4 +69,18 @@ public class InstantFunction : BASE
             button.interactable = false;
         }
     }
+
+    //本当はskillFunctionを用意したほうがいい
+    public void CheckButtonForRelease()
+    {
+        bool condition = Need == null || Need();
+        if (condition && CanPurchase(initCostList))
+        {
+            button.interactable = true;
+        }
+        else
+        {
+            button.interactable = false;
+        }
+    }
 }

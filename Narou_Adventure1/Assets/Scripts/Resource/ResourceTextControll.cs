@@ -48,7 +48,7 @@ public class ResourceTextControll : BASE {
             regen = 3;
             current_deal = 1;
             max_deal = 1;
-            regen_deal = 2;
+            regen_deal = 3;
         }
         /// <summary>
         /// 小数点の位置を一括で変える

@@ -9,7 +9,7 @@ using static UsefulMethod;
 public class Item_Inventory : BASE{
     public ItemKind kind;
     public Button equipButton, sellButtion, levelUpButton;
-    public Text spaceText, nameText, numText, rarityText, levelText;
+    public Text spaceText, nameText, numText, rarityText, levelText, maxNumText;
     public Toggle lockToggle;
     public GameObject newObject;
     public PopUp popUp;
@@ -82,6 +82,7 @@ public class Item_Inventory : BASE{
     {
         spaceText.text = main.itemCtrl.items[(int)kind].size.ToString();
         nameText.text = main.enumCtrl.items[(int)kind].Name();
+        maxNumText.text = (main.itemCtrl.items[(int)kind].MaxEquip == null) ? "∞" : main.itemCtrl.items[(int)kind].MaxEquip.ToString();
         numText.text = main.itemCtrl.equipNum[(int)kind].ToString() + "/" + (main.itemCtrl.equipNum[(int)kind] + main.itemCtrl.InventoryNum[(int)kind]).ToString();
         levelText.text = main.itemCtrl.items[(int)kind].level >= main.itemCtrl.items[(int)kind].maxLevel ?
             "Lv Max" :

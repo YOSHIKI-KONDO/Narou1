@@ -120,7 +120,7 @@ public class SKILL : BASE, INeed
         string sum_str = "";
         foreach (var atk in warriorAtks)
         {
-            sum_str += "damage(W):" + tDigit(atk.damage * comboFactor_effect()) + "\n";
+            sum_str += "Physics damage:" + tDigit(atk.damage * comboFactor_effect()) + "\n";
         }
         return sum_str;
     }
@@ -130,7 +130,7 @@ public class SKILL : BASE, INeed
         string sum_str = "";
         foreach (var atk in sorcererAtks)
         {
-            sum_str += "damage(S):" + tDigit(atk.damage * comboFactor_effect()) + "\n";
+            sum_str += "Magic damage:" + tDigit(atk.damage * comboFactor_effect()) + "\n";
         }
         return sum_str;
     }
@@ -179,7 +179,7 @@ public class SKILL : BASE, INeed
 
     protected void FixedUpdateSkill()
     {
-        learnF.FixedUpdateInstant();
+        learnF.CheckButtonForRelease();
         components.nameText.text = Name_str;
         if (popUp.gameObject.activeSelf) { ApplyPopUp(); }
 

@@ -21,7 +21,7 @@ public class ITEM : BASE, INeed
     ItemComponents components;
     //newやlockなども宣言する
     Button buyButton, sellButton, levelUpButton;
-    Text spaceText, nameText, numText, rarityText, levelText;
+    Text spaceText, nameText, numText, rarityText, levelText, maxNumText;
     public Toggle lockToggle;
     GameObject newObject;
     PopUp popUp;
@@ -108,6 +108,7 @@ public class ITEM : BASE, INeed
         levelText = components.levelText;
         newObject = components.newObj;
         rarityText = components.rarityText;
+        maxNumText = components.maxNumText;
         lockToggle = components.lockToggle;
         buyButton.onClick.AddListener(() => main.itemCtrl.Buy(kind));
         sellButton.onClick.AddListener(() => main.itemCtrl.Sell_Shop(kind));
@@ -172,6 +173,7 @@ public class ITEM : BASE, INeed
     {
         spaceText.text = main.itemCtrl.items[(int)kind].size.ToString();
         nameText.text = main.enumCtrl.items[(int)kind].Name();
+        maxNumText.text = (MaxEquip == null) ? "∞" : MaxEquip.ToString();
         numText.text = main.itemCtrl.equipNum[(int)kind].ToString() + "/" + (main.itemCtrl.equipNum[(int)kind] + main.itemCtrl.InventoryNum[(int)kind]).ToString();
         levelText.text = level >= maxLevel ? "Lv Max" : "Lv" + level.ToString() + "/" + maxLevel.ToString();
     }
