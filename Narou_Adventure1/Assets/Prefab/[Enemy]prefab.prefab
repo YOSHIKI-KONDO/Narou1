@@ -529,12 +529,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   main: {fileID: 0}
+  isEnemy: 1
+  kind: 0
   Name_text: {fileID: 0}
   hp_text: {fileID: 0}
   atk_text: {fileID: 0}
   hp_slider: {fileID: 0}
   int_slider: {fileID: 0}
   targetToggle: {fileID: 0}
+  maxHp: 
+  currentHp: 
 --- !u!223 &8017581848857832901
 Canvas:
   m_ObjectHideFlags: 0

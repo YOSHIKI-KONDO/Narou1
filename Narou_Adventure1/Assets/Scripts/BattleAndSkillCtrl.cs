@@ -658,7 +658,8 @@ public class BattleAndSkillCtrl : BASE {
                 tDigit(currentEnemys[i].currentHp,1), tDigit(currentEnemys[i].maxHp,1),
                 "Atk : " + tDigit(currentEnemys[i].attack,1),
                 (float)(currentEnemys[i].currentHp / currentEnemys[i].maxHp),
-                (float)(currentEnemys[i].currentInterval / currentEnemys[i].interval)
+                (float)(currentEnemys[i].currentInterval / currentEnemys[i].interval),
+                currentEnemys[i].kind
                 );
 
             //ターゲットインデックスを更新
