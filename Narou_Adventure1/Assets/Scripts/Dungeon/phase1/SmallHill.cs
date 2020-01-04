@@ -16,7 +16,7 @@ public class SmallHill : DUNGEON
 
     // Use this for initialization
     void Awake () {
-        AwakeDungeon(small_hill, ResourceKind.itemPoint1);
+        AwakeDungeon(small_hill, ResourceKind.itemPoint1, 1);
         enemyList.Add(new EnemyKind[] { slime });
         enemyList.Add(new EnemyKind[] { slime, slime });
         enemyList.Add(new EnemyKind[] { bat });

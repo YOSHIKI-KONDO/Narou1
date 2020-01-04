@@ -10,7 +10,7 @@ public class Demonic : ENEMY
     // Use this for initialization
     void Awake()
     {
-        AwakeEnemy(EnemyKind.demonic, 10, 5, 3, 0, 10, 2);
+        AwakeEnemy(EnemyKind.demonic, 10, 5, 3, 0, 10, 2, 1);
         drops.Add(new Drop(ResourceKind.anchovy_sandwich, 1, 5));
     }
 

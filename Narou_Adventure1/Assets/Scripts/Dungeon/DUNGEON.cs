@@ -23,6 +23,7 @@ public class DUNGEON : BASE {
     public int MaxFloor() { return enemyList.Count; }
     public int currentFloor { get => main.SR.currentFloor_Dungeon[(int)kind]; set => main.SR.currentFloor_Dungeon[(int)kind] = value; }//save
     public int maxFloor { get => main.SR.maxFloor_Dungeon[(int)kind]; set => main.SR.maxFloor_Dungeon[(int)kind] = value; }            //save
+    public int recommendLevel;
     public bool summonedEnemy;
 
     public virtual bool Requires() { return true; }
@@ -45,9 +46,10 @@ public class DUNGEON : BASE {
     public string Name_str, Description_str, Need_str, Floor_str, ProgressCost_str, Drops_str, FirstDrops_str;
 
     // Use this for initialization
-    public void AwakeDungeon (DungeonKind kind, ResourceKind itemPoint) {
+    public void AwakeDungeon (DungeonKind kind, ResourceKind itemPoint, int recommendLevel) {
 		StartBASE();
         this.kind = kind;
+        this.recommendLevel = recommendLevel;
         main.battleCtrl.dungeons[(int)kind] = this;
 
         components = GetComponent<DungeonComponents>();

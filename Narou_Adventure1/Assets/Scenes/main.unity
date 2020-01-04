@@ -3530,6 +3530,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   release: {fileID: 0}
   need: {fileID: 0}
+  recommendLevel: 0
   summonedEnemy: 0
   Name_str: 
   Description_str: 
@@ -4948,6 +4949,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   release: {fileID: 0}
   need: {fileID: 0}
+  recommendLevel: 0
   summonedEnemy: 0
   Name_str: 
   Description_str: 
@@ -6331,6 +6333,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   release: {fileID: 0}
   need: {fileID: 0}
+  recommendLevel: 0
   summonedEnemy: 0
   Name_str: 
   Description_str: 
@@ -7422,6 +7425,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   release: {fileID: 0}
   need: {fileID: 0}
+  recommendLevel: 0
   summonedEnemy: 0
   Name_str: 
   Description_str: 
@@ -8921,6 +8925,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   release: {fileID: 0}
   need: {fileID: 0}
+  recommendLevel: 0
   summonedEnemy: 0
   Name_str: 
   Description_str: 
@@ -15629,6 +15634,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   release: {fileID: 0}
   need: {fileID: 0}
+  recommendLevel: 0
   summonedEnemy: 0
   Name_str: 
   Description_str: 
@@ -17375,6 +17381,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   release: {fileID: 0}
   need: {fileID: 0}
+  recommendLevel: 0
   summonedEnemy: 0
   Name_str: 
   Description_str: 
@@ -18729,6 +18736,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   release: {fileID: 0}
   need: {fileID: 0}
+  recommendLevel: 0
   summonedEnemy: 0
   Name_str: 
   Description_str: 
@@ -22363,6 +22371,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   release: {fileID: 0}
   need: {fileID: 0}
+  recommendLevel: 0
   summonedEnemy: 0
   Name_str: 
   Description_str: 
@@ -38287,6 +38296,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   release: {fileID: 0}
   need: {fileID: 0}
+  recommendLevel: 0
   summonedEnemy: 0
   Name_str: 
   Description_str: 

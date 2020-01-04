@@ -16,7 +16,7 @@ public class EdgeOfTown : DUNGEON
 
     // Use this for initialization
     void Awake () {
-        AwakeDungeon(edge_of_town, ResourceKind.itemPoint1);
+        AwakeDungeon(edge_of_town, ResourceKind.itemPoint1,1);
         enemyList.Add(new EnemyKind[] { sigurd });
         enemyList.Add(new EnemyKind[] { askr, embla });
 
