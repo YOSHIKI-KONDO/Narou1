@@ -20,38 +20,45 @@ public class UICtrl : BASE {
         mainToggle.gameObject.AddComponent<ReleaseFunction>().StartFunction(mainToggle.gameObject,
             x => Sync(ref main.SR.released_element[(int)ElementKind.main], x),
             x => Sync(ref main.SR.completed_element[(int)ElementKind.main], x),
-            (x) => { return false; });
+            (x) => { return false; },
+            null, null, "");
 
         abilityToggle.gameObject.AddComponent<ReleaseFunction>().StartFunction(abilityToggle.gameObject,
             x => Sync(ref main.SR.released_element[(int)ElementKind.ability], x),
             x => Sync(ref main.SR.completed_element[(int)ElementKind.ability], x),
-            (x) => { return false; });
+            (x) => { return false; },
+            null, null, "Ability");
 
         itemToggle.gameObject.AddComponent<ReleaseFunction>().StartFunction(itemToggle.gameObject,
             x => Sync(ref main.SR.released_element[(int)ElementKind.item], x),
             x => Sync(ref main.SR.completed_element[(int)ElementKind.item], x),
-            (x) => { return false; });
+            (x) => { return false; },
+            null, null, "Item");
 
         skillToggle.gameObject.AddComponent<ReleaseFunction>().StartFunction(skillToggle.gameObject,
             x => Sync(ref main.SR.released_element[(int)ElementKind.skill], x),
             x => Sync(ref main.SR.completed_element[(int)ElementKind.skill], x),
-            (x) => { return false; });
+            (x) => { return false; },
+            null, null, "Skill");
 
         dungeonToggle.gameObject.AddComponent<ReleaseFunction>().StartFunction(dungeonToggle.gameObject,
             x => Sync(ref main.SR.released_element[(int)ElementKind.dungeon], x),
             x => Sync(ref main.SR.completed_element[(int)ElementKind.dungeon], x),
-            (x) => { return false; });
+            (x) => { return false; },
+            null, null, "Dungeon");
 
         statusToggle.gameObject.AddComponent<ReleaseFunction>().StartFunction(statusToggle.gameObject,
             x => Sync(ref main.SR.released_element[(int)ElementKind.status], x),
             x => Sync(ref main.SR.completed_element[(int)ElementKind.status], x),
-            (x) => { return false; });
+            (x) => { return false; },
+            null, null, "");
 
 
         skill_menu.AddComponent<ReleaseFunction>().StartFunction(skill_menu,
             x => Sync(ref main.SR.released_element[(int)ElementKind.skill], x),
             x => Sync(ref main.SR.completed_element[(int)ElementKind.skill], x),
-            (x) => { return false; });
+            (x) => { return false; },
+            null, null, "");
     }
 
     private void FixedUpdate()
@@ -64,5 +71,11 @@ public class UICtrl : BASE {
         ipText3.text = "Item point3:" + main.rsc.Value[(int)ResourceKind.itemPoint3].ToString() + " / " + main.rsc.Max((int)ResourceKind.itemPoint3).ToString();
         ipText4.text = "Item point4:" + main.rsc.Value[(int)ResourceKind.itemPoint4].ToString() + " / " + main.rsc.Max((int)ResourceKind.itemPoint4).ToString();
         ipText5.text = "Item point5:" + main.rsc.Value[(int)ResourceKind.itemPoint5].ToString() + " / " + main.rsc.Max((int)ResourceKind.itemPoint5).ToString();
+
+        //focus NOTE:なぜrelease functionを外してまで別の処理にするかは不明
+        //if(main.focus.gameObject.activeSelf == false)
+        //{
+        //    main.focus.Activate();
+        //}
     }
 }

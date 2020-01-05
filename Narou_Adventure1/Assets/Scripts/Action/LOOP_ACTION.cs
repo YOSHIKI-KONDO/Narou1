@@ -12,8 +12,10 @@ public class LOOP_ACTION : ACTION, INeed {
     public ReleaseFunction release;
     public ProgressFunction progress;
     public NeedFunciton need;
+    ActionComponents components;
     public Slider slider;
     Text text;
+    GameObject newObject;
 
     public double MaxValue;
     public double CurrentValue;
@@ -37,10 +39,12 @@ public class LOOP_ACTION : ACTION, INeed {
     protected void AwakeLoopAction(ActionEnum.Loop Kind,
         double maxValue = 60, double? plusValue = 1, bool onSlider = true, bool addCtrl = true) {
         StartBASE();
-        text = GetComponentInChildren<Text>();
-        if(GetComponentInChildren<Slider>() != null)
+        components = GetComponent<ActionComponents>();
+        text = components.text;
+        newObject = components.newObject;
+        if (components.slider != null)
         {
-            slider = GetComponentInChildren<Slider>();
+            slider = components.slider;
         }
         if (onSlider == false) { setFalse(slider.gameObject); }
 
@@ -52,12 +56,16 @@ public class LOOP_ACTION : ACTION, INeed {
         popUp.EnterAction = ApplyPopUp;
         need = gameObject.AddComponent<NeedFunciton>();
         release = gameObject.AddComponent<ReleaseFunction>();
-        release.StartFunction(gameObject, x => Sync(ref main.SR.released_loop[(int)kind], x), x => Sync(ref main.SR.completed_loop[(int)kind], x), x => Requires());
+        release.StartFunction(gameObject, x => Sync(ref main.SR.released_loop[(int)kind], x),
+        x => Sync(ref main.SR.completed_loop[(int)kind], x),
+        x => Requires(),
+        x => Sync(ref main.SR.watched_loop[(int)kind], x),
+        newObject,
+        main.enumCtrl.loopActions[(int)kind].Name() + "(Loop Action)");
         progress = gameObject.AddComponent<ProgressFunction>();
         progress.StartProgress(gameObject, Need, slider,
             x => Sync(ref main.SR.paid_loop[(int)kind], x),
             x => Sync(ref main.SR.currentValue_loop[(int)kind], x),
-            x => Sync(ref main.SR.watched_loop[(int)kind], x),
             main.enumCtrl.loopActions[(int)kind].Name(),
             addCtrl);
     }

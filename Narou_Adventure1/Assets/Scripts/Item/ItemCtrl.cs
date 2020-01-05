@@ -274,6 +274,9 @@ public class ItemCtrl : BASE {
 
     public bool CanSell_Inventory(ItemKind kind)
     {
+        //lockされていたらfalseを返す
+        if (items[(int)kind].lockToggle.isOn) { return false; }
+
         if (InventoryNum[(int)kind] > 0)
         {
             return true;
@@ -282,6 +285,9 @@ public class ItemCtrl : BASE {
     }
     public bool CanSell_Equip(ItemKind kind)
     {
+        //lockされていたらfalseを返す
+        if (items[(int)kind].lockToggle.isOn) { return false; }
+
         if (equipNum[(int)kind] > 0)
         {
             return true;
@@ -290,13 +296,37 @@ public class ItemCtrl : BASE {
     }
     public bool CanSell_Shop(ItemKind kind)
     {
+        //lockされていたらfalseを返す
+        if (items[(int)kind].lockToggle.isOn) { return false; }
+
         return CanSell_Inventory(kind) || CanSell_Equip(kind);
     }
 
     public bool CanLevelUp(ItemKind kind)//各レア度で分岐
     {
+        double itemPoint = 0;
         //アイテムポイントがあるかどうか
-        if (main.rsc.Value[(int)ResourceKind.itemPoint1] < 1)
+        switch (items[(int)kind].rarity)
+        {
+            case 1:
+                itemPoint = main.rsc.Value[(int)ResourceKind.itemPoint1];
+                break;
+            case 2:
+                itemPoint = main.rsc.Value[(int)ResourceKind.itemPoint2];
+                break;
+            case 3:
+                itemPoint = main.rsc.Value[(int)ResourceKind.itemPoint3];
+                break;
+            case 4:
+                itemPoint = main.rsc.Value[(int)ResourceKind.itemPoint4];
+                break;
+            case 5:
+                itemPoint = main.rsc.Value[(int)ResourceKind.itemPoint5];
+                break;
+            default:
+                break;
+        }
+        if (itemPoint < 1)
         {
             return false;
         }
@@ -322,6 +352,7 @@ public class ItemCtrl : BASE {
         {
             Calculate(items[(int)kind].BuyLists, false);
             GetItem(kind);
+            inventorys[(int)kind].Watched = false;//未読に
         }
     }
     public void Equip(ItemKind kind)
@@ -330,6 +361,7 @@ public class ItemCtrl : BASE {
         {
             equipNum[(int)kind]++;
             InventoryNum[(int)kind]--;
+            inventorys[(int)kind].Watched = true;//既読に
         }
     }
     public void Remove(ItemKind kind)
@@ -377,7 +409,26 @@ public class ItemCtrl : BASE {
     {
         if (CanLevelUp(kind))
         {
-            main.rsc.Value[(int)ResourceKind.itemPoint1] -= 1;
+            switch (items[(int)kind].rarity)
+            {
+                case 1:
+                    main.rsc.Value[(int)ResourceKind.itemPoint1] -= 1;
+                    break;
+                case 2:
+                    main.rsc.Value[(int)ResourceKind.itemPoint2] -= 1;
+                    break;
+                case 3:
+                    main.rsc.Value[(int)ResourceKind.itemPoint3] -= 1;
+                    break;
+                case 4:
+                    main.rsc.Value[(int)ResourceKind.itemPoint4] -= 1;
+                    break;
+                case 5:
+                    main.rsc.Value[(int)ResourceKind.itemPoint5] -= 1;
+                    break;
+                default:
+                    break;
+            }
             items[(int)kind].LevelUp();
         }
     }
@@ -392,11 +443,23 @@ public class ItemCtrl : BASE {
         if (CanGetInventory(kind))
         {
             GetItem(kind);
+            inventorys[(int)kind].Watched = false;//未読に
             return true;
         }
         else
         {
             return false;
         }
+    }
+
+    /// <summary>
+    /// 全てのトグルを同期させる。セーブもする。
+    /// </summary>
+    public void SynchronizeLock(bool isOn, ItemKind kind)
+    {
+        items[(int)kind].lockToggle.isOn = isOn;
+        equips[(int)kind].lockToggle.isOn = isOn;
+        inventorys[(int)kind].lockToggle.isOn = isOn;
+        main.SR.locked_Item[(int)kind] = isOn;
     }
 }

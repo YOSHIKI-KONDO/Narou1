@@ -12,7 +12,6 @@ public class InstantFunction : BASE
     public delegate bool Condition();
     public Condition Need;
     Button button;
-    public BoolSync Watched;
 
     public List<Dealing> initCostList = new List<Dealing>();
     public List<Dealing> completeEffectList = new List<Dealing>();
@@ -27,7 +26,7 @@ public class InstantFunction : BASE
     /// 初期設定。Obj以外は、無ければnullでいい。
     /// ObjにはgameObjectを入れる。
     /// </summary>
-    public void StartInstant(GameObject Obj, Condition Need, BoolSync Watched)
+    public void StartInstant(GameObject Obj, Condition Need)
     {
         if (Obj != null)
         {
@@ -35,7 +34,6 @@ public class InstantFunction : BASE
             button.onClick.AddListener(InstantBuy);
         }
         this.Need = Need;
-        this.Watched = Watched;
     }
 
     public void FixedUpdateInstant()
@@ -63,6 +61,20 @@ public class InstantFunction : BASE
     {
         bool condition = Need == null || Need();
         if (condition && (CanPurchase(initCostList) && !EffectIsCompleted(completeEffectList)))
+        {
+            button.interactable = true;
+        }
+        else
+        {
+            button.interactable = false;
+        }
+    }
+
+    //本当はskillFunctionを用意したほうがいい
+    public void CheckButtonForRelease()
+    {
+        bool condition = Need == null || Need();
+        if (condition && CanPurchase(initCostList))
         {
             button.interactable = true;
         }

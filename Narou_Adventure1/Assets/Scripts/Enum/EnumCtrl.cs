@@ -60,7 +60,7 @@ public class EnumCtrl : BASE {
 
         /* リソース */
         resources.Add(new template(ResourceKind.nothing, "nothing", "nothing", "nothing", "nothing"));
-        resources.Add(new template(ResourceKind.focus, "focus", "フォーカス", "", ""));
+        resources.Add(new template(ResourceKind.focus, "focus", "フォーカス", "Improve action efficiency with mp.", ""));
         resources.Add(new template(ResourceKind.equipSpace, "Equip", "装備", "", ""));
         resources.Add(new template(ResourceKind.inventorySpace, "Inventory", "インベントリ", "", ""));
         //プレイヤーステータス
@@ -84,82 +84,82 @@ public class EnumCtrl : BASE {
         resources.Add(new template(ResourceKind.attack, "Attack", "攻撃力", "", ""));
         resources.Add(new template(ResourceKind.magic_attack, "Magic Attack", "魔法攻撃力", "", ""));
           //ステータスリソース
-        resources.Add(new template(ResourceKind.stamina, "Stamina", "スタミナ", "use for everything", "あらゆる行動に使います"));
-        resources.Add(new template(ResourceKind.hp, "HP", "HP", "use for everything", "あらゆる行動に使います"));
-        resources.Add(new template(ResourceKind.mp, "MP", "MP", "use for everything", "あらゆる行動に使います"));
-        resources.Add(new template(ResourceKind.fire, "Fire", "火", "use for everything", "あらゆる行動に使います"));
-        resources.Add(new template(ResourceKind.water, "Water", "水", "use for everything", "あらゆる行動に使います"));
-        resources.Add(new template(ResourceKind.wind, "Wind", "風", "use for everything", "あらゆる行動に使います"));
-        resources.Add(new template(ResourceKind.earth, "Earth", "土", "use for everything", "あらゆる行動に使います"));
-        resources.Add(new template(ResourceKind.thunder, "Thunder", "雷", "use for everything", "あらゆる行動に使います"));
-        resources.Add(new template(ResourceKind.ice, "Ice", "氷", "use for everything", "あらゆる行動に使います"));
-        resources.Add(new template(ResourceKind.light, "Light", "光", "use for everything", "あらゆる行動に使います"));
-        resources.Add(new template(ResourceKind.dark, "Dark", "闇", "use for everything", "あらゆる行動に使います"));
+        resources.Add(new template(ResourceKind.stamina, "Stamina", "スタミナ", "use for loop action", "あらゆる行動に使います"));
+        resources.Add(new template(ResourceKind.hp, "HP", "HP", "your hit point", "あらゆる行動に使います"));
+        resources.Add(new template(ResourceKind.mp, "MP", "MP", "use for many things e.x. focus ,skill, ability...", "あらゆる行動に使います"));
+        resources.Add(new template(ResourceKind.fire, "Fire", "火", "", "あらゆる行動に使います"));
+        resources.Add(new template(ResourceKind.water, "Water", "水", "", "あらゆる行動に使います"));
+        resources.Add(new template(ResourceKind.wind, "Wind", "風", "", "あらゆる行動に使います"));
+        resources.Add(new template(ResourceKind.earth, "Earth", "土", "", "あらゆる行動に使います"));
+        resources.Add(new template(ResourceKind.thunder, "Thunder", "雷", "", "あらゆる行動に使います"));
+        resources.Add(new template(ResourceKind.ice, "Ice", "氷", "", "あらゆる行動に使います"));
+        resources.Add(new template(ResourceKind.light, "Light", "光", "", "あらゆる行動に使います"));
+        resources.Add(new template(ResourceKind.dark, "Dark", "闇", "", "あらゆる行動に使います"));
             //物資リソース
-        resources.Add(new template(ResourceKind.gold, "Gold", "Gold", "nothing", "nothing"));
-        resources.Add(new template(ResourceKind.research, "Destiny", "運命", "nothing", "nothing"));
-        resources.Add(new template(ResourceKind.paper, "Rune", "ルーン", "nothing", "nothing"));
-        resources.Add(new template(ResourceKind.book, "Rune Stone", "ルーン石碑", "nothing", "nothing"));
-        resources.Add(new template(ResourceKind.dictionary, "Gospel", "福音書", "nothing", "nothing"));
-        resources.Add(new template(ResourceKind.herb, "Herb", "ハーブ", "nothing", "nothing"));
-        resources.Add(new template(ResourceKind.medicine, "Medicine", "薬", "nothing", "nothing"));
-        resources.Add(new template(ResourceKind.potion, "Potion", "ポーション", "nothing", "nothing"));
-        resources.Add(new template(ResourceKind.wood, "Wood", "木", "nothing", "薪を作るのに最適な木。"));
-        resources.Add(new template(ResourceKind.firewood, "Firewood", "薪", "nothing", "良いサイズの薪。"));
-        resources.Add(new template(ResourceKind.charcoal, "Charcoal", "木炭", "nothing", "nothing"));
-        resources.Add(new template(ResourceKind.flower, "Flower", "花", "nothing", "ユグドラシルの花と呼ばれている。強い生命力を感じる。"));
+        resources.Add(new template(ResourceKind.gold, "Gold", "Gold", "use for upgrade, item", "nothing"));
+        resources.Add(new template(ResourceKind.research, "Destiny", "運命", "Everything will start from this.", "nothing"));
+        resources.Add(new template(ResourceKind.paper, "Rune", "ルーン", "magic item that generate destiny automatically", "nothing"));
+        resources.Add(new template(ResourceKind.book, "Rune Stone", "ルーン石碑", "magic item that generate destiny automatically", "nothing"));
+        resources.Add(new template(ResourceKind.dictionary, "Gospel", "福音書", "magic item that generate destiny automatically", "nothing"));
+        resources.Add(new template(ResourceKind.herb, "Herb", "ハーブ", "", "nothing"));
+        resources.Add(new template(ResourceKind.medicine, "Medicine", "薬", "", "nothing"));
+        resources.Add(new template(ResourceKind.potion, "Potion", "ポーション", "", "nothing"));
+        resources.Add(new template(ResourceKind.wood, "Wood", "木", "the best wood to make firewood", "薪を作るのに最適な木。"));
+        resources.Add(new template(ResourceKind.firewood, "Firewood", "薪", "good firewood", "良いサイズの薪。"));
+        resources.Add(new template(ResourceKind.charcoal, "Charcoal", "木炭", "", "nothing"));
+        resources.Add(new template(ResourceKind.flower, "Flower", "花", "This is called Flower of Yggdrasil. You can feel the intense power.", "ユグドラシルの花と呼ばれている。強い生命力を感じる。"));
         //食べ物
-        resources.Add(new template(ResourceKind.wheat, "Wheat", "小麦", "nothing", "nothing"));
-        resources.Add(new template(ResourceKind.bread, "Bread", "パン", "nothing", "nothing"));
-        resources.Add(new template(ResourceKind.fish, "Fish", "魚", "nothing", "nothing"));
-        resources.Add(new template(ResourceKind.anchovy_sandwich, "Anchovy Sandwich", "アンチョビサンド", "nothing", "故郷の名産物。塩味が効いている。"));
-        resources.Add(new template(ResourceKind.filet_o_fish, "Filet-O-Fish", "フィレオフィッシュ", "nothing", "落ち込んでいてもこれを食べたら元気が出る。"));
+        resources.Add(new template(ResourceKind.wheat, "Wheat", "小麦", "", "nothing"));
+        resources.Add(new template(ResourceKind.bread, "Bread", "パン", "", "nothing"));
+        resources.Add(new template(ResourceKind.fish, "Fish", "魚", "", "nothing"));
+        resources.Add(new template(ResourceKind.anchovy_sandwich, "Anchovy Sandwich", "アンチョビサンド", "Local specialty. Salty.", "故郷の名産物。塩味が効いている。"));
+        resources.Add(new template(ResourceKind.filet_o_fish, "Filet-O-Fish", "フィレオフィッシュ", "Eating this makes you feel better even if you are depressed.", "落ち込んでいてもこれを食べたら元気が出る。"));
             //石
-        resources.Add(new template(ResourceKind.stone, "Stone", "石", "nothing", "ただの石じゃない。加工しやすい、選ばれし石。"));
-        resources.Add(new template(ResourceKind.magi_stone, "Magi Stone", "魔石", "nothing", "nothing"));
-        resources.Add(new template(ResourceKind.fire_stone, "Fire Stone", "火魔石", "nothing", "nothing"));
-        resources.Add(new template(ResourceKind.water_stone, "Water Stone", "水魔石", "nothing", "nothing"));
-        resources.Add(new template(ResourceKind.wind_stone, "Wind Stone", "風魔石", "nothing", "nothing"));
-        resources.Add(new template(ResourceKind.earth_stone, "Earth Stone", "土魔石", "nothing", "nothing"));
+        resources.Add(new template(ResourceKind.stone, "Stone", "石", "Not just a stone. Easy to use, selected stone.", "ただの石じゃない。加工しやすい、選ばれし石。"));
+        resources.Add(new template(ResourceKind.magi_stone, "Magi Stone", "魔石", "", "nothing"));
+        resources.Add(new template(ResourceKind.fire_stone, "Fire Stone", "火魔石", "", "nothing"));
+        resources.Add(new template(ResourceKind.water_stone, "Water Stone", "水魔石", "", "nothing"));
+        resources.Add(new template(ResourceKind.wind_stone, "Wind Stone", "風魔石", "", "nothing"));
+        resources.Add(new template(ResourceKind.earth_stone, "Earth Stone", "土魔石", "", "nothing"));
         resources.Add(new template(ResourceKind.thunder_stone, "Thunder Stone", "雷魔石", "nothing", "nothing"));
-        resources.Add(new template(ResourceKind.ice_stone, "Ice Stone", "氷魔石", "nothing", "nothing"));
-        resources.Add(new template(ResourceKind.light_stone, "Light Stone", "光魔石", "nothing", "nothing"));
-        resources.Add(new template(ResourceKind.dark_stone, "Dark Stone", "闇魔石", "nothing", "nothing"));
+        resources.Add(new template(ResourceKind.ice_stone, "Ice Stone", "氷魔石", "", "nothing"));
+        resources.Add(new template(ResourceKind.light_stone, "Light Stone", "光魔石", "", "nothing"));
+        resources.Add(new template(ResourceKind.dark_stone, "Dark Stone", "闇魔石", "", "nothing"));
              //鉄
-        resources.Add(new template(ResourceKind.iron, "Iron", "鉄", "nothing", "nothing"));
-        resources.Add(new template(ResourceKind.steel, "Steel", "鋼鉄", "nothing", "nothing"));
-        resources.Add(new template(ResourceKind.magi_steel, "Magi Steel", "魔鋼鉄", "nothing", "nothing"));
-        resources.Add(new template(ResourceKind.fire_steel, "Fire Steel", "魔鋼鉄", "nothing", "nothing"));
-        resources.Add(new template(ResourceKind.water_steel, "Water Steel", "魔鋼鉄", "nothing", "nothing"));
-        resources.Add(new template(ResourceKind.wind_steel, "Wind Steel", "魔鋼鉄", "nothing", "nothing"));
-        resources.Add(new template(ResourceKind.earth_steel, "Earth Steel", "魔鋼鉄", "nothing", "nothing"));
-        resources.Add(new template(ResourceKind.thunder_steel, "Thunder Steel", "魔鋼鉄", "nothing", "nothing"));
-        resources.Add(new template(ResourceKind.ice_steel, "Ice Steel", "魔鋼鉄", "nothing", "nothing"));
-        resources.Add(new template(ResourceKind.light_steel, "Light Steel", "魔鋼鉄", "nothing", "nothing"));
-        resources.Add(new template(ResourceKind.dark_steel, "Dark Steel", "魔鋼鉄", "nothing", "nothing"));
+        resources.Add(new template(ResourceKind.iron, "Iron", "鉄", "", "nothing"));
+        resources.Add(new template(ResourceKind.steel, "Steel", "鋼鉄", "", "nothing"));
+        resources.Add(new template(ResourceKind.magi_steel, "Magi Steel", "魔鋼鉄", "", "nothing"));
+        resources.Add(new template(ResourceKind.fire_steel, "Fire Steel", "魔鋼鉄", "", "nothing"));
+        resources.Add(new template(ResourceKind.water_steel, "Water Steel", "魔鋼鉄", "", "nothing"));
+        resources.Add(new template(ResourceKind.wind_steel, "Wind Steel", "魔鋼鉄", "", "nothing"));
+        resources.Add(new template(ResourceKind.earth_steel, "Earth Steel", "魔鋼鉄", "", "nothing"));
+        resources.Add(new template(ResourceKind.thunder_steel, "Thunder Steel", "魔鋼鉄", "", "nothing"));
+        resources.Add(new template(ResourceKind.ice_steel, "Ice Steel", "魔鋼鉄", "", "nothing"));
+        resources.Add(new template(ResourceKind.light_steel, "Light Steel", "魔鋼鉄", "", "nothing"));
+        resources.Add(new template(ResourceKind.dark_steel, "Dark Steel", "魔鋼鉄", "", "nothing"));
             //上位鉱石
-        resources.Add(new template(ResourceKind.mithril, "Mithril", "ミスリル", "nothing", "高価な鉱石。とても硬く、魔力を通す。"));
-        resources.Add(new template(ResourceKind.adamantite, "Adamantite", "アダマンタイト", "nothing", "高価な鉱石。非常に硬く、魔力を通さない。"));
-        resources.Add(new template(ResourceKind.orichalcum, "Orichalcum", "オリハルコン", "nothing", "天下最強の鉱石。"));
+        resources.Add(new template(ResourceKind.mithril, "Mithril", "ミスリル", "Expensive ore. It is very hard and passes magic power.", "高価な鉱石。とても硬く、魔力を通す。"));
+        resources.Add(new template(ResourceKind.adamantite, "Adamantite", "アダマンタイト", "Expensive ore. It is very hard and doesn't pass magic power.", "高価な鉱石。非常に硬く、魔力を通さない。"));
+        resources.Add(new template(ResourceKind.orichalcum, "Orichalcum", "オリハルコン", "The most marvelous ore", "天下最強の鉱石。"));
 
           //アビリティポイント
-        resources.Add(new template(ResourceKind.ap, "AP", "AP", "nothing", "nothing"));
+        resources.Add(new template(ResourceKind.ap, "AP", "AP", "", "nothing"));
 
             //モンスター素材
-        resources.Add(new template(ResourceKind.fur, "Fur", "獣の皮", "nothing", "獣から剥ぎ取った毛皮。"));
-        resources.Add(new template(ResourceKind.premium_fur, "Premium Fur", "上質な皮", "nothing", "傷一つついていない、上質な毛皮。"));
+        resources.Add(new template(ResourceKind.fur, "Pelt", "獣の皮", "Pelt from beasts", "獣から剥ぎ取った毛皮。"));
+        resources.Add(new template(ResourceKind.premium_fur, "Prized plet", "上質な皮", "Has no scratches", "傷一つついていない、上質な毛皮。"));
 
         /* インスタントアクション */
         instantActions.Add(new template(ActionEnum.Instant.nothing, "nothing", "nothing", "nothing", "nothing"));
           //フェーズ１（入学前）
-        instantActions.Add(new template(ActionEnum.Instant.weeding, "Weeding", "草むしり", "nothing", "アルバイト。たまにハーブが生えている。"));
-        instantActions.Add(new template(ActionEnum.Instant.eat_anchovy_sandwich, "Eat Anchovy Sandwich", "アンチョビサンド", "nothing", "塩味が効いていて、疲れた体に旨みが染み渡る。"));
-        instantActions.Add(new template(ActionEnum.Instant.eat_filet_o_fish, "Eat Filet-O-Fish", "フィレオフィッシュ", "nothing", "一口噛むと、ふっくらとしたバンズに挟まれたフィッシュフライの油がほとばしる。"));
-        instantActions.Add(new template(ActionEnum.Instant.drink_herb_tea, "Drink Herb tea", "ハーブティー", "nothing", "神聖な味がする。"));
-        instantActions.Add(new template(ActionEnum.Instant.rune_generation, "Rune Generation", "ルーン生成", "nothing", "運命の力でルーンを得る。"));
-        instantActions.Add(new template(ActionEnum.Instant.runic_carving, "Runic Carving", "ルーンを刻む", "nothing", "ルーンを石碑に刻み、更なる運命を得る。"));
-        instantActions.Add(new template(ActionEnum.Instant.split_firewood, "Split Firewood", "薪割り", "nothing", "nothing"));
-        instantActions.Add(new template(ActionEnum.Instant.sell_firewood, "Sell Firewood", "薪を売る", "nothing", "nothing"));
+        instantActions.Add(new template(ActionEnum.Instant.weeding, "Weeding", "草むしり", "Part time job. Once in a while, you can get herbs.", "アルバイト。たまにハーブが生えている。"));
+        instantActions.Add(new template(ActionEnum.Instant.eat_anchovy_sandwich, "Eat Anchovy Sandwich", "アンチョビサンド", "The salty taste recovers you from fatigue.", "塩味が効いていて、疲れた体に旨みが染み渡る。"));
+        instantActions.Add(new template(ActionEnum.Instant.eat_filet_o_fish, "Eat Filet-O-Fish", "フィレオフィッシュ", "As you eat, the flavor of fried fish between fluffy patties will jumps out.", "一口噛むと、ふっくらとしたバンズに挟まれたフィッシュフライの油がほとばしる。"));
+        instantActions.Add(new template(ActionEnum.Instant.drink_herb_tea, "Drink Herb tea", "ハーブティー", "It tastes sacred.", "神聖な味がする。"));
+        instantActions.Add(new template(ActionEnum.Instant.rune_generation, "Rune Generation", "ルーン生成", "Obtain Rune from the destiny power.", "運命の力でルーンを得る。"));
+        instantActions.Add(new template(ActionEnum.Instant.runic_carving, "Runic Carving", "ルーンを刻む", "Obtain further destiny from carving with runes.", "ルーンを石碑に刻み、更なる運命を得る。"));
+        instantActions.Add(new template(ActionEnum.Instant.split_firewood, "Split Firewood", "薪割り", "", "nothing"));
+        instantActions.Add(new template(ActionEnum.Instant.sell_firewood, "Sell Firewood", "薪を売る", "", "nothing"));
           //フェーズ２（学校）
             //アビリティアクション
         instantActions.Add(new template(ActionEnum.Instant.mugged, "Mugged", "カツアゲ", "nothing", "お金を巻き上げろ！１クリック１パンチ！"));
@@ -187,10 +187,10 @@ public class EnumCtrl : BASE {
         /* アップグレードアクション */
         upgradeActions.Add(new template(ActionEnum.Upgrade.nothing, "nothing", "nothing", "nothing", "nothing"));
           //フェーズ１（入学前）
-        upgradeActions.Add(new template(ActionEnum.Upgrade.talk_fatherA, "Talk Father", "父の話を聞く", "nothing", "息子よ、強くなるのだ。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.talk_fatherB, "Talk Father", "父の話を聞く", "nothing", "お前の母は魔王に連れ去られた。助け出して欲しい。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.talk_fatherC, "Talk Father", "父の話を聞く", "nothing", "私は抵抗したが力及ばず、右腕を失ってしまった。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.talk_fatherD, "Talk Father", "父の話を聞く", "nothing", "学校に行くと良い。私では教えられないことを学べる。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.talk_fatherA, "Talk with Father", "父の話を聞く", "My son, Be strong.", "息子よ、強くなるのだ。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.talk_fatherB, "Talk with Father", "父の話を聞く", "Your mother was taken away by the Demon King.I want you to help her.", "お前の母は魔王に連れ去られた。助け出して欲しい。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.talk_fatherC, "Talk with Father", "父の話を聞く", "I resisted but couldn't help and lost my right arm.", "私は抵抗したが力及ばず、右腕を失ってしまった。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.talk_fatherD, "Talk with Father", "父の話を聞く", "Go to school. Learn what I can't teach.", "学校に行くと良い。私では教えられないことを学べる。"));
             //父の道場
         upgradeActions.Add(new template(ActionEnum.Upgrade.training, "Training", "トレーニング", "nothing", "nothing"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.sword_practice, "Sword Practice", "剣の稽古", "nothing", "nothing"));
@@ -214,24 +214,24 @@ public class EnumCtrl : BASE {
         upgradeActions.Add(new template(ActionEnum.Upgrade.rune_augmentation, "Rune Augmentation", "ルーン増強", "nothing", "nothing"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.buy_fire_spellbook, "Buy Fire Spellbook,", "火の魔導書を買う", "nothing", "nothing"));
             //少女イベント
-        upgradeActions.Add(new template(ActionEnum.Upgrade.girl_is_crying, "Girl is Crying", "少女が泣いている", "nothing", "大切にしていた花を、悪ガキにへし折られてしまってようだ。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.pick_flowers, "Pick Flowers", "花を摘みに行く", "nothing", "少女に新しい花をプレゼントしよう。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.punish_the_bad_kids, "Punish the Bad Kids", "悪ガキをこらしめる", "nothing", "骨と心をへし折ってやろう。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.thank_you, "Thank you", "ありがとう", "nothing", "少女は花を優しく握りしめ、はにかみながら笑った。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.ill_get_you_for_this, "I'll get you for this!", "覚えておけよ！", "nothing", "悪ガキは涙目になりながら走り去っていった。これで一安心だ。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.girl_is_crying, "Girl is Crying", "少女が泣いている", "It seems that the flowers she cherished have been broken down into bad kids.", "大切にしていた花を、悪ガキにへし折られてしまってようだ。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.pick_flowers, "Pick Flowers", "花を摘みに行く", "Give the girl a new flower.", "少女に新しい花をプレゼントしよう。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.punish_the_bad_kids, "Punish the Bad Kids", "悪ガキをこらしめる", "Let's break bones and minds.", "骨と心をへし折ってやろう。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.thank_you, "Thank you", "ありがとう", "The girl gently grasped the flower and smiled shyly.", "少女は花を優しく握りしめ、はにかみながら笑った。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.ill_get_you_for_this, "I'll get you for this!", "覚えておけよ！", "The bad kid ran away in tears. nothing to concern.", "悪ガキは涙目になりながら走り去っていった。これで一安心だ。"));
             //進学
-        upgradeActions.Add(new template(ActionEnum.Upgrade.warrior_school, "Warrior School", "戦士学校", "nothing", "戦士学校への入学を決意する。後戻りはできないので入学先はしっかり考えよう。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.sorcerer_school, "Sorcerer School", "魔法学校", "nothing", "魔法学校への入学を決意する。後戻りはできないので入学先はしっかり考えよう。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.tamer_school, "Tamer School", "テイマー学校", "nothing", "テイマー学校への入学を決意する。後戻りはできないので入学先はしっかり考えよう。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.leave_the_town, "Leave the Town", "村を出る", "nothing", "村を出る。平原と森を越えた先の学園都市に向かう。やり残したことはないか確認しよう。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.warrior_school, "Warrior School", "戦士学校", "Decide to enter warrior school. You can't go back, so consider where you want to go.", "戦士学校への入学を決意する。後戻りはできないので入学先はしっかり考えよう。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.sorcerer_school, "Sorcerer School", "魔法学校", "Decide to enter Sorcerer school. You can't go back, so consider where you want to go.", "魔法学校への入学を決意する。後戻りはできないので入学先はしっかり考えよう。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.tamer_school, "Tamer School", "テイマー学校", "Decide to enter Tamer school. You can't go back, so consider where you want to go.", "テイマー学校への入学を決意する。後戻りはできないので入学先はしっかり考えよう。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.leave_the_town, "Leave the Town", "村を出る", "Leave the village. Head to the school city beyond the plains and forests. Make sure that you have nothing to do now.", "村を出る。平原と森を越えた先の学園都市に向かう。やり残したことはないか確認しよう。"));
         //フェーズ２（学校）
-        upgradeActions.Add(new template(ActionEnum.Upgrade.academic_city, "Academic City", "学園都市へ向かう", "nothing", "少女が付いてくると言って聞かない。二人分の荷物を用意しよう。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.into_a_dormitory, "Into_a Dormitory", "学生寮に入る", "nothing", "同行者と別れ、寮に入る。「また後で、落ち着いたら挨拶に来てね。」"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.entrance_ceremony, "Entrance Ceremony", "入学式", "nothing", "晴れ舞台だ。これからの生活に向けて気分が高揚する。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.academic_city, "Academic City", "学園都市へ向かう", "The girl says she does want to go with me. Prepare your luggage for two people.", "少女が付いてくると言って聞かない。二人分の荷物を用意しよう。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.into_a_dormitory, "Into_a Dormitory", "学生寮に入る", "Breaks up with accompanying person and enters dormitory. [Please say hello to me when you are calm down.]", "同行者と別れ、寮に入る。「また後で、落ち着いたら挨拶に来てね。」"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.entrance_ceremony, "Entrance Ceremony", "入学式", "A stage for us. I feel lifted with thinking about my future.", "晴れ舞台だ。これからの生活に向けて気分が高揚する。"));
             //攫われイベント
-        upgradeActions.Add(new template(ActionEnum.Upgrade.norns_room, "Norn's room", "ノルンの部屋に行く", "nothing", "少女の部屋へ挨拶に向かう。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.desolate_room, "Desolate Room", "荒らされた部屋", "nothing", "しかし、中には誰もいない。争った形跡がある。攫われた母のことを思い出し、胸が高鳴った。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.rumor, "Rumor", "ウワサ", "nothing", "近頃、悪評高いゴミ屋敷には魔物が住み着いている。下水道でもないのに魔物が住み着くなんてよほど汚いみたいだ。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.norns_room, "Norn's room", "ノルンの部屋に行く", "Go to the girl's room to say hello", "少女の部屋へ挨拶に向かう。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.desolate_room, "Desolate Room", "荒らされた部屋", "But no one is inside. There is evidence of competing. I remembered my mother, and became upset.", "しかし、中には誰もいない。争った形跡がある。攫われた母のことを思い出し、胸が高鳴った。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.rumor, "Rumor", "ウワサ", "Recently, demons have settled in the notorious garbage mansion. It's so dirty that the monsters settled down even though it's not sewers.", "近頃、悪評高いゴミ屋敷には魔物が住み着いている。下水道でもないのに魔物が住み着くなんてよほど汚いみたいだ。"));
             //フリークエスト
         upgradeActions.Add(new template(ActionEnum.Upgrade.delivery_of_fur, "Delivery of fur", "毛皮の納品", "nothing", "ウルフを倒すと手に入る、毛皮を納品してくれ。商品なんだから傷は少なめで頼むよ。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.house_clean_up, "House clean up", "ゴミ屋敷の掃除", "nothing", "家主は何をしているんだ？近所迷惑だから誰でもいい、掃除してくれ！"));
@@ -431,6 +431,7 @@ public class EnumCtrl : BASE {
         /* スキル */
         skills.Add(new template(SkillKind.nothing, "nothing", "nothing", "nothing", "nothing"));
         skills.Add(new template(SkillKind.normalAttack, "Normal Attack", "通常攻撃", "", ""));
+        skills.Add(new template(SkillKind.normalAttack_npc1, "Normal Attack", "通常攻撃", "", ""));
         //戦士
         skills.Add(new template(SkillKind.right_slash, "Right Slash", "袈裟斬り", "", ""));
         skills.Add(new template(SkillKind.left_upper_slash, "Left Upper Slash", "左斬上げ", "", ""));

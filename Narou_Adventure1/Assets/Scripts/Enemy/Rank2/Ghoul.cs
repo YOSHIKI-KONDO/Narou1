@@ -10,7 +10,7 @@ public class Ghoul : ENEMY
     // Use this for initialization
     void Awake()
     {
-        AwakeEnemy(EnemyKind.ghoul, 30, 4, 20, 0, 10, 20);
+        AwakeEnemy(EnemyKind.ghoul, 30, 4, 20, 0, 10, 20, 1);
         drops.Add(new Drop(ResourceKind.stone, 1, 5));
     }
 

@@ -48,7 +48,7 @@ public class ResourceTextControll : BASE {
             regen = 3;
             current_deal = 1;
             max_deal = 1;
-            regen_deal = 2;
+            regen_deal = 3;
         }
         /// <summary>
         /// 小数点の位置を一括で変える
@@ -113,18 +113,6 @@ public class ResourceTextControll : BASE {
         effectAry = new RESOURCE_EFFECT[Enum.GetNames(typeof(ResourceKind)).Length];
     }
 
-    //mpが増えたらfocusが出現するための関数(笑)
-    void AwakeFocus()
-    {
-        if(main.SR.released_resource[(int)ResourceKind.focus] == false)
-        {
-            if(main.rsc.Max((int)ResourceKind.mp) >= 1)
-            {
-                main.SR.released_resource[(int)ResourceKind.focus] = true;
-            }
-        }
-    }
-
 	// Use this for initialization
 	void Awake () {
 		StartBASE();
@@ -144,6 +132,6 @@ public class ResourceTextControll : BASE {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        AwakeFocus();
+        
 	}
 }

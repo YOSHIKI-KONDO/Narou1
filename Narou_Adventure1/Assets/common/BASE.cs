@@ -135,7 +135,7 @@ public class BASE : MonoBehaviour
                     new TempRegen((deal as Temp_Regen_Deal).resourceKind,
                                   (deal as Temp_Regen_Deal).resourceKind.ToString() + specificName,
                                    ((Temp_Regen_Deal)deal).duration,
-                                   deal.Value));
+                                   deal.Value * mag));
                 continue; //次のループへ
             }
             if (deal is Temp_TRate_Deal)
@@ -144,7 +144,7 @@ public class BASE : MonoBehaviour
                     new TempTrainRate((deal as Temp_TRate_Deal).abilityKind,
                                   (deal as Temp_TRate_Deal).abilityKind.ToString() + specificName,
                                    ((Temp_TRate_Deal)deal).duration,
-                                   deal.Value));
+                                   deal.Value * mag));
                 continue; //次のループへ
             }
             //Itemの場合の判定
@@ -224,6 +224,7 @@ public class BASE : MonoBehaviour
     /// <summary>
     /// popUpに表示しやすいようなstringを出力する
     /// NOTE:factorは現状、リソースのstatus,regen,max アビリティのmax, trainrateにしか反映させていない(アイテムでそこしかあげないため)
+    /// NOTE:↑とりあえず全てに反映させてみた(2019/12/29)
     /// </summary>
     public string ProgressDetail(List<Dealing> dealings, double factor = 1)
     {
@@ -236,17 +237,17 @@ public class BASE : MonoBehaviour
             {
                 if (IsStatus((deal as Temp_Regen_Deal).resourceKind))
                 {
-                    sum_str += main.enumCtrl.resources[(int)(deal as Temp_Regen_Deal).resourceKind].Name() + ":" + tDigit(deal.Value, 1) + " (" + (deal as Temp_Regen_Deal).duration.ToString("F1") + "s)";
+                    sum_str += main.enumCtrl.resources[(int)(deal as Temp_Regen_Deal).resourceKind].Name() + ":" + tDigit(deal.Value * factor, 1) + " (" + (deal as Temp_Regen_Deal).duration.ToString("F1") + "s)";
                 }
                 else
                 {
-                    sum_str += main.enumCtrl.resources[(int)(deal as Temp_Regen_Deal).resourceKind].Name() + " rate:" + tDigit(deal.Value, 1) + "/s (" + (deal as Temp_Regen_Deal).duration.ToString("F1") + "s)";
+                    sum_str += main.enumCtrl.resources[(int)(deal as Temp_Regen_Deal).resourceKind].Name() + " rate:" + tDigit(deal.Value * factor, 1) + "/s (" + (deal as Temp_Regen_Deal).duration.ToString("F1") + "s)";
                 }
                 continue; //次のループへ
             }
             if (deal is Temp_TRate_Deal)
             {
-                sum_str += main.enumCtrl.abilitys[(int)(deal as Temp_TRate_Deal).abilityKind].Name() + " train rate:" + tDigit(deal.Value, 1) + "/s (" + (deal as Temp_TRate_Deal).duration.ToString("F1") + "s)";
+                sum_str += main.enumCtrl.abilitys[(int)(deal as Temp_TRate_Deal).abilityKind].Name() + " exp rate:" + tDigit(deal.Value * factor, 1) + "/s (" + (deal as Temp_TRate_Deal).duration.ToString("F1") + "s)";
                 continue; //次のループへ
             }
             //Itemの場合の判定
@@ -277,7 +278,7 @@ public class BASE : MonoBehaviour
                 switch ((Dealing.R_ParaKind)deal.paraKind)
                 {
                     case Dealing.R_ParaKind.current:
-                        sum_str += main.enumCtrl.resources[(int)(ResourceKind)deal.rscKind].Name() + ":" + tDigit(deal.Value, main.resourceTextCtrl.points[(int)(ResourceKind)deal.rscKind].current_deal);
+                        sum_str += main.enumCtrl.resources[(int)(ResourceKind)deal.rscKind].Name() + ":" + tDigit(deal.Value * factor, main.resourceTextCtrl.points[(int)(ResourceKind)deal.rscKind].current_deal);
                         break;
                     case Dealing.R_ParaKind.max:
                         sum_str += main.enumCtrl.resources[(int)(ResourceKind)deal.rscKind].Name() + " max:" + tDigit(deal.Value * factor, main.resourceTextCtrl.points[(int)(ResourceKind)deal.rscKind].max_deal);
@@ -304,13 +305,13 @@ public class BASE : MonoBehaviour
                 switch ((Dealing.A_ParaKind)deal.paraKind)
                 {
                     case Dealing.A_ParaKind.maxLevel:
-                        sum_str += main.enumCtrl.abilitys[(int)(AbilityKind)deal.rscKind].Name() + " max:" + tDigit(deal.Value * factor);
+                        sum_str += main.enumCtrl.abilitys[(int)(AbilityKind)deal.rscKind].Name() + " max:" + tDigit(deal.Value);
                         break;
                     case Dealing.A_ParaKind.trainRate:
-                        sum_str += main.enumCtrl.abilitys[(int)(AbilityKind)deal.rscKind].Name() + " train rate:" + tDigit(deal.Value * factor, 1) + "/s";
+                        sum_str += main.enumCtrl.abilitys[(int)(AbilityKind)deal.rscKind].Name() + " exp rate:" + tDigit(deal.Value * factor, 1) + "/s";
                         break;
                     case Dealing.A_ParaKind.currentExp:
-                        sum_str += main.enumCtrl.abilitys[(int)(AbilityKind)deal.rscKind].Name() + " exp:" + tDigit(deal.Value);
+                        sum_str += main.enumCtrl.abilitys[(int)(AbilityKind)deal.rscKind].Name() + " exp:" + tDigit(deal.Value * factor);
                         break;
                     default:
                         throw new Exception("対応していない項目です。");
@@ -325,10 +326,11 @@ public class BASE : MonoBehaviour
     }
 
     //List<Dealing>が全てリソースで、現在値を増やす場合で、かつ満タンの時にtrueを返す。
+    //要素が0の時の挙動。loopActionではtrueを返したい。Abilityではおそらくfalseを返したい。
     public bool EffectIsCompleted(List<Dealing> dealings)
     {
         bool isCompleted = true;
-        if(dealings.Count == 0) { return false; }
+        if(dealings.Count == 0) { return true; }
         foreach (var deal in dealings)
         {
             if (deal is Temp_Regen_Deal || deal is Temp_TRate_Deal)

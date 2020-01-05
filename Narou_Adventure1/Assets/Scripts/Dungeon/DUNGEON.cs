@@ -13,7 +13,8 @@ public class DUNGEON : BASE {
     public NeedFunciton need;
     DungeonComponents components;
     [NonSerialized]public Button enterButton;
-    Text nameText;
+    Text nameText, floorText;
+    GameObject newObj, completeObj;
 
     public List<EnemyKind[]> enemyList = new List<EnemyKind[]>(); //Enemyの配列のList
     public List<Drop> drops = new List<Drop>(); //ドロップ品
@@ -21,6 +22,8 @@ public class DUNGEON : BASE {
     public List<Dealing> progressCost = new List<Dealing>();
     public int MaxFloor() { return enemyList.Count; }
     public int currentFloor { get => main.SR.currentFloor_Dungeon[(int)kind]; set => main.SR.currentFloor_Dungeon[(int)kind] = value; }//save
+    public int maxFloor { get => main.SR.maxFloor_Dungeon[(int)kind]; set => main.SR.maxFloor_Dungeon[(int)kind] = value; }            //save
+    public int recommendLevel;
     public bool summonedEnemy;
 
     public virtual bool Requires() { return true; }
@@ -35,36 +38,55 @@ public class DUNGEON : BASE {
     void Enter()
     {
         currentFloor = 0;
-        //if(currentFloor >= MaxFloor())
-        //{
-        //    currentFloor = 0;
-        //}
         main.announce_d.Add("You entered " + main.enumCtrl.dungeons[(int)kind].Name());
         main.battleCtrl.dunKind = kind;
         main.battleCtrl.EnterDungeon();
+
+        main.checkDifficulty.TotalNum++; //難易度調整
+    }
+
+    public void WinAction()
+    {
+        main.checkDifficulty.WinNum++; //難易度調整
+    }
+
+    public void LoseAction()
+    {
+        main.checkDifficulty.LoseNum++; //難易度調整
     }
 
     public string Name_str, Description_str, Need_str, Floor_str, ProgressCost_str, Drops_str, FirstDrops_str;
 
     // Use this for initialization
-    public void AwakeDungeon (DungeonKind kind) {
+    public void AwakeDungeon (DungeonKind kind, ResourceKind itemPoint, int recommendLevel) {
 		StartBASE();
         this.kind = kind;
+        this.recommendLevel = recommendLevel;
         main.battleCtrl.dungeons[(int)kind] = this;
 
         components = GetComponent<DungeonComponents>();
         enterButton = components.enterButton;            //UI関連
         nameText = components.nameText;                  //UI関連
+        newObj = components.newObj;
+        completeObj = components.completeObj;
+        floorText = components.floorText;
         //button.onClick.AddListener(Enter);
         
         progress = gameObject.AddComponent<DungeonFunction>();
-        progress.AwakeDungeon(enterButton, main.enumCtrl.dungeons[(int)kind].Name(), x => Sync(ref main.SR.watched_Dungeon[(int)kind], x));
+        progress.AwakeDungeon(enterButton, main.enumCtrl.dungeons[(int)kind].Name());
         progress.SelectedAction = Enter;
         popUp = main.dungeonPopUp.StartPopUp(gameObject, main.windowShowCanvas);
         popUp.EnterAction = ApplyPopUp;
         need = gameObject.AddComponent<NeedFunciton>();
         release = gameObject.AddComponent<ReleaseFunction>();
-        release.StartFunction(gameObject, x => Sync(ref main.SR.released_Dungeon[(int)kind], x), x => Sync(ref main.SR.completed_Dungeon[(int)kind], x), x => Requires());
+        release.StartFunction(gameObject, x => Sync(ref main.SR.released_Dungeon[(int)kind], x),
+            x => Sync(ref main.SR.completed_Dungeon[(int)kind], x),
+            x => Requires(),
+            x => Sync(ref main.SR.watched_Dungeon[(int)kind], x),
+            newObj,
+            main.enumCtrl.dungeons[(int)kind].Name() + "(Dungeon)");
+
+        drops.Add(new Drop(itemPoint, 1, 100)); //アイテムポイントを1つ追加
     }
 
     // Use this for initialization
@@ -80,6 +102,7 @@ public class DUNGEON : BASE {
     public void FixedUpdateDungeon()
     {
         nameText.text = Name_str;
+        floorText.text = maxFloor.ToString() + "/" + MaxFloor().ToString();
         ApplyPopUp();
 
         if (CompleteCondition())//条件を満たしたらもう出なくなる
@@ -110,7 +133,8 @@ public class DUNGEON : BASE {
         Name_str = main.enumCtrl.dungeons[(int)kind].Name();
         if(main.SR.clearNum_Dungeon[(int)kind] > 0)
         {
-            Name_str += " (Cleared)";
+            //Name_str += " (Cleared)";
+            setActive(completeObj);
         }
         if (popUp.gameObject.activeSelf)
         {
@@ -133,7 +157,7 @@ public class DUNGEON : BASE {
             ChangeTextAdaptive(Floor_str, popUp.texts[5], popUp.texts[4].gameObject, popUp.texts[5].gameObject);
             ChangeTextAdaptive(ProgressCost_str, popUp.texts[7], popUp.texts[6].gameObject, popUp.texts[7].gameObject);
             ChangeTextAdaptive(Drops_str, popUp.texts[9], popUp.texts[8].gameObject, popUp.texts[9].gameObject);
-            ChangeTextAdaptive(FirstDrops_str, popUp.texts[10], popUp.texts[10].gameObject, popUp.texts[11].gameObject);
+            ChangeTextAdaptive(FirstDrops_str, popUp.texts[11], popUp.texts[10].gameObject, popUp.texts[11].gameObject);
         }
     }
 }

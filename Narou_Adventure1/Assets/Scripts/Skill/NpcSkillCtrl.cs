@@ -232,16 +232,16 @@ public class NpcSkillCtrl : BASE {
         npcs = new Npc[main.SD.num_ally];
         npcs[(int)AllyKind.npcA] =
             new Npc(AllyKind.npcA, x => Sync(ref main.SR.levels_Ally[(int)AllyKind.npcA], x), main,
-            10, 5,
-            1, 2,
-            1, 2,
-            0, 1,
-            0, 0,
-            0, 0,
-            2, 0,
-            10, 2.5,
+            4, 1,           //hp
+            0, 1,           //str
+            0, 1,           //m str
+            0, 0,           //def
+            0, 0,           //dodge
+            0, 0,           //cri chance
+            2, 0,           //cri factor
+            10, 2.5,        //exp
             x=>Sync(ref main.SR.exps_Ally[(int)AllyKind.npcA],x));
-        npcs[(int)AllyKind.npcA].skills.AddRange(new List<SkillKind> { SkillKind.normalAttack });
+        npcs[(int)AllyKind.npcA].skills.AddRange(new List<SkillKind> { SkillKind.normalAttack_npc1 });
 	}
 
 	// Use this for initialization

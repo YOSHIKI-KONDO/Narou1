@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
+using UnityEngine.Events;
 using System;
 
 /// <summary>
@@ -24,6 +25,8 @@ public class PopUp : MonoBehaviour
     public Vector3 Distance = new Vector3(200.0f, 100.0f);
     public Action EnterAction;
     public Action ExitAction;
+    public UnityAction UpdateAction;
+    public UnityAction FixedUpdateAction;
 
     public PopUp StartPopUp(GameObject hoverObject, Transform parent)
     {
@@ -93,5 +96,11 @@ public class PopUp : MonoBehaviour
     {
         ApplyPosition();
         ApplyActive();
+        UpdateAction?.Invoke();
+    }
+
+    private void FixedUpdate()
+    {
+        FixedUpdateAction?.Invoke();
     }
 }

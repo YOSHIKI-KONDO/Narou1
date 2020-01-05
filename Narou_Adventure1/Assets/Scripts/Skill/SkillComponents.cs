@@ -9,4 +9,5 @@ public class SkillComponents : BASE {
     public GameObject LearnBtnObj;
     public Button setButton;
     public Text nameText;
+    public GameObject newObject;
 }

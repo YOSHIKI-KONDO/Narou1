@@ -14,17 +14,19 @@ public class ITEM : BASE, INeed
     public List<NeedKind> sources = new List<NeedKind>();
     public int size;
     public int? MaxEquip;
+    public int rarity;
     public List<Dealing> BuyLists = new List<Dealing>();
     public List<Dealing> SellLists = new List<Dealing>();
     public List<Dealing> EffectLists = new List<Dealing>();
     ItemComponents components;
     //newやlockなども宣言する
-    public Button buyButton, sellButton, levelUpButton;
-    public Text spaceText, nameText, numText;
+    Button buyButton, sellButton, levelUpButton;
+    Text spaceText, nameText, numText, rarityText, levelText, maxNumText;
+    public Toggle lockToggle;
+    GameObject newObject;
     PopUp popUp;
     ReleaseFunction release;
     public NeedFunciton need;
-    public bool Watched { get => main.SR.watched_Item[(int)kind]; set => main.SR.watched_Item[(int)kind] = value; }
     public string Name_str, Description_str, Max_Str, Need_str, Effect_str, Cost_str, Sell_str;
 
     public int[] InventoryNum { get => main.SR.inventoryNum_Item; set => main.SR.inventoryNum_Item = value; }
@@ -83,17 +85,17 @@ public class ITEM : BASE, INeed
     }               
 
     // Use this for initialization
-    public void AwakeItem (ItemKind kind, int size, int? max = null) {
+    public void AwakeItem (ItemKind kind, int size, int? max = null, int rarity = 1, int maxLevel = 30, int maxLevelMag = 2) {
 		StartBASE();
         this.kind = kind;
         this.size = size;
         this.MaxEquip = max;
+        this.rarity = rarity;
+        this.maxLevel = maxLevel;
         main.itemCtrl.items[(int)kind] = this;
-        popUp = main.itemPopUpPre.StartPopUp(gameObject, main.windowShowCanvas);
-        popUp.EnterAction = ApplyPopUp;
-        release = gameObject.AddComponent<ReleaseFunction>();
-        release.StartFunction(gameObject, x => Sync(ref main.SR.released_Item[(int)kind], x), x => Sync(ref main.SR.completed_Item[(int)kind], x), x => Requires());
-        need = gameObject.AddComponent<NeedFunciton>();
+        if (level <= 0) { level = 1; }//レベルは0以上でなければならない
+        level_power = CalculatePower(maxLevel, maxLevelMag);
+
 
         //アイテムコンポーネントから参照をコピー
         components = GetComponent<ItemComponents>();
@@ -103,16 +105,35 @@ public class ITEM : BASE, INeed
         spaceText = components.spaceText;
         nameText = components.nameText;
         numText = components.numText;
+        levelText = components.levelText;
+        newObject = components.newObj;
+        rarityText = components.rarityText;
+        maxNumText = components.maxNumText;
+        lockToggle = components.lockToggle;
         buyButton.onClick.AddListener(() => main.itemCtrl.Buy(kind));
-        buyButton.onClick.AddListener(() => { Watched = true; }); //watchedをtrueにする処理をbuybuttonに追加
         sellButton.onClick.AddListener(() => main.itemCtrl.Sell_Shop(kind));
         levelUpButton.onClick.AddListener(() => main.itemCtrl.LevelUp(kind));
+        rarityText.text = StarFromRarity(rarity);
+        lockToggle.onValueChanged.AddListener(x => main.itemCtrl.SynchronizeLock(x, kind));
+
+
+        popUp = main.itemPopUpPre.StartPopUp(gameObject, main.windowShowCanvas);
+        popUp.EnterAction = ApplyPopUp;
+        release = gameObject.AddComponent<ReleaseFunction>();
+        release.StartFunction(gameObject, x => Sync(ref main.SR.released_Item[(int)kind], x),
+            x => Sync(ref main.SR.completed_Item[(int)kind], x),
+            x => Requires(),
+            x => Sync(ref main.SR.watched_Shop[(int)kind], x),
+            newObject,
+            main.enumCtrl.items[(int)kind].Name() + "(Shop)");
+        need = gameObject.AddComponent<NeedFunciton>();
     }
 
     // Use this for initialization
     public void StartItem () {
-        if (level <= 0) { level = 1; }//レベルは0以上でなければならない
-        level_power = CalculatePower(30, 2);
+        //lock toggle
+        lockToggle.onValueChanged.AddListener(x => main.itemCtrl.SynchronizeLock(x, kind));
+        lockToggle.isOn = main.SR.locked_Item[(int)kind];//セーブを代入
     }
 
     // Update is called once per frame
@@ -133,6 +154,16 @@ public class ITEM : BASE, INeed
         nameText.text = Name_str;
     }
 
+    public string StarFromRarity(int Rarity)
+    {
+        string sum = "";
+        for (int i = 0; i < Rarity; i++)
+        {
+            sum += "★";
+        }
+        return sum;
+    }
+
     double CalculatePower(int _maxLevel, double objective)
     {
         return Math.Log(objective, _maxLevel);
@@ -142,7 +173,9 @@ public class ITEM : BASE, INeed
     {
         spaceText.text = main.itemCtrl.items[(int)kind].size.ToString();
         nameText.text = main.enumCtrl.items[(int)kind].Name();
+        maxNumText.text = (MaxEquip == null) ? "∞" : MaxEquip.ToString();
         numText.text = main.itemCtrl.equipNum[(int)kind].ToString() + "/" + (main.itemCtrl.equipNum[(int)kind] + main.itemCtrl.InventoryNum[(int)kind]).ToString();
+        levelText.text = level >= maxLevel ? "Lv Max" : "Lv" + level.ToString() + "/" + maxLevel.ToString();
     }
 
     public void CheckButton()

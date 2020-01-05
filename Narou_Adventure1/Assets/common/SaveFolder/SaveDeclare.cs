@@ -83,8 +83,10 @@ public class SaveDeclare : BASE {
         InitializeArray(ref main.SR.inventoryNum_Item, num_item);
         InitializeArray(ref main.SR.released_Item, num_item);
         InitializeArray(ref main.SR.completed_Item, num_item);
-        InitializeArray(ref main.SR.watched_Item, num_item);
+        InitializeArray(ref main.SR.watched_Shop, num_item);
+        InitializeArray(ref main.SR.watched_Inventory, num_item);
         InitializeArray(ref main.SR.level_Item, num_item);
+        InitializeArray(ref main.SR.locked_Item, num_item);
 
         /* Need */
         InitializeArray(ref main.SR.needLimits, num_need);
@@ -102,6 +104,7 @@ public class SaveDeclare : BASE {
         InitializeArray(ref main.SR.currentFloor_Dungeon, num_dungeon);
         InitializeArray(ref main.SR.clearNum_Dungeon, num_dungeon);
         InitializeArray(ref main.SR.watched_Dungeon, num_dungeon);
+        InitializeArray(ref main.SR.maxFloor_Dungeon, num_dungeon);
 
         /* Npc */
         InitializeArray(ref main.SR.levels_Ally, num_ally);

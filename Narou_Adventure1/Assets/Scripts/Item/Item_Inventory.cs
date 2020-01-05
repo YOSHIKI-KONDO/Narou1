@@ -3,14 +3,21 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using static UsefulMethod;
 
-public class Item_Inventory : BASE {
+public class Item_Inventory : BASE{
     public ItemKind kind;
     public Button equipButton, sellButtion, levelUpButton;
-    public Text spaceText, nameText, numText;
+    public Text spaceText, nameText, numText, rarityText, levelText, maxNumText;
+    public Toggle lockToggle;
+    public GameObject newObject;
     public PopUp popUp;
     public string Name_str, Description_str, Max_Str, Need_str, Effect_str, Cost_str, Sell_str;
+    public bool Watched { get => main.SR.watched_Inventory[(int)kind]; set => main.SR.watched_Inventory[(int)kind] = value; }
+    bool hovered;
+    EnterExitEvent eeevent;
+    ITEM[] items;
 
     //ItemCtrlから呼ぶ
     public void StartInventory(ItemKind kind)
@@ -28,25 +35,61 @@ public class Item_Inventory : BASE {
 	// Use this for initialization
 	void Awake () {
         StartBASE();
+        eeevent = gameObject.AddComponent<EnterExitEvent>();
+        eeevent.EnterEvent = () => { hovered = true; };
+        eeevent.ExitEvent = () => { hovered = false; };
+
+        items = main.itemCtrl.items;
     }
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        //星で表記
+        rarityText.text = items[(int)kind].StarFromRarity(items[(int)kind].rarity);
+
+        //lock toggle
+        lockToggle.onValueChanged.AddListener(x => main.itemCtrl.SynchronizeLock(x, kind));
+        lockToggle.isOn = main.SR.locked_Item[(int)kind];//セーブを代入
+    }
 	
 	// Update is called once per frame
 	void Update () {
         CheckButton();
         ApplyTexts();
         ApplyPopUp();
+        ApplyNewObj();
+    }
+
+    //見られていたらnewをfalseにする。
+    void ApplyNewObj()
+    {
+        if (hovered)
+        {
+            if (Input.GetMouseButton(0))
+            {
+                Watched = true;
+            }
+        }
+
+        if (Watched)
+        {
+            setFalse(newObject);
+        }
+        else
+        {
+            setActive(newObject);
+        }
     }
 
     void ApplyTexts()
     {
-        spaceText.text = main.itemCtrl.items[(int)kind].size.ToString();
+        spaceText.text = items[(int)kind].size.ToString();
         nameText.text = main.enumCtrl.items[(int)kind].Name();
+        maxNumText.text = (items[(int)kind].MaxEquip == null) ? "∞" : items[(int)kind].MaxEquip.ToString();
         numText.text = main.itemCtrl.equipNum[(int)kind].ToString() + "/" + (main.itemCtrl.equipNum[(int)kind] + main.itemCtrl.InventoryNum[(int)kind]).ToString();
+        levelText.text = items[(int)kind].level >= items[(int)kind].maxLevel ?
+            "Lv Max" :
+            "Lv" + items[(int)kind].level.ToString() + "/" + items[(int)kind].maxLevel.ToString();
     }
 
     void CheckButton()
@@ -88,12 +131,12 @@ public class Item_Inventory : BASE {
             //自動でコストの文章を生成
             Name_str = main.enumCtrl.items[(int)kind].Name();
             Description_str = main.enumCtrl.items[(int)kind].Description();
-            if (main.itemCtrl.items[(int)kind].haveSource) { Description_str += Description_str == "" ? main.itemCtrl.items[(int)kind].SourceDetail() : "\n" + main.itemCtrl.items[(int)kind].SourceDetail(); }
-            Max_Str = "Max:" + ((main.itemCtrl.items[(int)kind].MaxEquip == null) ? "∞" : main.itemCtrl.items[(int)kind].MaxEquip.ToString());
-            Effect_str = ProgressDetail(main.itemCtrl.items[(int)kind].EffectLists, main.itemCtrl.items[(int)kind].LevelFactor());
-            Cost_str = ProgressDetail(main.itemCtrl.items[(int)kind].BuyLists);
-            Sell_str = ProgressDetail(main.itemCtrl.items[(int)kind].SellLists);
-            Cost_str = ProgressDetail(main.itemCtrl.items[(int)kind].BuyLists);
+            if (items[(int)kind].haveSource) { Description_str += Description_str == "" ? items[(int)kind].SourceDetail() : "\n" + items[(int)kind].SourceDetail(); }
+            Max_Str = "Max:" + ((items[(int)kind].MaxEquip == null) ? "∞" : items[(int)kind].MaxEquip.ToString());
+            Effect_str = ProgressDetail(items[(int)kind].EffectLists, items[(int)kind].LevelFactor());
+            Cost_str = ProgressDetail(items[(int)kind].BuyLists);
+            Sell_str = ProgressDetail(items[(int)kind].SellLists);
+            Cost_str = ProgressDetail(items[(int)kind].BuyLists);
             //needいらない
 
             ChangeTextAdaptive(Name_str, popUp.texts[0], popUp.texts[0].gameObject);

@@ -54,8 +54,10 @@ public class SaveR
     public int[] inventoryNum_Item;
     public bool[] released_Item;
     public bool[] completed_Item;
-    public bool[] watched_Item;
+    public bool[] watched_Shop;
+    public bool[] watched_Inventory;
     public int[] level_Item;
+    public bool[] locked_Item;
 
     /* Need */
     public int[] needLimits;
@@ -73,6 +75,7 @@ public class SaveR
     public int[] currentFloor_Dungeon;
     public int[] clearNum_Dungeon;
     public bool[] watched_Dungeon;
+    public int[] maxFloor_Dungeon;
 
     /* Ally */
     public List<AllyKind> allyKinds = new List<AllyKind>();

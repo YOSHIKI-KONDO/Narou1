@@ -10,7 +10,7 @@ public class Slime : ENEMY
     // Use this for initialization
     void Awake()
     {
-        AwakeEnemy(EnemyKind.slime, 10, 5, 1, 0, 1, 2);
+        AwakeEnemy(EnemyKind.slime, 10, 5, 1, 0, 1, 2, 1);
         drops.Add(new Drop(ResourceKind.herb, 1, 5));
 
         //drops.Add(Drop.OneShotDrop(ResourceKind.medicine, 1, 100));

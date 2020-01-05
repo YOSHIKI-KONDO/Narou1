@@ -92,7 +92,7 @@ public class ProgressCtrl : BASE {
 
     private void Start()
     {
-        ApplyFocus();
+        //ApplyFocus();
     }
 
     private void Update()

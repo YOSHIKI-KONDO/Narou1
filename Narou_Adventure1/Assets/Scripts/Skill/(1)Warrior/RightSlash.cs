@@ -18,6 +18,10 @@ public class RightSlash : SKILL
         learnF.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -5));
         useCosts.Add(new Dealing(ResourceKind.mp, Dealing.R_ParaKind.current, -1));
         warriorAtks.Add(new WarriorAttack(4));
+
+        //combo = new Cost_SC(AttributeKind.fireMagic, 0.5f);
+        //combo = new Effect_SC(AttributeKind.fireMagic, 10f);
+        //combo = new Interval_SC(AttributeKind.fireMagic, 0.1f);
     }
 
 	// Use this for initialization

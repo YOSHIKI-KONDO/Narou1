@@ -12,6 +12,7 @@ public class ItemComponents : MonoBehaviour
     public Text levelText;
     public Text rarityText;
     public Text spaceText;
+    public Text maxNumText;
     public Text numText;
     public Button buyButton;
     public Button sellButton;

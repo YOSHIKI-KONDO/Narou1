@@ -16,7 +16,7 @@ public class Bog : DUNGEON
 
     // Use this for initialization
     void Awake () {
-        AwakeDungeon(bog);
+        AwakeDungeon(bog, ResourceKind.itemPoint1, 1);
         enemyList.Add(new EnemyKind[] { goblin, goblin, goblin });
         enemyList.Add(new EnemyKind[] { snake, snake });
         enemyList.Add(new EnemyKind[] { goblin, snake, snake });
