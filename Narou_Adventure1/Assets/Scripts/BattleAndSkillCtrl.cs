@@ -534,8 +534,8 @@ public class BattleAndSkillCtrl : BASE {
             {
                 main.announce_d.Add("Dungeon Clear!!!");
                 main.SR.clearNum_Dungeon[(int)dunKind]++;
-                //AnalyticsEvent.LevelComplete(dunKind.ToString());
                 main.analytics.DungeonComplete(dunKind);
+                dungeons[(int)dunKind].WinAction();
 
                 //最高到達フロア更新
                 dungeons[(int)dunKind].maxFloor = dungeons[(int)dunKind].MaxFloor();
@@ -607,7 +607,7 @@ public class BattleAndSkillCtrl : BASE {
 
 
             // 待つ
-            waitFloor.Wait(100);
+            waitFloor.Wait((int)(100f/Time.timeScale));
             if (waitFloor.Waiting)
             {
                 return; //待っていたら関数そのものから抜ける ***
@@ -789,6 +789,7 @@ public class BattleAndSkillCtrl : BASE {
         // HP判定
         if (main.rsc.Value[(int)ResourceKind.hp] < 0.001d)
         {
+            dungeons[(int)dunKind].LoseAction();
             main.progressCtrl.Rest();
             FleeFromDungeon();
             return;

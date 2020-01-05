@@ -41,6 +41,18 @@ public class DUNGEON : BASE {
         main.announce_d.Add("You entered " + main.enumCtrl.dungeons[(int)kind].Name());
         main.battleCtrl.dunKind = kind;
         main.battleCtrl.EnterDungeon();
+
+        main.checkDifficulty.TotalNum++; //難易度調整
+    }
+
+    public void WinAction()
+    {
+        main.checkDifficulty.WinNum++; //難易度調整
+    }
+
+    public void LoseAction()
+    {
+        main.checkDifficulty.LoseNum++; //難易度調整
     }
 
     public string Name_str, Description_str, Need_str, Floor_str, ProgressCost_str, Drops_str, FirstDrops_str;
