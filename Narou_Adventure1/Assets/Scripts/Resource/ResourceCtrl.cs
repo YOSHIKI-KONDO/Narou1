@@ -94,6 +94,7 @@ public class ResourceCtrl : BASE {
             main.SR.level++;
             main.announce.Add("Level UP! (" + (main.SR.level - 1).ToString() + "→" + main.SR.level.ToString() + ")", Color.green);
             main.announce_d.Add("Level UP! (" + (main.SR.level - 1).ToString() + "→" + main.SR.level.ToString() + ")", Color.green);
+            main.rsc.Max_Base[(int)ResourceKind.hp] += 2; //hpを増やす
             AnalyticsEvent.LevelUp(main.SR.level); //レベルを送信
         }
     }

@@ -1,7 +1,7 @@
 ﻿public class SKILL_COMBO {
-    public AttributeKind kind;
+    public NeedKind kind;
     public float magnification;
-    public SKILL_COMBO(AttributeKind kind, float magnification)
+    public SKILL_COMBO(NeedKind kind, float magnification)
     {
         this.kind = kind;
         this.magnification = magnification;

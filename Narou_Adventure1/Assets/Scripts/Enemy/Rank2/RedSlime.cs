@@ -10,7 +10,7 @@ public class RedSlime : ENEMY
     // Use this for initialization
     void Awake()
     {
-        AwakeEnemy(EnemyKind.red_slime, 40, 5, 10, 0, 10, 10, 1);
+        AwakeEnemy(EnemyKind.red_slime, 40, 5, 14, 0, 10, 10, 1);
         drops.Add(new Drop(ResourceKind.herb, 1, 5));
     }
 

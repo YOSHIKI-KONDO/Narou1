@@ -10,7 +10,7 @@ public class Snake : ENEMY
     // Use this for initialization
     void Awake()
     {
-        AwakeEnemy(EnemyKind.snake, 5, 5, 5, 0, 1, 3, 1);
+        AwakeEnemy(EnemyKind.snake, 8, 10, 8, 0, 1, 3, 1);//インターバル長い
         drops.Add(new Drop(ResourceKind.stone, 1, 5));
     }
 

@@ -29,7 +29,7 @@ public class DemonicCellar : DUNGEON
         enemyList.Add(new EnemyKind[] { bat, rat });
         enemyList.Add(new EnemyKind[] { demonic_warrior });//10
 
-        progressCost.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.3f));
+        //progressCost.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.3f));
 
         drops.Add(new Drop(ResourceKind.gold, 5, 100));
         drops.Add(new Drop(ResourceKind.filet_o_fish, 1, 100));
