@@ -18,17 +18,17 @@ public class Bog : DUNGEON
     void Awake () {
         AwakeDungeon(bog, ResourceKind.itemPoint1, 1);
         enemyList.Add(new EnemyKind[] { goblin, goblin, goblin });
-        enemyList.Add(new EnemyKind[] { snake, snake });
+        enemyList.Add(new EnemyKind[] { snake, snake, snake });
         enemyList.Add(new EnemyKind[] { goblin, snake, snake });
         enemyList.Add(new EnemyKind[] { goblin, goblin });
-        enemyList.Add(new EnemyKind[] { orc, goblin, goblin });//5
+        enemyList.Add(new EnemyKind[] { orc, lizard_man, orc });//5
         enemyList.Add(new EnemyKind[] { snake });
         enemyList.Add(new EnemyKind[] { snake, goblin });
         enemyList.Add(new EnemyKind[] { snake, snake, snake });
         enemyList.Add(new EnemyKind[] { goblin, goblin, snake });
         enemyList.Add(new EnemyKind[] { lizard_man, lizard_man });//10
 
-        progressCost.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.3f));
+        //progressCost.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.3f));
 
         drops.Add(new Drop(ResourceKind.gold, 5, 100));
         drops.Add(new Drop(ResourceKind.filet_o_fish, 1, 100));

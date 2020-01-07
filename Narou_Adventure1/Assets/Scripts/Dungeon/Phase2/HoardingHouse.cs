@@ -28,7 +28,7 @@ public class HoardingHouse : DUNGEON
         enemyList.Add(new EnemyKind[] { snake, snake, slime });
         enemyList.Add(new EnemyKind[] { red_slime, red_slime });//10
 
-        progressCost.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.3f));
+        //progressCost.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.3f));
 
         drops.Add(new Drop(ResourceKind.gold, 5, 100));
         drops.Add(new Drop(ResourceKind.filet_o_fish, 1, 100));

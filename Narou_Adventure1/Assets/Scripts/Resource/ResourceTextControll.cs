@@ -10,7 +10,7 @@ public class ResourceTextControll : BASE {
     public ResourceText normalPre;
     public ResourceText energyPre;
     public Transform parent_energy;
-    public Transform parent_normal;
+    //public Transform parent_normal;
     public RESOURCE_EFFECT[] effectAry;
     public DecimalPoint_Resource[] points;
 
@@ -97,7 +97,7 @@ public class ResourceTextControll : BASE {
             }
 
             // 普通のリソース
-            var resource = Instantiate(normalPre, parent_normal);
+            var resource = Instantiate(normalPre, parent_energy);
             resource.kind = k;
             if (effectAry[i] != null)
             {

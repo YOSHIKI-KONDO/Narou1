@@ -1,0 +1,590 @@
+fileFormatVersion: 2
+guid: bcf77228de007694d81a54c5f75c06fa
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1703385357363395767
+    second: TagIcon19x19_0
+  - first:
+      213: -8491763506192817168
+    second: TagIcon19x19_1
+  - first:
+      213: 8375947056734364070
+    second: TagIcon19x19_2
+  - first:
+      213: 8600162215726645096
+    second: TagIcon19x19_3
+  - first:
+      213: -7567831336161926881
+    second: TagIcon19x19_4
+  - first:
+      213: 2135976074466134490
+    second: TagIcon19x19_5
+  - first:
+      213: 3012387192764678121
+    second: TagIcon19x19_6
+  - first:
+      213: 3105104449817852322
+    second: TagIcon19x19_7
+  - first:
+      213: -634773680822637930
+    second: TagIcon19x19_8
+  - first:
+      213: 1517623619564107822
+    second: TagIcon19x19_9
+  - first:
+      213: -5239756987312932692
+    second: TagIcon19x19_10
+  - first:
+      213: -2303074526855156941
+    second: TagIcon19x19_11
+  - first:
+      213: -1651313628426404326
+    second: TagIcon19x19_12
+  - first:
+      213: 3047341760887599657
+    second: TagIcon19x19_13
+  - first:
+      213: -3191114587484795393
+    second: TagIcon19x19_14
+  - first:
+      213: -5461176742074315687
+    second: TagIcon19x19_15
+  - first:
+      213: 3472780209164702522
+    second: TagIcon19x19_16
+  - first:
+      213: -6526307739633188611
+    second: TagIcon19x19_17
+  - first:
+      213: -3353845171072012762
+    second: TagIcon19x19_18
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TagIcon19x19_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 81
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc53a2c6aef9c75409755ba55f09d824
+      internalID: 1703385357363395767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TagIcon19x19_1
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 81
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a91cc158c6e5d89478dad6138062b88e
+      internalID: -8491763506192817168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TagIcon19x19_2
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 81
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9d97ce36b711bf41834fde0670d655e
+      internalID: 8375947056734364070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TagIcon19x19_3
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 81
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f35ada78d02c2f44fa53b75c37d1083d
+      internalID: 8600162215726645096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TagIcon19x19_4
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 81
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac6ab19b51f62284884ab9355d2baaf2
+      internalID: -7567831336161926881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TagIcon19x19_5
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 81
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dcc2c121a762d0438cdf888bda551bd
+      internalID: 2135976074466134490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TagIcon19x19_6
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 81
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c730047c2112f344f9015d836349a59f
+      internalID: 3012387192764678121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TagIcon19x19_7
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 81
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e986e68f18a1a14a88b4b703a6c8b65
+      internalID: 3105104449817852322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TagIcon19x19_8
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 81
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b27c7a7aedb1ca3499f6651c385bc6b8
+      internalID: -634773680822637930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TagIcon19x19_9
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 81
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f1ea03b412099b448bbd597fefc1f99
+      internalID: 1517623619564107822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TagIcon19x19_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 62
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b35e686981effa4b83b764a676ed1b2
+      internalID: -5239756987312932692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TagIcon19x19_11
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 62
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2acd65f8a492714a9eea35be3d068f0
+      internalID: -2303074526855156941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TagIcon19x19_12
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 62
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e094b9f2a42c05d4d8932c6eb02e1576
+      internalID: -1651313628426404326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TagIcon19x19_13
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 62
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 065a09127ecb47341bbd87c3ff3defd3
+      internalID: 3047341760887599657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TagIcon19x19_14
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 62
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0275dd330bf1d2348a3d7a424af4a0ef
+      internalID: -3191114587484795393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TagIcon19x19_15
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 62
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 513ed9f0dcc8b9f4493148488c3f09e5
+      internalID: -5461176742074315687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TagIcon19x19_16
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 62
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 241e9383ca835214e9a2b23d866064ed
+      internalID: 3472780209164702522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TagIcon19x19_17
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 62
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b63c0adfbfa8a4941bd46b65d150403f
+      internalID: -6526307739633188611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TagIcon19x19_18
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 62
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5abb1bd9f4d20c74bb2b399f055ef4e7
+      internalID: -3353845171072012762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: b274398ca6f49a74a8578671bb679b8e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
