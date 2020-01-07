@@ -42,17 +42,23 @@ public class DUNGEON : BASE {
         main.battleCtrl.dunKind = kind;
         main.battleCtrl.EnterDungeon();
 
-        main.checkDifficulty.TotalNum++; //難易度調整
+        //難易度調整
+        main.checkDifficulty.TotalNum++; 
+        main.checkDifficulty.MaxFloorNum = MaxFloor();
     }
 
     public void WinAction()
     {
-        main.checkDifficulty.WinNum++; //難易度調整
+        //難易度調整
+        main.checkDifficulty.WinNum++; 
+        main.checkDifficulty.Sum_FloorNum += MaxFloor();
     }
 
     public void LoseAction()
     {
-        main.checkDifficulty.LoseNum++; //難易度調整
+        //難易度調整
+        main.checkDifficulty.LoseNum++; 
+        main.checkDifficulty.Sum_FloorNum += currentFloor;
     }
 
     public string Name_str, Description_str, Need_str, Floor_str, ProgressCost_str, Drops_str, FirstDrops_str;

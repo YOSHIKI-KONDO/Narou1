@@ -10,7 +10,7 @@ public class Rat : ENEMY
     // Use this for initialization
     void Awake()
     {
-        AwakeEnemy(EnemyKind.rat, 3, 2, 1, 0, 1, 2, 1);
+        AwakeEnemy(EnemyKind.rat, 25, 2, 9, 0, 1, 2, 1);
         drops.Add(new Drop(ResourceKind.herb, 1, 3));
     }
 

@@ -29,7 +29,7 @@ public class SKILL : BASE, INeed
     {
         return (float)(currentValue / Duration());
     }
-    public List<AttributeKind> attributes = new List<AttributeKind>(); //属性
+    public List<NeedKind> attributes = new List<NeedKind>(); //属性
     public SKILL_COMBO combo; //直前のスキルによるコンボ
     public List<Dealing> useCosts = new List<Dealing>();
     public List<Dealing> useEffects = new List<Dealing>();
@@ -210,7 +210,7 @@ public class SKILL : BASE, INeed
         foreach (var attribute in attributes)
         {
             if (sum != "") { sum += ", "; }
-            sum += main.enumCtrl.attributes[(int)attribute].Name();
+            sum += main.enumCtrl.needs[(int)attribute].Name();
         }
         return sum;
     }

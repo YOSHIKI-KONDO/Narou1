@@ -64,9 +64,11 @@ public class BattleAndSkillCtrl : BASE {
 
     public double DamageCalculate(double skill_atk, double atk, double criticalFactor)
     {
-        return atk * (1d + skill_atk / 10) * criticalFactor;
+        double dmg = atk * (1d + skill_atk / 10) * criticalFactor;
+        int randomRange = (int)((1d / 2d) * Math.Sqrt(dmg));
+        double randomFactor = UnityEngine.Random.Range( -randomRange, randomRange + 1);
+        return dmg + randomFactor;
     }
-
 
     // Use this for initialization
     void Awake () {
@@ -395,6 +397,11 @@ public class BattleAndSkillCtrl : BASE {
                 slotKinds[i_r, i_c] = main.SR.slotKinds[ROW_SLOT * i_c + i_r];
             }
         }
+
+        //loop toggle
+        loopToggle.isOn = main.SR.isOn_loopToggle;
+        skillActiveToggle.isOn = main.SR.isOn_activeSkillToggle;
+        skillDungeonToggle.isOn = main.SR.isOn_dungeonOnlyToggle;
     }
 
     //saveCtrlから呼ぶ
@@ -407,6 +414,11 @@ public class BattleAndSkillCtrl : BASE {
                 main.SR.slotKinds[ROW_SLOT * i_c + i_r] = slotKinds[i_r, i_c];
             }
         }
+
+        //loop toggle
+        main.SR.isOn_loopToggle = loopToggle.isOn;
+        main.SR.isOn_activeSkillToggle = skillActiveToggle.isOn;
+        main.SR.isOn_dungeonOnlyToggle = skillDungeonToggle.isOn;
     }
 
     /* Enemys */
@@ -442,20 +454,22 @@ public class BattleAndSkillCtrl : BASE {
                         if (i_d == 0)
                         {
                             //味方がいるときは経験値を分ける
-                            currentEnemys[i].drops[0].amount /= (main.npcSkillCtrl.allyKinds.Count + 1);
+                            Drop exp_drop = new Drop(currentEnemys[i].drops[0].kind, currentEnemys[i].drops[0].amount, currentEnemys[i].drops[0].probability);//経験値のdropを複製
+                            //currentEnemys[i].drops[0].amount /= (main.npcSkillCtrl.allyKinds.Count + 1);
+                            exp_drop.amount /= (main.npcSkillCtrl.allyKinds.Count + 1);
                             foreach (var npc_kind in main.npcSkillCtrl.allyKinds)
                             {
                                 //経験値を足す
                                 main.npcSkillCtrl.npcs[(int)npc_kind].currentExp(main.npcSkillCtrl.npcs[(int)npc_kind].currentExp()
-                                    + currentEnemys[i].drops[i_d].amount);
+                                    + exp_drop.amount);
                                 //Announce
                                 main.announce_d.Add("LOOT [" + main.enumCtrl.enemys[(int)currentEnemys[i].kind].Name() + "] : "
                                     + main.enumCtrl.allys[(int)npc_kind].Name() + " gained "
-                                    + main.enumCtrl.resources[(int)currentEnemys[i].drops[i_d].kind].Name() + " + "
-                                    + tDigit(currentEnemys[i].drops[i_d].amount));
+                                    + main.enumCtrl.resources[(int)exp_drop.kind].Name() + " + "
+                                    + tDigit(exp_drop.amount));
                             }
                             //自分(普通のドロップの書き方と同じ)
-                            GetDrops(currentEnemys[i], currentEnemys[i].drops[i_d]);
+                            GetDrops(currentEnemys[i], exp_drop);
 
                             continue; //※
                         }
@@ -534,7 +548,7 @@ public class BattleAndSkillCtrl : BASE {
             {
                 main.announce_d.Add("Dungeon Clear!!!");
                 main.SR.clearNum_Dungeon[(int)dunKind]++;
-                main.analytics.DungeonComplete(dunKind);
+                //main.analytics.DungeonComplete(dunKind);
                 dungeons[(int)dunKind].WinAction();
 
                 //最高到達フロア更新
@@ -719,7 +733,7 @@ public class BattleAndSkillCtrl : BASE {
         Summon();
         currentInterval_normalAttack = 0;
         //AnalyticsEvent.LevelStart(dunKind.ToString());
-        main.analytics.DungeonEnter(dunKind);
+        //main.analytics.DungeonEnter(dunKind);
     }
 
     //Called in FixedUpdate

@@ -86,4 +86,7 @@ public class SaveR
     /* タブや項目 */
     public bool[] released_element;
     public bool[] completed_element;
+    public bool isOn_loopToggle;
+    public bool isOn_dungeonOnlyToggle = true;
+    public bool isOn_activeSkillToggle = true;
 }

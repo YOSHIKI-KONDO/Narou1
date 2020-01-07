@@ -19,9 +19,9 @@ public class RightSlash : SKILL
         useCosts.Add(new Dealing(ResourceKind.mp, Dealing.R_ParaKind.current, -1));
         warriorAtks.Add(new WarriorAttack(4));
 
-        //combo = new Cost_SC(AttributeKind.fireMagic, 0.5f);
-        //combo = new Effect_SC(AttributeKind.fireMagic, 10f);
-        //combo = new Interval_SC(AttributeKind.fireMagic, 0.1f);
+        combo = new Cost_SC(NeedKind.fire, 0.5f);
+        combo = new Effect_SC(NeedKind.fire, 10f);
+        combo = new Interval_SC(NeedKind.fire, 0.1f);
     }
 
 	// Use this for initialization

@@ -59,6 +59,7 @@ public class ProgressCtrl : BASE {
     {
         DeactivateAll();
         currentFunction = null;
+        previousFunction = null;
     }
 
     public void ActivatePrevious()
