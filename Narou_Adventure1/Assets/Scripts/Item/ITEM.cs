@@ -149,6 +149,7 @@ public class ITEM : BASE, INeed, ISetSource
             x => Sync(ref main.SR.watched_Shop[(int)kind], x),
             newObject,
             main.enumCtrl.items[(int)kind].Name() + "(Shop)");
+        release.action_activated = () => { main.SR.discover_Item[(int)kind] = true; }; //発見
         need = gameObject.AddComponent<NeedFunciton>();
     }
 

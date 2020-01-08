@@ -27832,7 +27832,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &990316775
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37860,6 +37860,7 @@ MonoBehaviour:
     regen_resource: []
     released_resource: 
     completed_resource: 
+    discover_resource: 
     released_instant: 
     completed_instant: 
     watched_instant: 
@@ -37891,6 +37892,7 @@ MonoBehaviour:
     watched_Inventory: 
     level_Item: 
     locked_Item: 
+    discover_Item: 
     needLimits: 
     released_Skill: 
     completed_Skill: 

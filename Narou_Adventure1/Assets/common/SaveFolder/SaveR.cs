@@ -20,6 +20,7 @@ public class SaveR
 
     public bool[] released_resource;
     public bool[] completed_resource;
+    public bool[] discover_resource;
 
     public bool[] released_instant;
     public bool[] completed_instant;
@@ -58,6 +59,7 @@ public class SaveR
     public bool[] watched_Inventory;
     public int[] level_Item;
     public bool[] locked_Item;
+    public bool[] discover_Item;
 
     /* Need */
     public int[] needLimits;
