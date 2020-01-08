@@ -8,7 +8,7 @@ using static UsefulMethod;
 /// <summary>
 /// ①UnlockCost ②ProgressCost ③CompleteEffect を設定する
 /// </summary>
-public class ABILITY : BASE, INeed
+public class ABILITY : BASE, INeed, ISetSource
 {
     public AbilityKind kind;
     public PopUp popUp;
@@ -17,6 +17,7 @@ public class ABILITY : BASE, INeed
     public NeedFunciton need;
     AbilityComponents components;
     GameObject newObject;
+    public List<NeedKind> sources = new List<NeedKind>();
 
     double init_exp;
     double bottom_exp;
@@ -97,6 +98,7 @@ public class ABILITY : BASE, INeed
     protected void StartAbility()
     {
         progress.ApplySlider(MaxExp());
+        main.iconCtrl.AddIcon(sources, components.attributesParent);
     }
 
     // Update is called once per frame
@@ -116,6 +118,15 @@ public class ABILITY : BASE, INeed
         {
             release.Completed(true);
             setFalse(popUp.gameObject);
+        }
+    }
+
+    public void SetSource(params NeedKind[] sourceKinds)
+    {
+        //haveSource = true;
+        foreach (var n in sourceKinds)
+        {
+            sources.Add(n);
         }
     }
 

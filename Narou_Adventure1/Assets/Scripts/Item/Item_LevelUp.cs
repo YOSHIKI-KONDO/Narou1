@@ -5,27 +5,31 @@ using UnityEngine;
 using UnityEngine.UI;
 using static UsefulMethod;
 
-public class Item_Equip : BASE
+public class Item_LevelUp : BASE
 {
     public ItemKind kind;
-    public Button removeButton, sellButtion, levelUpButton;
+    public Button equipButton, sellButtion, levelUpButton;
     public Text spaceText, nameText, numText, rarityText, levelText, maxNumText;
     public Toggle lockToggle;
+    public GameObject newObject;
     public Transform attributesParent;
     public PopUp popUp;
     public string Name_str, Description_str, Max_Str, Need_str, Effect_str, Cost_str, Sell_str, LvCost_Str, LvEffect_Str;
+    //public bool Watched { get => main.SR.watched_Inventory[(int)kind]; set => main.SR.watched_Inventory[(int)kind] = value; }
+    bool hovered;
+    EnterExitEvent eeevent;
     ITEM[] items;
 
     //ItemCtrlから呼ぶ
-    public void StartEquip(ItemKind kind)
+    public void StartLevelUp(ItemKind kind)
     {
         this.kind = kind;
 
         StartBASE();
         popUp = main.itemPopUpPre.StartPopUp(gameObject, main.windowShowCanvas);
 
-        removeButton.onClick.AddListener(() => main.itemCtrl.Remove(kind));
-        sellButtion.onClick.AddListener(() => main.itemCtrl.Sell_Equip(kind));
+        equipButton.onClick.AddListener(() => main.itemCtrl.Equip(kind));
+        sellButtion.onClick.AddListener(() => main.itemCtrl.Sell_Inventory(kind));
         levelUpButton.onClick.AddListener(() => main.itemCtrl.LevelUp(kind));
     }
 
@@ -33,6 +37,9 @@ public class Item_Equip : BASE
     void Awake()
     {
         StartBASE();
+        eeevent = gameObject.AddComponent<EnterExitEvent>();
+        eeevent.EnterEvent = () => { hovered = true; };
+        eeevent.ExitEvent = () => { hovered = false; };
 
         items = main.itemCtrl.items;
     }
@@ -56,7 +63,29 @@ public class Item_Equip : BASE
         CheckButton();
         ApplyTexts();
         ApplyPopUp();
+        //ApplyNewObj();
     }
+
+    //見られていたらnewをfalseにする。
+    //void ApplyNewObj()
+    //{
+    //    if (hovered)
+    //    {
+    //        if (Input.GetMouseButton(0))
+    //        {
+    //            Watched = true;
+    //        }
+    //    }
+
+    //    if (Watched)
+    //    {
+    //        setFalse(newObject);
+    //    }
+    //    else
+    //    {
+    //        setActive(newObject);
+    //    }
+    //}
 
     void ApplyTexts()
     {
@@ -72,16 +101,16 @@ public class Item_Equip : BASE
     void CheckButton()
     {
         //buy
-        if (main.itemCtrl.CanRemove(kind))
+        if (main.itemCtrl.CanEquip(kind))
         {
-            removeButton.interactable = true;
+            equipButton.interactable = true;
         }
         else
         {
-            removeButton.interactable = false;
+            equipButton.interactable = false;
         }
         //sell
-        if (main.itemCtrl.CanSell_Equip(kind))
+        if (main.itemCtrl.CanSell_Inventory(kind))
         {
             sellButtion.interactable = true;
         }
@@ -100,6 +129,7 @@ public class Item_Equip : BASE
         }
     }
 
+    //NOTE:ItemCtrlで一括管理したい
     void ApplyPopUp()
     {
         if (popUp.gameObject.activeSelf)

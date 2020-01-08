@@ -10,4 +10,5 @@ public class SkillComponents : BASE {
     public Button setButton;
     public Text nameText;
     public GameObject newObject;
+    public Transform AttributesParent;
 }

@@ -113,6 +113,7 @@ public class SaveDeclare : BASE {
         /* 要素 */
         InitializeArray(ref main.SR.released_element, num_element);
         InitializeArray(ref main.SR.completed_element, num_element);
+        InitializeArray(ref main.SR.watched_element, num_element);
     }
 
 	// Use this for initialization

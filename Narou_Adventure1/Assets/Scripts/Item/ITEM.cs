@@ -8,7 +8,7 @@ using static UsefulMethod;
 /// <summary>
 /// ショップに全て置く
 /// </summary>
-public class ITEM : BASE, INeed
+public class ITEM : BASE, INeed, ISetSource
 {
     public ItemKind kind;
     public List<NeedKind> sources = new List<NeedKind>();
@@ -24,6 +24,7 @@ public class ITEM : BASE, INeed
     Text spaceText, nameText, numText, rarityText, levelText, maxNumText;
     public Toggle lockToggle;
     GameObject newObject;
+    Transform AttributesParent;
     PopUp popUp;
     ReleaseFunction release;
     public NeedFunciton need;
@@ -45,7 +46,7 @@ public class ITEM : BASE, INeed
     }
 
     //重い
-    public string DetailLfactor(int Level)
+    public string DetailNextLEffect(int Level)
     {
         if(Level >= maxLevel)
         {
@@ -53,7 +54,7 @@ public class ITEM : BASE, INeed
         }
         else
         {
-            return "+" + tDigit(CalculateLFactor(Level), 2) + "%";
+            return "+" + tDigit(100d * (CalculateLFactor( Level + 1 ) - CalculateLFactor(Level)), 2) + "%";
         }
     }
 
@@ -131,13 +132,13 @@ public class ITEM : BASE, INeed
         rarityText = components.rarityText;
         maxNumText = components.maxNumText;
         lockToggle = components.lockToggle;
+        AttributesParent = components.AttributesParent;
         buyButton.onClick.AddListener(() => main.itemCtrl.Buy(kind));
         sellButton.onClick.AddListener(() => main.itemCtrl.Sell_Shop(kind));
         levelUpButton.onClick.AddListener(() => main.itemCtrl.LevelUp(kind));
         rarityText.text = StarFromRarity(rarity);
         SetItemPointDealing(rarity);
         lockToggle.onValueChanged.AddListener(x => main.itemCtrl.SynchronizeLock(x, kind));
-
 
         popUp = main.itemPopUpPre.StartPopUp(gameObject, main.windowShowCanvas);
         popUp.EnterAction = ApplyPopUp;
@@ -156,6 +157,9 @@ public class ITEM : BASE, INeed
         //lock toggle
         lockToggle.onValueChanged.AddListener(x => main.itemCtrl.SynchronizeLock(x, kind));
         lockToggle.isOn = main.SR.locked_Item[(int)kind];//セーブを代入
+
+        //アイコンを表示
+        main.iconCtrl.AddIcon(sources, AttributesParent);
     }
 
     // Update is called once per frame
@@ -272,7 +276,7 @@ public class ITEM : BASE, INeed
             Cost_str = ProgressDetail(BuyLists);
             Sell_str = ProgressDetail(SellLists);
             LvCost_Str = ProgressDetail(itemPointDeal);
-            LvEffect_Str = DetailLfactor(level + 1);
+            LvEffect_Str = DetailNextLEffect(level);
 
 
             //needが設定されている場合にのみ書き換える。
