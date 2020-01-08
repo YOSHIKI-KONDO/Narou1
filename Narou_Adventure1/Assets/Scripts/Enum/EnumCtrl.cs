@@ -230,10 +230,10 @@ public class EnumCtrl : BASE {
         upgradeActions.Add(new template(ActionEnum.Upgrade.entrance_ceremony, "Entrance Ceremony", "入学式", "A stage for us. I feel lifted with thinking about my future.", "晴れ舞台だ。これからの生活に向けて気分が高揚する。"));
             //攫われイベント
         upgradeActions.Add(new template(ActionEnum.Upgrade.norns_room, "Norn's room", "ノルンの部屋に行く", "Go to the girl's room to say hello", "少女の部屋へ挨拶に向かう。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.desolate_room, "Desolate Room", "荒らされた部屋", "But no one is inside. There is evidence of competing. I remembered my mother, and became upset.", "しかし、中には誰もいない。争った形跡がある。攫われた母のことを思い出し、胸が高鳴った。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.desolate_room, "Desolate room", "荒らされた部屋", "But no one is inside. There is evidence of competing. I remembered my mother, and became upset.", "しかし、中には誰もいない。争った形跡がある。攫われた母のことを思い出し、胸が高鳴った。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.rumor, "Rumor", "ウワサ", "Recently, demons have settled in the notorious garbage mansion. It's so dirty that the monsters settled down even though it's not sewers.", "近頃、悪評高いゴミ屋敷には魔物が住み着いている。下水道でもないのに魔物が住み着くなんてよほど汚いみたいだ。"));
             //フリークエスト
-        upgradeActions.Add(new template(ActionEnum.Upgrade.delivery_of_fur, "Delivery of fur", "毛皮の納品", "nothing", "ウルフを倒すと手に入る、毛皮を納品してくれ。商品なんだから傷は少なめで頼むよ。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.delivery_of_fur, "Delivery of pelt", "毛皮の納品", "nothing", "ウルフを倒すと手に入る、毛皮を納品してくれ。商品なんだから傷は少なめで頼むよ。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.house_clean_up, "House clean up", "ゴミ屋敷の掃除", "nothing", "家主は何をしているんだ？近所迷惑だから誰でもいい、掃除してくれ！"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.get_rid_of_rat, "Get rid of rat", "ネズミ退治", "nothing", "下水道に発生したポイズンラットを定期的に駆除しないといけない。不人気な依頼。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.wholesaler_of_drugs, "Wholesaler of Drugs,", "医薬品卸", "nothing", "薬はいくつあっても安心だ。市場に回すため引き取らせてもらいたい。(３回まで)"));
