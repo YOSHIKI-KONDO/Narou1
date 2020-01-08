@@ -10,7 +10,7 @@ public class Askr : ENEMY
     // Use this for initialization
     void Awake()
     {
-        AwakeEnemy(EnemyKind.askr, 9, 5, 3, 0, 4, 3,1);
+        AwakeEnemy(EnemyKind.askr);
         drops.Add(new Drop(ResourceKind.anchovy_sandwich, 1, 5));
     }
 

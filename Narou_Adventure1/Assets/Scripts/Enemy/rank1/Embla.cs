@@ -10,7 +10,7 @@ public class Embla : ENEMY
     // Use this for initialization
     void Awake()
     {
-        AwakeEnemy(EnemyKind.embla, 7, 3, 2, 0, 4, 3, 1);
+        AwakeEnemy(EnemyKind.embla);
         drops.Add(new Drop(ResourceKind.anchovy_sandwich, 1, 5));
     }
 

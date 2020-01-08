@@ -10,7 +10,7 @@ public class Sigurd : ENEMY
     // Use this for initialization
     void Awake()
     {
-        AwakeEnemy(EnemyKind.sigurd, 10, 4, 4, 0, 5, 5, 1);
+        AwakeEnemy(EnemyKind.sigurd);
         drops.Add(new Drop(ResourceKind.anchovy_sandwich, 1, 5));
     }
 

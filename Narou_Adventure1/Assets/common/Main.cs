@@ -56,6 +56,7 @@ public class Main : MonoBehaviour
     public Announce announce_d; //dungeon
     public Focus focus;
     public DecideParameter decideParameter;
+    public EnemyParameter enemyParameter;
     public CheckDifficulty checkDifficulty;
     public CheckActions checkActions;
 
