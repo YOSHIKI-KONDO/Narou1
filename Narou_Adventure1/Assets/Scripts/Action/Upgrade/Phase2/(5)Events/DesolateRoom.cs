@@ -17,7 +17,7 @@ public class DesolateRoom : UPGRADE_ACTION
         AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.desolate_room, 1,0,0);
         progress.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -5));
         progress.completeEffectList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.max, 10));
-        progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 1));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 100));
     }
 
 	// Use this for initialization

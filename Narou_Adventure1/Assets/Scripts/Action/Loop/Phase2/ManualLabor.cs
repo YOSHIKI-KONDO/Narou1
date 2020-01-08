@@ -15,10 +15,10 @@ public class ManualLabor : LOOP_ACTION
 
     // Use this for initialization
     void Awake () {
-        AwakeLoopAction(MainAction.ActionEnum.Loop.manual_labor, 30);
-        progress.progressCostList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.7));
+        AwakeLoopAction(MainAction.ActionEnum.Loop.manual_labor, 10,1);
+        progress.progressCostList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.6));
         progress.progressEffectList.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 1));
-        progress.completeEffectList.Add(new Dealing(ResourceKind.filet_o_fish, Dealing.R_ParaKind.current, 1));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.bread, Dealing.R_ParaKind.current, 1));
     }
 
 	// Use this for initialization

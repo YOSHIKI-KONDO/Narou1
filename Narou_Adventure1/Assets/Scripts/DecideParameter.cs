@@ -67,7 +67,7 @@ public class DecideParameter : BASE {
         main.rsc.Max_Base[(int)ResourceKind.filet_o_fish] = 3;
         main.rsc.Max_Base[(int)ResourceKind.stone] = 10;
         main.rsc.Max_Base[(int)ResourceKind.magi_stone] = 5;
-        main.rsc.Max_Base[(int)ResourceKind.ap] = 999;
+        main.rsc.Max_Base[(int)ResourceKind.ap] = 9999;
         main.rsc.Max_Base[(int)ResourceKind.fur] = 3;
         main.rsc.Max_Base[(int)ResourceKind.premium_fur] = 3;
         //装備アイテム：種類毎の上限(0ならば上限なし、無限)

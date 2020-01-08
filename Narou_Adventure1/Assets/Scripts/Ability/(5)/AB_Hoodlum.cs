@@ -19,12 +19,12 @@ public class AB_Hoodlum : ABILITY
     // Use this for initialization
     void Awake () {
         AwakeAbility(AbilityKind.hoodlum, 50, 1.2);
-        progress.unlockCostList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, -1));
+        progress.unlockCostList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, -50));
         progress.progressCostList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.5));
         progress.completeEffectList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.max, 0.1));
         progress.completeEffectList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.max, -2));
         progress.completeEffectList.Add(new Dealing(ResourceKind.stone, Dealing.R_ParaKind.max, 2));
-        progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 0.05));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 2));
     }
 
 	// Use this for initialization
