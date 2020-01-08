@@ -354,6 +354,7 @@ public class BattleAndSkillCtrl : BASE {
         int column = 0;
         foreach (var slot_ins in slots_ins)
         {
+            slot_ins.CanClick = true;
             slots[row, column] = slot_ins;
             int row_temp = row;
             int column_temp = column;
