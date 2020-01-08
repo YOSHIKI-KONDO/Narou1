@@ -44,6 +44,7 @@ public class SaveDeclare : BASE {
 
         InitializeArray(ref main.SR.released_resource, num_resource);
         InitializeArray(ref main.SR.completed_resource, num_resource);
+        InitializeArray(ref main.SR.discover_resource, num_resource);
 
         InitializeArray(ref main.SR.released_instant, num_instantAction);
         InitializeArray(ref main.SR.completed_instant, num_instantAction);
@@ -87,6 +88,7 @@ public class SaveDeclare : BASE {
         InitializeArray(ref main.SR.watched_Inventory, num_item);
         InitializeArray(ref main.SR.level_Item, num_item);
         InitializeArray(ref main.SR.locked_Item, num_item);
+        InitializeArray(ref main.SR.discover_Item, num_item);
 
         /* Need */
         InitializeArray(ref main.SR.needLimits, num_need);

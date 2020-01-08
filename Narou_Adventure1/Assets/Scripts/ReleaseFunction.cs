@@ -4,6 +4,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.Events;
 using static UsefulMethod;
 
 /// <summary>
@@ -23,6 +24,7 @@ public class ReleaseFunction : BASE{
     GameObject Obj;
     EnterExitEvent eeevent;
     bool hovered;
+    public UnityAction action_activated;//activeになっている間updateで呼ばれる関数
 
     private void Awake()
     {
@@ -114,6 +116,7 @@ public class ReleaseFunction : BASE{
     public void Activate()
     {
         setActive(Obj);
+        action_activated?.Invoke();
     }
 
     public void Deactivate()
