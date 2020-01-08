@@ -13,7 +13,7 @@ public class Item_Inventory : BASE{
     public Toggle lockToggle;
     public GameObject newObject;
     public PopUp popUp;
-    public string Name_str, Description_str, Max_Str, Need_str, Effect_str, Cost_str, Sell_str;
+    public string Name_str, Description_str, Max_Str, Need_str, Effect_str, Cost_str, Sell_str, LvCost_Str, LvEffect_Str;
     public bool Watched { get => main.SR.watched_Inventory[(int)kind]; set => main.SR.watched_Inventory[(int)kind] = value; }
     bool hovered;
     EnterExitEvent eeevent;
@@ -136,16 +136,22 @@ public class Item_Inventory : BASE{
             Effect_str = ProgressDetail(items[(int)kind].EffectLists, items[(int)kind].LevelFactor());
             Cost_str = ProgressDetail(items[(int)kind].BuyLists);
             Sell_str = ProgressDetail(items[(int)kind].SellLists);
-            Cost_str = ProgressDetail(items[(int)kind].BuyLists);
+            LvCost_Str = ProgressDetail(items[(int)kind].itemPointDeal);
+            LvEffect_Str = items[(int)kind].DetailLfactor(items[(int)kind].level + 1);
+
             //needいらない
 
             ChangeTextAdaptive(Name_str, popUp.texts[0], popUp.texts[0].gameObject);
-            ChangeTextAdaptive(Description_str, popUp.texts[1], popUp.texts[1].gameObject);
-            ChangeTextAdaptive(Max_Str, popUp.texts[2], popUp.texts[2].gameObject);
-            ChangeTextAdaptive(Need_str, popUp.texts[4], popUp.texts[3].gameObject, popUp.texts[4].gameObject);
-            ChangeTextAdaptive(Effect_str, popUp.texts[6], popUp.texts[5].gameObject, popUp.texts[6].gameObject);
-            ChangeTextAdaptive(Cost_str, popUp.texts[8], popUp.texts[7].gameObject, popUp.texts[8].gameObject);
-            ChangeTextAdaptive(Sell_str, popUp.texts[10], popUp.texts[9].gameObject, popUp.texts[10].gameObject);
+            ChangeTextAdaptive(rarityText.text, popUp.texts[1], popUp.texts[1].gameObject);
+            ChangeTextAdaptive(Description_str, popUp.texts[2], popUp.texts[2].gameObject);
+            ChangeTextAdaptive(levelText.text, popUp.texts[3], popUp.texts[3].gameObject);
+            ChangeTextAdaptive(Need_str, popUp.texts[5], popUp.texts[4].gameObject, popUp.texts[5].gameObject);
+            ChangeTextAdaptive(Cost_str, popUp.texts[7], popUp.texts[6].gameObject, popUp.texts[7].gameObject);
+            ChangeTextAdaptive(Sell_str, popUp.texts[9], popUp.texts[8].gameObject, popUp.texts[9].gameObject);
+            ChangeTextAdaptive(LvCost_Str, popUp.texts[11], popUp.texts[10].gameObject, popUp.texts[11].gameObject);
+            ChangeTextAdaptive(LvEffect_Str, popUp.texts[13], popUp.texts[12].gameObject, popUp.texts[13].gameObject);
+            ChangeTextAdaptive(Effect_str, popUp.texts[15], popUp.texts[14].gameObject, popUp.texts[15].gameObject);
+            ChangeTextAdaptive(Max_Str, popUp.texts[16], popUp.texts[16].gameObject);
         }
     }
 }

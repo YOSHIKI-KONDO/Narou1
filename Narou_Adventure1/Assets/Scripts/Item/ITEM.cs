@@ -27,24 +27,45 @@ public class ITEM : BASE, INeed
     PopUp popUp;
     ReleaseFunction release;
     public NeedFunciton need;
-    public string Name_str, Description_str, Max_Str, Need_str, Effect_str, Cost_str, Sell_str;
+    public string Name_str, Description_str, Max_Str, Need_str, Effect_str, Cost_str, Sell_str, LvCost_Str, LvEffect_Str;
+    public List<Dealing> itemPointDeal = new List<Dealing>(); //実際の処理はdealingを通じて行わない。表示用。
 
     public int[] InventoryNum { get => main.SR.inventoryNum_Item; set => main.SR.inventoryNum_Item = value; }
     public int[] equipNum { get => main.SR.equipNum_Item; set => main.SR.equipNum_Item = value; }
     public int level { get => main.SR.level_Item[(int)kind]; set => main.SR.level_Item[(int)kind] = value; }
     public int maxLevel = 30;
     public double level_power;
-    public double LevelFactor() { return levelFactor_cash ?? CalculateLFactor(); }
+    public double LevelFactor() { return levelFactor_cash ?? CalculateCurrentLFactor(); }
     double? levelFactor_cash;//レベルアップしたときにnullを入れる
     public void LevelUp() { level++; levelFactor_cash = null; }
-    double CalculateLFactor()
+    double CalculateCurrentLFactor()
     {
-        levelFactor_cash = Math.Pow(level, level_power);
-        if(level >= maxLevel)
-        {
-            levelFactor_cash += 0.5;//50%する
-        }
+        levelFactor_cash = CalculateLFactor(level);
         return (double)levelFactor_cash;
+    }
+
+    //重い
+    public string DetailLfactor(int Level)
+    {
+        if(Level >= maxLevel)
+        {
+            return "Max";
+        }
+        else
+        {
+            return "+" + tDigit(CalculateLFactor(Level), 2) + "%";
+        }
+    }
+
+    //重い
+    double CalculateLFactor(int Level)
+    {
+        double cal = Math.Pow(Level, level_power);
+        if (Level >= maxLevel)
+        {
+            cal += 0.5; //+50%bonus
+        }
+        return cal;
     }
 
     public bool haveSource;
@@ -114,6 +135,7 @@ public class ITEM : BASE, INeed
         sellButton.onClick.AddListener(() => main.itemCtrl.Sell_Shop(kind));
         levelUpButton.onClick.AddListener(() => main.itemCtrl.LevelUp(kind));
         rarityText.text = StarFromRarity(rarity);
+        SetItemPointDealing(rarity);
         lockToggle.onValueChanged.AddListener(x => main.itemCtrl.SynchronizeLock(x, kind));
 
 
@@ -164,6 +186,32 @@ public class ITEM : BASE, INeed
         return sum;
     }
 
+    //表示用にitemPointをDealingに入れるだけの関数。実際の処理はdealingを通じて行わない。
+    void SetItemPointDealing(int Rarity)
+    {
+        if (itemPointDeal.Count == 0) { itemPointDeal.Add(null); }
+        switch (Rarity)
+        {
+            case 1:
+                itemPointDeal[0] = new Dealing(ResourceKind.itemPoint1, Dealing.R_ParaKind.current, -1);
+                break;
+            case 2:
+                itemPointDeal[0] = new Dealing(ResourceKind.itemPoint2, Dealing.R_ParaKind.current, -1);
+                break;
+            case 3:
+                itemPointDeal[0] = new Dealing(ResourceKind.itemPoint3, Dealing.R_ParaKind.current, -1);
+                break;
+            case 4:
+                itemPointDeal[0] = new Dealing(ResourceKind.itemPoint4, Dealing.R_ParaKind.current, -1);
+                break;
+            case 5:
+                itemPointDeal[0] = new Dealing(ResourceKind.itemPoint5, Dealing.R_ParaKind.current, -1);
+                break;
+            default:
+                break;
+        }
+    }
+
     double CalculatePower(int _maxLevel, double objective)
     {
         return Math.Log(objective, _maxLevel);
@@ -175,7 +223,7 @@ public class ITEM : BASE, INeed
         nameText.text = main.enumCtrl.items[(int)kind].Name();
         maxNumText.text = (MaxEquip == null) ? "∞" : MaxEquip.ToString();
         numText.text = main.itemCtrl.equipNum[(int)kind].ToString() + "/" + (main.itemCtrl.equipNum[(int)kind] + main.itemCtrl.InventoryNum[(int)kind]).ToString();
-        levelText.text = level >= maxLevel ? "Lv Max" : "Lv" + level.ToString() + "/" + maxLevel.ToString();
+        levelText.text = level >= maxLevel ? "Lv.Max" : "Lv." + level.ToString() + "/" + maxLevel.ToString();
     }
 
     public void CheckButton()
@@ -223,19 +271,25 @@ public class ITEM : BASE, INeed
             Effect_str = ProgressDetail(EffectLists, LevelFactor());
             Cost_str = ProgressDetail(BuyLists);
             Sell_str = ProgressDetail(SellLists);
-            Cost_str = ProgressDetail(BuyLists);
+            LvCost_Str = ProgressDetail(itemPointDeal);
+            LvEffect_Str = DetailLfactor(level + 1);
+
 
             //needが設定されている場合にのみ書き換える。
             //そのため、ない場合は手動でNeed_strを変えることが可能。
             if (need.hasNeeds) { Need_str = need.Detail(); }
 
             ChangeTextAdaptive(Name_str, popUp.texts[0], popUp.texts[0].gameObject);
-            ChangeTextAdaptive(Description_str, popUp.texts[1], popUp.texts[1].gameObject);
-            ChangeTextAdaptive(Max_Str, popUp.texts[2], popUp.texts[2].gameObject);
-            ChangeTextAdaptive(Need_str, popUp.texts[4], popUp.texts[3].gameObject, popUp.texts[4].gameObject);
-            ChangeTextAdaptive(Effect_str, popUp.texts[6], popUp.texts[5].gameObject, popUp.texts[6].gameObject);
-            ChangeTextAdaptive(Cost_str, popUp.texts[8], popUp.texts[7].gameObject, popUp.texts[8].gameObject);
-            ChangeTextAdaptive(Sell_str, popUp.texts[10], popUp.texts[9].gameObject, popUp.texts[10].gameObject);
+            ChangeTextAdaptive(rarityText.text, popUp.texts[1], popUp.texts[1].gameObject);
+            ChangeTextAdaptive(Description_str, popUp.texts[2], popUp.texts[2].gameObject);
+            ChangeTextAdaptive(levelText.text, popUp.texts[3], popUp.texts[3].gameObject);
+            ChangeTextAdaptive(Need_str, popUp.texts[5], popUp.texts[4].gameObject, popUp.texts[5].gameObject);
+            ChangeTextAdaptive(Cost_str, popUp.texts[7], popUp.texts[6].gameObject, popUp.texts[7].gameObject);
+            ChangeTextAdaptive(Sell_str, popUp.texts[9], popUp.texts[8].gameObject, popUp.texts[9].gameObject);
+            ChangeTextAdaptive(LvCost_Str, popUp.texts[11], popUp.texts[10].gameObject, popUp.texts[11].gameObject);  
+            ChangeTextAdaptive(LvEffect_Str, popUp.texts[13], popUp.texts[12].gameObject, popUp.texts[13].gameObject);
+            ChangeTextAdaptive(Effect_str, popUp.texts[15], popUp.texts[14].gameObject, popUp.texts[15].gameObject);
+            ChangeTextAdaptive(Max_Str, popUp.texts[16], popUp.texts[16].gameObject);
         }
     }
 
