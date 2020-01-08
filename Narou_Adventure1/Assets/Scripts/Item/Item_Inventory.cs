@@ -6,13 +6,15 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using static UsefulMethod;
 
-public class Item_Inventory : BASE{
+public class Item_Inventory : BASE
+{
     public ItemKind kind;
     public Button equipButton, sellButtion, levelUpButton;
     public Text spaceText, nameText, numText, rarityText, levelText, maxNumText;
     public Toggle lockToggle;
     public GameObject newObject;
     public PopUp popUp;
+    public Transform attributesParent;
     public string Name_str, Description_str, Max_Str, Need_str, Effect_str, Cost_str, Sell_str, LvCost_Str, LvEffect_Str;
     public bool Watched { get => main.SR.watched_Inventory[(int)kind]; set => main.SR.watched_Inventory[(int)kind] = value; }
     bool hovered;
@@ -50,6 +52,8 @@ public class Item_Inventory : BASE{
         //lock toggle
         lockToggle.onValueChanged.AddListener(x => main.itemCtrl.SynchronizeLock(x, kind));
         lockToggle.isOn = main.SR.locked_Item[(int)kind];//セーブを代入
+
+        main.iconCtrl.AddIcon(items[(int)kind].sources, attributesParent);
     }
 	
 	// Update is called once per frame
@@ -137,7 +141,7 @@ public class Item_Inventory : BASE{
             Cost_str = ProgressDetail(items[(int)kind].BuyLists);
             Sell_str = ProgressDetail(items[(int)kind].SellLists);
             LvCost_Str = ProgressDetail(items[(int)kind].itemPointDeal);
-            LvEffect_Str = items[(int)kind].DetailLfactor(items[(int)kind].level + 1);
+            LvEffect_Str = items[(int)kind].DetailNextLEffect(items[(int)kind].level);
 
             //needいらない
 

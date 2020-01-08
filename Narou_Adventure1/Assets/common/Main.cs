@@ -52,6 +52,7 @@ public class Main : MonoBehaviour
     public NpcSkillCtrl npcSkillCtrl;
     public ResourceTextControll resourceTextCtrl;
     public AnalyticsCtrl analytics;
+    public IconCtrl iconCtrl;
     public Announce announce;
     public Announce announce_d; //dungeon
     public Focus focus;

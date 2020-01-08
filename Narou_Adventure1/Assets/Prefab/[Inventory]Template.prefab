@@ -761,7 +761,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7ad4539395ea432c8ba235080a2e5fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  main: {fileID: 0}
   kind: 0
   equipButton: {fileID: 2137373848159909867}
   sellButtion: {fileID: 2411217686480168090}
@@ -775,6 +774,7 @@ MonoBehaviour:
   lockToggle: {fileID: 3080156033376535260}
   newObject: {fileID: 7812755203726120867}
   popUp: {fileID: 0}
+  attributesParent: {fileID: 1491863774556602849}
   Name_str: 
   Description_str: 
   Max_Str: 
@@ -782,6 +782,8 @@ MonoBehaviour:
   Effect_str: 
   Cost_str: 
   Sell_str: 
+  LvCost_Str: 
+  LvEffect_Str: 
 --- !u!1 &4837177131439287890
 GameObject:
   m_ObjectHideFlags: 0

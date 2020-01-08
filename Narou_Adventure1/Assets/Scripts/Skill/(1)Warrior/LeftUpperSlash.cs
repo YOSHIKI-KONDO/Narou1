@@ -19,7 +19,7 @@ public class LeftUpperSlash : SKILL
         useCosts.Add(new Dealing(ResourceKind.mp, Dealing.R_ParaKind.current, -1));
         warriorAtks.Add(new WarriorAttack(5));
 
-        attributes.Add(NeedKind.fire);
+        SetSource(NeedKind.fire);
     }
 
 	// Use this for initialization

@@ -277,14 +277,14 @@ public class BattleAndSkillCtrl : BASE {
                     skills[(int)slotKinds[i_r, i_c]].isCombo = false;
                     continue;
                 }
-                if (skills[(int)slotKinds[i_r - 1, i_c]].attributes.Count == 0)
+                if (skills[(int)slotKinds[i_r - 1, i_c]].sources.Count == 0)
                 {
                     skills[(int)slotKinds[i_r, i_c]].isCombo = false;
                     continue;
                 }
 
                 //判定
-                if (skills[(int)slotKinds[i_r - 1, i_c]].attributes.Contains(skills[(int)slotKinds[i_r, i_c]].combo.kind))
+                if (skills[(int)slotKinds[i_r - 1, i_c]].sources.Contains(skills[(int)slotKinds[i_r, i_c]].combo.kind))
                 {
                     skills[(int)slotKinds[i_r, i_c]].isCombo = true;
                 }
@@ -888,7 +888,7 @@ public class BattleAndSkillCtrl : BASE {
                     }
                     break;
                 case Drop.DropKind.attribute_and:
-                    foreach (var attribute in skills[(int)attackSkillKind].attributes)
+                    foreach (var attribute in skills[(int)attackSkillKind].sources)
                     {
                         if (attribute != drop.attributes_AND)
                         {
@@ -897,7 +897,7 @@ public class BattleAndSkillCtrl : BASE {
                     }
                     break;
                 case Drop.DropKind.attribute_or:
-                    foreach (var attribute in skills[(int)attackSkillKind].attributes)
+                    foreach (var attribute in skills[(int)attackSkillKind].sources)
                     {
                         if (attribute == drop.attributes_OR)
                         {
