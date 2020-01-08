@@ -17,7 +17,7 @@ public class StudyInChurch : UPGRADE_ACTION
         AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.study_in_church, 1, 0, null, false, false);
         progress.initCostList.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -30));
         progress.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -20));
-        progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 90));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 140));
 	}
 
 	// Use this for initialization

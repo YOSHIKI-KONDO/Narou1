@@ -64,7 +64,7 @@ public class BattleComponents : BASE {
         popUp.texts[0].text = Name_text.text;
         popUp.texts[1].text = StarFromRank(main.battleCtrl.enemys[(int)kind].rank);
         //popUp.texts[2]
-        popUp.texts[3].text = "HP:" + maxHp + ",Atk:" + atk_text.text + ",Int:" + main.battleCtrl.enemys[(int)kind].interval.ToString("F0");
+        popUp.texts[3].text = "HP:" + maxHp + ", " + atk_text.text + ", Int:" + main.battleCtrl.enemys[(int)kind].interval.ToString("F0");
         ChangeTextAdaptive(DropsDetail(main.battleCtrl.enemys[(int)kind].drops), popUp.texts[5], popUp.texts[4].gameObject, popUp.texts[5].gameObject);
     }
 

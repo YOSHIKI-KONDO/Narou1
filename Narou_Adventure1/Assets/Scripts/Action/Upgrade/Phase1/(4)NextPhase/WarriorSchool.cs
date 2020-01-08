@@ -28,7 +28,7 @@ public class WarriorSchool : UPGRADE_ACTION
         progress.completeEffectList.Add(new Dealing(AbilityKind.beginner_swordmanship, Dealing.A_ParaKind.trainRate, 0.5));
         progress.completeEffectList.Add(new Dealing(AbilityKind.beginner_spearmanship, Dealing.A_ParaKind.trainRate, 0.5));
         progress.completeEffectList.Add(new Dealing(AbilityKind.beginner_bojutsu, Dealing.A_ParaKind.trainRate, 0.5));
-        progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 2));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 200));
         progress.completeEffectList.Add(new Dealing(ResourceKind.inventorySpace, Dealing.R_ParaKind.max, 1));
         progress.completeEffectList.Add(new Item_Dealing(ItemKind.warrior_textbook));
     }

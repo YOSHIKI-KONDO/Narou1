@@ -467,6 +467,8 @@ MonoBehaviour:
   Effect_str: 
   Cost_str: 
   Sell_str: 
+  LvCost_Str: 
+  LvEffect_Str: 
   maxLevel: 30
   level_power: 0
   haveSource: 0
@@ -1459,6 +1461,8 @@ MonoBehaviour:
   Effect_str: 
   Cost_str: 
   Sell_str: 
+  LvCost_Str: 
+  LvEffect_Str: 
   maxLevel: 30
   level_power: 0
   haveSource: 0
@@ -1622,6 +1626,8 @@ MonoBehaviour:
   Effect_str: 
   Cost_str: 
   Sell_str: 
+  LvCost_Str: 
+  LvEffect_Str: 
   maxLevel: 30
   level_power: 0
   haveSource: 0
@@ -4346,6 +4352,7 @@ MonoBehaviour:
   ProgressCost_str: 
   Drops_str: 
   FirstDrops_str: 
+  RecommendedLevel_str: 
 --- !u!1 &191675053
 GameObject:
   m_ObjectHideFlags: 0
@@ -5214,6 +5221,8 @@ MonoBehaviour:
   Effect_str: 
   Cost_str: 
   Sell_str: 
+  LvCost_Str: 
+  LvEffect_Str: 
   maxLevel: 30
   level_power: 0
   haveSource: 0
@@ -5591,6 +5600,8 @@ MonoBehaviour:
   Effect_str: 
   Cost_str: 
   Sell_str: 
+  LvCost_Str: 
+  LvEffect_Str: 
   maxLevel: 30
   level_power: 0
   haveSource: 0
@@ -5761,6 +5772,7 @@ MonoBehaviour:
   ProgressCost_str: 
   Drops_str: 
   FirstDrops_str: 
+  RecommendedLevel_str: 
 --- !u!1 &219157818
 GameObject:
   m_ObjectHideFlags: 0
@@ -7285,6 +7297,7 @@ MonoBehaviour:
   ProgressCost_str: 
   Drops_str: 
   FirstDrops_str: 
+  RecommendedLevel_str: 
 --- !u!1 &300956546
 GameObject:
   m_ObjectHideFlags: 0
@@ -8894,6 +8907,7 @@ MonoBehaviour:
   ProgressCost_str: 
   Drops_str: 
   FirstDrops_str: 
+  RecommendedLevel_str: 
 --- !u!1 &350156675
 GameObject:
   m_ObjectHideFlags: 0
@@ -10809,6 +10823,7 @@ MonoBehaviour:
   ProgressCost_str: 
   Drops_str: 
   FirstDrops_str: 
+  RecommendedLevel_str: 
 --- !u!1001 &412234136
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11589,6 +11604,8 @@ MonoBehaviour:
   Effect_str: 
   Cost_str: 
   Sell_str: 
+  LvCost_Str: 
+  LvEffect_Str: 
   maxLevel: 30
   level_power: 0
   haveSource: 0
@@ -13847,6 +13864,8 @@ MonoBehaviour:
   Effect_str: 
   Cost_str: 
   Sell_str: 
+  LvCost_Str: 
+  LvEffect_Str: 
   maxLevel: 30
   level_power: 0
   haveSource: 0
@@ -17960,6 +17979,7 @@ MonoBehaviour:
   ProgressCost_str: 
   Drops_str: 
   FirstDrops_str: 
+  RecommendedLevel_str: 
 --- !u!1 &620682943
 GameObject:
   m_ObjectHideFlags: 0
@@ -18400,6 +18420,8 @@ MonoBehaviour:
   Effect_str: 
   Cost_str: 
   Sell_str: 
+  LvCost_Str: 
+  LvEffect_Str: 
   maxLevel: 30
   level_power: 0
   haveSource: 0
@@ -18563,6 +18585,8 @@ MonoBehaviour:
   Effect_str: 
   Cost_str: 
   Sell_str: 
+  LvCost_Str: 
+  LvEffect_Str: 
   maxLevel: 30
   level_power: 0
   haveSource: 0
@@ -19732,6 +19756,7 @@ MonoBehaviour:
   ProgressCost_str: 
   Drops_str: 
   FirstDrops_str: 
+  RecommendedLevel_str: 
 --- !u!1 &684152509
 GameObject:
   m_ObjectHideFlags: 0
@@ -21377,6 +21402,7 @@ MonoBehaviour:
   ProgressCost_str: 
   Drops_str: 
   FirstDrops_str: 
+  RecommendedLevel_str: 
 --- !u!1 &699244538
 GameObject:
   m_ObjectHideFlags: 0
@@ -25351,6 +25377,7 @@ MonoBehaviour:
   ProgressCost_str: 
   Drops_str: 
   FirstDrops_str: 
+  RecommendedLevel_str: 
 --- !u!1001 &867925985
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27475,6 +27502,8 @@ MonoBehaviour:
   Effect_str: 
   Cost_str: 
   Sell_str: 
+  LvCost_Str: 
+  LvEffect_Str: 
   maxLevel: 30
   level_power: 0
   haveSource: 0
@@ -28976,6 +29005,8 @@ MonoBehaviour:
   Effect_str: 
   Cost_str: 
   Sell_str: 
+  LvCost_Str: 
+  LvEffect_Str: 
   maxLevel: 30
   level_power: 0
   haveSource: 0
@@ -30646,6 +30677,8 @@ MonoBehaviour:
   Effect_str: 
   Cost_str: 
   Sell_str: 
+  LvCost_Str: 
+  LvEffect_Str: 
   maxLevel: 30
   level_power: 0
   haveSource: 0
@@ -32750,6 +32783,8 @@ MonoBehaviour:
   Effect_str: 
   Cost_str: 
   Sell_str: 
+  LvCost_Str: 
+  LvEffect_Str: 
   maxLevel: 30
   level_power: 0
   haveSource: 0
@@ -34933,6 +34968,8 @@ MonoBehaviour:
   Effect_str: 
   Cost_str: 
   Sell_str: 
+  LvCost_Str: 
+  LvEffect_Str: 
   maxLevel: 30
   level_power: 0
   haveSource: 0
@@ -35458,6 +35495,8 @@ MonoBehaviour:
   Effect_str: 
   Cost_str: 
   Sell_str: 
+  LvCost_Str: 
+  LvEffect_Str: 
   maxLevel: 30
   level_power: 0
   haveSource: 0
@@ -35760,6 +35799,8 @@ MonoBehaviour:
   Effect_str: 
   Cost_str: 
   Sell_str: 
+  LvCost_Str: 
+  LvEffect_Str: 
   maxLevel: 30
   level_power: 0
   haveSource: 0
@@ -36463,6 +36504,8 @@ MonoBehaviour:
   Effect_str: 
   Cost_str: 
   Sell_str: 
+  LvCost_Str: 
+  LvEffect_Str: 
   maxLevel: 30
   level_power: 0
   haveSource: 0
@@ -37077,6 +37120,8 @@ MonoBehaviour:
   Effect_str: 
   Cost_str: 
   Sell_str: 
+  LvCost_Str: 
+  LvEffect_Str: 
   maxLevel: 30
   level_power: 0
   haveSource: 0
@@ -39794,6 +39839,8 @@ MonoBehaviour:
   Effect_str: 
   Cost_str: 
   Sell_str: 
+  LvCost_Str: 
+  LvEffect_Str: 
   maxLevel: 30
   level_power: 0
   haveSource: 0
@@ -40449,6 +40496,8 @@ MonoBehaviour:
   Effect_str: 
   Cost_str: 
   Sell_str: 
+  LvCost_Str: 
+  LvEffect_Str: 
   maxLevel: 30
   level_power: 0
   haveSource: 0
@@ -41955,6 +42004,7 @@ MonoBehaviour:
   ProgressCost_str: 
   Drops_str: 
   FirstDrops_str: 
+  RecommendedLevel_str: 
 --- !u!1001 &1515820168
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42939,6 +42989,8 @@ MonoBehaviour:
   Effect_str: 
   Cost_str: 
   Sell_str: 
+  LvCost_Str: 
+  LvEffect_Str: 
   maxLevel: 30
   level_power: 0
   haveSource: 0
@@ -43321,6 +43373,8 @@ MonoBehaviour:
   Effect_str: 
   Cost_str: 
   Sell_str: 
+  LvCost_Str: 
+  LvEffect_Str: 
   maxLevel: 30
   level_power: 0
   haveSource: 0
@@ -48494,6 +48548,8 @@ MonoBehaviour:
   Effect_str: 
   Cost_str: 
   Sell_str: 
+  LvCost_Str: 
+  LvEffect_Str: 
   maxLevel: 30
   level_power: 0
   haveSource: 0
@@ -49926,6 +49982,8 @@ MonoBehaviour:
   Effect_str: 
   Cost_str: 
   Sell_str: 
+  LvCost_Str: 
+  LvEffect_Str: 
   maxLevel: 30
   level_power: 0
   haveSource: 0
@@ -53453,6 +53511,8 @@ MonoBehaviour:
   Effect_str: 
   Cost_str: 
   Sell_str: 
+  LvCost_Str: 
+  LvEffect_Str: 
   maxLevel: 30
   level_power: 0
   haveSource: 0
@@ -54018,6 +54078,8 @@ MonoBehaviour:
   Effect_str: 
   Cost_str: 
   Sell_str: 
+  LvCost_Str: 
+  LvEffect_Str: 
   maxLevel: 30
   level_power: 0
   haveSource: 0
@@ -54939,6 +55001,8 @@ MonoBehaviour:
   Effect_str: 
   Cost_str: 
   Sell_str: 
+  LvCost_Str: 
+  LvEffect_Str: 
   maxLevel: 30
   level_power: 0
   haveSource: 0
@@ -56848,6 +56912,8 @@ MonoBehaviour:
   Effect_str: 
   Cost_str: 
   Sell_str: 
+  LvCost_Str: 
+  LvEffect_Str: 
   maxLevel: 30
   level_power: 0
   haveSource: 0
@@ -58975,6 +59041,8 @@ MonoBehaviour:
   Effect_str: 
   Cost_str: 
   Sell_str: 
+  LvCost_Str: 
+  LvEffect_Str: 
   maxLevel: 30
   level_power: 0
   haveSource: 0
@@ -59844,6 +59912,8 @@ MonoBehaviour:
   Effect_str: 
   Cost_str: 
   Sell_str: 
+  LvCost_Str: 
+  LvEffect_Str: 
   maxLevel: 30
   level_power: 0
   haveSource: 0

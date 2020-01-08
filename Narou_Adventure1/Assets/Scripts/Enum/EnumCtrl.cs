@@ -226,7 +226,7 @@ public class EnumCtrl : BASE {
         upgradeActions.Add(new template(ActionEnum.Upgrade.leave_the_town, "Leave the Town", "村を出る", "Leave the village. Head to the school city beyond the plains and forests. Make sure that you have nothing to do now.", "村を出る。平原と森を越えた先の学園都市に向かう。やり残したことはないか確認しよう。"));
         //フェーズ２（学校）
         upgradeActions.Add(new template(ActionEnum.Upgrade.academic_city, "Academic City", "学園都市へ向かう", "The girl says she does want to go with me. Prepare your luggage for two people.", "少女が付いてくると言って聞かない。二人分の荷物を用意しよう。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.into_a_dormitory, "Into_a Dormitory", "学生寮に入る", "Breaks up with accompanying person and enters dormitory. [Please say hello to me when you are calm down.]", "同行者と別れ、寮に入る。「また後で、落ち着いたら挨拶に来てね。」"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.into_a_dormitory, "Into a Dormitory", "学生寮に入る", "Breaks up with accompanying person and enters dormitory. [Please say hello to me when you are calm down.]", "同行者と別れ、寮に入る。「また後で、落ち着いたら挨拶に来てね。」"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.entrance_ceremony, "Entrance Ceremony", "入学式", "A stage for us. I feel lifted with thinking about my future.", "晴れ舞台だ。これからの生活に向けて気分が高揚する。"));
             //攫われイベント
         upgradeActions.Add(new template(ActionEnum.Upgrade.norns_room, "Norn's room", "ノルンの部屋に行く", "Go to the girl's room to say hello", "少女の部屋へ挨拶に向かう。"));
@@ -239,7 +239,19 @@ public class EnumCtrl : BASE {
         upgradeActions.Add(new template(ActionEnum.Upgrade.wholesaler_of_drugs, "Wholesaler of Drugs,", "医薬品卸", "nothing", "薬はいくつあっても安心だ。市場に回すため引き取らせてもらいたい。(３回まで)"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.in_cellar, "In cellar", "地下室へ", "nothing", "ゴミ屋敷から、地下へと続くあなぐらが掘られていた。足元には花びらが散乱している。"));
 
-            //戦士
+            //授業
+        upgradeActions.Add(new template(ActionEnum.Upgrade.sword_classwork, "Sword Classwork", "剣術の授業", "nothing", "筋骨隆々な先生が手取り足取り教えてくれるぞ。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.spear_classwork, "Spear Classwork", "槍術の授業", "nothing", "槍術の先生の趣味はスピアフィッシングとのこと。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.rod_classwork, "Rod Classwork", "棒術の授業", "nothing", "先生曰く、棒術を覚えるとパン屋で生地をこねるのに便利らしい。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.fire_magic_classwork, "Fire Magic Classwork", "火魔術の授業", "nothing", "火魔術は危険だが、生産には必須である。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.water_magic_classwork, "Water Magic Classwork", "水魔術の授業", "nothing", "水中の魚を容易く捕らえることができる、素晴らしい魔術だ。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.wind_magic_classwork, "Wind Magic Classwork", "風魔術の授業", "nothing", "風を刃のように扱うことができる、おそろしい魔術だ。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.earth_magic_classwork, "Earth Magic Classwork", "土魔術の授業", "nothing", "土魔術に精通した人は土地の開拓に重宝されるらしい。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.animal_handling_classwork, "Animal HandLing Classwork", "動物使役の授業", "nothing", "教室がペットで溢れ返り、うるさい。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.use_tools_classwork, "Use Tools Classwork", "道具使役の授業", "nothing", "道具に精通することで、様々な生産職への道が開かれるとのこと。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.life_magic_classwork, "Life Magic Classwork", "生活魔法の授業", "nothing", "いずれ役立つので、とりあえず授業を受ける人が多い。"));
+
+        //戦士
         upgradeActions.Add(new template(ActionEnum.Upgrade.apprentice_warrior, "Apprentice Warrior", "戦士見習い", "nothing", "見習いとして認められる。更なる技術の習熟に臨むべし。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.warrior, "Warrior", "ウォーリアー", "nothing", "nothing"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.soldier, "Soldierg", "ソルジャー", "nothing", "nothing"));

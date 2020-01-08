@@ -100,6 +100,18 @@
             wholesaler_of_drugs,
             in_cellar,
 
+            //授業
+            sword_classwork,
+            spear_classwork,
+            rod_classwork,
+            fire_magic_classwork,
+            water_magic_classwork,
+            wind_magic_classwork,
+            earth_magic_classwork,
+            animal_handling_classwork,
+            use_tools_classwork,
+            life_magic_classwork,
+
             //戦士
             apprentice_warrior,
             warrior,

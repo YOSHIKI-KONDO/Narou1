@@ -16,8 +16,8 @@ public class I_SorcererTextbook : ITEM
     void Awake()
     {
         AwakeItem(ItemKind.sorcerer_textbook, 1,1);
-        BuyLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -300));
-        SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 150));
+        BuyLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -600));
+        SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 300));
         EffectLists.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.max, 10));
         EffectLists.Add(new Dealing(AbilityKind.primary_fire_magic, Dealing.A_ParaKind.maxLevel, 1));
         EffectLists.Add(new Dealing(AbilityKind.primary_water_magic, Dealing.A_ParaKind.maxLevel, 1));
