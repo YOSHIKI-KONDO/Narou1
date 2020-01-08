@@ -10,7 +10,7 @@ public class LizardMan : ENEMY
     // Use this for initialization
     void Awake()
     {
-        AwakeEnemy(EnemyKind.lizard_man, 25, 5f, 13, 0, 10, 30, 1);
+        AwakeEnemy(EnemyKind.lizard_man);
         drops.Add(new Drop(ResourceKind.stone, 1, 5));
     }
 

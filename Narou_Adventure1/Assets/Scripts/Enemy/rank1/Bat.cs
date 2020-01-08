@@ -10,7 +10,7 @@ public class Bat : ENEMY
     // Use this for initialization
     void Awake()
     {
-        AwakeEnemy(EnemyKind.bat, 8, 4, 2, 0, 1, 3, 1);
+        AwakeEnemy(EnemyKind.bat);
         drops.Add(new Drop(ResourceKind.stone, 1, 5));
     }
 

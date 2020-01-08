@@ -10,7 +10,7 @@ public class Harpy : ENEMY
     // Use this for initialization
     void Awake()
     {
-        AwakeEnemy(EnemyKind.harpy, 50, 3, 10, 0, 10, 20, 1);
+        AwakeEnemy(EnemyKind.harpy);
         drops.Add(new Item_Drop(ItemKind.animalfood, 3));
     }
 

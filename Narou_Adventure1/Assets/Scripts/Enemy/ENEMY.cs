@@ -18,19 +18,19 @@ public class ENEMY : BASE {
     //public List<Drop> drops_atr_OR = new List<Drop>();   //必要な属性どれか一つを使って倒した場合の報酬(ii)
     //public List<Drop> drops_skill = new List<Drop>();    //特定のスキルを使って倒した場合の報酬(iii)
 
-    public void AwakeEnemy(EnemyKind kind, double maxHp, float interval, double attack, double defense, int gold, int exp, int rank)
+    public void AwakeEnemy(EnemyKind kind)
     {
         StartBASE();
         this.kind = kind;
         main.battleCtrl.enemys[(int)kind] = this;
 
-        this.maxHp = maxHp;
-        this.interval = interval;
-        this.attack = attack;
-        this.defense = defense;
-        this.rank = rank;
-        drops.Add(new Drop(ResourceKind.exp, exp, 100));
-        drops.Add(new Drop(ResourceKind.gold, gold, 100));
+        this.maxHp = main.enemyParameter.parameters[(int)kind].maxHp;
+        this.interval = main.enemyParameter.parameters[(int)kind].interval;
+        this.attack = main.enemyParameter.parameters[(int)kind].attack;
+        this.defense = main.enemyParameter.parameters[(int)kind].defense;
+        this.rank = main.enemyParameter.parameters[(int)kind].rank;
+        drops.Add(new Drop(ResourceKind.exp, main.enemyParameter.parameters[(int)kind].exp, 100));
+        drops.Add(new Drop(ResourceKind.gold, main.enemyParameter.parameters[(int)kind].gold, 100));
     }
 
     public void StartEnemy()
