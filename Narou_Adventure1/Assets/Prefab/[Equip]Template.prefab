@@ -998,7 +998,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86d3d116a4d0f4dd98246ae62ccb6cbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  main: {fileID: 0}
   kind: 0
   removeButton: {fileID: 1099824618150717337}
   sellButtion: {fileID: 4589069536826698004}
@@ -1010,6 +1009,7 @@ MonoBehaviour:
   levelText: {fileID: 6368795487137255233}
   maxNumText: {fileID: 2670106948382429810}
   lockToggle: {fileID: 3080156033376535260}
+  attributesParent: {fileID: 1491863774556602849}
   popUp: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -1018,6 +1018,8 @@ MonoBehaviour:
   Effect_str: 
   Cost_str: 
   Sell_str: 
+  LvCost_Str: 
+  LvEffect_Str: 
 --- !u!1 &5071622815432852656
 GameObject:
   m_ObjectHideFlags: 0

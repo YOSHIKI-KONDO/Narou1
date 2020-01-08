@@ -215,11 +215,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6fd1a6070a47480894ae9db5824e67f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  main: {fileID: 0}
   LearnBtnObj: {fileID: 7400567439713948376}
   setButton: {fileID: 5662465804135128381}
   nameText: {fileID: 461912250413829417}
   newObject: {fileID: 8859189320415745744}
+  AttributesParent: {fileID: 6212564714599682009}
 --- !u!1 &4771778132960442222
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using static UsefulMethod;
 
-public class SKILL : BASE, INeed
+public class SKILL : BASE, INeed, ISetSource
 {
     public SkillKind kind;
     public PopUp popUp;
@@ -29,7 +29,7 @@ public class SKILL : BASE, INeed
     {
         return (float)(currentValue / Duration());
     }
-    public List<NeedKind> attributes = new List<NeedKind>(); //属性
+    public List<NeedKind> sources = new List<NeedKind>(); //属性
     public SKILL_COMBO combo; //直前のスキルによるコンボ
     public List<Dealing> useCosts = new List<Dealing>();
     public List<Dealing> useEffects = new List<Dealing>();
@@ -169,6 +169,7 @@ public class SKILL : BASE, INeed
     protected void StartSkill()
     {
         ApplyPopUp();
+        main.iconCtrl.AddIcon(sources, components.AttributesParent);
     }
 
     // Update is called once per frame
@@ -204,10 +205,19 @@ public class SKILL : BASE, INeed
         }
     }
 
+    public void SetSource(params NeedKind[] sourceKinds)
+    {
+        //haveSource = true;
+        foreach (var n in sourceKinds)
+        {
+            sources.Add(n);
+        }
+    }
+
     string AttributeDetail()
     {
         string sum = "";
-        foreach (var attribute in attributes)
+        foreach (var attribute in sources)
         {
             if (sum != "") { sum += ", "; }
             sum += main.enumCtrl.needs[(int)attribute].Name();

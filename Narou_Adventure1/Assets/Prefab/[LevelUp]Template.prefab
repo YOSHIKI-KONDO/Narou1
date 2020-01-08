@@ -881,7 +881,7 @@ GameObject:
   - component: {fileID: 742993536633056257}
   - component: {fileID: -6728765921818177172}
   - component: {fileID: 3488214585279232769}
-  - component: {fileID: 7492452442740546508}
+  - component: {fileID: 8322773634746707303}
   m_Layer: 5
   m_Name: '[LevelUp]Template'
   m_TagString: Untagged
@@ -986,7 +986,7 @@ MonoBehaviour:
   levelUpButton: {fileID: 4610467501107325176}
   equipButton: {fileID: 1058921644739796130}
   removeButton: {fileID: 1099824618150717337}
---- !u!114 &7492452442740546508
+--- !u!114 &8322773634746707303
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -995,12 +995,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4688375336116266386}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86d3d116a4d0f4dd98246ae62ccb6cbd, type: 3}
+  m_Script: {fileID: 11500000, guid: 26900184eee654e8b803599f759041c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  main: {fileID: 0}
   kind: 0
-  removeButton: {fileID: 1099824618150717337}
+  equipButton: {fileID: 1058921644739796130}
   sellButtion: {fileID: 4589069536826698004}
   levelUpButton: {fileID: 4610467501107325176}
   spaceText: {fileID: 4472498151561895287}
@@ -1010,6 +1009,8 @@ MonoBehaviour:
   levelText: {fileID: 6368795487137255233}
   maxNumText: {fileID: 2670106948382429810}
   lockToggle: {fileID: 3080156033376535260}
+  newObject: {fileID: 7812755203726120867}
+  attributesParent: {fileID: 1491863774556602849}
   popUp: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -1018,6 +1019,8 @@ MonoBehaviour:
   Effect_str: 
   Cost_str: 
   Sell_str: 
+  LvCost_Str: 
+  LvEffect_Str: 
 --- !u!1 &5071622815432852656
 GameObject:
   m_ObjectHideFlags: 0

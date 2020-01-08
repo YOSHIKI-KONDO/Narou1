@@ -27,9 +27,11 @@ public class ItemCtrl : BASE {
     public ITEM[] items;
     public Item_Inventory[] inventorys;
     public Item_Equip[] equips;
+    public Item_LevelUp[] levelUps;
     public Item_Inventory inventoryPre;
     public Item_Equip equipPre;
-    public Transform inventoryTra, equipTra;
+    public Item_LevelUp levelUpPre;
+    public Transform inventoryTra, equipTra, levelUpTra;
     public int[] InventoryNum { get => main.SR.inventoryNum_Item; set => main.SR.inventoryNum_Item = value; }
     public int[] equipNum { get => main.SR.equipNum_Item; set => main.SR.equipNum_Item = value; }
     public int[] exitSourceNums; //sourceがあればtrue
@@ -46,6 +48,7 @@ public class ItemCtrl : BASE {
         items = new ITEM[Enum.GetNames(typeof(ItemKind)).Length];
         inventorys = new Item_Inventory[Enum.GetNames(typeof(ItemKind)).Length];
         equips = new Item_Equip[Enum.GetNames(typeof(ItemKind)).Length];
+        levelUps = new Item_LevelUp[Enum.GetNames(typeof(ItemKind)).Length];
         R_max = new double[Enum.GetNames(typeof(ResourceKind)).Length];
         R_regen = new double[Enum.GetNames(typeof(ResourceKind)).Length];
         A_maxLevel = new int[Enum.GetNames(typeof(AbilityKind)).Length];
@@ -90,6 +93,9 @@ public class ItemCtrl : BASE {
             //equip
             equips[i] = Instantiate(equipPre, equipTra);
             equips[i].StartEquip((ItemKind)i);
+            //level up
+            levelUps[i] = Instantiate(levelUpPre, levelUpTra);
+            levelUps[i].StartLevelUp((ItemKind)i);
         }
     }
 
@@ -195,6 +201,7 @@ public class ItemCtrl : BASE {
     {
         for (int i = 0; i < items.Length; i++)
         {
+            //equip
             if(equipNum[i] > 0)
             {
                 setActive(equips[i].gameObject);
@@ -205,6 +212,7 @@ public class ItemCtrl : BASE {
                 setFalse(equips[i].popUp.gameObject);
             }
 
+            //inventory
             if(InventoryNum[i] > 0)
             {
                 setActive(inventorys[i].gameObject);
@@ -213,6 +221,17 @@ public class ItemCtrl : BASE {
             {
                 setFalse(inventorys[i].gameObject);
                 setFalse(inventorys[i].popUp.gameObject);
+            }
+
+            //level up
+            if(equipNum[i] > 0 || InventoryNum[i] > 0)
+            {
+                setActive(levelUps[i].gameObject);
+            }
+            else
+            {
+                setFalse(levelUps[i].gameObject);
+                setFalse(levelUps[i].popUp.gameObject);
             }
         }
     }

@@ -11,6 +11,7 @@ public class UICtrl : BASE {
     public Text equipText;
     public Text ipText1, ipText2, ipText3, ipText4, ipText5;
     public Toggle mainToggle, abilityToggle, itemToggle, skillToggle, dungeonToggle, statusToggle;
+    public GameObject new_main, new_ability, new_item, new_skill, new_dungeon, new_status;
     public GameObject skill_menu;
 
 	// Use this for initialization
@@ -27,31 +28,36 @@ public class UICtrl : BASE {
             x => Sync(ref main.SR.released_element[(int)ElementKind.ability], x),
             x => Sync(ref main.SR.completed_element[(int)ElementKind.ability], x),
             (x) => { return false; },
-            null, null, "Ability");
+            (x) => Sync(ref main.SR.watched_element[(int)ElementKind.ability], x),
+            new_ability, "Ability");
 
         itemToggle.gameObject.AddComponent<ReleaseFunction>().StartFunction(itemToggle.gameObject,
             x => Sync(ref main.SR.released_element[(int)ElementKind.item], x),
             x => Sync(ref main.SR.completed_element[(int)ElementKind.item], x),
             (x) => { return false; },
-            null, null, "Item");
+            (x) => Sync(ref main.SR.watched_element[(int)ElementKind.item], x),
+            new_item, "Item");
 
         skillToggle.gameObject.AddComponent<ReleaseFunction>().StartFunction(skillToggle.gameObject,
             x => Sync(ref main.SR.released_element[(int)ElementKind.skill], x),
             x => Sync(ref main.SR.completed_element[(int)ElementKind.skill], x),
             (x) => { return false; },
-            null, null, "Skill");
+            (x) => Sync(ref main.SR.watched_element[(int)ElementKind.skill], x),
+            new_skill, "Skill");
 
         dungeonToggle.gameObject.AddComponent<ReleaseFunction>().StartFunction(dungeonToggle.gameObject,
             x => Sync(ref main.SR.released_element[(int)ElementKind.dungeon], x),
             x => Sync(ref main.SR.completed_element[(int)ElementKind.dungeon], x),
             (x) => { return false; },
-            null, null, "Dungeon");
+            (x) => Sync(ref main.SR.watched_element[(int)ElementKind.dungeon], x),
+            new_dungeon, "Dungeon");
 
         statusToggle.gameObject.AddComponent<ReleaseFunction>().StartFunction(statusToggle.gameObject,
             x => Sync(ref main.SR.released_element[(int)ElementKind.status], x),
             x => Sync(ref main.SR.completed_element[(int)ElementKind.status], x),
             (x) => { return false; },
-            null, null, "");
+            (x) => Sync(ref main.SR.watched_element[(int)ElementKind.status], x),
+            new_status, "");
 
 
         skill_menu.AddComponent<ReleaseFunction>().StartFunction(skill_menu,
