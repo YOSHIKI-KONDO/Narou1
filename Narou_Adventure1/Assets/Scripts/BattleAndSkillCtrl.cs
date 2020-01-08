@@ -4,6 +4,7 @@ using UnityEngine;
 using static UsefulMethod;
 using UnityEngine.UI;
 using UnityEngine.Analytics;
+using System.Linq;
 
 /// <summary>
 /// slotKinds  　　...２次元配列で、現在のスロットに格納されているスキルを格納している。
@@ -480,7 +481,10 @@ public class BattleAndSkillCtrl : BASE {
                     }
                 }
                 currentEnemys.Remove(currentEnemys[i]);
-                enemysCmps[0].targetToggle.isOn = true;
+                if (currentEnemys.Count > 0)
+                {   //次のターゲット
+                    enemysCmps[currentEnemys[0].indexInFloor].targetToggle.isOn = true;
+                }
 }
         }
 
@@ -660,20 +664,24 @@ public class BattleAndSkillCtrl : BASE {
                 setFalse(enemysCmps[i].gameObject);
                 continue;
             }
-            if(currentEnemys.Count <= i)
+            InnerEnemy thisE = currentEnemys.Find(e => e.indexInFloor == i); //enemyとiを揃える
+            //if (thisE == null) { setFalse(enemysCmps[i].gameObject); }
+
+            if (thisE == null)
             {
                 enemysCmps[i].hp_slider.value = 0f;
                 enemysCmps[i].int_slider.value = 0f;
                 enemysCmps[i].hp_text.text = "0/" + enemysCmps[i].maxHp;
                 continue;
             }
+            
             setActive(enemysCmps[i].gameObject);
-            enemysCmps[i].ApplyNormalObj(main.enumCtrl.enemys[(int)thisD.enemyList[thisD.currentFloor][i]].Name(),
-                tDigit(currentEnemys[i].currentHp,1), tDigit(currentEnemys[i].maxHp,1),
-                "Atk : " + tDigit(currentEnemys[i].attack,1),
-                (float)(currentEnemys[i].currentHp / currentEnemys[i].maxHp),
-                (float)(currentEnemys[i].currentInterval / currentEnemys[i].interval),
-                currentEnemys[i].kind
+            enemysCmps[i].ApplyNormalObj(main.enumCtrl.enemys[(int)thisE.kind].Name(),
+                tDigit(thisE.currentHp,1), tDigit(thisE.maxHp,1),
+                "Atk : " + tDigit(thisE.attack,1),
+                (float)(thisE.currentHp / thisE.maxHp),
+                (thisE.currentInterval / thisE.interval),
+                thisE.kind
                 );
 
             //ターゲットインデックスを更新
@@ -721,7 +729,7 @@ public class BattleAndSkillCtrl : BASE {
         for (int i = 0; i < thisD.enemyList[thisD.currentFloor].Length; i++)
         {
             //NOTE:分かりづらいが、現在のダンジョンの現在のフロアの敵をcurrentEnemysに追加している
-            currentEnemys.Add(new InnerEnemy(enemys[(int)thisD.enemyList[thisD.currentFloor][i]]));
+            currentEnemys.Add(new InnerEnemy(enemys[(int)thisD.enemyList[thisD.currentFloor][i]], i));
         }
         thisD.summonedEnemy = true;
         waitFloor.Reset(); //フロアの待ち時間のカウントをリセット
