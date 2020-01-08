@@ -61,7 +61,7 @@ public class DUNGEON : BASE {
         main.checkDifficulty.Sum_FloorNum += currentFloor;
     }
 
-    public string Name_str, Description_str, Need_str, Floor_str, ProgressCost_str, Drops_str, FirstDrops_str;
+    public string Name_str, Description_str, Need_str, Floor_str, ProgressCost_str, Drops_str, FirstDrops_str, RecommendedLevel_str;
 
     // Use this for initialization
     public void AwakeDungeon (DungeonKind kind, ResourceKind itemPoint, int recommendLevel) {
@@ -146,11 +146,12 @@ public class DUNGEON : BASE {
         {
             ApplySlider();//本来はここじゃない
             //自動でコストの文章を生成
-            Floor_str = currentFloor.ToString() + "/" + MaxFloor().ToString();
+            Floor_str = MaxFloor().ToString();
             Description_str = main.enumCtrl.dungeons[(int)kind].Description();
             ProgressCost_str = progress.ProgressDetail(progressCost);
             Drops_str = DropsDetail(drops);
             FirstDrops_str = DropsDetail(firstDrops);
+            RecommendedLevel_str = recommendLevel.ToString();
 
             //needが設定されている場合にのみ書き換える。
             //そのため、ない場合は手動でNeed_strを変えることが可能。
@@ -159,11 +160,12 @@ public class DUNGEON : BASE {
 
             ChangeTextAdaptive(Name_str, popUp.texts[0], popUp.texts[0].gameObject);
             ChangeTextAdaptive(Description_str, popUp.texts[1], popUp.texts[1].gameObject);
-            ChangeTextAdaptive(Need_str, popUp.texts[3], popUp.texts[2].gameObject, popUp.texts[3].gameObject);
+            ChangeTextAdaptive(RecommendedLevel_str, popUp.texts[3], popUp.texts[2].gameObject, popUp.texts[3].gameObject);
             ChangeTextAdaptive(Floor_str, popUp.texts[5], popUp.texts[4].gameObject, popUp.texts[5].gameObject);
-            ChangeTextAdaptive(ProgressCost_str, popUp.texts[7], popUp.texts[6].gameObject, popUp.texts[7].gameObject);
-            ChangeTextAdaptive(Drops_str, popUp.texts[9], popUp.texts[8].gameObject, popUp.texts[9].gameObject);
-            ChangeTextAdaptive(FirstDrops_str, popUp.texts[11], popUp.texts[10].gameObject, popUp.texts[11].gameObject);
+            ChangeTextAdaptive(Need_str, popUp.texts[7], popUp.texts[6].gameObject, popUp.texts[7].gameObject);
+            ChangeTextAdaptive(ProgressCost_str, popUp.texts[9], popUp.texts[8].gameObject, popUp.texts[9].gameObject);
+            ChangeTextAdaptive(Drops_str, popUp.texts[11], popUp.texts[10].gameObject, popUp.texts[11].gameObject);
+            ChangeTextAdaptive(FirstDrops_str, popUp.texts[13], popUp.texts[12].gameObject, popUp.texts[13].gameObject);
         }
     }
 }
