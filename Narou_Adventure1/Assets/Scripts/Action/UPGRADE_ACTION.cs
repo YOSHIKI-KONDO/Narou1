@@ -59,6 +59,7 @@ public class UPGRADE_ACTION : ACTION, INeed
         if (onSlider == false) { setFalse(slider.gameObject); }
 
         this.kind = Kind;
+        main.checkActions.upgrades[(int)kind] = kind;   //hierarchyチェック
         this.maxNum = maxNum;
         PlusValue = plusValue;
         MaxValue = maxValue;

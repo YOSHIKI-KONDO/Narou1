@@ -57,6 +57,7 @@ public class Main : MonoBehaviour
     public Focus focus;
     public DecideParameter decideParameter;
     public CheckDifficulty checkDifficulty;
+    public CheckActions checkActions;
 
     /* プレハブ */
     public PopUp ActionPopUpPre;

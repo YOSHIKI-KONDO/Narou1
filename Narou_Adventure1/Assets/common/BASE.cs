@@ -6,6 +6,7 @@ using System;
 
 public class BASE : MonoBehaviour
 {
+    [NonSerialized]
     public Main main;
     public void StartBASE()
     {

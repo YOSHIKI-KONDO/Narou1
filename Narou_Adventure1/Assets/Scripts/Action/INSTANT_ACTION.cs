@@ -35,9 +35,9 @@ public class INSTANT_ACTION : ACTION, INeed
         text = components.text;
         newObject = components.newObject;
         setFalse(components.slider.gameObject);
-        
 
         this.kind = Kind;
+        main.checkActions.instants[(int)kind] = kind;   //hierarchyチェック
 
         need = gameObject.AddComponent<NeedFunciton>();
         popUp = main.ActionPopUpPre.StartPopUp(gameObject, main.windowShowCanvas);

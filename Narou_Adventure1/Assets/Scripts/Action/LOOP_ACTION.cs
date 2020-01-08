@@ -49,6 +49,7 @@ public class LOOP_ACTION : ACTION, INeed {
         if (onSlider == false) { setFalse(slider.gameObject); }
 
         this.kind = Kind;
+        main.checkActions.loops[(int)kind] = kind;   //hierarchyチェック
         PlusValue = plusValue;
         MaxValue = maxValue;
 
