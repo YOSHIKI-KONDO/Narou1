@@ -25,12 +25,14 @@ public class SaveR
     public bool[] released_instant;
     public bool[] completed_instant;
     public bool[] watched_instant;
+    public int[] level_instant;
 
     public bool[] released_loop;
     public bool[] completed_loop;
     public double[] currentValue_loop;
     public bool[] paid_loop;
     public bool[] watched_loop;
+    public int[] level_loop;
 
     public bool[] released_upgrade;
     public bool[] completed_upgrade;
@@ -38,6 +40,7 @@ public class SaveR
     public bool[] paid_upgrade;
     public int[] clearNum_upgrade;
     public bool[] watched_upgrade;
+    public int[] level_upgrade;
 
     /* Ability */
     public bool[] released_ability;

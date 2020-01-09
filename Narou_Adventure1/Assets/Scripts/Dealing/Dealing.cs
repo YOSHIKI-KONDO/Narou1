@@ -1,4 +1,5 @@
 ﻿using System;
+using static BASE;
 public class Dealing
 {
     public enum R_ParaKind
@@ -21,18 +22,28 @@ public class Dealing
 
     public Enum rscKind;
     public Enum paraKind;
-    public double Value;
+    public double Value
+    {
+        get
+        {
+            if (Level != null)
+            {
+                return _value * (1d + 0.01d * Level()); // level * 1%加算
+            }
+            else
+            {
+                return _value;
+            }
+        }
+    }
+    double _value;
+    public IntSync Level;
 
     //リソース系のコンストラクタ。
     public Dealing(Enum rscKind, Enum paraKind, double Value)
     {
         this.rscKind = rscKind;
         this.paraKind = paraKind;
-        this.Value = Value;
-    }
-
-    public void Update(double newValue)
-    {
-        Value = newValue;
+        _value = Value;
     }
 }

@@ -74,6 +74,7 @@ public class LOOP_ACTION : ACTION, INeed {
     // Use this for initialization
     protected void StartLoopAction() {
         progress.ApplySlider(MaxValue);
+        ApplyEffectLevel();
     }
 
     // Update is called once per frame
@@ -91,6 +92,18 @@ public class LOOP_ACTION : ACTION, INeed {
         {
             release.Completed(true);
             setFalse(popUp.gameObject);
+        }
+    }
+
+    void ApplyEffectLevel()
+    {
+        foreach (var dealing in progress.progressEffectList)
+        {
+            dealing.Level = (x) => Sync(ref main.SR.level_loop[(int)kind], x);
+        }
+        foreach (var dealing in progress.completeEffectList)
+        {
+            dealing.Level = (x) => Sync(ref main.SR.level_loop[(int)kind], x);
         }
     }
 

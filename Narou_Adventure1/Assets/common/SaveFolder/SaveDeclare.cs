@@ -45,21 +45,21 @@ public class SaveDeclare : BASE {
         InitializeArray(ref main.SR.released_resource, num_resource);
         InitializeArray(ref main.SR.completed_resource, num_resource);
         InitializeArray(ref main.SR.discover_resource, num_resource);
-
-        InitializeArray(ref main.SR.released_instant, num_instantAction);
-        InitializeArray(ref main.SR.completed_instant, num_instantAction);
-        InitializeArray(ref main.SR.watched_instant, num_instantAction);
-
         InitializeArray(ref main.SR.max_resource, num_resource);
         InitializeArray(ref main.SR.current_resource, num_resource);
         InitializeArray(ref main.SR.regen_resource, num_resource);
 
+        InitializeArray(ref main.SR.released_instant, num_instantAction);
+        InitializeArray(ref main.SR.completed_instant, num_instantAction);
+        InitializeArray(ref main.SR.watched_instant, num_instantAction);
+        InitializeArray(ref main.SR.level_instant, num_instantAction);
 
         InitializeArray(ref main.SR.released_loop, num_loopAction);
         InitializeArray(ref main.SR.completed_loop, num_loopAction);
         InitializeArray(ref main.SR.currentValue_loop, num_loopAction);
         InitializeArray(ref main.SR.paid_loop, num_loopAction);
         InitializeArray(ref main.SR.watched_loop, num_loopAction);
+        InitializeArray(ref main.SR.level_loop, num_loopAction);
 
         InitializeArray(ref main.SR.released_upgrade, num_upgradeAction);
         InitializeArray(ref main.SR.completed_upgrade, num_upgradeAction);
@@ -67,6 +67,7 @@ public class SaveDeclare : BASE {
         InitializeArray(ref main.SR.paid_upgrade, num_upgradeAction);
         InitializeArray(ref main.SR.clearNum_upgrade, num_upgradeAction);
         InitializeArray(ref main.SR.watched_upgrade, num_upgradeAction);
+        InitializeArray(ref main.SR.level_upgrade, num_upgradeAction);
 
         /* Ability */
         InitializeArray(ref main.SR.released_ability, num_ability);
