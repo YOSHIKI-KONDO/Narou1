@@ -9,15 +9,16 @@ public class Rest : LOOP_ACTION
 {
     public override bool Requires()
     {
-        return main.rsc.Max((int)ResourceKind.stamina) >= 1;
+        return main.rsc.Max((int)ResourceKind.action) >= 1;
     }
 
     // Use this for initialization
     void Awake () {
         AwakeLoopAction(MainAction.ActionEnum.Loop.rest, 10, null, false);
-        progress.progressEffectList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, 1));
+        progress.progressEffectList.Add(new Dealing(ResourceKind.action, Dealing.R_ParaKind.current, 1));
         progress.progressEffectList.Add(new Dealing(ResourceKind.hp, Dealing.R_ParaKind.current, 1));
         progress.progressEffectList.Add(new Dealing(ResourceKind.mp, Dealing.R_ParaKind.current, 0.5));
+        progress.progressEffectList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, 1));
         progress.progressEffectList.Add(new Dealing(ResourceKind.fire, Dealing.R_ParaKind.current, 0.5));
         progress.progressEffectList.Add(new Dealing(ResourceKind.water, Dealing.R_ParaKind.current, 0.5));
         progress.progressEffectList.Add(new Dealing(ResourceKind.wind, Dealing.R_ParaKind.current, 0.5));
@@ -26,6 +27,7 @@ public class Rest : LOOP_ACTION
         progress.progressEffectList.Add(new Dealing(ResourceKind.ice, Dealing.R_ParaKind.current, 0.5));
         progress.progressEffectList.Add(new Dealing(ResourceKind.light, Dealing.R_ParaKind.current, 0.5));
         progress.progressEffectList.Add(new Dealing(ResourceKind.dark, Dealing.R_ParaKind.current, 0.5));
+        progress.progressEffectList.Add(new Dealing(ResourceKind.animal, Dealing.R_ParaKind.current, 0.5));
 
 
 
@@ -43,7 +45,7 @@ public class Rest : LOOP_ACTION
 
         if (progress.isOn)
         {
-            if (main.rsc.Value[(int)ResourceKind.stamina] >= main.rsc.Max((int)ResourceKind.stamina)
+            if (main.rsc.Value[(int)ResourceKind.action] >= main.rsc.Max((int)ResourceKind.action)
                 && main.rsc.Value[(int)ResourceKind.hp] >= main.rsc.Max((int)ResourceKind.hp)
                 && main.rsc.Value[(int)ResourceKind.mp] >= main.rsc.Max((int)ResourceKind.mp))
             {

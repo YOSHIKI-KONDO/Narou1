@@ -29,7 +29,7 @@ public class MentalTraining : UPGRADE_ACTION
     // Use this for initialization
     void Awake () {
         AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.mental_training, 5,10);
-        progress.progressCostList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.4));
+        progress.progressCostList.Add(new Dealing(ResourceKind.action, Dealing.R_ParaKind.current, -0.4));
         progress.completeEffectList.Add(new Dealing(ResourceKind.mp, Dealing.R_ParaKind.max, 1));
         progress.completeEffectList.Add(new Dealing(ResourceKind.hp, Dealing.R_ParaKind.max, 0.2));
         progress.completeEffectList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, 1));

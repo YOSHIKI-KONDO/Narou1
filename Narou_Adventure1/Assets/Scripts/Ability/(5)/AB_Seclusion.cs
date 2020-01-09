@@ -18,11 +18,11 @@ public class AB_Seclusion : ABILITY
 
     // Use this for initialization
     void Awake () {
-        AwakeAbility(AbilityKind.seclusion, 50, 1.2);
-        progress.unlockCostList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, -1));
-        progress.progressCostList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.5));
-        progress.completeEffectList.Add(new Dealing(ResourceKind.dodge, Dealing.R_ParaKind.status, 2));
-        progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 0.05));
+        AwakeAbility(AbilityKind.seclusion, 30, 1.2);
+        progress.unlockCostList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, -50));
+        progress.progressCostList.Add(new Dealing(ResourceKind.action, Dealing.R_ParaKind.current, -0.5));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.dodge, Dealing.R_ParaKind.status, 1));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 2));
     }
 
 	// Use this for initialization

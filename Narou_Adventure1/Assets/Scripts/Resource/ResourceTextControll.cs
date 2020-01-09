@@ -31,7 +31,7 @@ public class ResourceTextControll : BASE {
     }
 
     List<ResourceKind> energies = new List<ResourceKind>
-    { stamina, hp ,mp,fire,water,wind,earth,thunder,ice,ResourceKind.light,dark};
+    { action,hp,mp,stamina,fire,water,wind,earth,thunder,ice,ResourceKind.light,dark,animal};
 
     public class DecimalPoint_Resource
     {

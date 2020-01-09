@@ -15,13 +15,17 @@ public class AB_BeginnerSpearmanship : ABILITY
 
     // Use this for initialization
     void Awake () {
-        AwakeAbility(AbilityKind.beginner_spearmanship, 50, 1.2);
-        progress.unlockCostList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, -1));
-        progress.progressCostList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.5));
+        AwakeAbility(AbilityKind.beginner_spearmanship, 30, 1.2);
+        progress.unlockCostList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, -100));
+        progress.progressCostList.Add(new Dealing(ResourceKind.action, Dealing.R_ParaKind.current, -0.5));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.max, 1));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.regen, 0.02));
         progress.completeEffectList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.max, 1));
-        progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 0.05));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 4));
 
         need.AddSourceNeed(NeedKind.spear);
+
+        SetSource(NeedKind.spear);
     }
 
 	// Use this for initialization

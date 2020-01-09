@@ -9,7 +9,7 @@ public class EarthWall : SKILL
 {
     public override bool Requires()
     {
-        return main.a_rsc.CurrentLevels[(int)AbilityKind.primary_earth_magic] >= 6;
+        return main.a_rsc.CurrentLevels[(int)AbilityKind.primary_earth_magic] >= 7;
     }
 
     // Use this for initialization
@@ -18,6 +18,8 @@ public class EarthWall : SKILL
         learnF.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -5));
         useCosts.Add(new Dealing(ResourceKind.earth, Dealing.R_ParaKind.current, -2));
         useEffects.Add(new Temp_Regen_Deal(ResourceKind.defense, 2, 15));
+
+        SetSource(NeedKind.enhance, NeedKind.earth);
     }
 
 	// Use this for initialization

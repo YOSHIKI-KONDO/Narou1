@@ -16,7 +16,7 @@ public class Mugged : INSTANT_ACTION
     void Awake()
     {
         AwakeInstantAction(MainAction.ActionEnum.Instant.mugged);
-        instant.initCostList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.5));
+        instant.initCostList.Add(new Dealing(ResourceKind.action, Dealing.R_ParaKind.current, -0.5));
         instant.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -0.2));
         instant.completeEffectList.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 1));
 	}

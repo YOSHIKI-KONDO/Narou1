@@ -7,6 +7,7 @@
             nothing,
             //フェーズ１（入学前）
             weeding,
+            intensive_training,
             eat_anchovy_sandwich,
             eat_filet_o_fish,
             drink_herb_tea,
@@ -14,6 +15,7 @@
             runic_carving,
             split_firewood,
             sell_firewood,
+            sell_bread,
             //フェーズ２（学校）
             //アビリティアクション
             mugged,
@@ -99,6 +101,18 @@
             get_rid_of_rat,
             wholesaler_of_drugs,
             in_cellar,
+
+            //授業
+            sword_classwork,
+            spear_classwork,
+            rod_classwork,
+            fire_magic_classwork,
+            water_magic_classwork,
+            wind_magic_classwork,
+            earth_magic_classwork,
+            animal_handling_classwork,
+            use_tools_classwork,
+            life_magic_classwork,
 
             //戦士
             apprentice_warrior,

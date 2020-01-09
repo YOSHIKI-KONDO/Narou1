@@ -23,12 +23,12 @@ public class WarriorSchool : UPGRADE_ACTION
         AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.warrior_school, 1,0,0);
         progress.initCostList.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -80));
         progress.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -80));
-        progress.completeEffectList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.max, 1));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.action, Dealing.R_ParaKind.max, 1));
         progress.completeEffectList.Add(new Dealing(ResourceKind.hp, Dealing.R_ParaKind.max, 1));
         progress.completeEffectList.Add(new Dealing(AbilityKind.beginner_swordmanship, Dealing.A_ParaKind.trainRate, 0.5));
         progress.completeEffectList.Add(new Dealing(AbilityKind.beginner_spearmanship, Dealing.A_ParaKind.trainRate, 0.5));
         progress.completeEffectList.Add(new Dealing(AbilityKind.beginner_bojutsu, Dealing.A_ParaKind.trainRate, 0.5));
-        progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 2));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 200));
         progress.completeEffectList.Add(new Dealing(ResourceKind.inventorySpace, Dealing.R_ParaKind.max, 1));
         progress.completeEffectList.Add(new Item_Dealing(ItemKind.warrior_textbook));
     }

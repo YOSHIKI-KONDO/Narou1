@@ -24,7 +24,7 @@ public class SuccessionLiifeMagic : UPGRADE_ACTION
     // Use this for initialization
     void Awake () {
         AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.succession_life_magic, 1,30);
-        progress.progressCostList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.3));
+        progress.progressCostList.Add(new Dealing(ResourceKind.action, Dealing.R_ParaKind.current, -0.3));
         progress.progressCostList.Add(new Dealing(ResourceKind.mp, Dealing.R_ParaKind.current, -0.4));
         progress.completeEffectList.Add(new Dealing(AbilityKind.life_magic, Dealing.A_ParaKind.maxLevel, 1));
         progress.completeEffectList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, 5));

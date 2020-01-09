@@ -14,6 +14,7 @@ public class AcademicCity : UPGRADE_ACTION
     public override void CompleteAction()
     {
         main.SR.released_Norn = true;
+        main.SR.watched_element[(int)ElementKind.status] = false;
     }
 
     void Awake () {

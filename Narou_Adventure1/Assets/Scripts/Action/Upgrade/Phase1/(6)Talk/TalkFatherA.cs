@@ -9,7 +9,7 @@ public class TalkFatherA : UPGRADE_ACTION
 {
     public override bool Requires()
     {
-        return main.rsc.Max((int)ResourceKind.stamina) >= 1;
+        return main.rsc.Max((int)ResourceKind.action) >= 1;
     }
     public override bool CompleteCondition()
     {

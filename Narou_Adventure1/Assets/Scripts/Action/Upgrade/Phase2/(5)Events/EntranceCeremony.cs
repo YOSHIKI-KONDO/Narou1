@@ -21,7 +21,7 @@ public class EntranceCeremony : UPGRADE_ACTION
         AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.entrance_ceremony, 1,0,0);
         progress.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -10));
         progress.completeEffectList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.max, 20));
-        progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 1));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 100));
     }
 
 	// Use this for initialization

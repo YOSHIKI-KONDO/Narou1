@@ -21,7 +21,7 @@ public class I_WindRod : ITEM
         EffectLists.Add(new Dealing(ResourceKind.attack, Dealing.R_ParaKind.status, 5));
         EffectLists.Add(new Dealing(ResourceKind.magic_attack, Dealing.R_ParaKind.status, 5));
 
-        SetSource(NeedKind.goods, NeedKind.wind);
+        SetSource(NeedKind.weapon, NeedKind.rod, NeedKind.wind);
     }
 
     // Use this for initialization

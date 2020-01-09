@@ -27,7 +27,7 @@ public class TamerSchool : UPGRADE_ACTION
         progress.completeEffectList.Add(new Dealing(AbilityKind.animal_handling, Dealing.A_ParaKind.trainRate, 1));
         progress.completeEffectList.Add(new Dealing(AbilityKind.use_tools, Dealing.A_ParaKind.trainRate, 0.5));
         progress.completeEffectList.Add(new Dealing(AbilityKind.life_magic, Dealing.A_ParaKind.trainRate, 0.5));
-        progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 2));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 200));
         progress.completeEffectList.Add(new Dealing(ResourceKind.inventorySpace, Dealing.R_ParaKind.max, 1));
         progress.completeEffectList.Add(new Item_Dealing(ItemKind.tamer_textbook));
     }
