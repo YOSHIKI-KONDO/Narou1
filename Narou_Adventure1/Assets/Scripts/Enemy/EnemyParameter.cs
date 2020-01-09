@@ -15,7 +15,7 @@ public class EnemyParameter : BASE {
         parameters.Add(null);                                  //HP, ATK, INT, DEF, GOLD, EXP,RANK
         parameters.Add(new parameter(EnemyKind.slime,            10,   5,   1,   0,    1,   2,  1));
         parameters.Add(new parameter(EnemyKind.goblin,           12,   5,   3,   0,    3,   3,  1));
-        parameters.Add(new parameter(EnemyKind.rat,              25,   2,   9,   0,    1,   2,  1));
+        parameters.Add(new parameter(EnemyKind.rat,              25,   2,   9,   0,    1,   5,  1));
         parameters.Add(new parameter(EnemyKind.bird,             10,   3,   2,   0,    1,   2,  1));
         parameters.Add(new parameter(EnemyKind.bat,               8,   4,   2,   0,    1,   3,  1));
         parameters.Add(new parameter(EnemyKind.wolf,             20,   3, 2.5,   0,    1,   5,  1));
@@ -24,13 +24,13 @@ public class EnemyParameter : BASE {
         parameters.Add(new parameter(EnemyKind.sigurd,           10,   4,   4,   0,    5,   5,  1));
         parameters.Add(new parameter(EnemyKind.askr,              9,   5,   3,   0,    4,   3,  1));
         parameters.Add(new parameter(EnemyKind.embla,             7,   3,   2,   0,    4,   3,  1));
-        parameters.Add(new parameter(EnemyKind.red_slime,        40,   5,  14,   0,   10,  10,  1));
-        parameters.Add(new parameter(EnemyKind.orc,              40,   6,   7,   0,   30,  30,  1));
-        parameters.Add(new parameter(EnemyKind.poison_rat,       25,   2,  12,   0,   10,  20,  1));
-        parameters.Add(new parameter(EnemyKind.harpy,            50,   3,  10,   0,   10,  20,  1));
-        parameters.Add(new parameter(EnemyKind.ghoul,            60,   4,  12,   0,   10,  20,  1));
-        parameters.Add(new parameter(EnemyKind.werewolf,         55,   4,  12,   0,   10,  30,  1));
-        parameters.Add(new parameter(EnemyKind.lizard_man,       25,  5f,  13,   0,   10,  30,  1));
+        parameters.Add(new parameter(EnemyKind.red_slime,        40,   5,  14,   0,   10,   8,  1));
+        parameters.Add(new parameter(EnemyKind.orc,              40,   6,   7,   0,   30,   8,  1));
+        parameters.Add(new parameter(EnemyKind.poison_rat,       25,   2,  12,   0,   10,   8,  1));
+        parameters.Add(new parameter(EnemyKind.harpy,            50,   3,  10,   0,   10,   9,  1));
+        parameters.Add(new parameter(EnemyKind.ghoul,            60,   4,  12,   0,   10,   8,  1));
+        parameters.Add(new parameter(EnemyKind.werewolf,         55,   4,  12,   0,   10,  10,  1));
+        parameters.Add(new parameter(EnemyKind.lizard_man,       25,  5f,  13,   0,   10,  12,  1));
         parameters.Add(new parameter(EnemyKind.demonic_warrior, 100,   5,  30,   0,  100,  20,  1));
     }
 

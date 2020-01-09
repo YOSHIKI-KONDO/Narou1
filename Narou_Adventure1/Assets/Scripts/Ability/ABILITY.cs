@@ -15,9 +15,11 @@ public class ABILITY : BASE, INeed, ISetSource
     public ReleaseFunction release;
     public AbilityFunction progress;
     public NeedFunciton need;
+    public UnlockFunction unlockF;
     AbilityComponents components;
     GameObject newObject;
     public List<NeedKind> sources = new List<NeedKind>();
+    protected List<IInternalUnlock> unlocks = new List<IInternalUnlock>();
 
     double init_exp;
     double bottom_exp;
@@ -73,6 +75,7 @@ public class ABILITY : BASE, INeed, ISetSource
         popUp = main.AbilityPopUpPre.StartPopUp(gameObject, main.windowShowCanvas);
         popUp.EnterAction = ApplyPopUp;
         need = gameObject.AddComponent<NeedFunciton>();
+        unlockF = gameObject.AddComponent<UnlockFunction>();
         release = gameObject.AddComponent<ReleaseFunction>();
         release.StartFunction(gameObject, x => Sync(ref main.SR.released_ability[(int)kind], x),
             x => Sync(ref main.SR.completed_ability[(int)kind], x),
@@ -99,12 +102,13 @@ public class ABILITY : BASE, INeed, ISetSource
     {
         progress.ApplySlider(MaxExp());
         main.iconCtrl.AddIcon(sources, components.attributesParent);
+        InitializeUnlodkFunction();
     }
 
     // Update is called once per frame
     protected void UpdateAbility()
     {
-
+        
     }
 
     protected void FixedUpdateAbility()
@@ -129,6 +133,167 @@ public class ABILITY : BASE, INeed, ISetSource
             sources.Add(n);
         }
     }
+
+    void InitializeUnlodkFunction()
+    {
+        foreach (var _unlock in unlocks)
+        {
+            if (_unlock is InstantUnlock)
+            {
+                var castedUnlock = _unlock as InstantUnlock;
+                unlockF.unlocks.Add(new Unlock(castedUnlock.kind, () => { return castedUnlock.level <= level; },
+                    (x) => Sync(ref main.SR.released_instant[(int)castedUnlock.kind], x)));
+            }
+            else if (_unlock is LoopUnlock)
+            {
+                var castedUnlock = _unlock as LoopUnlock;
+                unlockF.unlocks.Add(new Unlock(castedUnlock.kind, () => { return castedUnlock.level <= level; },
+                    (x) => Sync(ref main.SR.released_loop[(int)castedUnlock.kind], x)));
+            }
+            else if (_unlock is UpgradeUnlock)
+            {
+                var castedUnlock = _unlock as UpgradeUnlock;
+                unlockF.unlocks.Add(new Unlock(castedUnlock.kind, () => { return castedUnlock.level <= level; },
+                    (x) => Sync(ref main.SR.released_upgrade[(int)castedUnlock.kind], x)));
+            }
+            else if (_unlock is AbilityUnlock)
+            {
+                var castedUnlock = _unlock as AbilityUnlock;
+                unlockF.unlocks.Add(new Unlock(castedUnlock.kind, () => { return castedUnlock.level <= level; },
+                    (x) => Sync(ref main.SR.released_ability[(int)castedUnlock.kind], x)));
+            }
+            else if (_unlock is SkillUnlock)
+            {
+                var castedUnlock = _unlock as SkillUnlock;
+                unlockF.unlocks.Add(new Unlock(castedUnlock.kind, () => { return castedUnlock.level <= level; },
+                    (x) => Sync(ref main.SR.released_Skill[(int)castedUnlock.kind], x)));
+            }
+            else if (_unlock is ItemUnlock)
+            {
+                var castedUnlock = _unlock as ItemUnlock;
+                unlockF.unlocks.Add(new Unlock(castedUnlock.kind, () => { return castedUnlock.level <= level; },
+                    (x) => Sync(ref main.SR.released_Item[(int)castedUnlock.kind], x)));
+            }
+            else if (_unlock is DungeonUnlock)
+            {
+                var castedUnlock = _unlock as DungeonUnlock;
+                unlockF.unlocks.Add(new Unlock(castedUnlock.kind, () => { return castedUnlock.level >= level; },
+                    (x) => Sync(ref main.SR.released_Dungeon[(int)castedUnlock.kind], x)));
+            }
+            else
+            {
+                Debug.Log("何かがおかしいです。");
+                continue;
+            }
+        }
+    }
+
+    string unlockDetail()
+    {
+        string sum = "";
+        for (int i = 0; i < unlocks.Count; i++)
+        {
+            if (sum != "") { sum += "\n"; }
+            if (unlocks[i] is InstantUnlock)
+            {
+                var castedUnlock = unlocks[i] as InstantUnlock;
+                sum += "Lv." + castedUnlock.level.ToString() + ":";
+                if (unlockF.unlocks[i].released())
+                {
+                    sum += main.enumCtrl.instantActions[(int)castedUnlock.kind].Name();
+                }
+                else
+                {
+                    sum += "???";
+                }
+            }
+            else if (unlocks[i] is LoopUnlock)
+            {
+                var castedUnlock = unlocks[i] as LoopUnlock;
+                sum += "Lv." + castedUnlock.level.ToString() + ":";
+                if (unlockF.unlocks[i].released())
+                {
+                    sum += main.enumCtrl.loopActions[(int)castedUnlock.kind].Name();
+                }
+                else
+                {
+                    sum += "???";
+                }
+            }
+            else if (unlocks[i] is UpgradeUnlock)
+            {
+                var castedUnlock = unlocks[i] as UpgradeUnlock;
+                sum += "Lv." + castedUnlock.level.ToString() + ":";
+                if (unlockF.unlocks[i].released())
+                {
+                    sum += main.enumCtrl.upgradeActions[(int)castedUnlock.kind].Name();
+                }
+                else
+                {
+                    sum += "???";
+                }
+            }
+            else if (unlocks[i] is AbilityUnlock)
+            {
+                var castedUnlock = unlocks[i] as AbilityUnlock;
+                sum += "Lv." + castedUnlock.level.ToString() + ":";
+                if (unlockF.unlocks[i].released())
+                {
+                    sum += main.enumCtrl.abilitys[(int)castedUnlock.kind].Name();
+                }
+                else
+                {
+                    sum += "???";
+                }
+            }
+            else if (unlocks[i] is SkillUnlock)
+            {
+                var castedUnlock = unlocks[i] as SkillUnlock;
+                sum += "Lv." + castedUnlock.level.ToString() + ":";
+                if (unlockF.unlocks[i].released())
+                {
+                    sum += main.enumCtrl.skills[(int)castedUnlock.kind].Name();
+                }
+                else
+                {
+                    sum += "???";
+                }
+            }
+            else if (unlocks[i] is ItemUnlock)
+            {
+                var castedUnlock = unlocks[i] as ItemUnlock;
+                sum += "Lv." + castedUnlock.level.ToString() + ":";
+                if (unlockF.unlocks[i].released())
+                {
+                    sum += main.enumCtrl.items[(int)castedUnlock.kind].Name();
+                }
+                else
+                {
+                    sum += "???";
+                }
+            }
+            else if (unlocks[i] is DungeonUnlock)
+            {
+                var castedUnlock = unlocks[i] as DungeonUnlock;
+                sum += "Lv." + castedUnlock.level.ToString() + ":";
+                if (unlockF.unlocks[i].released())
+                {
+                    sum += main.enumCtrl.dungeons[(int)castedUnlock.kind].Name();
+                }
+                else
+                {
+                    sum += "???";
+                }
+            }
+            else
+            {
+                Debug.Log("何かがおかしいです。");
+                continue;
+            }
+        }
+        return sum;
+    }
+
 
     void ApplyComponents()
     {
@@ -159,7 +324,8 @@ public class ABILITY : BASE, INeed, ISetSource
         {
             //自動でコストの文章を生成
             //Name_str = main.enumCtrl.abilitys[(int)kind].Name();
-            Description_str = main.enumCtrl.abilitys[(int)kind].Description();
+            //Description_str = main.enumCtrl.abilitys[(int)kind].Description();
+            Description_str = unlockDetail();
             Cost_str = progress.ProgressDetail(progress.initCostList);
             ProgressCost_str = progress.ProgressDetail(progress.progressCostList);
             ProgressEffect_str = progress.ProgressDetail(progress.progressEffectList);
@@ -178,6 +344,82 @@ public class ABILITY : BASE, INeed, ISetSource
             ChangeTextAdaptive(ProgressCost_str, popUp.texts[9], popUp.texts[8].gameObject, popUp.texts[9].gameObject);
             ChangeTextAdaptive(ProgressEffect_str, popUp.texts[11], popUp.texts[10].gameObject, popUp.texts[11].gameObject);
             ChangeTextAdaptive(CompleteEffect_str, popUp.texts[13], popUp.texts[12].gameObject, popUp.texts[13].gameObject);
+        }
+    }
+
+
+
+
+    //内部クラス
+    protected interface IInternalUnlock { }
+    protected class InstantUnlock : IInternalUnlock
+{
+        public MainAction.ActionEnum.Instant kind;
+        public int level;
+        public InstantUnlock(int level, MainAction.ActionEnum.Instant kind)
+        {
+            this.kind = kind;
+            this.level = level;
+        }
+    }
+    protected class LoopUnlock : IInternalUnlock
+{
+        public MainAction.ActionEnum.Loop kind;
+        public int level;
+        public LoopUnlock(int level, MainAction.ActionEnum.Loop kind)
+        {
+            this.kind = kind;
+            this.level = level;
+        }
+    }
+    protected class UpgradeUnlock : IInternalUnlock
+{
+        public MainAction.ActionEnum.Upgrade kind;
+        public int level;
+        public UpgradeUnlock(int level, MainAction.ActionEnum.Upgrade kind)
+        {
+            this.kind = kind;
+            this.level = level;
+        }
+    }
+    protected class AbilityUnlock : IInternalUnlock
+    {
+        public AbilityKind kind;
+        public int level;
+        public AbilityUnlock(int level, AbilityKind kind)
+        {
+            this.kind = kind;
+            this.level = level;
+        }
+    }
+    protected class SkillUnlock : IInternalUnlock
+    {
+        public SkillKind kind;
+        public int level;
+        public  SkillUnlock(int level, SkillKind kind)
+        {
+            this.kind = kind;
+            this.level = level;
+        }
+    }
+    protected class ItemUnlock : IInternalUnlock
+    {
+        public ItemKind kind;
+        public int level;
+        public ItemUnlock(int level, ItemKind kind)
+        {
+            this.kind = kind;
+            this.level = level;
+        }
+    }
+    protected class DungeonUnlock : IInternalUnlock
+    {
+        public DungeonKind kind;
+        public int level;
+        public DungeonUnlock(int level, DungeonKind kind)
+        {
+            this.kind = kind;
+            this.level = level;
         }
     }
 }

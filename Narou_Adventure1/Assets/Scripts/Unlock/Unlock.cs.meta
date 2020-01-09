@@ -1,0 +1,6 @@
+﻿public abstract class UNLOCK {
+    public delegate bool Condition();
+    //解放女権
+    public Condition condition;
+    public abstract void JudgeCondition();
+}

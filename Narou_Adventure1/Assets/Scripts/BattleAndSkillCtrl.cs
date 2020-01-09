@@ -65,10 +65,12 @@ public class BattleAndSkillCtrl : BASE {
 
     public double DamageCalculate(double skill_atk, double atk, double criticalFactor)
     {
+        //double dmg = atk * (1d + skill_atk / 10) * criticalFactor;
+        //int randomRange = (int)((1d / 2d) * Math.Sqrt(dmg));
+        //double randomFactor = UnityEngine.Random.Range( -randomRange, randomRange + 1);
+        //return dmg + randomFactor;
         double dmg = atk * (1d + skill_atk / 10) * criticalFactor;
-        int randomRange = (int)((1d / 2d) * Math.Sqrt(dmg));
-        double randomFactor = UnityEngine.Random.Range( -randomRange, randomRange + 1);
-        return dmg + randomFactor;
+        return dmg;
     }
 
     // Use this for initialization

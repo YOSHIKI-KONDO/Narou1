@@ -881,8 +881,10 @@ public class UsefulMethod : MonoBehaviour
 
     public static double CalDmg(double dmg, double def)
     {
-        if(dmg - def > 0) { return dmg - def; }   //0=>1で最低1保証
-        else { return 0; }                        //0=>1で最低1保証
+        double baseDmg = (dmg / 2d) - (def / 4d);
+        int randomRange = (int)((1d / 2d) * Math.Sqrt(baseDmg));
+        double randomFactor = UnityEngine.Random.Range(-randomRange, randomRange + 1);
+        return (baseDmg + randomFactor) > 0.1 ? baseDmg + randomFactor : 0.1;
     }
 
     public static void ChangeTextAdaptive(string sentense, Text text, params GameObject[] objects)
