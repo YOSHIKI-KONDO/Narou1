@@ -151,7 +151,7 @@ public class UsefulMethod : MonoBehaviour
         return ((int)i).ToString("F0");
 
     }
-    public static string tDigit(double i,int j)
+    public static string tDigit(double i,int j, bool truncate = false)
     {
         string tempString;
         string showNum = "";
@@ -195,9 +195,15 @@ public class UsefulMethod : MonoBehaviour
 
         switch(j){
             case 0:
+                /* 追加 */
+                if (truncate)
+                {
+                    i = Math.Floor(i);
+                }
+                /*  */
                 return i.ToString("F0");
             case 1:
-            return i.ToString("F1");
+                return i.ToString("F1");
             case 2:
                 return i.ToString("F2");
             case 3:

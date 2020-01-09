@@ -69,7 +69,7 @@ public class BattleAndSkillCtrl : BASE {
         //int randomRange = (int)((1d / 2d) * Math.Sqrt(dmg));
         //double randomFactor = UnityEngine.Random.Range( -randomRange, randomRange + 1);
         //return dmg + randomFactor;
-        double dmg = atk * (1d + skill_atk / 10) * criticalFactor;
+        double dmg = atk * (1d + skill_atk / 30) * criticalFactor; //10 => 30に変更
         return dmg;
     }
 
