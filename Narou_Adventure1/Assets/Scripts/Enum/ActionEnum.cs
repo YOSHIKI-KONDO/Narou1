@@ -73,7 +73,6 @@
             buy_wallet,
             study_in_church,
             buy_bag,
-            practical_skill,
             rune_augmentation,
             buy_fire_spellbook,
             //少女イベント

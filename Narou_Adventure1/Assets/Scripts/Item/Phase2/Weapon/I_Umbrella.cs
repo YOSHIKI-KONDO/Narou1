@@ -15,11 +15,11 @@ public class I_Umbrella : ITEM
     // Use this for initialization
     void Awake()
     {
-        AwakeItem(ItemKind.umbrella, 1,12);
+        AwakeItem(ItemKind.umbrella, 1,1,1,99,17);
         BuyLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -30));
         SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 15));
-        EffectLists.Add(new Dealing(ResourceKind.attack, Dealing.R_ParaKind.status, 1));
-        EffectLists.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.max, 1));
+        EffectLists.Add(new Dealing(ResourceKind.attack, Dealing.R_ParaKind.status, 2));
+        EffectLists.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.max, 2));
 
         SetSource(NeedKind.weapon, NeedKind.sword, NeedKind.spear, NeedKind.rod,  NeedKind.water);
     }

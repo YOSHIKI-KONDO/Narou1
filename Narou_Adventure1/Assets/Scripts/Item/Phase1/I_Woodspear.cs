@@ -14,7 +14,7 @@ public class I_Woodspear : ITEM
         AwakeItem(ItemKind.woodspear, 1,1);
         BuyLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -30));
         SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 15));
-        EffectLists.Add(new Dealing(ResourceKind.attack, Dealing.R_ParaKind.status, 2));
+        EffectLists.Add(new Dealing(ResourceKind.attack, Dealing.R_ParaKind.status, 4));
 
         SetSource(NeedKind.weapon, NeedKind.spear);
     }

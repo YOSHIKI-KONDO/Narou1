@@ -15,10 +15,10 @@ public class I_Pouch : ITEM
     // Use this for initialization
     void Awake()
     {
-        AwakeItem(ItemKind.pouch, 2,5);
-        BuyLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -70));
-        SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 35));
-        EffectLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.max, 100));
+        AwakeItem(ItemKind.pouch, 2,5,2,99,2);
+        BuyLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -60));
+        SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 30));
+        EffectLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.max, 80));
 
         SetSource(NeedKind.goods);
     }

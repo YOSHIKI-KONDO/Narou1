@@ -14,7 +14,7 @@ public class I_WaterOrb : ITEM
         AwakeItem(ItemKind.water_orb, 1,1);
         BuyLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -50));
         SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 25));
-        EffectLists.Add(new Dealing(ResourceKind.magic_attack, Dealing.R_ParaKind.status, 2));
+        EffectLists.Add(new Dealing(ResourceKind.magic_attack, Dealing.R_ParaKind.status, 4));
 
         SetSource(NeedKind.goods, NeedKind.water);
     }

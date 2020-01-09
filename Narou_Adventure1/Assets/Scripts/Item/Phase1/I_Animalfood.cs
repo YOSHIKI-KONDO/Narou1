@@ -11,7 +11,7 @@ public class I_Animalfood : ITEM
     // Use this for initialization
     void Awake()
     {
-        AwakeItem(ItemKind.animalfood, 1,1);
+        AwakeItem(ItemKind.animalfood, 1,1,1,1,1);
         BuyLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -30));
         SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 15));
         EffectLists.Add(new Dealing(AbilityKind.animal_handling, Dealing.A_ParaKind.maxLevel, 1));

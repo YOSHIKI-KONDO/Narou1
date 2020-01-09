@@ -15,11 +15,11 @@ public class I_WindRod : ITEM
     // Use this for initialization
     void Awake()
     {
-        AwakeItem(ItemKind.wind_rod, 1,1);
-        BuyLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -200));
-        SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 100));
-        EffectLists.Add(new Dealing(ResourceKind.attack, Dealing.R_ParaKind.status, 5));
-        EffectLists.Add(new Dealing(ResourceKind.magic_attack, Dealing.R_ParaKind.status, 5));
+        AwakeItem(ItemKind.wind_rod, 1,1,2,30,2);
+        BuyLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -150));
+        SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 75));
+        EffectLists.Add(new Dealing(ResourceKind.attack, Dealing.R_ParaKind.status, 6));
+        EffectLists.Add(new Dealing(ResourceKind.magic_attack, Dealing.R_ParaKind.status, 6));
 
         SetSource(NeedKind.weapon, NeedKind.rod, NeedKind.wind);
     }

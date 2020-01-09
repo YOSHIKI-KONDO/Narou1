@@ -15,7 +15,7 @@ public class I_Rosary : ITEM
     // Use this for initialization
     void Awake()
     {
-        AwakeItem(ItemKind.rosary, 5,1);
+        AwakeItem(ItemKind.rosary, 5,1,3,1,1);
         BuyLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -500));
         SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 250));
         EffectLists.Add(new Dealing(ResourceKind.magic_attack, Dealing.R_ParaKind.status, 2));

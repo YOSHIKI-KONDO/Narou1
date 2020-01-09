@@ -15,7 +15,7 @@ public class I_SeaBreezeAmulet : ITEM
     // Use this for initialization
     void Awake()
     {
-        AwakeItem(ItemKind.sea_breeze_amulet, 3,1);
+        AwakeItem(ItemKind.sea_breeze_amulet, 3,1,3,1,1);
         BuyLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -500));
         SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 250));
         EffectLists.Add(new Dealing(ResourceKind.defense, Dealing.R_ParaKind.status, 2));

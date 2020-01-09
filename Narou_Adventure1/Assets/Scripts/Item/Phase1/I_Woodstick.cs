@@ -14,7 +14,7 @@ public class I_Woodstick : ITEM
         AwakeItem(ItemKind.woodstick, 1,1);
         BuyLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -20));
         SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 10));
-        EffectLists.Add(new Dealing(ResourceKind.attack, Dealing.R_ParaKind.status, 1));
+        EffectLists.Add(new Dealing(ResourceKind.attack, Dealing.R_ParaKind.status, 2));
 
         SetSource(NeedKind.weapon, NeedKind.rod);
     }

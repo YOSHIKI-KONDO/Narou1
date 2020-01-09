@@ -15,7 +15,7 @@ public class I_StoneAxe : ITEM
     // Use this for initialization
     void Awake()
     {
-        AwakeItem(ItemKind.stone_axe, 1,1);
+        AwakeItem(ItemKind.stone_axe, 1,1,2,30,2);
         BuyLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -180));
         SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 90));
         EffectLists.Add(new Dealing(ResourceKind.attack, Dealing.R_ParaKind.status, 12));

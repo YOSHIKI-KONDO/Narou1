@@ -23,6 +23,8 @@ public class AB_PrimaryWindMagic : ABILITY
         progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 4));
 
         need.AddSourceNeed(NeedKind.wind);
+
+        SetSource(NeedKind.wind);
     }
 
 	// Use this for initialization

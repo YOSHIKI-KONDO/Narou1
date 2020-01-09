@@ -15,9 +15,9 @@ public class I_WarriorTextbook : ITEM
     // Use this for initialization
     void Awake()
     {
-        AwakeItem(ItemKind.warrior_textbook, 1,1);
-        BuyLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -600));
-        SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 300));
+        AwakeItem(ItemKind.warrior_textbook, 1,1,4,1,1);
+        BuyLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -1000));
+        SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 100));
         EffectLists.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.max, 10));
         EffectLists.Add(new Dealing(AbilityKind.beginner_swordmanship, Dealing.A_ParaKind.maxLevel, 1));
         EffectLists.Add(new Dealing(AbilityKind.beginner_spearmanship, Dealing.A_ParaKind.maxLevel, 1));
