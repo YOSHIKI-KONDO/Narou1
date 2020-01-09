@@ -61,6 +61,10 @@ public class ITEM : BASE, INeed, ISetSource
     //重い
     double CalculateLFactor(int Level)
     {
+        if (maxLevel <= 1)
+        {
+            return 1;
+        }
         double cal = Math.Pow(Level, level_power);
         if (Level >= maxLevel)
         {
