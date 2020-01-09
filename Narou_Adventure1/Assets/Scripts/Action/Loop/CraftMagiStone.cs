@@ -16,7 +16,7 @@ public class CraftMagiStone : LOOP_ACTION
     void Awake () {
         AwakeLoopAction(MainAction.ActionEnum.Loop.craft_magi_stone, 10,1);
         progress.initCostList.Add(new Dealing(ResourceKind.stone, Dealing.R_ParaKind.current, -1));
-        progress.progressCostList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.3));
+        progress.progressCostList.Add(new Dealing(ResourceKind.action, Dealing.R_ParaKind.current, -0.3));
         progress.progressCostList.Add(new Dealing(ResourceKind.mp, Dealing.R_ParaKind.current, -0.4));
         progress.completeEffectList.Add(new Dealing(ResourceKind.magi_stone, Dealing.R_ParaKind.current, 1));
     }

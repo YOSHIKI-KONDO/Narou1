@@ -9,8 +9,7 @@ public class EatAnchovySandwich : INSTANT_ACTION
 {
     public override bool Requires()
     {
-        return main.rsc.Max((int)ResourceKind.stamina) >= 5 &&
-               main.rsc.Value[(int)ResourceKind.anchovy_sandwich] >= 1;
+        return main.rsc.Value[(int)ResourceKind.anchovy_sandwich] >= 1;
     }
 
     // Use this for initialization
@@ -18,7 +17,7 @@ public class EatAnchovySandwich : INSTANT_ACTION
     {
         AwakeInstantAction(MainAction.ActionEnum.Instant.eat_anchovy_sandwich);
         instant.initCostList.Add(new Dealing(ResourceKind.anchovy_sandwich, Dealing.R_ParaKind.current, -1));
-        instant.completeEffectList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, 5));
+        instant.completeEffectList.Add(new Dealing(ResourceKind.action, Dealing.R_ParaKind.current, 5));
     }
 
     // Use this for initialization

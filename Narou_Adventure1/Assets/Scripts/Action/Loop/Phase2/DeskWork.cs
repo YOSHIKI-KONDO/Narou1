@@ -16,7 +16,7 @@ public class DeskWork : LOOP_ACTION
     // Use this for initialization
     void Awake () {
         AwakeLoopAction(MainAction.ActionEnum.Loop.desk_work, 20,1);
-        progress.progressCostList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.3));
+        progress.progressCostList.Add(new Dealing(ResourceKind.action, Dealing.R_ParaKind.current, -0.3));
         progress.progressCostList.Add(new Dealing(ResourceKind.mp, Dealing.R_ParaKind.current, -0.3));
         progress.progressEffectList.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 0.6));
         progress.completeEffectList.Add(new Dealing(ResourceKind.bread, Dealing.R_ParaKind.current, 1));

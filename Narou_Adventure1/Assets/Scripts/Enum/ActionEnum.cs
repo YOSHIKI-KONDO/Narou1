@@ -7,6 +7,7 @@
             nothing,
             //フェーズ１（入学前）
             weeding,
+            intensive_training,
             eat_anchovy_sandwich,
             eat_filet_o_fish,
             drink_herb_tea,
@@ -14,6 +15,7 @@
             runic_carving,
             split_firewood,
             sell_firewood,
+            sell_bread,
             //フェーズ２（学校）
             //アビリティアクション
             mugged,

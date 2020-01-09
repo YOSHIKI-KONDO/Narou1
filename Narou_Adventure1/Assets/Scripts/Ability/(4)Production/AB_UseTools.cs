@@ -15,9 +15,9 @@ public class AB_UseTools : ABILITY
 
     // Use this for initialization
     void Awake () {
-        AwakeAbility(AbilityKind.use_tools, 50, 1.2);
+        AwakeAbility(AbilityKind.use_tools, 30, 1.2);
         progress.unlockCostList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, -50));
-        progress.progressCostList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.4));
+        progress.progressCostList.Add(new Dealing(ResourceKind.action, Dealing.R_ParaKind.current, -0.4));
         progress.completeEffectList.Add(new Dealing(ResourceKind.herb, Dealing.R_ParaKind.max, 1));
         progress.completeEffectList.Add(new Dealing(ResourceKind.wheat, Dealing.R_ParaKind.max, 2));
         progress.completeEffectList.Add(new Dealing(ResourceKind.wood, Dealing.R_ParaKind.max, 1));

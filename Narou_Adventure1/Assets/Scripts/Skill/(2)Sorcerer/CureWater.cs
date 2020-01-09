@@ -9,7 +9,7 @@ public class CureWater : SKILL
 {
     public override bool Requires()
     {
-        return main.a_rsc.CurrentLevels[(int)AbilityKind.primary_water_magic] >= 6;
+        return main.a_rsc.CurrentLevels[(int)AbilityKind.primary_water_magic] >= 7;
     }
 
     // Use this for initialization
@@ -18,6 +18,8 @@ public class CureWater : SKILL
         learnF.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -5));
         useCosts.Add(new Dealing(ResourceKind.water, Dealing.R_ParaKind.current, -3));
         useEffects.Add(new Temp_Regen_Deal(ResourceKind.hp, 0.2, 20));
+
+        SetSource(NeedKind.enhance, NeedKind.water);
     }
 
 	// Use this for initialization

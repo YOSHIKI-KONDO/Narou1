@@ -9,15 +9,17 @@ public class UpperSlash : SKILL
 {
     public override bool Requires()
     {
-        return main.a_rsc.CurrentLevels[(int)AbilityKind.beginner_spearmanship] >= 6;
+        return main.a_rsc.CurrentLevels[(int)AbilityKind.beginner_spearmanship] >= 7;
     }
 
     // Use this for initialization
     void Awake () {
 		AwakeSkill(SkillKind.upper_slash, 2.5);
         learnF.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -5));
-        useCosts.Add(new Dealing(ResourceKind.mp, Dealing.R_ParaKind.current, -1));
-        warriorAtks.Add(new WarriorAttack(5));
+        useCosts.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -1));
+        warriorAtks.Add(new WarriorAttack(15));
+
+        SetSource(NeedKind.attack, NeedKind.spear);
     }
 
 	// Use this for initialization

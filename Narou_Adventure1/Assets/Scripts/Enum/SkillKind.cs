@@ -6,10 +6,13 @@
     //戦士
     right_slash,
     left_upper_slash,
+    cooking_sandwich,//生産
     stab,
     upper_slash,
+    spearfishing,//生産
     left_small_swing,
     parry,
+    knead_dough,//生産
     /*helm_splitter,
     left_whirlslash,
     guard,
@@ -20,12 +23,16 @@
     //魔導士
     fireball,
     hot_body,
+    create_charcoal,//生産
     waterball,
     cure_water,
+    catch_fish,//生産
     air_cutter,
     wind_step,
+    create_firewood,//生産
     stone_bullet,
     earth_wall,
+    grow_wheat,//生産
     /*electric_arrow,
     electric_step,
     ice_arrow,

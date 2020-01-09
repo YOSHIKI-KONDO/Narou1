@@ -31,8 +31,8 @@ public class DecideParameter : BASE {
         main.rsc.Max_Base[(int)ResourceKind.inventorySpace] = 0;
         main.rsc.Max_Base[(int)ResourceKind.equipSpace] = 0;
         //ステータスリソース
-        main.rsc.Max_Base[(int)ResourceKind.stamina] = 1;
-        main.rsc.Value[(int)ResourceKind.stamina]=1;
+        main.rsc.Max_Base[(int)ResourceKind.action] = 1;
+        main.rsc.Value[(int)ResourceKind.action]=1;
         main.rsc.Max_Base[(int)ResourceKind.hp] = 1;
         main.rsc.Value[(int)ResourceKind.hp] = 1;
         main.rsc.Max_Base[(int)ResourceKind.itemPoint1] = 20;
@@ -55,6 +55,7 @@ public class DecideParameter : BASE {
         main.rsc.Regen_Base[(int)ResourceKind.ice] = 0.1;
         main.rsc.Regen_Base[(int)ResourceKind.light] = 0.1;
         main.rsc.Regen_Base[(int)ResourceKind.dark] = 0.1;
+        main.rsc.Regen_Base[(int)ResourceKind.animal] = 0.1;
         //リソース
         main.rsc.Max_Base[(int)ResourceKind.gold] = 20;
         main.rsc.Max_Base[(int)ResourceKind.research] = 10;
@@ -63,6 +64,7 @@ public class DecideParameter : BASE {
         main.rsc.Max_Base[(int)ResourceKind.herb] = 5;
         main.rsc.Max_Base[(int)ResourceKind.flower] = 1;
         main.rsc.Max_Base[(int)ResourceKind.bread] = 10;
+        main.rsc.Max_Base[(int)ResourceKind.fish] = 20;
         main.rsc.Max_Base[(int)ResourceKind.anchovy_sandwich] = 3;
         main.rsc.Max_Base[(int)ResourceKind.filet_o_fish] = 3;
         main.rsc.Max_Base[(int)ResourceKind.stone] = 10;

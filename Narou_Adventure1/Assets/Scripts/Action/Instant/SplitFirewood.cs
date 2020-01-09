@@ -17,7 +17,7 @@ public class SplitFirewood : INSTANT_ACTION
     void Awake()
     {
         AwakeInstantAction(MainAction.ActionEnum.Instant.split_firewood);
-        instant.initCostList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -2));
+        instant.initCostList.Add(new Dealing(ResourceKind.action, Dealing.R_ParaKind.current, -2));
         instant.initCostList.Add(new Dealing(ResourceKind.wood, Dealing.R_ParaKind.current, -1));
         instant.completeEffectList.Add(new Dealing(ResourceKind.firewood, Dealing.R_ParaKind.current, 8));
 	}

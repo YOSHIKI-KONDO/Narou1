@@ -9,15 +9,17 @@ public class Parry : SKILL
 {
     public override bool Requires()
     {
-        return main.a_rsc.CurrentLevels[(int)AbilityKind.beginner_bojutsu] >= 6;
+        return main.a_rsc.CurrentLevels[(int)AbilityKind.beginner_bojutsu] >= 7;
     }
 
     // Use this for initialization
     void Awake () {
 		AwakeSkill(SkillKind.parry, 1.5);
         learnF.initCostList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -3));
-        useCosts.Add(new Dealing(ResourceKind.mp, Dealing.R_ParaKind.current, -1));
+        useCosts.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -1));
         useEffects.Add(new Temp_Regen_Deal(ResourceKind.strength, 10, 4));
+
+        SetSource(NeedKind.enhance, NeedKind.rod);
     }
 
 	// Use this for initialization

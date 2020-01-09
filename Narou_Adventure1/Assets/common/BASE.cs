@@ -17,7 +17,7 @@ public class BASE : MonoBehaviour
     public delegate double DoubleSync(double? x = null);
     public delegate bool BoolSync(bool? x = null);
 
-    public string DropsDetail(List<Drop> drops)
+    public string DropsDetail(List<Drop> drops, bool Hatena = false)
     {
         string sum = "";
         foreach (var drop in drops)
@@ -26,11 +26,25 @@ public class BASE : MonoBehaviour
             //itemチェック
             if (drop is Item_Drop)
             {
-                sum += main.enumCtrl.items[(int)((Item_Drop)drop).itemKind].Name() + " ... " + drop.probability.ToString("F0") + "%";
+                if (Hatena && (main.SR.discover_Item[(int)((Item_Drop)drop).itemKind] == false))
+                {
+                    sum += "??? ... " + drop.probability.ToString("F0") + "%";
+                }
+                else
+                {
+                    sum += main.enumCtrl.items[(int)((Item_Drop)drop).itemKind].Name() + " ... " + drop.probability.ToString("F0") + "%";
+                }
             }
             else
-            {
-                sum += main.enumCtrl.resources[(int)drop.kind].Name() + ":" + tDigit(drop.amount) + " ... " + drop.probability.ToString("F0") + "%";
+            {//リソース
+                if (Hatena && (main.SR.discover_resource[(int)drop.kind] == false))
+                {
+                    sum += "???:" + tDigit(drop.amount) + " ... " + drop.probability.ToString("F0") + "%";
+                }
+                else
+                {
+                    sum += main.enumCtrl.resources[(int)drop.kind].Name() + ":" + tDigit(drop.amount) + " ... " + drop.probability.ToString("F0") + "%";
+                }
             }
         }
         return sum;

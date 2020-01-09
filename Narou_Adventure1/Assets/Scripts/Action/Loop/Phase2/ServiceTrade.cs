@@ -16,7 +16,7 @@ public class ServiceTrade : LOOP_ACTION
     // Use this for initialization
     void Awake () {
         AwakeLoopAction(MainAction.ActionEnum.Loop.service_trade, 20,1);
-        progress.progressCostList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.4));
+        progress.progressCostList.Add(new Dealing(ResourceKind.action, Dealing.R_ParaKind.current, -0.4));
         progress.progressEffectList.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 0.7));
         progress.completeEffectList.Add(new Dealing(ResourceKind.filet_o_fish, Dealing.R_ParaKind.current, 1));
     }

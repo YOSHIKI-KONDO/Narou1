@@ -71,6 +71,7 @@ public class ResourceCtrl : BASE {
         }
 
         CalculateAllEffect();
+        CheckDiscover();
     }
 
     void Truncate()
@@ -112,6 +113,20 @@ public class ResourceCtrl : BASE {
             if (i == 0) { continue; }
             if (main.resourceTextCtrl.effectAry[i] == null) { continue; }
             CalculateResourceEffect(main.resourceTextCtrl.effectAry[i].effects, (int)Value[i], (ResourceKind)i);
+        }
+    }
+
+    // 未発見かどうかの更新
+    void CheckDiscover()
+    {
+        for (int i = 0; i < main.SD.num_resource; i++)
+        {
+            if (i == 0) { continue; }
+            if (main.SR.discover_resource[i] == false)
+            {
+                //現在地が1以上なら発見
+                if(Value[i] >= 1) { main.SR.discover_resource[i] = true; }
+            }
         }
     }
 

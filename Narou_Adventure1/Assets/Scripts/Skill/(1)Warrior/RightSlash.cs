@@ -16,12 +16,14 @@ public class RightSlash : SKILL
     void Awake () {
 		AwakeSkill(SkillKind.right_slash, 2);
         learnF.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -5));
-        useCosts.Add(new Dealing(ResourceKind.mp, Dealing.R_ParaKind.current, -1));
-        warriorAtks.Add(new WarriorAttack(4));
+        useCosts.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -1));
+        warriorAtks.Add(new WarriorAttack(12));
 
-        combo = new Cost_SC(NeedKind.fire, 0.5f);
-        combo = new Effect_SC(NeedKind.fire, 10f);
-        combo = new Interval_SC(NeedKind.fire, 0.1f);
+        SetSource(NeedKind.attack, NeedKind.sword);
+
+        combo = new Cost_SC(NeedKind.sword, 0.5f);
+        combo = new Effect_SC(NeedKind.sword, 10f);
+        combo = new Interval_SC(NeedKind.sword, 0.1f);
     }
 
 	// Use this for initialization

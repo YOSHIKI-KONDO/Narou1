@@ -84,9 +84,10 @@ public class EnumCtrl : BASE {
         resources.Add(new template(ResourceKind.attack, "Attack", "攻撃力", "", ""));
         resources.Add(new template(ResourceKind.magic_attack, "Magic Attack", "魔法攻撃力", "", ""));
           //ステータスリソース
-        resources.Add(new template(ResourceKind.stamina, "Stamina", "スタミナ", "use for loop action", "あらゆる行動に使います"));
+        resources.Add(new template(ResourceKind.action, "Action", "アクション", "use for loop action", "あらゆる行動に使います"));
         resources.Add(new template(ResourceKind.hp, "HP", "HP", "your hit point", "あらゆる行動に使います"));
         resources.Add(new template(ResourceKind.mp, "MP", "MP", "use for many things e.x. focus ,skill, ability...", "あらゆる行動に使います"));
+        resources.Add(new template(ResourceKind.stamina, "Stamina", "スタミナ", "use for loop action", "あらゆる行動に使います"));
         resources.Add(new template(ResourceKind.fire, "Fire", "火", "", "あらゆる行動に使います"));
         resources.Add(new template(ResourceKind.water, "Water", "水", "", "あらゆる行動に使います"));
         resources.Add(new template(ResourceKind.wind, "Wind", "風", "", "あらゆる行動に使います"));
@@ -95,7 +96,8 @@ public class EnumCtrl : BASE {
         resources.Add(new template(ResourceKind.ice, "Ice", "氷", "", "あらゆる行動に使います"));
         resources.Add(new template(ResourceKind.light, "Light", "光", "", "あらゆる行動に使います"));
         resources.Add(new template(ResourceKind.dark, "Dark", "闇", "", "あらゆる行動に使います"));
-            //物資リソース
+        resources.Add(new template(ResourceKind.animal, "Animal", "アニマル", "", "あらゆる行動に使います"));
+        //物資リソース
         resources.Add(new template(ResourceKind.gold, "Gold", "Gold", "use for upgrade, item", "nothing"));
         resources.Add(new template(ResourceKind.research, "Destiny", "運命", "Everything will start from this.", "nothing"));
         resources.Add(new template(ResourceKind.paper, "Rune", "ルーン", "magic item that generate destiny automatically", "nothing"));
@@ -153,6 +155,7 @@ public class EnumCtrl : BASE {
         instantActions.Add(new template(ActionEnum.Instant.nothing, "nothing", "nothing", "nothing", "nothing"));
           //フェーズ１（入学前）
         instantActions.Add(new template(ActionEnum.Instant.weeding, "Weeding", "草むしり", "Part time job. Once in a while, you can get herbs.", "アルバイト。たまにハーブが生えている。"));
+        instantActions.Add(new template(ActionEnum.Instant.intensive_training, "Intensive Training", "猛特訓", "nothing", "体を酷使することで運命力を得る。"));
         instantActions.Add(new template(ActionEnum.Instant.eat_anchovy_sandwich, "Eat Anchovy Sandwich", "アンチョビサンド", "The salty taste recovers you from fatigue.", "塩味が効いていて、疲れた体に旨みが染み渡る。"));
         instantActions.Add(new template(ActionEnum.Instant.eat_filet_o_fish, "Eat Filet-O-Fish", "フィレオフィッシュ", "As you eat, the flavor of fried fish between fluffy patties will jumps out.", "一口噛むと、ふっくらとしたバンズに挟まれたフィッシュフライの油がほとばしる。"));
         instantActions.Add(new template(ActionEnum.Instant.drink_herb_tea, "Drink Herb tea", "ハーブティー", "It tastes sacred.", "神聖な味がする。"));
@@ -160,8 +163,9 @@ public class EnumCtrl : BASE {
         instantActions.Add(new template(ActionEnum.Instant.runic_carving, "Runic Carving", "ルーンを刻む", "Obtain further destiny from carving with runes.", "ルーンを石碑に刻み、更なる運命を得る。"));
         instantActions.Add(new template(ActionEnum.Instant.split_firewood, "Split Firewood", "薪割り", "", "nothing"));
         instantActions.Add(new template(ActionEnum.Instant.sell_firewood, "Sell Firewood", "薪を売る", "", "nothing"));
-          //フェーズ２（学校）
-            //アビリティアクション
+        instantActions.Add(new template(ActionEnum.Instant.sell_bread, "Sell Bread", "パンを売る", "nothing", "nothing"));
+        //フェーズ２（学校）
+        //アビリティアクション
         instantActions.Add(new template(ActionEnum.Instant.mugged, "Mugged", "カツアゲ", "nothing", "お金を巻き上げろ！１クリック１パンチ！"));
         instantActions.Add(new template(ActionEnum.Instant.devotion, "Devotion", "祈祷", "nothing", "nothing"));
         instantActions.Add(new template(ActionEnum.Instant.take_medicine, "Take Medicine", "薬を飲む", "nothing", "nothing"));
@@ -242,12 +246,12 @@ public class EnumCtrl : BASE {
             //授業
         upgradeActions.Add(new template(ActionEnum.Upgrade.sword_classwork, "Sword Classwork", "剣術の授業", "nothing", "筋骨隆々な先生が手取り足取り教えてくれるぞ。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.spear_classwork, "Spear Classwork", "槍術の授業", "nothing", "槍術の先生の趣味はスピアフィッシングとのこと。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.rod_classwork, "Rod Classwork", "棒術の授業", "nothing", "先生曰く、棒術を覚えるとパン屋で生地をこねるのに便利らしい。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.rod_classwork, "Rod Classwork", "棒術の授業", "nothing", "先生曰く、棒術を覚えるとパン生地をこねるのに便利らしい。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.fire_magic_classwork, "Fire Magic Classwork", "火魔術の授業", "nothing", "火魔術は危険だが、生産には必須である。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.water_magic_classwork, "Water Magic Classwork", "水魔術の授業", "nothing", "水中の魚を容易く捕らえることができる、素晴らしい魔術だ。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.wind_magic_classwork, "Wind Magic Classwork", "風魔術の授業", "nothing", "風を刃のように扱うことができる、おそろしい魔術だ。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.earth_magic_classwork, "Earth Magic Classwork", "土魔術の授業", "nothing", "土魔術に精通した人は土地の開拓に重宝されるらしい。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.animal_handling_classwork, "Animal HandLing Classwork", "動物使役の授業", "nothing", "教室がペットで溢れ返り、うるさい。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.animal_handling_classwork, "Animal Handling Classwork", "動物使役の授業", "nothing", "教室がペットで溢れ返り、うるさい。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.use_tools_classwork, "Use Tools Classwork", "道具使役の授業", "nothing", "道具に精通することで、様々な生産職への道が開かれるとのこと。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.life_magic_classwork, "Life Magic Classwork", "生活魔法の授業", "nothing", "いずれ役立つので、とりあえず授業を受ける人が多い。"));
 
@@ -440,6 +444,12 @@ public class EnumCtrl : BASE {
         needs.Add(new template(NeedKind.animal, "animal", "animal", "", ""));
         needs.Add(new template(NeedKind.medic, "medic", "medic", "", ""));
 
+        needs.Add(new template(NeedKind.attack, "attack", "attack", "", ""));
+        needs.Add(new template(NeedKind.production, "production", "production", "", ""));
+        needs.Add(new template(NeedKind.enhance, "enhance", "enhance", "", ""));
+        needs.Add(new template(NeedKind.debuff, "debuff", "debuff", "", ""));
+        
+
         /* スキル */
         skills.Add(new template(SkillKind.nothing, "nothing", "nothing", "nothing", "nothing"));
         skills.Add(new template(SkillKind.normalAttack, "Normal Attack", "通常攻撃", "", ""));
@@ -447,10 +457,13 @@ public class EnumCtrl : BASE {
         //戦士
         skills.Add(new template(SkillKind.right_slash, "Right Slash", "袈裟斬り", "", ""));
         skills.Add(new template(SkillKind.left_upper_slash, "Left Upper Slash", "左斬上げ", "", ""));
+        skills.Add(new template(SkillKind.cooking_sandwich, "Cooking Sandwich", "クッキングサンドイッチ", "", ""));//生産
         skills.Add(new template(SkillKind.stab, "Stab", "突き", "", ""));
         skills.Add(new template(SkillKind.upper_slash, "Upper Slash", "斬上げ", "", ""));
+        skills.Add(new template(SkillKind.spearfishing, "Spearfishing", "スピアフィッシング", "", ""));//生産
         skills.Add(new template(SkillKind.left_small_swing, "Left Small Swing", "左小振り", "", ""));
         skills.Add(new template(SkillKind.parry, "Parry", "受け流し", "", ""));
+        skills.Add(new template(SkillKind.knead_dough, "Knead Dough", "パンをこねる", "", ""));//生産
         /*skills.Add(new template(SkillKind.helm_splitter, "Helm Splitter", "兜割り", "", ""));
         skills.Add(new template(SkillKind.left_whirlslash, "Left Whirlslash", "左回転斬り", "", ""));
         skills.Add(new template(SkillKind.guard, "Guard", "ガード", "", ""));
@@ -461,12 +474,16 @@ public class EnumCtrl : BASE {
         //魔導士
         skills.Add(new template(SkillKind.fireball, "Fireball", "ファイアーボール", "", ""));
         skills.Add(new template(SkillKind.hot_body, "Hot Body", "ホットボディ", "", ""));
+        skills.Add(new template(SkillKind.create_charcoal, "Create Charcoal", "クリエイト：木炭", "", ""));//生産
         skills.Add(new template(SkillKind.waterball, "Waterball", "ウォーターボール", "", ""));
         skills.Add(new template(SkillKind.cure_water, "Cure Water", "キュアウォーター", "", ""));
+        skills.Add(new template(SkillKind.catch_fish, "Catch Fish", "キャッチ：魚", "", ""));//生産
         skills.Add(new template(SkillKind.air_cutter, "Air Cutter", "エアーカッター", "", ""));
         skills.Add(new template(SkillKind.wind_step, "Wind Step", "ウインドステップ", "", ""));
+        skills.Add(new template(SkillKind.create_firewood, "Create Firewood", "クリエイト：薪", "", ""));//生産
         skills.Add(new template(SkillKind.stone_bullet, "Stone Bullet", "ストーンバレット", "", ""));
         skills.Add(new template(SkillKind.earth_wall, "Earth Wall", "アースウォール", "", ""));
+        skills.Add(new template(SkillKind.grow_wheat, "Grow Wheat", "グロウ：小麦", "", ""));//生産
         /*skills.Add(new template(SkillKind.electric_arrow, "Electric Arrow", "エレクトリックアロー", "", ""));
         skills.Add(new template(SkillKind.electric_step, "Electric Step", "エレクトリックステップ", "", ""));
         skills.Add(new template(SkillKind.ice_arrow, "Ice Arrow", "アイスアロー", "", ""));

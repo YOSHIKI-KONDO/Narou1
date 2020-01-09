@@ -26,9 +26,10 @@
     attack,
     magic_attack,
     //ステータスリソース
-    stamina,
+    action,
     hp,
     mp,
+    stamina,
     fire,
     water,
     wind,
@@ -37,6 +38,7 @@
     ice,
     light,
     dark,
+    animal,
     //物資リソース
     gold,
     research,

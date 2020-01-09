@@ -23,4 +23,9 @@
     
     animal,
     medic,
+
+    attack,
+    production,
+    enhance,
+    debuff,
 }

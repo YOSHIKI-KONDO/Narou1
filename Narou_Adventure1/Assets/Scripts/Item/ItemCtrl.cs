@@ -364,6 +364,7 @@ public class ItemCtrl : BASE {
     private void GetItem(ItemKind kind)
     {
         InventoryNum[(int)kind]++;
+        main.SR.discover_Item[(int)kind] = true;
     }
     public void Buy(ItemKind kind)
     {

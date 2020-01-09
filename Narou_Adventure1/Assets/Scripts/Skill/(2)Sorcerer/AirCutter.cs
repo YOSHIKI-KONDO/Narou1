@@ -17,7 +17,9 @@ public class AirCutter : SKILL
 		AwakeSkill(SkillKind.air_cutter, 3);
         learnF.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -5));
         useCosts.Add(new Dealing(ResourceKind.wind, Dealing.R_ParaKind.current, -1));
-        sorcererAtks.Add(new SorcererAttack(6));
+        sorcererAtks.Add(new SorcererAttack(18));
+
+        SetSource(NeedKind.attack, NeedKind.wind);
     }
 
 	// Use this for initialization

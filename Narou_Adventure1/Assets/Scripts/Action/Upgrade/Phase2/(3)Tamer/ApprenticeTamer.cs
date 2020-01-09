@@ -24,8 +24,8 @@ public class ApprenticeTamer : UPGRADE_ACTION
         AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.apprentice_tamer, 1,0,0);
         progress.initCostList.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -300));
         progress.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -300));
-        progress.completeEffectList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.max, 1));
-        progress.completeEffectList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.regen, 0.1));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.action, Dealing.R_ParaKind.max, 1));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.action, Dealing.R_ParaKind.regen, 0.1));
         progress.completeEffectList.Add(new Dealing(ResourceKind.mp, Dealing.R_ParaKind.max, 1));
         progress.completeEffectList.Add(new Dealing(AbilityKind.animal_handling, Dealing.A_ParaKind.maxLevel, 1));
         progress.completeEffectList.Add(new Dealing(AbilityKind.use_tools, Dealing.A_ParaKind.maxLevel, 1));

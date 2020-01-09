@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using static UsefulMethod;
 
-public class PracticalSkill : UPGRADE_ACTION
+/*public class PracticalSkill : UPGRADE_ACTION
 {
     public override bool Requires()
     {
@@ -34,4 +34,4 @@ public class PracticalSkill : UPGRADE_ACTION
     {
         FixedUpdateUpgradeAction();
     }
-}
+}*/

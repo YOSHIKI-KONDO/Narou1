@@ -16,8 +16,10 @@ public class Stab : SKILL
     void Awake () {
 		AwakeSkill(SkillKind.stab, 2);
         learnF.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -5));
-        useCosts.Add(new Dealing(ResourceKind.mp, Dealing.R_ParaKind.current, -1));
-        warriorAtks.Add(new WarriorAttack(4));
+        useCosts.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -1));
+        warriorAtks.Add(new WarriorAttack(12));
+
+        SetSource(NeedKind.attack, NeedKind.spear);
     }
 
 	// Use this for initialization

@@ -21,7 +21,7 @@ public class Weeding : INSTANT_ACTION
     void Awake()
     {
         AwakeInstantAction(MainAction.ActionEnum.Instant.weeding);
-        instant.initCostList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.4));
+        instant.initCostList.Add(new Dealing(ResourceKind.action, Dealing.R_ParaKind.current, -0.4));
         instant.completeEffectList.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 0.5));
         instant.completeEffectList.Add(new Dealing(ResourceKind.herb, Dealing.R_ParaKind.current, 0.05));
     }

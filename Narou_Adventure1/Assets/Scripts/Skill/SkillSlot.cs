@@ -6,17 +6,20 @@ using UnityEngine.UI;
 using static UsefulMethod;
 
 public class SkillSlot : BASE {
+    public bool CanClick;
     public SkillKind kind;
 
     public Slider slider;
     public Button button;
     public Text text;
     public PopUp popUp;
+    public GameObject obstaclePanel;
 
     public void CopyValue(SkillSlot slot)
     {
         slider.value = slot.slider.value;
         text.text = slot.text.text;
+        kind = slot.kind;
     }
 
 	// Use this for initialization
@@ -25,6 +28,7 @@ public class SkillSlot : BASE {
 
         popUp = main.skillPopUp.StartPopUp(gameObject, main.windowShowCanvas);
         popUp.EnterAction = ApplyPopUp;
+        if(CanClick == false) { setActive(obstaclePanel); }
     }
 
     private void FixedUpdate()

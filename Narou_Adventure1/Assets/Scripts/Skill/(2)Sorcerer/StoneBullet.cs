@@ -17,7 +17,9 @@ public class StoneBullet : SKILL
 		AwakeSkill(SkillKind.stone_bullet, 2);
         learnF.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -5));
         useCosts.Add(new Dealing(ResourceKind.earth, Dealing.R_ParaKind.current, -0.6));
-        sorcererAtks.Add(new SorcererAttack(4));
+        sorcererAtks.Add(new SorcererAttack(12));
+
+        SetSource(NeedKind.attack, NeedKind.earth);
     }
 
 	// Use this for initialization

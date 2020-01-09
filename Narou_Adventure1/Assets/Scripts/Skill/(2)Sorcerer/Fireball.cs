@@ -17,7 +17,9 @@ public class Fireball : SKILL
 		AwakeSkill(SkillKind.fireball, 4);
         learnF.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -5));
         useCosts.Add(new Dealing(ResourceKind.fire, Dealing.R_ParaKind.current, -1.2));
-        sorcererAtks.Add(new SorcererAttack(8));
+        sorcererAtks.Add(new SorcererAttack(24));
+
+        SetSource(NeedKind.attack, NeedKind.fire);
     }
 
 	// Use this for initialization
