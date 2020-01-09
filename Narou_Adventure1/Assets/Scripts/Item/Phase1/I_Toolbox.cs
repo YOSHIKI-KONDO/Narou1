@@ -11,7 +11,7 @@ public class I_Toolbox : ITEM
     // Use this for initialization
     void Awake()
     {
-        AwakeItem(ItemKind.toolbox, 1,1);
+        AwakeItem(ItemKind.toolbox, 1,1,1,1,1);
         BuyLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -40));
         SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 20));
         EffectLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.max, 5));

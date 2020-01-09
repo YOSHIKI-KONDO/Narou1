@@ -15,10 +15,10 @@ public class I_SmallBasket : ITEM
     // Use this for initialization
     void Awake()
     {
-        AwakeItem(ItemKind.small_basket, 1);
+        AwakeItem(ItemKind.small_basket, 1,null,1,20,2);
         BuyLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -40));
         SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 20));
-        EffectLists.Add(new Dealing(ResourceKind.bread, Dealing.R_ParaKind.max, 3));
+        EffectLists.Add(new Dealing(ResourceKind.bread, Dealing.R_ParaKind.max, 4));
         EffectLists.Add(new Dealing(ResourceKind.anchovy_sandwich, Dealing.R_ParaKind.max, 2));
         EffectLists.Add(new Dealing(ResourceKind.filet_o_fish, Dealing.R_ParaKind.max, 2));
 

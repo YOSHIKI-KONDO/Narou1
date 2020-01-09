@@ -23,6 +23,8 @@ public class AB_PrimaryEarthMagic : ABILITY
         progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 4));
 
         need.AddSourceNeed(NeedKind.earth);
+
+        SetSource(NeedKind.earth);
     }
 
 	// Use this for initialization

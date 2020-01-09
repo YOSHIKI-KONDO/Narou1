@@ -23,6 +23,8 @@ public class AB_PrimaryFireMagic : ABILITY
         progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 4));
 
         need.AddSourceNeed(NeedKind.fire);
+
+        SetSource(NeedKind.fire);
     }
 
 	// Use this for initialization

@@ -23,6 +23,8 @@ public class AB_PrimaryWaterMagic : ABILITY
         progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 4));
 
         need.AddSourceNeed(NeedKind.water);
+
+        SetSource(NeedKind.water);
     }
 
 	// Use this for initialization

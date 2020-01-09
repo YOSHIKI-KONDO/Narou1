@@ -23,6 +23,8 @@ public class AB_AnimalHandling : ABILITY
         progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 6));
 
         need.AddSourceNeed(NeedKind.animal);
+
+        SetSource(NeedKind.animal);
     }
 
 	// Use this for initialization

@@ -15,10 +15,10 @@ public class I_StoneShield : ITEM
     // Use this for initialization
     void Awake()
     {
-        AwakeItem(ItemKind.stone_shield, 1,1);
+        AwakeItem(ItemKind.stone_shield, 1,1,2,30,2);
         BuyLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -170));
         SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 85));
-        EffectLists.Add(new Dealing(ResourceKind.defense, Dealing.R_ParaKind.status, 7));
+        EffectLists.Add(new Dealing(ResourceKind.defense, Dealing.R_ParaKind.status, 6));
 
         SetSource(NeedKind.shield);
     }

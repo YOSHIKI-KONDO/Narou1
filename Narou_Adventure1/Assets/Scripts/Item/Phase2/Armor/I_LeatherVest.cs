@@ -15,10 +15,10 @@ public class I_LeatherVest : ITEM
     // Use this for initialization
     void Awake()
     {
-        AwakeItem(ItemKind.leather_vest, 1,1);
+        AwakeItem(ItemKind.leather_vest, 1,1,2,30,2);
         BuyLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -80));
         SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 40));
-        EffectLists.Add(new Dealing(ResourceKind.defense, Dealing.R_ParaKind.status, 5));
+        EffectLists.Add(new Dealing(ResourceKind.defense, Dealing.R_ParaKind.status, 8));
 
         SetSource(NeedKind.armor);
     }
