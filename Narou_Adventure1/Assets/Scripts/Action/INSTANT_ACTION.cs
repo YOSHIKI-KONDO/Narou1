@@ -56,7 +56,7 @@ public class INSTANT_ACTION : ACTION, INeed
     // Use this for initialization
     protected void StartInstantAction()
     {
-        
+        ApplyEffectLevel();   
     }
 
     // Update is called once per frame
@@ -75,6 +75,14 @@ public class INSTANT_ACTION : ACTION, INeed
         {
             release.Completed(true);
             setFalse(popUp.gameObject);
+        }
+    }
+
+    void ApplyEffectLevel()
+    {
+        foreach (var dealing in instant.completeEffectList)
+        {
+            dealing.Level = (x) => Sync(ref main.SR.level_instant[(int)kind], x);
         }
     }
 

@@ -12,8 +12,8 @@ using static UsefulMethod;
 public class StatusCtrl : BASE {
     public int Level { get => main.SR.level; }
     public double Hp { get => main.rsc.Max((int)ResourceKind.hp); }
-    public double Strength { get => 0d + main.rsc.Regen((int)ResourceKind.strength) + Level * 2.2; }
-    public double MentalStrength { get => 0d + main.rsc.Regen((int)ResourceKind.mentalStrength) + Level * 16.5; }
+    public double Strength { get => 0d + main.rsc.Regen((int)ResourceKind.strength) + Level * 1.65; }
+    public double MentalStrength { get => 0d + main.rsc.Regen((int)ResourceKind.mentalStrength) + Level * 1.65; }
     public double Attack { get => (Strength + main.rsc.Regen((int)ResourceKind.attack)); }
     public double MagicAttack { get => (MentalStrength + main.rsc.Regen((int)ResourceKind.magic_attack)); }
     public double Defense { get => main.rsc.Regen((int)ResourceKind.defense) + (Level-1) * 1.04d; }
