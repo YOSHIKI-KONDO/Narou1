@@ -23,7 +23,10 @@ public class ENEMY : BASE {
         StartBASE();
         this.kind = kind;
         main.battleCtrl.enemys[(int)kind] = this;
+    }
 
+    public void StartEnemy()
+    {
         this.maxHp = main.enemyParameter.parameters[(int)kind].maxHp;
         this.interval = main.enemyParameter.parameters[(int)kind].interval;
         this.attack = main.enemyParameter.parameters[(int)kind].attack;
@@ -31,11 +34,6 @@ public class ENEMY : BASE {
         this.rank = main.enemyParameter.parameters[(int)kind].rank;
         drops.Add(new Drop(ResourceKind.exp, main.enemyParameter.parameters[(int)kind].exp, 100));
         drops.Add(new Drop(ResourceKind.gold, main.enemyParameter.parameters[(int)kind].gold, 100));
-    }
-
-    public void StartEnemy()
-    {
-
     }
 
     public void UpdateEnemy()
