@@ -150,7 +150,9 @@ public class BattleAndSkillCtrl : BASE {
                 skills[(int)thisKind].currentValue += 0.1;//0.1秒に0.1ずつ増える
                 if (skills[(int)thisKind].currentValue >= skills[(int)thisKind].Duration())
                 {
+                    //生産系スキル
                     skills[(int)thisKind].Produce();
+                    skills[(int)thisKind].CastedAction();
 
                     if (dunKind != DungeonKind.nothing)
                     {
