@@ -112,6 +112,7 @@ public class BattleAndSkillCtrl : BASE {
         PlaySkills();
         PlayNpcSkills();
         NormalAttack();
+        SkillLevelControll();
 
         EnemysAction();
         JudgeCombo();
@@ -392,6 +393,12 @@ public class BattleAndSkillCtrl : BASE {
             if (i == 0) { continue; }
             if (skills[i] == null) { Debug.Log((SkillKind)i + " がスキル一覧に設置されていません。"); }
         }
+    }
+
+    void SkillLevelControll()
+    {
+        main.SR.level_Skill[(int)SkillKind.normalAttack] = 0;
+        main.SR.level_Skill[(int)SkillKind.normalAttack_npc1] = 0;
     }
 
     void Load()

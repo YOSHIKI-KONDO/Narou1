@@ -269,11 +269,11 @@ public class UsefulMethod : MonoBehaviour
                 return i.ToString("F0");
         }
     }
-    public static void writeGyoretsu(int[,] ary)
+    public static void writeGyoretsu<T>(T[,] ary)
     {
         string str = "";
         int FEcount = 0;
-        foreach (int expInt in ary)
+        foreach (var expInt in ary)
         {
             str = str + "," + expInt.ToString();
             FEcount++;
@@ -860,6 +860,47 @@ public class UsefulMethod : MonoBehaviour
             }
         }
         return (max, index);
+    }
+
+    /// <summary>
+    /// 複数の値から最大値を取る関数
+    /// </summary>
+    public static (T max, int index) Min<T>(params T[] nums)
+        where T : IComparable
+    {
+        if (nums.Length == 0) return (default(T), 0);
+        T min = nums[0];
+        int index = 0;
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (min.CompareTo(nums[i]) > 0)
+            {
+                min = nums[i];
+                index = i;
+            }
+        }
+        return (min, index);
+    }
+
+    /// <summary>
+    /// 平均二乗誤差、2乗和誤差
+    /// </summary>
+    public static double Mean_squared_error(double[,] y, double[,] t)
+    {
+        double[,] sub = new double[y.GetLength(0), y.GetLength(1)];
+        double sum = 0;
+        for (int i = 0; i < y.GetLength(0); i++)
+        {
+            for (int j = 0; j < y.GetLength(1); j++)
+            {
+                sub[i, j] = Math.Pow(y[i, j] - t[i, j], 2);
+            }
+        }
+        foreach (var _sub in sub)
+        {
+            sum += _sub;
+        }
+        return 0.5d * sum;
     }
 
     /// <summary>
