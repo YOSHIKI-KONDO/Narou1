@@ -27,13 +27,9 @@ public class ENEMY : BASE {
 
     public void StartEnemy()
     {
-        this.maxHp = main.enemyParameter.parameters[(int)kind].maxHp;
-        this.interval = main.enemyParameter.parameters[(int)kind].interval;
-        this.attack = main.enemyParameter.parameters[(int)kind].attack;
-        this.defense = main.enemyParameter.parameters[(int)kind].defense;
-        this.rank = main.enemyParameter.parameters[(int)kind].rank;
-        drops.Add(new Drop(ResourceKind.exp, main.enemyParameter.parameters[(int)kind].exp, 100));
-        drops.Add(new Drop(ResourceKind.gold, main.enemyParameter.parameters[(int)kind].gold, 100));
+        UpdateParameter();
+        drops.Add(new Drop(ResourceKind.exp, main.enemyParameter.parameters[(int)kind].Exp, 100));
+        drops.Add(new Drop(ResourceKind.gold, main.enemyParameter.parameters[(int)kind].Gold, 100));
     }
 
     public void UpdateEnemy()
@@ -44,5 +40,15 @@ public class ENEMY : BASE {
     public void FixedUpdateEnemy()
     {
 
+    }
+
+    public void UpdateParameter()
+    {
+        maxHp = main.enemyParameter.parameters[(int)kind].MaxHp;
+        interval = main.enemyParameter.parameters[(int)kind].Interval;
+        attack = main.enemyParameter.parameters[(int)kind].Attack;
+        defense = main.enemyParameter.parameters[(int)kind].Defense;
+        rank = main.enemyParameter.parameters[(int)kind].rank;
+        //gold, expは更新していない
     }
 }
