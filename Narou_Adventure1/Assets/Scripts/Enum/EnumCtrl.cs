@@ -447,7 +447,9 @@ public class EnumCtrl : BASE {
         needs.Add(new template(NeedKind.production, "production", "production", "", ""));
         needs.Add(new template(NeedKind.enhance, "enhance", "enhance", "", ""));
         needs.Add(new template(NeedKind.debuff, "debuff", "debuff", "", ""));
-        
+
+        needs.Add(new template(NeedKind.combo_arts, "combo arts", "combo arts", "", ""));
+
 
         /* スキル */
         skills.Add(new template(SkillKind.nothing, "nothing", "nothing", "nothing", "nothing"));

@@ -27724,25 +27724,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a64adda73d97b4d9eee290d5f02f5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kind: 0
-  popUp: {fileID: 0}
-  release: {fileID: 0}
-  progress: {fileID: 0}
-  need: {fileID: 0}
-  components: {fileID: 0}
-  slider: {fileID: 0}
-  text: {fileID: 0}
-  newObject: {fileID: 0}
-  MaxValue: 0
-  CurrentValue: 0
-  maxNum: 0
-  Name_str: 
-  Description_str: 
-  Need_str: 
-  Cost_str: 
-  ProgressCost_str: 
-  ProgressEffect_str: 
-  CompleteEffect_str: 
 --- !u!114 &876807350 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -9135263540800395467, guid: d3d8d320288d64d62ae413d755082ba8,
@@ -40643,17 +40624,20 @@ MonoBehaviour:
     released_instant: 
     completed_instant: 
     watched_instant: 
+    level_instant: 
     released_loop: 
     completed_loop: 
     currentValue_loop: []
     paid_loop: 
     watched_loop: 
+    level_loop: 
     released_upgrade: 
     completed_upgrade: 
     currentValue_upgrade: []
     paid_upgrade: 
     clearNum_upgrade: 
     watched_upgrade: 
+    level_upgrade: 
     released_ability: 
     completed_ability: 
     currentValue_ability: []
@@ -41315,6 +41299,7 @@ MonoBehaviour:
   - {fileID: -5239756987312932692, guid: bcf77228de007694d81a54c5f75c06fa, type: 3}
   - {fileID: -2303074526855156941, guid: bcf77228de007694d81a54c5f75c06fa, type: 3}
   - {fileID: -1651313628426404326, guid: bcf77228de007694d81a54c5f75c06fa, type: 3}
+  - {fileID: 0}
   iconPre: {fileID: 6753304635824383577, guid: 024454ad755d64570b27a949c14c7d98, type: 3}
 --- !u!1 &1344409748 stripped
 GameObject:
