@@ -28,4 +28,6 @@
     production,
     enhance,
     debuff,
+
+    combo_arts,
 }

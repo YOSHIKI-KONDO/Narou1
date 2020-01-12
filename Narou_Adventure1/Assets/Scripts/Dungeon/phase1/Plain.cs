@@ -17,26 +17,16 @@ public class Plain : DUNGEON
     // Use this for initialization
     void Awake () {
         AwakeDungeon(plain, ResourceKind.itemPoint1, 1);
-        enemyList.Add(new EnemyKind[] { slime });
-        enemyList.Add(new EnemyKind[] { bird, slime });
         enemyList.Add(new EnemyKind[] { goblin });
-        enemyList.Add(new EnemyKind[] { slime, slime });
-        enemyList.Add(new EnemyKind[] { goblin, goblin });//5
-        enemyList.Add(new EnemyKind[] { slime, slime, slime });
-        enemyList.Add(new EnemyKind[] { bird });
+        enemyList.Add(new EnemyKind[] { bird, slime });
         enemyList.Add(new EnemyKind[] { snake });
+        enemyList.Add(new EnemyKind[] { slime, slime, slime });
+        enemyList.Add(new EnemyKind[] { snake, snake });//5
         enemyList.Add(new EnemyKind[] { goblin, bird });
-        enemyList.Add(new EnemyKind[] { bird, goblin, slime });//10
-        enemyList.Add(new EnemyKind[] { slime, slime });
-        enemyList.Add(new EnemyKind[] { goblin, slime });
-        enemyList.Add(new EnemyKind[] { slime, snake });
         enemyList.Add(new EnemyKind[] { bird, bird });
-        enemyList.Add(new EnemyKind[] { snake, snake });//15
-        enemyList.Add(new EnemyKind[] { slime });
-        enemyList.Add(new EnemyKind[] { bird });
         enemyList.Add(new EnemyKind[] { slime, bird, slime });
-        enemyList.Add(new EnemyKind[] { snake, bird });
-        enemyList.Add(new EnemyKind[] { orc });//20
+        enemyList.Add(new EnemyKind[] { goblin, goblin });
+        enemyList.Add(new EnemyKind[] { orc });//10
 
         drops.Add(new Drop(ResourceKind.herb, 3, 100));
         firstDrops.Add(new Drop(ResourceKind.research, 20, 100));
