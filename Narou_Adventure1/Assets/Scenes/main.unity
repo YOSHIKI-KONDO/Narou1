@@ -40454,6 +40454,7 @@ GameObject:
   - component: {fileID: 1329275274}
   - component: {fileID: 1329275275}
   - component: {fileID: 1329275276}
+  - component: {fileID: 1329275277}
   m_Layer: 0
   m_Name: MainController
   m_TagString: mainCtrl
@@ -40662,6 +40663,8 @@ MonoBehaviour:
     learnt_Skill: 
     slotKinds: 
     watched_Skill: 
+    exp_Skill: []
+    level_Skill: 
     released_Dungeon: 
     completed_Dungeon: 
     currentFloor_Dungeon: 
@@ -41231,11 +41234,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 096ae0434f76c46539f2b803c542258f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeScale: 1
+  TimeScale: 100
   dunKind: 0
+  eneKind: 0
   minLevel: 1
-  maxlevel: 5
-  duration: 5
+  maxlevel: 30
+  duration: 1
+  enemy_t_sheet: {fileID: 11400000, guid: 806a49917afbf42cb92ba4a603194294, type: 2}
 --- !u!114 &1329275274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41301,6 +41306,18 @@ MonoBehaviour:
   - {fileID: -1651313628426404326, guid: bcf77228de007694d81a54c5f75c06fa, type: 3}
   - {fileID: 0}
   iconPre: {fileID: 6753304635824383577, guid: 024454ad755d64570b27a949c14c7d98, type: 3}
+--- !u!114 &1329275277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329275250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96ee74542f284c758e4c1d78d684f01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1344409748 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8149080873079052517, guid: 24b6ce1c984132b4c8a10ec08afff5cc,

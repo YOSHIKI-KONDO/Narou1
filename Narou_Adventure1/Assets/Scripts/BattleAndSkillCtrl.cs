@@ -69,7 +69,7 @@ public class BattleAndSkillCtrl : BASE {
         //int randomRange = (int)((1d / 2d) * Math.Sqrt(dmg));
         //double randomFactor = UnityEngine.Random.Range( -randomRange, randomRange + 1);
         //return dmg + randomFactor;
-        double dmg = atk * (1d + skill_atk / 10) * criticalFactor;
+        double dmg = atk * (1d + skill_atk / 30) * criticalFactor; //10 => 30に変更
         return dmg;
     }
 
@@ -112,6 +112,7 @@ public class BattleAndSkillCtrl : BASE {
         PlaySkills();
         PlayNpcSkills();
         NormalAttack();
+        SkillLevelControll();
 
         EnemysAction();
         JudgeCombo();
@@ -150,7 +151,9 @@ public class BattleAndSkillCtrl : BASE {
                 skills[(int)thisKind].currentValue += 0.1;//0.1秒に0.1ずつ増える
                 if (skills[(int)thisKind].currentValue >= skills[(int)thisKind].Duration())
                 {
+                    //生産系スキル
                     skills[(int)thisKind].Produce();
+                    skills[(int)thisKind].CastedAction();
 
                     if (dunKind != DungeonKind.nothing)
                     {
@@ -390,6 +393,12 @@ public class BattleAndSkillCtrl : BASE {
             if (i == 0) { continue; }
             if (skills[i] == null) { Debug.Log((SkillKind)i + " がスキル一覧に設置されていません。"); }
         }
+    }
+
+    void SkillLevelControll()
+    {
+        main.SR.level_Skill[(int)SkillKind.normalAttack] = 0;
+        main.SR.level_Skill[(int)SkillKind.normalAttack_npc1] = 0;
     }
 
     void Load()

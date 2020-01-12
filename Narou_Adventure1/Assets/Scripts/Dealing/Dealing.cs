@@ -38,12 +38,14 @@ public class Dealing
     }
     double _value;
     public IntSync Level;
+    public bool toDisplay;//falseだとdetailに出さない
 
     //リソース系のコンストラクタ。
-    public Dealing(Enum rscKind, Enum paraKind, double Value)
+    public Dealing(Enum rscKind, Enum paraKind, double Value, bool toDisplay = true)
     {
         this.rscKind = rscKind;
         this.paraKind = paraKind;
+        this.toDisplay = toDisplay;
         _value = Value;
     }
 }

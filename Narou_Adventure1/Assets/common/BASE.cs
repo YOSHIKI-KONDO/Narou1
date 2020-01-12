@@ -246,6 +246,7 @@ public class BASE : MonoBehaviour
         string sum_str = "";
         foreach (var deal in dealings)
         {
+            if (deal.toDisplay == false) { continue; }
             if (sum_str != "") { sum_str += "\n"; }
             //Temporary Effectの判定
             if (deal is Temp_Regen_Deal)

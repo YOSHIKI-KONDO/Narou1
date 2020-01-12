@@ -73,6 +73,8 @@ public class SaveR
     public bool[] learnt_Skill;
     public SkillKind[] slotKinds;
     public bool[] watched_Skill;
+    public double[] exp_Skill;
+    public int[] level_Skill;
 
     /* Dungeon */
     public bool[] released_Dungeon;

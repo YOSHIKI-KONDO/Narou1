@@ -12,11 +12,11 @@ using static UsefulMethod;
 public class StatusCtrl : BASE {
     public int Level { get => main.SR.level; }
     public double Hp { get => main.rsc.Max((int)ResourceKind.hp); }
-    public double Strength { get => 0d + main.rsc.Regen((int)ResourceKind.strength) + Level * 1.65; }
-    public double MentalStrength { get => 0d + main.rsc.Regen((int)ResourceKind.mentalStrength) + Level * 1.65; }
+    public double Strength { get => 3d + main.rsc.Regen((int)ResourceKind.strength); }
+    public double MentalStrength { get => 3d + main.rsc.Regen((int)ResourceKind.mentalStrength); }
     public double Attack { get => (Strength + main.rsc.Regen((int)ResourceKind.attack)); }
     public double MagicAttack { get => (MentalStrength + main.rsc.Regen((int)ResourceKind.magic_attack)); }
-    public double Defense { get => main.rsc.Regen((int)ResourceKind.defense) + (Level-1) * 1.04d; }
+    public double Defense { get => 2 + main.rsc.Regen((int)ResourceKind.defense); }
     public double DodgeChance { get => main.rsc.Regen((int)ResourceKind.dodge); }
     public double CriticalChance { get => 5 + main.rsc.Regen((int)ResourceKind.criticalChance); }
     public double CriticalFactor { get => 2; }
@@ -26,6 +26,32 @@ public class StatusCtrl : BASE {
     public StatusComponent heroCmps;
     public StatusComponent nornCmps;
     /*  **  */
+
+    //checkDifficultyで使う
+    public void InitStatus_Debug()
+    {
+        main.rsc.Max_Base[(int)ResourceKind.hp]               = 8;
+        main.rsc.Regen_Base[(int)ResourceKind.strength]       = 0;
+        main.rsc.Regen_Base[(int)ResourceKind.mentalStrength] = 0;
+        main.rsc.Regen_Base[(int)ResourceKind.defense]        = 0;
+    }
+
+    //checkDifficultyで使う
+    public void LevelUp_Debug()
+    {
+        main.rsc.Max_Base[(int)ResourceKind.hp]                 += 2.75f;
+        main.rsc.Regen_Base[(int)ResourceKind.strength]         += 2.5f;
+        main.rsc.Regen_Base[(int)ResourceKind.mentalStrength]   += 2.5f;
+        main.rsc.Regen_Base[(int)ResourceKind.defense]          += 2.5f;
+    }
+
+    public void LevelUp()
+    {
+        main.rsc.Max_Base[(int)ResourceKind.hp]               += UnityEngine.Random.Range(2.5f, 3.0f);   //試しに乱数で増やしてみる
+        main.rsc.Regen_Base[(int)ResourceKind.strength]       += UnityEngine.Random.Range(2.0f, 3.0f);   //試しに乱数で増やしてみる
+        main.rsc.Regen_Base[(int)ResourceKind.mentalStrength] += UnityEngine.Random.Range(2.0f, 3.0f);   //試しに乱数で増やしてみる
+        main.rsc.Regen_Base[(int)ResourceKind.defense]        += UnityEngine.Random.Range(2.0f, 3.0f);   //試しに乱数で増やしてみる
+    }
 
     // Use this for initialization
     void Awake () {

@@ -47,23 +47,31 @@ public class EnemyParameter : BASE {
     public class parameter
     {
         public EnemyKind kind;
-        public double maxHp;
-        public float interval;
-        public double attack;
-        public double defense;
-        public int gold;
-        public int exp;
+        public double MaxHp { get => maxHp * level; }      //levelの関数
+        public float Interval { get => interval; }                 
+        public double Attack { get => attack * level; }    //levelの関数
+        public double Defense { get => defense * level; }  //levelの関数
+        public int Gold { get => gold * level; }           //levelの関数
+        public int Exp { get => exp * level; }             //levelの関数
+        double maxHp;
+        float interval;
+        double attack;
+        double defense;
+        int gold;
+        int exp;
         public int rank;
+        public int level;
 
-        public parameter(EnemyKind kind, double maxHp, float interval, double attack, double defense, int gold, int exp, int rank)
+        public parameter(EnemyKind kind, float interval, double base_maxHp, double base_attack, double base_defense, int base_gold, int base_exp, int rank, int level)
         {
+            this.level = level;
             this.kind = kind;
-            this.maxHp = maxHp;
-            this.interval = interval;
-            this.attack = attack;
-            this.defense = defense;
-            this.gold = gold;
-            this.exp = exp;
+            this.maxHp = base_maxHp;       
+            this.interval = interval;      
+            this.attack = base_attack;     
+            this.defense = base_defense;   
+            this.gold = base_gold;         
+            this.exp = base_exp;           
             this.rank = rank;
         }
         public parameter()
