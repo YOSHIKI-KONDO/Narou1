@@ -67,27 +67,87 @@ public class CheckDifficulty : BASE {
             this.FloorRate = floorRate;
         }
     }
-    string NewLineClear(List<DataSet> list)
+    string NewLineClear(IEnumerable<DataSet> list)
     {
         string sum = "";
         foreach (var set in list)
         {
             if (sum != "") { sum += "\n"; }
-            sum += set.ClearRate.ToString("F3");
+            if(set == null)
+            {
+                sum += "0.000";
+            }
+            else
+            {
+                sum += set.ClearRate.ToString("F3");
+            }
         }
         return sum;
     }
-    string NewLineFloor(List<DataSet> list)
+    string NewLineFloor(IEnumerable<DataSet> list)
     {
         string sum = "";
         foreach (var set in list)
         {
             if (sum != "") { sum += "\n"; }
-            sum += set.FloorRate.ToString("F3");
+            if (set == null)
+            {
+                sum += "0.000";
+            }
+            else
+            {
+                sum += set.FloorRate.ToString("F3");
+            }
         }
         return sum;
     }
-    List<DataSet> dataList = new List<DataSet>();
+
+    string NewLineClear_wholeD(DataSet[,] list)
+    {
+        string sum = "";
+        for (int i_l = 0; i_l < list.GetLength(1); i_l++)
+        {
+            for (int i_d = 0; i_d < list.GetLength(0); i_d++)
+            {
+                if(list[i_d, i_l] == null)
+                {
+                    sum += "0.000" + "\t";
+                }
+                else
+                {
+                    sum += list[i_d, i_l].ClearRate.ToString("F3") + "\t";
+                }
+            }
+            sum += "\n";
+        }
+        return sum;
+    }
+    string NewLineFloor_wholeD(DataSet[,] list)
+    {
+        string sum = "";
+        for (int i_l = 0; i_l < list.GetLength(1); i_l++)
+        {
+            for (int i_d = 0; i_d < list.GetLength(0); i_d++)
+            {
+                if (list[i_d, i_l] == null)
+                {
+                    sum += "0.000" + "\t";
+                }
+                else
+                {
+                    sum += list[i_d, i_l].FloorRate.ToString("F3") + "\t";
+                }
+            }
+            sum += "\n";
+        }
+        return sum;
+    }
+
+    DataSet[] dataList = new DataSet[100]; //lv100まで初期化
+    DataSet[,] dataList_wholeD;
+
+
+
     struct EnemyLevelRange
     {
         public int minLevel;
@@ -110,14 +170,14 @@ public class CheckDifficulty : BASE {
         list.Add(new EnemyLevelRange(EnemyKind.rat, 1, 3));
         list.Add(new EnemyLevelRange(EnemyKind.bird, 1, 2));
         list.Add(new EnemyLevelRange(EnemyKind.bat, 1, 2));
-        list.Add(new EnemyLevelRange(EnemyKind.wolf, 1, 2));
+        list.Add(new EnemyLevelRange(EnemyKind.wolf, 1, 5));
         list.Add(new EnemyLevelRange(EnemyKind.snake, 1, 2));
         list.Add(new EnemyLevelRange(EnemyKind.demonic, 1, 2));
         list.Add(new EnemyLevelRange(EnemyKind.sigurd, 1, 2));
         list.Add(new EnemyLevelRange(EnemyKind.askr, 1, 2));
         list.Add(new EnemyLevelRange(EnemyKind.embla, 1, 2));
         list.Add(new EnemyLevelRange(EnemyKind.red_slime, 1, 2));
-        list.Add(new EnemyLevelRange(EnemyKind.orc, 1, 2));
+        list.Add(new EnemyLevelRange(EnemyKind.orc, 6, 8));
         list.Add(new EnemyLevelRange(EnemyKind.poison_rat, 1, 2));
         list.Add(new EnemyLevelRange(EnemyKind.harpy, 1, 2));
         list.Add(new EnemyLevelRange(EnemyKind.ghoul, 1, 2));
@@ -227,9 +287,14 @@ public class CheckDifficulty : BASE {
     void End_dungeon()
     {
         main.progressCtrl.DontDoAnything();
-        Debug.Log("計測終了");
+        //Debug.Log("計測終了");
         Debug.Log(main.enumCtrl.dungeons[(int)dunKind].Name() + "の平均クリア率\n" + NewLineClear(dataList));
         Debug.Log(main.enumCtrl.dungeons[(int)dunKind].Name() + "の平均攻略率\n" + NewLineFloor(dataList));
+        //全体のリストに追加
+        for (int i = 0; i < dataList.Length; i++)
+        {
+            dataList_wholeD[(int)dunKind, i] = dataList[i]; 
+        }
 
         if (calKind == CalculateKind.allDungeon)
         {
@@ -239,7 +304,9 @@ public class CheckDifficulty : BASE {
                 CalculateFloor();
                 return;
             }
-            Debug.Log("全体調査終了.");
+            Debug.Log("全体調査完了.");
+            Debug.Log("全体クリア率\n" + NewLineClear_wholeD(dataList_wholeD));
+            Debug.Log("全体攻略率\n" + NewLineFloor_wholeD(dataList_wholeD));
         }
     }
 
@@ -252,7 +319,7 @@ public class CheckDifficulty : BASE {
                 "の計測終了(Lv" + currentLevel + ")" + winNum + "勝" + LoseNum + "負. " + "勝率は" + (100f * (float)winNum / (float)duration).ToString("F1") + "%でした。 " +
                 "平均クリア率は" + (100f * sum_FloorNum / (duration * maxFloorNum)).ToString("F0") + "%."
                 );*/
-            dataList.Add(new DataSet(((float)winNum / (float)duration), ((float)sum_FloorNum / (float)(duration * maxFloorNum))));
+            dataList[currentLevel] = new DataSet(((float)winNum / (float)duration), ((float)sum_FloorNum / (float)(duration * maxFloorNum)));
 
             //続行判定
             if (winNum == duration)
@@ -291,6 +358,7 @@ public class CheckDifficulty : BASE {
         if((int)dunKind < main.SD.num_dungeon - 1)
         {
             //損失関数の計算
+            ZeroToOneAfterOne(ref result_oneLevel);
             loss[currentEnemyLevel] = Mean_squared_error(result_oneLevel, completeRate_teacher);
 
             dunKind = (DungeonKind)((int)dunKind + 1);
@@ -350,15 +418,42 @@ public class CheckDifficulty : BASE {
         return min;
     }
 
+    //攻略率100%が出たら、以降すべての数字を100%にする関数
+    void ZeroToOneAfterOne(ref double[,] list)
+    {
+        for (int i_d = 0; i_d < list.GetLength(0); i_d++)
+        {
+            bool cleared = false;
+            for (int i_l = 0; i_l < list.GetLength(1); i_l++)
+            {
+                if (list[i_d, i_l] >= 0.99d)
+                {
+                    cleared = true;
+                }
+                if (cleared)
+                {
+                    list[i_d, i_l] = 1;
+                }
+            }
+        }
+    }
+
 
 
     void CheckNextLevel_enemy()
     {
         if (WinNum + loseNum >= duration)
         {
-            result_oneLevel[currentLevel, (int)dunKind] = (float)sum_FloorNum / (float)(duration * maxFloorNum);
-            result_oneLevel[currentLevel, (int)dunKind] = Domain(result_oneLevel[currentLevel, (int)dunKind], 1, 0);
-            dataList.Add(new DataSet(((float)winNum / (float)duration), ((float)sum_FloorNum / (float)(duration * maxFloorNum))));//本当はダンジョン用と分けた方がいいかも
+            result_oneLevel[(int)dunKind, currentLevel] = (float)sum_FloorNum / (float)(duration * maxFloorNum);
+            result_oneLevel[(int)dunKind, currentLevel] = Domain(result_oneLevel[(int)dunKind, currentLevel], 1, 0);
+            dataList[currentLevel] = new DataSet(((float)winNum / (float)duration), ((float)sum_FloorNum / (float)(duration * maxFloorNum)));//本当はダンジョン用と分けた方がいいかも
+            if(completeRate_teacher[(int)dunKind, currentLevel - 1] < 0.01d)
+            {
+                if (dataList[currentEnemyLevel] != null)
+                {
+                    dataList[currentEnemyLevel].FloorRate = 0;
+                }
+            }
 
             if (winNum == duration)
             {
@@ -428,7 +523,7 @@ public class CheckDifficulty : BASE {
         {
             main.status.LevelUp_Debug();
         }
-        dataList = new List<DataSet>();//listの初期化
+        dataList = new DataSet[100];//listの初期化
         totalNum = 0;
         WinNum = 0;
         loseNum = 0;
@@ -443,6 +538,7 @@ public class CheckDifficulty : BASE {
     {
         calKind = CalculateKind.allDungeon;
         dunKind = (DungeonKind)1;
+        dataList_wholeD = new DataSet[main.SD.num_dungeon, 100];
         CalculateFloor();
     }
 
@@ -487,20 +583,20 @@ public class CheckDifficulty : BASE {
     //レベルリセットのたびに呼ばれる関数
     void CalculateEnemyOneLevelAllDungeon()
     {
-        Debug.Log("現在のレベルは" + currentEnemyLevel);
+        //Debug.Log("現在のレベルは" + currentEnemyLevel);
         //敵のステータスの更新
         main.enemyParameter.parameters[(int)eneKind].level = currentEnemyLevel;
         main.battleCtrl.enemys[(int)eneKind].UpdateParameter();
         dunKind = (DungeonKind)1;
         CalculateFloor();
-        result_oneLevel = new double[enemy_t_sheet.sheets[0].list.Count, main.SD.num_dungeon];
+        result_oneLevel = new double[main.SD.num_dungeon, enemy_t_sheet.sheets[0].list.Count];
     }
 
 
     public Entity_enemy_t enemy_t_sheet;
     double[,] Read_Data_T()
     {
-        double[,] sum = new double[enemy_t_sheet.sheets[0].list.Count, main.SD.num_dungeon];
+        double[,] sum = new double[main.SD.num_dungeon, enemy_t_sheet.sheets[0].list.Count];
         for (int i = 0; i < enemy_t_sheet.sheets[0].list.Count; i++)
         {
             for (int i_d = 0; i_d < main.SD.num_dungeon; i_d++)
@@ -508,34 +604,34 @@ public class CheckDifficulty : BASE {
                 switch ((DungeonKind)i_d)
                 {
                     case DungeonKind.edge_of_town:
-                        sum[i, i_d] = enemy_t_sheet.sheets[0].list[i].EdgeOfTown;
+                        sum[i_d, i] = enemy_t_sheet.sheets[0].list[i].EdgeOfTown;
                         break;
                     case DungeonKind.small_hill:
-                        sum[i, i_d] = enemy_t_sheet.sheets[0].list[i].SmallHill;
+                        sum[i_d, i] = enemy_t_sheet.sheets[0].list[i].SmallHill;
                         break;
                     case DungeonKind.plain:
-                        sum[i, i_d] = enemy_t_sheet.sheets[0].list[i].Plain;
+                        sum[i_d, i] = enemy_t_sheet.sheets[0].list[i].Plain;
                         break;
                     case DungeonKind.lost_forest:
-                        sum[i, i_d] = enemy_t_sheet.sheets[0].list[i].LostForest;
+                        sum[i_d, i] = enemy_t_sheet.sheets[0].list[i].LostForest;
                         break;
                     case DungeonKind.oak_forest:
-                        sum[i, i_d] = enemy_t_sheet.sheets[0].list[i].OakForest;
+                        sum[i_d, i] = enemy_t_sheet.sheets[0].list[i].OakForest;
                         break;
                     case DungeonKind.moor:
-                        sum[i, i_d] = enemy_t_sheet.sheets[0].list[i].moor;
+                        sum[i_d, i] = enemy_t_sheet.sheets[0].list[i].moor;
                         break;
                     case DungeonKind.hoarding_house:
-                        sum[i, i_d] = enemy_t_sheet.sheets[0].list[i].hoardingHouse;
+                        sum[i_d, i] = enemy_t_sheet.sheets[0].list[i].hoardingHouse;
                         break;
                     case DungeonKind.sewer:
-                        sum[i, i_d] = enemy_t_sheet.sheets[0].list[i].sewer;
+                        sum[i_d, i] = enemy_t_sheet.sheets[0].list[i].sewer;
                         break;
                     case DungeonKind.bog:
-                        sum[i, i_d] = enemy_t_sheet.sheets[0].list[i].bog;
+                        sum[i_d, i] = enemy_t_sheet.sheets[0].list[i].bog;
                         break;
                     case DungeonKind.demonic_cellar:
-                        sum[i, i_d] = enemy_t_sheet.sheets[0].list[i].demonic_cellar;
+                        sum[i_d, i] = enemy_t_sheet.sheets[0].list[i].demonic_cellar;
                         break;
                     default:
                         break;

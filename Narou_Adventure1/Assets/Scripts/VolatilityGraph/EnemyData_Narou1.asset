@@ -62,7 +62,7 @@ MonoBehaviour:
     - Lv: 5
       EdgeOfTown: 1
       SmallHill: 1
-      Plain: 0.7
+      Plain: 0.6
       LostForest: 0
       OakForest: 0
       moor: 0
@@ -73,7 +73,7 @@ MonoBehaviour:
     - Lv: 6
       EdgeOfTown: 1
       SmallHill: 1
-      Plain: 0.8
+      Plain: 0.7
       LostForest: 0
       OakForest: 0
       moor: 0
@@ -84,7 +84,7 @@ MonoBehaviour:
     - Lv: 7
       EdgeOfTown: 1
       SmallHill: 1
-      Plain: 0.9
+      Plain: 0.7
       LostForest: 0
       OakForest: 0
       moor: 0
@@ -95,7 +95,7 @@ MonoBehaviour:
     - Lv: 8
       EdgeOfTown: 1
       SmallHill: 1
-      Plain: 1
+      Plain: 0.8
       LostForest: 0
       OakForest: 0
       moor: 0
@@ -106,8 +106,8 @@ MonoBehaviour:
     - Lv: 9
       EdgeOfTown: 1
       SmallHill: 1
-      Plain: 1
-      LostForest: 0.5
+      Plain: 0.8
+      LostForest: 0
       OakForest: 0
       moor: 0
       hoardingHouse: 0
@@ -117,8 +117,8 @@ MonoBehaviour:
     - Lv: 10
       EdgeOfTown: 1
       SmallHill: 1
-      Plain: 1
-      LostForest: 0.6
+      Plain: 0.9
+      LostForest: 0
       OakForest: 0
       moor: 0
       hoardingHouse: 0
@@ -128,8 +128,8 @@ MonoBehaviour:
     - Lv: 11
       EdgeOfTown: 1
       SmallHill: 1
-      Plain: 1
-      LostForest: 0.7
+      Plain: 0.9
+      LostForest: 0
       OakForest: 0
       moor: 0
       hoardingHouse: 0
@@ -140,7 +140,7 @@ MonoBehaviour:
       EdgeOfTown: 1
       SmallHill: 1
       Plain: 1
-      LostForest: 0.8
+      LostForest: 0.6
       OakForest: 0
       moor: 0
       hoardingHouse: 0
@@ -151,7 +151,7 @@ MonoBehaviour:
       EdgeOfTown: 1
       SmallHill: 1
       Plain: 1
-      LostForest: 0.9
+      LostForest: 0.6
       OakForest: 0
       moor: 0
       hoardingHouse: 0
@@ -162,7 +162,7 @@ MonoBehaviour:
       EdgeOfTown: 1
       SmallHill: 1
       Plain: 1
-      LostForest: 1
+      LostForest: 0.7
       OakForest: 0
       moor: 0
       hoardingHouse: 0
@@ -173,8 +173,8 @@ MonoBehaviour:
       EdgeOfTown: 1
       SmallHill: 1
       Plain: 1
-      LostForest: 1
-      OakForest: 0.5
+      LostForest: 0.7
+      OakForest: 0
       moor: 0
       hoardingHouse: 0
       sewer: 0
@@ -184,8 +184,8 @@ MonoBehaviour:
       EdgeOfTown: 1
       SmallHill: 1
       Plain: 1
-      LostForest: 1
-      OakForest: 0.6
+      LostForest: 0.8
+      OakForest: 0
       moor: 0
       hoardingHouse: 0
       sewer: 0
@@ -195,8 +195,8 @@ MonoBehaviour:
       EdgeOfTown: 1
       SmallHill: 1
       Plain: 1
-      LostForest: 1
-      OakForest: 0.7
+      LostForest: 0.8
+      OakForest: 0
       moor: 0
       hoardingHouse: 0
       sewer: 0
@@ -206,8 +206,8 @@ MonoBehaviour:
       EdgeOfTown: 1
       SmallHill: 1
       Plain: 1
-      LostForest: 1
-      OakForest: 0.8
+      LostForest: 0.9
+      OakForest: 0
       moor: 0
       hoardingHouse: 0
       sewer: 0
@@ -217,8 +217,8 @@ MonoBehaviour:
       EdgeOfTown: 1
       SmallHill: 1
       Plain: 1
-      LostForest: 1
-      OakForest: 0.9
+      LostForest: 0.9
+      OakForest: 0
       moor: 0
       hoardingHouse: 0
       sewer: 0
@@ -229,40 +229,40 @@ MonoBehaviour:
       SmallHill: 1
       Plain: 1
       LostForest: 1
-      OakForest: 1
-      moor: 0
-      hoardingHouse: 0
-      sewer: 0
-      bog: 0
+      OakForest: 0.6
+      moor: 0.6
+      hoardingHouse: 0.6
+      sewer: 0.6
+      bog: 0.6
       demonic_cellar: 0
     - Lv: 21
       EdgeOfTown: 1
       SmallHill: 1
       Plain: 1
       LostForest: 1
-      OakForest: 1
-      moor: 0.5
-      hoardingHouse: 0.5
-      sewer: 0.5
-      bog: 0.5
+      OakForest: 0.6
+      moor: 0.6
+      hoardingHouse: 0.6
+      sewer: 0.6
+      bog: 0.6
       demonic_cellar: 0
     - Lv: 22
       EdgeOfTown: 1
       SmallHill: 1
       Plain: 1
       LostForest: 1
-      OakForest: 1
-      moor: 0.6
-      hoardingHouse: 0.6
-      sewer: 0.6
-      bog: 0.6
+      OakForest: 0.7
+      moor: 0.7
+      hoardingHouse: 0.7
+      sewer: 0.7
+      bog: 0.7
       demonic_cellar: 0
     - Lv: 23
       EdgeOfTown: 1
       SmallHill: 1
       Plain: 1
       LostForest: 1
-      OakForest: 1
+      OakForest: 0.7
       moor: 0.7
       hoardingHouse: 0.7
       sewer: 0.7
@@ -273,7 +273,7 @@ MonoBehaviour:
       SmallHill: 1
       Plain: 1
       LostForest: 1
-      OakForest: 1
+      OakForest: 0.8
       moor: 0.8
       hoardingHouse: 0.8
       sewer: 0.8
@@ -284,34 +284,34 @@ MonoBehaviour:
       SmallHill: 1
       Plain: 1
       LostForest: 1
-      OakForest: 1
-      moor: 0.9
-      hoardingHouse: 0.9
-      sewer: 0.9
-      bog: 0.9
+      OakForest: 0.8
+      moor: 0.8
+      hoardingHouse: 0.8
+      sewer: 0.8
+      bog: 0.8
       demonic_cellar: 0
     - Lv: 26
       EdgeOfTown: 1
       SmallHill: 1
       Plain: 1
       LostForest: 1
-      OakForest: 1
-      moor: 1
-      hoardingHouse: 1
-      sewer: 1
-      bog: 1
+      OakForest: 0.9
+      moor: 0.9
+      hoardingHouse: 0.9
+      sewer: 0.9
+      bog: 0.9
       demonic_cellar: 0
     - Lv: 27
       EdgeOfTown: 1
       SmallHill: 1
       Plain: 1
       LostForest: 1
-      OakForest: 1
-      moor: 1
-      hoardingHouse: 1
-      sewer: 1
-      bog: 1
-      demonic_cellar: 0.5
+      OakForest: 0.9
+      moor: 0.9
+      hoardingHouse: 0.9
+      sewer: 0.9
+      bog: 0.9
+      demonic_cellar: 0
     - Lv: 28
       EdgeOfTown: 1
       SmallHill: 1
@@ -333,7 +333,7 @@ MonoBehaviour:
       hoardingHouse: 1
       sewer: 1
       bog: 1
-      demonic_cellar: 0.7
+      demonic_cellar: 0.6
     - Lv: 30
       EdgeOfTown: 1
       SmallHill: 1
@@ -344,7 +344,7 @@ MonoBehaviour:
       hoardingHouse: 1
       sewer: 1
       bog: 1
-      demonic_cellar: 0.8
+      demonic_cellar: 0.7
     - Lv: 31
       EdgeOfTown: 1
       SmallHill: 1
@@ -355,8 +355,206 @@ MonoBehaviour:
       hoardingHouse: 1
       sewer: 1
       bog: 1
-      demonic_cellar: 0.9
+      demonic_cellar: 0.7
     - Lv: 32
+      EdgeOfTown: 1
+      SmallHill: 1
+      Plain: 1
+      LostForest: 1
+      OakForest: 1
+      moor: 1
+      hoardingHouse: 1
+      sewer: 1
+      bog: 1
+      demonic_cellar: 0.8
+    - Lv: 33
+      EdgeOfTown: 1
+      SmallHill: 1
+      Plain: 1
+      LostForest: 1
+      OakForest: 1
+      moor: 1
+      hoardingHouse: 1
+      sewer: 1
+      bog: 1
+      demonic_cellar: 0.8
+    - Lv: 34
+      EdgeOfTown: 1
+      SmallHill: 1
+      Plain: 1
+      LostForest: 1
+      OakForest: 1
+      moor: 1
+      hoardingHouse: 1
+      sewer: 1
+      bog: 1
+      demonic_cellar: 0.9
+    - Lv: 35
+      EdgeOfTown: 1
+      SmallHill: 1
+      Plain: 1
+      LostForest: 1
+      OakForest: 1
+      moor: 1
+      hoardingHouse: 1
+      sewer: 1
+      bog: 1
+      demonic_cellar: 0.9
+    - Lv: 36
+      EdgeOfTown: 1
+      SmallHill: 1
+      Plain: 1
+      LostForest: 1
+      OakForest: 1
+      moor: 1
+      hoardingHouse: 1
+      sewer: 1
+      bog: 1
+      demonic_cellar: 1
+    - Lv: 37
+      EdgeOfTown: 1
+      SmallHill: 1
+      Plain: 1
+      LostForest: 1
+      OakForest: 1
+      moor: 1
+      hoardingHouse: 1
+      sewer: 1
+      bog: 1
+      demonic_cellar: 1
+    - Lv: 38
+      EdgeOfTown: 1
+      SmallHill: 1
+      Plain: 1
+      LostForest: 1
+      OakForest: 1
+      moor: 1
+      hoardingHouse: 1
+      sewer: 1
+      bog: 1
+      demonic_cellar: 1
+    - Lv: 39
+      EdgeOfTown: 1
+      SmallHill: 1
+      Plain: 1
+      LostForest: 1
+      OakForest: 1
+      moor: 1
+      hoardingHouse: 1
+      sewer: 1
+      bog: 1
+      demonic_cellar: 1
+    - Lv: 40
+      EdgeOfTown: 1
+      SmallHill: 1
+      Plain: 1
+      LostForest: 1
+      OakForest: 1
+      moor: 1
+      hoardingHouse: 1
+      sewer: 1
+      bog: 1
+      demonic_cellar: 1
+    - Lv: 41
+      EdgeOfTown: 1
+      SmallHill: 1
+      Plain: 1
+      LostForest: 1
+      OakForest: 1
+      moor: 1
+      hoardingHouse: 1
+      sewer: 1
+      bog: 1
+      demonic_cellar: 1
+    - Lv: 42
+      EdgeOfTown: 1
+      SmallHill: 1
+      Plain: 1
+      LostForest: 1
+      OakForest: 1
+      moor: 1
+      hoardingHouse: 1
+      sewer: 1
+      bog: 1
+      demonic_cellar: 1
+    - Lv: 43
+      EdgeOfTown: 1
+      SmallHill: 1
+      Plain: 1
+      LostForest: 1
+      OakForest: 1
+      moor: 1
+      hoardingHouse: 1
+      sewer: 1
+      bog: 1
+      demonic_cellar: 1
+    - Lv: 44
+      EdgeOfTown: 1
+      SmallHill: 1
+      Plain: 1
+      LostForest: 1
+      OakForest: 1
+      moor: 1
+      hoardingHouse: 1
+      sewer: 1
+      bog: 1
+      demonic_cellar: 1
+    - Lv: 45
+      EdgeOfTown: 1
+      SmallHill: 1
+      Plain: 1
+      LostForest: 1
+      OakForest: 1
+      moor: 1
+      hoardingHouse: 1
+      sewer: 1
+      bog: 1
+      demonic_cellar: 1
+    - Lv: 46
+      EdgeOfTown: 1
+      SmallHill: 1
+      Plain: 1
+      LostForest: 1
+      OakForest: 1
+      moor: 1
+      hoardingHouse: 1
+      sewer: 1
+      bog: 1
+      demonic_cellar: 1
+    - Lv: 47
+      EdgeOfTown: 1
+      SmallHill: 1
+      Plain: 1
+      LostForest: 1
+      OakForest: 1
+      moor: 1
+      hoardingHouse: 1
+      sewer: 1
+      bog: 1
+      demonic_cellar: 1
+    - Lv: 48
+      EdgeOfTown: 1
+      SmallHill: 1
+      Plain: 1
+      LostForest: 1
+      OakForest: 1
+      moor: 1
+      hoardingHouse: 1
+      sewer: 1
+      bog: 1
+      demonic_cellar: 1
+    - Lv: 49
+      EdgeOfTown: 1
+      SmallHill: 1
+      Plain: 1
+      LostForest: 1
+      OakForest: 1
+      moor: 1
+      hoardingHouse: 1
+      sewer: 1
+      bog: 1
+      demonic_cellar: 1
+    - Lv: 50
       EdgeOfTown: 1
       SmallHill: 1
       Plain: 1

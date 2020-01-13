@@ -12,11 +12,11 @@ using static UsefulMethod;
 public class StatusCtrl : BASE {
     public int Level { get => main.SR.level; }
     public double Hp { get => main.rsc.Max((int)ResourceKind.hp); }
-    public double Strength { get => 3d + main.rsc.Regen((int)ResourceKind.strength); }
-    public double MentalStrength { get => 3d + main.rsc.Regen((int)ResourceKind.mentalStrength); }
+    public double Strength { get => 10d + main.rsc.Regen((int)ResourceKind.strength); }
+    public double MentalStrength { get => 10d + main.rsc.Regen((int)ResourceKind.mentalStrength); }
     public double Attack { get => (Strength + main.rsc.Regen((int)ResourceKind.attack)); }
     public double MagicAttack { get => (MentalStrength + main.rsc.Regen((int)ResourceKind.magic_attack)); }
-    public double Defense { get => 2 + main.rsc.Regen((int)ResourceKind.defense); }
+    public double Defense { get => 10d + main.rsc.Regen((int)ResourceKind.defense); }
     public double DodgeChance { get => main.rsc.Regen((int)ResourceKind.dodge); }
     public double CriticalChance { get => 5 + main.rsc.Regen((int)ResourceKind.criticalChance); }
     public double CriticalFactor { get => 2; }
