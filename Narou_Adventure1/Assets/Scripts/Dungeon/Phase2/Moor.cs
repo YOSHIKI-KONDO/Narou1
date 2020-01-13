@@ -17,16 +17,16 @@ public class Moor : DUNGEON
     // Use this for initialization
     void Awake () {
         AwakeDungeon(moor, ResourceKind.itemPoint1, 1);
-        enemyList.Add(new EnemyKind[] { wolf, wolf, slime });
-        enemyList.Add(new EnemyKind[] { rat, rat, slime });
+        enemyList.Add(new EnemyKind[] { wolf, wolf, snake });
+        enemyList.Add(new EnemyKind[] { rat, rat, snake });
         enemyList.Add(new EnemyKind[] { poison_rat });
         enemyList.Add(new EnemyKind[] { wolf, bird, rat });
-        enemyList.Add(new EnemyKind[] { slime, slime, rat, rat });//5
+        enemyList.Add(new EnemyKind[] { snake, snake, rat, rat });//5
         enemyList.Add(new EnemyKind[] { bird, bird });
-        enemyList.Add(new EnemyKind[] { harpy, bird, bird });
-        enemyList.Add(new EnemyKind[] { wolf, bird, rat, slime });
-        enemyList.Add(new EnemyKind[] { wolf, wolf, slime, slime });
-        enemyList.Add(new EnemyKind[] { poison_rat, harpy });//10
+        enemyList.Add(new EnemyKind[] { poison_rat, bird, bird });
+        enemyList.Add(new EnemyKind[] { wolf, bird, rat, snake });
+        enemyList.Add(new EnemyKind[] { wolf, wolf, snake, snake });
+        enemyList.Add(new EnemyKind[] { poison_rat, poison_rat, poison_rat });//10
 
         //progressCost.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.3f));
 

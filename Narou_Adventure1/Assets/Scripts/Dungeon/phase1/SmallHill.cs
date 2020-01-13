@@ -19,8 +19,8 @@ public class SmallHill : DUNGEON
         AwakeDungeon(small_hill, ResourceKind.itemPoint1, 1);
         enemyList.Add(new EnemyKind[] { slime });
         enemyList.Add(new EnemyKind[] { slime, slime });
-        enemyList.Add(new EnemyKind[] { bat });
-        enemyList.Add(new EnemyKind[] { slime, bat });
+        enemyList.Add(new EnemyKind[] { goblin });
+        enemyList.Add(new EnemyKind[] { slime, goblin });
         enemyList.Add(new EnemyKind[] { wolf, wolf });
 
         drops.Add(new Drop(ResourceKind.stone, 1, 100));
