@@ -166,8 +166,8 @@ public class CheckDifficulty : BASE {
         //list = new List<EnemyLevelRange>();
         list.Add(new EnemyLevelRange(EnemyKind.nothing, 2, 3));
         list.Add(new EnemyLevelRange(EnemyKind.slime, 1, 2));
-        list.Add(new EnemyLevelRange(EnemyKind.goblin, 3, 10));
-        list.Add(new EnemyLevelRange(EnemyKind.rat, 1, 3));
+        list.Add(new EnemyLevelRange(EnemyKind.goblin, 1, 4));
+        list.Add(new EnemyLevelRange(EnemyKind.rat, 1, 5));
         list.Add(new EnemyLevelRange(EnemyKind.bird, 1, 2));
         list.Add(new EnemyLevelRange(EnemyKind.bat, 1, 2));
         list.Add(new EnemyLevelRange(EnemyKind.wolf, 1, 5));
