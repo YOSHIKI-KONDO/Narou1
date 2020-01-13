@@ -43,22 +43,19 @@ public class DUNGEON : BASE {
         main.battleCtrl.EnterDungeon();
 
         //難易度調整
-        main.checkDifficulty.TotalNum++; 
-        main.checkDifficulty.MaxFloorNum = MaxFloor();
+        main.checkDifficulty.EnterAction(MaxFloor());
     }
 
     public void WinAction()
     {
         //難易度調整
-        main.checkDifficulty.WinNum++; 
-        main.checkDifficulty.Sum_FloorNum += MaxFloor();
+        main.checkDifficulty.WinAction(MaxFloor());
     }
 
     public void LoseAction()
     {
         //難易度調整
-        main.checkDifficulty.LoseNum++; 
-        main.checkDifficulty.Sum_FloorNum += currentFloor;
+        main.checkDifficulty.LoseAction(currentFloor);
     }
 
     public string Name_str, Description_str, Need_str, Floor_str, ProgressCost_str, Drops_str, FirstDrops_str, RecommendedLevel_str;

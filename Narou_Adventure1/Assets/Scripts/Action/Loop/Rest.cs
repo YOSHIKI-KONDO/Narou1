@@ -19,15 +19,15 @@ public class Rest : LOOP_ACTION
         progress.progressEffectList.Add(new Dealing(ResourceKind.hp, Dealing.R_ParaKind.current, 1));
         progress.progressEffectList.Add(new Dealing(ResourceKind.mp, Dealing.R_ParaKind.current, 0.5));
         progress.progressEffectList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, 1));
-        progress.progressEffectList.Add(new Dealing(ResourceKind.fire, Dealing.R_ParaKind.current, 0.5));
-        progress.progressEffectList.Add(new Dealing(ResourceKind.water, Dealing.R_ParaKind.current, 0.5));
-        progress.progressEffectList.Add(new Dealing(ResourceKind.wind, Dealing.R_ParaKind.current, 0.5));
-        progress.progressEffectList.Add(new Dealing(ResourceKind.earth, Dealing.R_ParaKind.current, 0.5));
-        progress.progressEffectList.Add(new Dealing(ResourceKind.thunder, Dealing.R_ParaKind.current, 0.5));
-        progress.progressEffectList.Add(new Dealing(ResourceKind.ice, Dealing.R_ParaKind.current, 0.5));
-        progress.progressEffectList.Add(new Dealing(ResourceKind.light, Dealing.R_ParaKind.current, 0.5));
-        progress.progressEffectList.Add(new Dealing(ResourceKind.dark, Dealing.R_ParaKind.current, 0.5));
-        progress.progressEffectList.Add(new Dealing(ResourceKind.animal, Dealing.R_ParaKind.current, 0.5));
+        progress.progressEffectList.Add(new Dealing(ResourceKind.fire, Dealing.R_ParaKind.current, 0.5, false));
+        progress.progressEffectList.Add(new Dealing(ResourceKind.water, Dealing.R_ParaKind.current, 0.5, false));
+        progress.progressEffectList.Add(new Dealing(ResourceKind.wind, Dealing.R_ParaKind.current, 0.5, false));
+        progress.progressEffectList.Add(new Dealing(ResourceKind.earth, Dealing.R_ParaKind.current, 0.5, false));
+        progress.progressEffectList.Add(new Dealing(ResourceKind.thunder, Dealing.R_ParaKind.current, 0.5, false));
+        progress.progressEffectList.Add(new Dealing(ResourceKind.ice, Dealing.R_ParaKind.current, 0.5, false));
+        progress.progressEffectList.Add(new Dealing(ResourceKind.light, Dealing.R_ParaKind.current, 0.5, false));
+        progress.progressEffectList.Add(new Dealing(ResourceKind.dark, Dealing.R_ParaKind.current, 0.5, false));
+        progress.progressEffectList.Add(new Dealing(ResourceKind.animal, Dealing.R_ParaKind.current, 0.5, false));
 
 
 

@@ -45,7 +45,7 @@ public class ResourceText : BASE {
     private void FixedUpdate()
     {
         nameText.text = main.enumCtrl.resources[(int)kind].Name();
-        numText.text = tDigit(main.rsc.Value[(int)kind], main.resourceTextCtrl.points[(int)kind].current) + "/"
+        numText.text = tDigit(main.rsc.Value[(int)kind], main.resourceTextCtrl.points[(int)kind].current, true) + "/"
             + tDigit(main.rsc.Max((int)kind), main.resourceTextCtrl.points[(int)kind].max);
         if (slider != null)
         {

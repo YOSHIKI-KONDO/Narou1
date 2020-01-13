@@ -134,7 +134,7 @@ public class Item_Inventory : BASE
         {
             //自動でコストの文章を生成
             Name_str = main.enumCtrl.items[(int)kind].Name();
-            Description_str = main.enumCtrl.items[(int)kind].Description();
+            Description_str = main.enumCtrl.items[(int)kind].Description();//更新する必要がある
             if (items[(int)kind].haveSource) { Description_str += Description_str == "" ? items[(int)kind].SourceDetail() : "\n" + items[(int)kind].SourceDetail(); }
             Max_Str = "Max:" + ((items[(int)kind].MaxEquip == null) ? "∞" : items[(int)kind].MaxEquip.ToString());
             Effect_str = ProgressDetail(items[(int)kind].EffectLists, items[(int)kind].LevelFactor());

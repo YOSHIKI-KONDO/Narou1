@@ -29,6 +29,10 @@ public class SKILL : BASE, INeed, ISetSource
     {
         return (float)(currentValue / Duration());
     }
+    public int level { get => main.SR.level_Skill[(int)kind]; set => main.SR.level_Skill[(int)kind] = value; }
+    public int MaxLevel() { return 400; }
+    public double exp { get => main.SR.exp_Skill[(int)kind]; set => main.SR.exp_Skill[(int)kind] = value; }
+    public double MaxExp() { return 10d * Math.Pow(1.022, level); }
     public List<NeedKind> sources = new List<NeedKind>(); //属性
     public SKILL_COMBO combo; //直前のスキルによるコンボ
     public List<Dealing> useCosts = new List<Dealing>();
@@ -46,6 +50,26 @@ public class SKILL : BASE, INeed, ISetSource
 
 
 
+
+    public void CastedAction()
+    {
+        if(level >= MaxLevel())
+        {
+            level = MaxLevel();
+            exp = 0;
+        }
+        exp += init_maxValue; //インターバル分expを増加
+        ApplyLevel();
+    }
+
+    void ApplyLevel()
+    {
+        while(exp >= MaxExp())
+        {
+            exp -= MaxExp();
+            level++;
+        }
+    }
 
     float comboFactor_effect()
     {
@@ -94,7 +118,7 @@ public class SKILL : BASE, INeed, ISetSource
         double sum = 0;
         foreach (var atk in warriorAtks)
         {
-            sum += atk.damage * comboFactor_effect();
+            sum += atk.Damage * comboFactor_effect();
         }
         return sum;
     }
@@ -104,9 +128,26 @@ public class SKILL : BASE, INeed, ISetSource
         double sum = 0;
         foreach (var atk in sorcererAtks)
         {
-            sum += atk.damage * comboFactor_effect();
+            sum += atk.Damage * comboFactor_effect();
         }
         return sum;
+    }
+
+    //レベルを同期
+    void SyncLevel()
+    {
+        foreach (var dealing in useEffects)
+        {
+            dealing.Level = (x) => Sync(ref main.SR.level_Skill[(int)kind], x);
+        }
+        foreach (var attack in warriorAtks)
+        {
+            attack.Level = (x) => Sync(ref main.SR.level_Skill[(int)kind], x);
+        }
+        foreach (var attack in sorcererAtks)
+        {
+            attack.Level = (x) => Sync(ref main.SR.level_Skill[(int)kind], x);
+        }
     }
 
 
@@ -120,7 +161,7 @@ public class SKILL : BASE, INeed, ISetSource
         string sum_str = "";
         foreach (var atk in warriorAtks)
         {
-            sum_str += "Physics damage:" + tDigit(atk.damage * comboFactor_effect()) + "\n";
+            sum_str += "Physics damage:" + tDigit(atk.Damage * comboFactor_effect(), 1) + "\n";
         }
         return sum_str;
     }
@@ -130,7 +171,7 @@ public class SKILL : BASE, INeed, ISetSource
         string sum_str = "";
         foreach (var atk in sorcererAtks)
         {
-            sum_str += "Magic damage:" + tDigit(atk.damage * comboFactor_effect()) + "\n";
+            sum_str += "Magic damage:" + tDigit(atk.Damage * comboFactor_effect(), 1) + "\n";
         }
         return sum_str;
     }
@@ -170,6 +211,7 @@ public class SKILL : BASE, INeed, ISetSource
     {
         ApplyPopUp();
         main.iconCtrl.AddIcon(sources, components.AttributesParent);
+        SyncLevel();
     }
 
     // Update is called once per frame
@@ -229,7 +271,9 @@ public class SKILL : BASE, INeed, ISetSource
     {
         //とりあえず今はdescriptionの部分に追加する
         Name_str = main.enumCtrl.skills[(int)kind].Name();
-        Description_str = AttributeDetail();//Description_str = main.enumCtrl.skills[(int)kind].Description();
+        //Description_str = main.enumCtrl.skills[(int)kind].Description();
+        //Description_str = AttributeDetail();
+        Description_str = "Lv." + level.ToString() + "/" + MaxLevel() + "(exp:" + tDigit(exp,1) + "/" + tDigit(MaxExp(),1) + ")";
         UseCost_str = ProgressDetail(useCosts, comboFactor_cost());
         UseEffect_str = WarriorDetail();
         UseEffect_str += SorcererDetail();

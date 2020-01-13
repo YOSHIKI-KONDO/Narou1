@@ -100,6 +100,8 @@ public class SaveDeclare : BASE {
         InitializeArray(ref main.SR.learnt_Skill, num_skill);
         InitializeArray(ref main.SR.slotKinds, main.battleCtrl.ROW_SLOT * main.battleCtrl.COLUMN_SLOT);
         InitializeArray(ref main.SR.watched_Skill, num_skill);
+        InitializeArray(ref main.SR.exp_Skill, num_skill);
+        InitializeArray(ref main.SR.level_Skill, num_skill);
 
         /* Dungeon */
         InitializeArray(ref main.SR.released_Dungeon, num_dungeon);
