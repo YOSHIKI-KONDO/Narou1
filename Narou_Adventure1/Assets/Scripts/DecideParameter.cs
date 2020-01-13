@@ -35,6 +35,7 @@ public class DecideParameter : BASE {
         main.rsc.Value[(int)ResourceKind.action]=1;
         main.rsc.Max_Base[(int)ResourceKind.hp] = 1;
         main.rsc.Value[(int)ResourceKind.hp] = 1;
+        main.rsc.Regen_Base[(int)ResourceKind.hp] = 0.1;
         main.rsc.Max_Base[(int)ResourceKind.itemPoint1] = 20;
         main.rsc.Max_Base[(int)ResourceKind.itemPoint2] = 20;
         main.rsc.Max_Base[(int)ResourceKind.itemPoint3] = 20;

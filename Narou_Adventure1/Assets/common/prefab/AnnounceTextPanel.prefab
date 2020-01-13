@@ -1340,8 +1340,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dca2f3ad113f451b9b1217660a5ad1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  main: {fileID: 0}
   announceTextShort: {fileID: 2866424259822898238}
   announceTextLong: {fileID: 2866424258883795593}
   switchButton: {fileID: 2866424259474474716}
   textDetailPanel: {fileID: 2866424259099312091}
+  baseColor: {r: 1, g: 1, b: 1, a: 0}

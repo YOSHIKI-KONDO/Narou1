@@ -116,6 +116,8 @@ public class BattleAndSkillCtrl : BASE {
 
         EnemysAction();
         JudgeCombo();
+
+        CheckFault(); //ここにも追加
     }
 
     //Called in Fixed Update
@@ -821,7 +823,7 @@ public class BattleAndSkillCtrl : BASE {
         if (dunKind == DungeonKind.nothing) { return; }
 
         // HP判定
-        if (main.rsc.Value[(int)ResourceKind.hp] < 0.001d)
+        if (main.rsc.Value[(int)ResourceKind.hp] < 0.1d)
         {
             dungeons[(int)dunKind].LoseAction();
             main.progressCtrl.Rest();

@@ -12,8 +12,9 @@ public class Announce : BASE {
     public TextMeshProUGUI announceTextLong;
     public Button switchButton;
     public GameObject textDetailPanel;
+    public Color baseColor;
 
-    string baseColor;
+    string baseColorStr;
     string colorString;
 
     void SwitchPanel()
@@ -27,7 +28,7 @@ public class Announce : BASE {
     {
         if (Clr == null)
         {
-            colorString = baseColor;
+            colorString = baseColorStr;
         }
         else
         {
@@ -59,7 +60,7 @@ public class Announce : BASE {
 	// Use this for initialization
 	void Start () {
         switchButton?.onClick.AddListener(SwitchPanel);
-        baseColor = ColorUtility.ToHtmlStringRGB(Color.white);
+        baseColorStr = ColorUtility.ToHtmlStringRGB(baseColor);
 	}
 	
 	// Update is called once per frame

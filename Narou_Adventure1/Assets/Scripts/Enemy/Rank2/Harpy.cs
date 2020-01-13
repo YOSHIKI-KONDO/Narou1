@@ -11,6 +11,7 @@ public class Harpy : ENEMY
     void Awake()
     {
         AwakeEnemy(EnemyKind.harpy);
+        drops.Add(new Drop(ResourceKind.wood, 2, 4));
         drops.Add(new Item_Drop(ItemKind.animalfood, 3));
     }
 

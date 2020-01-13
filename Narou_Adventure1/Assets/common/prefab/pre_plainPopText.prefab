@@ -41,7 +41,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -285.92307, y: 135.52615}
-  m_SizeDelta: {x: 300, y: 188.34}
+  m_SizeDelta: {x: 300, y: 148.34}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!223 &223162940736294856
 Canvas:
@@ -124,15 +124,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.9411765}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 0.9411765}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: -5668187704428498929, guid: f7c03ab4c2347e14bbe7f11078fd4052,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 763d2db5c2621cf44bea7cf9ad4c743b, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -154,12 +153,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 30
-    m_Right: 30
-    m_Top: 30
-    m_Bottom: 30
+    m_Left: 10
+    m_Right: 10
+    m_Top: 10
+    m_Bottom: 10
   m_ChildAlignment: 0
-  m_Spacing: 10
+  m_Spacing: 0
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
@@ -291,8 +290,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 150, y: -94.17}
-  m_SizeDelta: {x: 240, y: 128.34}
+  m_AnchoredPosition: {x: 150, y: -74.17}
+  m_SizeDelta: {x: 280, y: 128.34}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &68896407752327972
 CanvasRenderer:
@@ -404,13 +403,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 4673654798184173604}
-    characterCount: 123
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 24
-    wordCount: 20
+    spaceCount: 2
+    wordCount: 0
     linkCount: 0
-    lineCount: 8
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 2
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0

@@ -12,7 +12,7 @@ public class Goblin : ENEMY
     {
         AwakeEnemy(EnemyKind.goblin);
         drops.Add(new Drop(ResourceKind.stone, 1, 10));
-        drops.Add(new Drop(ResourceKind.wood, 1, 5));
+        drops.Add(new Item_Drop(ItemKind.woodstick, 1));
     }
 
     // Use this for initialization
