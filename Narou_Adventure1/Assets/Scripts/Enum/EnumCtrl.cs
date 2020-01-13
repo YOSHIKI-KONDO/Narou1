@@ -59,7 +59,7 @@ public class EnumCtrl : BASE {
 		StartBASE();
 
         /* リソース */
-        resources.Add(new template(ResourceKind.nothing, "nothing", "nothing", "nothing", "nothing"));
+        resources.Add(new template(ResourceKind.nothing, "", "", "", ""));
         resources.Add(new template(ResourceKind.focus, "focus", "フォーカス", "Improve action efficiency with mp.", ""));
         resources.Add(new template(ResourceKind.equipSpace, "Equip", "装備", "", ""));
         resources.Add(new template(ResourceKind.inventorySpace, "Inventory", "インベントリ", "", ""));
@@ -98,124 +98,124 @@ public class EnumCtrl : BASE {
         resources.Add(new template(ResourceKind.dark, "Dark", "闇", "", "あらゆる行動に使います"));
         resources.Add(new template(ResourceKind.animal, "Animal", "アニマル", "", "あらゆる行動に使います"));
         //物資リソース
-        resources.Add(new template(ResourceKind.gold, "Gold", "Gold", "use for upgrade, item", "nothing"));
-        resources.Add(new template(ResourceKind.research, "Destiny", "運命", "Everything will start from this.", "nothing"));
-        resources.Add(new template(ResourceKind.paper, "Rune", "ルーン", "magic item that generate destiny automatically", "nothing"));
-        resources.Add(new template(ResourceKind.book, "Rune Stone", "ルーン石碑", "magic item that generate destiny automatically", "nothing"));
-        resources.Add(new template(ResourceKind.dictionary, "Gospel", "福音書", "magic item that generate destiny automatically", "nothing"));
-        resources.Add(new template(ResourceKind.herb, "Herb", "ハーブ", "", "nothing"));
-        resources.Add(new template(ResourceKind.medicine, "Medicine", "薬", "", "nothing"));
-        resources.Add(new template(ResourceKind.potion, "Potion", "ポーション", "", "nothing"));
+        resources.Add(new template(ResourceKind.gold, "Gold", "Gold", "", ""));
+        resources.Add(new template(ResourceKind.research, "Destiny", "運命", "Everything will start from this.", ""));
+        resources.Add(new template(ResourceKind.paper, "Rune", "ルーン", "magic item that generate destiny automatically", ""));
+        resources.Add(new template(ResourceKind.book, "Rune Stone", "ルーン石碑", "magic item that generate destiny automatically", ""));
+        resources.Add(new template(ResourceKind.dictionary, "Gospel", "福音書", "magic item that generate destiny automatically", ""));
+        resources.Add(new template(ResourceKind.herb, "Herb", "ハーブ", "", ""));
+        resources.Add(new template(ResourceKind.medicine, "Medicine", "薬", "", ""));
+        resources.Add(new template(ResourceKind.potion, "Potion", "ポーション", "", ""));
         resources.Add(new template(ResourceKind.wood, "Wood", "木", "the best wood to make firewood", "薪を作るのに最適な木。"));
         resources.Add(new template(ResourceKind.firewood, "Firewood", "薪", "good firewood", "良いサイズの薪。"));
-        resources.Add(new template(ResourceKind.charcoal, "Charcoal", "木炭", "", "nothing"));
+        resources.Add(new template(ResourceKind.charcoal, "Charcoal", "木炭", "", ""));
         resources.Add(new template(ResourceKind.flower, "Flower", "花", "This is called Flower of Yggdrasil. You can feel the intense power.", "ユグドラシルの花と呼ばれている。強い生命力を感じる。"));
         //食べ物
-        resources.Add(new template(ResourceKind.wheat, "Wheat", "小麦", "", "nothing"));
-        resources.Add(new template(ResourceKind.bread, "Bread", "パン", "", "nothing"));
-        resources.Add(new template(ResourceKind.fish, "Fish", "魚", "", "nothing"));
+        resources.Add(new template(ResourceKind.wheat, "Wheat", "小麦", "", ""));
+        resources.Add(new template(ResourceKind.bread, "Bread", "パン", "", ""));
+        resources.Add(new template(ResourceKind.fish, "Fish", "魚", "", ""));
         resources.Add(new template(ResourceKind.anchovy_sandwich, "Anchovy Sandwich", "アンチョビサンド", "Local specialty. Salty.", "故郷の名産物。塩味が効いている。"));
         resources.Add(new template(ResourceKind.filet_o_fish, "Filet-O-Fish", "フィレオフィッシュ", "Eating this makes you feel better even if you are depressed.", "落ち込んでいてもこれを食べたら元気が出る。"));
             //石
         resources.Add(new template(ResourceKind.stone, "Stone", "石", "Not just a stone. Easy to use, selected stone.", "ただの石じゃない。加工しやすい、選ばれし石。"));
-        resources.Add(new template(ResourceKind.magi_stone, "Magi Stone", "魔石", "", "nothing"));
-        resources.Add(new template(ResourceKind.fire_stone, "Fire Stone", "火魔石", "", "nothing"));
-        resources.Add(new template(ResourceKind.water_stone, "Water Stone", "水魔石", "", "nothing"));
-        resources.Add(new template(ResourceKind.wind_stone, "Wind Stone", "風魔石", "", "nothing"));
-        resources.Add(new template(ResourceKind.earth_stone, "Earth Stone", "土魔石", "", "nothing"));
-        resources.Add(new template(ResourceKind.thunder_stone, "Thunder Stone", "雷魔石", "nothing", "nothing"));
-        resources.Add(new template(ResourceKind.ice_stone, "Ice Stone", "氷魔石", "", "nothing"));
-        resources.Add(new template(ResourceKind.light_stone, "Light Stone", "光魔石", "", "nothing"));
-        resources.Add(new template(ResourceKind.dark_stone, "Dark Stone", "闇魔石", "", "nothing"));
+        resources.Add(new template(ResourceKind.magi_stone, "Magi Stone", "魔石", "", ""));
+        resources.Add(new template(ResourceKind.fire_stone, "Fire Stone", "火魔石", "", ""));
+        resources.Add(new template(ResourceKind.water_stone, "Water Stone", "水魔石", "", ""));
+        resources.Add(new template(ResourceKind.wind_stone, "Wind Stone", "風魔石", "", ""));
+        resources.Add(new template(ResourceKind.earth_stone, "Earth Stone", "土魔石", "", ""));
+        resources.Add(new template(ResourceKind.thunder_stone, "Thunder Stone", "雷魔石", "", ""));
+        resources.Add(new template(ResourceKind.ice_stone, "Ice Stone", "氷魔石", "", ""));
+        resources.Add(new template(ResourceKind.light_stone, "Light Stone", "光魔石", "", ""));
+        resources.Add(new template(ResourceKind.dark_stone, "Dark Stone", "闇魔石", "", ""));
              //鉄
-        resources.Add(new template(ResourceKind.iron, "Iron", "鉄", "", "nothing"));
-        resources.Add(new template(ResourceKind.steel, "Steel", "鋼鉄", "", "nothing"));
-        resources.Add(new template(ResourceKind.magi_steel, "Magi Steel", "魔鋼鉄", "", "nothing"));
-        resources.Add(new template(ResourceKind.fire_steel, "Fire Steel", "魔鋼鉄", "", "nothing"));
-        resources.Add(new template(ResourceKind.water_steel, "Water Steel", "魔鋼鉄", "", "nothing"));
-        resources.Add(new template(ResourceKind.wind_steel, "Wind Steel", "魔鋼鉄", "", "nothing"));
-        resources.Add(new template(ResourceKind.earth_steel, "Earth Steel", "魔鋼鉄", "", "nothing"));
-        resources.Add(new template(ResourceKind.thunder_steel, "Thunder Steel", "魔鋼鉄", "", "nothing"));
-        resources.Add(new template(ResourceKind.ice_steel, "Ice Steel", "魔鋼鉄", "", "nothing"));
-        resources.Add(new template(ResourceKind.light_steel, "Light Steel", "魔鋼鉄", "", "nothing"));
-        resources.Add(new template(ResourceKind.dark_steel, "Dark Steel", "魔鋼鉄", "", "nothing"));
+        resources.Add(new template(ResourceKind.iron, "Iron", "鉄", "", ""));
+        resources.Add(new template(ResourceKind.steel, "Steel", "鋼鉄", "", ""));
+        resources.Add(new template(ResourceKind.magi_steel, "Magi Steel", "魔鋼鉄", "", ""));
+        resources.Add(new template(ResourceKind.fire_steel, "Fire Steel", "魔鋼鉄", "", ""));
+        resources.Add(new template(ResourceKind.water_steel, "Water Steel", "魔鋼鉄", "", ""));
+        resources.Add(new template(ResourceKind.wind_steel, "Wind Steel", "魔鋼鉄", "", ""));
+        resources.Add(new template(ResourceKind.earth_steel, "Earth Steel", "魔鋼鉄", "", ""));
+        resources.Add(new template(ResourceKind.thunder_steel, "Thunder Steel", "魔鋼鉄", "", ""));
+        resources.Add(new template(ResourceKind.ice_steel, "Ice Steel", "魔鋼鉄", "", ""));
+        resources.Add(new template(ResourceKind.light_steel, "Light Steel", "魔鋼鉄", "", ""));
+        resources.Add(new template(ResourceKind.dark_steel, "Dark Steel", "魔鋼鉄", "", ""));
             //上位鉱石
         resources.Add(new template(ResourceKind.mithril, "Mithril", "ミスリル", "Expensive ore. It is very hard and passes magic power.", "高価な鉱石。とても硬く、魔力を通す。"));
         resources.Add(new template(ResourceKind.adamantite, "Adamantite", "アダマンタイト", "Expensive ore. It is very hard and doesn't pass magic power.", "高価な鉱石。非常に硬く、魔力を通さない。"));
         resources.Add(new template(ResourceKind.orichalcum, "Orichalcum", "オリハルコン", "The most marvelous ore", "天下最強の鉱石。"));
 
           //アビリティポイント
-        resources.Add(new template(ResourceKind.ap, "AP", "AP", "", "nothing"));
+        resources.Add(new template(ResourceKind.ap, "AP", "AP", "", ""));
 
             //モンスター素材
         resources.Add(new template(ResourceKind.fur, "Pelt", "獣の皮", "Pelt from beasts", "獣から剥ぎ取った毛皮。"));
         resources.Add(new template(ResourceKind.premium_fur, "Prized plet", "上質な皮", "Has no scratches", "傷一つついていない、上質な毛皮。"));
 
         /* インスタントアクション */
-        instantActions.Add(new template(ActionEnum.Instant.nothing, "nothing", "nothing", "nothing", "nothing"));
+        instantActions.Add(new template(ActionEnum.Instant.nothing, "", "", "", ""));
           //フェーズ１（入学前）
         instantActions.Add(new template(ActionEnum.Instant.weeding, "Weeding", "草むしり", "Part time job. Once in a while, you can get herbs.", "アルバイト。たまにハーブが生えている。"));
-        instantActions.Add(new template(ActionEnum.Instant.intensive_training, "Intensive Training", "猛特訓", "nothing", "体を酷使することで運命力を得る。"));
+        instantActions.Add(new template(ActionEnum.Instant.intensive_training, "Intensive Training", "猛特訓", "", "体を酷使することで運命力を得る。"));
         instantActions.Add(new template(ActionEnum.Instant.eat_anchovy_sandwich, "Eat Anchovy Sandwich", "アンチョビサンド", "The salty taste recovers you from fatigue.", "塩味が効いていて、疲れた体に旨みが染み渡る。"));
         instantActions.Add(new template(ActionEnum.Instant.eat_filet_o_fish, "Eat Filet-O-Fish", "フィレオフィッシュ", "As you eat, the flavor of fried fish between fluffy patties will jumps out.", "一口噛むと、ふっくらとしたバンズに挟まれたフィッシュフライの油がほとばしる。"));
         instantActions.Add(new template(ActionEnum.Instant.drink_herb_tea, "Drink Herb tea", "ハーブティー", "It tastes sacred.", "神聖な味がする。"));
         instantActions.Add(new template(ActionEnum.Instant.rune_generation, "Rune Generation", "ルーン生成", "Obtain Rune from the destiny power.", "運命の力でルーンを得る。"));
         instantActions.Add(new template(ActionEnum.Instant.runic_carving, "Runic Carving", "ルーンを刻む", "Obtain further destiny from carving with runes.", "ルーンを石碑に刻み、更なる運命を得る。"));
-        instantActions.Add(new template(ActionEnum.Instant.split_firewood, "Split Firewood", "薪割り", "", "nothing"));
-        instantActions.Add(new template(ActionEnum.Instant.sell_firewood, "Sell Firewood", "薪を売る", "", "nothing"));
-        instantActions.Add(new template(ActionEnum.Instant.sell_bread, "Sell Bread", "パンを売る", "nothing", "nothing"));
+        instantActions.Add(new template(ActionEnum.Instant.split_firewood, "Split Firewood", "薪割り", "", ""));
+        instantActions.Add(new template(ActionEnum.Instant.sell_firewood, "Sell Firewood", "薪を売る", "", ""));
+        instantActions.Add(new template(ActionEnum.Instant.sell_bread, "Sell Bread", "パンを売る", "", ""));
         //フェーズ２（学校）
         //アビリティアクション
-        instantActions.Add(new template(ActionEnum.Instant.mugged, "Mugged", "カツアゲ", "nothing", "お金を巻き上げろ！１クリック１パンチ！"));
-        instantActions.Add(new template(ActionEnum.Instant.devotion, "Devotion", "祈祷", "nothing", "nothing"));
-        instantActions.Add(new template(ActionEnum.Instant.take_medicine, "Take Medicine", "薬を飲む", "nothing", "nothing"));
+        instantActions.Add(new template(ActionEnum.Instant.mugged, "Extortion", "カツアゲ", "", "お金を巻き上げろ！１クリック１パンチ！"));
+        instantActions.Add(new template(ActionEnum.Instant.devotion, "Devotion", "祈祷", "", ""));
+        instantActions.Add(new template(ActionEnum.Instant.take_medicine, "Take Medicine", "薬を飲む", "", ""));
         /* ループアクション */
-        loopActions.Add(new template(ActionEnum.Loop.nothing, "nothing", "nothing", "nothing", "nothing"));
+        loopActions.Add(new template(ActionEnum.Loop.nothing, "", "", "", ""));
             //常用
-        loopActions.Add(new template(ActionEnum.Loop.rest, "Rest", "休憩", "nothing", "nothing"));
-        loopActions.Add(new template(ActionEnum.Loop.pray, "Pray", "祈る", "nothing", "nothing"));
+        loopActions.Add(new template(ActionEnum.Loop.rest, "Rest", "休憩", "", ""));
+        loopActions.Add(new template(ActionEnum.Loop.pray, "Pray", "祈る", "", ""));
           //フェーズ１（入学前）
-        loopActions.Add(new template(ActionEnum.Loop.farmwork, "Farmwork", "農作業", "nothing", "nothing"));
-        loopActions.Add(new template(ActionEnum.Loop.harvest_wheat, "Harvest Wheat", "小麦の収穫", "nothing", "nothing"));
-        loopActions.Add(new template(ActionEnum.Loop.grow_herb, "Grow Herb", "ハーブ栽培", "nothing", "nothing"));
-        loopActions.Add(new template(ActionEnum.Loop.lumberjack, "Lumberjack", "木こり", "nothing", "手斧の扱いをマスターした。"));
-        loopActions.Add(new template(ActionEnum.Loop.craft_magi_stone, "Craft:Magi Stone", "作成：マギストーン", "nothing", "魔力を込めた石を作成する。"));
+        loopActions.Add(new template(ActionEnum.Loop.farmwork, "Farmwork", "農作業", "", ""));
+        loopActions.Add(new template(ActionEnum.Loop.harvest_wheat, "Harvest Wheat", "小麦の収穫", "", ""));
+        loopActions.Add(new template(ActionEnum.Loop.grow_herb, "Grow Herb", "ハーブ栽培", "", ""));
+        loopActions.Add(new template(ActionEnum.Loop.lumberjack, "Lumberjack", "木こり", "", "手斧の扱いをマスターした。"));
+        loopActions.Add(new template(ActionEnum.Loop.craft_magi_stone, "Craft:Magi Stone", "作成：マギストーン", "", "魔力を込めた石を作成する。"));
         //フェーズ２（学校）
-        loopActions.Add(new template(ActionEnum.Loop.manual_labor, "Manual Labor", "肉体労働", "nothing", "nothing"));
-        loopActions.Add(new template(ActionEnum.Loop.desk_work, "Desk Work", "デスクワーク", "nothing", "nothing"));
-        loopActions.Add(new template(ActionEnum.Loop.service_trade, "Service Trade", "サービス業", "nothing", "nothing"));
+        loopActions.Add(new template(ActionEnum.Loop.manual_labor, "Manual Labor", "肉体労働", "", ""));
+        loopActions.Add(new template(ActionEnum.Loop.desk_work, "Desk Work", "デスクワーク", "", ""));
+        loopActions.Add(new template(ActionEnum.Loop.service_trade, "Service Trade", "サービス業", "", ""));
             //アビリティアクション
-        loopActions.Add(new template(ActionEnum.Loop.pickpocket, "Pickpocket", "スリ", "nothing", "nothing"));
-        loopActions.Add(new template(ActionEnum.Loop.dispense_medicines, "Dispense Medicines", "薬の調合", "nothing", "nothing"));
+        loopActions.Add(new template(ActionEnum.Loop.pickpocket, "Pickpocket", "スリ", "", ""));
+        loopActions.Add(new template(ActionEnum.Loop.dispense_medicines, "Dispense Medicines", "薬の調合", "", ""));
 
         /* アップグレードアクション */
-        upgradeActions.Add(new template(ActionEnum.Upgrade.nothing, "nothing", "nothing", "nothing", "nothing"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.nothing, "", "", "", ""));
           //フェーズ１（入学前）
         upgradeActions.Add(new template(ActionEnum.Upgrade.talk_fatherA, "Talk with Father", "父の話を聞く", "My son, Be strong.", "息子よ、強くなるのだ。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.talk_fatherB, "Talk with Father", "父の話を聞く", "Your mother was taken away by the Demon King.I want you to help her.", "お前の母は魔王に連れ去られた。助け出して欲しい。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.talk_fatherC, "Talk with Father", "父の話を聞く", "I resisted but couldn't help and lost my right arm.", "私は抵抗したが力及ばず、右腕を失ってしまった。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.talk_fatherD, "Talk with Father", "父の話を聞く", "Go to school. Learn what I can't teach.", "学校に行くと良い。私では教えられないことを学べる。"));
             //父の道場
-        upgradeActions.Add(new template(ActionEnum.Upgrade.training, "Training", "トレーニング", "nothing", "nothing"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.sword_practice, "Sword Practice", "剣の稽古", "nothing", "nothing"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.spear_practice, "Spear Practice", "槍の稽古", "nothing", "nothing"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.rod_practice, "Rod Practice", "棒の稽古", "nothing", "nothing"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.training, "Training", "トレーニング", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.sword_practice, "Sword Practice", "剣の稽古", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.spear_practice, "Spear Practice", "槍の稽古", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.rod_practice, "Rod Practice", "棒の稽古", "", ""));
             //母の書斎                             
-        upgradeActions.Add(new template(ActionEnum.Upgrade.mental_training, "Mental Training", "メンタルトレーニング", "nothing", "nothing"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.read_fire_spellbook, "Read Fire Spellbook", "火の魔導書", "nothing", "nothing"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.read_water_spellbook, "Read Water Spellbookg", "水の魔導書", "nothing", "nothing"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.read_wind_spellbook, "Read Wind Spellbook", "風の魔導書", "nothing", "nothing"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.read_earth_spellbook, "Read Earth Spellbook", "土の魔導書", "nothing", "nothing"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.mental_training, "Mental Training", "メンタルトレーニング", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.read_fire_spellbook, "Read Fire Spellbook", "火の魔導書", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.read_water_spellbook, "Read Water Spellbookg", "水の魔導書", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.read_wind_spellbook, "Read Wind Spellbook", "風の魔導書", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.read_earth_spellbook, "Read Earth Spellbook", "土の魔導書", "", ""));
             //村の広場                              
-        upgradeActions.Add(new template(ActionEnum.Upgrade.play_with_cat, "Play With Cat", "猫と遊ぶ", "nothing", "nothing"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.learn_use_tools, "Learn Use Tools", "道具の使い方を教わる", "nothing", "nothing"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.succession_life_magic, "Succession Life Magic", "生活魔法継承", "nothing", "nothing"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.play_with_cat, "Play With Cat", "猫と遊ぶ", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.learn_use_tools, "Learn Use Tools", "道具の使い方を教わる", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.succession_life_magic, "Succession Life Magic", "生活魔法継承", "", ""));
             //純アップグレード
-        upgradeActions.Add(new template(ActionEnum.Upgrade.buy_wallet, "Buy Wallet", "財布を買う", "nothing", "nothing"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.study_in_church, "Study in Church", "教会で勉強", "nothing", "nothing"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.buy_bag, "Buy Bag", "鞄を買う", "nothing", "nothing"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.rune_augmentation, "Rune Augmentation", "ルーン増強", "nothing", "nothing"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.buy_fire_spellbook, "Buy Fire Spellbook,", "火の魔導書を買う", "nothing", "nothing"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.buy_wallet, "Buy Wallet", "財布を買う", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.study_in_church, "Study in Church", "教会で勉強", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.buy_bag, "Buy Bag", "鞄を買う", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.rune_augmentation, "Rune Augmentation", "ルーン増強", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.buy_fire_spellbook, "Buy Fire Spellbook,", "火の魔導書を買う", "", ""));
             //少女イベント
         upgradeActions.Add(new template(ActionEnum.Upgrade.girl_is_crying, "Girl is Crying", "少女が泣いている", "It seems that the flowers she cherished have been broken down into bad kids.", "大切にしていた花を、悪ガキにへし折られてしまってようだ。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.pick_flowers, "Pick Flowers", "花を摘みに行く", "Give the girl a new flower.", "少女に新しい花をプレゼントしよう。"));
@@ -236,154 +236,154 @@ public class EnumCtrl : BASE {
         upgradeActions.Add(new template(ActionEnum.Upgrade.desolate_room, "Desolate room", "荒らされた部屋", "But no one is inside. There is evidence of competing. I remembered my mother, and became upset.", "しかし、中には誰もいない。争った形跡がある。攫われた母のことを思い出し、胸が高鳴った。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.rumor, "Rumor", "ウワサ", "Recently, demons have settled in the notorious garbage mansion. It's so dirty that the monsters settled down even though it's not sewers.", "近頃、悪評高いゴミ屋敷には魔物が住み着いている。下水道でもないのに魔物が住み着くなんてよほど汚いみたいだ。"));
             //フリークエスト
-        upgradeActions.Add(new template(ActionEnum.Upgrade.delivery_of_fur, "Delivery of pelt", "毛皮の納品", "nothing", "ウルフを倒すと手に入る、毛皮を納品してくれ。商品なんだから傷は少なめで頼むよ。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.house_clean_up, "House clean up", "ゴミ屋敷の掃除", "nothing", "家主は何をしているんだ？近所迷惑だから誰でもいい、掃除してくれ！"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.get_rid_of_rat, "Get rid of rat", "ネズミ退治", "nothing", "下水道に発生したポイズンラットを定期的に駆除しないといけない。不人気な依頼。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.wholesaler_of_drugs, "Wholesaler of Drugs,", "医薬品卸", "nothing", "薬はいくつあっても安心だ。市場に回すため引き取らせてもらいたい。(３回まで)"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.in_cellar, "In cellar", "地下室へ", "nothing", "ゴミ屋敷から、地下へと続くあなぐらが掘られていた。足元には花びらが散乱している。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.delivery_of_fur, "Delivery of pelt", "毛皮の納品", "", "ウルフを倒すと手に入る、毛皮を納品してくれ。商品なんだから傷は少なめで頼むよ。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.house_clean_up, "House clean up", "ゴミ屋敷の掃除", "", "家主は何をしているんだ？近所迷惑だから誰でもいい、掃除してくれ！"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.get_rid_of_rat, "Get rid of rat", "ネズミ退治", "", "下水道に発生したポイズンラットを定期的に駆除しないといけない。不人気な依頼。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.wholesaler_of_drugs, "Wholesaler of Drugs,", "医薬品卸", "", "薬はいくつあっても安心だ。市場に回すため引き取らせてもらいたい。(３回まで)"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.in_cellar, "In cellar", "地下室へ", "", "ゴミ屋敷から、地下へと続くあなぐらが掘られていた。足元には花びらが散乱している。"));
 
             //授業
-        upgradeActions.Add(new template(ActionEnum.Upgrade.sword_classwork, "Sword Classwork", "剣術の授業", "nothing", "筋骨隆々な先生が手取り足取り教えてくれるぞ。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.spear_classwork, "Spear Classwork", "槍術の授業", "nothing", "槍術の先生の趣味はスピアフィッシングとのこと。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.rod_classwork, "Rod Classwork", "棒術の授業", "nothing", "先生曰く、棒術を覚えるとパン生地をこねるのに便利らしい。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.fire_magic_classwork, "Fire Magic Classwork", "火魔術の授業", "nothing", "火魔術は危険だが、生産には必須である。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.water_magic_classwork, "Water Magic Classwork", "水魔術の授業", "nothing", "水中の魚を容易く捕らえることができる、素晴らしい魔術だ。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.wind_magic_classwork, "Wind Magic Classwork", "風魔術の授業", "nothing", "風を刃のように扱うことができる、おそろしい魔術だ。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.earth_magic_classwork, "Earth Magic Classwork", "土魔術の授業", "nothing", "土魔術に精通した人は土地の開拓に重宝されるらしい。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.animal_handling_classwork, "Animal Handling Classwork", "動物使役の授業", "nothing", "教室がペットで溢れ返り、うるさい。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.use_tools_classwork, "Use Tools Classwork", "道具使役の授業", "nothing", "道具に精通することで、様々な生産職への道が開かれるとのこと。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.life_magic_classwork, "Life Magic Classwork", "生活魔法の授業", "nothing", "いずれ役立つので、とりあえず授業を受ける人が多い。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.sword_classwork, "Sword Classwork", "剣術の授業", "", "筋骨隆々な先生が手取り足取り教えてくれるぞ。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.spear_classwork, "Spear Classwork", "槍術の授業", "", "槍術の先生の趣味はスピアフィッシングとのこと。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.rod_classwork, "Rod Classwork", "棒術の授業", "", "先生曰く、棒術を覚えるとパン生地をこねるのに便利らしい。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.fire_magic_classwork, "Fire Magic Classwork", "火魔術の授業", "", "火魔術は危険だが、生産には必須である。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.water_magic_classwork, "Water Magic Classwork", "水魔術の授業", "", "水中の魚を容易く捕らえることができる、素晴らしい魔術だ。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.wind_magic_classwork, "Wind Magic Classwork", "風魔術の授業", "", "風を刃のように扱うことができる、おそろしい魔術だ。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.earth_magic_classwork, "Earth Magic Classwork", "土魔術の授業", "", "土魔術に精通した人は土地の開拓に重宝されるらしい。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.animal_handling_classwork, "Animal Handling Classwork", "動物使役の授業", "", "教室がペットで溢れ返り、うるさい。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.use_tools_classwork, "Use Tools Classwork", "道具使役の授業", "", "道具に精通することで、様々な生産職への道が開かれるとのこと。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.life_magic_classwork, "Life Magic Classwork", "生活魔法の授業", "", "いずれ役立つので、とりあえず授業を受ける人が多い。"));
 
         //戦士
-        upgradeActions.Add(new template(ActionEnum.Upgrade.apprentice_warrior, "Apprentice Warrior", "戦士見習い", "nothing", "見習いとして認められる。更なる技術の習熟に臨むべし。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.warrior, "Warrior", "ウォーリアー", "nothing", "nothing"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.soldier, "Soldierg", "ソルジャー", "nothing", "nothing"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.mercenary, "Mercenary", "マーセナリー", "nothing", "nothing"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.trooper, "Trooper", "トルーパー", "nothing", "nothing"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.knight, "Knight", "ナイト", "nothing", "nothing"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.slayer, "Slayer", "スレイヤー", "nothing", "nothing"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.fighter, "Fighter", "ファイター", "nothing", "nothing"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.apprentice_warrior, "Apprentice Warrior", "戦士見習い", "", "見習いとして認められる。更なる技術の習熟に臨むべし。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.warrior, "Warrior", "ウォーリアー", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.soldier, "Soldierg", "ソルジャー", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.mercenary, "Mercenary", "マーセナリー", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.trooper, "Trooper", "トルーパー", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.knight, "Knight", "ナイト", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.slayer, "Slayer", "スレイヤー", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.fighter, "Fighter", "ファイター", "", ""));
             //魔導士
-        upgradeActions.Add(new template(ActionEnum.Upgrade.apprentice_sorcerer, "Apprentice Sorcerer", "魔導士見習い", "nothing", "見習いとして認められる。更なる技術の習熟に臨むべし。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.sorcerer, "Sorcerer", "ソーサラー", "nothing", "nothing"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.wizard, "Wizard", "ウィザード", "nothing", "nothing"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.warlock, "Warlock", "ウォーロック", "nothing", "nothing"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.high_sorcerer, "High Sorcerer", "ハイソーサラー", "nothing", "nothing"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.priest, "Priest", "プリースト", "nothing", "nothing"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.conjurer, "Conjurer", "コンジュラー", "nothing", "nothing"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.black_mage, "Black Mage", "ブラックメイジ", "nothing", "nothing"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.apprentice_sorcerer, "Apprentice Sorcerer", "魔導士見習い", "", "見習いとして認められる。更なる技術の習熟に臨むべし。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.sorcerer, "Sorcerer", "ソーサラー", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.wizard, "Wizard", "ウィザード", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.warlock, "Warlock", "ウォーロック", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.high_sorcerer, "High Sorcerer", "ハイソーサラー", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.priest, "Priest", "プリースト", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.conjurer, "Conjurer", "コンジュラー", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.black_mage, "Black Mage", "ブラックメイジ", "", ""));
             //テイマー
-        upgradeActions.Add(new template(ActionEnum.Upgrade.apprentice_tamer, "Apprentice Tamer", "テイマー見習い", "nothing", "見習いとして認められる。更なる技術の習熟に臨むべし。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.tamer, "Tamer", "テイマー", "nothing", "nothing"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.beast_tamer, "Beast Tamer", "ビーストテイマー", "nothing", "nothing"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.elementaler, "Elementaler", "エレメンタラー", "nothing", "nothing"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.monster_tamer, "Monster Tamer", "モンスターテイマー", "nothing", "nothing"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.summoner, "Summoner", "サモナー", "nothing", "nothing"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.apprentice_tamer, "Apprentice Tamer", "テイマー見習い", "", "見習いとして認められる。更なる技術の習熟に臨むべし。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.tamer, "Tamer", "テイマー", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.beast_tamer, "Beast Tamer", "ビーストテイマー", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.elementaler, "Elementaler", "エレメンタラー", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.monster_tamer, "Monster Tamer", "モンスターテイマー", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.summoner, "Summoner", "サモナー", "", ""));
             //生産職
-        upgradeActions.Add(new template(ActionEnum.Upgrade.crafter, "Crafter", "クラフター", "nothing", "nothing"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.iron_crafter, "Iron Crafter", "アイアンクラフター", "nothing", "nothing"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.magicrafter, "MagiCrafter", "マギクラフター", "nothing", "nothing"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.weapon_maker, "Weapon Maker", "ウェポンメイカー", "nothing", "nothing"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.alchemist, "Alchemist", "アルケミスト", "nothing", "nothing"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.crafter, "Crafter", "クラフター", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.iron_crafter, "Iron Crafter", "アイアンクラフター", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.magicrafter, "MagiCrafter", "マギクラフター", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.weapon_maker, "Weapon Maker", "ウェポンメイカー", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.alchemist, "Alchemist", "アルケミスト", "", ""));
         /* アビリティ */
-        abilitys.Add(new template(AbilityKind.nothing, "nothing", "nothing", "nothing", "nothing"));
+        abilitys.Add(new template(AbilityKind.nothing, "", "", "", ""));
             //戦士基本職初級
-        abilitys.Add(new template(AbilityKind.beginner_swordmanship, "Beginner Swordmanship", "初級剣術", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.beginner_spearmanship, "Beginner Spearmanship", "初級槍術", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.beginner_bojutsu, "Beginner Bojutsu", "初級棒術", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.beginner_battleaxe, "Beginner Battleaxe", "初級斧術", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.beginner_shieldmanship, "Beginner Shieldmanship", "初級盾術", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.beginner_martialart, "Beginner MartialArt", "初級体術", "nothing", "nothing"));
+        abilitys.Add(new template(AbilityKind.beginner_swordmanship, "Beginner Swordmanship", "初級剣術", "", ""));
+        abilitys.Add(new template(AbilityKind.beginner_spearmanship, "Beginner Spearmanship", "初級槍術", "", ""));
+        abilitys.Add(new template(AbilityKind.beginner_bojutsu, "Beginner Bojutsu", "初級棒術", "", ""));
+        abilitys.Add(new template(AbilityKind.beginner_battleaxe, "Beginner Battleaxe", "初級斧術", "", ""));
+        abilitys.Add(new template(AbilityKind.beginner_shieldmanship, "Beginner Shieldmanship", "初級盾術", "", ""));
+        abilitys.Add(new template(AbilityKind.beginner_martialart, "Beginner MartialArt", "初級体術", "", ""));
             //戦士基本職中級
-        abilitys.Add(new template(AbilityKind.intermediate_swordmanship, "Intermediate Swordmanship", "中級剣術", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.intermediate_spearmanship, "Intermediate Spearmanship", "中級槍術", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.intermediate_bojutsu, "Intermediate Bojutsu", "中級棒術", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.intermediate_battleaxe, "Intermediate Battleaxe", "中級斧術", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.intermediate_shieldmanship, "Intermediate Shieldmanship", "中級盾術", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.intermediate_martialart, "Intermediate MartialArt", "中級体術", "nothing", "nothing"));
+        abilitys.Add(new template(AbilityKind.intermediate_swordmanship, "Intermediate Swordmanship", "中級剣術", "", ""));
+        abilitys.Add(new template(AbilityKind.intermediate_spearmanship, "Intermediate Spearmanship", "中級槍術", "", ""));
+        abilitys.Add(new template(AbilityKind.intermediate_bojutsu, "Intermediate Bojutsu", "中級棒術", "", ""));
+        abilitys.Add(new template(AbilityKind.intermediate_battleaxe, "Intermediate Battleaxe", "中級斧術", "", ""));
+        abilitys.Add(new template(AbilityKind.intermediate_shieldmanship, "Intermediate Shieldmanship", "中級盾術", "", ""));
+        abilitys.Add(new template(AbilityKind.intermediate_martialart, "Intermediate MartialArt", "中級体術", "", ""));
             //戦士基本職上級
-        abilitys.Add(new template(AbilityKind.advanced_swordmanship, "Advanced Swordmanship", "上級剣術", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.advanced_spearmanship, "Advanced Spearmanship", "上級槍術", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.advanced_bojutsu, "Advanced Bojutsu", "上級棒術", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.advanced_battleaxe, "Advanced Battleaxe", "上級斧術", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.advanced_shieldmanship, "Advanced Shieldmanship", "上級盾術", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.advanced_martialart, "Advanced MartialArt", "上級体術", "nothing", "nothing"));
+        abilitys.Add(new template(AbilityKind.advanced_swordmanship, "Advanced Swordmanship", "上級剣術", "", ""));
+        abilitys.Add(new template(AbilityKind.advanced_spearmanship, "Advanced Spearmanship", "上級槍術", "", ""));
+        abilitys.Add(new template(AbilityKind.advanced_bojutsu, "Advanced Bojutsu", "上級棒術", "", ""));
+        abilitys.Add(new template(AbilityKind.advanced_battleaxe, "Advanced Battleaxe", "上級斧術", "", ""));
+        abilitys.Add(new template(AbilityKind.advanced_shieldmanship, "Advanced Shieldmanship", "上級盾術", "", ""));
+        abilitys.Add(new template(AbilityKind.advanced_martialart, "Advanced MartialArt", "上級体術", "", ""));
 
             //魔術士基本職初級
-        abilitys.Add(new template(AbilityKind.primary_fire_magic, "Primary Fire Magic", "初級火魔法", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.primary_water_magic, "Primary Water Magic", "初級水魔法", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.primary_wind_magic, "Primary Wind Magic", "初級風魔法", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.primary_earth_magic, "Primary Earth Magic", "初級土魔法", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.primary_thunder_magic, "Primary Thunder Magic", "初級雷魔法", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.primary_ice_magic, "Primary Ice Magic", "初級氷魔法", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.primary_light_magic, "Primary Light Magic", "初級光魔法", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.primary_dark_magic, "Primary Dark Magic", "初級闇魔法", "nothing", "nothing"));
+        abilitys.Add(new template(AbilityKind.primary_fire_magic, "Primary Fire Magic", "初級火魔法", "", ""));
+        abilitys.Add(new template(AbilityKind.primary_water_magic, "Primary Water Magic", "初級水魔法", "", ""));
+        abilitys.Add(new template(AbilityKind.primary_wind_magic, "Primary Wind Magic", "初級風魔法", "", ""));
+        abilitys.Add(new template(AbilityKind.primary_earth_magic, "Primary Earth Magic", "初級土魔法", "", ""));
+        abilitys.Add(new template(AbilityKind.primary_thunder_magic, "Primary Thunder Magic", "初級雷魔法", "", ""));
+        abilitys.Add(new template(AbilityKind.primary_ice_magic, "Primary Ice Magic", "初級氷魔法", "", ""));
+        abilitys.Add(new template(AbilityKind.primary_light_magic, "Primary Light Magic", "初級光魔法", "", ""));
+        abilitys.Add(new template(AbilityKind.primary_dark_magic, "Primary Dark Magic", "初級闇魔法", "", ""));
             //魔術士基本職中級
-        abilitys.Add(new template(AbilityKind.intermediate_fire_magic, "Intermediate Fire Magic", "中級火魔法", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.intermediate_water_magic, "Intermediate Water Magic", "中級水魔法", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.intermediate_wind_magic, "Intermediate Wind Magic", "中級風魔法", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.intermediate_earth_magic, "Intermediate Earth Magic", "中級土魔法", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.intermediate_thunder_magic, "Intermediate Thunder Magic", "中級雷魔法", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.intermediate_ice_magic, "Intermediate Ice Magic", "中級氷魔法", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.intermediate_light_magic, "Intermediate Light Magic", "中級光魔法", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.intermediate_dark_magic, "Intermediate Dark Magic", "中級闇魔法", "nothing", "nothing"));
+        abilitys.Add(new template(AbilityKind.intermediate_fire_magic, "Intermediate Fire Magic", "中級火魔法", "", ""));
+        abilitys.Add(new template(AbilityKind.intermediate_water_magic, "Intermediate Water Magic", "中級水魔法", "", ""));
+        abilitys.Add(new template(AbilityKind.intermediate_wind_magic, "Intermediate Wind Magic", "中級風魔法", "", ""));
+        abilitys.Add(new template(AbilityKind.intermediate_earth_magic, "Intermediate Earth Magic", "中級土魔法", "", ""));
+        abilitys.Add(new template(AbilityKind.intermediate_thunder_magic, "Intermediate Thunder Magic", "中級雷魔法", "", ""));
+        abilitys.Add(new template(AbilityKind.intermediate_ice_magic, "Intermediate Ice Magic", "中級氷魔法", "", ""));
+        abilitys.Add(new template(AbilityKind.intermediate_light_magic, "Intermediate Light Magic", "中級光魔法", "", ""));
+        abilitys.Add(new template(AbilityKind.intermediate_dark_magic, "Intermediate Dark Magic", "中級闇魔法", "", ""));
             //魔術士基本職上級
-        abilitys.Add(new template(AbilityKind.advanced_fire_magic, "Advanced Fire Magic", "上級火魔法", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.advanced_water_magic, "Advanced Water Magic", "上級水魔法", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.advanced_wind_magic, "Advanced Wind Magic", "上級風魔法", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.advanced_earth_magic, "Advanced Earth Magic", "上級土魔法", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.advanced_thunder_magic, "Advanced Thunder Magic", "上級雷魔法", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.advanced_ice_magic, "Advanced Ice Magic", "上級氷魔法", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.advanced_light_magic, "Advanced Light Magic", "上級光魔法", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.advanced_dark_magic, "Advanced Dark Magic", "上級闇魔法", "nothing", "nothing"));
+        abilitys.Add(new template(AbilityKind.advanced_fire_magic, "Advanced Fire Magic", "上級火魔法", "", ""));
+        abilitys.Add(new template(AbilityKind.advanced_water_magic, "Advanced Water Magic", "上級水魔法", "", ""));
+        abilitys.Add(new template(AbilityKind.advanced_wind_magic, "Advanced Wind Magic", "上級風魔法", "", ""));
+        abilitys.Add(new template(AbilityKind.advanced_earth_magic, "Advanced Earth Magic", "上級土魔法", "", ""));
+        abilitys.Add(new template(AbilityKind.advanced_thunder_magic, "Advanced Thunder Magic", "上級雷魔法", "", ""));
+        abilitys.Add(new template(AbilityKind.advanced_ice_magic, "Advanced Ice Magic", "上級氷魔法", "", ""));
+        abilitys.Add(new template(AbilityKind.advanced_light_magic, "Advanced Light Magic", "上級光魔法", "", ""));
+        abilitys.Add(new template(AbilityKind.advanced_dark_magic, "Advanced Dark Magic", "上級闇魔法", "", ""));
 
             //使役者基本職初級
-        abilitys.Add(new template(AbilityKind.animal_handling, "Animal Handling", "動物使役", "nothing", "nothing"));
+        abilitys.Add(new template(AbilityKind.animal_handling, "Animal Handling", "動物使役", "", ""));
             //使役者基本職中級
-        abilitys.Add(new template(AbilityKind.beast_tamer, "Beast Tamer", "獣使い", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.insect_handling, "Insect Handling", "虫使い", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.bird_handling, "Bird Handling", "鳥使い", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.elementalor, "Elementalor", "精霊使い", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.summon_fairy, "Summon Fairy", "妖精使い", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.summon_familiar, "Summon Familiar", "使い魔召喚", "nothing", "nothing"));
+        abilitys.Add(new template(AbilityKind.beast_tamer, "Beast Tamer", "獣使い", "", ""));
+        abilitys.Add(new template(AbilityKind.insect_handling, "Insect Handling", "虫使い", "", ""));
+        abilitys.Add(new template(AbilityKind.bird_handling, "Bird Handling", "鳥使い", "", ""));
+        abilitys.Add(new template(AbilityKind.elementalor, "Elementalor", "精霊使い", "", ""));
+        abilitys.Add(new template(AbilityKind.summon_fairy, "Summon Fairy", "妖精使い", "", ""));
+        abilitys.Add(new template(AbilityKind.summon_familiar, "Summon Familiar", "使い魔召喚", "", ""));
             //使役者基本職上級
-        abilitys.Add(new template(AbilityKind.monster_tamer, "Monster Tamer", "魔物使い", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.summoner, "Summoner", "召喚士", "nothing", "nothing"));
+        abilitys.Add(new template(AbilityKind.monster_tamer, "Monster Tamer", "魔物使い", "", ""));
+        abilitys.Add(new template(AbilityKind.summoner, "Summoner", "召喚士", "", ""));
 
             //共通基本職（戦士初級）
-        abilitys.Add(new template(AbilityKind.hoodlum, "Hoodlum", "ごろつき", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.seclusion, "Seclusion", "隠密", "nothing", "nothing"));
+        abilitys.Add(new template(AbilityKind.hoodlum, "Hoodlum", "ごろつき", "", ""));
+        abilitys.Add(new template(AbilityKind.seclusion, "Seclusion", "隠密", "", ""));
             //共通基本職（戦士中級）
-        abilitys.Add(new template(AbilityKind.thief, "Thief", "盗賊", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.assassin, "Assassin", "暗殺者", "nothing", "nothing"));
+        abilitys.Add(new template(AbilityKind.thief, "Thief", "盗賊", "", ""));
+        abilitys.Add(new template(AbilityKind.assassin, "Assassin", "暗殺者", "", ""));
             //共通基本職（戦士上級）
-        abilitys.Add(new template(AbilityKind.ninja, "Ninja", "忍者", "nothing", "nothing"));
+        abilitys.Add(new template(AbilityKind.ninja, "Ninja", "忍者", "", ""));
 
             //共通基本職（魔術師初級）
-        abilitys.Add(new template(AbilityKind.black_mage, "Black_Mage", "黒魔術師", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.believer, "Believer", "教徒", "nothing", "nothing"));
+        abilitys.Add(new template(AbilityKind.black_mage, "Black_Mage", "黒魔術師", "", ""));
+        abilitys.Add(new template(AbilityKind.believer, "Believer", "教徒", "", ""));
             //共通基本職（魔術師中級）
-        abilitys.Add(new template(AbilityKind.necromancer, "Necromancer", "死霊術師", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.priest, "Priest", "聖職者", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.fanatic, "Fanatic", "狂信者", "nothing", "nothing"));
+        abilitys.Add(new template(AbilityKind.necromancer, "Necromancer", "死霊術師", "", ""));
+        abilitys.Add(new template(AbilityKind.priest, "Priest", "聖職者", "", ""));
+        abilitys.Add(new template(AbilityKind.fanatic, "Fanatic", "狂信者", "", ""));
             //共通基本職（魔術師上級）
-        abilitys.Add(new template(AbilityKind.demonolater, "Demonolater", "悪魔崇拝者", "nothing", "nothing"));
+        abilitys.Add(new template(AbilityKind.demonolater, "Demonolater", "悪魔崇拝者", "", ""));
 
             //共通基本職（生産職初級）
-        abilitys.Add(new template(AbilityKind.pharmacist, "Pharmacist", "薬師", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.use_tools, "Use Tools", "道具使役", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.life_magic, "Life Magic", "生活魔法", "nothing", "nothing"));
+        abilitys.Add(new template(AbilityKind.pharmacist, "Pharmacist", "薬師", "", ""));
+        abilitys.Add(new template(AbilityKind.use_tools, "Use Tools", "道具使役", "", ""));
+        abilitys.Add(new template(AbilityKind.life_magic, "Life Magic", "生活魔法", "", ""));
             //共通基本職（生産職中級）
-        abilitys.Add(new template(AbilityKind.doctor, "Doctor", "医者", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.crafter, "Crafter", "クラフター", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.whitesmith, "Whitesmith", "からくり士", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.magicrafter, "Magicrafter", "マギクラフター", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.enchanter, "Enchanter", "エンチャンター", "nothing", "nothing"));
+        abilitys.Add(new template(AbilityKind.doctor, "Doctor", "医者", "", ""));
+        abilitys.Add(new template(AbilityKind.crafter, "Crafter", "クラフター", "", ""));
+        abilitys.Add(new template(AbilityKind.whitesmith, "Whitesmith", "からくり士", "", ""));
+        abilitys.Add(new template(AbilityKind.magicrafter, "Magicrafter", "マギクラフター", "", ""));
+        abilitys.Add(new template(AbilityKind.enchanter, "Enchanter", "エンチャンター", "", ""));
             //共通基本職（生産職上級）
-        abilitys.Add(new template(AbilityKind.blacksmith, "Blacksmith", "鍛冶師", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.machine_engineer, "Machine Engineer", "機械技術士", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.alchemist, "Alchemist", "錬金術師", "nothing", "nothing"));
-        abilitys.Add(new template(AbilityKind.high_enchanter, "High Enchanter", "ハイエンチャンター", "nothing", "nothing"));
+        abilitys.Add(new template(AbilityKind.blacksmith, "Blacksmith", "鍛冶師", "", ""));
+        abilitys.Add(new template(AbilityKind.machine_engineer, "Machine Engineer", "機械技術士", "", ""));
+        abilitys.Add(new template(AbilityKind.alchemist, "Alchemist", "錬金術師", "", ""));
+        abilitys.Add(new template(AbilityKind.high_enchanter, "High Enchanter", "ハイエンチャンター", "", ""));
 
         /* アイテム */
           //フェーズ１
@@ -420,7 +420,7 @@ public class EnumCtrl : BASE {
         items.Add(new template(ItemKind.umbrella, "Umbrella", "傘", "", "物心ついた少年が手にする、伝説の武器。"));
 
         /* 必要条件 */
-        needs.Add(new template(NeedKind.nothing, "nothing", "nothing", "nothing", "nothing"));
+        needs.Add(new template(NeedKind.nothing, "", "", "", ""));
         needs.Add(new template(NeedKind.weapon, "weapon", "weapon", "", ""));
         needs.Add(new template(NeedKind.armor, "armor", "armor", "", ""));
         needs.Add(new template(NeedKind.goods, "goods", "goods", "", ""));
@@ -452,7 +452,7 @@ public class EnumCtrl : BASE {
 
 
         /* スキル */
-        skills.Add(new template(SkillKind.nothing, "nothing", "nothing", "nothing", "nothing"));
+        skills.Add(new template(SkillKind.nothing, "", "", "", ""));
         skills.Add(new template(SkillKind.normalAttack, "Normal Attack", "通常攻撃", "", ""));
         skills.Add(new template(SkillKind.normalAttack_npc1, "Normal Attack", "通常攻撃", "", ""));
         //戦士
@@ -498,108 +498,108 @@ public class EnumCtrl : BASE {
         /*skills.Add(new template(SkillKind.throwing, "Throwing", "投てき", "", ""));
         */
         /* 敵 */
-        enemys.Add(new template(EnemyKind.nothing, "nothing", "nothing", "nothing", "nothing"));
+        enemys.Add(new template(EnemyKind.nothing, "", "", "", ""));
         //ランク1
         enemys.Add(new template(EnemyKind.slime, "Slime", "スライム", "", ""));
         enemys.Add(new template(EnemyKind.goblin, "Goblin", "ゴブリン", "", ""));
-        enemys.Add(new template(EnemyKind.rat, "Rat", "ラット", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.bird, "Bird", "バード", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.bat, "Bat", "バット", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.wolf, "Wolf", "ウルフ", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.snake, "Snake", "スネーク", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.demonic, "Demonic", "魔族", "nothing", "nothing"));
+        enemys.Add(new template(EnemyKind.rat, "Rat", "ラット", "", ""));
+        enemys.Add(new template(EnemyKind.bird, "Bird", "バード", "", ""));
+        enemys.Add(new template(EnemyKind.bat, "Bat", "バット", "", ""));
+        enemys.Add(new template(EnemyKind.wolf, "Wolf", "ウルフ", "", ""));
+        enemys.Add(new template(EnemyKind.snake, "Snake", "スネーク", "", ""));
+        enemys.Add(new template(EnemyKind.demonic, "Demonic", "魔族", "", ""));
         //ランク1人物
-        enemys.Add(new template(EnemyKind.sigurd, "Sigurd", "シグルズ", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.askr, "Askr", "アスク", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.embla, "Embla", "エムブラ", "nothing", "nothing"));
+        enemys.Add(new template(EnemyKind.sigurd, "Sigurd", "シグルズ", "", ""));
+        enemys.Add(new template(EnemyKind.askr, "Askr", "アスク", "", ""));
+        enemys.Add(new template(EnemyKind.embla, "Embla", "エムブラ", "", ""));
         //ランク2
-        enemys.Add(new template(EnemyKind.red_slime, "Red Slime", "レッドスライム", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.orc, "Orc", "オーク", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.poison_rat, "Poison Rat", "ポイズンラット", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.harpy, "Harpy", "ハーピィ", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.ghoul, "Ghoul", "グール", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.werewolf, "Werewolf", "ウェアウルフ", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.lizard_man, "Lizard Man", "リザードマン", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.demonic_warrior, "Demonic Warrior", "魔族の戦士", "nothing", "nothing"));
+        enemys.Add(new template(EnemyKind.red_slime, "Red Slime", "レッドスライム", "", ""));
+        enemys.Add(new template(EnemyKind.orc, "Orc", "オーク", "", ""));
+        enemys.Add(new template(EnemyKind.poison_rat, "Poison Rat", "ポイズンラット", "", ""));
+        enemys.Add(new template(EnemyKind.harpy, "Harpy", "ハーピィ", "", ""));
+        enemys.Add(new template(EnemyKind.ghoul, "Ghoul", "グール", "", ""));
+        enemys.Add(new template(EnemyKind.werewolf, "Werewolf", "ウェアウルフ", "", ""));
+        enemys.Add(new template(EnemyKind.lizard_man, "Lizard Man", "リザードマン", "", ""));
+        enemys.Add(new template(EnemyKind.demonic_warrior, "Demonic Warrior", "魔族の戦士", "", ""));
         //ランク3
-        /*enemys.Add(new template(EnemyKind.element_slime, "Element Slime", "エレメントスライム", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.ogre, "Ogre", "オーガ", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.electric_rat, "Electric Rat", "エレクトリックラット", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.griffon, "Griffon", "グリフォン", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.vampire, "Vampire", "ヴァンパイア", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.hati, "Hati", "ハティ", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.nidhogg, "Nidhogg", "ニーズヘッグ", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.demonic_guards, "Demonic Guards", "魔族の近衛兵", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.angel, "Angel", "エンジェル", "nothing", "nothing"));
+        /*enemys.Add(new template(EnemyKind.element_slime, "Element Slime", "エレメントスライム", "", ""));
+        enemys.Add(new template(EnemyKind.ogre, "Ogre", "オーガ", "", ""));
+        enemys.Add(new template(EnemyKind.electric_rat, "Electric Rat", "エレクトリックラット", "", ""));
+        enemys.Add(new template(EnemyKind.griffon, "Griffon", "グリフォン", "", ""));
+        enemys.Add(new template(EnemyKind.vampire, "Vampire", "ヴァンパイア", "", ""));
+        enemys.Add(new template(EnemyKind.hati, "Hati", "ハティ", "", ""));
+        enemys.Add(new template(EnemyKind.nidhogg, "Nidhogg", "ニーズヘッグ", "", ""));
+        enemys.Add(new template(EnemyKind.demonic_guards, "Demonic Guards", "魔族の近衛兵", "", ""));
+        enemys.Add(new template(EnemyKind.angel, "Angel", "エンジェル", "", ""));
         //ランク4
-        enemys.Add(new template(EnemyKind.aqua_element,"Aqua Element", "アクアエレメント", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.troll, "Troll", "トロール", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.ratatoskr, "Ratatoskr", "ラタトスク", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.garuda, "Garuda", "ガルーダ", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.vampire_lord, "Vampire Lord", "ヴァンパイアロード", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.managarmr, "Mánagarmr", "マーナガルム", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.fire_drake, "Fire Drake", "ファイアードレイク", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.satan, "Satan", "魔王", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.einherjar, "Einherjar", "エインヘリアル", "nothing", "nothing"));
+        enemys.Add(new template(EnemyKind.aqua_element,"Aqua Element", "アクアエレメント", "", ""));
+        enemys.Add(new template(EnemyKind.troll, "Troll", "トロール", "", ""));
+        enemys.Add(new template(EnemyKind.ratatoskr, "Ratatoskr", "ラタトスク", "", ""));
+        enemys.Add(new template(EnemyKind.garuda, "Garuda", "ガルーダ", "", ""));
+        enemys.Add(new template(EnemyKind.vampire_lord, "Vampire Lord", "ヴァンパイアロード", "", ""));
+        enemys.Add(new template(EnemyKind.managarmr, "Mánagarmr", "マーナガルム", "", ""));
+        enemys.Add(new template(EnemyKind.fire_drake, "Fire Drake", "ファイアードレイク", "", ""));
+        enemys.Add(new template(EnemyKind.satan, "Satan", "魔王", "", ""));
+        enemys.Add(new template(EnemyKind.einherjar, "Einherjar", "エインヘリアル", "", ""));
         //ランク4魔界
-        enemys.Add(new template(EnemyKind.warg, "Warg", "ワーグ", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.ice_tortois, "Ice Tortois", "アイスタートル", "nothing", "nothing"));
+        enemys.Add(new template(EnemyKind.warg, "Warg", "ワーグ", "", ""));
+        enemys.Add(new template(EnemyKind.ice_tortois, "Ice Tortois", "アイスタートル", "", ""));
         //ランク5
-        enemys.Add(new template(EnemyKind.skoll, "Sköll", "スコル", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.dragon_ice, "Dragon Ice", "アイスドラゴン", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.heidrun, "nothing", "ヘイズルーン", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.hraesvelgr, "nothing", "フレスベルグ", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.valkyrie, "nothing", "ワルキューレ", "nothing", "nothing"));
+        enemys.Add(new template(EnemyKind.skoll, "Sköll", "スコル", "", ""));
+        enemys.Add(new template(EnemyKind.dragon_ice, "Dragon Ice", "アイスドラゴン", "", ""));
+        enemys.Add(new template(EnemyKind.heidrun, "", "ヘイズルーン", "", ""));
+        enemys.Add(new template(EnemyKind.hraesvelgr, "", "フレスベルグ", "", ""));
+        enemys.Add(new template(EnemyKind.valkyrie, "", "ワルキューレ", "", ""));
         //ランク5天界
-        enemys.Add(new template(EnemyKind.fafnir, "Fafnir", "ファフニール", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.huginn, "Huginn", "フギン", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.muninn, "Muninn", "ムニン", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.geri, "Geri", "ゲリ", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.freki, "Freki", "フレキ", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.garm, "Garm", "ガルム", "nothing", "nothing"));
+        enemys.Add(new template(EnemyKind.fafnir, "Fafnir", "ファフニール", "", ""));
+        enemys.Add(new template(EnemyKind.huginn, "Huginn", "フギン", "", ""));
+        enemys.Add(new template(EnemyKind.muninn, "Muninn", "ムニン", "", ""));
+        enemys.Add(new template(EnemyKind.geri, "Geri", "ゲリ", "", ""));
+        enemys.Add(new template(EnemyKind.freki, "Freki", "フレキ", "", ""));
+        enemys.Add(new template(EnemyKind.garm, "Garm", "ガルム", "", ""));
         //ランク6
-        enemys.Add(new template(EnemyKind.valkyrja, "Valkyrja", "ヴァルキュリア", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.heimdall, "Heimdall", "ヘイムダル", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.sleipnir, "Sleipnir", "スレイプニル", "nothing", "nothing"));
+        enemys.Add(new template(EnemyKind.valkyrja, "Valkyrja", "ヴァルキュリア", "", ""));
+        enemys.Add(new template(EnemyKind.heimdall, "Heimdall", "ヘイムダル", "", ""));
+        enemys.Add(new template(EnemyKind.sleipnir, "Sleipnir", "スレイプニル", "", ""));
         //ランク6召喚獣
-        enemys.Add(new template(EnemyKind.fenrir, "Fenrir", "フェンリル", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.jormungandr, "Jörmungandr", "ヨルムンガンド", "nothing", "nothing"));
+        enemys.Add(new template(EnemyKind.fenrir, "Fenrir", "フェンリル", "", ""));
+        enemys.Add(new template(EnemyKind.jormungandr, "Jörmungandr", "ヨルムンガンド", "", ""));
         //ランク7
-        enemys.Add(new template(EnemyKind.odin, "Odin", "オーディン", "nothing", "nothing"));
-        enemys.Add(new template(EnemyKind.hel, "Hel", "ヘル", "nothing", "nothing"));
+        enemys.Add(new template(EnemyKind.odin, "Odin", "オーディン", "", ""));
+        enemys.Add(new template(EnemyKind.hel, "Hel", "ヘル", "", ""));
         */
         /* ダンジョン */
-        dungeons.Add(new template(DungeonKind.nothing, "nothing", "nothing", "nothing", "nothing"));
-        dungeons.Add(new template(DungeonKind.edge_of_town, "Edge of Town", "村の外れ", "nothing", "悪ガキを呼び出した。"));
-        dungeons.Add(new template(DungeonKind.small_hill, "Small Hill", "小高い丘", "nothing", "丘の頂上に綺麗な花が咲いているらしい。"));
-        dungeons.Add(new template(DungeonKind.plain, "Plain", "平原", "nothing", "都市へ向かうには平原を超える必要がある。"));
-        dungeons.Add(new template(DungeonKind.lost_forest, "Lost Forest", "迷いの森", "nothing", "毎年、そこそこの人がそこそこ迷うらしい。と、噂で聞いた気がする。"));
+        dungeons.Add(new template(DungeonKind.nothing, "", "", "", ""));
+        dungeons.Add(new template(DungeonKind.edge_of_town, "Edge of Town", "村の外れ", "", "悪ガキを呼び出した。"));
+        dungeons.Add(new template(DungeonKind.small_hill, "Small Hill", "小高い丘", "", "丘の頂上に綺麗な花が咲いているらしい。"));
+        dungeons.Add(new template(DungeonKind.plain, "Plain", "平原", "", "都市へ向かうには平原を超える必要がある。"));
+        dungeons.Add(new template(DungeonKind.lost_forest, "Lost Forest", "迷いの森", "", "毎年、そこそこの人がそこそこ迷うらしい。と、噂で聞いた気がする。"));
         dungeons.Add(new template(DungeonKind.oak_forest, "Oak Forest", "オークの森", "Orc doesn't live here.", "楢の森。オークは住んでいない。"));
-        dungeons.Add(new template(DungeonKind.moor, "Moor", "湿原", "nothing", "オークの森を抜けた先にある湿原"));
-        dungeons.Add(new template(DungeonKind.hoarding_house, "Hoarding House", "ゴミ屋敷", "nothing", "都内で噂のゴミ屋敷。"));
-        dungeons.Add(new template(DungeonKind.sewer, "Sewer", "下水道", "nothing", "むぅ、臭い。"));
-        dungeons.Add(new template(DungeonKind.bog, "Bog", "沼地", "nothing", "足場に気を付けて進もう。"));
-        dungeons.Add(new template(DungeonKind.demonic_cellar, "Demonic Cellar", "魔族のあなぐら", "nothing", "ゴミ屋敷の下に地下室があった。"));
+        dungeons.Add(new template(DungeonKind.moor, "Moor", "湿原", "", "オークの森を抜けた先にある湿原"));
+        dungeons.Add(new template(DungeonKind.hoarding_house, "Hoarding House", "ゴミ屋敷", "", "都内で噂のゴミ屋敷。"));
+        dungeons.Add(new template(DungeonKind.sewer, "Sewer", "下水道", "", "むぅ、臭い。"));
+        dungeons.Add(new template(DungeonKind.bog, "Bog", "沼地", "", "足場に気を付けて進もう。"));
+        dungeons.Add(new template(DungeonKind.demonic_cellar, "Demonic Cellar", "魔族のあなぐら", "", "ゴミ屋敷の下に地下室があった。"));
 
         /* 味方 */
-        allys.Add(new template(AllyKind.nothing, "nothing", "nothing", "nothing", "nothing"));
-        allys.Add(new template(AllyKind.npcA, "Norn", "ノルン", "nothing", "nothing"));
-        allys.Add(new template(AllyKind.npcB, "Stela", "ステラ", "nothing", "nothing"));
-        allys.Add(new template(AllyKind.npcB, "Kashima", "鹿島", "nothing", "nothing"));
+        allys.Add(new template(AllyKind.nothing, "", "", "", ""));
+        allys.Add(new template(AllyKind.npcA, "Norn", "ノルン", "", ""));
+        allys.Add(new template(AllyKind.npcB, "Stela", "ステラ", "", ""));
+        allys.Add(new template(AllyKind.npcB, "Kashima", "鹿島", "", ""));
 
         /* スキルの属性 */
-        attributes.Add(new template(AttributeKind.nothing, "nothing", "nothing", "nothing", "nothing"));
-        attributes.Add(new template(AttributeKind.fireMagic, "Fire Magic", "火炎魔法", "nothing", "nothing"));
-        attributes.Add(new template(AttributeKind.waterSword, "Water Sword", "火炎斬り", "nothing", "nothing"));
+        attributes.Add(new template(AttributeKind.nothing, "", "", "", ""));
+        attributes.Add(new template(AttributeKind.fireMagic, "Fire Magic", "火炎魔法", "", ""));
+        attributes.Add(new template(AttributeKind.waterSword, "Water Sword", "火炎斬り", "", ""));
 
         /* 要素 */
-        elements.Add(new template(ElementKind.nothing, "nothing", "nothing", "nothing", "nothing"));
-        elements.Add(new template(ElementKind.main, "Main", "メイン", "nothing", "nothing"));
-        elements.Add(new template(ElementKind.ability, "アビリティ", "nothing", "nothing", "nothing"));
-        elements.Add(new template(ElementKind.item, "Item", "アイテム", "nothing", "nothing"));
-        elements.Add(new template(ElementKind.skill, "Skill", "スキル", "nothing", "nothing"));
-        elements.Add(new template(ElementKind.dungeon, "Dungeon", "ダンジョン", "nothing", "nothing"));
-        elements.Add(new template(ElementKind.status, "Status", "ステータス", "nothing", "nothing"));
+        elements.Add(new template(ElementKind.nothing, "", "", "", ""));
+        elements.Add(new template(ElementKind.main, "Main", "メイン", "", ""));
+        elements.Add(new template(ElementKind.ability, "アビリティ", "", "", ""));
+        elements.Add(new template(ElementKind.item, "Item", "アイテム", "", ""));
+        elements.Add(new template(ElementKind.skill, "Skill", "スキル", "", ""));
+        elements.Add(new template(ElementKind.dungeon, "Dungeon", "ダンジョン", "", ""));
+        elements.Add(new template(ElementKind.status, "Status", "ステータス", "", ""));
 
         //テスト
         TestAll();
