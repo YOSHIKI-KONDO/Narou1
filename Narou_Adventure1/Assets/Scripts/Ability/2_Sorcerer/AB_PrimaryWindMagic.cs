@@ -10,7 +10,8 @@ public class AB_PrimaryWindMagic : ABILITY
 
     public override bool Requires()
     {
-        return main.a_rsc.MaxLevel((int)AbilityKind.primary_wind_magic) >= 6;
+        return main.a_rsc.MaxLevel((int)AbilityKind.primary_wind_magic) >= 6 ||
+        main.itemCtrl.exitSourceNums[(int)NeedKind.wind] > 0;
     }
 
     // Use this for initialization
@@ -25,6 +26,10 @@ public class AB_PrimaryWindMagic : ABILITY
         need.AddSourceNeed(NeedKind.wind);
 
         SetSource(NeedKind.wind);
+
+        unlocks.Add(new SkillUnlock(1, SkillKind.air_cutter));
+        unlocks.Add(new SkillUnlock(4, SkillKind.create_firewood));
+        unlocks.Add(new SkillUnlock(7, SkillKind.wind_step));
     }
 
 	// Use this for initialization

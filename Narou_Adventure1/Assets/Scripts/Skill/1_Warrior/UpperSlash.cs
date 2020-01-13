@@ -21,9 +21,7 @@ public class UpperSlash : SKILL
 
         SetSource(NeedKind.attack, NeedKind.spear, NeedKind.combo_arts);
 
-        combo = new Cost_SC(NeedKind.combo_arts, 0.5f);
-        combo = new Effect_SC(NeedKind.combo_arts, 10f);
-        combo = new Interval_SC(NeedKind.combo_arts, 0.1f);
+        combo = new Cost_SC(NeedKind.combo_arts, 0.7f);
     }
 
 	// Use this for initialization

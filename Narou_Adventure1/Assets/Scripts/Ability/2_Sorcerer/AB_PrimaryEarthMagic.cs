@@ -10,7 +10,8 @@ public class AB_PrimaryEarthMagic : ABILITY
 
     public override bool Requires()
     {
-        return main.a_rsc.MaxLevel((int)AbilityKind.primary_earth_magic) >= 6;
+        return main.a_rsc.MaxLevel((int)AbilityKind.primary_earth_magic) >= 6 ||
+        main.itemCtrl.exitSourceNums[(int)NeedKind.earth] > 0;
     }
 
     // Use this for initialization
@@ -25,6 +26,10 @@ public class AB_PrimaryEarthMagic : ABILITY
         need.AddSourceNeed(NeedKind.earth);
 
         SetSource(NeedKind.earth);
+
+        unlocks.Add(new SkillUnlock(1, SkillKind.stone_bullet));
+        unlocks.Add(new SkillUnlock(4, SkillKind.grow_wheat));
+        unlocks.Add(new SkillUnlock(7, SkillKind.earth_wall));
     }
 
 	// Use this for initialization

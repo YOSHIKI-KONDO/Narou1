@@ -10,7 +10,8 @@ public class AB_BeginnerBojutsu : ABILITY
 
     public override bool Requires()
     {
-        return main.a_rsc.MaxLevel((int)AbilityKind.beginner_bojutsu) >= 6 ;
+        return main.a_rsc.MaxLevel((int)AbilityKind.beginner_bojutsu) >= 6 ||
+        main.itemCtrl.exitSourceNums[(int)NeedKind.rod] > 0;
     }
 
     // Use this for initialization
@@ -26,6 +27,10 @@ public class AB_BeginnerBojutsu : ABILITY
         need.AddSourceNeed(NeedKind.rod);
 
         SetSource(NeedKind.rod);
+
+        unlocks.Add(new SkillUnlock(1, SkillKind.left_small_swing));
+        unlocks.Add(new SkillUnlock(4, SkillKind.knead_dough));
+        unlocks.Add(new SkillUnlock(7, SkillKind.parry));
     }
 
 	// Use this for initialization

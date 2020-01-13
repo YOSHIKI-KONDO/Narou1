@@ -25,6 +25,8 @@ public class AB_Pharmacist : ABILITY
         progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 5));
 
         need.AddSourceNeed(NeedKind.medic);
+
+        unlocks.Add(new LoopUnlock(1, MainAction.ActionEnum.Loop.dispense_medicines));
     }
 
 	// Use this for initialization

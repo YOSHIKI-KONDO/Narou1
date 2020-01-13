@@ -10,7 +10,8 @@ public class AB_PrimaryWaterMagic : ABILITY
 
     public override bool Requires()
     {
-        return main.a_rsc.MaxLevel((int)AbilityKind.primary_water_magic) >= 6;
+        return main.a_rsc.MaxLevel((int)AbilityKind.primary_water_magic) >= 6 ||
+        main.itemCtrl.exitSourceNums[(int)NeedKind.water] > 0;
     }
 
     // Use this for initialization
@@ -25,6 +26,10 @@ public class AB_PrimaryWaterMagic : ABILITY
         need.AddSourceNeed(NeedKind.water);
 
         SetSource(NeedKind.water);
+
+        unlocks.Add(new SkillUnlock(1, SkillKind.waterball));
+        unlocks.Add(new SkillUnlock(4, SkillKind.catch_fish));
+        unlocks.Add(new SkillUnlock(7, SkillKind.cure_water));
     }
 
 	// Use this for initialization

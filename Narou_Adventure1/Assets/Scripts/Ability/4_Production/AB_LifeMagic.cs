@@ -21,6 +21,10 @@ public class AB_LifeMagic : ABILITY
         progress.completeEffectList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.max, 2));
         progress.completeEffectList.Add(new Dealing(ResourceKind.paper, Dealing.R_ParaKind.max, 1));
         progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 5));
+
+        unlocks.Add(new LoopUnlock(1, MainAction.ActionEnum.Loop.grow_herb));
+        unlocks.Add(new InstantUnlock(4, MainAction.ActionEnum.Instant.rune_generation));
+        unlocks.Add(new InstantUnlock(7, MainAction.ActionEnum.Instant.runic_carving));
     }
 
 	// Use this for initialization

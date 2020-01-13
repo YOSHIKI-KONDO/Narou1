@@ -10,7 +10,7 @@ public class AB_Seclusion : ABILITY
 
     public override bool Requires()
     {
-        return main.a_rsc.MaxLevel((int)AbilityKind.seclusion) >= 6 ||
+        return main.a_rsc.CurrentLevels[(int)AbilityKind.seclusion] >= 5 ||
                ((main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.pick_flowers] >= 1 ||
                main.rsc.Value[(int)ResourceKind.research] <= 5) &&
                main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.entrance_ceremony] >= 1);
@@ -23,6 +23,8 @@ public class AB_Seclusion : ABILITY
         progress.progressCostList.Add(new Dealing(ResourceKind.action, Dealing.R_ParaKind.current, -0.5));
         progress.completeEffectList.Add(new Dealing(ResourceKind.dodge, Dealing.R_ParaKind.status, 1));
         progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 2));
+
+        unlocks.Add(new LoopUnlock(1, MainAction.ActionEnum.Loop.pickpocket));
     }
 
 	// Use this for initialization

@@ -10,7 +10,8 @@ public class AB_BeginnerSwordmanship : ABILITY
 
     public override bool Requires()
     {
-        return main.a_rsc.MaxLevel((int)AbilityKind.beginner_swordmanship) >= 6;
+        return main.a_rsc.MaxLevel((int)AbilityKind.beginner_swordmanship) >= 6 ||
+        main.itemCtrl.exitSourceNums[(int)NeedKind.sword] > 0;
     }
 
     // Use this for initialization
@@ -26,6 +27,10 @@ public class AB_BeginnerSwordmanship : ABILITY
         need.AddSourceNeed(NeedKind.sword);
 
         SetSource(NeedKind.sword);
+
+        unlocks.Add(new SkillUnlock(1, SkillKind.right_slash));
+        unlocks.Add(new SkillUnlock(4, SkillKind.cooking_sandwich));
+        unlocks.Add(new SkillUnlock(7, SkillKind.left_upper_slash));
     }
 
 	// Use this for initialization
