@@ -12,7 +12,7 @@ public class Harpy : ENEMY
     {
         AwakeEnemy(EnemyKind.harpy);
         drops.Add(new Drop(ResourceKind.wood, 2, 4));
-        drops.Add(new Item_Drop(ItemKind.animalfood, 3));
+        drops.Add(new Item_Drop(ItemKind.whip, 2));
     }
 
     // Use this for initialization
