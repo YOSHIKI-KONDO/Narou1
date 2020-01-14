@@ -83,6 +83,7 @@ public class Main : MonoBehaviour
         //初めてのプレイだったら現在の値を代入
         if (!S.isContinuePlay)
         {
+            analytics.StartGame(); //analyticsに送信
             birthTime = DateTime.Now;
             lastTime = DateTime.Now;
             S.isContinuePlay = true;

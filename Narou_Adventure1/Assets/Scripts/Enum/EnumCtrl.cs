@@ -302,6 +302,9 @@ public class EnumCtrl : BASE {
         upgradeActions.Add(new template(ActionEnum.Upgrade.magicrafter, "MagiCrafter", "マギクラフター", "", ""));
         upgradeActions.Add(new template(ActionEnum.Upgrade.weapon_maker, "Weapon Maker", "ウェポンメイカー", "", ""));
         upgradeActions.Add(new template(ActionEnum.Upgrade.alchemist, "Alchemist", "アルケミスト", "", ""));
+
+        upgradeActions.Add(new template(ActionEnum.Upgrade.thank_you_for_playing, "Thank you for playing", "Thank you for playing", "", ""));
+
         /* アビリティ */
         abilitys.Add(new template(AbilityKind.nothing, "", "", "", ""));
             //戦士基本職初級

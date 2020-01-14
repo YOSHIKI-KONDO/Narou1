@@ -48,7 +48,7 @@ public class ABILITY : BASE, INeed, ISetSource
     }
 
     public string Name_str, Description_str, Need_str, Cost_str, ProgressCost_str, ProgressEffect_str, CompleteEffect_str;
-    public string Unlock_str;
+    public string Unlock_str, UnlockContent_str;
 
     void LevelUp()
     {
@@ -324,13 +324,13 @@ public class ABILITY : BASE, INeed, ISetSource
         {
             //自動でコストの文章を生成
             //Name_str = main.enumCtrl.abilitys[(int)kind].Name();
-            //Description_str = main.enumCtrl.abilitys[(int)kind].Description();
-            Description_str = unlockDetail();
+            Description_str = main.enumCtrl.abilitys[(int)kind].Description();
             Cost_str = progress.ProgressDetail(progress.initCostList);
             ProgressCost_str = progress.ProgressDetail(progress.progressCostList);
             ProgressEffect_str = progress.ProgressDetail(progress.progressEffectList);
             CompleteEffect_str = progress.ProgressDetail(progress.completeEffectList);
             Unlock_str = progress.ProgressDetail(progress.unlockCostList);
+            UnlockContent_str = unlockDetail();
 
             //needが設定されている場合にのみ書き換える。
             //そのため、ない場合は手動でNeed_strを変えることが可能。
@@ -344,6 +344,7 @@ public class ABILITY : BASE, INeed, ISetSource
             ChangeTextAdaptive(ProgressCost_str, popUp.texts[9], popUp.texts[8].gameObject, popUp.texts[9].gameObject);
             ChangeTextAdaptive(ProgressEffect_str, popUp.texts[11], popUp.texts[10].gameObject, popUp.texts[11].gameObject);
             ChangeTextAdaptive(CompleteEffect_str, popUp.texts[13], popUp.texts[12].gameObject, popUp.texts[13].gameObject);
+            ChangeTextAdaptive(UnlockContent_str, popUp.texts[14], popUp.texts[14].gameObject);
         }
     }
 

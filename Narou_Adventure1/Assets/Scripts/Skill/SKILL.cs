@@ -161,7 +161,8 @@ public class SKILL : BASE, INeed, ISetSource
         string sum_str = "";
         foreach (var atk in warriorAtks)
         {
-            sum_str += "Physics damage:" + tDigit(atk.Damage * comboFactor_effect(), 1) + "\n";
+            if(sum_str != "") { sum_str += "\n"; }
+            sum_str += "Physics damage:" + tDigit(atk.Damage * comboFactor_effect(), 1);
         }
         return sum_str;
     }
@@ -171,12 +172,13 @@ public class SKILL : BASE, INeed, ISetSource
         string sum_str = "";
         foreach (var atk in sorcererAtks)
         {
+            if (sum_str != "") { sum_str += "\n"; }
             sum_str += "Magic damage:" + tDigit(atk.Damage * comboFactor_effect(), 1) + "\n";
         }
         return sum_str;
     }
 
-    public string Name_str, Description_str, Need_str,LearnCost_str, UseCost_str, UseEffect_str, Interval_str;
+    public string Name_str, Description_str, Need_str,LearnCost_str, UseCost_str, UseEffect_str, Interval_str, Tag_str, Level_str;
 
     // Use this for initialization
     protected void AwakeSkill(SkillKind Kind, double init_maxValue)
@@ -271,15 +273,16 @@ public class SKILL : BASE, INeed, ISetSource
     {
         //とりあえず今はdescriptionの部分に追加する
         Name_str = main.enumCtrl.skills[(int)kind].Name();
-        //Description_str = main.enumCtrl.skills[(int)kind].Description();
-        //Description_str = AttributeDetail();
-        Description_str = "Lv." + level.ToString() + "/" + MaxLevel() + "(exp:" + tDigit(exp,1) + "/" + tDigit(MaxExp(),1) + ")";
+        Description_str = main.enumCtrl.skills[(int)kind].Description();
+        //Description_str = "Lv." + level.ToString() + "/" + MaxLevel() + "(exp:" + tDigit(exp,1) + "/" + tDigit(MaxExp(),1) + ")";
         UseCost_str = ProgressDetail(useCosts, comboFactor_cost());
         UseEffect_str = WarriorDetail();
         UseEffect_str += SorcererDetail();
         UseEffect_str += ProgressDetail(useEffects, comboFactor_effect());
         Interval_str = tDigit(Duration(),1) + "s";
         LearnCost_str = main.SR.learnt_Skill[(int)kind] ? "" : learnF.ProgressDetail(learnF.initCostList);
+        Level_str = "Lv." + level.ToString();
+        Tag_str = AttributeDetail();
 
         //色変更
         if (combo != null)
@@ -301,9 +304,9 @@ public class SKILL : BASE, INeed, ISetSource
             }
             else
             {
-                popUp.texts[9].color = Color.black;
-                popUp.texts[7].color = Color.black;
-                popUp.texts[11].color = Color.black;
+                popUp.texts[9].color = Color.white;
+                popUp.texts[7].color = Color.white;
+                popUp.texts[11].color = Color.white;
             }
         }
 
@@ -318,5 +321,7 @@ public class SKILL : BASE, INeed, ISetSource
         ChangeTextAdaptive(UseCost_str, popUp.texts[7], popUp.texts[6].gameObject, popUp.texts[7].gameObject);
         ChangeTextAdaptive(UseEffect_str, popUp.texts[9], popUp.texts[8].gameObject, popUp.texts[9].gameObject);
         ChangeTextAdaptive(Interval_str, popUp.texts[11], popUp.texts[10].gameObject, popUp.texts[11].gameObject);
+        ChangeTextAdaptive(Level_str, popUp.texts[12], popUp.texts[12].gameObject);
+        ChangeTextAdaptive(Tag_str, popUp.texts[14], popUp.texts[13].gameObject, popUp.texts[14].gameObject);
     }
 }

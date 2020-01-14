@@ -160,6 +160,8 @@
             weapon_maker,
             alchemist,
 
+            thank_you_for_playing,
+
         }
     }
 }
