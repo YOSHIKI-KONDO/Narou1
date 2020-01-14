@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using static UsefulMethod;
 
 public class OfflineBonus : BASE {
 	public DateTime lastTime { get { return DateTime.FromBinary(Convert.ToInt64(main.S.lastTime)); } }
+	public Text bonusLabel;
+	public TextMeshProUGUI startText;
 
 	// Use this for initialization
 	void Awake () {
@@ -15,8 +18,12 @@ public class OfflineBonus : BASE {
 
 	// Use this for initialization
 	void Start () {
-		Debug.Log("You are left for " + DoubleTimeToDate(DeltaTimeFloat(lastTime)));
-		Debug.Log(Calculate());
+		//Debug.Log("You are left for " + DoubleTimeToDate(DeltaTimeFloat(lastTime)));
+		startText.text = Calculate();
+        if(startText.text != "")
+        {
+			bonusLabel.text = "Offline Effect";
+        }
 	}
 	
 	// Update is called once per frame
@@ -46,7 +53,7 @@ public class OfflineBonus : BASE {
 			{
 				continue;
 			}
-			sum += (sum == "") ? "Offline Bonus\n\nYou are left for " + DoubleTimeToDate(elapsedTime) + "\n" : "\n";
+			sum += (sum == "") ? "You are left for " + DoubleTimeToDate(elapsedTime) + "\n" : "\n";
 			sum += main.enumCtrl.resources[i].Name() + "\t" + tDigit(plusValue[i], 2);
 		}
 		return sum;

@@ -11,9 +11,11 @@ public class UICtrl : BASE {
     public Text equipText;
     public Slider inventorySlider, equipSlider;
     //public Text ipText1, ipText2, ipText3, ipText4, ipText5;
-    public Toggle mainToggle, abilityToggle, itemToggle, skillToggle, dungeonToggle, statusToggle;
-    public GameObject new_main, new_ability, new_item, new_skill, new_dungeon, new_status;
+    public Toggle mainToggle, abilityToggle, itemToggle, skillToggle, dungeonToggle, statusToggle, optionToggle;
+    public GameObject new_main, new_ability, new_item, new_skill, new_dungeon, new_status, new_option;
     public GameObject skill_menu;
+
+    public GameObject thankPanel;
 
 	// Use this for initialization
 	void Awake () {
@@ -59,6 +61,13 @@ public class UICtrl : BASE {
             (x) => { return false; },
             (x) => Sync(ref main.SR.watched_element[(int)ElementKind.status], x),
             new_status, "");
+
+       optionToggle.gameObject.AddComponent<ReleaseFunction>().StartFunction(optionToggle.gameObject,
+            x => Sync(ref main.SR.released_element[(int)ElementKind.option], x),
+            x => Sync(ref main.SR.completed_element[(int)ElementKind.option], x),
+            (x) => { return false; },
+            (x) => Sync(ref main.SR.watched_element[(int)ElementKind.option], x),
+            new_option, "");
 
 
         skill_menu.AddComponent<ReleaseFunction>().StartFunction(skill_menu,

@@ -491,6 +491,9 @@ MonoBehaviour:
   nameText: {fileID: 461912250413829417}
   newObject: {fileID: 8859189320415745744}
   AttributesParent: {fileID: 6212564714599682009}
+  expSlider: {fileID: 260621920291169848}
+  expText: {fileID: 5354501189903670839}
+  levelText: {fileID: 4900740679844049222}
 --- !u!1 &4343648726815211884
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,4 +7,5 @@
     skill,
     dungeon,
     status,
+    option
 }

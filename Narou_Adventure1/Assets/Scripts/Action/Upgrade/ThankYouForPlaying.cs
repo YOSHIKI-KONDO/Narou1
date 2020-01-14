@@ -14,6 +14,11 @@ public class ThankYouForPlaying : UPGRADE_ACTION
                main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.apprentice_tamer] >= 1 ;
     }
 
+    public override void CompleteAction()
+    {
+        main.uiCtrl.thankPanel.SetActive(true);
+    }
+
     // Use this for initialization
     void Awake () {
         AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.thank_you_for_playing, 1, 0, null, false, false);

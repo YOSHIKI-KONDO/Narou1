@@ -164,25 +164,25 @@ public class CheckDifficulty : BASE {
     void InitEnemyLevels(List<EnemyLevelRange> list)
     {
         //list = new List<EnemyLevelRange>();
-        list.Add(new EnemyLevelRange(EnemyKind.nothing, 2, 3));
-        list.Add(new EnemyLevelRange(EnemyKind.slime, 1, 2));
-        list.Add(new EnemyLevelRange(EnemyKind.goblin, 1, 4));
-        list.Add(new EnemyLevelRange(EnemyKind.rat, 1, 5));
-        list.Add(new EnemyLevelRange(EnemyKind.bird, 1, 2));
-        list.Add(new EnemyLevelRange(EnemyKind.bat, 1, 2));
-        list.Add(new EnemyLevelRange(EnemyKind.wolf, 1, 5));
-        list.Add(new EnemyLevelRange(EnemyKind.snake, 1, 2));
-        list.Add(new EnemyLevelRange(EnemyKind.demonic, 1, 2));
-        list.Add(new EnemyLevelRange(EnemyKind.sigurd, 1, 2));
-        list.Add(new EnemyLevelRange(EnemyKind.askr, 1, 2));
-        list.Add(new EnemyLevelRange(EnemyKind.embla, 1, 2));
-        list.Add(new EnemyLevelRange(EnemyKind.red_slime, 1, 2));
-        list.Add(new EnemyLevelRange(EnemyKind.orc, 6, 8));
-        list.Add(new EnemyLevelRange(EnemyKind.poison_rat, 1, 2));
-        list.Add(new EnemyLevelRange(EnemyKind.harpy, 1, 2));
-        list.Add(new EnemyLevelRange(EnemyKind.ghoul, 1, 2));
-        list.Add(new EnemyLevelRange(EnemyKind.werewolf, 1, 2));
-        list.Add(new EnemyLevelRange(EnemyKind.lizard_man, 1, 2));
+        list.Add(new EnemyLevelRange(EnemyKind.nothing,         1, 1));
+        list.Add(new EnemyLevelRange(EnemyKind.slime,           1, 1));
+        list.Add(new EnemyLevelRange(EnemyKind.goblin,          1, 2));
+        list.Add(new EnemyLevelRange(EnemyKind.rat,             1, 5));
+        list.Add(new EnemyLevelRange(EnemyKind.bird,            1, 2));
+        list.Add(new EnemyLevelRange(EnemyKind.bat,             1, 2));
+        list.Add(new EnemyLevelRange(EnemyKind.wolf,            1, 3));
+        list.Add(new EnemyLevelRange(EnemyKind.snake,           1, 2));
+        list.Add(new EnemyLevelRange(EnemyKind.demonic,         1, 2));
+        list.Add(new EnemyLevelRange(EnemyKind.sigurd,          1, 2));
+        list.Add(new EnemyLevelRange(EnemyKind.askr,            1, 2));
+        list.Add(new EnemyLevelRange(EnemyKind.embla,           1, 2));
+        list.Add(new EnemyLevelRange(EnemyKind.red_slime,       1, 2));
+        list.Add(new EnemyLevelRange(EnemyKind.orc,             6, 8));
+        list.Add(new EnemyLevelRange(EnemyKind.poison_rat,      1, 2));
+        list.Add(new EnemyLevelRange(EnemyKind.harpy,           1, 2));
+        list.Add(new EnemyLevelRange(EnemyKind.ghoul,           1, 2));
+        list.Add(new EnemyLevelRange(EnemyKind.werewolf,        1, 2));
+        list.Add(new EnemyLevelRange(EnemyKind.lizard_man,      1, 2));
         list.Add(new EnemyLevelRange(EnemyKind.demonic_warrior, 1, 2));
     }
 

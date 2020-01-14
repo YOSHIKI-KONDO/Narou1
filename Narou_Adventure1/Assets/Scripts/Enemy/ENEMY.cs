@@ -31,6 +31,7 @@ public class ENEMY : BASE {
     public void StartEnemy()
     {
         UpdateParameter();
+        drops.Add(new Drop(Narou1Func.ItemPointKind(rank), 3, 2)); //ランクに対応するあいてむポイントをドロップする。
     }
 
     public void UpdateEnemy()
