@@ -257,7 +257,7 @@ public class EnumCtrl : BASE {
         upgradeActions.Add(new template(ActionEnum.Upgrade.delivery_of_fur, "Delivery of pelt", "毛皮の納品", "[Deliver the pelt that you can get by defeating Wolf. Since it will be for sale, I call for less scratches.]", "ウルフを倒すと手に入る、毛皮を納品してくれ。商品なんだから傷は少なめで頼むよ。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.house_clean_up, "House clean up", "ゴミ屋敷の掃除", "[What is the landlord doing!? Somebody clean it up! It's absolutely annoying!!]", "家主は何をしているんだ？近所迷惑だから誰でもいい、掃除してくれ！"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.get_rid_of_rat, "Get rid of rat", "ネズミ退治", "A request to get rid of poison rats that lived in the sewer. Unpopular.", "下水道に発生したポイズンラットを定期的に駆除しないといけない。不人気な依頼。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.wholesaler_of_drugs, "Wholesaler of Medicine,", "医薬品卸", "I cannot have too much medicines. I'd like to buy some of them.(Up to 3 times)", "薬はいくつあっても安心だ。市場に回すため引き取らせてもらいたい。(３回まで)"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.wholesaler_of_drugs, "Wholesaler of Medicine", "医薬品卸", "I cannot have too much medicines. I'd like to buy some of them.(Up to 3 times)", "薬はいくつあっても安心だ。市場に回すため引き取らせてもらいたい。(３回まで)"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.in_cellar, "Into cellar", "地下室へ", "Hoarding house seems to have the cellar. Petals are scattered at the feet.", "ゴミ屋敷から、地下へと続くあなぐらが掘られていた。足元には花びらが散乱している。"));
 
             //授業
@@ -447,6 +447,9 @@ public class EnumCtrl : BASE {
         items.Add(new template(ItemKind.cutlass, "Cutlass", "カットラス", "", ""));
         items.Add(new template(ItemKind.trident, "Trident", "トライデント", "", ""));
         items.Add(new template(ItemKind.whip, "Whip", "鞭", "", ""));
+        items.Add(new template(ItemKind.claw_bar, "Claw Bar", "バール", "", "魔法のステッキ。魔力を感じる。"));
+        items.Add(new template(ItemKind.charm, "Charm", "御守り", "", ""));
+        items.Add(new template(ItemKind.darkness_sword, "Darkness Sword", "ダークネスソード", "", ""));
 
         /* 必要条件 */
         needs.Add(new template(NeedKind.nothing, "", "", "", ""));

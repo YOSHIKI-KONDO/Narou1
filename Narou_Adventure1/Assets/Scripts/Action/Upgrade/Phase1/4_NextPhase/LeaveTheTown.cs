@@ -21,6 +21,8 @@ public class LeaveTheTown : UPGRADE_ACTION
         AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.leave_the_town, 1, 0, null, false, false);
         progress.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -5));
         progress.completeEffectList.Add(new Dealing(ResourceKind.hp, Dealing.R_ParaKind.max, 1));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.inventorySpace, Dealing.R_ParaKind.max, 1));
+        progress.completeEffectList.Add(new Item_Dealing(ItemKind.charm));
     }
 
 	// Use this for initialization

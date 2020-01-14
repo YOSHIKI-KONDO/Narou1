@@ -30,8 +30,9 @@ public class Bog : DUNGEON
 
         //progressCost.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.3f));
 
-        drops.Add(new Drop(ResourceKind.gold, 5, 100));
-        drops.Add(new Drop(ResourceKind.filet_o_fish, 1, 100));
+        drops.Add(new Drop(ResourceKind.gold, 10, 100));
+        drops.Add(new Drop(ResourceKind.stone, 5, 80));
+        firstDrops.Add(new Drop(ResourceKind.magi_stone, 1, 100));
     }
 
 	// Use this for initialization

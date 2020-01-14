@@ -28,7 +28,7 @@ public class LostForest : DUNGEON
         enemyList.Add(new EnemyKind[] { wolf, wolf, wolf });
         enemyList.Add(new EnemyKind[] { werewolf });//10
 
-        drops.Add(new Drop(ResourceKind.wood, 3, 100));
+        drops.Add(new Drop(ResourceKind.wood, 1, 100));
         firstDrops.Add(new Drop(ResourceKind.research, 20, 100));
     }
 
