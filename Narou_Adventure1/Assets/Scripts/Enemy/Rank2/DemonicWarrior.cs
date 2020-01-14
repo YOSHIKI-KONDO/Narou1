@@ -11,7 +11,8 @@ public class DemonicWarrior : ENEMY
     void Awake()
     {
         AwakeEnemy(EnemyKind.demonic_warrior);
-        drops.Add(new Drop(ResourceKind.anchovy_sandwich, 1, 5));
+        drops.Add(new Drop(ResourceKind.magi_stone, 1, 5));
+        drops.Add(new Item_Drop(ItemKind.fire_ruby, 1));
     }
 
     // Use this for initialization

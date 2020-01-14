@@ -9,8 +9,7 @@ public class GrowHerb : LOOP_ACTION
 {
     public override bool Requires()
     {
-        return main.a_rsc.CurrentLevels[(int)AbilityKind.life_magic] >= 3 ||
-               main.a_rsc.CurrentLevels[(int)AbilityKind.use_tools] >= 4;
+        return main.a_rsc.CurrentLevels[(int)AbilityKind.life_magic] >= 4;
     }
 
     // Use this for initialization

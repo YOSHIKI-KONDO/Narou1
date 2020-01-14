@@ -11,7 +11,8 @@ public class Ghoul : ENEMY
     void Awake()
     {
         AwakeEnemy(EnemyKind.ghoul);
-        drops.Add(new Drop(ResourceKind.stone, 1, 5));
+        drops.Add(new Item_Drop(ItemKind.leather_vest, 2));
+        drops.Add(new Drop(ResourceKind.magi_stone, 1, 1));
     }
 
     // Use this for initialization

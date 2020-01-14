@@ -10,7 +10,7 @@ public class AB_Hoodlum : ABILITY
 
     public override bool Requires()
     {
-        return main.a_rsc.MaxLevel((int)AbilityKind.hoodlum) >= 6 ||
+        return main.a_rsc.CurrentLevels[(int)AbilityKind.hoodlum] >= 5 ||
                ((main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.punish_the_bad_kids] >= 1 ||
                main.rsc.Value[(int)ResourceKind.research] <= 5) &&
                main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.entrance_ceremony] >= 1);
@@ -25,6 +25,8 @@ public class AB_Hoodlum : ABILITY
         progress.completeEffectList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.max, -2));
         progress.completeEffectList.Add(new Dealing(ResourceKind.stone, Dealing.R_ParaKind.max, 2));
         progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 2));
+
+        unlocks.Add(new InstantUnlock(1, MainAction.ActionEnum.Instant.mugged));
     }
 
 	// Use this for initialization

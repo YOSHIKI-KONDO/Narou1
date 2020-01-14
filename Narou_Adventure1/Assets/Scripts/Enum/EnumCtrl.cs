@@ -70,16 +70,16 @@ public class EnumCtrl : BASE {
         resources.Add(new template(ResourceKind.dodge, "Dodge Chance", "回避率", "", ""));
         resources.Add(new template(ResourceKind.criticalChance, "Critical Chance", "会心率", "", ""));
         resources.Add(new template(ResourceKind.exp, "Exp", "経験値", "", ""));
-        resources.Add(new template(ResourceKind.itemPoint1, "Item Point1", "アイテムP1", "Use for Item level up.", "アイテムのレベルアップに使用します。"));
-        resources.Add(new template(ResourceKind.itemPoint2, "Item Point2", "アイテムP2", "Use for Item level up.", "アイテムのレベルアップに使用します。"));
-        resources.Add(new template(ResourceKind.itemPoint3, "Item Point3", "アイテムP3", "Use for Item level up.", "アイテムのレベルアップに使用します。"));
-        resources.Add(new template(ResourceKind.itemPoint4, "Item Point4", "アイテムP4", "Use for Item level up.", "アイテムのレベルアップに使用します。"));
-        resources.Add(new template(ResourceKind.itemPoint5, "Item Point5", "アイテムP5", "Use for Item level up.", "アイテムのレベルアップに使用します。"));
-        resources.Add(new template(ResourceKind.itemPoint6, "Item Point6", "アイテムP6", "Use for Item level up.", "アイテムのレベルアップに使用します。"));
-        resources.Add(new template(ResourceKind.itemPoint7, "Item Point7", "アイテムP7", "Use for Item level up.", "アイテムのレベルアップに使用します。"));
-        resources.Add(new template(ResourceKind.itemPoint8, "Item Point8", "アイテムP8", "Use for Item level up.", "アイテムのレベルアップに使用します。"));
-        resources.Add(new template(ResourceKind.itemPoint9, "Item Point9", "アイテムP9", "Use for Item level up.", "アイテムのレベルアップに使用します。"));
-        resources.Add(new template(ResourceKind.itemPoint10, "Item Point10", "アイテムP10", "Use for Item level up.", "アイテムのレベルアップに使用します。"));
+        resources.Add(new template(ResourceKind.itemPoint1, "Item Point★1", "アイテムポイント★1", "Use for Item level up.", "アイテムのレベルアップに使用します。"));
+        resources.Add(new template(ResourceKind.itemPoint2, "Item Point★2", "アイテムポイント★2", "Use for Item level up.", "アイテムのレベルアップに使用します。"));
+        resources.Add(new template(ResourceKind.itemPoint3, "Item Point★3", "アイテムポイント★3", "Use for Item level up.", "アイテムのレベルアップに使用します。"));
+        resources.Add(new template(ResourceKind.itemPoint4, "Item Point★4", "アイテムポイント★4", "Use for Item level up.", "アイテムのレベルアップに使用します。"));
+        resources.Add(new template(ResourceKind.itemPoint5, "Item Point★5", "アイテムポイント★5", "Use for Item level up.", "アイテムのレベルアップに使用します。"));
+        resources.Add(new template(ResourceKind.itemPoint6, "Item Point★6", "アイテムポイント★6", "Use for Item level up.", "アイテムのレベルアップに使用します。"));
+        resources.Add(new template(ResourceKind.itemPoint7, "Item Point★7", "アイテムポイント★7", "Use for Item level up.", "アイテムのレベルアップに使用します。"));
+        resources.Add(new template(ResourceKind.itemPoint8, "Item Point★8", "アイテムポイント★8", "Use for Item level up.", "アイテムのレベルアップに使用します。"));
+        resources.Add(new template(ResourceKind.itemPoint9, "Item Point★9", "アイテムポイント★9", "Use for Item level up.", "アイテムのレベルアップに使用します。"));
+        resources.Add(new template(ResourceKind.itemPoint10, "Item Point★10", "アイテムポイント★10", "Use for Item level up.", "アイテムのレベルアップに使用します。"));
         //武器
         resources.Add(new template(ResourceKind.attack, "Attack", "攻撃力", "", ""));
         resources.Add(new template(ResourceKind.magic_attack, "Magic Attack", "魔法攻撃力", "", ""));
@@ -112,6 +112,7 @@ public class EnumCtrl : BASE {
         resources.Add(new template(ResourceKind.flower, "Flower", "花", "This is called Flower of Yggdrasil. You can feel the intense power.", "ユグドラシルの花と呼ばれている。強い生命力を感じる。"));
         //食べ物
         resources.Add(new template(ResourceKind.wheat, "Wheat", "小麦", "", ""));
+        resources.Add(new template(ResourceKind.dough, "Dough", "パン生地", "", ""));
         resources.Add(new template(ResourceKind.bread, "Bread", "パン", "", ""));
         resources.Add(new template(ResourceKind.fish, "Fish", "魚", "", ""));
         resources.Add(new template(ResourceKind.anchovy_sandwich, "Anchovy Sandwich", "アンチョビサンド", "Local specialty. Salty.", "故郷の名産物。塩味が効いている。"));
@@ -164,8 +165,22 @@ public class EnumCtrl : BASE {
         instantActions.Add(new template(ActionEnum.Instant.split_firewood, "Split Firewood", "薪割り", "", ""));
         instantActions.Add(new template(ActionEnum.Instant.sell_firewood, "Sell Firewood", "薪を売る", "", ""));
         instantActions.Add(new template(ActionEnum.Instant.sell_bread, "Sell Bread", "パンを売る", "", ""));
-        //フェーズ２（学校）
-        //アビリティアクション
+            //アイテムポイントコンバージョン
+        instantActions.Add(new template(ActionEnum.Instant.ip1down, "Down▲", "Down▲", "Item Point★1", "Item Point★1"));
+        instantActions.Add(new template(ActionEnum.Instant.ip2up, "Up▼", "Up▼", "Item Point★2", "Item Point★2"));
+        instantActions.Add(new template(ActionEnum.Instant.ip2down, "Down▲", "Down▲", "Item Point★2", "Item Point★2"));
+        instantActions.Add(new template(ActionEnum.Instant.ip3up, "Up▼", "Up▼", "Item Point★3", "Item Point★3"));
+        instantActions.Add(new template(ActionEnum.Instant.ip3down, "Down▲", "Down▲", "Item Point★3", "Item Point★3"));
+        instantActions.Add(new template(ActionEnum.Instant.ip4up, "Up▼", "Up▼", "Item Point★4", "Item Point★4"));
+        instantActions.Add(new template(ActionEnum.Instant.ip4down, "Down▲", "Down▲", "Item Point★4", "Item Point★4"));
+        instantActions.Add(new template(ActionEnum.Instant.ip5up, "Up▼", "Up▼", "Item Point★5", "Item Point★5"));
+        instantActions.Add(new template(ActionEnum.Instant.ip5down, "Down▲", "Down▲", "Item Point★5", "Item Point★5"));
+        instantActions.Add(new template(ActionEnum.Instant.ip6up, "Up▼", "Up▼", "Item Point★6", "Item Point★6"));
+        instantActions.Add(new template(ActionEnum.Instant.ip6down, "Down▲", "Down▲", "Item Point★6", "Item Point★6"));
+        instantActions.Add(new template(ActionEnum.Instant.ip7up, "Up▼", "Up▼", "Item Point★7", "Item Point★7"));
+
+          //フェーズ２（学校）
+            //アビリティアクション
         instantActions.Add(new template(ActionEnum.Instant.mugged, "Extortion", "カツアゲ", "Rob someone of money! 1 gold per 1 click!", "お金を巻き上げろ！１クリック１パンチ！"));
         instantActions.Add(new template(ActionEnum.Instant.devotion, "Devotion", "祈祷", "", ""));
         instantActions.Add(new template(ActionEnum.Instant.take_medicine, "Take Medicine", "薬を飲む", "", ""));
@@ -180,12 +195,13 @@ public class EnumCtrl : BASE {
         loopActions.Add(new template(ActionEnum.Loop.grow_herb, "Grow Herb", "ハーブ栽培", "", ""));
         loopActions.Add(new template(ActionEnum.Loop.lumberjack, "Lumberjack", "木こり", "You mastered how to use an axe.", "手斧の扱いをマスターした。"));
         loopActions.Add(new template(ActionEnum.Loop.craft_magi_stone, "Craft:Magi Stone", "作成：マギストーン", "Generate the magical stone.", "魔力を込めた石を作成する。"));
-        //フェーズ２（学校）
+          //フェーズ２（学校）
         loopActions.Add(new template(ActionEnum.Loop.manual_labor, "Manual Labor", "肉体労働", "", ""));
         loopActions.Add(new template(ActionEnum.Loop.desk_work, "Desk Work", "デスクワーク", "", ""));
         loopActions.Add(new template(ActionEnum.Loop.service_trade, "Service trade", "サービス業", "", ""));
-        //アビリティアクション
+            //アビリティアクション
         loopActions.Add(new template(ActionEnum.Loop.pickpocket, "Pickpocket", "スリ", "", ""));
+        loopActions.Add(new template(ActionEnum.Loop.bake_bread, "Bake Bread", "パンを焼く", "", ""));
         loopActions.Add(new template(ActionEnum.Loop.dispense_medicines, "Making Medicines", "薬の調合", "", ""));
 
         /* アップグレードアクション */
@@ -227,7 +243,7 @@ public class EnumCtrl : BASE {
         upgradeActions.Add(new template(ActionEnum.Upgrade.sorcerer_school, "Sorcerer School", "魔法学校", "Decide to enter Sorcerer school. You can't go back, so consider where you want to go.", "魔法学校への入学を決意する。後戻りはできないので入学先はしっかり考えよう。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.tamer_school, "Tamer School", "テイマー学校", "Decide to enter Tamer school. You can't go back, so consider where you want to go.", "テイマー学校への入学を決意する。後戻りはできないので入学先はしっかり考えよう。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.leave_the_town, "Leave the Town", "村を出る", "Leave the village. Head to the school city beyond the plains and forests. Make sure that you have nothing to do now.", "村を出る。平原と森を越えた先の学園都市に向かう。やり残したことはないか確認しよう。"));
-        //フェーズ２（学校）
+          //フェーズ２（学校）
         upgradeActions.Add(new template(ActionEnum.Upgrade.academic_city, "Academic City", "学園都市へ向かう", "The girl says she does want to go with me. Prepare your luggage for two people.", "少女が付いてくると言って聞かない。二人分の荷物を用意しよう。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.into_a_dormitory, "Into a Dormitory", "学生寮に入る", "Breaks up with accompanying person and enters dormitory. \n[Please say hello to me when you are calm down.]", "同行者と別れ、寮に入る。「また後で、落ち着いたら挨拶に来てね。」"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.entrance_ceremony, "Entrance Ceremony", "入学式", "A stage for us. Feel like walking on air with thinking about my future.", "晴れ舞台だ。これからの生活に向けて気分が高揚する。"));
@@ -254,7 +270,7 @@ public class EnumCtrl : BASE {
         upgradeActions.Add(new template(ActionEnum.Upgrade.use_tools_classwork, "Use Tools Class", "道具使役の授業", "It is said that familiarity with tools will open the way to various production jobs.", "道具に精通することで、様々な生産職への道が開かれるとのこと。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.life_magic_classwork, "Life Magic Class", "生活魔法の授業", "Many people take classes for the time being because it is useful.", "いずれ役立つので、とりあえず授業を受ける人が多い。"));
 
-        //戦士
+            //戦士
         upgradeActions.Add(new template(ActionEnum.Upgrade.apprentice_warrior, "Apprentice Warrior", "戦士見習い", "Approved as an apprentice. Work on further technical skills.", "見習いとして認められる。更なる技術の習熟に臨むべし。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.warrior, "Warrior", "ウォーリアー", "", ""));
         upgradeActions.Add(new template(ActionEnum.Upgrade.soldier, "Soldierg", "ソルジャー", "", ""));
@@ -413,7 +429,11 @@ public class EnumCtrl : BASE {
         items.Add(new template(ItemKind.rosary, "Rosary", "ロザリオ", "", ""));
         items.Add(new template(ItemKind.pouch, "Pouch", "ポーチ", "", ""));
         items.Add(new template(ItemKind.small_basket, "Small Basket", "スモールバスケット", "", ""));
+        items.Add(new template(ItemKind.kiln, "Kiln", "窯", "", ""));
         items.Add(new template(ItemKind.medicine_box, "Medicine Box", "薬箱", "", ""));
+        items.Add(new template(ItemKind.sandwich_stall, "Sandwich Stall", "サンドイッチの屋台", "", ""));
+        items.Add(new template(ItemKind.planter, "Planter", "植木鉢", "", ""));
+
         items.Add(new template(ItemKind.warrior_textbook, "Warrior Textbook", "戦士教本", "", ""));
         items.Add(new template(ItemKind.sorcerer_textbook, "Sorcerer Textbook", "魔術士教本", "", ""));
         items.Add(new template(ItemKind.tamer_textbook, "Tamer Textbook", "テイマー教本", "", ""));
@@ -441,7 +461,9 @@ public class EnumCtrl : BASE {
         needs.Add(new template(NeedKind.dark, "dark", "dark", "", ""));
 
         needs.Add(new template(NeedKind.animal, "animal", "animal", "", ""));
+        needs.Add(new template(NeedKind.kiln, "kiln", "kiln", "", ""));
         needs.Add(new template(NeedKind.medic, "medic", "medic", "", ""));
+        needs.Add(new template(NeedKind.stall, "stall", "stall", "", ""));
 
         needs.Add(new template(NeedKind.attack, "attack", "attack", "", ""));
         needs.Add(new template(NeedKind.production, "production", "production", "", ""));

@@ -22,7 +22,9 @@
     dark,
     
     animal,
+    kiln,
     medic,
+    stall,
 
     attack,
     production,

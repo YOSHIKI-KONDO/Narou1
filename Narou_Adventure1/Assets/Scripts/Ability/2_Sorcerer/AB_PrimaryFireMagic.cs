@@ -10,7 +10,8 @@ public class AB_PrimaryFireMagic : ABILITY
 
     public override bool Requires()
     {
-        return main.a_rsc.MaxLevel((int)AbilityKind.primary_fire_magic) >= 6;
+        return main.a_rsc.MaxLevel((int)AbilityKind.primary_fire_magic) >= 6 ||
+        main.itemCtrl.exitSourceNums[(int)NeedKind.fire] > 0;
     }
 
     // Use this for initialization
@@ -25,6 +26,10 @@ public class AB_PrimaryFireMagic : ABILITY
         need.AddSourceNeed(NeedKind.fire);
 
         SetSource(NeedKind.fire);
+
+        unlocks.Add(new SkillUnlock(1, SkillKind.fireball));
+        unlocks.Add(new SkillUnlock(4, SkillKind.create_charcoal));
+        unlocks.Add(new SkillUnlock(7, SkillKind.hot_body));
     }
 
 	// Use this for initialization

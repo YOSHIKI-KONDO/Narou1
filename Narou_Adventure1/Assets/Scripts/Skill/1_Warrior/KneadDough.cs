@@ -18,8 +18,7 @@ public class KneadDough : SKILL
         learnF.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -10));
         useCosts.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -1));
         useCosts.Add(new Dealing(ResourceKind.wheat, Dealing.R_ParaKind.current, -8));
-        useCosts.Add(new Dealing(ResourceKind.charcoal, Dealing.R_ParaKind.current, -1));
-        useEffects.Add(new Dealing(ResourceKind.bread, Dealing.R_ParaKind.current, 1));
+        useEffects.Add(new Dealing(ResourceKind.dough, Dealing.R_ParaKind.current, 1));
 
         SetSource(NeedKind.production, NeedKind.rod);
     }

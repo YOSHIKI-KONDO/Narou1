@@ -54,6 +54,7 @@
     flower,
     //食べ物
     wheat,
+    dough,
     bread,
     fish,
     anchovy_sandwich,

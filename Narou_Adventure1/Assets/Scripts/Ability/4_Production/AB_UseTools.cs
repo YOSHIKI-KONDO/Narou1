@@ -23,6 +23,10 @@ public class AB_UseTools : ABILITY
         progress.completeEffectList.Add(new Dealing(ResourceKind.wood, Dealing.R_ParaKind.max, 1));
         progress.completeEffectList.Add(new Dealing(ResourceKind.firewood, Dealing.R_ParaKind.max, 10));
         progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 5));
+
+        unlocks.Add(new LoopUnlock(1, MainAction.ActionEnum.Loop.harvest_wheat));
+        unlocks.Add(new LoopUnlock(4, MainAction.ActionEnum.Loop.lumberjack));
+        unlocks.Add(new LoopUnlock(7, MainAction.ActionEnum.Loop.craft_magi_stone));
     }
 
 	// Use this for initialization

@@ -19,7 +19,7 @@ public class I_MedicineBox : ITEM
         BuyLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -120));
         SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 60));
         EffectLists.Add(new Dealing(ResourceKind.herb, Dealing.R_ParaKind.max, 10));
-        EffectLists.Add(new Dealing(ResourceKind.medicine, Dealing.R_ParaKind.max, 5));
+        EffectLists.Add(new Dealing(ResourceKind.medicine, Dealing.R_ParaKind.max, 4));
         EffectLists.Add(new Dealing(ResourceKind.potion, Dealing.R_ParaKind.max, 2));
 
         SetSource(NeedKind.goods, NeedKind.medic);

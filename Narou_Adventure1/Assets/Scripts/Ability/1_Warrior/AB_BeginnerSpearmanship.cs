@@ -10,7 +10,8 @@ public class AB_BeginnerSpearmanship : ABILITY
 
     public override bool Requires()
     {
-        return main.a_rsc.MaxLevel((int)AbilityKind.beginner_spearmanship) >= 6;
+        return main.a_rsc.MaxLevel((int)AbilityKind.beginner_spearmanship) >= 6 ||
+        main.itemCtrl.exitSourceNums[(int)NeedKind.spear] > 0;
     }
 
     // Use this for initialization
@@ -26,6 +27,10 @@ public class AB_BeginnerSpearmanship : ABILITY
         need.AddSourceNeed(NeedKind.spear);
 
         SetSource(NeedKind.spear);
+
+        unlocks.Add(new SkillUnlock(1, SkillKind.stab));
+        unlocks.Add(new SkillUnlock(4, SkillKind.spearfishing));
+        unlocks.Add(new SkillUnlock(7, SkillKind.upper_slash));
     }
 
 	// Use this for initialization

@@ -11,8 +11,8 @@ public class Orc : ENEMY
     void Awake()
     {
         AwakeEnemy(EnemyKind.orc);
-        drops.Add(new Drop(ResourceKind.stone, 1, 10));
         drops.Add(new Drop(ResourceKind.wood, 1, 5));
+        drops.Add(new Item_Drop(ItemKind.stone_axe, 2));
     }
 
     // Use this for initialization

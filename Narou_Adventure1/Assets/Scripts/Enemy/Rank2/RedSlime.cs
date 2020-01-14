@@ -11,7 +11,8 @@ public class RedSlime : ENEMY
     void Awake()
     {
         AwakeEnemy(EnemyKind.red_slime);
-        drops.Add(new Drop(ResourceKind.herb, 1, 5));
+        drops.Add(new Drop(ResourceKind.herb, 2, 5));
+        drops.Add(new Drop(ResourceKind.wheat, 2, 5));
     }
 
     // Use this for initialization

@@ -11,7 +11,10 @@ public class Wolf : ENEMY
     void Awake()
     {
         AwakeEnemy(EnemyKind.wolf);
-        drops.Add(new Item_Drop(ItemKind.animalfood, 1));
+        drops.Add(new Drop(ResourceKind.herb, 1, 5));
+        drops.Add(new Drop(ResourceKind.fur, 1, 2));
+
+        drops.Add(Drop.Attribute_AND_Drop(ResourceKind.premium_fur, 1, 100, NeedKind.dark));
     }
 
     // Use this for initialization

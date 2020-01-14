@@ -11,7 +11,8 @@ public class Snake : ENEMY
     void Awake()
     {
         AwakeEnemy(EnemyKind.snake);
-        drops.Add(new Drop(ResourceKind.stone, 1, 5));
+        drops.Add(new Drop(ResourceKind.wheat, 1, 6));
+        drops.Add(new Drop(ResourceKind.stone, 1, 3));
     }
 
     // Use this for initialization

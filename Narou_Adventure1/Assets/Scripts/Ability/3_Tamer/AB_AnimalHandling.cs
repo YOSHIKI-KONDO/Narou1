@@ -10,7 +10,8 @@ public class AB_AnimalHandling : ABILITY
 
     public override bool Requires()
     {
-        return main.a_rsc.MaxLevel((int)AbilityKind.animal_handling) >= 6;
+        return main.a_rsc.MaxLevel((int)AbilityKind.animal_handling) >= 6 ||
+        main.itemCtrl.exitSourceNums[(int)NeedKind.animal] > 0;
     }
 
     // Use this for initialization
@@ -25,6 +26,9 @@ public class AB_AnimalHandling : ABILITY
         need.AddSourceNeed(NeedKind.animal);
 
         SetSource(NeedKind.animal);
+
+        unlocks.Add(new SkillUnlock(1, SkillKind.animal_attack));
+        unlocks.Add(new SkillUnlock(4, SkillKind.picking_up_coins));
     }
 
 	// Use this for initialization
