@@ -9,7 +9,7 @@ public class I_LeatherVest : ITEM
 {
     public override bool Requires()
     {
-        return false;//main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.into_a_dormitory] >= 1;
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.into_a_dormitory] >= 1;
     }
 
     // Use this for initialization

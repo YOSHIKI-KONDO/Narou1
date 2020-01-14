@@ -104,6 +104,7 @@
             //フェーズ２（学校）
             academic_city,
             into_a_dormitory,
+            good_sleep,
             entrance_ceremony,
             //攫われイベント
             norns_room,
