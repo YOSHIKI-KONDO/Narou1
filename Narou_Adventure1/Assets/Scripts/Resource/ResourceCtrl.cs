@@ -87,10 +87,10 @@ public class ResourceCtrl : BASE {
     //levelと経験値の設定
     void ApplyLevel()
     {
-        Max_Base[index_exp] = 7.5 * Math.Pow(1.4, main.SR.level);  //最大値を設定
+        Max_Base[index_exp] = 12 * Math.Pow(1.8, main.SR.level);  //最大値を設定
         while (Value[index_exp] >= Max(index_exp))
         {
-            Max_Base[index_exp] = 7.5 * Math.Pow(1.4, main.SR.level);  //最大値を設定
+            Max_Base[index_exp] = 12 * Math.Pow(1.8, main.SR.level);  //最大値を設定
             Value[index_exp] -= Max(index_exp);
             main.SR.level++;
             main.announce.Add("Level UP! (" + (main.SR.level - 1).ToString() + "→" + main.SR.level.ToString() + ")", Color.green);

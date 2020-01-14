@@ -45,6 +45,8 @@ public class SkillSlot : BASE {
         }
         if (popUp.gameObject.activeSelf)
         {
+            main.battleCtrl.skills[(int)kind].ApplyPopUp();
+
             ChangeTextAdaptive(main.battleCtrl.skills[(int)kind].Name_str, popUp.texts[0], popUp.texts[0].gameObject);
             ChangeTextAdaptive(main.battleCtrl.skills[(int)kind].Description_str, popUp.texts[1], popUp.texts[1].gameObject);
             ChangeTextAdaptive(main.battleCtrl.skills[(int)kind].Need_str, popUp.texts[3], popUp.texts[2].gameObject, popUp.texts[3].gameObject);
@@ -52,6 +54,8 @@ public class SkillSlot : BASE {
             ChangeTextAdaptive(main.battleCtrl.skills[(int)kind].UseCost_str, popUp.texts[7], popUp.texts[6].gameObject, popUp.texts[7].gameObject);
             ChangeTextAdaptive(main.battleCtrl.skills[(int)kind].UseEffect_str, popUp.texts[9], popUp.texts[8].gameObject, popUp.texts[9].gameObject);
             ChangeTextAdaptive(main.battleCtrl.skills[(int)kind].Interval_str, popUp.texts[11], popUp.texts[10].gameObject, popUp.texts[11].gameObject);
+            ChangeTextAdaptive(main.battleCtrl.skills[(int)kind].Level_str, popUp.texts[12], popUp.texts[12].gameObject);
+            ChangeTextAdaptive(main.battleCtrl.skills[(int)kind].Tag_str, popUp.texts[14], popUp.texts[13].gameObject, popUp.texts[14].gameObject);
         }
     }
 }

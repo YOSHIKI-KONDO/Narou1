@@ -54,4 +54,9 @@ public class AnalyticsCtrl : BASE {
     {
         AnalyticsEvent.TutorialComplete("Tutorial Complete");
     }
+
+    private void Awake()
+    {
+        StartBASE();
+    }
 }

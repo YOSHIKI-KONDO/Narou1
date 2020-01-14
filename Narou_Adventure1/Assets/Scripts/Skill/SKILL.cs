@@ -173,7 +173,7 @@ public class SKILL : BASE, INeed, ISetSource
         foreach (var atk in sorcererAtks)
         {
             if (sum_str != "") { sum_str += "\n"; }
-            sum_str += "Magic damage:" + tDigit(atk.Damage * comboFactor_effect(), 1) + "\n";
+            sum_str += "Magic damage:" + tDigit(atk.Damage * comboFactor_effect(), 1);
         }
         return sum_str;
     }
@@ -269,7 +269,8 @@ public class SKILL : BASE, INeed, ISetSource
         return sum;
     }
 
-    void ApplyPopUp()
+    //SkillSlot.csからも呼ばれる
+    public void ApplyPopUp()
     {
         //とりあえず今はdescriptionの部分に追加する
         Name_str = main.enumCtrl.skills[(int)kind].Name();

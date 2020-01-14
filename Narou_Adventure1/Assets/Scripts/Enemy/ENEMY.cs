@@ -23,13 +23,14 @@ public class ENEMY : BASE {
         StartBASE();
         this.kind = kind;
         main.battleCtrl.enemys[(int)kind] = this;
+
+        drops.Add(new Drop(ResourceKind.exp, 1, 100));  //UpdateParameterで量だけ変える
+        drops.Add(new Drop(ResourceKind.gold, 1, 100)); //UpdateParameterで量だけ変える
     }
 
     public void StartEnemy()
     {
         UpdateParameter();
-        drops.Add(new Drop(ResourceKind.exp, main.enemyParameter.parameters[(int)kind].Exp, 100));
-        drops.Add(new Drop(ResourceKind.gold, main.enemyParameter.parameters[(int)kind].Gold, 100));
     }
 
     public void UpdateEnemy()
@@ -49,6 +50,8 @@ public class ENEMY : BASE {
         attack = main.enemyParameter.parameters[(int)kind].Attack;
         defense = main.enemyParameter.parameters[(int)kind].Defense;
         rank = main.enemyParameter.parameters[(int)kind].rank;
+        drops[0].amount = main.enemyParameter.parameters[(int)kind].Exp;
+        drops[1].amount = main.enemyParameter.parameters[(int)kind].Gold;
         //gold, expは更新していない
     }
 }
