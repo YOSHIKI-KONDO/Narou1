@@ -11,7 +11,9 @@ public class ApprenticeTamer : UPGRADE_ACTION
     {
         return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.tamer_school] >= 1 &&
                main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.entrance_ceremony] >= 1 &&
-               main.a_rsc.CurrentLevels[(int)AbilityKind.animal_handling] >= 8;
+               (main.a_rsc.CurrentLevels[(int)AbilityKind.animal_handling] >= 8 &&
+               main.a_rsc.CurrentLevels[(int)AbilityKind.use_tools] >= 8 &&
+               main.a_rsc.CurrentLevels[(int)AbilityKind.life_magic] >= 8);
     }
     public override bool CompleteCondition()
     {

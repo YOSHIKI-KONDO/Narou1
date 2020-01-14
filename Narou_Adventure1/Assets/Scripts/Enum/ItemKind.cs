@@ -36,4 +36,8 @@
     sorcerer_textbook,
     tamer_textbook,
     umbrella,
+
+    cutlass,
+    trident,
+    whip,
 }

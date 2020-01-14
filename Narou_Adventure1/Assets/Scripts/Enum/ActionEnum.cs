@@ -16,6 +16,7 @@
             split_firewood,
             sell_firewood,
             sell_bread,
+            sell_anchovy_sandwich,
             //アイテムポイントコンバージョン
             ip1down,
             ip2up,
@@ -158,6 +159,8 @@
             magicrafter,
             weapon_maker,
             alchemist,
+
+            thank_you_for_playing,
 
         }
     }

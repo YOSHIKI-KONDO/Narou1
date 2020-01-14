@@ -12,7 +12,7 @@ public class LizardMan : ENEMY
     {
         AwakeEnemy(EnemyKind.lizard_man);
         drops.Add(new Drop(ResourceKind.stone, 1, 10));
-        drops.Add(new Item_Drop(ItemKind.stone_shield, 2));
+        drops.Add(new Item_Drop(ItemKind.cutlass, 2));
     }
 
     // Use this for initialization

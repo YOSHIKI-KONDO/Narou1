@@ -12,7 +12,7 @@ public class Werewolf : ENEMY
     {
         AwakeEnemy(EnemyKind.werewolf);
         drops.Add(new Drop(ResourceKind.fur, 1, 5));
-        drops.Add(new Item_Drop(ItemKind.animalfood, 2));
+        drops.Add(new Item_Drop(ItemKind.animalfood, 3));
 
         drops.Add(Drop.Attribute_AND_Drop(ResourceKind.premium_fur, 1, 100, NeedKind.dark));
     }
