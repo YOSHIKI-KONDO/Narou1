@@ -16,6 +16,19 @@
             split_firewood,
             sell_firewood,
             sell_bread,
+            //アイテムポイントコンバージョン
+            ip1down,
+            ip2up,
+            ip2down,
+            ip3up,
+            ip3down,
+            ip4up,
+            ip4down,
+            ip5up,
+            ip5down,
+            ip6up,
+            ip6down,
+            ip7up,
             //フェーズ２（学校）
             //アビリティアクション
             mugged,
@@ -42,6 +55,7 @@
             service_trade,
             //アビリティアクション
             pickpocket,
+            bake_bread,
             dispense_medicines,
 
         }

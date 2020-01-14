@@ -9,11 +9,11 @@ public class BakeBread : LOOP_ACTION
 {
     public override bool Requires()
     {
-        return false;//main.itemCtrl.exitSourceNums[(int)NeedKind.kiln] > 0;
+        return main.itemCtrl.exitSourceNums[(int)NeedKind.kiln] > 0;
     }
 
     // Use this for initialization
- /*   void Awake () {
+    void Awake () {
         AwakeLoopAction(MainAction.ActionEnum.Loop.bake_bread, 10,1);
         progress.initCostList.Add(new Dealing(ResourceKind.dough, Dealing.R_ParaKind.current, -1));
         progress.progressCostList.Add(new Dealing(ResourceKind.action, Dealing.R_ParaKind.current, -0.3));
@@ -35,5 +35,5 @@ public class BakeBread : LOOP_ACTION
     void FixedUpdate()
     {
         FixedUpdateLoopAction();
-    }*/
+    }
 }

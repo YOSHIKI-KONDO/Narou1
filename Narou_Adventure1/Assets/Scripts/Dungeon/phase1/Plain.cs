@@ -19,9 +19,9 @@ public class Plain : DUNGEON
         AwakeDungeon(plain, ResourceKind.itemPoint1, 1);
         enemyList.Add(new EnemyKind[] { goblin });
         enemyList.Add(new EnemyKind[] { bird, slime });
-        enemyList.Add(new EnemyKind[] { snake });
+        enemyList.Add(new EnemyKind[] { goblin });
         enemyList.Add(new EnemyKind[] { slime, slime, slime });
-        enemyList.Add(new EnemyKind[] { snake, snake });//5
+        enemyList.Add(new EnemyKind[] { goblin, goblin });//5
         enemyList.Add(new EnemyKind[] { goblin, bird });
         enemyList.Add(new EnemyKind[] { bird, bird });
         enemyList.Add(new EnemyKind[] { slime, bird, slime });

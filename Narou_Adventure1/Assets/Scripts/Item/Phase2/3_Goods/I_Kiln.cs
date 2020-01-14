@@ -13,13 +13,13 @@ public class I_Kiln : ITEM
     }
 
     // Use this for initialization
-    /*void Awake()
+    void Awake()
     {
         AwakeItem(ItemKind.kiln, 1,2,2,30,2);
         BuyLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -150));
         SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 75));
-        EffectLists.Add(new Dealing(ResourceKind.firewood, Dealing.R_ParaKind.regen, -0.05));
-        EffectLists.Add(new Dealing(ResourceKind.charcoal, Dealing.R_ParaKind.regen, 0.05));
+        EffectLists.Add(new Dealing(ResourceKind.firewood, Dealing.R_ParaKind.regen, -0.02));
+        EffectLists.Add(new Dealing(ResourceKind.charcoal, Dealing.R_ParaKind.regen, 0.02));
         EffectLists.Add(new Dealing(ResourceKind.charcoal, Dealing.R_ParaKind.max, 10));
         EffectLists.Add(new Dealing(ResourceKind.bread, Dealing.R_ParaKind.max, 10));
 
@@ -41,5 +41,5 @@ public class I_Kiln : ITEM
     void FixedUpdate()
     {
         FixedUpdateItem();
-    }*/
+    }
 }

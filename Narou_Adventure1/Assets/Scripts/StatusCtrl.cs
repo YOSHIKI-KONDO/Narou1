@@ -18,7 +18,7 @@ public class StatusCtrl : BASE {
     public double MagicAttack { get => (MentalStrength + main.rsc.Regen((int)ResourceKind.magic_attack)); }
     public double Defense { get => 10d + main.rsc.Regen((int)ResourceKind.defense); }
     public double DodgeChance { get => main.rsc.Regen((int)ResourceKind.dodge); }
-    public double CriticalChance { get => 5 + main.rsc.Regen((int)ResourceKind.criticalChance); }
+    public double CriticalChance { get => 0 + main.rsc.Regen((int)ResourceKind.criticalChance); }
     public double CriticalFactor { get => 2; }
 
 

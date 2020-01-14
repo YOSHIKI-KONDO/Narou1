@@ -21,7 +21,7 @@ public class RightSlash : SKILL
 
         SetSource(NeedKind.attack, NeedKind.sword, NeedKind.combo_arts);
 
-        combo = new Cost_SC(NeedKind.combo_arts, 0.7f);
+        combo = new Interval_SC(NeedKind.combo_arts, 0.7f);
     }
 
 	// Use this for initialization

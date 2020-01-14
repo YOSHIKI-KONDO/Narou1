@@ -23,7 +23,7 @@ public class LostForest : DUNGEON
         enemyList.Add(new EnemyKind[] { goblin, snake });
         enemyList.Add(new EnemyKind[] { harpy });//5
         enemyList.Add(new EnemyKind[] { goblin, goblin, snake });
-        enemyList.Add(new EnemyKind[] { bird, bird, bird });
+        enemyList.Add(new EnemyKind[] { bird, bird, snake });
         enemyList.Add(new EnemyKind[] { snake, bird });
         enemyList.Add(new EnemyKind[] { wolf, wolf, wolf });
         enemyList.Add(new EnemyKind[] { werewolf });//10

@@ -13,7 +13,7 @@ public class Ip2down : INSTANT_ACTION
     }
 
     // Use this for initialization
-/*    void Awake()
+    void Awake()
     {
         AwakeInstantAction(MainAction.ActionEnum.Instant.ip2down);
         instant.initCostList.Add(new Dealing(ResourceKind.itemPoint3, Dealing.R_ParaKind.current, -1));
@@ -35,5 +35,5 @@ public class Ip2down : INSTANT_ACTION
     void FixedUpdate()
     {
         FixedUpdateInstantAction();
-    }*/
+    }
 }

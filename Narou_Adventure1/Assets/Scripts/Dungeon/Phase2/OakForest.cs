@@ -21,12 +21,12 @@ public class OakForest : DUNGEON
         enemyList.Add(new EnemyKind[] { wolf, wolf });
         enemyList.Add(new EnemyKind[] { wolf, bird, rat });
         enemyList.Add(new EnemyKind[] { bird, bird, rat, rat });
-        enemyList.Add(new EnemyKind[] { harpy, harpy });//5
+        enemyList.Add(new EnemyKind[] { harpy });//5
         enemyList.Add(new EnemyKind[] { rat, rat, rat, rat });
         enemyList.Add(new EnemyKind[] { bird, bird, wolf, rat });
         enemyList.Add(new EnemyKind[] { wolf, wolf, rat, rat });
         enemyList.Add(new EnemyKind[] { wolf, werewolf, wolf });
-        enemyList.Add(new EnemyKind[] { harpy, harpy, harpy });//10
+        enemyList.Add(new EnemyKind[] { harpy, harpy,  });//10
 
         //progressCost.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.3f));
 

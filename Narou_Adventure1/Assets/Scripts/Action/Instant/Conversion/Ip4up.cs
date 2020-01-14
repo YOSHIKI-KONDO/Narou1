@@ -13,7 +13,7 @@ public class Ip4up : INSTANT_ACTION
     }
 
     // Use this for initialization
-/*    void Awake()
+    void Awake()
     {
         AwakeInstantAction(MainAction.ActionEnum.Instant.ip4up);
         instant.initCostList.Add(new Dealing(ResourceKind.itemPoint3, Dealing.R_ParaKind.current, -10));
@@ -35,5 +35,5 @@ public class Ip4up : INSTANT_ACTION
     void FixedUpdate()
     {
         FixedUpdateInstantAction();
-    }*/
+    }
 }
