@@ -9,16 +9,16 @@ public class I_PlateMail : ITEM
 {
     public override bool Requires()
     {
-        return false; //main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.into_a_dormitory] >= 1;
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.into_a_dormitory] >= 1;
     }
 
     // Use this for initialization
     void Awake()
     {
         AwakeItem(ItemKind.plate_mail, 1,1,3,50,2);
-        BuyLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -600));
-        SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 300));
-        EffectLists.Add(new Dealing(ResourceKind.defense, Dealing.R_ParaKind.status, 30));
+        BuyLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -450));
+        SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 225));
+        EffectLists.Add(new Dealing(ResourceKind.defense, Dealing.R_ParaKind.status, 18));
 
         SetSource(NeedKind.armor);
     }
