@@ -691,7 +691,7 @@ public class BattleAndSkillCtrl : BASE {
             setActive(enemysCmps[i].gameObject);
             enemysCmps[i].ApplyNormalObj(main.enumCtrl.enemys[(int)thisE.kind].Name(),
                 tDigit(thisE.currentHp,1), tDigit(thisE.maxHp,1),
-                "Atk : " + tDigit(thisE.attack,1) + "/Def : " + tDigit(thisE.defense, 1),
+                "Atk : " + tDigit(thisE.attack) + "/Def : " + tDigit(thisE.defense),
                 (float)(thisE.currentHp / thisE.maxHp),
                 (thisE.currentInterval / thisE.interval),
                 thisE.kind
@@ -704,7 +704,7 @@ public class BattleAndSkillCtrl : BASE {
         // 主人公のComponent更新
         heroCmp.ApplyNormalObj("Hero Lv" + main.SR.level.ToString() + " (" + main.rsc.Value[(int)ResourceKind.exp].ToString("F1") + "/" + main.rsc.Max((int)ResourceKind.exp).ToString("F1") + ")"
             , tDigit(main.rsc.Value[(int)ResourceKind.hp], 1), tDigit(main.rsc.Max((int)ResourceKind.hp), 1),
-            "Atk : " + tDigit(main.status.Attack, 1) + "/Def : " + tDigit(main.status.Defense, 1),
+            "Atk : " + tDigit(main.status.Attack) + "/Def : " + tDigit(main.status.Defense),
             (float)(main.rsc.Value[(int)ResourceKind.hp] / main.rsc.Max((int)ResourceKind.hp)),
             currentInterval_normalAttack / Interval_normalAttack) ;//ここにインターバル
 
@@ -720,7 +720,7 @@ public class BattleAndSkillCtrl : BASE {
                 setActive(allysCmps[i].gameObject);
                 allysCmps[i].ApplyNormalObj(main.enumCtrl.allys[(int)i].Name() + " Lv" + main.npcSkillCtrl.npcs[i].level().ToString(),
                     tDigit(main.npcSkillCtrl.npcs[i].currentHp,1), tDigit(main.npcSkillCtrl.npcs[i].Hp,1),
-                    "Atk:" + tDigit(main.npcSkillCtrl.npcs[i].Attack,1) + "/Def:" + tDigit(main.npcSkillCtrl.npcs[i].Defense,1),
+                    "Atk:" + tDigit(main.npcSkillCtrl.npcs[i].Attack) + "/Def:" + tDigit(main.npcSkillCtrl.npcs[i].Defense),
                     main.npcSkillCtrl.npcs[i].HpSliderValue(),
                 main.npcSkillCtrl.npcs[i].IntervalSliderValue());
             }
@@ -774,13 +774,13 @@ public class BattleAndSkillCtrl : BASE {
                     if (UnityEngine.Random.Range(0f, 100f) < main.status.DodgeChance)
                     {
                         //避けた
-                        main.announce_d.Add("You dodged " + main.enumCtrl.enemys[i].Name() + "'s attack");
+                        main.announce_d.Add("You dodged " + main.enumCtrl.enemys[(int)currentEnemys[i].kind].Name() + "'s attack");
                     }
                     else
                     {
                         //当たった
                         main.rsc.Value[(int)ResourceKind.hp] -= cal_dmg;
-                        main.announce_d.Add(main.enumCtrl.enemys[i].Name() + " has attacked you for " + tDigit(cal_dmg, 1) + " damages");
+                        main.announce_d.Add(main.enumCtrl.enemys[(int)currentEnemys[i].kind].Name() + " has attacked you for " + tDigit(cal_dmg, 1) + " damages");
                     }
                 }
                 else
@@ -792,7 +792,7 @@ public class BattleAndSkillCtrl : BASE {
                     {
                         //避けた
                         main.announce_d.Add(main.enumCtrl.allys[(int)target_npc].Name()  + " dodged "
-                            + main.enumCtrl.enemys[i].Name() + "'s attack");
+                            + main.enumCtrl.enemys[(int)currentEnemys[i].kind].Name() + "'s attack");
                     }
                     else
                     {
@@ -900,6 +900,10 @@ public class BattleAndSkillCtrl : BASE {
                     }
                     break;
                 case Drop.DropKind.attribute_and:
+                    if(skills[(int)attackSkillKind].sources.Count == 0)
+                    {
+                        currentEnemys[target].match_atr_AND = false;
+                    }
                     foreach (var attribute in skills[(int)attackSkillKind].sources)
                     {
                         if (attribute != drop.attributes_AND)
@@ -909,6 +913,10 @@ public class BattleAndSkillCtrl : BASE {
                     }
                     break;
                 case Drop.DropKind.attribute_or:
+                    if(skills[(int)attackSkillKind].sources.Count == 0)
+                    {
+                        currentEnemys[target].match_atr_OR = false;
+                    }
                     foreach (var attribute in skills[(int)attackSkillKind].sources)
                     {
                         if (attribute == drop.attributes_OR)
