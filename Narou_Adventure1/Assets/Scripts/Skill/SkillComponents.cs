@@ -11,4 +11,7 @@ public class SkillComponents : BASE {
     public Text nameText;
     public GameObject newObject;
     public Transform AttributesParent;
+    public Slider expSlider;
+    public Text expText;
+    public Text levelText;
 }

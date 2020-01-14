@@ -52,8 +52,14 @@ public class Announce : BASE {
         announceTextLong.text.Substring(announceTextLong.text.IndexOf("\n", StringComparison.CurrentCulture)+1);
     }
 
-	// Use this for initialization
-	void Awake () {
+    public void ResetText()
+    {
+        announceTextLong.text = "";
+        announceTextShort.text = "";
+    }
+
+    // Use this for initialization
+    void Awake () {
 		StartBASE();
 	}
 

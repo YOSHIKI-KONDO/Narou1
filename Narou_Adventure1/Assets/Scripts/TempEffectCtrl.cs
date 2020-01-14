@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using static UsefulMethod;
 
 /// <summary>
@@ -15,6 +16,7 @@ using static UsefulMethod;
 public class TempEffectCtrl : BASE {
     List<TempRegen> regens = new List<TempRegen>();
     List<TempTrainRate> trainRates = new List<TempTrainRate>();
+    public TextMeshProUGUI statusText;
 
     public double[] Regens = new double[Enum.GetNames(typeof(ResourceKind)).Length];      //リソースに加算
     public double[] TRates = new double[Enum.GetNames(typeof(AbilityKind)).Length];       //アビリティに加算
@@ -57,6 +59,11 @@ public class TempEffectCtrl : BASE {
                     TRates[(int)trainRates[i].kind] += trainRates[i].amount;
                 }
             }
+            statusText.text = RegenDetail(regens) + TRateDetail(trainRates);
+            if(statusText.text != "")
+            {
+                statusText.text = "<Effects>\n" + statusText.text;
+            }
         }
     }
 
@@ -98,5 +105,29 @@ public class TempEffectCtrl : BASE {
         }
         // 0f以下の物を一括で削除
         effectLists.RemoveAll(s => s.remainTime <= 0f);
+    }
+
+    //TemporaryEffectを一覧の文字越で表す関数
+    string RegenDetail(List<TempRegen> effectLists)
+    {
+        string sum = "";
+        foreach (var effect in effectLists)
+        {
+            if(sum != "") { sum += "\n"; }
+            sum += main.enumCtrl.resources[(int)effect.kind].Name() + " regen\t: " + effect.amount + "/s\t" + effect.remainTime.ToString("F1") + "s";
+        }
+        return sum;
+    }
+
+    //TemporaryEffectを一覧の文字越で表す関数
+    string TRateDetail(List<TempTrainRate> effectLists)
+    {
+        string sum = "";
+        foreach (var effect in effectLists)
+        {
+            if (sum != "") { sum += "\n"; }
+            sum += main.enumCtrl.abilitys[(int)effect.kind].Name() + " exp\t: " + effect.amount + "/s\t" + effect.remainTime.ToString("F1") + "s";
+        }
+        return sum;
     }
 }

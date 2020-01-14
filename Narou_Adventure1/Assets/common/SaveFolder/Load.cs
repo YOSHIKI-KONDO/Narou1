@@ -71,7 +71,7 @@ document.addEventListener('click', function() {
     //Incentivized Ads 初回Bonusから呼ぶ
     public IEnumerator saveText()
     {
-        saveTitle = "IdleWine_" + DateTime.Now.ToString();
+        saveTitle = "NoNameGame_" + DateTime.Now.ToString();
 
         saveStrArray[0] = PlayerPrefs.GetString(keyList.resetSaveKey);
         saveStrArray[1] = PlayerPrefs.GetString(keyList.permanentSaveKey);

@@ -6,14 +6,18 @@ using UnityEngine.EventSystems;
 using UnityEngine.Events;
 using TMPro;
 
-public class Plain_PopText : MonoBehaviour
+public class Plain_PopText : BASE
 {
     public GameObject window;
     public Transform windowParent;
     public GameObject mainCtrl;
-    public Main main;
     [TextAreaAttribute(10,100)]//height:10,width:100
     public string text;
+
+    private void Awake()
+    {
+        StartBASE();
+    }
 
     private void Start()
     {
@@ -27,8 +31,6 @@ public class Plain_PopText : MonoBehaviour
 
     public void startText()
     {
-        mainCtrl = GameObject.FindGameObjectWithTag("mainCtrl");
-        main = mainCtrl.GetComponent<Main>();
         windowParent = mainCtrl.GetComponent<UsefulMethod>().windowTransform;
         window = Instantiate(main.plainPopText, windowParent);
         gameObject.AddComponent<EventTrigger>().triggers = new List<EventTrigger.Entry>();
