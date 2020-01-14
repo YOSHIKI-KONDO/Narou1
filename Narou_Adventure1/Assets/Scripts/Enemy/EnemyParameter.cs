@@ -13,24 +13,24 @@ public class EnemyParameter : BASE {
 		StartBASE();
 
         parameters.Add(null);                                 //Int,  HP, ATK, DEF, GOLD, EXP, RANK, Level
-        parameters.Add(new parameter(EnemyKind.slime,             5, 3.8, 3.1,  3.1,    1,  1,    1,   1));
-        parameters.Add(new parameter(EnemyKind.goblin,            3, 4.4, 1.7,  3.9,    1,  1,    1,   2));
-        parameters.Add(new parameter(EnemyKind.rat,               2, 4.0, 2.0,  4.0,    1,  1,    1,   8));
-        parameters.Add(new parameter(EnemyKind.bird,              4, 3.3, 3.3,  3.3,    1,  1,    1,   6));
-        parameters.Add(new parameter(EnemyKind.bat,               5, 3.1, 4.4,  2.5,    1,  1,    1,   3));
-        parameters.Add(new parameter(EnemyKind.wolf,              3, 4.1, 2.4,  3.5,    1,  1,    1,   5));
+        parameters.Add(new parameter(EnemyKind.slime,             5, 3.8, 3.1,  3.1,    1,  1,    1,   2));
+        parameters.Add(new parameter(EnemyKind.goblin,            3, 4.4, 1.7,  3.9,    1,  1,    1,   3));
+        parameters.Add(new parameter(EnemyKind.rat,               2, 4.0, 2.0,  4.0,    1,  1,    1,  15));
+        parameters.Add(new parameter(EnemyKind.bird,              4, 3.3, 3.3,  3.3,    1,  1,    1,   5));
+        parameters.Add(new parameter(EnemyKind.bat,               5, 3.1, 4.4,  2.5,    1,  1,    1,  10));
+        parameters.Add(new parameter(EnemyKind.wolf,              3, 4.1, 2.4,  3.5,    1,  1,    1,   3));
         parameters.Add(new parameter(EnemyKind.snake,             7, 3.0, 4.5,  2.5,    1,  1,    1,   6));
         parameters.Add(new parameter(EnemyKind.demonic,           3, 5.0, 2.8,  2.2,    1,  1,    1,  15));
         parameters.Add(new parameter(EnemyKind.sigurd,            4, 5.0, 2.2,  2.8,    1,  1,    1,   3));
         parameters.Add(new parameter(EnemyKind.askr,              3, 4.4, 2.8,  2.8,    1,  1,    1,   3));
         parameters.Add(new parameter(EnemyKind.embla,             2, 4.7, 2.0,  3.3,    1,  1,    1,   3));
-        parameters.Add(new parameter(EnemyKind.red_slime,         2, 3.3, 3.3,  3.3,    1,  1,    2,  12));
-        parameters.Add(new parameter(EnemyKind.orc,               5, 4.3, 2.9,  2.9,    1,  1,    2,  12));
-        parameters.Add(new parameter(EnemyKind.poison_rat,        2, 4.6, 1.5,  3.8,    1,  1,    2,   9));
-        parameters.Add(new parameter(EnemyKind.harpy,             4, 3.8, 2.5,  3.8,    1,  1,    2,  12));
-        parameters.Add(new parameter(EnemyKind.ghoul,             3, 2.9, 5.0,  2.1,    1,  1,    2,  10));
-        parameters.Add(new parameter(EnemyKind.werewolf,          3, 4.2, 2.1,  3.7,    1,  1,    2,  10));
-        parameters.Add(new parameter(EnemyKind.lizard_man,        6, 2.7, 3.6,  3.6,    1,  1,    2,  11));
+        parameters.Add(new parameter(EnemyKind.red_slime,         2, 3.3, 3.3,  3.3,    1,  1,    2,   9));
+        parameters.Add(new parameter(EnemyKind.orc,               5, 4.3, 2.9,  2.9,    1,  1,    2,   9));
+        parameters.Add(new parameter(EnemyKind.poison_rat,        2, 4.6, 1.5,  3.8,    1,  1,    2,  20));
+        parameters.Add(new parameter(EnemyKind.harpy,             4, 3.8, 2.5,  3.8,    1,  1,    2,   9));
+        parameters.Add(new parameter(EnemyKind.ghoul,             3, 2.9, 5.0,  2.1,    1,  1,    2,   9));
+        parameters.Add(new parameter(EnemyKind.werewolf,          3, 4.2, 2.1,  3.7,    1,  1,    2,  12));
+        parameters.Add(new parameter(EnemyKind.lizard_man,        6, 2.7, 3.6,  3.6,    1,  1,    2,  13));
         parameters.Add(new parameter(EnemyKind.demonic_warrior,   2, 5.0, 2.2,  2.8,    1,  1,    2,  20));
     }
 

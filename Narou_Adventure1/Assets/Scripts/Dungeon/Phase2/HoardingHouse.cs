@@ -17,11 +17,11 @@ public class HoardingHouse : DUNGEON
     // Use this for initialization
     void Awake () {
         AwakeDungeon(hoarding_house, ResourceKind.itemPoint1, 1);
-        enemyList.Add(new EnemyKind[] { red_slime });//1
-        enemyList.Add(new EnemyKind[] { slime, slime });
-        enemyList.Add(new EnemyKind[] { rat, rat, rat });
+        enemyList.Add(new EnemyKind[] { rat });//1
+        enemyList.Add(new EnemyKind[] { rat, bat });
+        enemyList.Add(new EnemyKind[] { rat, rat });
         enemyList.Add(new EnemyKind[] { red_slime });//4
-        enemyList.Add(new EnemyKind[] { bat, bat, rat, rat });
+        enemyList.Add(new EnemyKind[] { bat, rat, rat });
         enemyList.Add(new EnemyKind[] { snake, bat, rat });
         enemyList.Add(new EnemyKind[] { red_slime, rat, rat });//7
         enemyList.Add(new EnemyKind[] { bat, bat, snake });
