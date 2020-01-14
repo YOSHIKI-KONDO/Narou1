@@ -21,10 +21,10 @@ public class Bog : DUNGEON
         enemyList.Add(new EnemyKind[] { snake, snake, snake });
         enemyList.Add(new EnemyKind[] { goblin, snake, snake });
         enemyList.Add(new EnemyKind[] { goblin, goblin });
-        enemyList.Add(new EnemyKind[] { orc, lizard_man, orc });//5
-        enemyList.Add(new EnemyKind[] { snake });
+        enemyList.Add(new EnemyKind[] { lizard_man });//5
+        enemyList.Add(new EnemyKind[] { snake, snake });
         enemyList.Add(new EnemyKind[] { snake, goblin });
-        enemyList.Add(new EnemyKind[] { snake, snake, snake });
+        enemyList.Add(new EnemyKind[] { goblin, orc, goblin });
         enemyList.Add(new EnemyKind[] { goblin, goblin, snake });
         enemyList.Add(new EnemyKind[] { lizard_man, lizard_man });//10
 

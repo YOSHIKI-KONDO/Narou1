@@ -83,6 +83,8 @@ public class SaveR
     public int[] clearNum_Dungeon;
     public bool[] watched_Dungeon;
     public int[] maxFloor_Dungeon;
+    public bool[] sent_enterAnalytics_Dungeon;
+    public bool[] sent_completeAnalytics_Dungeon;
 
     /* Ally */
     public List<AllyKind> allyKinds = new List<AllyKind>();

@@ -110,6 +110,8 @@ public class SaveDeclare : BASE {
         InitializeArray(ref main.SR.clearNum_Dungeon, num_dungeon);
         InitializeArray(ref main.SR.watched_Dungeon, num_dungeon);
         InitializeArray(ref main.SR.maxFloor_Dungeon, num_dungeon);
+        InitializeArray(ref main.SR.sent_enterAnalytics_Dungeon, num_dungeon);
+        InitializeArray(ref main.SR.sent_completeAnalytics_Dungeon, num_dungeon);
 
         /* Npc */
         InitializeArray(ref main.SR.levels_Ally, num_ally);

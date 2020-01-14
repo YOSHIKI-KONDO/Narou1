@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UsefulMethod;
 using UnityEngine.UI;
-using UnityEngine.Analytics;
 using System.Linq;
 
 /// <summary>
@@ -566,7 +565,7 @@ public class BattleAndSkillCtrl : BASE {
             {
                 main.announce_d.Add("Dungeon Clear!!!");
                 main.SR.clearNum_Dungeon[(int)dunKind]++;
-                //main.analytics.DungeonComplete(dunKind);
+                main.analytics.DungeonComplete(dunKind);
                 dungeons[(int)dunKind].WinAction();
 
                 //最高到達フロア更新
@@ -692,7 +691,7 @@ public class BattleAndSkillCtrl : BASE {
             setActive(enemysCmps[i].gameObject);
             enemysCmps[i].ApplyNormalObj(main.enumCtrl.enemys[(int)thisE.kind].Name(),
                 tDigit(thisE.currentHp,1), tDigit(thisE.maxHp,1),
-                "Atk : " + tDigit(thisE.attack,1),
+                "Atk : " + tDigit(thisE.attack,1) + "/Def : " + tDigit(thisE.defense, 1),
                 (float)(thisE.currentHp / thisE.maxHp),
                 (thisE.currentInterval / thisE.interval),
                 thisE.kind
@@ -705,7 +704,7 @@ public class BattleAndSkillCtrl : BASE {
         // 主人公のComponent更新
         heroCmp.ApplyNormalObj("Hero Lv" + main.SR.level.ToString() + " (" + main.rsc.Value[(int)ResourceKind.exp].ToString("F1") + "/" + main.rsc.Max((int)ResourceKind.exp).ToString("F1") + ")"
             , tDigit(main.rsc.Value[(int)ResourceKind.hp], 1), tDigit(main.rsc.Max((int)ResourceKind.hp), 1),
-            "",
+            "Atk : " + tDigit(main.status.Attack, 1) + "/Def : " + tDigit(main.status.Defense, 1),
             (float)(main.rsc.Value[(int)ResourceKind.hp] / main.rsc.Max((int)ResourceKind.hp)),
             currentInterval_normalAttack / Interval_normalAttack) ;//ここにインターバル
 
@@ -721,7 +720,7 @@ public class BattleAndSkillCtrl : BASE {
                 setActive(allysCmps[i].gameObject);
                 allysCmps[i].ApplyNormalObj(main.enumCtrl.allys[(int)i].Name() + " Lv" + main.npcSkillCtrl.npcs[i].level().ToString(),
                     tDigit(main.npcSkillCtrl.npcs[i].currentHp,1), tDigit(main.npcSkillCtrl.npcs[i].Hp,1),
-                    "Atk:" + tDigit(main.npcSkillCtrl.npcs[i].Attack,1) + "/MAtk:" + tDigit(main.npcSkillCtrl.npcs[i].MagicAttack,1),
+                    "Atk:" + tDigit(main.npcSkillCtrl.npcs[i].Attack,1) + "/Def:" + tDigit(main.npcSkillCtrl.npcs[i].Defense,1),
                     main.npcSkillCtrl.npcs[i].HpSliderValue(),
                 main.npcSkillCtrl.npcs[i].IntervalSliderValue());
             }
@@ -754,8 +753,7 @@ public class BattleAndSkillCtrl : BASE {
         main.npcSkillCtrl.InitFight();
         Summon();
         currentInterval_normalAttack = 0;
-        //AnalyticsEvent.LevelStart(dunKind.ToString());
-        //main.analytics.DungeonEnter(dunKind);
+        main.analytics.DungeonEnter(dunKind);
     }
 
     //Called in FixedUpdate
