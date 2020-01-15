@@ -171,7 +171,10 @@ public class ITEM : BASE, INeed, ISetSource
     public void UpdateItem () {
         CheckButton();
         ApplyTexts();
-        ApplyPopUp();
+        if (popUp.gameObject.activeSelf)
+        {
+            ApplyPopUp();
+        }
     }
 
     // Update is called once per frame
@@ -270,36 +273,33 @@ public class ITEM : BASE, INeed, ISetSource
     {
         //自動でコストの文章を生成
         Name_str = main.enumCtrl.items[(int)kind].Name();
-        if (popUp.gameObject.activeSelf)
-        {
-            //自動でコストの文章を生成
-            //Name_str = main.enumCtrl.items[(int)kind].Name();
-            Description_str = main.enumCtrl.items[(int)kind].Description();
-            if (haveSource) { Description_str += Description_str == "" ? SourceDetail() : "\n" + SourceDetail(); }
-            Max_Str = "Max:" + ((MaxEquip == null) ? "∞" : MaxEquip.ToString());
-            Effect_str = ProgressDetail(EffectLists, LevelFactor());
-            Cost_str = ProgressDetail(BuyLists);
-            Sell_str = ProgressDetail(SellLists);
-            LvCost_Str = ProgressDetail(itemPointDeal);
-            LvEffect_Str = DetailNextLEffect(level);
+        //自動でコストの文章を生成
+        //Name_str = main.enumCtrl.items[(int)kind].Name();
+        Description_str = main.enumCtrl.items[(int)kind].Description();
+        if (haveSource) { Description_str += Description_str == "" ? SourceDetail() : "\n" + SourceDetail(); }
+        Max_Str = "Max:" + ((MaxEquip == null) ? "∞" : MaxEquip.ToString());
+        Effect_str = ProgressDetail(EffectLists, LevelFactor());
+        Cost_str = ProgressDetail(BuyLists);
+        Sell_str = ProgressDetail(SellLists);
+        LvCost_Str = ProgressDetail(itemPointDeal);
+        LvEffect_Str = DetailNextLEffect(level);
 
 
-            //needが設定されている場合にのみ書き換える。
-            //そのため、ない場合は手動でNeed_strを変えることが可能。
-            if (need.hasNeeds) { Need_str = need.Detail(); }
+        //needが設定されている場合にのみ書き換える。
+        //そのため、ない場合は手動でNeed_strを変えることが可能。
+        if (need.hasNeeds) { Need_str = need.Detail(); }
 
-            ChangeTextAdaptive(Name_str, popUp.texts[0], popUp.texts[0].gameObject);
-            ChangeTextAdaptive(rarityText.text, popUp.texts[1], popUp.texts[1].gameObject);
-            ChangeTextAdaptive(Description_str, popUp.texts[2], popUp.texts[2].gameObject);
-            ChangeTextAdaptive(levelText.text, popUp.texts[3], popUp.texts[3].gameObject);
-            ChangeTextAdaptive(Need_str, popUp.texts[5], popUp.texts[4].gameObject, popUp.texts[5].gameObject);
-            ChangeTextAdaptive(Cost_str, popUp.texts[7], popUp.texts[6].gameObject, popUp.texts[7].gameObject);
-            ChangeTextAdaptive(Sell_str, popUp.texts[9], popUp.texts[8].gameObject, popUp.texts[9].gameObject);
-            ChangeTextAdaptive(LvCost_Str, popUp.texts[11], popUp.texts[10].gameObject, popUp.texts[11].gameObject);  
-            ChangeTextAdaptive(LvEffect_Str, popUp.texts[13], popUp.texts[12].gameObject, popUp.texts[13].gameObject);
-            ChangeTextAdaptive(Effect_str, popUp.texts[15], popUp.texts[14].gameObject, popUp.texts[15].gameObject);
-            ChangeTextAdaptive(Max_Str, popUp.texts[16], popUp.texts[16].gameObject);
-        }
+        ChangeTextAdaptive(Name_str, popUp.texts[0], popUp.texts[0].gameObject);
+        ChangeTextAdaptive(rarityText.text, popUp.texts[1], popUp.texts[1].gameObject);
+        ChangeTextAdaptive(Description_str, popUp.texts[2], popUp.texts[2].gameObject);
+        ChangeTextAdaptive(levelText.text, popUp.texts[3], popUp.texts[3].gameObject);
+        ChangeTextAdaptive(Need_str, popUp.texts[5], popUp.texts[4].gameObject, popUp.texts[5].gameObject);
+        ChangeTextAdaptive(Cost_str, popUp.texts[7], popUp.texts[6].gameObject, popUp.texts[7].gameObject);
+        ChangeTextAdaptive(Sell_str, popUp.texts[9], popUp.texts[8].gameObject, popUp.texts[9].gameObject);
+        ChangeTextAdaptive(LvCost_Str, popUp.texts[11], popUp.texts[10].gameObject, popUp.texts[11].gameObject);  
+        ChangeTextAdaptive(LvEffect_Str, popUp.texts[13], popUp.texts[12].gameObject, popUp.texts[13].gameObject);
+        ChangeTextAdaptive(Effect_str, popUp.texts[15], popUp.texts[14].gameObject, popUp.texts[15].gameObject);
+        ChangeTextAdaptive(Max_Str, popUp.texts[16], popUp.texts[16].gameObject);
     }
 
     //アイテムのNeed(タグ)の数が上限に達していたらtrue

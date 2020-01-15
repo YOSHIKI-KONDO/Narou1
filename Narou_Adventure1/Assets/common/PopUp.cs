@@ -50,8 +50,9 @@ public class PopUp : MonoBehaviour
         entry.eventID = EventTriggerType.PointerEnter;
         entry2.eventID = EventTriggerType.PointerExit;
         entry.callback.AddListener((x) => ApplyPosition());
-        entry.callback.AddListener((x) => gameObject.SetActive(true));
-        entry.callback.AddListener((x) => EnterAction?.Invoke());
+        entry.callback.AddListener((x) => gameObject.SetActive(true));      //アクティブに
+        entry.callback.AddListener((x) => EnterAction?.Invoke());           //キャンバスの内容の変更など
+        entry.callback.AddListener((x) => LayoutRebuilder.ForceRebuildLayoutImmediate(GetComponent<RectTransform>()));         //キャンバスの反映
         entry2.callback.AddListener((x) => gameObject.SetActive(false));
         entry2.callback.AddListener((x) => ExitAction?.Invoke());
         hoverObject.GetComponent<EventTrigger>().triggers.Add(entry);
