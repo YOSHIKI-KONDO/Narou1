@@ -20,6 +20,7 @@ public class Announce : BASE {
     void SwitchPanel()
     {
         textDetailPanel.SetActive(!textDetailPanel.activeSelf);
+        announceTextShort.gameObject.SetActive(!textDetailPanel.activeSelf); //detailとactiveを反対にする
         switchButton.gameObject.GetComponentInChildren<Text>().text
             = textDetailPanel.activeSelf ? "▼" : "▲";
     }
@@ -37,19 +38,23 @@ public class Announce : BASE {
 
         if (announceTextShort != null)
         {
-            announceTextShort.text = "<color=#" + colorString + ">" + Txt + "</color>";
+            announceTextShort.text += "\n" + "<color=#" + colorString + ">" + Txt + "</color>";
+            SubstringLongText(announceTextShort);
         }
-        announceTextLong.text = announceTextLong.text + "\n" + "<color=#" + colorString + ">"+ Txt + "</color>";
-        SubstringLongText();
+        if(announceTextLong != null)
+        {
+            announceTextLong.text += "\n" + "<color=#" + colorString + ">" + Txt + "</color>";
+            SubstringLongText(announceTextLong);
+        }
     }
 
     /// <summary>
     /// overflow対策
     /// </summary>
-    void SubstringLongText()
+    void SubstringLongText(TextMeshProUGUI text)
     {
-        announceTextLong.text=
-        announceTextLong.text.Substring(announceTextLong.text.IndexOf("\n", StringComparison.CurrentCulture)+1);
+        text.text =
+        text.text.Substring(text.text.IndexOf("\n", StringComparison.CurrentCulture) + 1);
     }
 
     public void ResetText()
@@ -67,10 +72,5 @@ public class Announce : BASE {
 	void Start () {
         switchButton?.onClick.AddListener(SwitchPanel);
         baseColorStr = ColorUtility.ToHtmlStringRGB(baseColor);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 }
