@@ -5,23 +5,21 @@ using UnityEngine;
 using UnityEngine.UI;
 using static UsefulMethod;
 
-public class UpperSlash : SKILL
+public class Punch : SKILL
 {
     public override bool Requires()
     {
-        return main.a_rsc.CurrentLevels[(int)AbilityKind.beginner_spearmanship] >= 7;
+        return main.SR.level >= 2;
     }
 
     // Use this for initialization
     void Awake () {
-		AwakeSkill(SkillKind.upper_slash, 2.5);
+		AwakeSkill(SkillKind.punch, 1.5);
         learnF.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -5));
-        useCosts.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -1));
-        warriorAtks.Add(new WarriorAttack(15));
+        useCosts.Add(new Dealing(ResourceKind.action, Dealing.R_ParaKind.current, -1));
+        warriorAtks.Add(new WarriorAttack(6));
 
-        SetSource(NeedKind.attack, NeedKind.spear, NeedKind.combo_arts);
-
-        combo = new Interval_SC(NeedKind.combo_arts, 0.7f);
+        SetSource(NeedKind.attack);
     }
 
 	// Use this for initialization

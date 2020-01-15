@@ -12,7 +12,7 @@ public class DemonicWarrior : ENEMY
     {
         AwakeEnemy(EnemyKind.demonic_warrior);
         drops.Add(new Drop(ResourceKind.magi_stone, 1, 5));
-        drops.Add(new Item_Drop(ItemKind.fire_ruby, 1));
+        drops.Add(new Item_Drop(ItemKind.darkness_sword, 1));
     }
 
     // Use this for initialization

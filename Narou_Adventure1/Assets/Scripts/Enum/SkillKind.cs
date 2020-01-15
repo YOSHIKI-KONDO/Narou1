@@ -3,6 +3,11 @@
     nothing,
     normalAttack,
     normalAttack_npc1,
+    //レベル解放スキル
+    punch,
+    impact,
+    throwing,
+    boost,
     //戦士
     right_slash,
     left_upper_slash,
@@ -43,6 +48,11 @@
     //テイマー
     animal_attack,
     picking_up_coins,
-    /*throwing,
-     */
+
+    //複合スキル
+    flame_slash,
+    mud_shot,
+    storm_spike,
+    animal_rush,
+
 }

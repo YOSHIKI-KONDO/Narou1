@@ -27,6 +27,7 @@ public class DecideParameter : BASE {
         }
         main.SR.released_element[(int)ElementKind.main] = true;     //要素、タブの解放
         main.SR.released_element[(int)ElementKind.status] = true;   //要素、タブの解放
+        main.SR.released_element[(int)ElementKind.option] = true;   //要素、タブの解放
 
         main.rsc.Max_Base[(int)ResourceKind.inventorySpace] = 0;
         main.rsc.Max_Base[(int)ResourceKind.equipSpace] = 0;

@@ -421,8 +421,8 @@ public class EnumCtrl : BASE {
           //Phase2
         items.Add(new template(ItemKind.stone_sword, "Stone Sword", "石の剣", "", ""));
         items.Add(new template(ItemKind.stone_spear, "Stone Spear", "石の槍", "", ""));
-        items.Add(new template(ItemKind.fire_rod, "Fire Rod", "火の魔杖", "", ""));
-        items.Add(new template(ItemKind.water_rod, "Water Rod", "水の魔杖", "", ""));
+        items.Add(new template(ItemKind.fire_rod, "Fire Rod", "火の魔杖", "An orb that holds the magic of fire. Magic beginners train with this.", ""));
+        items.Add(new template(ItemKind.water_rod, "Water Rod", "水の魔杖", "An orb that holds the magic of fire. Magic beginners train with this.", ""));
         items.Add(new template(ItemKind.wind_rod, "Wind Rod", "風の魔杖", "", ""));
         items.Add(new template(ItemKind.earth_rod, "Earth Rod", "地の魔杖", "", ""));
         items.Add(new template(ItemKind.stone_axe, "Stone Axe", "石の斧", "", ""));
@@ -489,6 +489,11 @@ public class EnumCtrl : BASE {
         skills.Add(new template(SkillKind.nothing, "", "", "", ""));
         skills.Add(new template(SkillKind.normalAttack, "Normal Attack", "通常攻撃", "", ""));
         skills.Add(new template(SkillKind.normalAttack_npc1, "Normal Attack", "通常攻撃", "", ""));
+        //レベル解放スキル
+        skills.Add(new template(SkillKind.punch, "Punch", "パンチ", "", ""));
+        skills.Add(new template(SkillKind.impact, "Impact", "インパクト", "", ""));
+        skills.Add(new template(SkillKind.throwing, "Throwing", "投てき", "", ""));
+        skills.Add(new template(SkillKind.boost, "Boost", "ブースト", "", ""));
         //戦士
         skills.Add(new template(SkillKind.right_slash, "Right Slash", "袈裟斬り", "", ""));
         skills.Add(new template(SkillKind.left_upper_slash, "Left Upper Slash", "左斬上げ", "", ""));
@@ -529,8 +534,13 @@ public class EnumCtrl : BASE {
         //テイマー
         skills.Add(new template(SkillKind.animal_attack, "Animal Attack", "アニマルアタック", "", ""));
         skills.Add(new template(SkillKind.picking_up_coins, "Picking up Coins", "小銭拾い", "", ""));
-        /*skills.Add(new template(SkillKind.throwing, "Throwing", "投てき", "", ""));
-        */
+
+        //複合スキル
+        skills.Add(new template(SkillKind.flame_slash, "Flame Slash", "火炎斬り", "", ""));
+        skills.Add(new template(SkillKind.mud_shot, "Mud Shot", "マッドショット", "", ""));
+        skills.Add(new template(SkillKind.storm_spike, "Storm Spike", "ストームスパイク", "", ""));
+        skills.Add(new template(SkillKind.animal_rush, "Animal Rush", "アニマルラッシュ", "", ""));
+
         /* 敵 */
         enemys.Add(new template(EnemyKind.nothing, "", "", "", ""));
         //ランク1

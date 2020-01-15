@@ -12,6 +12,7 @@ public class SaveR
     /* NOTE : インスペクターに表示させたくない変数は[NonSerialized]をつける */
     /* NOTE : サイズの大きい配列は[NonSeriarized]をつける */
 
+    public bool isBeta;
     public int level = 1;
 
     public double[] max_resource;

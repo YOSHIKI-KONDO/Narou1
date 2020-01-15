@@ -226,6 +226,9 @@ public class SKILL : BASE, INeed, ISetSource
     {
         learnF.CheckButtonForRelease();
         components.nameText.text = Name_str;
+        components.expSlider.value = (float)(currentValue / MaxExp());
+        components.expText.text = tDigit(currentValue) + "/" + tDigit(MaxExp());
+        components.levelText.text = "Lv " + level.ToString() + "/" + MaxLevel().ToString();
         if (popUp.gameObject.activeSelf) { ApplyPopUp(); }
 
         if (CompleteCondition())//条件を満たしたらもう出なくなる

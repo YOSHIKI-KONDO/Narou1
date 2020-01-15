@@ -31,7 +31,7 @@ public class DemonicCellar : DUNGEON
         //progressCost.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.3f));
 
         drops.Add(new Drop(ResourceKind.gold, 20, 100));
-        drops.Add(new Item_Drop(ItemKind.darkness_sword, 1));
+        drops.Add(new Item_Drop(ItemKind.fire_ruby, 1));
         firstDrops.Add(new Drop(ResourceKind.magi_stone, 1, 100));
     }
 

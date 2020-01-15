@@ -702,7 +702,7 @@ public class BattleAndSkillCtrl : BASE {
         }
 
         // 主人公のComponent更新
-        heroCmp.ApplyNormalObj("Hero Lv" + main.SR.level.ToString() + " (" + main.rsc.Value[(int)ResourceKind.exp].ToString("F1") + "/" + main.rsc.Max((int)ResourceKind.exp).ToString("F1") + ")"
+        heroCmp.ApplyNormalObj("You Lv" + main.SR.level.ToString() + " (" + main.rsc.Value[(int)ResourceKind.exp].ToString("F1") + "/" + main.rsc.Max((int)ResourceKind.exp).ToString("F1") + ")"
             , tDigit(main.rsc.Value[(int)ResourceKind.hp], 1), tDigit(main.rsc.Max((int)ResourceKind.hp), 1),
             "Atk : " + tDigit(main.status.Attack) + "/Def : " + tDigit(main.status.Defense),
             (float)(main.rsc.Value[(int)ResourceKind.hp] / main.rsc.Max((int)ResourceKind.hp)),
@@ -940,7 +940,7 @@ public class BattleAndSkillCtrl : BASE {
         }
 
         if (actor == "") { return; }
-        main.announce_d.Add(actor + " " + have + " attacked " + main.enumCtrl.enemys[target].Name() + " for " + tDigit(cal_dmg, 1) + " damages" + lastSentense);
+        main.announce_d.Add(actor + " " + have + " attacked " + main.enumCtrl.enemys[(int)currentEnemys[target].kind].Name() + " for " + tDigit(cal_dmg, 1) + " damages" + lastSentense);
     }
 
 

@@ -23,7 +23,7 @@ public class Moor : DUNGEON
         enemyList.Add(new EnemyKind[] { wolf, bird, rat });
         enemyList.Add(new EnemyKind[] { snake, snake, rat, rat });//5
         enemyList.Add(new EnemyKind[] { bird, bird });
-        enemyList.Add(new EnemyKind[] { poison_rat, bird, bird });
+        enemyList.Add(new EnemyKind[] { poison_rat, bird, bird });  
         enemyList.Add(new EnemyKind[] { wolf, bird, rat, snake });
         enemyList.Add(new EnemyKind[] { wolf, wolf, snake, snake });
         enemyList.Add(new EnemyKind[] { poison_rat, poison_rat, poison_rat });//10

@@ -37,6 +37,7 @@ public class Main : MonoBehaviour
     public AudioSource SoundEffectSource;
     public Sound sound;
     public GameObject plainPopText;
+    public PopUp DefaultPopUp;
 
 
     /* Libraryここまで */
@@ -53,6 +54,7 @@ public class Main : MonoBehaviour
     public ResourceTextControll resourceTextCtrl;
     public AnalyticsCtrl analytics;
     public IconCtrl iconCtrl;
+    public UICtrl uiCtrl;
     public Announce announce;
     public Announce announce_d; //dungeon
     public Focus focus;
@@ -84,6 +86,7 @@ public class Main : MonoBehaviour
         if (!S.isContinuePlay)
         {
             analytics.StartGame(); //analyticsに送信
+            announce.ResetText();  //最初だけテキストを全て消す
             birthTime = DateTime.Now;
             lastTime = DateTime.Now;
             S.isContinuePlay = true;

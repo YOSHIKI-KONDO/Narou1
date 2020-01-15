@@ -18,7 +18,7 @@ public class Rest : LOOP_ACTION
         progress.progressEffectList.Add(new Dealing(ResourceKind.action, Dealing.R_ParaKind.current, 1));
         progress.progressEffectList.Add(new Dealing(ResourceKind.hp, Dealing.R_ParaKind.current, 1));
         progress.progressEffectList.Add(new Dealing(ResourceKind.mp, Dealing.R_ParaKind.current, 0.5));
-        progress.progressEffectList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, 1));
+        progress.progressEffectList.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, 1, false));
         progress.progressEffectList.Add(new Dealing(ResourceKind.fire, Dealing.R_ParaKind.current, 0.5, false));
         progress.progressEffectList.Add(new Dealing(ResourceKind.water, Dealing.R_ParaKind.current, 0.5, false));
         progress.progressEffectList.Add(new Dealing(ResourceKind.wind, Dealing.R_ParaKind.current, 0.5, false));
