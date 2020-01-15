@@ -9,4 +9,5 @@ public class ActionComponents : BASE {
     public Text text;
     public Slider slider;
     public GameObject newObject;
+    public GameObject actionMark;
 }

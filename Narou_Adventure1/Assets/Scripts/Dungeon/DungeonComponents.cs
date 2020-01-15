@@ -12,4 +12,5 @@ public class DungeonComponents : BASE {
     public Text nameText;
     public Text floorText;
     public Button enterButton;
+    public GameObject actionMark;
 }

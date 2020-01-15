@@ -33,9 +33,9 @@ public class ProgressFunction : OnlyAction
     /// 初期設定。Obj以外は、無ければnullでいい。
     /// ObjにはgameObjectを入れる。
     /// </summary>
-    public virtual void StartProgress(GameObject Obj, Condition Need, Slider slider, BoolSync hasPaid, DoubleSync currentValue, string actionName, bool addCtrl = true)
+    public virtual void StartProgress(GameObject Obj, Condition Need, Slider slider, BoolSync hasPaid, DoubleSync currentValue, string actionName, GameObject isOnObj, bool addCtrl)
     {
-        AwakeOnlyAction(Obj.GetComponent<Button>(), actionName, addCtrl);
+        AwakeOnlyAction(Obj.GetComponent<Button>(), isOnObj, actionName, addCtrl);
         this.Need = Need;
         this.slider = slider;
         HasPaid = hasPaid;

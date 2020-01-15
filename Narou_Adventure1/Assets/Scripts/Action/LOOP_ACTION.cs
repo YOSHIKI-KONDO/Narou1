@@ -16,6 +16,7 @@ public class LOOP_ACTION : ACTION, INeed {
     public Slider slider;
     Text text;
     GameObject newObject;
+    GameObject actionMark;
 
     public double MaxValue;
     public double CurrentValue;
@@ -42,6 +43,7 @@ public class LOOP_ACTION : ACTION, INeed {
         components = GetComponent<ActionComponents>();
         text = components.text;
         newObject = components.newObject;
+        actionMark = components.actionMark;
         if (components.slider != null)
         {
             slider = components.slider;
@@ -68,7 +70,9 @@ public class LOOP_ACTION : ACTION, INeed {
             x => Sync(ref main.SR.paid_loop[(int)kind], x),
             x => Sync(ref main.SR.currentValue_loop[(int)kind], x),
             main.enumCtrl.loopActions[(int)kind].Name(),
+            actionMark,
             addCtrl);
+        progress.elementKind = ElementKind.main; //溜まったらStartProgressに統合する
     }
 
     // Use this for initialization
