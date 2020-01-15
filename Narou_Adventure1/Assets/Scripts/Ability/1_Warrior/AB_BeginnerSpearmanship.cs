@@ -26,6 +26,10 @@ public class AB_BeginnerSpearmanship : ABILITY
         need.AddSourceNeed(NeedKind.spear);
 
         SetSource(NeedKind.spear);
+
+        unlocks.Add(new SkillUnlock(1, SkillKind.stab));
+        unlocks.Add(new SkillUnlock(4, SkillKind.spearfishing));
+        unlocks.Add(new SkillUnlock(7, SkillKind.upper_slash));
     }
 
 	// Use this for initialization

@@ -9,7 +9,7 @@ public class ReadWaterSpellbook : UPGRADE_ACTION
 {
     public override bool Requires()
     {
-        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.talk_fatherC] >= 1;
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.mothers_den] >= 1;
     }
     public override bool CompleteCondition()
     {

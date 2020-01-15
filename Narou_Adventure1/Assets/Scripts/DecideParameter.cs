@@ -59,7 +59,7 @@ public class DecideParameter : BASE {
         main.rsc.Regen_Base[(int)ResourceKind.dark] = 0.1;
         main.rsc.Regen_Base[(int)ResourceKind.animal] = 0.1;
         //リソース
-        main.rsc.Max_Base[(int)ResourceKind.gold] = 20;
+        main.rsc.Max_Base[(int)ResourceKind.gold] = 10;
         main.rsc.Max_Base[(int)ResourceKind.research] = 10;
         main.rsc.Max_Base[(int)ResourceKind.paper] = 5;
         main.rsc.Max_Base[(int)ResourceKind.book] = 1;

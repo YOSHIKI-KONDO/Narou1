@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System;
+using System.Text;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -965,9 +967,58 @@ public class UsefulMethod : MonoBehaviour
     }
 
 
+    //テキストをファイルから読み込む（行読み）
+    //※Android で SD カードから読み込みをするには、「AndroidManifest.xml」にパーミッション（"READ_EXTERNAL_STORAGE" または "WRITE_EXTERNAL_STORAGE"）が必要。
+    public static string LoadText(string path)
+    {
+        StringBuilder sb = new StringBuilder(1024);  //※capacity は任意
 
-    // Use this for initialization
-    void Start()
+        try
+        {
+            using (StreamReader reader = new StreamReader(path))
+            {
+                while (!reader.EndOfStream)
+                {
+                    string line = reader.ReadLine();
+                    sb.Append(line).Append("\n");
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e.Message);
+            return null;
+        }
+
+        return sb.ToString();
+    }
+
+    //テキストをファイルに保存
+    //※Android で External Storage に書き込みをするには、「AndroidManifest.xml」にパーミッション（"WRITE_EXTERNAL_STORAGE"）が必要。
+    //※セキュリティ上、Unity から直接 SD カードには保存できない。
+    public static bool SaveText(string text, string path)
+    {
+        try
+        {
+            using (StreamWriter writer = new StreamWriter(path))
+            {
+                writer.Write(text);
+                writer.Flush();
+                writer.Close();
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e.Message);  //Access to the path "filename" is denied. → パーミッションが無い, 書き込みアクセス不可（SDカードなど）
+            return false;
+        }
+        return true;
+    }
+
+
+
+// Use this for initialization
+void Start()
     {
         window = Instantiate(windowPre, windowTransform);
         window.name = "debaggudayo";

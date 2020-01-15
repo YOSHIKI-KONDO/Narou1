@@ -9,7 +9,7 @@ public class SpearPractice : UPGRADE_ACTION
 {
     public override bool Requires()
     {
-        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.rune_augmentation] >= 1;
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.fathers_gym] >= 1;
     }
     public override bool CompleteCondition()
     {

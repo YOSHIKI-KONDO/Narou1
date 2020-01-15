@@ -18,6 +18,7 @@ public class ABILITY : BASE, INeed, ISetSource
     public UnlockFunction unlockF;
     AbilityComponents components;
     GameObject newObject;
+    GameObject actionMark;
     public List<NeedKind> sources = new List<NeedKind>();
     protected List<IInternalUnlock> unlocks = new List<IInternalUnlock>();
 
@@ -67,6 +68,7 @@ public class ABILITY : BASE, INeed, ISetSource
         StartBASE();
         components = GetComponent<AbilityComponents>();
         newObject = components.newText;
+        actionMark = components.actionMark;
 
         this.kind = Kind;
         this.init_exp = initExp;
@@ -92,7 +94,9 @@ public class ABILITY : BASE, INeed, ISetSource
             components.slider,
             x => Sync(ref main.SR.paid_ability[(int)kind], x),
             x => Sync(ref main.SR.currentValue_ability[(int)kind], x),
-            main.enumCtrl.abilitys[(int)kind].Name());
+            main.enumCtrl.abilitys[(int)kind].Name(),
+            actionMark);
+        progress.elementKind = ElementKind.ability; //溜まったらStartAbilityに統合する
         progress.CompleteAction = LevelUp;//回数を増やす処理
         progress.IsMax = () => { return level >= MaxLevel; };
     }

@@ -9,7 +9,7 @@ public class RuneAugmentation : UPGRADE_ACTION
 {
     public override bool Requires()
     {
-        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.talk_fatherD] >= 1;
+        return main.rsc.Max((int)ResourceKind.action) >= 50;
     }
 
     // Use this for initialization

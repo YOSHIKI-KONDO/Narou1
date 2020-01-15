@@ -253,6 +253,7 @@ MonoBehaviour:
   nameText: {fileID: 2232230017608664069}
   floorText: {fileID: 3090672417917102571}
   enterButton: {fileID: 7429743711702770087}
+  actionMark: {fileID: 0}
 --- !u!1 &4686264724553757267
 GameObject:
   m_ObjectHideFlags: 0

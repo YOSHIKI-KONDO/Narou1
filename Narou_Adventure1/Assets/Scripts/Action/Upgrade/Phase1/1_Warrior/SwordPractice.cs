@@ -9,7 +9,7 @@ public class SwordPractice : UPGRADE_ACTION
 {
     public override bool Requires()
     {
-        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.talk_fatherD] >= 1;
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.fathers_gym] >= 1;
     }
     public override bool CompleteCondition()
     {

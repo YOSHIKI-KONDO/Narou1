@@ -5,11 +5,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using static UsefulMethod;
 
-public class LearnUseTools : UPGRADE_ACTION
+public class FathersGym : UPGRADE_ACTION
 {
     public override bool Requires()
     {
-        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.go_to_the_town] >= 1;
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.talk_fatherD] >= 1;
     }
     public override bool CompleteCondition()
     {
@@ -17,16 +17,14 @@ public class LearnUseTools : UPGRADE_ACTION
     }
     public override void CompleteAction()
     {
-        main.SR.released_element[(int)ElementKind.main] = true;
-        main.SR.released_element[(int)ElementKind.ability] = true;
+        main.analytics.TutorialComplete();
     }
 
     // Use this for initialization
     void Awake () {
-        AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.learn_use_tools, 1,20);
-        progress.progressCostList.Add(new Dealing(ResourceKind.action, Dealing.R_ParaKind.current, -0.4));
-        progress.completeEffectList.Add(new Dealing(AbilityKind.use_tools, Dealing.A_ParaKind.maxLevel, 1));
-        progress.completeEffectList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, 5));
+        AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.fathers_gym, 1, 0, null, false, false);
+        progress.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -35));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 30));
     }
 
 	// Use this for initialization

@@ -15,7 +15,7 @@ public class EnemyParameter : BASE {
         parameters.Add(null);                                 //Int,  HP, ATK, DEF, GOLD, EXP, RANK, Level
         parameters.Add(new parameter(EnemyKind.slime,             5, 3.8, 3.1,  3.1,    1,  1,    1,   2));
         parameters.Add(new parameter(EnemyKind.goblin,            3, 4.4, 1.7,  3.9,    1,  1,    1,   3));
-        parameters.Add(new parameter(EnemyKind.rat,               2, 4.0, 2.0,  4.0,    1,  1,    1,  10));
+        parameters.Add(new parameter(EnemyKind.rat,               2, 4.0, 2.0,  4.0,    1,  1,    1,  12));
         parameters.Add(new parameter(EnemyKind.bird,              4, 3.3, 3.3,  3.3,    1,  1,    1,   5));
         parameters.Add(new parameter(EnemyKind.bat,               5, 3.1, 4.4,  2.5,    1,  1,    1,  10));
         parameters.Add(new parameter(EnemyKind.wolf,              3, 4.1, 2.4,  3.5,    1,  1,    1,   3));

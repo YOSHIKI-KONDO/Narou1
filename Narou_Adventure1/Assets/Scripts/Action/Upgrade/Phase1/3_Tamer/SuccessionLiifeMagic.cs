@@ -9,7 +9,8 @@ public class SuccessionLiifeMagic : UPGRADE_ACTION
 {
     public override bool Requires()
     {
-        return main.rsc.Max((int)ResourceKind.mp) >= 5;
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.go_to_the_town] >= 1 &&
+               main.rsc.Max((int)ResourceKind.mp) >= 5;
     }
     public override bool CompleteCondition()
     {

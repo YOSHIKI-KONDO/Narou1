@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class AbilityComponents : MonoBehaviour
 {
     public GameObject newText;
+    public GameObject actionMark;
     public Transform attributesParent;
 
     public GameObject TrainBtnObj;
