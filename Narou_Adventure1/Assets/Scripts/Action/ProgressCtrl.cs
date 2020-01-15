@@ -17,6 +17,8 @@ public class ProgressCtrl : BASE {
 
     //UI
     public Text text;
+    public GameObject actionObj_main, actionObj_ability, actionObj_dungeon;
+    List<(GameObject, ElementKind)> actionObjs = new List<(GameObject, ElementKind)>(); //actionObjを追加したらここに追加する。
 
     //OnlyActionから呼ぶ
     public void SwitchProgress(OnlyAction function)
@@ -24,6 +26,7 @@ public class ProgressCtrl : BASE {
         DeactivateAll();
         ActivateProgress(function); 
         previousFunction = function;
+        ApplyTopActionMark();
     }
 
     public void DeactivateAll()
@@ -42,11 +45,31 @@ public class ProgressCtrl : BASE {
             {
                 p.isOn = true;
                 currentFunction = p;
-                //Focus関連
-                //ApplyFocus(); //常に出しておく
             }
+
+            //行動マークの更新
+            if (p.isOn == true  && p.isOnObj != null)
+                setActive(p.isOnObj);
+            if (p.isOn == false && p.isOnObj != null)
+                setFalse(p.isOnObj);
         }
         currentFunction.SelectedAction?.Invoke();
+    }
+
+    void ApplyTopActionMark()
+    {
+        if(currentFunction == null) { return; }
+        foreach (var obj in actionObjs)
+        {
+            if(obj.Item2 == currentFunction.elementKind)
+            {
+                setActive(obj.Item1);
+            }
+            else
+            {
+                setFalse(obj.Item1);
+            }
+        }
     }
 
     public void Rest()
@@ -94,6 +117,9 @@ public class ProgressCtrl : BASE {
     private void Start()
     {
         //ApplyFocus();
+        actionObjs.Add((actionObj_main, ElementKind.main));
+        actionObjs.Add((actionObj_ability, ElementKind.ability));
+        actionObjs.Add((actionObj_dungeon, ElementKind.dungeon));
     }
 
     private void Update()

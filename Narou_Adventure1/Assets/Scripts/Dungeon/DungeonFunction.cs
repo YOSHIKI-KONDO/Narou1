@@ -6,8 +6,8 @@ using UnityEngine.UI;
 using static UsefulMethod;
 
 public class DungeonFunction : OnlyAction {
-    public void AwakeDungeon(Button button, string actionName)
+    public void AwakeDungeon(Button button, string actionName, GameObject isOnObj)
     {
-        AwakeOnlyAction(button, actionName);
+        AwakeOnlyAction(button, isOnObj, actionName, true);
     }
 }

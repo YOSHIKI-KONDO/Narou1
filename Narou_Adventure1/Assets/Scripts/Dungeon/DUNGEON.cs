@@ -15,6 +15,7 @@ public class DUNGEON : BASE {
     [NonSerialized]public Button enterButton;
     Text nameText, floorText;
     GameObject newObj, completeObj;
+    GameObject actionMark;
 
     public List<EnemyKind[]> enemyList = new List<EnemyKind[]>(); //Enemyの配列のList
     public List<Drop> drops = new List<Drop>(); //ドロップ品
@@ -71,13 +72,15 @@ public class DUNGEON : BASE {
         enterButton = components.enterButton;            //UI関連
         nameText = components.nameText;                  //UI関連
         newObj = components.newObj;
+        actionMark = components.actionMark;
         completeObj = components.completeObj;
         floorText = components.floorText;
         //button.onClick.AddListener(Enter);
         
         progress = gameObject.AddComponent<DungeonFunction>();
-        progress.AwakeDungeon(enterButton, main.enumCtrl.dungeons[(int)kind].Name());
+        progress.AwakeDungeon(enterButton, main.enumCtrl.dungeons[(int)kind].Name(), actionMark);
         progress.SelectedAction = Enter;
+        progress.elementKind = ElementKind.dungeon; //溜まったらAwakeDungeonに統合する
         popUp = main.dungeonPopUp.StartPopUp(gameObject, main.windowShowCanvas);
         popUp.EnterAction = ApplyPopUp;
         need = gameObject.AddComponent<NeedFunciton>();

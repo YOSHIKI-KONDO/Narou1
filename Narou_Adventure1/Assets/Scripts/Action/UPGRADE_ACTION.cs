@@ -17,6 +17,7 @@ public class UPGRADE_ACTION : ACTION, INeed
     public Slider slider;
     Text text;
     GameObject newObject;
+    GameObject actionMark;
 
     public double MaxValue;
     public double CurrentValue;
@@ -52,6 +53,7 @@ public class UPGRADE_ACTION : ACTION, INeed
         components = GetComponent<ActionComponents>();
         text = components.text;
         newObject = components.newObject;
+        actionMark = components.actionMark;
         if (components.slider != null)
         {
             slider = components.slider;
@@ -80,7 +82,9 @@ public class UPGRADE_ACTION : ACTION, INeed
             x => Sync(ref main.SR.paid_upgrade[(int)kind], x),
             x => Sync(ref main.SR.currentValue_upgrade[(int)kind], x),
             main.enumCtrl.upgradeActions[(int)kind].Name(),
+            actionMark,
             addCtrl);
+        progress.elementKind = ElementKind.main; //溜まったらStartProgressに統合する
         progress.CompleteAction = AddClerNum;//回数を増やす処理
         progress.CompleteActionForSub = CompleteAction;
     }
