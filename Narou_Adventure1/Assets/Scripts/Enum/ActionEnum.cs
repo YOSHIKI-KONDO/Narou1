@@ -71,16 +71,19 @@
             talk_fatherD,
             //父の道場
             training,
+            fathers_gym,
             sword_practice,
             spear_practice,
             rod_practice,
             //母の書斎
             mental_training,
+            mothers_den,
             read_fire_spellbook,
             read_water_spellbook,
             read_wind_spellbook,
             read_earth_spellbook,
             //村の広場
+            go_to_the_town,
             play_with_cat,
             learn_use_tools,
             succession_life_magic,

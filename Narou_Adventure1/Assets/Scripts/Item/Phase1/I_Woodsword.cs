@@ -7,6 +7,11 @@ using static UsefulMethod;
 
 public class I_Woodsword : ITEM
 {
+    public override bool Requires()
+    {
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.fathers_gym] >= 1 &&
+               main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.buy_bag] >= 1;
+    }
 
     // Use this for initialization
     void Awake()

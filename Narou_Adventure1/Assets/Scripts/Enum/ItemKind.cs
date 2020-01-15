@@ -40,4 +40,9 @@
     cutlass,
     trident,
     whip,
+    claw_bar,
+    charm,
+    darkness_sword,
+    woodshield,
+    old_robe,
 }

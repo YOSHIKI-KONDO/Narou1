@@ -21,7 +21,7 @@ public class IntoADormitory : UPGRADE_ACTION
         AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.into_a_dormitory, 1, 0, null, false, false);
         progress.initCostList.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -10));
         progress.completeEffectList.Add(new Dealing(ResourceKind.equipSpace, Dealing.R_ParaKind.max, 5));
-        progress.completeEffectList.Add(new Dealing(ResourceKind.inventorySpace, Dealing.R_ParaKind.max, 4));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.inventorySpace, Dealing.R_ParaKind.max, 3));
     }
 
 	// Use this for initialization

@@ -9,8 +9,7 @@ public class ReadEarthSpellbook : UPGRADE_ACTION
 {
     public override bool Requires()
     {
-        return main.rsc.Max( (int)ResourceKind.mp) >= 5 &&
-               main.rsc.Value[ (int)ResourceKind.herb] >= 7;
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.mothers_den] >= 1;
     }
     public override bool CompleteCondition()
     {

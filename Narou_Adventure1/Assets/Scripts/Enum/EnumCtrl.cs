@@ -214,16 +214,19 @@ public class EnumCtrl : BASE {
         upgradeActions.Add(new template(ActionEnum.Upgrade.talk_fatherD, "Talk with Father", "父の話を聞く", "Go to school. Learn what I can't teach.", "学校に行くと良い。私では教えられないことを学べる。"));
             //父の道場
         upgradeActions.Add(new template(ActionEnum.Upgrade.training, "Training", "トレーニング", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.fathers_gym, "Father's Gym", "父の道場", "", ""));
         upgradeActions.Add(new template(ActionEnum.Upgrade.sword_practice, "Sword Practice", "剣の稽古", "", ""));
         upgradeActions.Add(new template(ActionEnum.Upgrade.spear_practice, "Spear Practice", "槍の稽古", "", ""));
         upgradeActions.Add(new template(ActionEnum.Upgrade.rod_practice, "Rod Practice", "棒の稽古", "", ""));
             //母の書斎                             
         upgradeActions.Add(new template(ActionEnum.Upgrade.mental_training, "Mental Training", "メンタルトレーニング", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.mothers_den, "Mother's Den", "母の書斎", "", ""));
         upgradeActions.Add(new template(ActionEnum.Upgrade.read_fire_spellbook, "Read Fire Spellbook", "火の魔導書", "", ""));
         upgradeActions.Add(new template(ActionEnum.Upgrade.read_water_spellbook, "Read Water Spellbook", "水の魔導書", "", ""));
         upgradeActions.Add(new template(ActionEnum.Upgrade.read_wind_spellbook, "Read Wind Spellbook", "風の魔導書", "", ""));
         upgradeActions.Add(new template(ActionEnum.Upgrade.read_earth_spellbook, "Read Earth Spellbook", "土の魔導書", "", ""));
-            //村の広場                              
+            //村の広場
+        upgradeActions.Add(new template(ActionEnum.Upgrade.go_to_the_town, "Go to the Town", "村へ行く", "", ""));
         upgradeActions.Add(new template(ActionEnum.Upgrade.play_with_cat, "Play wit Cat", "猫と遊ぶ", "", ""));
         upgradeActions.Add(new template(ActionEnum.Upgrade.learn_use_tools, "Learn Use Tools", "道具の使い方を教わる", "", ""));
         upgradeActions.Add(new template(ActionEnum.Upgrade.succession_life_magic, "Life Magic Inheritance", "生活魔法継承", "", ""));
@@ -232,7 +235,7 @@ public class EnumCtrl : BASE {
         upgradeActions.Add(new template(ActionEnum.Upgrade.study_in_church, "Study in Church", "教会で勉強", "", ""));
         upgradeActions.Add(new template(ActionEnum.Upgrade.buy_bag, "Buy Bag", "鞄を買う", "", ""));
         upgradeActions.Add(new template(ActionEnum.Upgrade.rune_augmentation, "Rune Augmentation", "ルーン増強", "", ""));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.buy_fire_spellbook, "Buy Fire Spellbook,", "火の魔導書を買う", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.buy_fire_spellbook, "Buy Fire Spellbook", "火の魔導書を買う", "", ""));
             //少女イベント
         upgradeActions.Add(new template(ActionEnum.Upgrade.girl_is_crying, "A Girl is Crying", "少女が泣いている", "It seems that the flowers she cherished have been broken down into bad kids.", "大切にしていた花を、悪ガキにへし折られてしまってようだ。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.pick_flowers, "Pick Flowers", "花を摘みに行く", "Give the girl a new flower.", "少女に新しい花をプレゼントしよう。"));
@@ -257,7 +260,7 @@ public class EnumCtrl : BASE {
         upgradeActions.Add(new template(ActionEnum.Upgrade.delivery_of_fur, "Delivery of pelt", "毛皮の納品", "[Deliver the pelt that you can get by defeating Wolf. Since it will be for sale, I call for less scratches.]", "ウルフを倒すと手に入る、毛皮を納品してくれ。商品なんだから傷は少なめで頼むよ。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.house_clean_up, "House clean up", "ゴミ屋敷の掃除", "[What is the landlord doing!? Somebody clean it up! It's absolutely annoying!!]", "家主は何をしているんだ？近所迷惑だから誰でもいい、掃除してくれ！"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.get_rid_of_rat, "Get rid of rat", "ネズミ退治", "A request to get rid of poison rats that lived in the sewer. Unpopular.", "下水道に発生したポイズンラットを定期的に駆除しないといけない。不人気な依頼。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.wholesaler_of_drugs, "Wholesaler of Medicine,", "医薬品卸", "I cannot have too much medicines. I'd like to buy some of them.(Up to 3 times)", "薬はいくつあっても安心だ。市場に回すため引き取らせてもらいたい。(３回まで)"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.wholesaler_of_drugs, "Wholesaler of Medicine", "医薬品卸", "I cannot have too much medicines. I'd like to buy some of them.(Up to 3 times)", "薬はいくつあっても安心だ。市場に回すため引き取らせてもらいたい。(３回まで)"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.in_cellar, "Into cellar", "地下室へ", "Hoarding house seems to have the cellar. Petals are scattered at the feet.", "ゴミ屋敷から、地下へと続くあなぐらが掘られていた。足元には花びらが散乱している。"));
 
             //授業
@@ -421,8 +424,8 @@ public class EnumCtrl : BASE {
           //Phase2
         items.Add(new template(ItemKind.stone_sword, "Stone Sword", "石の剣", "", ""));
         items.Add(new template(ItemKind.stone_spear, "Stone Spear", "石の槍", "", ""));
-        items.Add(new template(ItemKind.fire_rod, "Fire Rod", "火の魔杖", "", ""));
-        items.Add(new template(ItemKind.water_rod, "Water Rod", "水の魔杖", "", ""));
+        items.Add(new template(ItemKind.fire_rod, "Fire Rod", "火の魔杖", "An orb that holds the magic of fire. Magic beginners train with this.", ""));
+        items.Add(new template(ItemKind.water_rod, "Water Rod", "水の魔杖", "An orb that holds the magic of fire. Magic beginners train with this.", ""));
         items.Add(new template(ItemKind.wind_rod, "Wind Rod", "風の魔杖", "", ""));
         items.Add(new template(ItemKind.earth_rod, "Earth Rod", "地の魔杖", "", ""));
         items.Add(new template(ItemKind.stone_axe, "Stone Axe", "石の斧", "", ""));
@@ -447,6 +450,11 @@ public class EnumCtrl : BASE {
         items.Add(new template(ItemKind.cutlass, "Cutlass", "カットラス", "", ""));
         items.Add(new template(ItemKind.trident, "Trident", "トライデント", "", ""));
         items.Add(new template(ItemKind.whip, "Whip", "鞭", "", ""));
+        items.Add(new template(ItemKind.claw_bar, "Claw Bar", "バール", "", "魔法のステッキ。魔力を感じる。"));
+        items.Add(new template(ItemKind.charm, "Charm", "御守り", "", ""));
+        items.Add(new template(ItemKind.darkness_sword, "Darkness Sword", "ダークネスソード", "", ""));
+        items.Add(new template(ItemKind.woodshield, "Wood Shield,", "木の盾", "", ""));
+        items.Add(new template(ItemKind.old_robe, "Old Robe,", "古いローブ", "", ""));
 
         /* 必要条件 */
         needs.Add(new template(NeedKind.nothing, "", "", "", ""));
@@ -486,6 +494,11 @@ public class EnumCtrl : BASE {
         skills.Add(new template(SkillKind.nothing, "", "", "", ""));
         skills.Add(new template(SkillKind.normalAttack, "Normal Attack", "通常攻撃", "", ""));
         skills.Add(new template(SkillKind.normalAttack_npc1, "Normal Attack", "通常攻撃", "", ""));
+        //レベル解放スキル
+        skills.Add(new template(SkillKind.punch, "Punch", "パンチ", "", ""));
+        skills.Add(new template(SkillKind.impact, "Impact", "インパクト", "", ""));
+        skills.Add(new template(SkillKind.throwing, "Throwing", "投てき", "", ""));
+        skills.Add(new template(SkillKind.boost, "Boost", "ブースト", "", ""));
         //戦士
         skills.Add(new template(SkillKind.right_slash, "Right Slash", "袈裟斬り", "", ""));
         skills.Add(new template(SkillKind.left_upper_slash, "Left Upper Slash", "左斬上げ", "", ""));
@@ -526,8 +539,13 @@ public class EnumCtrl : BASE {
         //テイマー
         skills.Add(new template(SkillKind.animal_attack, "Animal Attack", "アニマルアタック", "", ""));
         skills.Add(new template(SkillKind.picking_up_coins, "Picking up Coins", "小銭拾い", "", ""));
-        /*skills.Add(new template(SkillKind.throwing, "Throwing", "投てき", "", ""));
-        */
+
+        //複合スキル
+        skills.Add(new template(SkillKind.flame_slash, "Flame Slash", "火炎斬り", "", ""));
+        skills.Add(new template(SkillKind.mud_shot, "Mud Shot", "マッドショット", "", ""));
+        skills.Add(new template(SkillKind.storm_spike, "Storm Spike", "ストームスパイク", "", ""));
+        skills.Add(new template(SkillKind.animal_rush, "Animal Rush", "アニマルラッシュ", "", ""));
+
         /* 敵 */
         enemys.Add(new template(EnemyKind.nothing, "", "", "", ""));
         //ランク1

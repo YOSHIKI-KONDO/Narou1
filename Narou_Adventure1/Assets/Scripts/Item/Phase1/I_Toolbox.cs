@@ -7,6 +7,11 @@ using static UsefulMethod;
 
 public class I_Toolbox : ITEM
 {
+    public override bool Requires()
+    {
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.learn_use_tools] >= 1 &&
+               main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.buy_bag] >= 1;
+    }
 
     // Use this for initialization
     void Awake()

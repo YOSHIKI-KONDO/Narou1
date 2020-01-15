@@ -24,6 +24,8 @@ public class NormalAttack : SKILL {
 
         //attributes.Add(AttributeKind.fireMagic);    //add
         //attributes.Add(AttributeKind.waterSword);   //add
+
+        SetSource(NeedKind.attack);
     }
 
     // Use this for initialization

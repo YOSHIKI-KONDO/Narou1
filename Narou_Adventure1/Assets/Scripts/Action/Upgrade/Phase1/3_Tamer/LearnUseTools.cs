@@ -9,7 +9,7 @@ public class LearnUseTools : UPGRADE_ACTION
 {
     public override bool Requires()
     {
-        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.talk_fatherA] >= 1;
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.go_to_the_town] >= 1;
     }
     public override bool CompleteCondition()
     {

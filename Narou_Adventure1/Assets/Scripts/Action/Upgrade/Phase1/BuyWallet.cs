@@ -9,14 +9,14 @@ public class BuyWallet : UPGRADE_ACTION
 {
     public override bool Requires()
     {
-        return main.rsc.Value[(int)ResourceKind.gold] >= 3;
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.go_to_the_town] >= 1;
     }
 
     // Use this for initialization
     void Awake () {
-        AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.buy_wallet, 2,0,null,false,false);
+        AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.buy_wallet, 1,0,null,false,false);
         progress.initCostList.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -15));
-        progress.completeEffectList.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.max, 30));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.max, 20));
 	}
 
 	// Use this for initialization

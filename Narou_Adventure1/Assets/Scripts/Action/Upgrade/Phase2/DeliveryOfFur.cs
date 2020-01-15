@@ -20,7 +20,8 @@ public class DeliveryOfFur : UPGRADE_ACTION
     void Awake () {
         AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.delivery_of_fur, 1, 0, null, false, false);
         progress.initCostList.Add(new Dealing(ResourceKind.fur, Dealing.R_ParaKind.current, -1));
-        progress.completeEffectList.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 40));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 10));
+        progress.completeEffectList.Add(new Item_Dealing(ItemKind.claw_bar));
     }
 
 	// Use this for initialization

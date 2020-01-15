@@ -14,10 +14,10 @@ public class EarthWall : SKILL
 
     // Use this for initialization
     void Awake () {
-		AwakeSkill(SkillKind.earth_wall, 2);
+		AwakeSkill(SkillKind.earth_wall, 4);
         learnF.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -5));
         useCosts.Add(new Dealing(ResourceKind.earth, Dealing.R_ParaKind.current, -2));
-        useEffects.Add(new Temp_Regen_Deal(ResourceKind.defense, 2, 15));
+        useEffects.Add(new Temp_Regen_Deal(ResourceKind.defense, 2, 30));
 
         SetSource(NeedKind.enhance, NeedKind.earth);
     }
