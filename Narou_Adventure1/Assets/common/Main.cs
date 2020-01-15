@@ -112,6 +112,7 @@ public class Main : MonoBehaviour
         while (true)
         {
             allTime++;
+            announce.Add(allTime.ToString());
             yield return new WaitForSeconds(1.0f);
         }
     }

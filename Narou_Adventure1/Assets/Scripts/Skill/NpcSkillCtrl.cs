@@ -29,10 +29,10 @@ public class NpcSkillCtrl : BASE {
         public double MaxExp { get => CashMaxExp ?? CalculateMaxExp(); }
         public DoubleSync currentExp;
 
-        int initHp, plusHp;
-        int initStrength, plusStrength;
-        int initMStrength, plusMStrength;
-        int initDefense, plusDefense;
+        double initHp, plusHp;
+        double initStrength, plusStrength;
+        double initMStrength, plusMStrength;
+        double initDefense, plusDefense;
         double initDodge, plusDodge;
         double initCriticalC, plusCriticalC;
         double initCriticalD, plusCriticalD;
@@ -46,9 +46,9 @@ public class NpcSkillCtrl : BASE {
         bool casted;
         SKILL thisSkill;
 
-        public Npc(AllyKind kind, IntSync level, Main main, int initHp, int plusHp, int initStrength, int plusStrength,
-            int initMStrength, int plusMStrength, int initDefense, int plusDefense, int initDodge, int plusDodge,
-            int initCriticalC, int plusCriticalC, int initCriticalD, int plusCriticalD, double initExp, double powerExp,
+        public Npc(AllyKind kind, IntSync level, Main main, double initHp, double plusHp, double initStrength, double plusStrength,
+            double initMStrength, double plusMStrength, double initDefense, double plusDefense, double initDodge, double plusDodge,
+            double initCriticalC, double plusCriticalC, double initCriticalD, double plusCriticalD, double initExp, double powerExp,
             DoubleSync currentExp)
         {
             this.kind = kind;
@@ -232,10 +232,10 @@ public class NpcSkillCtrl : BASE {
         npcs = new Npc[main.SD.num_ally];
         npcs[(int)AllyKind.npcA] =
             new Npc(AllyKind.npcA, x => Sync(ref main.SR.levels_Ally[(int)AllyKind.npcA], x), main,
-            4, 1,           //hp
-            0, 1,           //str
-            0, 1,           //m str
-            0, 0,           //def
+            8, 2.2,           //hp
+            0, 2,           //str
+            0, 2.4,           //m str
+            0, 1.8,           //def
             0, 0,           //dodge
             0, 0,           //cri chance
             2, 0,           //cri factor

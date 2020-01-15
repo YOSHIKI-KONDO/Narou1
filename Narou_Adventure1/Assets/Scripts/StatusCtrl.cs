@@ -128,15 +128,24 @@ public class StatusCtrl : BASE {
         if (main.SR.released_Norn)
         {
             setActive(nornCmps.gameObject);
-            if (main.npcSkillCtrl.allyKinds.IndexOf(AllyKind.npcA) >= 0)
+            if(main.battleCtrl.dunKind != DungeonKind.nothing)
             {
+                //戦闘中は変更できないようにする
                 nornCmps.btn_a.interactable = false;
-                nornCmps.btn_b.interactable = true;
+                nornCmps.btn_b.interactable = false;
             }
             else
             {
-                nornCmps.btn_a.interactable = true;
-                nornCmps.btn_b.interactable = false;
+                if (main.npcSkillCtrl.allyKinds.IndexOf(AllyKind.npcA) >= 0)
+                {
+                    nornCmps.btn_a.interactable = false;
+                    nornCmps.btn_b.interactable = true;
+                }
+                else
+                {
+                    nornCmps.btn_a.interactable = true;
+                    nornCmps.btn_b.interactable = false;
+                }
             }
         }
         else

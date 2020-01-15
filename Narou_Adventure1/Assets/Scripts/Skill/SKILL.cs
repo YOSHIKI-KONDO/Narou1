@@ -228,7 +228,8 @@ public class SKILL : BASE, INeed, ISetSource
         components.nameText.text = Name_str;
         components.expSlider.value = (float)(exp / MaxExp());
         components.expText.text = tDigit(exp) + "/" + tDigit(MaxExp());
-        components.levelText.text = "Lv " + level.ToString() + "/" + MaxLevel().ToString();
+        //components.levelText.text = "Lv " + level.ToString() + "/" + MaxLevel().ToString();
+        components.levelText.text = "Lv " + level.ToString();
         if (popUp.gameObject.activeSelf) { ApplyPopUp(); }
 
         if (CompleteCondition())//条件を満たしたらもう出なくなる
