@@ -59,8 +59,10 @@ public class Announce : BASE {
 
     public void ResetText()
     {
-        announceTextLong.text = "";
-        announceTextShort.text = "";
+        for (int i = 0; i < 100; i++)
+        {
+            Add(" ");
+        }
     }
 
     // Use this for initialization
