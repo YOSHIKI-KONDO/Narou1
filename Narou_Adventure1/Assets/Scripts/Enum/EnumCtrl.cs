@@ -453,6 +453,8 @@ public class EnumCtrl : BASE {
         items.Add(new template(ItemKind.claw_bar, "Claw Bar", "バール", "", "魔法のステッキ。魔力を感じる。"));
         items.Add(new template(ItemKind.charm, "Charm", "御守り", "", ""));
         items.Add(new template(ItemKind.darkness_sword, "Darkness Sword", "ダークネスソード", "", ""));
+        items.Add(new template(ItemKind.woodshield, "Wood Shield,", "木の盾", "", ""));
+        items.Add(new template(ItemKind.old_robe, "Old Robe,", "古いローブ", "", ""));
 
         /* 必要条件 */
         needs.Add(new template(NeedKind.nothing, "", "", "", ""));

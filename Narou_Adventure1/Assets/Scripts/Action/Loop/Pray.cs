@@ -9,7 +9,7 @@ public class Pray : LOOP_ACTION
 {
     public override bool Requires()
     {
-        return main.rsc.Max((int)ResourceKind.action) >= 5;
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.talk_fatherA] >= 1;
     }
 
     // Use this for initialization

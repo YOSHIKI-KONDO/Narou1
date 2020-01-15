@@ -19,7 +19,7 @@ public class TalkFatherC : UPGRADE_ACTION
     // Use this for initialization
     void Awake () {
         AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.talk_fatherC, 1, 0, null, false, false);
-        progress.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -15));
+        progress.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -12));
         progress.completeEffectList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.max, 5));
     }
 
