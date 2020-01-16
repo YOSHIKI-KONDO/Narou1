@@ -21,7 +21,7 @@ public class EnemyParameter : BASE {
         parameters.Add(new parameter(EnemyKind.wolf,              3, 4.1, 2.4,  3.5,    1,  1,    1,   4));
         parameters.Add(new parameter(EnemyKind.snake,             7, 3.0, 4.5,  2.5,    1,  1,    1,   6));
         parameters.Add(new parameter(EnemyKind.demonic,           3, 5.0, 2.8,  2.2,    1,  1,    1,  15));
-        parameters.Add(new parameter(EnemyKind.sigurd,            4, 5.0, 2.2,  2.8,    1,  1,    1,   3));
+        parameters.Add(new parameter(EnemyKind.sigurd,            4, 5.0, 2.2,  2.8,    1,  2,    1,   3));
         parameters.Add(new parameter(EnemyKind.askr,              3, 4.4, 2.8,  2.8,    1,  1,    1,   3));
         parameters.Add(new parameter(EnemyKind.embla,             2, 4.7, 2.0,  3.3,    1,  1,    1,   3));
         parameters.Add(new parameter(EnemyKind.red_slime,         2, 3.3, 3.3,  3.3,    1,  1,    2,   9));
