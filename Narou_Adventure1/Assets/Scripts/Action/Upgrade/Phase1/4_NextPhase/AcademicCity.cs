@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using static UsefulMethod;
 
-public class AcademicCity : UPGRADE_ACTION
+public class AcademicCity : UPGRADE_ACTION //LeaveTheTownのような感じ
 {
     public override bool Requires()
     {

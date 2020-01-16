@@ -115,7 +115,7 @@ public class EnumCtrl : BASE {
         resources.Add(new template(ResourceKind.dough, "Dough", "パン生地", "", ""));//add
         resources.Add(new template(ResourceKind.bread, "Bread", "パン", "", ""));
         resources.Add(new template(ResourceKind.fish, "Fish", "魚", "", ""));
-        resources.Add(new template(ResourceKind.anchovy_sandwich, "Anchovy Sandwich", "アンチョビサンド", "Local specialty. Salty.", "故郷の名産物。塩味が効いている。"));
+        resources.Add(new template(ResourceKind.anchovy_sandwich, "AnchovySandwich", "アンチョビサンド", "Local specialty. Salty.", "故郷の名産物。塩味が効いている。"));
         resources.Add(new template(ResourceKind.filet_o_fish, "Filet-O-Fish", "フィレオフィッシュ", "Eating this makes you feel better even if you are depressed.", "落ち込んでいてもこれを食べたら元気が出る。"));
             //石
         resources.Add(new template(ResourceKind.stone, "Stone", "石", "Not just a stone. Easy to use, selected stone.", "ただの石じゃない。加工しやすい、選ばれし石。"));
@@ -199,7 +199,7 @@ public class EnumCtrl : BASE {
           //フェーズ２（学校）
         loopActions.Add(new template(ActionEnum.Loop.manual_labor, "Manual Labor", "肉体労働", "", ""));
         loopActions.Add(new template(ActionEnum.Loop.desk_work, "Desk Work", "デスクワーク", "", ""));
-        loopActions.Add(new template(ActionEnum.Loop.service_trade, "Service trade", "サービス業", "", ""));
+        loopActions.Add(new template(ActionEnum.Loop.service_trade, "Pub Waitron", "酒場の接客", "", ""));//modify
             //アビリティアクション
         loopActions.Add(new template(ActionEnum.Loop.pickpocket, "Pickpocket", "スリ", "", ""));
         loopActions.Add(new template(ActionEnum.Loop.bake_bread, "Bake Bread", "パンを焼く", "", ""));//add
@@ -246,16 +246,16 @@ public class EnumCtrl : BASE {
         upgradeActions.Add(new template(ActionEnum.Upgrade.warrior_school, "Warrior School", "戦士学校", "Decide to enter warrior school. You can't go back, so consider where you want to go.", "戦士学校への入学を決意する。後戻りはできないので入学先はしっかり考えよう。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.sorcerer_school, "Sorcerer School", "魔法学校", "Decide to enter Sorcerer school. You can't go back, so consider where you want to go.", "魔法学校への入学を決意する。後戻りはできないので入学先はしっかり考えよう。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.tamer_school, "Tamer School", "テイマー学校", "Decide to enter Tamer school. You can't go back, so consider where you want to go.", "テイマー学校への入学を決意する。後戻りはできないので入学先はしっかり考えよう。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.leave_the_town, "Leave the Town", "村を出る", "Leave the village. Head to the school city beyond the plains and forests. Make sure that you have nothing to do now.", "村を出る。平原と森を越えた先の学園都市に向かう。やり残したことはないか確認しよう。"));//modify
-
+        upgradeActions.Add(new template(ActionEnum.Upgrade.leave_the_town, "Talk with Father", "父と話す", "Leave the village. Head to the school city beyond the plains and forests. Make sure that you have nothing to do now.", "村を出るのか。母のことは任せたぞ。それと、やり残したことはないか確認しておきなさい。それと、この御守りを持っていきなさい。"));//modify
+        upgradeActions.Add(new template(ActionEnum.Upgrade.academic_city, "Leave the Town", "村を出る", "The girl says she does want to go with me. Prepare your luggage for two people.", "平原と森を越えた先の学園都市に向かう。村を出ようとすると少女に呼び止められた。少女が付いてくると言って聞かない。二人分の荷物を用意しよう。"));//modify
         upgradeActions.Add(new template(ActionEnum.Upgrade.shed, "Shed", "小屋", "", "平原をしばらく進むと、森の手前に小屋が見えた。"));//add
         upgradeActions.Add(new template(ActionEnum.Upgrade.talk_old_man, "Talk with Old man", "老人の話を聞く", "", "弱そうな子供だな。この先の森はより強い魔物が出る。防具を装備しなさい。ゴブリンの死体から木の盾を拝借するのだ。"));//add
         upgradeActions.Add(new template(ActionEnum.Upgrade.open_closet, "Open Closet", "クローゼットを開ける", "", "老人の目を欺くことなどたやすい。"));//add
 
         //フェーズ２（学校）
-        upgradeActions.Add(new template(ActionEnum.Upgrade.academic_city, "Academic City", "学園都市へ向かう", "The girl says she does want to go with me. Prepare your luggage for two people.", "少女が付いてくると言って聞かない。二人分の荷物を用意しよう。"));
+        
         upgradeActions.Add(new template(ActionEnum.Upgrade.into_a_dormitory, "Into a Dormitory", "学生寮に入る", "Breaks up with accompanying person and enters dormitory. \n[Please say hello to me when you are calm down.]", "同行者と別れ、寮に入る。「また後で、落ち着いたら挨拶に来てね。」"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.good_sleep, "Good Sleep", "快眠", "Rest Level Up!!", ""));//add
+        upgradeActions.Add(new template(ActionEnum.Upgrade.good_sleep, "Good Sleep", "快眠", "Rest Level Up!!", "休憩レベルアップ！！"));//add
         upgradeActions.Add(new template(ActionEnum.Upgrade.entrance_ceremony, "Entrance Ceremony", "入学式", "A stage for us. Feel like walking on air with thinking about my future.", "晴れ舞台だ。これからの生活に向けて気分が高揚する。"));
             //攫われイベント
         upgradeActions.Add(new template(ActionEnum.Upgrade.norns_room, "Norn's room", "ノルンの部屋に行く", "Go to the girl's room to say hello", "少女の部屋へ挨拶に向かう。"));

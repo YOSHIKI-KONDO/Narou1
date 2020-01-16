@@ -13,6 +13,10 @@ public class SmallHill : DUNGEON
     {
         return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.pick_flowers] >= 1;
     }
+    public override bool CompleteCondition()
+    {
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.into_a_dormitory] >= 1;
+    }
 
     // Use this for initialization
     void Awake () {

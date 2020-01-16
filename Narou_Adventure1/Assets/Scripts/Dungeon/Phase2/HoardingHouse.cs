@@ -31,6 +31,7 @@ public class HoardingHouse : DUNGEON
         //progressCost.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.3f));
 
         drops.Add(new Drop(ResourceKind.gold, 10, 100));
+        drops.Add(new Drop(ResourceKind.dough, 1, 60));
         firstDrops.Add(new Item_Drop(ItemKind.leather_vest, 100));
     }
 
