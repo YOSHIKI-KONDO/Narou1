@@ -14,10 +14,10 @@ public class AnimalAttack : SKILL
 
     // Use this for initialization
     void Awake () {
-		AwakeSkill(SkillKind.animal_attack, 10);
+		AwakeSkill(SkillKind.animal_attack, 2);
         learnF.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -5));
-        useCosts.Add(new Dealing(ResourceKind.animal, Dealing.R_ParaKind.current, -2));
-        warriorAtks.Add(new WarriorAttack(12));
+        useCosts.Add(new Dealing(ResourceKind.animal, Dealing.R_ParaKind.current, -1));
+        warriorAtks.Add(new WarriorAttack(13));
 
         SetSource(NeedKind.attack, NeedKind.animal);
     }

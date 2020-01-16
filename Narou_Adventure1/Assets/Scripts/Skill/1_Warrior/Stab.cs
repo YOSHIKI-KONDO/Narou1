@@ -14,10 +14,10 @@ public class Stab : SKILL
 
     // Use this for initialization
     void Awake () {
-		AwakeSkill(SkillKind.stab, 2);
+		AwakeSkill(SkillKind.stab, 1.8);
         learnF.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -5));
-        useCosts.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -1));
-        warriorAtks.Add(new WarriorAttack(12));
+        useCosts.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.9));
+        warriorAtks.Add(new WarriorAttack(10));
 
         SetSource(NeedKind.attack, NeedKind.spear, NeedKind.combo_arts);
 

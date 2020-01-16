@@ -14,10 +14,10 @@ public class LeftSmallSwing : SKILL
 
     // Use this for initialization
     void Awake () {
-		AwakeSkill(SkillKind.left_small_swing, 1);
+		AwakeSkill(SkillKind.left_small_swing, 1.2);
         learnF.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -5));
-        useCosts.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -1));
-        warriorAtks.Add(new WarriorAttack(6));
+        useCosts.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.6));
+        warriorAtks.Add(new WarriorAttack(7));
 
         SetSource(NeedKind.attack, NeedKind.rod, NeedKind.combo_arts);
 

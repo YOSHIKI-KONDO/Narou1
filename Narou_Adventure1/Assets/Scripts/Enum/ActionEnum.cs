@@ -104,6 +104,9 @@
             sorcerer_school,
             tamer_school,
             leave_the_town,
+            shed,
+            talk_old_man,
+            open_closet,
             //フェーズ２（学校）
             academic_city,
             into_a_dormitory,
@@ -113,6 +116,7 @@
             norns_room,
             desolate_room,
             rumor,
+            resucue_a_girl,
             //フリークエスト
             delivery_of_fur,
             house_clean_up,
