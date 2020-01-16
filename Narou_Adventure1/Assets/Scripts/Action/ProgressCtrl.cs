@@ -141,8 +141,8 @@ public class ProgressCtrl : BASE {
     {
         if(currentFunction != null)
         {
-            text.text = currentFunction.actionName;
-            text.text += "(" + (currentFunction.sliderValue * 100).ToString("F0") + "%)";
+            text.text = "Current : " + currentFunction.actionName;
+            //text.text += "(" + (currentFunction.sliderValue * 100).ToString("F0") + "%)";
         }
         else
         {

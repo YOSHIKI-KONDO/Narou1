@@ -18,18 +18,28 @@ public class OfflineBonus : BASE {
 
 	// Use this for initialization
 	void Start () {
-		//Debug.Log("You are left for " + DoubleTimeToDate(DeltaTimeFloat(lastTime)));
-		startText.text = Calculate();
-        if(startText.text != "")
-        {
-			bonusLabel.text = "Offline Effect";
-        }
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
+
+	bool called;
+    private void LateUpdate()
+    {
+        if(called == false)
+        {
+			startText.text = Calculate();
+			if (startText.text != "")
+			{
+				bonusLabel.text = "Offline Effect";
+			}
+
+			called = true;//一度しか呼ばない
+		}
+    }
 
     string Calculate()
     {
