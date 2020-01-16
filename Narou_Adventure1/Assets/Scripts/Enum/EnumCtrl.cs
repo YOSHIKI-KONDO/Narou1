@@ -415,7 +415,7 @@ public class EnumCtrl : BASE {
         items.Add(new template(ItemKind.toolbox, "Toolbox", "工具箱", "", ""));
         items.Add(new template(ItemKind.woodsword, "Wood Sword", "木の剣", "", ""));
         items.Add(new template(ItemKind.woodspear, "Wood Spear", "木の槍", "", ""));
-        items.Add(new template(ItemKind.woodstick, "Wood Stick", "木の杖", "Stick made of wood", ""));
+        items.Add(new template(ItemKind.woodstick, "Wood Stick", "木の杖", "", ""));
         items.Add(new template(ItemKind.fire_orb, "Fire Orb", "ファイアーオーブ", "An orb that holds the magic of fire. Magic beginners train with this.", "火の魔力を閉じ込めたオーブ。魔法初心者はこれを用いて訓練する。"));
         items.Add(new template(ItemKind.water_orb, "Water Orb", "ウォーターオーブ", "An orb that holds the magic of water. Magic beginners train with this.", "水の魔力を閉じ込めたオーブ。魔法初心者はこれを用いて訓練する。"));
         items.Add(new template(ItemKind.wind_orb, "Wind Orb", "ウインドオーブ", "An orb that holds the magic of wind. Magic beginners train with this.", "風の魔力を閉じ込めたオーブ。魔法初心者はこれを用いて訓練する。"));

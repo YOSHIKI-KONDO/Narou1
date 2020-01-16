@@ -234,7 +234,8 @@ public class BattleAndSkillCtrl : BASE {
                         , main.enumCtrl.allys[i].Name(), criticalSentense);
                 }
                 thisSkill.Produce();
-                main.announce_d.Add(main.enumCtrl.allys[i].Name() + " used " + main.enumCtrl.skills[(int)thisSkill.kind].Name());
+                //NOTE:攻撃のアナウンスと被るため、beta版ではコメントアウト
+                //main.announce_d.Add(main.enumCtrl.allys[i].Name() + " used " + main.enumCtrl.skills[(int)thisSkill.kind].Name());
             }
         }
     }
@@ -549,7 +550,7 @@ public class BattleAndSkillCtrl : BASE {
                 string additive = couldGet ? "" : " (but Inventory is full)";
                 main.announce_d.Add("LOOT [" + main.enumCtrl.enemys[(int)innerEnemy.kind].Name() + "] : "
                     + main.enumCtrl.items[(int)(drop as Item_Drop).itemKind].Name()
-                    + additive);
+                    + additive, Color.green);
             }
 
             main.announce_d.Add("LOOT [" + main.enumCtrl.enemys[(int)innerEnemy.kind].Name() + "] : " + main.enumCtrl.resources[(int)drop.kind].Name() + " + " +
@@ -799,7 +800,7 @@ public class BattleAndSkillCtrl : BASE {
                         //当たった
                         var cal_dmg = CalDmg(currentEnemys[i].attack, main.npcSkillCtrl.npcs[(int)target_npc].Defense);
                         main.npcSkillCtrl.npcs[(int)target_npc].currentHp -= cal_dmg;
-                        main.announce_d.Add(main.enumCtrl.enemys[i].Name() + " has attacked " + main.enumCtrl.allys[(int)target_npc].Name() + " for " + tDigit(cal_dmg) + " damages");
+                        main.announce_d.Add(main.enumCtrl.enemys[(int)currentEnemys[i].kind].Name() + " has attacked " + main.enumCtrl.allys[(int)target_npc].Name() + " for " + tDigit(cal_dmg) + " damages");
                         //やられたらcanFightから外す
                         if (main.npcSkillCtrl.npcs[(int)target_npc].currentHp <= 0)
                         {

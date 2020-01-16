@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
+using TMPro;
 //using MathNet.Numerics.Distributions;
 using static System.Math;
 
@@ -749,7 +750,26 @@ public class UsefulMethod : MonoBehaviour
     /// <summary>
     /// Textをfalseにし、フェードアウトさせるコルーチン
     /// </summary>
-    public static IEnumerator TextFadeOutCoroutine(Image txt, float Duration = 0.1f, int iteration = 10)
+    public static IEnumerator TextFadeOutCoroutine(Text txt, float Duration = 0.1f, int iteration = 10)
+    {
+        Color cashColor = txt.color;
+        Color tempColor = txt.color;
+
+        float interval = Duration / iteration;
+
+        for (float i = 1.0f; i >= 0.0f; i -= 1.0f / iteration)
+        {
+            tempColor.a = i;
+            txt.color = tempColor;
+            yield return new WaitForSeconds(interval);
+        }
+        txt.color = Color.clear;
+        txt.gameObject.SetActive(false);
+        txt.color = cashColor;
+    }
+
+    //overload
+    public static IEnumerator TextFadeOutCoroutine(TextMeshProUGUI txt, float Duration = 0.1f, int iteration = 10)
     {
         Color cashColor = txt.color;
         Color tempColor = txt.color;
