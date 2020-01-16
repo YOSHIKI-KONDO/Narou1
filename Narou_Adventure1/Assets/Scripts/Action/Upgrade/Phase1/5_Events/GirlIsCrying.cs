@@ -17,9 +17,7 @@ public class GirlIsCrying : UPGRADE_ACTION
                main.a_rsc.CurrentLevels[(int)AbilityKind.primary_wind_magic] >= 1 ||
                main.a_rsc.CurrentLevels[(int)AbilityKind.primary_earth_magic] >= 1 ||
                main.a_rsc.CurrentLevels[(int)AbilityKind.animal_handling] >= 1) ||
-               (main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.warrior_school] >= 1 ||
-               main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.sorcerer_school] >= 1 ||
-               main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.tamer_school] >= 1);
+               main.rsc.Max((int)ResourceKind.research) >= 80;
     }
 
     // Use this for initialization
