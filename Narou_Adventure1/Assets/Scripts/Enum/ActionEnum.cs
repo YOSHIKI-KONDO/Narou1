@@ -116,6 +116,7 @@
             norns_room,
             desolate_room,
             rumor,
+            resucue_a_girl,
             //フリークエスト
             delivery_of_fur,
             house_clean_up,
