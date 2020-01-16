@@ -86,7 +86,7 @@ public class Main : MonoBehaviour
         if (!S.isContinuePlay)
         {
             analytics.StartGame(); //analyticsに送信
-            announce.ResetText();  //最初だけテキストを全て消す
+            StartCoroutine(NewInvokeCor(() => announce.ResetText(), 0.1f));  //最初だけテキストを全て消す
             birthTime = DateTime.Now;
             lastTime = DateTime.Now;
             S.isContinuePlay = true;

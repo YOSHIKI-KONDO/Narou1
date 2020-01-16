@@ -247,7 +247,11 @@ public class EnumCtrl : BASE {
         upgradeActions.Add(new template(ActionEnum.Upgrade.sorcerer_school, "Sorcerer School", "魔法学校", "Decide to enter Sorcerer school. You can't go back, so consider where you want to go.", "魔法学校への入学を決意する。後戻りはできないので入学先はしっかり考えよう。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.tamer_school, "Tamer School", "テイマー学校", "Decide to enter Tamer school. You can't go back, so consider where you want to go.", "テイマー学校への入学を決意する。後戻りはできないので入学先はしっかり考えよう。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.leave_the_town, "Leave the Town", "村を出る", "Leave the village. Head to the school city beyond the plains and forests. Make sure that you have nothing to do now.", "村を出る。平原と森を越えた先の学園都市に向かう。やり残したことはないか確認しよう。"));
-          //フェーズ２（学校）
+        upgradeActions.Add(new template(ActionEnum.Upgrade.shed, "Shed", "小屋", "", "平原をしばらく進むと、森の手前に小屋が見えた。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.talk_old_man, "Talk with Old man", "老人の話を聞く", "", "弱そうな子供だな。この先の森はより強い魔物が出る。防具を装備しなさい。ゴブリンの死体から木の盾を拝借するのだ。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.open_closet, "Open Closet", "クローゼットを開ける", "", "老人の目を欺くことなどたやすい。"));
+
+        //フェーズ２（学校）
         upgradeActions.Add(new template(ActionEnum.Upgrade.academic_city, "Academic City", "学園都市へ向かう", "The girl says she does want to go with me. Prepare your luggage for two people.", "少女が付いてくると言って聞かない。二人分の荷物を用意しよう。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.into_a_dormitory, "Into a Dormitory", "学生寮に入る", "Breaks up with accompanying person and enters dormitory. \n[Please say hello to me when you are calm down.]", "同行者と別れ、寮に入る。「また後で、落ち着いたら挨拶に来てね。」"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.good_sleep, "Good Sleep", "快眠", "Rest Level Up!!", ""));
@@ -415,7 +419,7 @@ public class EnumCtrl : BASE {
         items.Add(new template(ItemKind.toolbox, "Toolbox", "工具箱", "", ""));
         items.Add(new template(ItemKind.woodsword, "Wood Sword", "木の剣", "", ""));
         items.Add(new template(ItemKind.woodspear, "Wood Spear", "木の槍", "", ""));
-        items.Add(new template(ItemKind.woodstick, "Wood Stick", "木の杖", "Stick made of wood", ""));
+        items.Add(new template(ItemKind.woodstick, "Wood Stick", "木の杖", "", ""));
         items.Add(new template(ItemKind.fire_orb, "Fire Orb", "ファイアーオーブ", "An orb that holds the magic of fire. Magic beginners train with this.", "火の魔力を閉じ込めたオーブ。魔法初心者はこれを用いて訓練する。"));
         items.Add(new template(ItemKind.water_orb, "Water Orb", "ウォーターオーブ", "An orb that holds the magic of water. Magic beginners train with this.", "水の魔力を閉じ込めたオーブ。魔法初心者はこれを用いて訓練する。"));
         items.Add(new template(ItemKind.wind_orb, "Wind Orb", "ウインドオーブ", "An orb that holds the magic of wind. Magic beginners train with this.", "風の魔力を閉じ込めたオーブ。魔法初心者はこれを用いて訓練する。"));

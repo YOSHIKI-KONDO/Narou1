@@ -79,7 +79,7 @@ public class UICtrl : BASE {
 
     private void FixedUpdate()
     {
-        apText.text = "AP : " + tDigit(main.rsc.Value[(int)ResourceKind.ap], 2);
+        apText.text = "AP : " + tDigit(main.rsc.Value[(int)ResourceKind.ap]);
         equipText.text = main.rsc.Value[(int)ResourceKind.equipSpace].ToString() + " / " + main.rsc.Max((int)ResourceKind.equipSpace).ToString();
         inventoryText.text = main.rsc.Value[(int)ResourceKind.inventorySpace].ToString() + " / " + main.rsc.Max((int)ResourceKind.inventorySpace).ToString();
         equipSlider.value = (float)(main.rsc.Value[(int)ResourceKind.equipSpace] / main.rsc.Max((int)ResourceKind.equipSpace));

@@ -46,6 +46,13 @@ public class SkillSlot : BASE {
         if (popUp.gameObject.activeSelf)
         {
             main.battleCtrl.skills[(int)kind].ApplyPopUp();
+            //色変更
+            if (main.battleCtrl.skills[(int)kind].combo != null)
+            {
+                popUp.texts[9].color = main.battleCtrl.skills[(int)kind].popUp.texts[9].color;
+                popUp.texts[7].color = main.battleCtrl.skills[(int)kind].popUp.texts[7].color;
+                popUp.texts[11].color = main.battleCtrl.skills[(int)kind].popUp.texts[11].color;
+            }
 
             ChangeTextAdaptive(main.battleCtrl.skills[(int)kind].Name_str, popUp.texts[0], popUp.texts[0].gameObject);
             ChangeTextAdaptive(main.battleCtrl.skills[(int)kind].Description_str, popUp.texts[1], popUp.texts[1].gameObject);

@@ -17,6 +17,8 @@ public class InCellar : UPGRADE_ACTION
     void Awake () {
         AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.in_cellar, 1, 0, null, false, false);
         progress.completeEffectList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.max, 20));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.equipSpace, Dealing.R_ParaKind.max, 2));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.inventorySpace, Dealing.R_ParaKind.max, 2));
     }
 
 	// Use this for initialization

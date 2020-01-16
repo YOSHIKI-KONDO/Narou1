@@ -58,7 +58,22 @@ public class ProgressCtrl : BASE {
 
     void ApplyTopActionMark()
     {
-        if(currentFunction == null) { return; }
+        if(currentFunction == null)
+        {
+            foreach (var obj in actionObjs)
+            {
+                setFalse(obj.Item1);
+            }
+            return;
+        }
+        if(currentFunction.elementKind == ElementKind.nothing)
+        {
+            foreach (var obj in actionObjs)
+            {
+                setFalse(obj.Item1);
+            }
+            return;
+        }
         foreach (var obj in actionObjs)
         {
             if(obj.Item2 == currentFunction.elementKind)
