@@ -459,8 +459,8 @@ public class EnumCtrl : BASE {
         items.Add(new template(ItemKind.claw_bar, "Claw Bar", "バール", "", "魔法のステッキ。魔力を感じる。"));//add
         items.Add(new template(ItemKind.charm, "Charm", "御守り", "", ""));//add
         items.Add(new template(ItemKind.darkness_sword, "Darkness Sword", "ダークネスソード", "", ""));//add
-        items.Add(new template(ItemKind.woodshield, "Wood Shield,", "木の盾", "", ""));//add
-        items.Add(new template(ItemKind.old_robe, "Old Robe,", "古いローブ", "", ""));//add
+        items.Add(new template(ItemKind.woodshield, "Wood Shield", "木の盾", "", ""));//add
+        items.Add(new template(ItemKind.old_robe, "Old Robe", "古いローブ", "", ""));//add
 
         /* 必要条件 */
         needs.Add(new template(NeedKind.nothing, "", "", "", ""));
@@ -547,10 +547,10 @@ public class EnumCtrl : BASE {
         skills.Add(new template(SkillKind.picking_up_coins, "Picking up Coins", "小銭拾い", "", ""));
 
         //複合スキル
-        skills.Add(new template(SkillKind.flame_slash, "Flame Slash", "火炎斬り", "", ""));
-        skills.Add(new template(SkillKind.mud_shot, "Mud Shot", "マッドショット", "", ""));
-        skills.Add(new template(SkillKind.storm_spike, "Storm Spike", "ストームスパイク", "", ""));
-        skills.Add(new template(SkillKind.animal_rush, "Animal Rush", "アニマルラッシュ", "", ""));
+        skills.Add(new template(SkillKind.flame_slash, "Flame Slash", "火炎斬り", "", ""));//add
+        skills.Add(new template(SkillKind.mud_shot, "Mud Shot", "マッドショット", "", ""));//add
+        skills.Add(new template(SkillKind.storm_spike, "Storm Spike", "ストームスパイク", "", ""));//add
+        skills.Add(new template(SkillKind.animal_rush, "Animal Rush", "アニマルラッシュ", "", ""));//add
 
         /* 敵 */
         enemys.Add(new template(EnemyKind.nothing, "", "", "", ""));
