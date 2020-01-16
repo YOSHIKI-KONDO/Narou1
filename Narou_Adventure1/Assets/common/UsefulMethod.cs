@@ -953,7 +953,7 @@ public class UsefulMethod : MonoBehaviour
         double baseDmg = (dmg / 2d) - (def / 4d);
         int randomRange = (int)((1d / 2d) * Math.Sqrt(baseDmg));
         double randomFactor = UnityEngine.Random.Range(-randomRange, randomRange + 1);
-        return (baseDmg + randomFactor) > 0.1 ? baseDmg + randomFactor : 0.1;
+        return (baseDmg + randomFactor) > 0.5 ? baseDmg + randomFactor : 0.5;
     }
 
     public static void ChangeTextAdaptive(string sentense, Text text, params GameObject[] objects)
