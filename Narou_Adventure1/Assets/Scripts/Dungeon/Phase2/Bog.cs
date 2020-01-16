@@ -32,7 +32,7 @@ public class Bog : DUNGEON
 
         drops.Add(new Drop(ResourceKind.gold, 10, 100));
         drops.Add(new Drop(ResourceKind.stone, 5, 80));
-        firstDrops.Add(new Drop(ResourceKind.magi_stone, 1, 100));
+        firstDrops.Add(new Item_Drop(ItemKind.stone_shield, 100));
     }
 
 	// Use this for initialization

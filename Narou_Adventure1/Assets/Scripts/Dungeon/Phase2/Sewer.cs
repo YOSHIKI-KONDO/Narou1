@@ -31,7 +31,8 @@ public class Sewer : DUNGEON
         //progressCost.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.3f));
 
         drops.Add(new Drop(ResourceKind.gold, 10, 100));
-        firstDrops.Add(new Item_Drop(ItemKind.stone_shield, 100));
+        drops.Add(new Item_Drop(ItemKind.plate_mail, 1));
+        firstDrops.Add(new Item_Drop(ItemKind.water_rod, 100));
     }
 
 	// Use this for initialization

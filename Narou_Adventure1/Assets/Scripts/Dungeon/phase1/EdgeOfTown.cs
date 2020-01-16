@@ -13,6 +13,10 @@ public class EdgeOfTown : DUNGEON
     {
         return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.punish_the_bad_kids] >= 1;
     }
+    public override bool CompleteCondition()
+    {
+        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.into_a_dormitory] >= 1;
+    }
 
     // Use this for initialization
     void Awake () {

@@ -24,7 +24,6 @@ public class AnimalRush : SKILL
         SetSource(NeedKind.attack, NeedKind.animal, NeedKind.rod, NeedKind.combo_arts);
 
         combo = new Interval_SC(NeedKind.combo_arts, 0.7f);
-        combo = new Interval_SC(NeedKind.animal, 0.7f);
     }
 
 	// Use this for initialization
