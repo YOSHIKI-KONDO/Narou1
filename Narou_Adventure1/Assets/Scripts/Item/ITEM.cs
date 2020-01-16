@@ -276,7 +276,7 @@ public class ITEM : BASE, INeed, ISetSource
         //自動でコストの文章を生成
         //Name_str = main.enumCtrl.items[(int)kind].Name();
         Description_str = main.enumCtrl.items[(int)kind].Description();
-        if (haveSource) { Description_str += Description_str == "" ? SourceDetail() : "\n" + SourceDetail(); }
+        //if (haveSource) { Description_str += Description_str == "" ? SourceDetail() : "\n" + SourceDetail(); }
         Max_Str = "Max:" + ((MaxEquip == null) ? "∞" : MaxEquip.ToString());
         Effect_str = ProgressDetail(EffectLists, LevelFactor());
         Cost_str = ProgressDetail(BuyLists);
@@ -287,7 +287,10 @@ public class ITEM : BASE, INeed, ISetSource
 
         //needが設定されている場合にのみ書き換える。
         //そのため、ない場合は手動でNeed_strを変えることが可能。
-        if (need.hasNeeds) { Need_str = need.Detail(); }
+        /***** 今だけNeedにsourceの情報を入れている *****/
+        //if (need.hasNeeds) { Need_str = need.Detail(); }
+        if (haveSource) { Need_str = SourceDetail(); }
+        /***** ******************************* *****/
 
         ChangeTextAdaptive(Name_str, popUp.texts[0], popUp.texts[0].gameObject);
         ChangeTextAdaptive(rarityText.text, popUp.texts[1], popUp.texts[1].gameObject);
