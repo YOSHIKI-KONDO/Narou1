@@ -9,9 +9,7 @@ public class ThankYouForPlaying : UPGRADE_ACTION
 {
     public override bool Requires()
     {
-        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.apprentice_warrior] >= 1 ||
-               main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.apprentice_sorcerer] >= 1 ||
-               main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.apprentice_tamer] >= 1 ;
+        return main.SR.clearNum_Dungeon[(int)DungeonKind.demonic_cellar] >= 1;
     }
 
     public override void CompleteAction()

@@ -16,7 +16,7 @@ public class LeftUpperSlash : SKILL
     void Awake () {
 		AwakeSkill(SkillKind.left_upper_slash, 2.5);
         learnF.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -5));
-        useCosts.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -1));
+        useCosts.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -1.1));
         warriorAtks.Add(new WarriorAttack(15));
 
         SetSource(NeedKind.attack, NeedKind.sword, NeedKind.combo_arts);
