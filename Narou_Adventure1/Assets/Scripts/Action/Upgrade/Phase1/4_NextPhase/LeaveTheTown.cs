@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using static UsefulMethod;
 
-public class LeaveTheTown : UPGRADE_ACTION
+public class LeaveTheTown : UPGRADE_ACTION //TalkFatherEのような感じ
 {
     public override bool Requires()
     {

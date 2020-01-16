@@ -9,7 +9,7 @@ public class RuneAugmentation : UPGRADE_ACTION
 {
     public override bool Requires()
     {
-        return main.rsc.Max((int)ResourceKind.action) >= 50;
+        return main.rsc.Max((int)ResourceKind.research) >= 50;
     }
 
     // Use this for initialization

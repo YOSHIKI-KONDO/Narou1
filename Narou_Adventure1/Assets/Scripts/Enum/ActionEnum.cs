@@ -104,11 +104,11 @@
             sorcerer_school,
             tamer_school,
             leave_the_town,
+            academic_city,
             shed,
             talk_old_man,
             open_closet,
             //フェーズ２（学校）
-            academic_city,
             into_a_dormitory,
             good_sleep,
             entrance_ceremony,
