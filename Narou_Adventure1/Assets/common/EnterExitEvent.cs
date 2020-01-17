@@ -6,14 +6,20 @@ public class EnterExitEvent : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 {
     public Action EnterEvent;
     public Action ExitEvent;
+    public Action DisableEvent;
 
     public void OnPointerEnter(PointerEventData e)
     {
-        EnterEvent();
+        EnterEvent?.Invoke();
     }
 
     public void OnPointerExit(PointerEventData e)
     {
-        ExitEvent();
+        ExitEvent?.Invoke();
+    }
+
+    void OnDisable()
+    {
+        DisableEvent?.Invoke();
     }
 }

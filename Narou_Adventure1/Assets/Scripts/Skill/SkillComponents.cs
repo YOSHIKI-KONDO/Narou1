@@ -10,6 +10,7 @@ public class SkillComponents : BASE {
     public Button setButton;
     public Text nameText;
     public GameObject newObject;
+    public GameObject highLight;
     public Transform AttributesParent;
     public Slider expSlider;
     public Text expText;

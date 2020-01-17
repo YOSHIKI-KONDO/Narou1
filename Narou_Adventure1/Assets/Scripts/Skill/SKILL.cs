@@ -12,8 +12,10 @@ public class SKILL : BASE, INeed, ISetSource
     public ReleaseFunction release;
     public InstantFunction learnF;
     public NeedFunciton need;
+    public HighLightFunction highLightF;
     SkillComponents components;
     GameObject newObject;
+    public GameObject highLight;
 
     public bool isCombo;    //コンボが発生しているかどうか
     public bool PayedCost;   //コストを払ったかどうか
@@ -187,6 +189,7 @@ public class SKILL : BASE, INeed, ISetSource
         components = GetComponent<SkillComponents>();
         components.nameText.text = Name_str;
         newObject = components.newObject;
+        highLight = components.highLight;
 
         this.kind = Kind;
         this.init_maxValue = init_maxValue;
@@ -213,6 +216,8 @@ public class SKILL : BASE, INeed, ISetSource
     {
         ApplyPopUp();
         main.iconCtrl.AddIcon(sources, components.AttributesParent);
+        highLightF = gameObject.AddComponent<HighLightFunction>();
+        highLightF.StartContents(highLight, useEffects);
         SyncLevel();
     }
 

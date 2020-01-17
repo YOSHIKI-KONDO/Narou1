@@ -13,11 +13,13 @@ public class UPGRADE_ACTION : ACTION, INeed
     public ReleaseFunction release;
     public ProgressFunction progress;
     public NeedFunciton need;
+    HighLightFunction highLightF;
     ActionComponents components;
     public Slider slider;
     Text text;
     GameObject newObject;
     GameObject actionMark;
+    public GameObject highLight;
 
     public double MaxValue;
     public double CurrentValue;
@@ -54,6 +56,7 @@ public class UPGRADE_ACTION : ACTION, INeed
         text = components.text;
         newObject = components.newObject;
         actionMark = components.actionMark;
+        highLight = components.highLight;
         if (components.slider != null)
         {
             slider = components.slider;
@@ -61,7 +64,8 @@ public class UPGRADE_ACTION : ACTION, INeed
         if (onSlider == false) { setFalse(slider.gameObject); }
 
         this.kind = Kind;
-        main.checkActions.upgrades[(int)kind] = kind;   //hierarchyチェック
+        //main.checkActions.upgrades[(int)kind] = kind;   //hierarchyチェック
+        main.actionContainer.upgrades[(int)kind] = this;
         this.maxNum = maxNum;
         PlusValue = plusValue;
         MaxValue = maxValue;
@@ -94,6 +98,9 @@ public class UPGRADE_ACTION : ACTION, INeed
     {
         progress.ApplySlider(MaxValue);
         ApplyEffectLevel();
+        highLightF = gameObject.AddComponent<HighLightFunction>();
+        highLightF.StartContents(highLight, progress.progressEffectList);
+        highLightF.StartContents(highLight, progress.completeEffectList);
     }
 
     // Update is called once per frame

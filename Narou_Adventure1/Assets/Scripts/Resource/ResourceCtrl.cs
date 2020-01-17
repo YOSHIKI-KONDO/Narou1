@@ -93,8 +93,8 @@ public class ResourceCtrl : BASE {
             Max_Base[index_exp] = 9 + 5 * Math.Pow(main.SR.level, 2.1);  //最大値を設定
             Value[index_exp] -= Max(index_exp);
             main.SR.level++;
-            main.announce.Add("Level UP! (" + (main.SR.level - 1).ToString() + "→" + main.SR.level.ToString() + ")", Color.green);
-            main.announce_d.Add("Level UP! (" + (main.SR.level - 1).ToString() + "→" + main.SR.level.ToString() + ")", Color.green);
+            main.announce.Add("Level UP! (" + (main.SR.level - 1).ToString() + "→" + main.SR.level.ToString() + ")", Color.red);
+            main.announce_d.Add("Level UP! (" + (main.SR.level - 1).ToString() + "→" + main.SR.level.ToString() + ")", Color.red);
             main.status.LevelUp(); //ステータスを増やす
             AnalyticsEvent.LevelUp(main.SR.level); //レベルを送信
         }

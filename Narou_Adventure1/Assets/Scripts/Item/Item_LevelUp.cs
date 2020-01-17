@@ -19,6 +19,8 @@ public class Item_LevelUp : BASE
     bool hovered;
     EnterExitEvent eeevent;
     ITEM[] items;
+    public GameObject highLight;
+    HighLightFunction highLightF;
 
     //ItemCtrlから呼ぶ
     public void StartLevelUp(ItemKind kind)
@@ -55,6 +57,10 @@ public class Item_LevelUp : BASE
         lockToggle.isOn = main.SR.locked_Item[(int)kind];//セーブを代入
 
         main.iconCtrl.AddIcon(items[(int)kind].sources, attributesParent);
+
+        //ハイライト
+        highLightF = gameObject.AddComponent<HighLightFunction>();
+        highLightF.StartContents(highLight, items[(int)kind].EffectLists);
     }
 
     // Update is called once per frame

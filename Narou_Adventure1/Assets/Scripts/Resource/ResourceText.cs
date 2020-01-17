@@ -15,6 +15,8 @@ public class ResourceText : BASE {
     string Name_str, Description_str, Regen_str, Effect_str;
     public string Others_str;
     public List<Dealing> effects = new List<Dealing>();
+    public GameObject highLight;
+    EnterExitEvent eeevent;
 
     bool Requires()
     {
@@ -40,6 +42,11 @@ public class ResourceText : BASE {
             main.enumCtrl.resources[(int)kind].Name() + "(Resource)");
         popUp = main.resourcePopUp.StartPopUp(gameObject, main.windowShowCanvas);
         popUp.EnterAction = ApplyPopUp;
+
+        eeevent = gameObject.AddComponent<EnterExitEvent>();
+        eeevent.EnterEvent = () => main.highLightCtrl.ApplyContents(kind, true);     //highLightFunctionを使用せずにそのまま書く
+        eeevent.ExitEvent = () => main.highLightCtrl.ApplyContents(kind, false);     //highLightFunctionを使用せずにそのまま書く
+        eeevent.DisableEvent = () => main.highLightCtrl.ApplyContents(kind, false);  //highLightFunctionを使用せずにそのまま書く
     }
 
     private void FixedUpdate()

@@ -70,6 +70,7 @@ public class UsefulMethod : MonoBehaviour
     }
     public static void setActive(GameObject go)
     {
+        if (go == null) { return; }
         if (!go.activeSelf)
         {
             go.SetActive(true);
@@ -78,6 +79,7 @@ public class UsefulMethod : MonoBehaviour
 
     public static void setActive(GameObject go, bool bo)
     {
+        if (go == null) { return; }
         if (!go.activeSelf&&bo)
         {
             go.SetActive(true);
@@ -86,6 +88,7 @@ public class UsefulMethod : MonoBehaviour
 
     public static void setFalse(GameObject go)
     {
+        if(go == null) { return; }
         if (go.activeSelf)
         {
             go.SetActive(false);
