@@ -52,7 +52,7 @@
     //テイマー
     animal_attack,
     picking_up_coins,
-
+    mad_animal,
     //複合スキル
     flame_slash,
     mud_shot,

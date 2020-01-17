@@ -29,6 +29,7 @@ public class AB_AnimalHandling : ABILITY
 
         unlocks.Add(new SkillUnlock(1, SkillKind.animal_attack));
         unlocks.Add(new SkillUnlock(4, SkillKind.picking_up_coins));
+        unlocks.Add(new SkillUnlock(7, SkillKind.mad_animal));
     }
 
 	// Use this for initialization

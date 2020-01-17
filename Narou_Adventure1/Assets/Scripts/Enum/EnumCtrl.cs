@@ -555,6 +555,7 @@ public class EnumCtrl : BASE {
         //テイマー
         skills.Add(new template(SkillKind.animal_attack, "Animal Attack", "アニマルアタック", "", ""));
         skills.Add(new template(SkillKind.picking_up_coins, "Picking up Coins", "小銭拾い", "", ""));
+        skills.Add(new template(SkillKind.mad_animal, "Mad Animal", "マッドアニマル", "", ""));
 
         //複合スキル
         skills.Add(new template(SkillKind.flame_slash, "Flame Slash", "火炎斬り", "", ""));//add
