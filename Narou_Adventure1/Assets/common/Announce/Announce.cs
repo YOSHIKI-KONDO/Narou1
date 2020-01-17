@@ -26,7 +26,7 @@ public class Announce : BASE {
 
         if (switchImage != null)
         {
-            switchImage.sprite = textDetailPanel.activeSelf ? upSprite : downSprite;
+            switchImage.sprite = textDetailPanel.activeSelf ? downSprite : upSprite;
         }
     }
 
