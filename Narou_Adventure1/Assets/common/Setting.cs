@@ -6,6 +6,10 @@ using UnityEngine.UI;
 using static UsefulMethod;
 
 public class Setting : BASE {
+    //UI
+    public Slider SESlider, BGMSlider;
+    public Toggle buttonHighLightToggle;
+    public Toggle resourceHighLightToggle;
 
     public float SEVolume
     {
@@ -26,7 +30,23 @@ public class Setting : BASE {
         }
     }
 
-    public Slider SESlider, BGMSlider;
+    
+
+    void Save()
+    {
+        //SEVolume = SESlider.value;
+        //BGMVolume = BGMSlider.value;
+        main.SR.isOn_ButtonHighLight = buttonHighLightToggle.isOn;
+        main.SR.isOn_ResourceHighLight = resourceHighLightToggle.isOn;
+    }
+
+    void Load()
+    {
+        //SESlider.value = SEVolume;
+        //BGMSlider.value = BGMVolume;
+        buttonHighLightToggle.isOn = main.SR.isOn_ButtonHighLight;
+        resourceHighLightToggle.isOn = main.SR.isOn_ResourceHighLight;
+    }
 
     // Use this for initialization
     void Awake () {
@@ -35,9 +55,7 @@ public class Setting : BASE {
 
     private void Start()
     {
-        //SESlider.value = SEVolume;
-        //BGMSlider.value = BGMVolume;
-
+        Load();
         StartCoroutine(FixedUpdateCor());
     }
 
@@ -45,8 +63,7 @@ public class Setting : BASE {
     {
         while (true)
         {
-            //SEVolume = SESlider.value;
-            //BGMVolume = BGMSlider.value;
+            Save();
             yield return new WaitForSeconds(main.tick);
         }
     }

@@ -85,8 +85,7 @@ public class LOOP_ACTION : ACTION, INeed {
         progress.ApplySlider(MaxValue);
         ApplyEffectLevel();
         highLightF = gameObject.AddComponent<HighLightFunction>();
-        highLightF.StartContents(highLight, progress.progressEffectList);
-        highLightF.StartContents(highLight, progress.completeEffectList);
+        highLightF.StartContents(highLight, progress.progressEffectList, progress.completeEffectList);
     }
 
     // Update is called once per frame

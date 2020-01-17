@@ -14,7 +14,7 @@ public class Load : BASE, IPointerDownHandler
     public Button saveButton;
     public Button hardResetButton;
     string sceneName = "main";
-    string gameTitle = "No-Name-Game";
+    string gameTitle = "AnotherChronicle";
     string saveTitle, saveContent;
     bool isOver;
     AES aes = new AES();

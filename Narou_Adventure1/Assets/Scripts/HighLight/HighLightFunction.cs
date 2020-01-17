@@ -17,7 +17,7 @@ public class HighLightFunction : BASE {
     /// <summary>
     /// コンテンツからAddした後に呼ぶ
     /// </summary>
-    public void StartContents(GameObject highLightObj, List<Dealing> dealings)
+    public void StartContents(GameObject highLightObj, params List<Dealing>[] Dealings)
     {
         StartBASE();
         this.highLightObj = highLightObj;
@@ -26,24 +26,30 @@ public class HighLightFunction : BASE {
         {
             eeevent = gameObject.AddComponent<EnterExitEvent>();
         }
-        eeevent.EnterEvent = () => ApplyResource(dealings, true);
-        eeevent.ExitEvent = () => ApplyResource(dealings, false);
 
-        //highlightctrlに反映
-        foreach (var deal in dealings)
+        eeevent.EnterEvent = () => ApplyResource(true, Dealings);
+        eeevent.ExitEvent = () => ApplyResource(false, Dealings);
+        foreach (var dealings in Dealings)
         {
-            if(deal.rscKind is ResourceKind == false) { continue; }
-            main.highLightCtrl.resourceHighLights[(int)(ResourceKind)deal.rscKind].functions.Add(this);
+            //highlightctrlに反映
+            foreach (var deal in dealings)
+            {
+                if (deal.rscKind is ResourceKind == false) { continue; }
+                main.highLightCtrl.resourceHighLights[(int)(ResourceKind)deal.rscKind].functions.Add(this);
+            }
         }
     }
 
-    void ApplyResource(List<Dealing> dealings, bool onHighLight)
+    void ApplyResource(bool onHighLight, params List<Dealing>[] Dealings)
     {
-        for (int i = 0; i < dealings.Count; i++)
+        foreach (var dealings in Dealings)
         {
-            if(dealings[i].rscKind is ResourceKind == false) { continue; }
-            //dealingのrscKindがリソース
-            main.highLightCtrl.ApplyResource((ResourceKind)dealings[i].rscKind, onHighLight);
+            for (int i = 0; i < dealings.Count; i++)
+            {
+                if (dealings[i].rscKind is ResourceKind == false) { continue; }
+                //dealingのrscKindがリソース
+                main.highLightCtrl.ApplyResource((ResourceKind)dealings[i].rscKind, onHighLight);
+            }
         }
     }
 }

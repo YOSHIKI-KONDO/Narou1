@@ -33,6 +33,7 @@ public class HighLightCtrl : BASE {
 
     public void ApplyResource(ResourceKind resourceKind, bool onHighLight)
     {
+        if(main.SR.isOn_ResourceHighLight == false) { return; }
         if(resources[(int)resourceKind] == null) { return; }
 		if (resources[(int)resourceKind].highLight == null) { return; }
 		if (onHighLight)
@@ -47,7 +48,8 @@ public class HighLightCtrl : BASE {
 
     public void ApplyContents(ResourceKind resourceKind, bool onHighLight)
     {
-		if (resourceKind == ResourceKind.nothing) { return; }
+        if (main.SR.isOn_ButtonHighLight == false) { return; }
+        if (resourceKind == ResourceKind.nothing) { return; }
         foreach (var hl in resourceHighLights[(int)resourceKind].functions)
         {
             if (onHighLight)
