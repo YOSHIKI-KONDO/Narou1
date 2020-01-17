@@ -55,6 +55,7 @@ public class Main : MonoBehaviour
     public AnalyticsCtrl analytics;
     public IconCtrl iconCtrl;
     public UICtrl uiCtrl;
+    public HighLightCtrl highLightCtrl;
     public Announce announce;
     public Announce announce_d; //dungeon
     public Focus focus;
@@ -62,6 +63,8 @@ public class Main : MonoBehaviour
     public EnemyParameter enemyParameter;
     public CheckDifficulty checkDifficulty;
     public CheckActions checkActions;
+    public ActionContainer actionContainer;
+    public AbilityContainer abilityContainer;
 
     /* プレハブ */
     public PopUp ActionPopUpPre;

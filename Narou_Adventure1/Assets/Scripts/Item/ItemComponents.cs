@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ItemComponents : MonoBehaviour
 {
     public GameObject newObj;
+    public GameObject highLight;
     public Toggle lockToggle;
     public Transform AttributesParent;
     public Text nameText;

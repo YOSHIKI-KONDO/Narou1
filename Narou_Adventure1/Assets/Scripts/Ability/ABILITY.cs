@@ -16,9 +16,11 @@ public class ABILITY : BASE, INeed, ISetSource
     public AbilityFunction progress;
     public NeedFunciton need;
     public UnlockFunction unlockF;
+    public HighLightFunction highLightF;
     AbilityComponents components;
     GameObject newObject;
     GameObject actionMark;
+    public GameObject highLight;
     public List<NeedKind> sources = new List<NeedKind>();
     protected List<IInternalUnlock> unlocks = new List<IInternalUnlock>();
 
@@ -69,8 +71,10 @@ public class ABILITY : BASE, INeed, ISetSource
         components = GetComponent<AbilityComponents>();
         newObject = components.newText;
         actionMark = components.actionMark;
+        highLight = components.highLight;
 
         this.kind = Kind;
+        main.abilityContainer.abilitys[(int)kind] = this;
         this.init_exp = initExp;
         this.bottom_exp = bottomExp;
 
@@ -107,6 +111,8 @@ public class ABILITY : BASE, INeed, ISetSource
         progress.ApplySlider(MaxExp());
         main.iconCtrl.AddIcon(sources, components.attributesParent);
         InitializeUnlodkFunction();
+        highLightF = gameObject.AddComponent<HighLightFunction>();
+        highLightF.StartContents(highLight, progress.completeEffectList);
     }
 
     // Update is called once per frame
@@ -208,7 +214,7 @@ public class ABILITY : BASE, INeed, ISetSource
                 }
                 else
                 {
-                    sum += "???";
+                    sum += "???(Instant Action)";
                 }
             }
             else if (unlocks[i] is LoopUnlock)
@@ -221,7 +227,7 @@ public class ABILITY : BASE, INeed, ISetSource
                 }
                 else
                 {
-                    sum += "???";
+                    sum += "???(Loop Aciton)";
                 }
             }
             else if (unlocks[i] is UpgradeUnlock)
@@ -234,7 +240,7 @@ public class ABILITY : BASE, INeed, ISetSource
                 }
                 else
                 {
-                    sum += "???";
+                    sum += "???(Upgrade Action)";
                 }
             }
             else if (unlocks[i] is AbilityUnlock)
@@ -247,7 +253,7 @@ public class ABILITY : BASE, INeed, ISetSource
                 }
                 else
                 {
-                    sum += "???";
+                    sum += "???(Ability)";
                 }
             }
             else if (unlocks[i] is SkillUnlock)
@@ -260,7 +266,7 @@ public class ABILITY : BASE, INeed, ISetSource
                 }
                 else
                 {
-                    sum += "???";
+                    sum += "???(Skill)";
                 }
             }
             else if (unlocks[i] is ItemUnlock)
@@ -273,7 +279,7 @@ public class ABILITY : BASE, INeed, ISetSource
                 }
                 else
                 {
-                    sum += "???";
+                    sum += "???(Item)";
                 }
             }
             else if (unlocks[i] is DungeonUnlock)
@@ -286,7 +292,7 @@ public class ABILITY : BASE, INeed, ISetSource
                 }
                 else
                 {
-                    sum += "???";
+                    sum += "???(Dungeon)";
                 }
             }
             else

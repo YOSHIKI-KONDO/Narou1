@@ -16,7 +16,7 @@ public class OakForest : DUNGEON
 
     // Use this for initialization
     void Awake () {
-        AwakeDungeon(oak_forest, ResourceKind.itemPoint1, 1);
+        AwakeDungeon(oak_forest, ResourceKind.itemPoint1, 22);
         enemyList.Add(new EnemyKind[] { bird, bird, bird });
         enemyList.Add(new EnemyKind[] { wolf, wolf });
         enemyList.Add(new EnemyKind[] { wolf, bird, rat });

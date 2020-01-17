@@ -18,6 +18,8 @@ public class Item_Inventory : BASE
     public string Name_str, Description_str, Max_Str, Need_str, Effect_str, Cost_str, Sell_str, LvCost_Str, LvEffect_Str;
     public bool Watched { get => main.SR.watched_Inventory[(int)kind]; set => main.SR.watched_Inventory[(int)kind] = value; }
     bool hovered;
+    public GameObject highLight;
+    HighLightFunction highLightF;
     EnterExitEvent eeevent;
     ITEM[] items;
 
@@ -54,6 +56,10 @@ public class Item_Inventory : BASE
         lockToggle.isOn = main.SR.locked_Item[(int)kind];//セーブを代入
 
         main.iconCtrl.AddIcon(items[(int)kind].sources, attributesParent);
+
+        //ハイライト
+        highLightF = gameObject.AddComponent<HighLightFunction>();
+        highLightF.StartContents(highLight, items[(int)kind].EffectLists);
     }
 	
 	// Update is called once per frame

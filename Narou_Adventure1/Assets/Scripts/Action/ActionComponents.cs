@@ -10,4 +10,5 @@ public class ActionComponents : BASE {
     public Slider slider;
     public GameObject newObject;
     public GameObject actionMark;
+    public GameObject highLight;
 }

@@ -16,6 +16,7 @@ public class DUNGEON : BASE {
     Text nameText, floorText;
     GameObject newObj, completeObj;
     GameObject actionMark;
+    public GameObject highLight;
 
     public List<EnemyKind[]> enemyList = new List<EnemyKind[]>(); //Enemyの配列のList
     public List<Drop> drops = new List<Drop>(); //ドロップ品
@@ -75,6 +76,7 @@ public class DUNGEON : BASE {
         actionMark = components.actionMark;
         completeObj = components.completeObj;
         floorText = components.floorText;
+        highLight = components.highLight;
         //button.onClick.AddListener(Enter);
         
         progress = gameObject.AddComponent<DungeonFunction>();
@@ -97,7 +99,7 @@ public class DUNGEON : BASE {
 
     // Use this for initialization
     public void StartDungeon () {
-        ApplySlider();   
+        ApplySlider();
 	}
 
     // Update is called once per frame

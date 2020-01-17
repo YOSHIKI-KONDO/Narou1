@@ -343,7 +343,7 @@ MonoBehaviour:
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "\u25CF"
 --- !u!222 &5352890
@@ -554,6 +554,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -905,6 +906,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -1196,6 +1198,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   Name_str: 
@@ -1364,6 +1367,7 @@ MonoBehaviour:
   release: {fileID: 0}
   instant: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   Name_str: 
   Description_str: 
   Need_str: 
@@ -1529,6 +1533,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -1698,6 +1703,8 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   unlockF: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   sources: 
   Name_str: 
   Description_str: 
@@ -1812,6 +1819,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   Name_str: 
@@ -1973,6 +1981,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -2143,17 +2152,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2189,6 +2198,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -2356,6 +2367,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -2780,6 +2792,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -3020,6 +3033,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -3484,6 +3498,7 @@ MonoBehaviour:
   release: {fileID: 0}
   instant: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   Name_str: 
   Description_str: 
   Need_str: 
@@ -3513,6 +3528,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -3987,6 +4003,7 @@ MonoBehaviour:
   slider: {fileID: 409449214}
   newObject: {fileID: 2021789966}
   actionMark: {fileID: 0}
+  highLight: {fileID: 0}
 --- !u!114 &102377574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4086,6 +4103,7 @@ MonoBehaviour:
   release: {fileID: 0}
   instant: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   Name_str: 
   Description_str: 
   Need_str: 
@@ -4483,6 +4501,8 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   unlockF: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   sources: 
   Name_str: 
   Description_str: 
@@ -4827,17 +4847,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4873,6 +4893,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -4911,6 +4933,7 @@ MonoBehaviour:
   release: {fileID: 0}
   instant: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   Name_str: 
   Description_str: 
   Need_str: 
@@ -5294,17 +5317,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -5340,6 +5363,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -5524,6 +5549,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -6396,6 +6422,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -6639,6 +6666,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   release: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   recommendLevel: 0
   summonedEnemy: 0
   Name_str: 
@@ -7161,6 +7189,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -7529,6 +7558,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -7984,6 +8014,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -8250,6 +8281,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   release: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   recommendLevel: 0
   summonedEnemy: 0
   Name_str: 
@@ -8720,6 +8752,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   Name_str: 
@@ -9091,7 +9124,7 @@ MonoBehaviour:
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "\u25CF"
 --- !u!222 &239447191
@@ -9770,7 +9803,7 @@ MonoBehaviour:
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "\u25CF"
 --- !u!222 &256011630
@@ -9950,6 +9983,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -10525,6 +10559,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   release: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   recommendLevel: 0
   summonedEnemy: 0
   Name_str: 
@@ -11022,6 +11057,7 @@ MonoBehaviour:
   slider: {fileID: 530848563}
   newObject: {fileID: 299774443}
   actionMark: {fileID: 0}
+  highLight: {fileID: 0}
 --- !u!114 &307044430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11121,6 +11157,7 @@ MonoBehaviour:
   release: {fileID: 0}
   instant: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   Name_str: 
   Description_str: 
   Need_str: 
@@ -11285,6 +11322,8 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   unlockF: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   sources: 
   Name_str: 
   Description_str: 
@@ -11509,6 +11548,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   Name_str: 
@@ -12269,6 +12309,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -12448,6 +12489,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -13457,6 +13499,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   release: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   recommendLevel: 0
   summonedEnemy: 0
   Name_str: 
@@ -13980,6 +14023,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -14792,17 +14836,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -14838,6 +14882,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -15176,6 +15222,8 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   unlockF: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   sources: 
   Name_str: 
   Description_str: 
@@ -15433,6 +15481,7 @@ MonoBehaviour:
   release: {fileID: 0}
   instant: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   Name_str: 
   Description_str: 
   Need_str: 
@@ -15607,6 +15656,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -15646,6 +15696,7 @@ MonoBehaviour:
   release: {fileID: 0}
   instant: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   Name_str: 
   Description_str: 
   Need_str: 
@@ -16147,17 +16198,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -16193,6 +16244,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -16456,6 +16509,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   release: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   recommendLevel: 0
   summonedEnemy: 0
   Name_str: 
@@ -16634,6 +16688,7 @@ MonoBehaviour:
   release: {fileID: 0}
   instant: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   Name_str: 
   Description_str: 
   Need_str: 
@@ -17238,6 +17293,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -17403,6 +17459,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -17575,6 +17632,8 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   unlockF: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   sources: 
   Name_str: 
   Description_str: 
@@ -17841,6 +17900,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -18296,6 +18356,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -18602,17 +18663,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -18648,6 +18709,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -18693,6 +18756,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -19021,6 +19085,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -19310,6 +19375,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -19771,6 +19837,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -20089,17 +20156,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -20135,6 +20202,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -20381,6 +20450,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -20760,6 +20830,7 @@ MonoBehaviour:
   release: {fileID: 0}
   instant: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   Name_str: 
   Description_str: 
   Need_str: 
@@ -20934,6 +21005,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -21053,6 +21125,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -21232,6 +21305,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -21573,6 +21647,7 @@ MonoBehaviour:
   release: {fileID: 0}
   instant: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   Name_str: 
   Description_str: 
   Need_str: 
@@ -21761,6 +21836,7 @@ MonoBehaviour:
   slider: {fileID: 824888050}
   newObject: {fileID: 675479164}
   actionMark: {fileID: 0}
+  highLight: {fileID: 0}
 --- !u!114 &528837596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21860,6 +21936,7 @@ MonoBehaviour:
   release: {fileID: 0}
   instant: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   Name_str: 
   Description_str: 
   Need_str: 
@@ -21984,6 +22061,7 @@ MonoBehaviour:
   release: {fileID: 0}
   instant: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   Name_str: 
   Description_str: 
   Need_str: 
@@ -22158,6 +22236,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -22469,6 +22548,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -22648,6 +22728,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -23329,17 +23410,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -23375,6 +23456,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -23612,6 +23695,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -24084,17 +24168,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -24130,6 +24214,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -24587,6 +24673,8 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   unlockF: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   sources: 
   Name_str: 
   Description_str: 
@@ -25838,6 +25926,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   release: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   recommendLevel: 0
   summonedEnemy: 0
   Name_str: 
@@ -26365,6 +26454,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -26527,6 +26617,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -26692,6 +26783,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -26857,6 +26949,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -27022,6 +27115,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -27635,6 +27729,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -28166,6 +28261,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -28412,17 +28508,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -28458,6 +28554,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -28803,6 +28901,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   release: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   recommendLevel: 0
   summonedEnemy: 0
   Name_str: 
@@ -29100,6 +29199,8 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   unlockF: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   sources: 
   Name_str: 
   Description_str: 
@@ -29418,6 +29519,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -29745,17 +29847,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -29791,6 +29893,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -30042,17 +30146,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -30088,6 +30192,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -30485,17 +30591,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -30531,6 +30637,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -30704,6 +30812,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   release: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   recommendLevel: 0
   summonedEnemy: 0
   Name_str: 
@@ -31166,6 +31275,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -31206,6 +31316,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   Name_str: 
@@ -31245,6 +31356,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -31285,6 +31397,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -31574,6 +31687,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -31842,17 +31956,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -31888,6 +32002,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -32473,17 +32589,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -32519,6 +32635,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -32921,6 +33039,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -33421,6 +33540,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -33536,6 +33656,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -33712,6 +33833,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -34018,17 +34140,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -34064,6 +34186,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -34310,6 +34434,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -34586,6 +34711,7 @@ MonoBehaviour:
   release: {fileID: 0}
   instant: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   Name_str: 
   Description_str: 
   Need_str: 
@@ -34780,6 +34906,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -35118,17 +35245,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -35164,6 +35291,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -35348,6 +35477,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -36327,6 +36457,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -36494,17 +36625,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -36540,6 +36671,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -36852,6 +36985,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   release: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   recommendLevel: 0
   summonedEnemy: 0
   Name_str: 
@@ -37031,6 +37165,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -37276,6 +37411,7 @@ MonoBehaviour:
   slider: {fileID: 340984200}
   newObject: {fileID: 1422244568}
   actionMark: {fileID: 0}
+  highLight: {fileID: 0}
 --- !u!114 &878068483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37375,6 +37511,7 @@ MonoBehaviour:
   release: {fileID: 0}
   instant: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   Name_str: 
   Description_str: 
   Need_str: 
@@ -37549,6 +37686,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -37973,6 +38111,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -38644,6 +38783,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -38823,6 +38963,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   Name_str: 
@@ -39327,17 +39468,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -39373,6 +39514,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -39418,6 +39561,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -39846,6 +39990,8 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   unlockF: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   sources: 
   Name_str: 
   Description_str: 
@@ -40240,6 +40386,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -40655,6 +40802,7 @@ MonoBehaviour:
   slider: {fileID: 965101789}
   newObject: {fileID: 1061317208}
   actionMark: {fileID: 0}
+  highLight: {fileID: 0}
 --- !u!114 &981728997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40754,6 +40902,7 @@ MonoBehaviour:
   release: {fileID: 0}
   instant: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   Name_str: 
   Description_str: 
   Need_str: 
@@ -40932,6 +41081,7 @@ MonoBehaviour:
   release: {fileID: 0}
   instant: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   Name_str: 
   Description_str: 
   Need_str: 
@@ -40967,6 +41117,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -41081,6 +41232,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   Name_str: 
@@ -41398,6 +41550,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -41565,17 +41718,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -41611,6 +41764,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -41722,6 +41877,7 @@ MonoBehaviour:
   slider: {fileID: 617180132}
   newObject: {fileID: 1655307943}
   actionMark: {fileID: 0}
+  highLight: {fileID: 0}
 --- !u!114 &994960949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41821,6 +41977,7 @@ MonoBehaviour:
   release: {fileID: 0}
   instant: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   Name_str: 
   Description_str: 
   Need_str: 
@@ -41995,6 +42152,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -42535,17 +42693,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -42581,6 +42739,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -42721,6 +42881,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   Name_str: 
@@ -43309,6 +43470,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -44017,17 +44179,17 @@ PrefabInstance:
     - target: {fileID: 4515083492722841132, guid: 05b77b154daad4107892f5ad9eedfa0c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4515083492722841132, guid: 05b77b154daad4107892f5ad9eedfa0c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 4515083492722841132, guid: 05b77b154daad4107892f5ad9eedfa0c,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 4515083492722841132, guid: 05b77b154daad4107892f5ad9eedfa0c,
         type: 3}
@@ -44042,7 +44204,7 @@ PrefabInstance:
     - target: {fileID: 4515083492722841132, guid: 05b77b154daad4107892f5ad9eedfa0c,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4515083492722841132, guid: 05b77b154daad4107892f5ad9eedfa0c,
         type: 3}
@@ -44052,7 +44214,7 @@ PrefabInstance:
     - target: {fileID: 4515083492722841132, guid: 05b77b154daad4107892f5ad9eedfa0c,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4515083492722841132, guid: 05b77b154daad4107892f5ad9eedfa0c,
         type: 3}
@@ -44650,6 +44812,7 @@ MonoBehaviour:
   release: {fileID: 0}
   instant: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   Name_str: 
   Description_str: 
   Need_str: 
@@ -44998,17 +45161,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -45044,6 +45207,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -45228,6 +45393,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -45396,6 +45562,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -45578,6 +45745,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -45837,6 +46005,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -45877,6 +46046,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -46056,6 +46226,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   Name_str: 
@@ -46454,6 +46625,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   Name_str: 
@@ -46622,6 +46794,8 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   unlockF: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   sources: 
   Name_str: 
   Description_str: 
@@ -47157,6 +47331,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -47197,6 +47372,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -47760,6 +47936,8 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   unlockF: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   sources: 
   Name_str: 
   Description_str: 
@@ -47836,6 +48014,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -48165,6 +48344,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -48205,6 +48385,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -48947,6 +49128,7 @@ MonoBehaviour:
   release: {fileID: 0}
   instant: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   Name_str: 
   Description_str: 
   Need_str: 
@@ -48982,6 +49164,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -49152,6 +49335,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -49331,6 +49515,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -49971,6 +50156,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -50376,6 +50562,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -50732,6 +50919,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -50772,6 +50960,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   Name_str: 
@@ -51236,6 +51425,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -51636,6 +51826,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -51798,6 +51989,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -52067,6 +52259,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -52441,6 +52634,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -53075,6 +53269,8 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   unlockF: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   sources: 
   Name_str: 
   Description_str: 
@@ -53349,6 +53545,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -53527,6 +53724,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -53840,6 +54038,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -54013,6 +54212,9 @@ GameObject:
   - component: {fileID: 1329275276}
   - component: {fileID: 1329275277}
   - component: {fileID: 1329275278}
+  - component: {fileID: 1329275281}
+  - component: {fileID: 1329275280}
+  - component: {fileID: 1329275279}
   m_Layer: 0
   m_Name: MainController
   m_TagString: mainCtrl
@@ -54271,6 +54473,7 @@ MonoBehaviour:
   analytics: {fileID: 1329275271}
   iconCtrl: {fileID: 1329275276}
   uiCtrl: {fileID: 1329275272}
+  highLightCtrl: {fileID: 1329275281}
   announce: {fileID: 2866424259776704689}
   announce_d: {fileID: 2866424259065655889}
   focus: {fileID: 2822668639949457068}
@@ -54278,6 +54481,8 @@ MonoBehaviour:
   enemyParameter: {fileID: 1329275275}
   checkDifficulty: {fileID: 1329275273}
   checkActions: {fileID: 1329275274}
+  actionContainer: {fileID: 1329275279}
+  abilityContainer: {fileID: 1329275280}
   ActionPopUpPre: {fileID: 7993348671439776045, guid: ef87e7b7fe96c4783b3876a4d12beaf0,
     type: 3}
   AbilityPopUpPre: {fileID: 7993348671439776045, guid: 85601b3d84cc7454c869acfb1e58b5f7,
@@ -54578,6 +54783,7 @@ MonoBehaviour:
     type: 3}
   parent_energy: {fileID: 2661820205041650487}
   effectAry: []
+  resourceTexts: []
 --- !u!114 &1329275269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54902,6 +55108,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ac706128ee5b4aba9a69ba0422b69cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1329275279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329275250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6a281ba1943b4ed2b178ceb68c13c0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkHierarchy: 0
+  instants: []
+  loops: []
+  upgrades: []
+--- !u!114 &1329275280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329275250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 996d802e37d0e4aaab5f8923c032401a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilitys: []
+--- !u!114 &1329275281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329275250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71336982f1f59444aba4685132cef155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1343588738
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55163,6 +55410,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   Name_str: 
@@ -55420,6 +55668,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -55958,6 +56207,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -56266,6 +56516,8 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   unlockF: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   sources: 
   Name_str: 
   Description_str: 
@@ -56445,6 +56697,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -56934,17 +57187,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -56980,6 +57233,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -57450,6 +57705,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -57725,6 +57981,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -57767,6 +58024,7 @@ MonoBehaviour:
   release: {fileID: 0}
   instant: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   Name_str: 
   Description_str: 
   Need_str: 
@@ -58063,6 +58321,8 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   unlockF: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   sources: 
   Name_str: 
   Description_str: 
@@ -58617,6 +58877,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -58801,6 +59062,7 @@ MonoBehaviour:
   slider: {fileID: 1828682850}
   newObject: {fileID: 1359188448}
   actionMark: {fileID: 0}
+  highLight: {fileID: 0}
 --- !u!114 &1430911436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58900,6 +59162,7 @@ MonoBehaviour:
   release: {fileID: 0}
   instant: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   Name_str: 
   Description_str: 
   Need_str: 
@@ -59185,6 +59448,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -59702,6 +59966,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -59742,6 +60007,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   Name_str: 
@@ -59920,6 +60186,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -60099,6 +60366,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -60162,6 +60430,7 @@ MonoBehaviour:
   release: {fileID: 0}
   instant: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   Name_str: 
   Description_str: 
   Need_str: 
@@ -60197,6 +60466,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   Name_str: 
@@ -60473,17 +60743,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -60519,6 +60789,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -60703,6 +60975,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -61170,6 +61443,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   release: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   recommendLevel: 0
   summonedEnemy: 0
   Name_str: 
@@ -61314,6 +61588,7 @@ MonoBehaviour:
   slider: {fileID: 10585945}
   newObject: {fileID: 1696365149}
   actionMark: {fileID: 0}
+  highLight: {fileID: 0}
 --- !u!114 &1511320280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61413,6 +61688,7 @@ MonoBehaviour:
   release: {fileID: 0}
   instant: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   Name_str: 
   Description_str: 
   Need_str: 
@@ -61587,6 +61863,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -61801,6 +62078,7 @@ MonoBehaviour:
   slider: {fileID: 152968047}
   newObject: {fileID: 2137618682}
   actionMark: {fileID: 0}
+  highLight: {fileID: 0}
 --- !u!114 &1519012320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61900,6 +62178,7 @@ MonoBehaviour:
   release: {fileID: 0}
   instant: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   Name_str: 
   Description_str: 
   Need_str: 
@@ -61947,6 +62226,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -62114,17 +62394,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -62160,6 +62440,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -62205,6 +62487,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -62275,6 +62558,7 @@ MonoBehaviour:
   slider: {fileID: 1233553172}
   newObject: {fileID: 1652537146}
   actionMark: {fileID: 0}
+  highLight: {fileID: 0}
 --- !u!114 &1537474362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62374,6 +62658,7 @@ MonoBehaviour:
   release: {fileID: 0}
   instant: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   Name_str: 
   Description_str: 
   Need_str: 
@@ -62898,6 +63183,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -63080,6 +63366,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -63120,6 +63407,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -63282,6 +63570,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -63844,6 +64133,7 @@ MonoBehaviour:
   release: {fileID: 0}
   instant: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   Name_str: 
   Description_str: 
   Need_str: 
@@ -64113,6 +64403,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -64332,6 +64623,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -65027,6 +65319,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   Name_str: 
@@ -65205,6 +65498,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -65245,6 +65539,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -65412,17 +65707,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -65458,6 +65753,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -65642,6 +65939,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -66131,6 +66429,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -66246,6 +66545,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   Name_str: 
@@ -66589,17 +66889,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -66635,6 +66935,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -68376,6 +68678,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -68596,6 +68899,7 @@ MonoBehaviour:
   release: {fileID: 0}
   instant: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   Name_str: 
   Description_str: 
   Need_str: 
@@ -68821,6 +69125,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -69110,6 +69415,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -69279,6 +69585,8 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   unlockF: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   sources: 
   Name_str: 
   Description_str: 
@@ -69337,6 +69645,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   Name_str: 
@@ -69610,6 +69919,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -69789,6 +70099,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   Name_str: 
@@ -69828,6 +70139,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -70146,6 +70458,7 @@ MonoBehaviour:
   slider: {fileID: 1446062766}
   newObject: {fileID: 297766288}
   actionMark: {fileID: 0}
+  highLight: {fileID: 0}
 --- !u!114 &1745076928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70245,6 +70558,7 @@ MonoBehaviour:
   release: {fileID: 0}
   instant: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   Name_str: 
   Description_str: 
   Need_str: 
@@ -70292,6 +70606,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -70720,6 +71035,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -70964,17 +71280,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -71010,6 +71326,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -71182,17 +71500,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -71228,6 +71546,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -71272,6 +71592,7 @@ MonoBehaviour:
   release: {fileID: 0}
   instant: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   Name_str: 
   Description_str: 
   Need_str: 
@@ -71512,6 +71833,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -71951,6 +72273,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   Name_str: 
@@ -71990,6 +72313,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   Name_str: 
@@ -72261,6 +72585,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -72301,6 +72626,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -72742,6 +73068,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -73943,17 +74270,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -73989,6 +74316,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -74173,6 +74502,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -74491,6 +74821,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -74670,6 +75001,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   Name_str: 
@@ -75318,17 +75650,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -75364,6 +75696,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -75548,6 +75882,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -75930,6 +76265,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   Name_str: 
@@ -77098,6 +77434,7 @@ MonoBehaviour:
   release: {fileID: 0}
   instant: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   Name_str: 
   Description_str: 
   Need_str: 
@@ -77865,6 +78202,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -78511,6 +78849,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -78772,6 +79111,7 @@ MonoBehaviour:
   release: {fileID: 0}
   instant: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   Name_str: 
   Description_str: 
   Need_str: 
@@ -79139,6 +79479,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -79529,6 +79870,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -79572,6 +79914,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -79944,17 +80287,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -79990,6 +80333,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -80162,17 +80507,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -80208,6 +80553,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -80392,6 +80739,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -80662,6 +81010,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -80841,6 +81190,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -81177,6 +81527,7 @@ MonoBehaviour:
   release: {fileID: 0}
   instant: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   Name_str: 
   Description_str: 
   Need_str: 
@@ -81568,17 +81919,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -81614,6 +81965,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -83129,6 +83482,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -83291,6 +83645,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -83771,6 +84126,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -84091,17 +84447,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -84137,6 +84493,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -84537,17 +84895,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -84583,6 +84941,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -84628,6 +84988,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -84795,17 +85156,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -84841,6 +85202,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -85025,6 +85388,7 @@ MonoBehaviour:
   progress: {fileID: 0}
   need: {fileID: 0}
   slider: {fileID: 0}
+  highLight: {fileID: 0}
   MaxValue: 0
   CurrentValue: 0
   maxNum: 0
@@ -85808,6 +86172,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -86073,6 +86438,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -87971,17 +88337,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 576377792836419257, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1993405394866148627, guid: 0d1e35ba78d3c4e81a75282e454a195f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4745982126825299556, guid: 0d1e35ba78d3c4e81a75282e454a195f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -88827,6 +89193,7 @@ MonoBehaviour:
   size: 0
   rarity: 0
   lockToggle: {fileID: 0}
+  highLight: {fileID: 0}
   need: {fileID: 0}
   Name_str: 
   Description_str: 
@@ -88906,6 +89273,7 @@ MonoBehaviour:
   floorText: {fileID: 2853225146966422425}
   enterButton: {fileID: 0}
   actionMark: {fileID: 0}
+  highLight: {fileID: 0}
 --- !u!114 &2058940378402321896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89032,6 +89400,7 @@ MonoBehaviour:
   setButton: {fileID: 0}
   nameText: {fileID: 1686388647749020046}
   newObject: {fileID: 0}
+  highLight: {fileID: 0}
   AttributesParent: {fileID: 0}
   expSlider: {fileID: 0}
   expText: {fileID: 0}
@@ -89571,6 +89940,8 @@ MonoBehaviour:
   release: {fileID: 0}
   learnF: {fileID: 0}
   need: {fileID: 0}
+  highLightF: {fileID: 0}
+  highLight: {fileID: 0}
   isCombo: 0
   PayedCost: 0
   equipped: 0
@@ -89980,6 +90351,7 @@ MonoBehaviour:
   release: {fileID: 0}
   popUp: {fileID: 0}
   Others_str: 
+  highLight: {fileID: 0}
 --- !u!114 &2822668639949457062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92318,7 +92690,7 @@ MonoBehaviour:
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "\u25B2"
 --- !u!224 &2866424260034936699
@@ -93894,6 +94266,7 @@ MonoBehaviour:
   slider: {fileID: 8467991384906814470}
   newObject: {fileID: 4491152128540854963}
   actionMark: {fileID: 0}
+  highLight: {fileID: 0}
 --- !u!222 &4420642929006441192
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -94037,6 +94410,7 @@ MonoBehaviour:
   release: {fileID: 0}
   instant: {fileID: 0}
   need: {fileID: 0}
+  highLight: {fileID: 0}
   Name_str: 
   Description_str: 
   Need_str: 
@@ -94134,6 +94508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newObj: {fileID: 0}
+  highLight: {fileID: 0}
   lockToggle: {fileID: 0}
   AttributesParent: {fileID: 0}
   nameText: {fileID: 8844997702177106219}
@@ -94279,17 +94654,17 @@ PrefabInstance:
     - target: {fileID: 4515083492722841132, guid: 05b77b154daad4107892f5ad9eedfa0c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 220
       objectReference: {fileID: 0}
     - target: {fileID: 4515083492722841132, guid: 05b77b154daad4107892f5ad9eedfa0c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 4515083492722841132, guid: 05b77b154daad4107892f5ad9eedfa0c,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 4515083492722841132, guid: 05b77b154daad4107892f5ad9eedfa0c,
         type: 3}
@@ -94304,7 +94679,7 @@ PrefabInstance:
     - target: {fileID: 4515083492722841132, guid: 05b77b154daad4107892f5ad9eedfa0c,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4515083492722841132, guid: 05b77b154daad4107892f5ad9eedfa0c,
         type: 3}
@@ -94314,7 +94689,7 @@ PrefabInstance:
     - target: {fileID: 4515083492722841132, guid: 05b77b154daad4107892f5ad9eedfa0c,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4515083492722841132, guid: 05b77b154daad4107892f5ad9eedfa0c,
         type: 3}
@@ -95524,6 +95899,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newText: {fileID: 0}
   actionMark: {fileID: 0}
+  highLight: {fileID: 0}
   attributesParent: {fileID: 0}
   TrainBtnObj: {fileID: 0}
   unlockButton: {fileID: 0}

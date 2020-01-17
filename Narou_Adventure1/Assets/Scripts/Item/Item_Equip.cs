@@ -15,6 +15,8 @@ public class Item_Equip : BASE
     public PopUp popUp;
     public string Name_str, Description_str, Max_Str, Need_str, Effect_str, Cost_str, Sell_str, LvCost_Str, LvEffect_Str;
     ITEM[] items;
+    public GameObject highLight;
+    HighLightFunction highLightF;
 
     //ItemCtrlから呼ぶ
     public void StartEquip(ItemKind kind)
@@ -48,6 +50,10 @@ public class Item_Equip : BASE
         lockToggle.isOn = main.SR.locked_Item[(int)kind];//セーブを代入
 
         main.iconCtrl.AddIcon(items[(int)kind].sources, attributesParent);
+
+        //ハイライト
+        highLightF = gameObject.AddComponent<HighLightFunction>();
+        highLightF.StartContents(highLight, items[(int)kind].EffectLists);
     }
 
     // Update is called once per frame

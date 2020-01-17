@@ -13,9 +13,11 @@ public class INSTANT_ACTION : ACTION, INeed
     public ReleaseFunction release;
     public InstantFunction instant;
     public NeedFunciton need;
+    HighLightFunction highLightF;
     ActionComponents components;
     Text text;
     GameObject newObject;
+    public GameObject highLight;
 
     public virtual bool Requires() { return true; }
     public virtual bool CompleteCondition() { return false; }
@@ -34,10 +36,12 @@ public class INSTANT_ACTION : ACTION, INeed
         components = GetComponent<ActionComponents>();
         text = components.text;
         newObject = components.newObject;
+        highLight = components.highLight;
         setFalse(components.slider.gameObject);
 
         this.kind = Kind;
-        main.checkActions.instants[(int)kind] = kind;   //hierarchyチェック
+        //main.checkActions.instants[(int)kind] = kind;   //hierarchyチェック
+        main.actionContainer.instants[(int)kind] = this;
 
         need = gameObject.AddComponent<NeedFunciton>();
         popUp = main.ActionPopUpPre.StartPopUp(gameObject, main.windowShowCanvas);
@@ -56,7 +60,9 @@ public class INSTANT_ACTION : ACTION, INeed
     // Use this for initialization
     protected void StartInstantAction()
     {
-        ApplyEffectLevel();   
+        ApplyEffectLevel();
+        highLightF = gameObject.AddComponent<HighLightFunction>();
+        highLightF.StartContents(highLight, instant.completeEffectList);
     }
 
     // Update is called once per frame

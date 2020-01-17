@@ -24,10 +24,12 @@ public class ITEM : BASE, INeed, ISetSource
     Text spaceText, nameText, numText, rarityText, levelText, maxNumText;
     public Toggle lockToggle;
     GameObject newObject;
+    public GameObject highLight;
     Transform AttributesParent;
     PopUp popUp;
     ReleaseFunction release;
     public NeedFunciton need;
+    HighLightFunction highLightF;
     public string Name_str, Description_str, Max_Str, Need_str, Effect_str, Cost_str, Sell_str, LvCost_Str, LvEffect_Str;
     public List<Dealing> itemPointDeal = new List<Dealing>(); //実際の処理はdealingを通じて行わない。表示用。
 
@@ -136,6 +138,7 @@ public class ITEM : BASE, INeed, ISetSource
         rarityText = components.rarityText;
         maxNumText = components.maxNumText;
         lockToggle = components.lockToggle;
+        highLight = components.highLight;
         AttributesParent = components.AttributesParent;
         buyButton.onClick.AddListener(() => main.itemCtrl.Buy(kind));
         sellButton.onClick.AddListener(() => main.itemCtrl.Sell_Shop(kind));
@@ -165,6 +168,10 @@ public class ITEM : BASE, INeed, ISetSource
 
         //アイコンを表示
         main.iconCtrl.AddIcon(sources, AttributesParent);
+
+        //ハイライト初期化
+        highLightF = gameObject.AddComponent<HighLightFunction>();
+        highLightF.StartContents(highLight, EffectLists);
     }
 
     // Update is called once per frame

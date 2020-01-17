@@ -13,6 +13,7 @@ public class ResourceTextControll : BASE {
     //public Transform parent_normal;
     public RESOURCE_EFFECT[] effectAry;
     public DecimalPoint_Resource[] points;
+    public ResourceText[] resourceTexts;
 
     //小数点の設定
     //規定値 現在地:0, 最大値0, 回復:3, 現在地(Dealing):1, 最大値(Dealing):1, 回復(Dealing):2
@@ -89,6 +90,7 @@ public class ResourceTextControll : BASE {
             {
                 var energy = Instantiate(energyPre, parent_energy);
                 energy.kind = k;
+                resourceTexts[i] = energy;//配列に追加
                 if (effectAry[i] != null)
                 {
                     energy.effects = effectAry[i].effects;
@@ -99,6 +101,7 @@ public class ResourceTextControll : BASE {
             // 普通のリソース
             var resource = Instantiate(normalPre, parent_energy);
             resource.kind = k;
+            resourceTexts[i] = resource;//配列に追加
             if (effectAry[i] != null)
             {
                 resource.effects = effectAry[i].effects;
@@ -127,6 +130,7 @@ public class ResourceTextControll : BASE {
 
 	// Use this for initialization
 	void Start () {
+        resourceTexts = new ResourceText[main.SD.num_resource];
         Initialize();
 	}
 	

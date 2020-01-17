@@ -7,6 +7,7 @@ public class AbilityComponents : MonoBehaviour
 {
     public GameObject newText;
     public GameObject actionMark;
+    public GameObject highLight;
     public Transform attributesParent;
 
     public GameObject TrainBtnObj;
