@@ -9,7 +9,7 @@ public class AnimalRush : SKILL
 {
     public override bool Requires()
     {
-        return main.a_rsc.CurrentLevels[(int)AbilityKind.animal_handling] >= 3 &&
+        return main.a_rsc.CurrentLevels[(int)AbilityKind.animal_handling] >= 5 &&
                main.a_rsc.CurrentLevels[(int)AbilityKind.beginner_bojutsu] >= 1;
     }
 
@@ -18,8 +18,8 @@ public class AnimalRush : SKILL
 		AwakeSkill(SkillKind.animal_rush, 2);
         learnF.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -20));
         useCosts.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.5));
-        useCosts.Add(new Dealing(ResourceKind.animal, Dealing.R_ParaKind.current, -0.5));
-        warriorAtks.Add(new WarriorAttack(10));
+        useCosts.Add(new Dealing(ResourceKind.animal, Dealing.R_ParaKind.current, -1));
+        warriorAtks.Add(new WarriorAttack(22));
 
         SetSource(NeedKind.attack, NeedKind.animal, NeedKind.rod, NeedKind.combo_arts);
 

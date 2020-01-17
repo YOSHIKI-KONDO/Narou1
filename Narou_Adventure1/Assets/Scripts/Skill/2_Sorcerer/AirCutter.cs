@@ -14,10 +14,10 @@ public class AirCutter : SKILL
 
     // Use this for initialization
     void Awake () {
-		AwakeSkill(SkillKind.air_cutter, 3);
+		AwakeSkill(SkillKind.air_cutter, 2.6);
         learnF.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -5));
         useCosts.Add(new Dealing(ResourceKind.wind, Dealing.R_ParaKind.current, -1));
-        sorcererAtks.Add(new SorcererAttack(18));
+        sorcererAtks.Add(new SorcererAttack(20));
 
         SetSource(NeedKind.attack, NeedKind.wind);
     }

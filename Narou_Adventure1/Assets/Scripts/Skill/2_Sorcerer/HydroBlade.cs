@@ -5,21 +5,22 @@ using UnityEngine;
 using UnityEngine.UI;
 using static UsefulMethod;
 
-public class StoneBullet : SKILL
+public class HydroBlade : SKILL
 {
     public override bool Requires()
     {
-        return main.a_rsc.CurrentLevels[(int)AbilityKind.primary_earth_magic] >= 1;
+        return main.a_rsc.CurrentLevels[(int)AbilityKind.primary_water_magic] >= 7;
     }
 
     // Use this for initialization
     void Awake () {
-		AwakeSkill(SkillKind.stone_bullet, 2.2);
+		AwakeSkill(SkillKind.hydro_blade, 1);
         learnF.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -5));
-        useCosts.Add(new Dealing(ResourceKind.earth, Dealing.R_ParaKind.current, -0.7));
-        sorcererAtks.Add(new SorcererAttack(16));
+        useCosts.Add(new Dealing(ResourceKind.mp, Dealing.R_ParaKind.current, -0.8));
+        useCosts.Add(new Dealing(ResourceKind.water, Dealing.R_ParaKind.current, -1.8));
+        sorcererAtks.Add(new SorcererAttack(19));
 
-        SetSource(NeedKind.attack, NeedKind.earth);
+        SetSource(NeedKind.attack, NeedKind.water);
     }
 
 	// Use this for initialization

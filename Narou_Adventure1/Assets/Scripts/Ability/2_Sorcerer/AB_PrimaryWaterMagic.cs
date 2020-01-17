@@ -29,7 +29,7 @@ public class AB_PrimaryWaterMagic : ABILITY
 
         unlocks.Add(new SkillUnlock(1, SkillKind.waterball));
         unlocks.Add(new SkillUnlock(4, SkillKind.catch_fish));
-        unlocks.Add(new SkillUnlock(7, SkillKind.cure_water));
+        unlocks.Add(new SkillUnlock(7, SkillKind.hydro_blade));
     }
 
 	// Use this for initialization

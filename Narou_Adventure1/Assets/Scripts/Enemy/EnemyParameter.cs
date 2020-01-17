@@ -29,7 +29,7 @@ public class EnemyParameter : BASE {
         parameters.Add(new parameter(EnemyKind.poison_rat,        2, 4.6, 1.5,  3.8,    1,  1,    2,  15));
         parameters.Add(new parameter(EnemyKind.harpy,             4, 3.8, 2.5,  3.8,    1,  1,    2,  12));
         parameters.Add(new parameter(EnemyKind.ghoul,             3, 2.9, 5.0,  2.1,    1,  1,    2,  13));
-        parameters.Add(new parameter(EnemyKind.werewolf,          3, 4.2, 2.1,  3.7,    1,  1,    2,  13));
+        parameters.Add(new parameter(EnemyKind.werewolf,          3, 4.2, 2.1,  3.7,    1,  1,    2,  11));
         parameters.Add(new parameter(EnemyKind.lizard_man,        6, 2.7, 3.6,  3.6,    1,  1,    2,  15));
         parameters.Add(new parameter(EnemyKind.demonic_warrior,   2, 5.0, 2.2,  2.8,    1,  1,    2,  20));
     }

@@ -17,7 +17,7 @@ public class Waterball : SKILL
 		AwakeSkill(SkillKind.waterball, 3);
         learnF.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -5));
         useCosts.Add(new Dealing(ResourceKind.water, Dealing.R_ParaKind.current, -0.9));
-        sorcererAtks.Add(new SorcererAttack(16));
+        sorcererAtks.Add(new SorcererAttack(22));
 
         SetSource(NeedKind.attack, NeedKind.water);
     }

@@ -29,7 +29,7 @@ public class AB_PrimaryEarthMagic : ABILITY
 
         unlocks.Add(new SkillUnlock(1, SkillKind.stone_bullet));
         unlocks.Add(new SkillUnlock(4, SkillKind.grow_wheat));
-        unlocks.Add(new SkillUnlock(7, SkillKind.earth_wall));
+        unlocks.Add(new SkillUnlock(7, SkillKind.rock_press));
     }
 
 	// Use this for initialization

@@ -29,15 +29,19 @@
     fireball,
     hot_body,
     create_charcoal,//生産
+    burning_shot,
     waterball,
     cure_water,
     catch_fish,//生産
+    hydro_blade,
     air_cutter,
     wind_step,
     create_firewood,//生産
+    air_bazooka,
     stone_bullet,
     earth_wall,
     grow_wheat,//生産
+    rock_press,
     /*electric_arrow,
     electric_step,
     ice_arrow,

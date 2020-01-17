@@ -5,21 +5,22 @@ using UnityEngine;
 using UnityEngine.UI;
 using static UsefulMethod;
 
-public class StoneBullet : SKILL
+public class AirBazooka : SKILL
 {
     public override bool Requires()
     {
-        return main.a_rsc.CurrentLevels[(int)AbilityKind.primary_earth_magic] >= 1;
+        return main.a_rsc.CurrentLevels[(int)AbilityKind.primary_wind_magic] >= 7;
     }
 
     // Use this for initialization
     void Awake () {
-		AwakeSkill(SkillKind.stone_bullet, 2.2);
+		AwakeSkill(SkillKind.air_bazooka, 1.7);
         learnF.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -5));
-        useCosts.Add(new Dealing(ResourceKind.earth, Dealing.R_ParaKind.current, -0.7));
-        sorcererAtks.Add(new SorcererAttack(16));
+        useCosts.Add(new Dealing(ResourceKind.mp, Dealing.R_ParaKind.current, -0.8));
+        useCosts.Add(new Dealing(ResourceKind.wind, Dealing.R_ParaKind.current, -1.9));
+        sorcererAtks.Add(new SorcererAttack(24));
 
-        SetSource(NeedKind.attack, NeedKind.earth);
+        SetSource(NeedKind.attack, NeedKind.wind);
     }
 
 	// Use this for initialization
