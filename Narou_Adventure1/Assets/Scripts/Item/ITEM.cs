@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using static UsefulMethod;
 
 /// <summary>
@@ -21,7 +22,8 @@ public class ITEM : BASE, INeed, ISetSource
     ItemComponents components;
     //newやlockなども宣言する
     Button buyButton, sellButton, levelUpButton;
-    Text spaceText, nameText, numText, rarityText, levelText, maxNumText;
+    Text spaceText, nameText, numText, levelText, maxNumText;
+    TextMeshProUGUI rarityText;
     public Toggle lockToggle;
     GameObject newObject;
     public GameObject highLight;
@@ -200,7 +202,7 @@ public class ITEM : BASE, INeed, ISetSource
         string sum = "";
         for (int i = 0; i < Rarity; i++)
         {
-            sum += "★";
+            sum += "<sprite=0>";
         }
         return sum;
     }
@@ -300,7 +302,8 @@ public class ITEM : BASE, INeed, ISetSource
         /***** ******************************* *****/
 
         ChangeTextAdaptive(Name_str, popUp.texts[0], popUp.texts[0].gameObject);
-        ChangeTextAdaptive(rarityText.text, popUp.texts[1], popUp.texts[1].gameObject);
+        //ChangeTextAdaptive(rarityText.text, popUp.texts[1], popUp.texts[1].gameObject);
+        ChangeTextAdaptive(rarityText.text, popUp.textPros[0], popUp.textPros[0].gameObject);
         ChangeTextAdaptive(Description_str, popUp.texts[2], popUp.texts[2].gameObject);
         ChangeTextAdaptive(levelText.text, popUp.texts[3], popUp.texts[3].gameObject);
         ChangeTextAdaptive(Need_str, popUp.texts[5], popUp.texts[4].gameObject, popUp.texts[5].gameObject);

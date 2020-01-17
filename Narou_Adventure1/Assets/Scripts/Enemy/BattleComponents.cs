@@ -58,11 +58,12 @@ public class BattleComponents : BASE {
     {
         if (kind == EnemyKind.nothing)
         {
-            Debug.Log("ApplyNOrmalObjでEnumが入力されていません");
+            Debug.Log("ApplyNormalObjでEnumが入力されていません");
             return;
         }
         popUp.texts[0].text = Name_text.text;
-        popUp.texts[1].text = StarFromRank(main.battleCtrl.enemys[(int)kind].rank);
+        //1を変えた↓
+        popUp.textPros[0].text = StarFromRank(main.battleCtrl.enemys[(int)kind].rank);
         //popUp.texts[2]
         popUp.texts[3].text = "HP:" + maxHp + ", " + atk_text.text + ", Int:" + main.battleCtrl.enemys[(int)kind].interval.ToString("F0");
         ChangeTextAdaptive(DropsDetail(main.battleCtrl.enemys[(int)kind].drops, true), popUp.texts[5], popUp.texts[4].gameObject, popUp.texts[5].gameObject);
@@ -73,7 +74,7 @@ public class BattleComponents : BASE {
         string sum = "";
         for (int i = 0; i < Rank; i++)
         {
-            sum += "★";
+            sum += "<sprite=0>";
         }
         return sum;
     }

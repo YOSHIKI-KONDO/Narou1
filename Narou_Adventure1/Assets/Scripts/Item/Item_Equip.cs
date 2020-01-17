@@ -4,12 +4,14 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using static UsefulMethod;
+using TMPro;
 
 public class Item_Equip : BASE
 {
     public ItemKind kind;
     public Button removeButton, sellButtion, levelUpButton;
-    public Text spaceText, nameText, numText, rarityText, levelText, maxNumText;
+    public Text spaceText, nameText, numText, levelText, maxNumText;
+    public TextMeshProUGUI rarityText;
     public Toggle lockToggle;
     public Transform attributesParent;
     public PopUp popUp;
@@ -124,7 +126,8 @@ public class Item_Equip : BASE
             //needいらない
 
             ChangeTextAdaptive(Name_str, popUp.texts[0], popUp.texts[0].gameObject);
-            ChangeTextAdaptive(rarityText.text, popUp.texts[1], popUp.texts[1].gameObject);
+            //ChangeTextAdaptive(rarityText.text, popUp.texts[1], popUp.texts[1].gameObject);
+            ChangeTextAdaptive(rarityText.text, popUp.textPros[0], popUp.textPros[0].gameObject);
             ChangeTextAdaptive(Description_str, popUp.texts[2], popUp.texts[2].gameObject);
             ChangeTextAdaptive(levelText.text, popUp.texts[3], popUp.texts[3].gameObject);
             ChangeTextAdaptive(Need_str, popUp.texts[5], popUp.texts[4].gameObject, popUp.texts[5].gameObject);
