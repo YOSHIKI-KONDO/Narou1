@@ -100,4 +100,6 @@ public class SaveR
     public bool isOn_loopToggle;
     public bool isOn_dungeonOnlyToggle = true;
     public bool isOn_activeSkillToggle = true;
+    public bool isOn_ButtonHighLight = false;
+    public bool isOn_ResourceHighLight = true;
 }

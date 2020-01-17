@@ -301,15 +301,15 @@ public class SKILL : BASE, INeed, ISetSource
             {
                 if (combo is Effect_SC)
                 {
-                    popUp.texts[9].color = Color.green;
+                    popUp.texts[9].color = Narou1Func.color_pink;
                 }
                 if (combo is Cost_SC)
                 {
-                    popUp.texts[7].color = Color.green;
+                    popUp.texts[7].color = Narou1Func.color_pink;
                 }
                 if (combo is Interval_SC)
                 {
-                    popUp.texts[11].color = Color.green;
+                    popUp.texts[11].color = Narou1Func.color_pink;
                 }
             }
             else

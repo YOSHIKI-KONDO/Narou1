@@ -37,27 +37,38 @@ public class PopUp : MonoBehaviour
             tmp_PopUp.GetTexts();
         }
         tmp_PopUp.InitializeTrigger();
-        
+
 
         return tmp_PopUp;
     }
 
     void InitializeTrigger()
     {
-        hoverObject.AddComponent<EventTrigger>().triggers = new List<EventTrigger.Entry>();
-        EventTrigger.Entry entry = new EventTrigger.Entry();
-        EventTrigger.Entry entry2 = new EventTrigger.Entry();
-        entry.eventID = EventTriggerType.PointerEnter;
-        entry2.eventID = EventTriggerType.PointerExit;
-        entry.callback.AddListener((x) => ApplyPosition());
-        entry.callback.AddListener((x) => gameObject.SetActive(true));      //アクティブに
-        entry.callback.AddListener((x) => EnterAction?.Invoke());           //キャンバスの内容の変更など
-        entry.callback.AddListener((x) => LayoutRebuilder.ForceRebuildLayoutImmediate(GetComponent<RectTransform>()));         //キャンバスの反映
-        entry2.callback.AddListener((x) => gameObject.SetActive(false));
-        entry2.callback.AddListener((x) => ExitAction?.Invoke());
-        hoverObject.GetComponent<EventTrigger>().triggers.Add(entry);
-        hoverObject.GetComponent<EventTrigger>().triggers.Add(entry2);
+        //hoverObject.AddComponent<EventTrigger>().triggers = new List<EventTrigger.Entry>();
+        //EventTrigger.Entry entry = new EventTrigger.Entry();
+        //EventTrigger.Entry entry2 = new EventTrigger.Entry();
+        //entry.eventID = EventTriggerType.PointerEnter;
+        //entry2.eventID = EventTriggerType.PointerExit;
+        //entry.callback.AddListener((x) => ApplyPosition());
+        //entry.callback.AddListener((x) => gameObject.SetActive(true));      //アクティブに
+        //entry.callback.AddListener((x) => EnterAction?.Invoke());           //キャンバスの内容の変更など
+        //entry.callback.AddListener((x) => LayoutRebuilder.ForceRebuildLayoutImmediate(GetComponent<RectTransform>()));         //キャンバスの反映
+        //entry2.callback.AddListener((x) => gameObject.SetActive(false));
+        //entry2.callback.AddListener((x) => ExitAction?.Invoke());
+        //hoverObject.GetComponent<EventTrigger>().triggers.Add(entry);
+        //hoverObject.GetComponent<EventTrigger>().triggers.Add(entry2);
+
+        var events = hoverObject.AddComponent<OnEvents>();
+        //enter
+        events.EnterEvents.Add(() => ApplyPosition());
+        events.EnterEvents.Add(() => gameObject.SetActive(true));
+        events.EnterEvents.Add(() => EnterAction?.Invoke());
+        events.EnterEvents.Add(() => LayoutRebuilder.ForceRebuildLayoutImmediate(GetComponent<RectTransform>()));
+        //exit
+        events.ExitEvents.Add(() => gameObject.SetActive(false));
+        events.ExitEvents.Add(() => ExitAction?.Invoke());
     }
+
 
     void GetTexts()
     {

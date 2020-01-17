@@ -9,6 +9,7 @@ using static UsefulMethod;
 /// Narou1でよく使う関数
 /// </summary>
 public class Narou1Func : BASE {
+    public static Color color_pink = new Color(1f, 0.6f, 0.6f, 1f);
 
 	public static ResourceKind ItemPointKind(int rarity)
     {

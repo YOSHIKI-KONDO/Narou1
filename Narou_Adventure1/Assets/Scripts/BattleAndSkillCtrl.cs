@@ -550,7 +550,7 @@ public class BattleAndSkillCtrl : BASE {
                 string additive = couldGet ? "" : " (but Inventory is full)";
                 main.announce_d.Add("LOOT [" + main.enumCtrl.enemys[(int)innerEnemy.kind].Name() + "] : "
                     + main.enumCtrl.items[(int)(drop as Item_Drop).itemKind].Name()
-                    + additive, Color.green);
+                    + additive, Color.red);
             }
 
             main.announce_d.Add("LOOT [" + main.enumCtrl.enemys[(int)innerEnemy.kind].Name() + "] : " + main.enumCtrl.resources[(int)drop.kind].Name() + " + " +
@@ -585,7 +585,7 @@ public class BattleAndSkillCtrl : BASE {
                             string additive = couldGet ? "" : " (but Inventory is full)";
                             main.announce_d.Add("LOOT [" + main.enumCtrl.dungeons[(int)dunKind].Name() + "] : "
                                 + main.enumCtrl.items[(int)(dungeons[(int)dunKind].drops[i_d] as Item_Drop).itemKind].Name()
-                                + additive, Color.green);
+                                + additive, Color.red);
                             
                         }
                         else
@@ -610,7 +610,7 @@ public class BattleAndSkillCtrl : BASE {
                             string additive = couldGet ? "" : " (but Inventory is full)";
                             main.announce_d.Add("LOOT [" + main.enumCtrl.dungeons[(int)dunKind].Name() + "] : "
                                 + main.enumCtrl.items[(int)(dungeons[(int)dunKind].firstDrops[i_d] as Item_Drop).itemKind].Name()
-                                + additive, Color.green);
+                                + additive, Color.red);
 
                         }
                         else

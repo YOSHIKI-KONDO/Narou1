@@ -13,6 +13,8 @@ public class Announce : BASE {
     public Button switchButton;
     public GameObject textDetailPanel;
     public Color baseColor;
+    public Image switchImage;
+    public Sprite upSprite, downSprite;
 
     string baseColorStr;
     string colorString;
@@ -21,8 +23,11 @@ public class Announce : BASE {
     {
         textDetailPanel.SetActive(!textDetailPanel.activeSelf);
         announceTextShort.gameObject.SetActive(!textDetailPanel.activeSelf); //detailとactiveを反対にする
-        switchButton.gameObject.GetComponentInChildren<Text>().text
-            = textDetailPanel.activeSelf ? "▼" : "▲";
+
+        if (switchImage != null)
+        {
+            switchImage.sprite = textDetailPanel.activeSelf ? upSprite : downSprite;
+        }
     }
 
     public void Add(string Txt, Color? Clr = null)
