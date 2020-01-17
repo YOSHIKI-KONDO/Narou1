@@ -19,9 +19,9 @@ public class I_FireRuby : ITEM
         AwakeItem(ItemKind.fire_ruby, 2,1,3,1,1);
         BuyLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -500));
         SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 250));
-        EffectLists.Add(new Dealing(ResourceKind.magic_attack, Dealing.R_ParaKind.status, 5));
         EffectLists.Add(new Dealing(ResourceKind.fire, Dealing.R_ParaKind.max, 3));
         EffectLists.Add(new Dealing(AbilityKind.primary_fire_magic, Dealing.A_ParaKind.maxLevel, 2));
+        EffectLists.Add(new Dealing(ResourceKind.magic_attack, Dealing.R_ParaKind.status, 5));
 
         SetSource(NeedKind.goods, NeedKind.fire);
     }

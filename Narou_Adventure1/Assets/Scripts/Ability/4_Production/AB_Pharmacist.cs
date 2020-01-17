@@ -16,7 +16,7 @@ public class AB_Pharmacist : ABILITY
 
     // Use this for initialization
     void Awake () {
-        AwakeAbility(AbilityKind.doctor, 30, 1.2);
+        AwakeAbility(AbilityKind.pharmacist, 30, 1.2);
         progress.unlockCostList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, -100));
         progress.progressCostList.Add(new Dealing(ResourceKind.action, Dealing.R_ParaKind.current, -0.4));
         progress.completeEffectList.Add(new Dealing(ResourceKind.herb, Dealing.R_ParaKind.max, 1));

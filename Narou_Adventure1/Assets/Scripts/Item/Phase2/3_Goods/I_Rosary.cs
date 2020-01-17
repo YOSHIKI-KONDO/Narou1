@@ -19,11 +19,11 @@ public class I_Rosary : ITEM
         AwakeItem(ItemKind.rosary, 3,1,3,1,1);
         BuyLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -530));
         SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 265));
-        EffectLists.Add(new Dealing(ResourceKind.magic_attack, Dealing.R_ParaKind.status, 2));
-        EffectLists.Add(new Dealing(ResourceKind.defense, Dealing.R_ParaKind.status, 3));
         EffectLists.Add(new Dealing(AbilityKind.believer, Dealing.A_ParaKind.maxLevel, 1));
         EffectLists.Add(new Dealing(AbilityKind.believer, Dealing.A_ParaKind.trainRate, 0.5));
         EffectLists.Add(new Dealing(ResourceKind.light, Dealing.R_ParaKind.regen, 0.1));
+        EffectLists.Add(new Dealing(ResourceKind.magic_attack, Dealing.R_ParaKind.status, 2));
+        EffectLists.Add(new Dealing(ResourceKind.defense, Dealing.R_ParaKind.status, 6));
 
         SetSource(NeedKind.goods, NeedKind.light);
     }

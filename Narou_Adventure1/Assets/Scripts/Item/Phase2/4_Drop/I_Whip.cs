@@ -15,7 +15,7 @@ public class I_Whip : ITEM
     // Use this for initialization
     void Awake()
     {
-        AwakeItem(ItemKind.whip, 1,1,2,30,2);
+        AwakeItem(ItemKind.whip, 1,1,2,1,1);
         BuyLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -160));
         SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 80));
         EffectLists.Add(new Dealing(AbilityKind.animal_handling, Dealing.A_ParaKind.maxLevel, 1));
