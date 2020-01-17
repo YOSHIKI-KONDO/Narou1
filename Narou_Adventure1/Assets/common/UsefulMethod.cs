@@ -959,7 +959,24 @@ public class UsefulMethod : MonoBehaviour
         return (baseDmg + randomFactor) > 0.5 ? baseDmg + randomFactor : 0.5;
     }
 
+    //overload
     public static void ChangeTextAdaptive(string sentense, Text text, params GameObject[] objects)
+    {
+        if (sentense == "" || sentense == null)
+        {
+            foreach (var obj in objects)
+            {
+                setFalse(obj);
+            }
+        }
+        else
+        {
+            text.text = sentense;
+        }
+    }
+
+    //overload
+    public static void ChangeTextAdaptive(string sentense, TextMeshProUGUI text, params GameObject[] objects)
     {
         if (sentense == "" || sentense == null)
         {

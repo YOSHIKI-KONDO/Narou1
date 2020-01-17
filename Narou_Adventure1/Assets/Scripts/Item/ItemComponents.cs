@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ItemComponents : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class ItemComponents : MonoBehaviour
     public Transform AttributesParent;
     public Text nameText;
     public Text levelText;
-    public Text rarityText;
+    public TextMeshProUGUI rarityText;
     public Text spaceText;
     public Text maxNumText;
     public Text numText;
