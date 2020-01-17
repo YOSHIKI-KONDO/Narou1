@@ -9,15 +9,15 @@ public class I_StoneAxe : ITEM
 {
     public override bool Requires()
     {
-        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.into_a_dormitory] >= 1;
+        return main.SR.clearNum_Dungeon[(int)DungeonKind.sewer] >= 1;
     }
 
     // Use this for initialization
     void Awake()
     {
         AwakeItem(ItemKind.stone_axe, 1,1,2,30,2);
-        BuyLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -180));
-        SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 90));
+        BuyLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -150));
+        SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 75));
         EffectLists.Add(new Dealing(ResourceKind.attack, Dealing.R_ParaKind.status, 12));
 
         SetSource(NeedKind.weapon, NeedKind.axe);

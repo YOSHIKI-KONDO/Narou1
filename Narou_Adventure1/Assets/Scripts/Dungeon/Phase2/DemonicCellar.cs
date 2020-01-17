@@ -17,15 +17,15 @@ public class DemonicCellar : DUNGEON
     // Use this for initialization
     void Awake () {
         AwakeDungeon(demonic_cellar, ResourceKind.itemPoint1, 1);
-        enemyList.Add(new EnemyKind[] { lizard_man });//1
+        enemyList.Add(new EnemyKind[] { lizard_man, rat, rat });//1
         enemyList.Add(new EnemyKind[] { bat, bat });
         enemyList.Add(new EnemyKind[] { rat, rat, rat });
-        enemyList.Add(new EnemyKind[] { werewolf , werewolf });//4
+        enemyList.Add(new EnemyKind[] { werewolf, werewolf });//4
         enemyList.Add(new EnemyKind[] { bat, bat, rat, rat });
-        enemyList.Add(new EnemyKind[] { bat, bat, rat });
-        enemyList.Add(new EnemyKind[] { lizard_man, rat, rat });//7
+        enemyList.Add(new EnemyKind[] { rat, bat, rat });
+        enemyList.Add(new EnemyKind[] { lizard_man, werewolf, rat, rat });//7
         enemyList.Add(new EnemyKind[] { bat, bat, bat });
-        enemyList.Add(new EnemyKind[] { bat, bat, bat, rat });
+        enemyList.Add(new EnemyKind[] { lizard_man, bat, rat });
         enemyList.Add(new EnemyKind[] { demonic_warrior });//10
 
         //progressCost.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -0.3f));

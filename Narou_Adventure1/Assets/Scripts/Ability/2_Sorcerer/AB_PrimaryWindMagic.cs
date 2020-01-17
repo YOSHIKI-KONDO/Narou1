@@ -29,7 +29,7 @@ public class AB_PrimaryWindMagic : ABILITY
 
         unlocks.Add(new SkillUnlock(1, SkillKind.air_cutter));
         unlocks.Add(new SkillUnlock(4, SkillKind.create_firewood));
-        unlocks.Add(new SkillUnlock(7, SkillKind.wind_step));
+        unlocks.Add(new SkillUnlock(7, SkillKind.air_bazooka));
     }
 
 	// Use this for initialization

@@ -17,7 +17,7 @@ public class RightSlash : SKILL
 		AwakeSkill(SkillKind.right_slash, 2);
         learnF.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -5));
         useCosts.Add(new Dealing(ResourceKind.stamina, Dealing.R_ParaKind.current, -1));
-        warriorAtks.Add(new WarriorAttack(12));
+        warriorAtks.Add(new WarriorAttack(13));
 
         SetSource(NeedKind.attack, NeedKind.sword, NeedKind.combo_arts);
 

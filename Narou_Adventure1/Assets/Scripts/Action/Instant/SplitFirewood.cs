@@ -9,7 +9,7 @@ public class SplitFirewood : INSTANT_ACTION
 {
     public override bool Requires()
     {
-        return main.a_rsc.CurrentLevels[(int)AbilityKind.use_tools] >= 3 ||
+        return main.a_rsc.CurrentLevels[(int)AbilityKind.use_tools] >= 4 ||
                main.rsc.Value[(int)ResourceKind.wood] >=1;
     }
 

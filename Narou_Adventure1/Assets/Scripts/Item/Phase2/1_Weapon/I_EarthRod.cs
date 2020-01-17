@@ -16,8 +16,9 @@ public class I_EarthRod : ITEM
     void Awake()
     {
         AwakeItem(ItemKind.earth_rod, 1,1,2,30,2);
-        BuyLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -150));
-        SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 75));
+        BuyLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -130));
+        SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 65));
+        EffectLists.Add(new Dealing(ResourceKind.paper, Dealing.R_ParaKind.max, 1));
         EffectLists.Add(new Dealing(ResourceKind.attack, Dealing.R_ParaKind.status, 6));
         EffectLists.Add(new Dealing(ResourceKind.magic_attack, Dealing.R_ParaKind.status, 6));
 

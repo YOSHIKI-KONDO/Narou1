@@ -29,7 +29,7 @@ public class AB_PrimaryFireMagic : ABILITY
 
         unlocks.Add(new SkillUnlock(1, SkillKind.fireball));
         unlocks.Add(new SkillUnlock(4, SkillKind.create_charcoal));
-        unlocks.Add(new SkillUnlock(7, SkillKind.hot_body));
+        unlocks.Add(new SkillUnlock(7, SkillKind.burning_shot));
     }
 
 	// Use this for initialization

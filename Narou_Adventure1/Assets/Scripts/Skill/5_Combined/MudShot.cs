@@ -9,17 +9,17 @@ public class MudShot : SKILL
 {
     public override bool Requires()
     {
-        return main.a_rsc.CurrentLevels[(int)AbilityKind.primary_water_magic] >= 2 &&
-               main.a_rsc.CurrentLevels[(int)AbilityKind.primary_earth_magic] >= 2;
+        return main.a_rsc.CurrentLevels[(int)AbilityKind.primary_water_magic] >= 4 &&
+               main.a_rsc.CurrentLevels[(int)AbilityKind.primary_earth_magic] >= 4;
     }
 
     // Use this for initialization
     void Awake () {
-		AwakeSkill(SkillKind.mud_shot, 4);
+		AwakeSkill(SkillKind.mud_shot, 2.6);
         learnF.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -20));
         useCosts.Add(new Dealing(ResourceKind.water, Dealing.R_ParaKind.current, -1.5));
         useCosts.Add(new Dealing(ResourceKind.earth, Dealing.R_ParaKind.current, -1.5));
-        sorcererAtks.Add(new SorcererAttack(30));
+        sorcererAtks.Add(new SorcererAttack(46));
 
         SetSource(NeedKind.attack, NeedKind.water, NeedKind.earth);
     }

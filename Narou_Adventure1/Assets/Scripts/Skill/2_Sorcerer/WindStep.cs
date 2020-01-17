@@ -9,7 +9,7 @@ public class WindStep : SKILL
 {
     public override bool Requires()
     {
-        return main.a_rsc.CurrentLevels[(int)AbilityKind.primary_wind_magic] >= 7;
+        return false;//main.a_rsc.CurrentLevels[(int)AbilityKind.primary_wind_magic] >= 7;
     }
 
     // Use this for initialization

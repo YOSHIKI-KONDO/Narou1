@@ -509,9 +509,11 @@ public class EnumCtrl : BASE {
         skills.Add(new template(SkillKind.right_slash, "Right Slash", "袈裟斬り", "", ""));
         skills.Add(new template(SkillKind.left_upper_slash, "Left Upper Slash", "左斬上げ", "", ""));
         skills.Add(new template(SkillKind.cooking_sandwich, "Cooking Sandwich", "クッキングサンドイッチ", "", ""));//生産
+
         skills.Add(new template(SkillKind.stab, "Stab", "突き", "", ""));
         skills.Add(new template(SkillKind.upper_slash, "Upper Slash", "斬上げ", "", ""));
         skills.Add(new template(SkillKind.spearfishing, "Spearfishing", "スピアフィッシング", "", ""));//生産
+
         skills.Add(new template(SkillKind.left_small_swing, "Left Small Swing", "左小振り", "", ""));
         skills.Add(new template(SkillKind.parry, "Parry", "受け流し", "", ""));
         skills.Add(new template(SkillKind.knead_dough, "Knead Dough", "パンをこねる", "", ""));//生産
@@ -526,15 +528,23 @@ public class EnumCtrl : BASE {
         skills.Add(new template(SkillKind.fireball, "Fireball", "ファイアーボール", "", ""));
         skills.Add(new template(SkillKind.hot_body, "Hot Body", "ホットボディ", "", ""));
         skills.Add(new template(SkillKind.create_charcoal, "Create Charcoal", "クリエイト：木炭", "", ""));//生産
+        skills.Add(new template(SkillKind.burning_shot, "Burning Shot", "バーニングショット", "", ""));
+
         skills.Add(new template(SkillKind.waterball, "Waterball", "ウォーターボール", "", ""));
         skills.Add(new template(SkillKind.cure_water, "Cure Water", "キュアウォーター", "", ""));
         skills.Add(new template(SkillKind.catch_fish, "Catch Fish", "キャッチ：魚", "", ""));//生産
+        skills.Add(new template(SkillKind.hydro_blade, "Hydro Blade", "ハイドロブレード", "", ""));
+
         skills.Add(new template(SkillKind.air_cutter, "Air Cutter", "エアーカッター", "", ""));
         skills.Add(new template(SkillKind.wind_step, "Wind Step", "ウインドステップ", "", ""));
         skills.Add(new template(SkillKind.create_firewood, "Create Firewood", "クリエイト：薪", "", ""));//生産
+        skills.Add(new template(SkillKind.air_bazooka, "Air Bazooka", "エアーバズーカ", "", ""));
+
         skills.Add(new template(SkillKind.stone_bullet, "Stone Bullet", "ストーンバレット", "", ""));
         skills.Add(new template(SkillKind.earth_wall, "Earth Wall", "アースウォール", "", ""));
         skills.Add(new template(SkillKind.grow_wheat, "Grow Wheat", "グロウ：小麦", "", ""));//生産
+        skills.Add(new template(SkillKind.rock_press, "Rock Press", "ロックプレス", "", ""));
+
         /*skills.Add(new template(SkillKind.electric_arrow, "Electric Arrow", "エレクトリックアロー", "", ""));
         skills.Add(new template(SkillKind.electric_step, "Electric Step", "エレクトリックステップ", "", ""));
         skills.Add(new template(SkillKind.ice_arrow, "Ice Arrow", "アイスアロー", "", ""));
@@ -545,6 +555,7 @@ public class EnumCtrl : BASE {
         //テイマー
         skills.Add(new template(SkillKind.animal_attack, "Animal Attack", "アニマルアタック", "", ""));
         skills.Add(new template(SkillKind.picking_up_coins, "Picking up Coins", "小銭拾い", "", ""));
+        skills.Add(new template(SkillKind.mad_animal, "Mad Animal", "マッドアニマル", "", ""));
 
         //複合スキル
         skills.Add(new template(SkillKind.flame_slash, "Flame Slash", "火炎斬り", "", ""));//add
