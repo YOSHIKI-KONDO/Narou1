@@ -18,6 +18,8 @@ public class AB_LifeMagic : ABILITY
         AwakeAbility(AbilityKind.life_magic, 30, 1.2);
         progress.unlockCostList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, -50));
         progress.progressCostList.Add(new Dealing(ResourceKind.action, Dealing.R_ParaKind.current, -0.4));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.mp, Dealing.R_ParaKind.max, 0.1));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.mp, Dealing.R_ParaKind.regen, 0.02));
         progress.completeEffectList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.max, 2));
         progress.completeEffectList.Add(new Dealing(ResourceKind.paper, Dealing.R_ParaKind.max, 1));
         progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 5));

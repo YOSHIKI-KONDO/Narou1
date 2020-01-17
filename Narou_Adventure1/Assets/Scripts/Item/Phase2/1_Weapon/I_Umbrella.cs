@@ -21,7 +21,7 @@ public class I_Umbrella : ITEM
         EffectLists.Add(new Dealing(ResourceKind.attack, Dealing.R_ParaKind.status, 2));
         EffectLists.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.max, 2));
 
-        SetSource(NeedKind.weapon, NeedKind.sword, NeedKind.spear, NeedKind.rod,  NeedKind.water);
+        SetSource(NeedKind.weapon, NeedKind.sword, NeedKind.rod,  NeedKind.water);
     }
 
     // Use this for initialization

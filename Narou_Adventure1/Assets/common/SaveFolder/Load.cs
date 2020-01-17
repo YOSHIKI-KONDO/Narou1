@@ -12,6 +12,9 @@ using System.Security.Cryptography;
 public class Load : BASE, IPointerDownHandler
 {
     public Button saveButton;
+    public Button hardResetButton;
+    string sceneName = "main";
+    string gameTitle = "No-Name-Game";
     string saveTitle, saveContent;
     bool isOver;
     AES aes = new AES();
@@ -26,6 +29,7 @@ public class Load : BASE, IPointerDownHandler
 
     void Start()
     {
+        hardResetButton?.onClick.AddListener(HardReset);
 #if UNITY_EDITOR
 #elif UNITY_WEBGL
         saveButton.onClick.AddListener(()=>StartCoroutine(saveText()));
@@ -71,7 +75,7 @@ document.addEventListener('click', function() {
     //Incentivized Ads 初回Bonusから呼ぶ
     public IEnumerator saveText()
     {
-        saveTitle = "NoNameGame_" + DateTime.Now.ToString();
+        saveTitle = gameTitle + "_" + DateTime.Now.ToString();
 
         saveStrArray[0] = PlayerPrefs.GetString(keyList.resetSaveKey);
         saveStrArray[1] = PlayerPrefs.GetString(keyList.permanentSaveKey);
@@ -163,7 +167,7 @@ if (fileuploader) {
         main.SR = SRdata;
         main.S = Sdata;
         yield return new WaitForSeconds(1.0f);
-        SceneManager.LoadScene("wine");
+        SceneManager.LoadScene(sceneName);
     }
 
     //string debugData = "";
@@ -192,4 +196,14 @@ if (fileuploader) {
     //    yield return new WaitForSeconds(1.0f);
     //    SceneManager.LoadScene("wine");
     //}
+
+
+    int clickCount;
+    void HardReset()
+    {
+        clickCount++;
+        if (clickCount < 10) { return; }
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene(sceneName);
+    }
 }

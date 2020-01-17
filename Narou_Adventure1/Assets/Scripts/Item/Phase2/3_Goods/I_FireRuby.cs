@@ -9,13 +9,14 @@ public class I_FireRuby : ITEM
 {
     public override bool Requires()
     {
-        return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.into_a_dormitory] >= 1;
+        return main.SR.clearNum_Dungeon[(int)DungeonKind.hoarding_house] >= 1 ||
+               main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.wholesaler_of_drugs] >= 1;
     }
 
     // Use this for initialization
     void Awake()
     {
-        AwakeItem(ItemKind.fire_ruby, 4,1,3,1,1);
+        AwakeItem(ItemKind.fire_ruby, 2,1,3,1,1);
         BuyLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -500));
         SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 250));
         EffectLists.Add(new Dealing(ResourceKind.magic_attack, Dealing.R_ParaKind.status, 5));

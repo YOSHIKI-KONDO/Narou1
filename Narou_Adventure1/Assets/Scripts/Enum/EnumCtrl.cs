@@ -60,7 +60,7 @@ public class EnumCtrl : BASE {
 
         /* リソース */
         resources.Add(new template(ResourceKind.nothing, "", "", "", ""));
-        resources.Add(new template(ResourceKind.focus, "focus", "フォーカス", "Improve action efficiency with mp.", ""));
+        resources.Add(new template(ResourceKind.focus, "Focus", "フォーカス", "Improve action efficiency with mp.", ""));
         resources.Add(new template(ResourceKind.equipSpace, "Equip", "装備", "", ""));
         resources.Add(new template(ResourceKind.inventorySpace, "Inventory", "インベントリ", "", ""));
         //プレイヤーステータス
@@ -158,7 +158,7 @@ public class EnumCtrl : BASE {
         instantActions.Add(new template(ActionEnum.Instant.weeding, "Weeding", "草むしり", "Part time job. Once in a while, you can get herbs.", "アルバイト。たまにハーブが生えている。"));
         instantActions.Add(new template(ActionEnum.Instant.intensive_training, "Intensive Training", "猛特訓", "Gain destiny by training hard.", "体を酷使することで運命力を得る。"));
         instantActions.Add(new template(ActionEnum.Instant.eat_anchovy_sandwich, "Eat Anchovy Sandwich", "アンチョビサンドを食べる", "The salty taste recovers you from fatigue.", "塩味が効いていて、疲れた体に旨みが染み渡る。"));
-        instantActions.Add(new template(ActionEnum.Instant.eat_filet_o_fish, "Eat Filet-O-Fish", "フィレオフィッシュを食べる", "As soon as you put it in your mouth, the deliciousness of fried fish between fluffy patties fills your mouth", "一口噛むと、ふっくらとしたバンズに挟まれたフィッシュフライの油がほとばしる。"));
+        instantActions.Add(new template(ActionEnum.Instant.eat_filet_o_fish, "Eat Filet-O-Fish", "フィレオフィッシュを食べる", "As soon as you put it in your mouth, the deliciousness of fried fish between fluffy patties fills your mouth.", "一口噛むと、ふっくらとしたバンズに挟まれたフィッシュフライの油がほとばしる。"));
         instantActions.Add(new template(ActionEnum.Instant.drink_herb_tea, "Drink Herb tea", "ハーブティーを飲む", "It tastes sacred.", "神聖な味がする。"));
         instantActions.Add(new template(ActionEnum.Instant.rune_generation, "Rune Generation", "ルーン生成", "Obtain Rune from the destiny power.", "運命の力でルーンを得る。"));
         instantActions.Add(new template(ActionEnum.Instant.runic_carving, "Runic Carving", "ルーンを刻む", "Obtain further destiny from carving with runes.", "ルーンを石碑に刻み、更なる運命を得る。"));
@@ -202,7 +202,7 @@ public class EnumCtrl : BASE {
         loopActions.Add(new template(ActionEnum.Loop.service_trade, "Pub Waitron", "酒場の接客", "", ""));//modify
             //アビリティアクション
         loopActions.Add(new template(ActionEnum.Loop.pickpocket, "Pickpocket", "スリ", "", ""));
-        loopActions.Add(new template(ActionEnum.Loop.bake_bread, "Bake Bread", "パンを焼く", "", ""));//add
+        loopActions.Add(new template(ActionEnum.Loop.bake_bread, "Baking", "パンを焼く", "", ""));//modify
         loopActions.Add(new template(ActionEnum.Loop.dispense_medicines, "Making Medicines", "薬の調合", "", ""));
 
         /* アップグレードアクション */
@@ -214,7 +214,7 @@ public class EnumCtrl : BASE {
         upgradeActions.Add(new template(ActionEnum.Upgrade.talk_fatherD, "Talk with Father", "父の話を聞く", "Go to school. Learn what I can't teach.", "学校に行くと良い。私では教えられないことを学べる。"));
             //父の道場
         upgradeActions.Add(new template(ActionEnum.Upgrade.training, "Training", "トレーニング", "", ""));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.fathers_gym, "Father's Gym", "父の道場", "", ""));//add
+        upgradeActions.Add(new template(ActionEnum.Upgrade.fathers_gym, "Father's Training room", "父の道場", "", ""));//modify
         upgradeActions.Add(new template(ActionEnum.Upgrade.sword_practice, "Sword Practice", "剣の稽古", "", ""));
         upgradeActions.Add(new template(ActionEnum.Upgrade.spear_practice, "Spear Practice", "槍の稽古", "", ""));
         upgradeActions.Add(new template(ActionEnum.Upgrade.rod_practice, "Rod Practice", "棒の稽古", "", ""));
@@ -248,9 +248,9 @@ public class EnumCtrl : BASE {
         upgradeActions.Add(new template(ActionEnum.Upgrade.tamer_school, "Tamer School", "テイマー学校", "Decide to enter Tamer school. You can't go back, so consider where you want to go.", "テイマー学校への入学を決意する。後戻りはできないので入学先はしっかり考えよう。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.leave_the_town, "Talk with Father", "父と話す", "Leave the village. Head to the school city beyond the plains and forests. Make sure that you have nothing to do now.", "村を出るのか。母のことは任せたぞ。それと、やり残したことはないか確認しておきなさい。それと、この御守りを持っていきなさい。"));//modify
         upgradeActions.Add(new template(ActionEnum.Upgrade.academic_city, "Leave the Town", "村を出る", "The girl says she does want to go with me. Prepare your luggage for two people.", "平原と森を越えた先の学園都市に向かう。村を出ようとすると少女に呼び止められた。少女が付いてくると言って聞かない。二人分の荷物を用意しよう。"));//modify
-        upgradeActions.Add(new template(ActionEnum.Upgrade.shed, "Shed", "小屋", "", "平原をしばらく進むと、森の手前に小屋が見えた。"));//add
-        upgradeActions.Add(new template(ActionEnum.Upgrade.talk_old_man, "Talk with Old man", "老人の話を聞く", "", "弱そうな子供だな。この先の森はより強い魔物が出る。防具を装備しなさい。ゴブリンの死体から木の盾を拝借するのだ。"));//add
-        upgradeActions.Add(new template(ActionEnum.Upgrade.open_closet, "Open Closet", "クローゼットを開ける", "", "老人の目を欺くことなどたやすい。"));//add
+        upgradeActions.Add(new template(ActionEnum.Upgrade.shed, "Cabin", "小屋", "After a short walk through the plains, You see a cabin in front of the forest.", "平原をしばらく進むと、森の手前に小屋が見えた。"));//modify
+        upgradeActions.Add(new template(ActionEnum.Upgrade.talk_old_man, "Talk with old man", "老人の話を聞く", "[Look weak. In the forest ahead there will be stronger monsters. Equip armor. Obtain a wooden shield from the goblin corpse.]", "弱そうな子供だな。この先の森はより強い魔物が出る。防具を装備しなさい。ゴブリンの死体から木の盾を拝借するのだ。"));//add
+        upgradeActions.Add(new template(ActionEnum.Upgrade.open_closet, "Open Closet", "クローゼットを開ける", "So easy to do everything, hiding from an old man.", "老人の目を欺くことなどたやすい。"));//add
 
         //フェーズ２（学校）
         
@@ -261,7 +261,7 @@ public class EnumCtrl : BASE {
         upgradeActions.Add(new template(ActionEnum.Upgrade.norns_room, "Norn's room", "ノルンの部屋に行く", "Go to the girl's room to say hello", "少女の部屋へ挨拶に向かう。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.desolate_room, "Trashed room", "荒らされた部屋", "But no one is inside. There is evidence of competing. I remembered my mother, and became upset.", "しかし、中には誰もいない。争った形跡がある。攫われた母のことを思い出し、胸が高鳴った。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.rumor, "Rumor", "ウワサ", "Recently, demons have settled in the notorious garbage mansion. It's so dirty that the monsters settled down even though it's not sewers.", "近頃、悪評高いゴミ屋敷には魔物が住み着いている。下水道でもないのに魔物が住み着くなんてよほど汚いみたいだ。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.resucue_a_girl, "Resucue a Girl", "少女を救出する", "", "囚われていた少女を救出する。気を失っているが、命に別状はないようだ。"));//add
+        upgradeActions.Add(new template(ActionEnum.Upgrade.resucue_a_girl, "Saving a Girl", "少女を救出する", "Saving a girl who has been in a jail.  Though she is fainted, it looks like she is safe.", "囚われていた少女を救出する。気を失っているが、命に別状はないようだ。"));//modify
             //フリークエスト
         upgradeActions.Add(new template(ActionEnum.Upgrade.delivery_of_fur, "Delivery of pelt", "毛皮の納品", "[Deliver the pelt that you can get by defeating Wolf. Since it will be for sale, I call for less scratches.]", "ウルフを倒すと手に入る、毛皮を納品してくれ。商品なんだから傷は少なめで頼むよ。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.house_clean_up, "House clean up", "ゴミ屋敷の掃除", "[What is the landlord doing!? Somebody clean it up! It's absolutely annoying!!]", "家主は何をしているんだ？近所迷惑だから誰でもいい、掃除してくれ！"));
@@ -456,10 +456,10 @@ public class EnumCtrl : BASE {
         items.Add(new template(ItemKind.cutlass, "Cutlass", "カットラス", "", ""));//add
         items.Add(new template(ItemKind.trident, "Trident", "トライデント", "", ""));//add
         items.Add(new template(ItemKind.whip, "Whip", "鞭", "", ""));//add
-        items.Add(new template(ItemKind.claw_bar, "Claw Bar", "バール", "", "魔法のステッキ。魔力を感じる。"));//add
+        items.Add(new template(ItemKind.claw_bar, "Crowbar", "バール", "A magic wand. Feel the magic power.", "魔法のステッキ。魔力を感じる。"));//add
         items.Add(new template(ItemKind.charm, "Charm", "御守り", "", ""));//add
         items.Add(new template(ItemKind.darkness_sword, "Darkness Sword", "ダークネスソード", "", ""));//add
-        items.Add(new template(ItemKind.woodshield, "Wood Shield", "木の盾", "", ""));//add
+        items.Add(new template(ItemKind.woodshield, "Wooden Shield", "木の盾", "", ""));//add
         items.Add(new template(ItemKind.old_robe, "Old Robe", "古いローブ", "", ""));//add
 
         /* 必要条件 */

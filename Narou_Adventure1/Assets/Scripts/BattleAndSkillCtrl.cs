@@ -639,7 +639,7 @@ public class BattleAndSkillCtrl : BASE {
 
 
             // 待つ
-            waitFloor.Wait((int)(100f/Time.timeScale));
+            waitFloor.Wait((int)(20f/Time.timeScale));
             if (waitFloor.Waiting)
             {
                 return; //待っていたら関数そのものから抜ける ***

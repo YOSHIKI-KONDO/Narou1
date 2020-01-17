@@ -16,8 +16,8 @@ public class I_StoneSpear : ITEM
     void Awake()
     {
         AwakeItem(ItemKind.stone_spear, 1,1,2,30,2);
-        BuyLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -130));
-        SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 65));
+        BuyLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, -100));
+        SellLists.Add(new Dealing(ResourceKind.gold, Dealing.R_ParaKind.current, 50));
         EffectLists.Add(new Dealing(ResourceKind.attack, Dealing.R_ParaKind.status, 10));
 
         SetSource(NeedKind.weapon, NeedKind.spear);
