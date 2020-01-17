@@ -339,8 +339,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 27, y: -104}
-  m_SizeDelta: {x: 34, y: 14}
+  m_AnchoredPosition: {x: 38, y: -104}
+  m_SizeDelta: {x: 56, y: 14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3652519421957878716
 CanvasRenderer:
@@ -383,7 +383,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u25BCcost"
+  m_Text: << cost >>
 --- !u!1 &1198224866674842353
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,7 +620,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u25B2complete effects"
+  m_Text: '[ complete effects ]'
 --- !u!1 &4036460942192077037
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,7 +699,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u25B2effects"
+  m_Text: '[ effects ]'
 --- !u!1 &4403929188208401439
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,8 +734,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 46.5, y: -48}
-  m_SizeDelta: {x: 73, y: 14}
+  m_AnchoredPosition: {x: 57.5, y: -48}
+  m_SizeDelta: {x: 95, y: 14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1504066737068597274
 CanvasRenderer:
@@ -778,7 +778,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u25BCunlock cost"
+  m_Text: << unlock cost >>
 --- !u!1 &4525761441766222540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1287,8 +1287,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 33, y: -216}
-  m_SizeDelta: {x: 46, y: 14}
+  m_AnchoredPosition: {x: 34, y: -216}
+  m_SizeDelta: {x: 48, y: 14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7754391031560472742
 CanvasRenderer:
@@ -1331,7 +1331,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u25A0 unlock"
+  m_Text: '[ unlock ]'
 --- !u!1 &8322968360427129778
 GameObject:
   m_ObjectHideFlags: 0
@@ -1366,8 +1366,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 52.5, y: -132}
-  m_SizeDelta: {x: 85, y: 14}
+  m_AnchoredPosition: {x: 63.5, y: -132}
+  m_SizeDelta: {x: 107, y: 14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5086363594861885766
 CanvasRenderer:
@@ -1410,7 +1410,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u25BCprogress cost"
+  m_Text: << progress cost >>
 --- !u!1 &9212686560406264578
 GameObject:
   m_ObjectHideFlags: 0
