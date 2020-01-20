@@ -625,8 +625,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 44.5, y: -7}
-  m_SizeDelta: {x: 89, y: 14}
+  m_AnchoredPosition: {x: 38.5, y: -7}
+  m_SizeDelta: {x: 77, y: 14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5976487529911244461
 CanvasRenderer:
@@ -669,7 +669,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u25BClevel up cost : "
+  m_Text: 'level up cost : '
 --- !u!1 &1189804105644113197
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,8 +704,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 29.5, y: -7}
-  m_SizeDelta: {x: 59, y: 14}
+  m_AnchoredPosition: {x: 24.5, y: -7}
+  m_SizeDelta: {x: 49, y: 14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2254917077822819187
 CanvasRenderer:
@@ -748,7 +748,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u25A0 sell price"
+  m_Text: sell price
 --- !u!1 &1224547314161717567
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,8 +783,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 51, y: -7}
-  m_SizeDelta: {x: 102, y: 14}
+  m_AnchoredPosition: {x: 45, y: -7}
+  m_SizeDelta: {x: 90, y: 14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7352832843299699220
 CanvasRenderer:
@@ -827,7 +827,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u25B2level up effects : "
+  m_Text: 'level up effects : '
 --- !u!1 &1357508791770198180
 GameObject:
   m_ObjectHideFlags: 0
@@ -1376,7 +1376,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 135, y: -7}
+  m_AnchoredPosition: {x: 123, y: -7}
   m_SizeDelta: {x: 92, y: 14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1042178649100695215
@@ -2050,8 +2050,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 33.5, y: -132.18}
-  m_SizeDelta: {x: 47, y: 14}
+  m_AnchoredPosition: {x: 44.5, y: -132.18}
+  m_SizeDelta: {x: 69, y: 14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1329373453577011796
 CanvasRenderer:
@@ -2094,7 +2094,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u25B2effects"
+  m_Text: << effects >>
 --- !u!1 &4934632899580910150
 GameObject:
   m_ObjectHideFlags: 0
@@ -2619,8 +2619,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 18.5, y: -7}
-  m_SizeDelta: {x: 37, y: 14}
+  m_AnchoredPosition: {x: 13.5, y: -7}
+  m_SizeDelta: {x: 27, y: 14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8461313465470501988
 CanvasRenderer:
@@ -2663,7 +2663,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u25A0 price"
+  m_Text: price
 --- !u!1 &6152533950703690221
 GameObject:
   m_ObjectHideFlags: 0
@@ -2918,7 +2918,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 118, y: -7}
+  m_AnchoredPosition: {x: 106, y: -7}
   m_SizeDelta: {x: 32, y: 14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &323799757211523186
