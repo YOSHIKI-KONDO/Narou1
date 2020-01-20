@@ -85,6 +85,8 @@ public class ProgressFunction : OnlyAction
         }
         else
         {
+            if (main.SR.doAnnounce_resourceMaxOrLack)
+                main.announce.Add("You ran out of the resources and take a rest.");
             main.progressCtrl.Rest();
             return;
         }
@@ -102,6 +104,8 @@ public class ProgressFunction : OnlyAction
         //もしもいっぱいだったら 止まる
         if (EffectIsCompleted(progressEffectList) && EffectIsCompleted(completeEffectList) && this != main.progressCtrl.restFunction)
         {
+            if(main.SR.doAnnounce_resourceMaxOrLack)
+                main.announce.Add("The resources are full and you can't produce it anymore.");
             main.progressCtrl.DontDoAnything();
         }
 

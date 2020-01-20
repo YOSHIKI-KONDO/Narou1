@@ -102,4 +102,5 @@ public class SaveR
     public bool isOn_activeSkillToggle = true;
     public bool isOn_ButtonHighLight = false;
     public bool isOn_ResourceHighLight = true;
+    public bool doAnnounce_resourceMaxOrLack = true;
 }
