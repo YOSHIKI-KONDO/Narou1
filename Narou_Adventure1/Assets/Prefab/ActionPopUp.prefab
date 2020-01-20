@@ -253,8 +253,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 27, y: -76}
-  m_SizeDelta: {x: 34, y: 14}
+  m_AnchoredPosition: {x: 38, y: -76}
+  m_SizeDelta: {x: 56, y: 14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3652519421957878716
 CanvasRenderer:
@@ -297,7 +297,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u25BCcost"
+  m_Text: << cost >>
 --- !u!1 &1198224866674842353
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,7 +674,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u25B2complete effects"
+  m_Text: '[ complete effects ]'
 --- !u!1 &3876214060566534168
 GameObject:
   m_ObjectHideFlags: 0
@@ -894,7 +894,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u25B2effects"
+  m_Text: '[ effects ]'
 --- !u!1 &4525761441766222540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,8 +1543,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 52.5, y: -104}
-  m_SizeDelta: {x: 85, y: 14}
+  m_AnchoredPosition: {x: 63.5, y: -104}
+  m_SizeDelta: {x: 107, y: 14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5086363594861885766
 CanvasRenderer:
@@ -1587,7 +1587,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u25BCprogress cost"
+  m_Text: << progress cost >>
 --- !u!1 &8739443805331010744
 GameObject:
   m_ObjectHideFlags: 0
