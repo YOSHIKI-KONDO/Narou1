@@ -1663,8 +1663,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 18, y: -7}
-  m_SizeDelta: {x: 36, y: 14}
+  m_AnchoredPosition: {x: 19, y: -7}
+  m_SizeDelta: {x: 38, y: 14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1606432908465340316
 CanvasRenderer:
@@ -1707,7 +1707,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u25A0 loots"
+  m_Text: '[ loots ]'
 --- !u!1 &4972998416431062817
 GameObject:
   m_ObjectHideFlags: 0
@@ -2512,8 +2512,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 52.5, y: -63}
-  m_SizeDelta: {x: 85, y: 14}
+  m_AnchoredPosition: {x: 63.5, y: -63}
+  m_SizeDelta: {x: 107, y: 14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5086363594861885766
 CanvasRenderer:
@@ -2556,7 +2556,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u25BCprogress cost"
+  m_Text: << progress cost >>
 --- !u!1 &8704791981604146684
 GameObject:
   m_ObjectHideFlags: 0
@@ -2591,8 +2591,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 52, y: -7}
-  m_SizeDelta: {x: 104, y: 14}
+  m_AnchoredPosition: {x: 53, y: -7}
+  m_SizeDelta: {x: 106, y: 14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1902500987917870284
 CanvasRenderer:
@@ -2635,7 +2635,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u25A0 First Clear Bonus"
+  m_Text: '[ First Clear Bonus ]'
 --- !u!1 &8914571935440072296
 GameObject:
   m_ObjectHideFlags: 0
