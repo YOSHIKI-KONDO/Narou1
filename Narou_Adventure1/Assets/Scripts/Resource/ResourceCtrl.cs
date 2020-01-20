@@ -97,6 +97,7 @@ public class ResourceCtrl : BASE {
             main.announce_d.Add("Level UP! (" + (main.SR.level - 1).ToString() + "→" + main.SR.level.ToString() + ")", Color.red);
             main.status.LevelUp(); //ステータスを増やす
             AnalyticsEvent.LevelUp(main.SR.level); //レベルを送信
+            Application.ExternalCall("kongregate.stats.submit", "Max Level", main.SR.level); //ハイスコアを送信
         }
     }
 

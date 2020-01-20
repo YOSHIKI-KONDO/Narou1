@@ -36,7 +36,7 @@ public class UPGRADE_ACTION : ACTION, INeed
     }
     public virtual void CompleteAction() { }
 
-    public string Name_str, Description_str, Need_str, Cost_str, ProgressCost_str, ProgressEffect_str, CompleteEffect_str;
+    public string Name_str, Description_str, Need_str, Cost_str, ProgressCost_str, ProgressEffect_str, CompleteEffect_str, MaxNum_str;
 
     void AddClerNum()
     {
@@ -158,6 +158,7 @@ public class UPGRADE_ACTION : ACTION, INeed
             ProgressCost_str = progress.ProgressDetail(progress.progressCostList);
             ProgressEffect_str = progress.ProgressDetail(progress.progressEffectList);
             CompleteEffect_str = progress.ProgressDetail(progress.completeEffectList);
+            MaxNum_str = maxNum == 1 ? "" : "Max:" + ClearNum + "/" + maxNum;
 
             //needが設定されている場合にのみ書き換える。
             //そのため、ない場合は手動でNeed_strを変えることが可能。
@@ -171,6 +172,7 @@ public class UPGRADE_ACTION : ACTION, INeed
             ChangeTextAdaptive(ProgressCost_str, popUp.texts[7], popUp.texts[6].gameObject, popUp.texts[7].gameObject);
             ChangeTextAdaptive(ProgressEffect_str, popUp.texts[9], popUp.texts[8].gameObject, popUp.texts[9].gameObject);
             ChangeTextAdaptive(CompleteEffect_str, popUp.texts[11], popUp.texts[10].gameObject, popUp.texts[11].gameObject);
+            ChangeTextAdaptive(MaxNum_str, popUp.texts[12], popUp.texts[12].gameObject);
         }
     }
 }

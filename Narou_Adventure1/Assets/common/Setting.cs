@@ -10,6 +10,7 @@ public class Setting : BASE {
     public Slider SESlider, BGMSlider;
     public Toggle buttonHighLightToggle;
     public Toggle resourceHighLightToggle;
+    public Toggle announce_resourceMaxLack;
 
     public float SEVolume
     {
@@ -38,6 +39,7 @@ public class Setting : BASE {
         //BGMVolume = BGMSlider.value;
         main.SR.isOn_ButtonHighLight = buttonHighLightToggle.isOn;
         main.SR.isOn_ResourceHighLight = resourceHighLightToggle.isOn;
+        main.SR.doAnnounce_resourceMaxOrLack = announce_resourceMaxLack.isOn;
     }
 
     void Load()
@@ -46,6 +48,7 @@ public class Setting : BASE {
         //BGMSlider.value = BGMVolume;
         buttonHighLightToggle.isOn = main.SR.isOn_ButtonHighLight;
         resourceHighLightToggle.isOn = main.SR.isOn_ResourceHighLight;
+        announce_resourceMaxLack.isOn = main.SR.doAnnounce_resourceMaxOrLack;
     }
 
     // Use this for initialization

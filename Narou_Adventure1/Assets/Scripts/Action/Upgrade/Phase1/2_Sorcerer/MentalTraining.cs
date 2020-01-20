@@ -23,6 +23,8 @@ public class MentalTraining : UPGRADE_ACTION
         {
             main.rsc.Max_Base[(int)ResourceKind.focus] = 1;
             main.rsc.Value[(int)ResourceKind.focus] = 1;
+            StartCoroutine(NewInvokeCor(() => //1秒遅れでアナウンスする。
+            main.announce.Add("<b><i>By using mp, you can use focus function. Making action progress more faster by focusing.</i></b>", Color.black),0.1f));
         }
     }
 
@@ -38,7 +40,7 @@ public class MentalTraining : UPGRADE_ACTION
 	// Use this for initialization
 	void Start () {
         StartUpgradeAction();
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {

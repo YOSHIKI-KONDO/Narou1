@@ -106,8 +106,6 @@ public class Main : MonoBehaviour
             SR.firstPlay = false;
             decideParameter.Initialize();
         }
-
-
     }
 
     IEnumerator plusTime()
