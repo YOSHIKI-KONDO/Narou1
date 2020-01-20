@@ -16,7 +16,7 @@ public class Moor : DUNGEON
 
     // Use this for initialization
     void Awake () {
-        AwakeDungeon(moor, ResourceKind.itemPoint1, 1);
+        AwakeDungeon(moor, ResourceKind.itemPoint1, 12);
         enemyList.Add(new EnemyKind[] { wolf, wolf, snake });
         enemyList.Add(new EnemyKind[] { rat, rat, snake });
         enemyList.Add(new EnemyKind[] { wolf, bird, rat });

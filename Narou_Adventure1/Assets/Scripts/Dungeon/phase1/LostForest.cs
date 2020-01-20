@@ -16,7 +16,7 @@ public class LostForest : DUNGEON
 
     // Use this for initialization
     void Awake () {
-        AwakeDungeon(lost_forest, ResourceKind.itemPoint1, 15);
+        AwakeDungeon(lost_forest, ResourceKind.itemPoint1, 8);
         enemyList.Add(new EnemyKind[] { bird, bird });
         enemyList.Add(new EnemyKind[] { goblin, wolf });
         enemyList.Add(new EnemyKind[] { wolf, wolf });

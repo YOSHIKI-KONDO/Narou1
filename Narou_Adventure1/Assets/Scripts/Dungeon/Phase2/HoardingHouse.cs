@@ -16,7 +16,7 @@ public class HoardingHouse : DUNGEON
 
     // Use this for initialization
     void Awake () {
-        AwakeDungeon(hoarding_house, ResourceKind.itemPoint1, 1);
+        AwakeDungeon(hoarding_house, ResourceKind.itemPoint1, 12);
         enemyList.Add(new EnemyKind[] { rat });//1
         enemyList.Add(new EnemyKind[] { rat, bat });
         enemyList.Add(new EnemyKind[] { rat, rat });
