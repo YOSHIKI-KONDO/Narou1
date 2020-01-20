@@ -541,16 +541,16 @@ public class BattleAndSkillCtrl : BASE {
             }
         }
 
-        //リソースの報酬を入手する関数
+        //リソースの報酬を入手する関数<b><i></i></b>
         void GetResourceDrops(InnerEnemy innerEnemy, Drop drop)
         {
             if (drop is Item_Drop)
             {
                 bool couldGet = main.itemCtrl.Drop_Inventory(((drop as Item_Drop).itemKind));
                 string additive = couldGet ? "" : " (but Inventory is full)";
-                main.announce_d.Add("LOOT [" + main.enumCtrl.enemys[(int)innerEnemy.kind].Name() + "] : "
+                main.announce_d.Add("<b><i>LOOT [" + main.enumCtrl.enemys[(int)innerEnemy.kind].Name() + "] : "
                     + main.enumCtrl.items[(int)(drop as Item_Drop).itemKind].Name()
-                    + additive, Color.red);
+                    + additive + "</i></b>");
             }
 
             main.announce_d.Add("LOOT [" + main.enumCtrl.enemys[(int)innerEnemy.kind].Name() + "] : " + main.enumCtrl.resources[(int)drop.kind].Name() + " + " +
@@ -583,10 +583,11 @@ public class BattleAndSkillCtrl : BASE {
                         {
                             bool couldGet = main.itemCtrl.Drop_Inventory((dungeons[(int)dunKind].drops[i_d] as Item_Drop).itemKind);
                             string additive = couldGet ? "" : " (but Inventory is full)";
-                            main.announce_d.Add("LOOT [" + main.enumCtrl.dungeons[(int)dunKind].Name() + "] : "
+                            main.announce_d.Add("<b><i>LOOT [" + main.enumCtrl.dungeons[(int)dunKind].Name() + "] : "
                                 + main.enumCtrl.items[(int)(dungeons[(int)dunKind].drops[i_d] as Item_Drop).itemKind].Name()
-                                + additive, Color.red);
-                            
+                                + additive + "</i></b>");
+
+
                         }
                         else
                         {
@@ -608,9 +609,9 @@ public class BattleAndSkillCtrl : BASE {
                         {
                             bool couldGet = main.itemCtrl.Drop_Inventory((dungeons[(int)dunKind].firstDrops[i_d] as Item_Drop).itemKind);
                             string additive = couldGet ? "" : " (but Inventory is full)";
-                            main.announce_d.Add("LOOT [" + main.enumCtrl.dungeons[(int)dunKind].Name() + "] : "
+                            main.announce_d.Add("<b><i>LOOT [" + main.enumCtrl.dungeons[(int)dunKind].Name() + "] : "
                                 + main.enumCtrl.items[(int)(dungeons[(int)dunKind].firstDrops[i_d] as Item_Drop).itemKind].Name()
-                                + additive, Color.red);
+                                + additive + "</i></b>");
 
                         }
                         else

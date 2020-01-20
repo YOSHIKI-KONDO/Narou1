@@ -13,7 +13,7 @@ public class OnlyAction : BASE {
     public Action SelectedAction; //選択された時に呼ばれる関数
     public string actionName;
     public float sliderValue;
-    bool addCtrl;
+    protected bool addCtrl;
 
     // Use this for initialization
     public void AwakeOnlyAction(Button button, GameObject isOnObj, string ActionName, bool addCtrl) {

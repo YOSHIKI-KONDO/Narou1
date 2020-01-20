@@ -70,7 +70,10 @@ public class ResourceText : BASE {
         {
             //自動でコストの文章を生成
             Description_str = main.enumCtrl.resources[(int)kind].Description();
-            Regen_str = "Regeneration : " + tDigit(main.rsc.Regen((int)kind), main.resourceTextCtrl.points[(int)kind].regen) + "/s";
+            if (main.rsc.Regen((int)kind) > 0.0001 || main.rsc.Regen((int)kind) < -0.0001)
+            {
+                Regen_str = "Regeneration : " + tDigit(main.rsc.Regen((int)kind), main.resourceTextCtrl.points[(int)kind].regen) + "/s";
+            }
             Effect_str = ProgressDetail(effects);
 
             ChangeTextAdaptive(Name_str, popUp.texts[0], popUp.texts[0].gameObject);

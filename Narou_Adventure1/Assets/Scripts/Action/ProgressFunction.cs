@@ -102,9 +102,11 @@ public class ProgressFunction : OnlyAction
             HasPaid(false);
         }
         //もしもいっぱいだったら 止まる
+        //NOTE:リソースがいっぱいなのと、upgradeアクションなど最大値しか設定されていなくて止まるものが一緒くたになっている。
+        //買い切りのupgradeをすると呼ばれてしまう。
         if (EffectIsCompleted(progressEffectList) && EffectIsCompleted(completeEffectList) && this != main.progressCtrl.restFunction)
         {
-            if(main.SR.doAnnounce_resourceMaxOrLack)
+            if(main.SR.doAnnounce_resourceMaxOrLack && addCtrl)
                 main.announce.Add("The resources are full and you can't produce it anymore.");
             main.progressCtrl.DontDoAnything();
         }

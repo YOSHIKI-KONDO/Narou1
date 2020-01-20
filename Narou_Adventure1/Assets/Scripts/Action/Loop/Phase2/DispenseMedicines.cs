@@ -15,8 +15,9 @@ public class DispenseMedicines : LOOP_ACTION
     // Use this for initialization
     void Awake () {
         AwakeLoopAction(MainAction.ActionEnum.Loop.dispense_medicines, 4,1);
+        progress.initCostList.Add(new Dealing(ResourceKind.herb, Dealing.R_ParaKind.current, -1));
         progress.progressCostList.Add(new Dealing(ResourceKind.action, Dealing.R_ParaKind.current, -0.6));
-        progress.progressCostList.Add(new Dealing(ResourceKind.herb, Dealing.R_ParaKind.current, -0.5));
+        //progress.progressCostList.Add(new Dealing(ResourceKind.herb, Dealing.R_ParaKind.current, -0.5));
         progress.completeEffectList.Add(new Dealing(ResourceKind.medicine, Dealing.R_ParaKind.current, 1));
     }
 
