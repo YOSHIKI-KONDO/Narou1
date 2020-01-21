@@ -227,7 +227,7 @@ public class ABILITY : BASE, INeed, ISetSource
                 }
                 else
                 {
-                    sum += "???(Loop Aciton)";
+                    sum += "???(Loop Action)";
                 }
             }
             else if (unlocks[i] is UpgradeUnlock)

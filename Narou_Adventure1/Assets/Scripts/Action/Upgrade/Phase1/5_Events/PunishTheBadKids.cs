@@ -20,6 +20,8 @@ public class PunishTheBadKids : UPGRADE_ACTION
         main.SR.released_element[(int)ElementKind.dungeon] = true;
         main.SR.released_element[(int)ElementKind.skill] = true;
         main.SR.released_element[(int)ElementKind.status] = true;
+        main.announce.Add("<b><i>Set your skills in slots and use them. You can change the settings.</i></b>");
+        main.announce.Add("<b><i>(Skills are mainly released by abilities.)</i></b>");
     }
 
     // Use this for initialization
