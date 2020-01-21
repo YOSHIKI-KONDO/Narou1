@@ -704,7 +704,7 @@ public class BattleAndSkillCtrl : BASE {
         }
 
         // 主人公のComponent更新
-        heroCmp.ApplyNormalObj("You Lv" + main.SR.level.ToString() + " (" + main.rsc.Value[(int)ResourceKind.exp].ToString("F1") + "/" + main.rsc.Max((int)ResourceKind.exp).ToString("F1") + ")"
+        heroCmp.ApplyNormalObj(main.SR.PlayerName + " Lv" + main.SR.level.ToString() + " (" + main.rsc.Value[(int)ResourceKind.exp].ToString("F1") + "/" + main.rsc.Max((int)ResourceKind.exp).ToString("F1") + ")"
             , tDigit(main.rsc.Value[(int)ResourceKind.hp], 1), tDigit(main.rsc.Max((int)ResourceKind.hp), 1),
             "Atk : " + tDigit(main.status.Attack) + "/Def : " + tDigit(main.status.Defense),
             (float)(main.rsc.Value[(int)ResourceKind.hp] / main.rsc.Max((int)ResourceKind.hp)),

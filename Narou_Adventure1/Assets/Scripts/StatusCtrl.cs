@@ -63,10 +63,16 @@ public class StatusCtrl : BASE {
         nornCmps.btn_b.onClick.AddListener(() => main.npcSkillCtrl.LeaveAlly(AllyKind.npcA));
         nornCmps.btn_a.GetComponentInChildren<Text>().text = "Join";
         nornCmps.btn_b.GetComponentInChildren<Text>().text = "Leave";
+
+        //名前変更の処理
+        setActive(heroCmps.btn_changeName.gameObject);
+        heroCmps.btn_changeName.onClick.AddListener(OnClickChangeNameButton);
+        heroCmps.btn_confirmName.onClick.AddListener(OnClickConfirmButton);
     }
 
     private void FixedUpdate()
     {
+        heroCmps.txt_Name.text = main.SR.PlayerName;
         heroCmps.txt_Name_Level.text = "Level";
         heroCmps.txt_Name_Exp.text = main.enumCtrl.resources[(int)ResourceKind.exp].Name();
         heroCmps.txt_Name_Hp.text = main.enumCtrl.resources[(int)ResourceKind.hp].Name();
@@ -156,5 +162,19 @@ public class StatusCtrl : BASE {
                 main.npcSkillCtrl.allyKinds = new List<AllyKind>();
             }
         }
+    }
+
+    void OnClickChangeNameButton()
+    {
+        setActive(heroCmps.inputField_name.gameObject);
+        heroCmps.inputField_name.text = main.SR.PlayerName;
+    }
+
+    void OnClickConfirmButton()
+    {
+        setFalse(heroCmps.inputField_name.gameObject);
+        main.SR.PlayerName = heroCmps.inputField_name.text;
+        if (main.SR.PlayerName == "")
+            main.SR.PlayerName = "You";
     }
 }
