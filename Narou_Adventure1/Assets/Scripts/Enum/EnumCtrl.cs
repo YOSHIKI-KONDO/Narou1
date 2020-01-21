@@ -60,7 +60,7 @@ public class EnumCtrl : BASE {
 
         /* リソース */
         resources.Add(new template(ResourceKind.nothing, "", "", "", ""));
-        resources.Add(new template(ResourceKind.focus, "Focus", "フォーカス", "Making action progress more faster by using MP", ""));
+        resources.Add(new template(ResourceKind.focus, "Focus", "フォーカス", "Making action progress faster by using MP", ""));
         resources.Add(new template(ResourceKind.equipSpace, "Equip", "装備", "", ""));
         resources.Add(new template(ResourceKind.inventorySpace, "Inventory", "インベントリ", "", ""));
         //プレイヤーステータス
@@ -156,7 +156,7 @@ public class EnumCtrl : BASE {
         instantActions.Add(new template(ActionEnum.Instant.nothing, "", "", "", ""));
           //フェーズ１（入学前）
         instantActions.Add(new template(ActionEnum.Instant.weeding, "Weeding", "草むしり", "Part time job. Don't pick herbs by stealth … I told you!", "アルバイト。たまにハーブが生えている。"));
-        instantActions.Add(new template(ActionEnum.Instant.intensive_training, "Intensive Training", "猛特訓", "Be stronger, and you can change even your distiny.", "体を酷使することで運命力を得る。"));
+        instantActions.Add(new template(ActionEnum.Instant.intensive_training, "Intensive Training", "猛特訓", "Be stronger, and you can change even your destiny.", "体を酷使することで運命力を得る。"));
         instantActions.Add(new template(ActionEnum.Instant.eat_anchovy_sandwich, "Eat Anchovy Sandwich", "アンチョビサンドを食べる", "The salty taste recovers you from fatigue.", "塩味が効いていて、疲れた体に旨みが染み渡る。"));
         instantActions.Add(new template(ActionEnum.Instant.eat_filet_o_fish, "Eat Filet-O-Fish", "フィレオフィッシュを食べる", "As soon as you put it in your mouth, the deliciousness of fried fish between fluffy patties fills your mouth.", "一口噛むと、ふっくらとしたバンズに挟まれたフィッシュフライの油がほとばしる。"));
         instantActions.Add(new template(ActionEnum.Instant.drink_herb_tea, "Drink Herb tea", "ハーブティーを飲む", "It tastes sacred.", "神聖な味がする。"));
@@ -248,7 +248,7 @@ public class EnumCtrl : BASE {
         upgradeActions.Add(new template(ActionEnum.Upgrade.tamer_school, "Tamer School", "テイマー学校", "Decide to enter Tamer school. You can't go back, so consider where you want to go.", "テイマー学校への入学を決意する。後戻りはできないので入学先はしっかり考えよう。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.leave_the_town, "Talk with Father", "父と話す", "Leave the village. Head to the school city beyond the plains and forests. Make sure you have nothing left to do now", "村を出るのか。母のことは任せたぞ。それと、やり残したことはないか確認しておきなさい。それと、この御守りを持っていきなさい。"));//modify
         upgradeActions.Add(new template(ActionEnum.Upgrade.academic_city, "Leave the Town", "村を出る", "The girl says she does want to go with me. Prepare two luggages for you and her.", "平原と森を越えた先の学園都市に向かう。村を出ようとすると少女に呼び止められた。少女が付いてくると言って聞かない。二人分の荷物を用意しよう。"));//modify
-        upgradeActions.Add(new template(ActionEnum.Upgrade.shed, "Cabin", "小屋", "After a short walk through the plains, You see a cabin in front of the forest.", "平原をしばらく進むと、森の手前に小屋が見えた。"));//modify
+        upgradeActions.Add(new template(ActionEnum.Upgrade.shed, "Cabin", "小屋", "After a short walk through the plains, you see a cabin in front of the forest.", "平原をしばらく進むと、森の手前に小屋が見えた。"));//modify
         upgradeActions.Add(new template(ActionEnum.Upgrade.talk_old_man, "Talk with old man", "老人の話を聞く", "[You look weak. In the forest ahead there are stronger monsters. Equip armor. Obtain a wooden shield from the goblin corpse.]", "弱そうな子供だな。この先の森はより強い魔物が出る。防具を装備しなさい。ゴブリンの死体から木の盾を拝借するのだ。"));//add
         upgradeActions.Add(new template(ActionEnum.Upgrade.open_closet, "Open Closet", "クローゼットを開ける", "So easy to do everything, hiding from an old man.", "老人の目を欺くことなどたやすい。"));//add
 

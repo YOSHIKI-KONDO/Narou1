@@ -782,7 +782,7 @@ public class BattleAndSkillCtrl : BASE {
                     {
                         //当たった
                         main.rsc.Value[(int)ResourceKind.hp] -= cal_dmg;
-                        main.announce_d.Add(main.enumCtrl.enemys[(int)currentEnemys[i].kind].Name() + " has attacked you for " + tDigit(cal_dmg, 1) + " damages");
+                        main.announce_d.Add(main.enumCtrl.enemys[(int)currentEnemys[i].kind].Name() + " has attacked you for " + tDigit(cal_dmg, 1) + " damage");
                     }
                 }
                 else
@@ -801,7 +801,7 @@ public class BattleAndSkillCtrl : BASE {
                         //当たった
                         var cal_dmg = CalDmg(currentEnemys[i].attack, main.npcSkillCtrl.npcs[(int)target_npc].Defense);
                         main.npcSkillCtrl.npcs[(int)target_npc].currentHp -= cal_dmg;
-                        main.announce_d.Add(main.enumCtrl.enemys[(int)currentEnemys[i].kind].Name() + " has attacked " + main.enumCtrl.allys[(int)target_npc].Name() + " for " + tDigit(cal_dmg) + " damages");
+                        main.announce_d.Add(main.enumCtrl.enemys[(int)currentEnemys[i].kind].Name() + " has attacked " + main.enumCtrl.allys[(int)target_npc].Name() + " for " + tDigit(cal_dmg) + " damage");
                         //やられたらcanFightから外す
                         if (main.npcSkillCtrl.npcs[(int)target_npc].currentHp <= 0)
                         {
