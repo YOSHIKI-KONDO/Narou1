@@ -15,6 +15,8 @@ public class BuyBag : UPGRADE_ACTION
     public override void CompleteAction()
     {
         main.SR.released_element[(int)ElementKind.item] = true;
+        main.announce.Add("<b><i>Equip items! You can purchase items in the Shop. Items work by equipping them.</i></b>");
+        main.announce.Add("<b><i>Also new items will be released by Upgrade Actions and new resources.</i></b>");
     }
 
     // Use this for initialization

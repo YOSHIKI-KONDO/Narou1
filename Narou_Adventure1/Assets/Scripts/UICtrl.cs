@@ -37,7 +37,7 @@ public class UICtrl : BASE {
             new_ability, "Ability");
         abilityRelease.action_activated = () =>
         {
-            main.announce.Add("<b><i>Start training! And let's listen to my father.</i></b>");
+            main.announce.Add("<b><i>Learn the abilities! And you can increase resource caps, release new actions, and so on.</i></b>");
         };
 
         var itemRelease = itemToggle.gameObject.AddComponent<ReleaseFunction>();
@@ -63,7 +63,6 @@ public class UICtrl : BASE {
         skillRelease.action_activated = () =>
         {
             main.announce.Add("<b><i>Set your skills in slots! Set your attack skills in the dungeon and challenge.</i></b>");
-            main.announce.Add("<b><i>Production skills can always be looped by unchecking the dungeon only check.</i></b>");
         };
 
         dungeonToggle.gameObject.AddComponent<ReleaseFunction>().StartFunction(dungeonToggle.gameObject,
