@@ -15,8 +15,6 @@ public class ThankYouForPlaying : UPGRADE_ACTION
     public override void CompleteAction()
     {
         main.uiCtrl.thankPanel.SetActive(true);
-        int clearTime = (int)(main.S.allTime / 60f);
-        Application.ExternalCall("kongregate.stats.submit", "Clear Time", clearTime); //ハイスコアを送信
     }
 
     // Use this for initialization

@@ -25,6 +25,11 @@ public class DecideParameter : BASE {
         {
             main.a_rsc.MaxLevels_Base[i] = 5;//最大レベル5でスタート
         }
+        /* スキルを学んだ状態に(beta ver) */
+        for (int i = 0; i < main.SD.num_skill; i++)
+        {
+            main.SR.learnt_Skill[i] = true;
+        }
         main.SR.released_element[(int)ElementKind.main] = true;     //要素、タブの解放
         main.SR.released_element[(int)ElementKind.status] = true;   //要素、タブの解放
         main.SR.released_element[(int)ElementKind.option] = true;   //要素、タブの解放

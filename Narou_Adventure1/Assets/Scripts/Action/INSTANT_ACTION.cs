@@ -118,6 +118,7 @@ public class INSTANT_ACTION : ACTION, INeed
             ChangeTextAdaptive(Need_str, popUp.texts[3], popUp.texts[2].gameObject, popUp.texts[3].gameObject);
             ChangeTextAdaptive(Cost_str, popUp.texts[5], popUp.texts[4].gameObject, popUp.texts[5].gameObject);
             ChangeTextAdaptive(CompleteEffect_str, popUp.texts[11], popUp.texts[10].gameObject, popUp.texts[11].gameObject);
+            setFalse(popUp.texts[12].gameObject);
         }
     }
 }

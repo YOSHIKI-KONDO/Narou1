@@ -214,13 +214,13 @@ public class EnumCtrl : BASE {
         upgradeActions.Add(new template(ActionEnum.Upgrade.talk_fatherD, "Talk with Father", "父の話を聞く", "You need to go to school. Learn what I can't teach.", "学校に行くと良い。私では教えられないことを学べる。"));
             //父の道場
         upgradeActions.Add(new template(ActionEnum.Upgrade.training, "Training", "トレーニング", "", ""));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.fathers_gym, "Father's Training room", "父の道場", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.fathers_gym, "Father's Training room", "父の道場", "Learn how to use weapons in his training room.", "父の道場で武器の使い方を教わる。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.sword_practice, "Sword Practice", "剣の稽古", "", ""));
         upgradeActions.Add(new template(ActionEnum.Upgrade.spear_practice, "Spear Practice", "槍の稽古", "", ""));
         upgradeActions.Add(new template(ActionEnum.Upgrade.rod_practice, "Rod Practice", "棒の稽古", "", ""));
             //母の書斎                             
         upgradeActions.Add(new template(ActionEnum.Upgrade.mental_training, "Mental Training", "メンタルトレーニング", "", ""));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.mothers_den, "Mother's Den", "母の書斎", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.mothers_den, "Mother's Library", "母の書斎", "Read magic books in her library and practice elementary magic.", "母の書斎で魔導書を読み、初級魔法を練習する。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.read_fire_spellbook, "Read Fire Spellbook", "火の魔導書", "", ""));
         upgradeActions.Add(new template(ActionEnum.Upgrade.read_water_spellbook, "Read Water Spellbook", "水の魔導書", "", ""));
         upgradeActions.Add(new template(ActionEnum.Upgrade.read_wind_spellbook, "Read Wind Spellbook", "風の魔導書", "", ""));
@@ -232,8 +232,8 @@ public class EnumCtrl : BASE {
         upgradeActions.Add(new template(ActionEnum.Upgrade.succession_life_magic, "Life Magic Inheritance", "生活魔法継承", "", ""));
             //純アップグレード
         upgradeActions.Add(new template(ActionEnum.Upgrade.buy_wallet, "Buy Purse", "財布を買う", "", ""));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.study_in_church, "Study in Church", "教会で勉強", "", ""));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.buy_bag, "Buy Bag", "鞄を買う", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.study_in_church, "Study in Church", "教会で勉強", "Study and gain knowledge in the village church.", "村の教会で勉強し知識を得る。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.buy_bag, "Buy Bag", "鞄を買う", "You will be able to have items.", "アイテムを持てるようになり、ショップに行けるようになる。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.rune_augmentation, "Rune Augmentation", "ルーン増強", "", ""));
         upgradeActions.Add(new template(ActionEnum.Upgrade.buy_fire_spellbook, "Buy Fire Spellbook", "火の魔導書を買う", "", ""));
             //少女イベント

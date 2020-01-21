@@ -23,6 +23,7 @@ public class BASE : MonoBehaviour
         foreach (var drop in drops)
         {
             if (sum != "") { sum += "\n"; }
+            if (drop.dropKind != Drop.DropKind.normal) { continue; }//特殊なドロップだったら表示しない
             //itemチェック
             if (drop is Item_Drop)
             {
