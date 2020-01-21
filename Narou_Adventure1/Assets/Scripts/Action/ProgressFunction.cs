@@ -125,7 +125,8 @@ public class ProgressFunction : OnlyAction
     protected virtual void CheckButton()
     {
         bool condition = Need == null || Need();
-        if(condition && ((CanPurchase(initCostList) && CanPurchase(progressCostList)) || HasPaid()))
+        if(condition && ((CanPurchase(initCostList) && CanPurchase(progressCostList)) || HasPaid()) &&
+            !(EffectIsCompleted(progressEffectList) && EffectIsCompleted(completeEffectList)))                                                                 
         {
             button.interactable = true;
         }

@@ -14,6 +14,7 @@ public class SaveR
 
     public bool isBeta;
     public int level = 1;
+    public string PlayerName = "You";
 
     public double[] max_resource;
     public double[] current_resource;
@@ -64,6 +65,12 @@ public class SaveR
     public int[] level_Item;
     public bool[] locked_Item;
     public bool[] discover_Item;
+    public bool released_ShopButton_Decoy = true;
+    public bool released_InventoryButton_Decoy = true;
+    public bool completed_ShopButton_Decoy;
+    public bool completed_InventoryButton_Decoy;
+    public bool watched_ShopButton = true;
+    public bool watched_InventoryButton = true;
 
     /* Need */
     public int[] needLimits;

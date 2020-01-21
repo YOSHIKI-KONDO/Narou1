@@ -7,7 +7,7 @@ using static UsefulMethod;
 
 public class CityGuild : UPGRADE_ACTION
 {
-    public override bool Requires()
+    /*public override bool Requires()
     {
         return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.into_a_dormitory] >= 1;
     }
@@ -32,5 +32,5 @@ public class CityGuild : UPGRADE_ACTION
     void FixedUpdate()
     {
         FixedUpdateUpgradeAction();
-    }
+    }*/
 }

@@ -11,11 +11,15 @@ public class EntranceCeremony : UPGRADE_ACTION
     {
         return main.SR.clearNum_upgrade[(int)MainAction.ActionEnum.Upgrade.into_a_dormitory] >= 1;
     }
+    public override void CompleteAction()
+    {
+        main.SR.released_Norn = false;
+    }
 
     // Use this for initialization
     void Awake () {
         AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.entrance_ceremony, 1, 0, null, false, false);
-        progress.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -40));
+        progress.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -10));
         progress.completeEffectList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.max, 20));
         progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 100));
     }

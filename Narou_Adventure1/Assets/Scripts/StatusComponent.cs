@@ -7,6 +7,7 @@ using static UsefulMethod;
 
 public class StatusComponent : BASE {
     /*  UI  */
+    public Text txt_Name;
     public Text txt_Name_Level;
     public Text txt_Name_Exp;
     public Text txt_Name_Hp;
@@ -31,4 +32,6 @@ public class StatusComponent : BASE {
     public Text txt_Value_CriticalC;
 
     public Button btn_a, btn_b;
+    public Button btn_changeName, btn_confirmName;
+    public InputField inputField_name;
 }
