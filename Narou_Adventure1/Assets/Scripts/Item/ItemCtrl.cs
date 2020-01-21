@@ -373,6 +373,8 @@ public class ItemCtrl : BASE {
             Calculate(items[(int)kind].BuyLists, false);
             GetItem(kind);
             inventorys[(int)kind].Watched = false;//未読に
+            main.SR.watched_InventoryButton = false;//inventoryボタンを未読に
+            main.SR.watched_ShopButton = true;//shopボタンを既読に 
         }
     }
     public void Equip(ItemKind kind)
@@ -464,6 +466,7 @@ public class ItemCtrl : BASE {
         {
             GetItem(kind);
             inventorys[(int)kind].Watched = false;//未読に
+            main.SR.watched_InventoryButton = false;//inventoryボタンを未読に
             return true;
         }
         else

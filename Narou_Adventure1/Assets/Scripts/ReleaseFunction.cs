@@ -24,7 +24,8 @@ public class ReleaseFunction : BASE{
     GameObject Obj;
     EnterExitEvent eeevent;
     bool hovered;
-    public UnityAction action_activated;//activeになっている間updateで呼ばれる関数
+    public UnityAction action_activated;       //アナウンスのタイミングで呼ばれる関数
+    public UnityAction action_activated_update;//activeになっている間updateで呼ばれる関数
 
     private void Awake()
     {
@@ -79,6 +80,7 @@ public class ReleaseFunction : BASE{
             if (announceSentense != "")
             {
                 main.announce.Add(announceSentense + " has been unlocked.");
+                action_activated?.Invoke();
             }
             Released(true);
         }
@@ -116,7 +118,7 @@ public class ReleaseFunction : BASE{
     public void Activate()
     {
         setActive(Obj);
-        action_activated?.Invoke();
+        action_activated_update?.Invoke();
     }
 
     public void Deactivate()
