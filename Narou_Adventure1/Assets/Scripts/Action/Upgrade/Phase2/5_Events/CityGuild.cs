@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using static UsefulMethod;
 
-public class EntranceCeremony : UPGRADE_ACTION
+public class CityGuild : UPGRADE_ACTION
 {
     public override bool Requires()
     {
@@ -14,10 +14,9 @@ public class EntranceCeremony : UPGRADE_ACTION
 
     // Use this for initialization
     void Awake () {
-        AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.entrance_ceremony, 1, 0, null, false, false);
-        progress.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -40));
-        progress.completeEffectList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.max, 20));
-        progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 100));
+        AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.city_guild, 1, 0, null, false, false);
+        progress.initCostList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.current, -30));
+        progress.completeEffectList.Add(new Dealing(ResourceKind.research, Dealing.R_ParaKind.max, 15));
     }
 
 	// Use this for initialization

@@ -164,7 +164,7 @@ public class SKILL : BASE, INeed, ISetSource
         foreach (var atk in warriorAtks)
         {
             if(sum_str != "") { sum_str += "\n"; }
-            sum_str += "Physics damage:" + tDigit(atk.Damage * comboFactor_effect(), 1);
+            sum_str += "Phisical damage:" + tDigit(atk.Damage * comboFactor_effect(), 1);
         }
         return sum_str;
     }

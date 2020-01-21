@@ -170,6 +170,10 @@
 
             thank_you_for_playing,
 
+            //進学後
+            city_shop,
+            city_guild,
+
         }
     }
 }
