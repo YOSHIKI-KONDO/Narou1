@@ -1875,6 +1875,7 @@ GameObject:
   - component: {fileID: 4515083492722841122}
   - component: {fileID: 4515083492722841133}
   - component: {fileID: 5343619218036698532}
+  - component: {fileID: 5946862400723257421}
   m_Layer: 5
   m_Name: '[Status]template'
   m_TagString: Untagged
@@ -2026,6 +2027,21 @@ MonoBehaviour:
   btn_changeName: {fileID: 3277295811567273198}
   btn_confirmName: {fileID: 1987421228287511579}
   inputField_name: {fileID: 5437332369025417524}
+--- !u!114 &5946862400723257421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4515083492722841135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6facc4641c54beba4d0f5c40e1d4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color:
+  - {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
+  sourceImage: []
 --- !u!1 &4515083492767393786
 GameObject:
   m_ObjectHideFlags: 0

@@ -36,7 +36,7 @@ public class BattleComponents : BASE {
             StartBASE();
             popUp = main.enemyPopUp.StartPopUp(gameObject, main.windowShowCanvas);
             popUp.UpdateAction = ApplyPopUp;
-            setFalse(popUp.texts[2].gameObject);
+            setFalse(popUp.textPros[2].gameObject);
         }
     }
 
@@ -61,12 +61,12 @@ public class BattleComponents : BASE {
             Debug.Log("ApplyNormalObjでEnumが入力されていません");
             return;
         }
-        popUp.texts[0].text = Name_text.text;
+        popUp.textPros[0].text = Name_text.text;
         //1を変えた↓
-        popUp.textPros[0].text = StarFromRank(main.battleCtrl.enemys[(int)kind].rank);
-        //popUp.texts[2]
-        popUp.texts[3].text = "HP:" + maxHp + ", " + atk_text.text + ", Int:" + main.battleCtrl.enemys[(int)kind].interval.ToString("F0");
-        ChangeTextAdaptive(DropsDetail(main.battleCtrl.enemys[(int)kind].drops, true), popUp.texts[5], popUp.texts[4].gameObject, popUp.texts[5].gameObject);
+        popUp.textPros[1].text = StarFromRank(main.battleCtrl.enemys[(int)kind].rank);
+        popUp.textPros[2].text = main.enumCtrl.enemys[(int)kind].Description();
+        popUp.textPros[3].text = "HP:" + maxHp + ", " + atk_text.text + ", Int:" + main.battleCtrl.enemys[(int)kind].interval.ToString("F0");
+        ChangeTextAdaptive(DropsDetail(main.battleCtrl.enemys[(int)kind].drops, true), popUp.textPros[5], popUp.textPros[4].gameObject, popUp.textPros[5].gameObject);
     }                                                                             
 
     string StarFromRank(int Rank)

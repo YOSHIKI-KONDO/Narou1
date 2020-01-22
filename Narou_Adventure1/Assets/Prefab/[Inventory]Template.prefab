@@ -319,8 +319,9 @@ GameObject:
   - component: {fileID: 9021202576015608723}
   - component: {fileID: 7756835017289424184}
   - component: {fileID: 4244121199136018978}
+  - component: {fileID: 5632635036721320829}
   m_Layer: 5
-  m_Name: '[Button]Remove'
+  m_Name: '[Button]Remove(CM)'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -428,6 +429,21 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &5632635036721320829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2761224177301671553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6facc4641c54beba4d0f5c40e1d4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color:
+  - {r: 0.8627451, g: 0.8627451, b: 0.8627451, a: 1}
+  sourceImage: []
 --- !u!1 &3675634548480082759
 GameObject:
   m_ObjectHideFlags: 0
@@ -952,8 +968,9 @@ GameObject:
   - component: {fileID: 6715137328866326104}
   - component: {fileID: 4558075344483879274}
   - component: {fileID: 2137373848159909867}
+  - component: {fileID: 7727329648178343345}
   m_Layer: 5
-  m_Name: '[Button]Equip'
+  m_Name: '[Button]Equip(CM)'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1061,6 +1078,21 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &7727329648178343345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4837177131439287890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6facc4641c54beba4d0f5c40e1d4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color:
+  - {r: 0.8627451, g: 0.8627451, b: 0.8627451, a: 1}
+  sourceImage: []
 --- !u!1 &5071622815432852656
 GameObject:
   m_ObjectHideFlags: 0
@@ -1072,8 +1104,9 @@ GameObject:
   - component: {fileID: 2381252887864309693}
   - component: {fileID: 4828582000520453291}
   - component: {fileID: 7201092023195190101}
+  - component: {fileID: 6526921475899921661}
   m_Layer: 5
-  m_Name: Background
+  m_Name: Background(CM)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1136,6 +1169,21 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &6526921475899921661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5071622815432852656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6facc4641c54beba4d0f5c40e1d4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color:
+  - {r: 0.8627451, g: 0.8627451, b: 0.8627451, a: 1}
+  sourceImage: []
 --- !u!1 &5456672599324550639
 GameObject:
   m_ObjectHideFlags: 0
@@ -1679,8 +1727,9 @@ GameObject:
   - component: {fileID: 2758559442076657311}
   - component: {fileID: 129961519648812012}
   - component: {fileID: 2411217686480168090}
+  - component: {fileID: 2119860622587730488}
   m_Layer: 5
-  m_Name: '[Button]Sell'
+  m_Name: '[Button]Sell(CM)'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1788,6 +1837,21 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &2119860622587730488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6943405914562875412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6facc4641c54beba4d0f5c40e1d4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color:
+  - {r: 0.8627451, g: 0.8627451, b: 0.8627451, a: 1}
+  sourceImage: []
 --- !u!1 &7490062752026010315
 GameObject:
   m_ObjectHideFlags: 0
@@ -1799,8 +1863,9 @@ GameObject:
   - component: {fileID: 6602223443423379384}
   - component: {fileID: 1614301802330762642}
   - component: {fileID: 1581179696532548599}
+  - component: {fileID: 6480677203728938835}
   m_Layer: 5
-  m_Name: BackImage1
+  m_Name: BackImage1(CM)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1862,6 +1927,21 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &6480677203728938835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7490062752026010315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6facc4641c54beba4d0f5c40e1d4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color:
+  - {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  sourceImage: []
 --- !u!1 &7687948527807230807
 GameObject:
   m_ObjectHideFlags: 0
@@ -2149,8 +2229,9 @@ GameObject:
   - component: {fileID: 3150234140993027945}
   - component: {fileID: 989275511973767908}
   - component: {fileID: 2312915967916034700}
+  - component: {fileID: 7289140060725382966}
   m_Layer: 5
-  m_Name: BackImage2
+  m_Name: BackImage2(CM)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2212,6 +2293,21 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &7289140060725382966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7897806711972518993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6facc4641c54beba4d0f5c40e1d4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color:
+  - {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
+  sourceImage: []
 --- !u!1 &8566854189745320899
 GameObject:
   m_ObjectHideFlags: 0

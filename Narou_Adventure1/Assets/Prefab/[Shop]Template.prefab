@@ -323,8 +323,9 @@ GameObject:
   - component: {fileID: 8993047472212909377}
   - component: {fileID: 573797671239060674}
   - component: {fileID: 1058921644739796130}
+  - component: {fileID: 3792005924376111630}
   m_Layer: 5
-  m_Name: '[Button]Buy'
+  m_Name: '[Button]Buy(CM)'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -432,6 +433,21 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &3792005924376111630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697470219131463409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6facc4641c54beba4d0f5c40e1d4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color:
+  - {r: 0.8627451, g: 0.8627451, b: 0.8627451, a: 1}
+  sourceImage: []
 --- !u!1 &3223072808432135789
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,8 +1012,9 @@ GameObject:
   - component: {fileID: 2381252887864309693}
   - component: {fileID: 4828582000520453291}
   - component: {fileID: 7201092023195190101}
+  - component: {fileID: 2456013446188169294}
   m_Layer: 5
-  m_Name: Background
+  m_Name: Background(CM)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1060,6 +1077,21 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &2456013446188169294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5071622815432852656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6facc4641c54beba4d0f5c40e1d4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color:
+  - {r: 0.8627451, g: 0.8627451, b: 0.8627451, a: 1}
+  sourceImage: []
 --- !u!1 &5456672599324550639
 GameObject:
   m_ObjectHideFlags: 0
@@ -1150,6 +1182,7 @@ GameObject:
   - component: {fileID: 4699692431942913141}
   - component: {fileID: 5911463809565630280}
   - component: {fileID: 3732000451288524683}
+  - component: {fileID: 5701709533602209662}
   m_Layer: 5
   m_Name: BackImage2
   m_TagString: Untagged
@@ -1213,6 +1246,21 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &5701709533602209662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6006902066362181746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6facc4641c54beba4d0f5c40e1d4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color:
+  - {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
+  sourceImage: []
 --- !u!1 &6677031680009794002
 GameObject:
   m_ObjectHideFlags: 0
@@ -1365,8 +1413,9 @@ GameObject:
   - component: {fileID: 4574603678546857856}
   - component: {fileID: 2640323156073576913}
   - component: {fileID: 4589069536826698004}
+  - component: {fileID: 1341895192630113796}
   m_Layer: 5
-  m_Name: '[Button]Sell'
+  m_Name: '[Button]Sell(CM)'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1474,6 +1523,21 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1341895192630113796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7468936281274377919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6facc4641c54beba4d0f5c40e1d4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color:
+  - {r: 0.8627451, g: 0.8627451, b: 0.8627451, a: 1}
+  sourceImage: []
 --- !u!1 &7487932003961238987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1485,6 +1549,7 @@ GameObject:
   - component: {fileID: 3709359298778837081}
   - component: {fileID: 2345409208494876104}
   - component: {fileID: 4902762496962887587}
+  - component: {fileID: 6041821411202542948}
   m_Layer: 5
   m_Name: BackImage1
   m_TagString: Untagged
@@ -1548,6 +1613,21 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &6041821411202542948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7487932003961238987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6facc4641c54beba4d0f5c40e1d4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color:
+  - {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  sourceImage: []
 --- !u!1 &7687948527807230807
 GameObject:
   m_ObjectHideFlags: 0
