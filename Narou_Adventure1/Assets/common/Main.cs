@@ -90,7 +90,7 @@ public class Main : MonoBehaviour
         {
             analytics.StartGame(); //analyticsに送信
             StartCoroutine(NewInvokeCor(() => announce.ResetText(), 0.1f));  //最初だけテキストを全て消す
-            StartCoroutine(NewInvokeCor(() => announce.Add("<b><i>Start training! And let's listen to my father.</i></b>"), 0.1f));  //最初の文章を出す
+            //StartCoroutine(NewInvokeCor(() => announce.Add("<b><i>Start training! And listen to my father.</i></b>"), 0.1f));  //最初の文章を出す
             birthTime = DateTime.Now;
             lastTime = DateTime.Now;
             S.isContinuePlay = true;
