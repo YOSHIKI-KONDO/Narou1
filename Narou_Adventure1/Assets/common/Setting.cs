@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using static UsefulMethod;
 
 public class Setting : BASE {
@@ -11,6 +12,8 @@ public class Setting : BASE {
     public Toggle buttonHighLightToggle;
     public Toggle resourceHighLightToggle;
     public Toggle announce_resourceMaxLack;
+    public Toggle darkModeToggle;
+    public Button restartButton;
 
     public float SEVolume
     {
@@ -40,6 +43,7 @@ public class Setting : BASE {
         main.SR.isOn_ButtonHighLight = buttonHighLightToggle.isOn;
         main.SR.isOn_ResourceHighLight = resourceHighLightToggle.isOn;
         main.SR.doAnnounce_resourceMaxOrLack = announce_resourceMaxLack.isOn;
+        main.SR.colorMode = darkModeToggle.isOn == true ? 1 : 0;
     }
 
     void Load()
@@ -49,6 +53,7 @@ public class Setting : BASE {
         buttonHighLightToggle.isOn = main.SR.isOn_ButtonHighLight;
         resourceHighLightToggle.isOn = main.SR.isOn_ResourceHighLight;
         announce_resourceMaxLack.isOn = main.SR.doAnnounce_resourceMaxOrLack;
+        darkModeToggle.isOn = main.SR.colorMode == 1 ? true : false;
     }
 
     // Use this for initialization
@@ -60,6 +65,7 @@ public class Setting : BASE {
     {
         Load();
         StartCoroutine(FixedUpdateCor());
+        restartButton.onClick.AddListener(() =>LoadNewScene("main"));
     }
 
     IEnumerator FixedUpdateCor()
@@ -69,5 +75,21 @@ public class Setting : BASE {
             Save();
             yield return new WaitForSeconds(main.tick);
         }
+    }
+
+
+
+    //new scene
+    public void LoadNewScene(string sceneName)
+    {
+        Save();
+        StartCoroutine(LoadNewSceneCor(sceneName));
+    }
+
+    IEnumerator LoadNewSceneCor(string sceneName)
+    {
+        PlayerPrefs.Save();
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene(sceneName);
     }
 }

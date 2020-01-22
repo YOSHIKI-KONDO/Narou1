@@ -8,6 +8,7 @@ public class SaveR
 {
     public string ascendTime;
     public bool firstPlay = true;//アセンド直後にStartでfalseにする
+    public int colorMode;//0:normal
     /* ここからアセンドでリセットする変数をpublicで宣言していく */
     /* NOTE : インスペクターに表示させたくない変数は[NonSerialized]をつける */
     /* NOTE : サイズの大きい配列は[NonSeriarized]をつける */
@@ -105,7 +106,7 @@ public class SaveR
     public bool[] completed_element;
     public bool[] watched_element;
     public bool isOn_loopToggle;
-    public bool isOn_dungeonOnlyToggle = true;
+    public bool isOn_dungeonOnlyToggle = false;
     public bool isOn_activeSkillToggle = true;
     public bool isOn_ButtonHighLight = false;
     public bool isOn_ResourceHighLight = true;

@@ -49,20 +49,20 @@ public class SkillSlot : BASE {
             //色変更
             if (main.battleCtrl.skills[(int)kind].combo != null)
             {
-                popUp.texts[9].color = main.battleCtrl.skills[(int)kind].popUp.texts[9].color;
-                popUp.texts[7].color = main.battleCtrl.skills[(int)kind].popUp.texts[7].color;
-                popUp.texts[11].color = main.battleCtrl.skills[(int)kind].popUp.texts[11].color;
+                popUp.textPros[9].color = main.battleCtrl.skills[(int)kind].popUp.textPros[9].color;
+                popUp.textPros[7].color = main.battleCtrl.skills[(int)kind].popUp.textPros[7].color;
+                popUp.textPros[11].color = main.battleCtrl.skills[(int)kind].popUp.textPros[11].color;
             }
 
-            ChangeTextAdaptive(main.battleCtrl.skills[(int)kind].Name_str, popUp.texts[0], popUp.texts[0].gameObject);
-            ChangeTextAdaptive(main.battleCtrl.skills[(int)kind].Description_str, popUp.texts[1], popUp.texts[1].gameObject);
-            ChangeTextAdaptive(main.battleCtrl.skills[(int)kind].Need_str, popUp.texts[3], popUp.texts[2].gameObject, popUp.texts[3].gameObject);
-            ChangeTextAdaptive(main.battleCtrl.skills[(int)kind].LearnCost_str, popUp.texts[5], popUp.texts[4].gameObject, popUp.texts[5].gameObject);
-            ChangeTextAdaptive(main.battleCtrl.skills[(int)kind].UseCost_str, popUp.texts[7], popUp.texts[6].gameObject, popUp.texts[7].gameObject);
-            ChangeTextAdaptive(main.battleCtrl.skills[(int)kind].UseEffect_str, popUp.texts[9], popUp.texts[8].gameObject, popUp.texts[9].gameObject);
-            ChangeTextAdaptive(main.battleCtrl.skills[(int)kind].Interval_str, popUp.texts[11], popUp.texts[10].gameObject, popUp.texts[11].gameObject);
-            ChangeTextAdaptive(main.battleCtrl.skills[(int)kind].Level_str, popUp.texts[12], popUp.texts[12].gameObject);
-            ChangeTextAdaptive(main.battleCtrl.skills[(int)kind].Tag_str, popUp.texts[14], popUp.texts[13].gameObject, popUp.texts[14].gameObject);
+            ChangeTextAdaptive(main.battleCtrl.skills[(int)kind].Name_str, popUp.textPros[0], popUp.textPros[0].gameObject);
+            ChangeTextAdaptive(main.battleCtrl.skills[(int)kind].Description_str, popUp.textPros[1], popUp.textPros[1].gameObject);
+            ChangeTextAdaptive(main.battleCtrl.skills[(int)kind].Need_str, popUp.textPros[3], popUp.textPros[2].gameObject, popUp.textPros[3].gameObject);
+            ChangeTextAdaptive(main.battleCtrl.skills[(int)kind].LearnCost_str, popUp.textPros[5], popUp.textPros[4].gameObject, popUp.textPros[5].gameObject);
+            ChangeTextAdaptive(main.battleCtrl.skills[(int)kind].UseCost_str, popUp.textPros[7], popUp.textPros[6].gameObject, popUp.textPros[7].gameObject);
+            ChangeTextAdaptive(main.battleCtrl.skills[(int)kind].UseEffect_str, popUp.textPros[9], popUp.textPros[8].gameObject, popUp.textPros[9].gameObject);
+            ChangeTextAdaptive(main.battleCtrl.skills[(int)kind].Interval_str, popUp.textPros[11], popUp.textPros[10].gameObject, popUp.textPros[11].gameObject);
+            ChangeTextAdaptive(main.battleCtrl.skills[(int)kind].Level_str, popUp.textPros[12], popUp.textPros[12].gameObject);
+            ChangeTextAdaptive(main.battleCtrl.skills[(int)kind].Tag_str, popUp.textPros[14], popUp.textPros[13].gameObject, popUp.textPros[14].gameObject);
         }
     }
 }

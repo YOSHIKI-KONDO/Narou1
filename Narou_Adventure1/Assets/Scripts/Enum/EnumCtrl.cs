@@ -227,7 +227,7 @@ public class EnumCtrl : BASE {
         upgradeActions.Add(new template(ActionEnum.Upgrade.read_earth_spellbook, "Read Earth Spellbook", "土の魔導書", "", ""));
             //村の広場
         upgradeActions.Add(new template(ActionEnum.Upgrade.go_to_the_town, "Go to the Town", "村へ行く", "", ""));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.play_with_cat, "Play wit Cat", "猫と遊ぶ", "", ""));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.play_with_cat, "Play with Cat", "猫と遊ぶ", "", ""));
         upgradeActions.Add(new template(ActionEnum.Upgrade.learn_use_tools, "Learn Using Tools", "道具の使い方を教わる", "", ""));
         upgradeActions.Add(new template(ActionEnum.Upgrade.succession_life_magic, "Life Magic Inheritance", "生活魔法継承", "", ""));
             //純アップグレード

@@ -108,17 +108,17 @@ public class INSTANT_ACTION : ACTION, INeed
             //そのため、ない場合は手動でNeed_strを変えることが可能。
             if (need.hasNeeds) { Need_str = need.Detail(); }
 
-            setFalse(popUp.texts[6].gameObject);
-            setFalse(popUp.texts[7].gameObject);
-            setFalse(popUp.texts[8].gameObject);
-            setFalse(popUp.texts[9].gameObject);
+            setFalse(popUp.textPros[6].gameObject);
+            setFalse(popUp.textPros[7].gameObject);
+            setFalse(popUp.textPros[8].gameObject);
+            setFalse(popUp.textPros[9].gameObject);
 
-            ChangeTextAdaptive(Name_str, popUp.texts[0], popUp.texts[0].gameObject);
-            ChangeTextAdaptive(Description_str, popUp.texts[1], popUp.texts[1].gameObject);
-            ChangeTextAdaptive(Need_str, popUp.texts[3], popUp.texts[2].gameObject, popUp.texts[3].gameObject);
-            ChangeTextAdaptive(Cost_str, popUp.texts[5], popUp.texts[4].gameObject, popUp.texts[5].gameObject);
-            ChangeTextAdaptive(CompleteEffect_str, popUp.texts[11], popUp.texts[10].gameObject, popUp.texts[11].gameObject);
-            setFalse(popUp.texts[12].gameObject);
+            ChangeTextAdaptive(Name_str, popUp.textPros[0], popUp.textPros[0].gameObject);
+            ChangeTextAdaptive(Description_str, popUp.textPros[1], popUp.textPros[1].gameObject);
+            ChangeTextAdaptive(Need_str, popUp.textPros[3], popUp.textPros[2].gameObject, popUp.textPros[3].gameObject);
+            ChangeTextAdaptive(Cost_str, popUp.textPros[5], popUp.textPros[4].gameObject, popUp.textPros[5].gameObject);
+            ChangeTextAdaptive(CompleteEffect_str, popUp.textPros[11], popUp.textPros[10].gameObject, popUp.textPros[11].gameObject);
+            setFalse(popUp.textPros[12].gameObject);
         }
     }
 }

@@ -14,7 +14,7 @@ public class PopUp_Default : BASE {
 	void Awake () {
 		StartBASE();
 		popUp = main.DefaultPopUp.StartPopUp(gameObject, main.windowShowCanvas);
-		popUp.texts[0].text = text;
+		popUp.textPros[0].text = text;
 	}
 
 	// Use this for initialization
