@@ -76,11 +76,11 @@ public class ResourceText : BASE {
             }
             Effect_str = ProgressDetail(effects);
 
-            ChangeTextAdaptive(Name_str, popUp.texts[0], popUp.texts[0].gameObject);
-            ChangeTextAdaptive(Description_str, popUp.texts[1], popUp.texts[1].gameObject);
-            ChangeTextAdaptive(Regen_str, popUp.texts[2], popUp.texts[2].gameObject);
-            ChangeTextAdaptive(Effect_str, popUp.texts[4], popUp.texts[3].gameObject, popUp.texts[4].gameObject);
-            ChangeTextAdaptive(Others_str, popUp.texts[5], popUp.texts[5].gameObject);
+            ChangeTextAdaptive(Name_str, popUp.textPros[0], popUp.textPros[0].gameObject);
+            ChangeTextAdaptive(Description_str, popUp.textPros[1], popUp.textPros[1].gameObject);
+            ChangeTextAdaptive(Regen_str, popUp.textPros[2], popUp.textPros[2].gameObject);
+            ChangeTextAdaptive(Effect_str, popUp.textPros[4], popUp.textPros[3].gameObject, popUp.textPros[4].gameObject);
+            ChangeTextAdaptive(Others_str, popUp.textPros[5], popUp.textPros[5].gameObject);
         }
     }
 }
