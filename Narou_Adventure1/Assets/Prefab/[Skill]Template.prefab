@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 5640469384265825193}
   - component: {fileID: 6169640257199967736}
   - component: {fileID: 5662465804135128381}
+  - component: {fileID: 7715070029319192520}
   m_Layer: 5
   m_Name: '[Button]Equip'
   m_TagString: Untagged
@@ -274,6 +275,21 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &7715070029319192520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629253246641541782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6facc4641c54beba4d0f5c40e1d4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color:
+  - {r: 0.8627451, g: 0.8627451, b: 0.8627451, a: 1}
+  sourceImage: []
 --- !u!1 &2118319098315701433
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,8 +598,9 @@ GameObject:
   - component: {fileID: 5147327940127121653}
   - component: {fileID: 7246989436449319648}
   - component: {fileID: 4221084358520155571}
+  - component: {fileID: 4084257157806669522}
   m_Layer: 5
-  m_Name: BackImage1
+  m_Name: BackImage1(CM)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -645,6 +662,21 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &4084257157806669522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4343648726815211884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6facc4641c54beba4d0f5c40e1d4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color:
+  - {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  sourceImage: []
 --- !u!1 &4771778132960442222
 GameObject:
   m_ObjectHideFlags: 0
@@ -941,8 +973,9 @@ GameObject:
   - component: {fileID: 4745982126825299556}
   - component: {fileID: 2619508310261469087}
   - component: {fileID: 5100738040957318650}
+  - component: {fileID: 8523491780026396762}
   m_Layer: 5
-  m_Name: Fill
+  m_Name: Fill(CM)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1004,6 +1037,21 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &8523491780026396762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7382299306557925358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6facc4641c54beba4d0f5c40e1d4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color:
+  - {r: 0.78431374, g: 0.19607843, b: 0.19607843, a: 1}
+  sourceImage: []
 --- !u!1 &7400567439713948376
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,6 +1064,7 @@ GameObject:
   - component: {fileID: 1006275019793492328}
   - component: {fileID: 8560271120383408363}
   - component: {fileID: 9189792315280615563}
+  - component: {fileID: 7921735856477861529}
   m_Layer: 5
   m_Name: '[Button]Learn'
   m_TagString: Untagged
@@ -1125,6 +1174,21 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &7921735856477861529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7400567439713948376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6facc4641c54beba4d0f5c40e1d4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color:
+  - {r: 0.8627451, g: 0.8627451, b: 0.8627451, a: 1}
+  sourceImage: []
 --- !u!1 &7566905432801231259
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,8 +1261,9 @@ GameObject:
   - component: {fileID: 582762232384765288}
   - component: {fileID: 9213169877683579582}
   - component: {fileID: 980826396964507983}
+  - component: {fileID: 2941674849425430072}
   m_Layer: 5
-  m_Name: BackImage2
+  m_Name: BackImage2(CM)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1260,6 +1325,21 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &2941674849425430072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8743161208348051115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6facc4641c54beba4d0f5c40e1d4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color:
+  - {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
+  sourceImage: []
 --- !u!1 &8859189320415745744
 GameObject:
   m_ObjectHideFlags: 0

@@ -86,8 +86,9 @@ GameObject:
   - component: {fileID: 4959417605582718346}
   - component: {fileID: 5282832205592719393}
   - component: {fileID: 7058328978722279086}
+  - component: {fileID: 7898698029447260368}
   m_Layer: 5
-  m_Name: Fill
+  m_Name: Fill(CM)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149,6 +150,21 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &7898698029447260368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090149816405796232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6facc4641c54beba4d0f5c40e1d4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color:
+  - {r: 0.7830189, g: 0.19607843, b: 0.19607843, a: 1}
+  sourceImage: []
 --- !u!1 &1570335488229026910
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,6 +457,7 @@ GameObject:
   - component: {fileID: 8149080873079052512}
   - component: {fileID: 8149080873079052515}
   - component: {fileID: 8511838338965372497}
+  - component: {fileID: 4181554646066561305}
   m_Layer: 5
   m_Name: '[ActionButton]Template'
   m_TagString: Untagged
@@ -571,6 +588,21 @@ MonoBehaviour:
   newObject: {fileID: 8222967786845053114}
   actionMark: {fileID: 8249273397844802982}
   highLight: {fileID: 573479455365734626}
+--- !u!114 &4181554646066561305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8149080873079052517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6facc4641c54beba4d0f5c40e1d4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color:
+  - {r: 0.8627451, g: 0.8627451, b: 0.8627451, a: 1}
+  sourceImage: []
 --- !u!1 &8222967786845053114
 GameObject:
   m_ObjectHideFlags: 0
