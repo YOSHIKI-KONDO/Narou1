@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 832129055371007046}
   - component: {fileID: 2162823435240959322}
   - component: {fileID: 6753304635824383577}
+  - component: {fileID: 7070705388962649681}
   m_Layer: 5
   m_Name: '[Icon]Attributes'
   m_TagString: Untagged
@@ -89,3 +90,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 2162823435240959322}
+--- !u!114 &7070705388962649681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383577804386709945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6facc4641c54beba4d0f5c40e1d4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color:
+  - {r: 1, g: 1, b: 1, a: 0.7058824}
+  sourceImage: []

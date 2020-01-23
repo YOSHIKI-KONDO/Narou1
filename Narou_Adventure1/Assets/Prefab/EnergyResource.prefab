@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 3800810080780311750}
   - component: {fileID: 6121599353738073932}
   - component: {fileID: 8441578380963587265}
+  - component: {fileID: 7450809697144873309}
   m_Layer: 5
-  m_Name: '[GameObject]HighLight'
+  m_Name: '[GameObject]HighLight(CM)'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,6 +77,21 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &7450809697144873309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141821266674194145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6facc4641c54beba4d0f5c40e1d4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color:
+  - {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  sourceImage: []
 --- !u!1 &3842690676200324542
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,8 +384,9 @@ GameObject:
   - component: {fileID: 3842690677402820001}
   - component: {fileID: 3842690677402820003}
   - component: {fileID: 3842690677402820002}
+  - component: {fileID: 1918618345642507472}
   m_Layer: 5
-  m_Name: '[Text]Num'
+  m_Name: '[Text]Num(CM)'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -436,6 +453,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 10/12
+--- !u!114 &1918618345642507472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3842690677402820000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73d41423d1a51446a962001b1dee0513, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color:
+  - {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &3842690677450107564
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,8 +478,9 @@ GameObject:
   - component: {fileID: 3842690677450107565}
   - component: {fileID: 3842690677450107567}
   - component: {fileID: 3842690677450107566}
+  - component: {fileID: 3461331036582780466}
   m_Layer: 5
-  m_Name: Fill
+  m_Name: Fill(CM)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -510,6 +542,21 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &3461331036582780466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3842690677450107564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6facc4641c54beba4d0f5c40e1d4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color:
+  - {r: 0.78431374, g: 0.3137255, b: 0.3137255, a: 1}
+  sourceImage: []
 --- !u!1 &3842690677546954845
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,8 +568,9 @@ GameObject:
   - component: {fileID: 3842690677546954846}
   - component: {fileID: 3842690677546954832}
   - component: {fileID: 3842690677546954847}
+  - component: {fileID: 2752489600707481527}
   m_Layer: 5
-  m_Name: '[Text]Name'
+  m_Name: '[Text]Name(CM)'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -589,6 +637,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Gold
+--- !u!114 &2752489600707481527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3842690677546954845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73d41423d1a51446a962001b1dee0513, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color:
+  - {r: 0.88235295, g: 0.88235295, b: 0.88235295, a: 1}
 --- !u!1 &3842690677566300525
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,8 +662,9 @@ GameObject:
   - component: {fileID: 3842690677566300526}
   - component: {fileID: 3842690677566300512}
   - component: {fileID: 3842690677566300527}
+  - component: {fileID: 9075754475507595893}
   m_Layer: 5
-  m_Name: Background
+  m_Name: Background(CM)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -663,6 +726,21 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &9075754475507595893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3842690677566300525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6facc4641c54beba4d0f5c40e1d4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color:
+  - {r: 0.50980395, g: 0.50980395, b: 0.50980395, a: 1}
+  sourceImage: []
 --- !u!1 &8187646406738983695
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,8 +752,9 @@ GameObject:
   - component: {fileID: 8587809781235326235}
   - component: {fileID: 149505359540683611}
   - component: {fileID: 1216643959255954686}
+  - component: {fileID: 2272757618867383582}
   m_Layer: 5
-  m_Name: '[GameObject]HighLight (1)'
+  m_Name: '[GameObject]HighLight (1)(CM)'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -738,3 +817,18 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &2272757618867383582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8187646406738983695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6facc4641c54beba4d0f5c40e1d4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color:
+  - {r: 1, g: 1, b: 1, a: 1}
+  sourceImage: []
