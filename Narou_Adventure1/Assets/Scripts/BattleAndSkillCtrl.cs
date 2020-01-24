@@ -341,6 +341,13 @@ public class BattleAndSkillCtrl : BASE {
 
                     //スキルが設置してあったら、equipedをtrueにする
                     skills[(int)slotKinds[i_r, i_c]].equipped = true;
+
+                    //現在の行で、コストが足らず止まっていたら
+                    if(i_r == currentRow && skills[(int)slotKinds[i_r, i_c]].casted == false &&
+                        skills[(int)slotKinds[i_r, i_c]].currentValue < 0.1)
+                    {
+                        slots[i_r, i_c].slider.value = 0.05f;
+                    }
                 }
                 slots[i_r, i_c].kind = slotKinds[i_r, i_c]; //kind設定
             }
@@ -942,7 +949,7 @@ public class BattleAndSkillCtrl : BASE {
         }
 
         if (actor == "") { return; }
-        main.announce_d.Add(actor + " " + have + " attacked " + main.enumCtrl.enemys[(int)currentEnemys[target].kind].Name() + " for " + tDigit(cal_dmg, 1) + " damages" + lastSentense);
+        main.announce_d.Add(actor + " " + have + " attacked " + main.enumCtrl.enemys[(int)currentEnemys[target].kind].Name() + " for " + tDigit(cal_dmg, 1) + " damage" + lastSentense);
     }
 
 

@@ -17,6 +17,7 @@ public class Load : BASE, IPointerDownHandler
     string gameTitle = "AnotherChronicle";
     string saveTitle, saveContent;
     bool isOver;
+    bool canSave = true;
     AES aes = new AES();
 
     string[] saveStrArray = new string[2];
@@ -30,6 +31,7 @@ public class Load : BASE, IPointerDownHandler
     void Start()
     {
         hardResetButton?.onClick.AddListener(HardReset);
+        StartCoroutine(SaveTime());
 #if UNITY_EDITOR
 #elif UNITY_WEBGL
         saveButton.onClick.AddListener(()=>StartCoroutine(saveText()));
@@ -111,6 +113,7 @@ document.addEventListener('click', function() {
     {
 #if UNITY_EDITOR
 #elif UNITY_WEBGL
+        canSave = false;   
         Application.ExternalEval(
             @"
 var fileuploader = document.getElementById('fileuploader');
@@ -205,5 +208,18 @@ if (fileuploader) {
         if (clickCount < 10) { return; }
         PlayerPrefs.DeleteAll();
         SceneManager.LoadScene(sceneName);
+    }
+
+
+    IEnumerator SaveTime()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1.0f);
+            if (canSave)
+            {
+                main.lastTime = DateTime.Now;
+            }
+        }
     }
 }

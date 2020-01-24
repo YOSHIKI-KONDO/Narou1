@@ -160,25 +160,25 @@ public class EnumCtrl : BASE {
         instantActions.Add(new template(ActionEnum.Instant.eat_anchovy_sandwich, "Eat Anchovy Sandwich", "アンチョビサンドを食べる", "The salty taste recovers you from fatigue.", "塩味が効いていて、疲れた体に旨みが染み渡る。"));
         instantActions.Add(new template(ActionEnum.Instant.eat_filet_o_fish, "Eat Filet-O-Fish", "フィレオフィッシュを食べる", "As soon as you put it in your mouth, the deliciousness of fried fish between fluffy patties fills your mouth.", "一口噛むと、ふっくらとしたバンズに挟まれたフィッシュフライの油がほとばしる。"));
         instantActions.Add(new template(ActionEnum.Instant.drink_herb_tea, "Drink Herb tea", "ハーブティーを飲む", "It tastes sacred.", "神聖な味がする。"));
-        instantActions.Add(new template(ActionEnum.Instant.rune_generation, "Rune Generation", "ルーン生成", "Obtain Rune from the destiny power.", "運命の力でルーンを得る。"));
+        instantActions.Add(new template(ActionEnum.Instant.rune_generation, "Rune Generation", "ルーン生成", "Obtain a rune with help of the power of destiny. ", "運命の力でルーンを得る。"));
         instantActions.Add(new template(ActionEnum.Instant.runic_carving, "Runic Carving", "ルーンを刻む", "Obtain further destiny from carving with runes.", "ルーンを石碑に刻み、更なる運命を得る。"));
         instantActions.Add(new template(ActionEnum.Instant.split_firewood, "Split Firewood", "薪割り", "", ""));
         instantActions.Add(new template(ActionEnum.Instant.sell_firewood, "Sell Firewood", "薪を売る", "", ""));
         instantActions.Add(new template(ActionEnum.Instant.sell_bread, "Sell Bread", "パンを売る", "", ""));
         instantActions.Add(new template(ActionEnum.Instant.sell_anchovy_sandwich, "Sell Anchovy Sandwich", "アンチョビサンドを売る", "", ""));
         //アイテムポイントコンバージョン
-        instantActions.Add(new template(ActionEnum.Instant.ip1down, "Downgrade Item Point[1]", "ダウングレードアイテムポイント★1", "Item Point★1", "Item Point★1"));
-        instantActions.Add(new template(ActionEnum.Instant.ip2up, "Upgrade Item Point[2]", "アップグレードアイテムポイント★2", "Item Point★2", "Item Point★2"));    
-        instantActions.Add(new template(ActionEnum.Instant.ip2down, "Downgrade Item Point[2]", "ダウングレードアイテムポイント★2", "Item Point★2", "Item Point★2"));
-        instantActions.Add(new template(ActionEnum.Instant.ip3up, "Upgrade Item Point[3]", "アップグレードアイテムポイント★3", "Item Point★3", "Item Point★3"));    
-        instantActions.Add(new template(ActionEnum.Instant.ip3down, "Downgrade Item Point[3]", "ダウングレードアイテムポイント★3", "Item Point★3", "Item Point★3"));
-        instantActions.Add(new template(ActionEnum.Instant.ip4up, "Upgrade Item Point[4]", "アップグレードアイテムポイント★4", "Item Point★4", "Item Point★4"));    
-        instantActions.Add(new template(ActionEnum.Instant.ip4down, "Downgrade Item Point[4]", "ダウングレードアイテムポイント★4", "Item Point★4", "Item Point★4"));
-        instantActions.Add(new template(ActionEnum.Instant.ip5up, "Upgrade Item Point[5]", "アップグレードアイテムポイント★5", "Item Point★5", "Item Point★5"));    
-        instantActions.Add(new template(ActionEnum.Instant.ip5down, "Downgrade Item Point[5]", "ダウングレードアイテムポイント★5", "Item Point★5", "Item Point★5"));
-        instantActions.Add(new template(ActionEnum.Instant.ip6up, "Upgrade Item Point[6]", "アップグレードアイテムポイント★6", "Item Point★6", "Item Point★6"));    
-        instantActions.Add(new template(ActionEnum.Instant.ip6down, "Downgrade Item Point[6]", "ダウングレードアイテムポイント★6", "Item Point★6", "Item Point★6"));
-        instantActions.Add(new template(ActionEnum.Instant.ip7up, "Upgrade Item Point[7]", "アップグレードアイテムポイント★7", "Item Point★7", "Item Point★7"));    
+        instantActions.Add(new template(ActionEnum.Instant.ip1down, "Downgrade Item Point[1]", "ダウングレードアイテムポイント★1", "Item Point[1]", "Item Point★1"));
+        instantActions.Add(new template(ActionEnum.Instant.ip2up, "Upgrade Item Point[2]", "アップグレードアイテムポイント★2", "Item Point[2]", "Item Point★2"));    
+        instantActions.Add(new template(ActionEnum.Instant.ip2down, "Downgrade Item Point[2]", "ダウングレードアイテムポイント★2", "Item Point[2]", "Item Point★2"));
+        instantActions.Add(new template(ActionEnum.Instant.ip3up, "Upgrade Item Point[3]", "アップグレードアイテムポイント★3", "Item Point[3]", "Item Point★3"));    
+        instantActions.Add(new template(ActionEnum.Instant.ip3down, "Downgrade Item Point[3]", "ダウングレードアイテムポイント★3", "Item Point[3]", "Item Point★3"));
+        instantActions.Add(new template(ActionEnum.Instant.ip4up, "Upgrade Item Point[4]", "アップグレードアイテムポイント★4", "Item Point[4]", "Item Point★4"));    
+        instantActions.Add(new template(ActionEnum.Instant.ip4down, "Downgrade Item Point[4]", "ダウングレードアイテムポイント★4", "Item Point[4]", "Item Point★4"));
+        instantActions.Add(new template(ActionEnum.Instant.ip5up, "Upgrade Item Point[5]", "アップグレードアイテムポイント★5", "Item Point[5]", "Item Point★5"));    
+        instantActions.Add(new template(ActionEnum.Instant.ip5down, "Downgrade Item Point[5]", "ダウングレードアイテムポイント★5", "Item Point[5]", "Item Point★5"));
+        instantActions.Add(new template(ActionEnum.Instant.ip6up, "Upgrade Item Point[6]", "アップグレードアイテムポイント★6", "Item Point[6]", "Item Point★6"));    
+        instantActions.Add(new template(ActionEnum.Instant.ip6down, "Downgrade Item Point[6]", "ダウングレードアイテムポイント★6", "Item Point[6]", "Item Point★6"));
+        instantActions.Add(new template(ActionEnum.Instant.ip7up, "Upgrade Item Point[7]", "アップグレードアイテムポイント★7", "Item Point[7]", "Item Point★7"));    
 
         //フェーズ２（学校）
         //アビリティアクション
@@ -265,7 +265,7 @@ public class EnumCtrl : BASE {
         upgradeActions.Add(new template(ActionEnum.Upgrade.delivery_of_fur, "Delivery of pelt", "毛皮の納品", "[Deliver the pelt that you can get from Wolf. Since it will be for sale, Don't make any scratches on it! ]", "ウルフを倒すと手に入る、毛皮を納品してくれ。商品なんだから傷は少なめで頼むよ。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.house_clean_up, "House clean up", "ゴミ屋敷の掃除", "[Where in the world did the landlord go!?  Somebody clean it up! It's absolutely annoying!!]", "家主は何をしているんだ？近所迷惑だから誰でもいい、掃除してくれ！"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.get_rid_of_rat, "Get rid of rat", "ネズミ退治", "A request to get rid of poison rats that lived in the sewer. Unpopular one.", "下水道に発生したポイズンラットを定期的に駆除しないといけない。不人気な依頼。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.wholesaler_of_drugs, "Wholesaler of Medicine", "医薬品卸", "I cannot have too much medicines. I'd like to buy some of them.(Up to 3 times)", "薬はいくつあっても安心だ。市場に回すため引き取らせてもらいたい。(３回まで)"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.wholesaler_of_drugs, "Wholesaler of Medicine", "医薬品卸", "I cannot have too many medicines. I'd like to buy some of them.(Up to 3 times)", "薬はいくつあっても安心だ。市場に回すため引き取らせてもらいたい。(３回まで)"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.in_cellar, "Into cellar", "地下室へ", "You find a hole which seems to be connected to the underground. Petals are scattered at the feet.", "ゴミ屋敷から、地下へと続くあなぐらが掘られていた。足元には花びらが散乱している。"));
 
             //授業
@@ -276,7 +276,7 @@ public class EnumCtrl : BASE {
         upgradeActions.Add(new template(ActionEnum.Upgrade.water_magic_classwork, "Water Magic Class", "水魔術の授業", "A wonderful magic by which you can easily catch underwater fish.", "水中の魚を容易く捕らえることができる、素晴らしい魔術だ。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.wind_magic_classwork, "Wind Magic Class", "風魔術の授業", "A terrible magic that can handle the wind like a blade.", "風を刃のように扱うことができる、おそろしい魔術だ。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.earth_magic_classwork, "Earth Magic Class", "土魔術の授業", "Those who are familiar with earth magic are helpful for land reclamation.", "土魔術に精通した人は土地の開拓に重宝されるらしい。"));
-        upgradeActions.Add(new template(ActionEnum.Upgrade.animal_handling_classwork, "Animal Handler Class", "動物使役の授業", "The classroom overflows with pets and is noisy.", "教室がペットで溢れ返り、うるさい。"));
+        upgradeActions.Add(new template(ActionEnum.Upgrade.animal_handling_classwork, "Animal Handling Class", "動物使役の授業", "The classroom overflows with pets and is noisy.", "教室がペットで溢れ返り、うるさい。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.use_tools_classwork, "Use Tools Class", "道具使役の授業", "It is said that familiarity with tools will open the way to various production jobs.", "道具に精通することで、様々な生産職への道が開かれるとのこと。"));
         upgradeActions.Add(new template(ActionEnum.Upgrade.life_magic_classwork, "Life Magic Class", "生活魔法の授業", "Many people take this class for the time being because it is useful.", "いずれ役立つので、とりあえず授業を受ける人が多い。"));
 
@@ -367,11 +367,11 @@ public class EnumCtrl : BASE {
         abilitys.Add(new template(AbilityKind.advanced_dark_magic, "Advanced Dark Magic", "上級闇魔法", "", ""));
 
             //使役者基本職初級
-        abilitys.Add(new template(AbilityKind.animal_handling, "Animal Handler", "動物使役", "", ""));
+        abilitys.Add(new template(AbilityKind.animal_handling, "Animal Handling", "動物使役", "", ""));
             //使役者基本職中級
         abilitys.Add(new template(AbilityKind.beast_tamer, "Beast Tamer", "獣使い", "", ""));
-        abilitys.Add(new template(AbilityKind.insect_handling, "Insect Handler", "虫使い", "", ""));
-        abilitys.Add(new template(AbilityKind.bird_handling, "Bird Handler", "鳥使い", "", ""));
+        abilitys.Add(new template(AbilityKind.insect_handling, "Insect Handling", "虫使い", "", ""));
+        abilitys.Add(new template(AbilityKind.bird_handling, "Bird Handling", "鳥使い", "", ""));
         abilitys.Add(new template(AbilityKind.elementalor, "Elementalor", "精霊使い", "", ""));
         abilitys.Add(new template(AbilityKind.summon_fairy, "Summon Fairy", "妖精使い", "", ""));
         abilitys.Add(new template(AbilityKind.summon_familiar, "Summon Familiar", "使い魔召喚", "", ""));
@@ -638,11 +638,11 @@ public class EnumCtrl : BASE {
         dungeons.Add(new template(DungeonKind.edge_of_town, "Edge of Town", "村の外れ", "Let brats come here", "悪ガキを呼び出した。"));
         dungeons.Add(new template(DungeonKind.small_hill, "Small Hill", "小高い丘", "It is said that beautiful flowers are blooming at the top of the hill.", "丘の頂上に綺麗な花が咲いているらしい。"));
         dungeons.Add(new template(DungeonKind.plain, "Plain", "平原", "You need to go over the plains to get to the city", "都市へ向かうには平原を超える必要がある。"));
-        dungeons.Add(new template(DungeonKind.lost_forest, "Lostlorn Forest", "迷いの森", "Every year, much people get lost there. Probably I heard it with rumors", "毎年、そこそこの人がそこそこ迷うらしい。と、噂で聞いた気がする。"));
+        dungeons.Add(new template(DungeonKind.lost_forest, "Lostlorn Forest", "迷いの森", "A lot of people get lost here every year, so the rumors say...", "毎年、そこそこの人がそこそこ迷うらしい。と、噂で聞いた気がする。"));
         dungeons.Add(new template(DungeonKind.oak_forest, "Oak Forest", "オークの森", "Orc doesn't live here.", "楢の森。オークは住んでいない。"));
         dungeons.Add(new template(DungeonKind.moor, "Moor", "湿原", "Wetlands beyond the Oak Forest", "オークの森を抜けた先にある湿原"));
         dungeons.Add(new template(DungeonKind.hoarding_house, "Hoarding House", "ゴミ屋敷", "", "都内で噂のゴミ屋敷。"));
-        dungeons.Add(new template(DungeonKind.sewer, "Sewer", "下水道", "Stink.", "むぅ、臭い。"));
+        dungeons.Add(new template(DungeonKind.sewer, "Sewer", "下水道", "It stinks, a lot.", "むぅ、臭い。"));
         dungeons.Add(new template(DungeonKind.bog, "Bog", "沼地", "Move on very carefully", "足場に気を付けて進もう。"));
         dungeons.Add(new template(DungeonKind.demonic_cellar, "Demonic Cellar", "魔族のあなぐら", "There was a basement under the hoarding house.", "ゴミ屋敷の下に地下室があった。"));
 
