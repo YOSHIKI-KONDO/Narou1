@@ -260,8 +260,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 48.1, y: -24.474998}
-  m_SizeDelta: {x: 96.2, y: 15.65}
+  m_AnchoredPosition: {x: 49.6, y: -24.474998}
+  m_SizeDelta: {x: 99.2, y: 15.65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5711191653445099489
 Canvas:
@@ -341,7 +341,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 0
+  m_Spacing: 3
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
@@ -1014,8 +1014,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 42.24, y: -7.825}
-  m_SizeDelta: {x: 84.48, y: 15.65}
+  m_AnchoredPosition: {x: 43.74, y: -7.825}
+  m_SizeDelta: {x: 87.48, y: 15.65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7317201791202553359
 Canvas:
@@ -1095,7 +1095,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 0
+  m_Spacing: 3
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
@@ -1224,7 +1224,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 67.635, y: -7.825}
+  m_AnchoredPosition: {x: 70.635, y: -7.825}
   m_SizeDelta: {x: 57.13, y: 15.65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6378280643750686957
@@ -1538,8 +1538,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 68.035, y: -101.535}
-  m_SizeDelta: {x: 116.07, y: 15.65}
+  m_AnchoredPosition: {x: 69.585, y: -101.535}
+  m_SizeDelta: {x: 119.17, y: 15.65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7962803557348059614
 CanvasRenderer:
@@ -1569,7 +1569,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: << release cost >>
+  m_text: << unleash cost >>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2794,7 +2794,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 55.914993, y: -7.825}
+  m_AnchoredPosition: {x: 58.915, y: -7.825}
   m_SizeDelta: {x: 57.13, y: 15.65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2762091762243671755

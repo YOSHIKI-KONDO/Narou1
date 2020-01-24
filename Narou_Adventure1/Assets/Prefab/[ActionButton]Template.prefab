@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 3230666632395254127}
   - component: {fileID: 6898827181254487520}
   - component: {fileID: 1170567819598059843}
+  - component: {fileID: 5248826493023507079}
   m_Layer: 5
-  m_Name: '[GameObject]HighLight'
+  m_Name: '[GameObject]HighLight(CM)'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,6 +76,21 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &5248826493023507079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573479455365734626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6facc4641c54beba4d0f5c40e1d4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color:
+  - {r: 0.88235295, g: 0.88235295, b: 0.88235295, a: 1}
+  sourceImage: []
 --- !u!1 &1090149816405796232
 GameObject:
   m_ObjectHideFlags: 0

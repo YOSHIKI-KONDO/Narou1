@@ -398,7 +398,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Release
+  m_Text: Unleash
 --- !u!1 &1296234027384605954
 GameObject:
   m_ObjectHideFlags: 0
@@ -1101,8 +1101,9 @@ GameObject:
   - component: {fileID: 3622102382386323833}
   - component: {fileID: 3622102382386323831}
   - component: {fileID: 3622102382386323832}
+  - component: {fileID: 1050486720641908747}
   m_Layer: 5
-  m_Name: Background
+  m_Name: Background(CM)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1164,6 +1165,21 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &1050486720641908747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3622102382386323834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6facc4641c54beba4d0f5c40e1d4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color:
+  - {r: 0.7058824, g: 0.7058824, b: 0.7058824, a: 1}
+  sourceImage: []
 --- !u!1 &3622102383163669929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1429,8 +1445,9 @@ GameObject:
   - component: {fileID: 4010534006628256666}
   - component: {fileID: 7387827722151064234}
   - component: {fileID: 3890633854249467038}
+  - component: {fileID: 4548927976760184307}
   m_Layer: 5
-  m_Name: '[GameObject]HighLight'
+  m_Name: '[GameObject]HighLight(CM)'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1493,6 +1510,21 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &4548927976760184307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8531791885931288769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6facc4641c54beba4d0f5c40e1d4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color:
+  - {r: 1, g: 1, b: 1, a: 1}
+  sourceImage: []
 --- !u!1 &8795241544513683771
 GameObject:
   m_ObjectHideFlags: 0
