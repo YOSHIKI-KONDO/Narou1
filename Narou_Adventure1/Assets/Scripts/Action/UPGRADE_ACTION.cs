@@ -26,6 +26,7 @@ public class UPGRADE_ACTION : ACTION, INeed
     public double? PlusValue;
     public int maxNum;
     public int ClearNum { get => main.SR.clearNum_upgrade[(int)kind]; set => main.SR.clearNum_upgrade[(int)kind] = value; }
+    protected bool LockOtherAction;//onならpopupなどが出る
 
     public virtual bool Requires() { return true; }
     public virtual bool CompleteCondition() { return false; }
@@ -149,6 +150,7 @@ public class UPGRADE_ACTION : ACTION, INeed
     {
         //自動でコストの文章を生成
         Name_str = main.enumCtrl.upgradeActions[(int)kind].Name();
+        if (LockOtherAction) { Name_str += "*"; }
         if (popUp.gameObject.activeSelf)
         {
             //自動でコストの文章を生成

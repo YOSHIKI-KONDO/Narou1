@@ -86,7 +86,7 @@ public class ProgressFunction : OnlyAction
         else
         {
             if (main.SR.doAnnounce_resourceMaxOrLack)
-                main.announce.Add("You ran out of resources and take a rest.");
+                main.announce.Add("You ran out of resources and took a break.");
             main.progressCtrl.Rest();
             return;
         }

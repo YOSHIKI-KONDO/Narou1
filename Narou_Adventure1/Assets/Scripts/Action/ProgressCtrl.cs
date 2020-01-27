@@ -33,7 +33,11 @@ public class ProgressCtrl : BASE {
     {
         foreach (var p in list)
         {
-            p.isOn = false;
+            if (p.isOn == true)
+            {
+                setFalse(p.isOnObj); //行動マークの更新
+                p.isOn = false;
+            }
         }
     }
 
@@ -98,6 +102,7 @@ public class ProgressCtrl : BASE {
         DeactivateAll();
         currentFunction = null;
         previousFunction = null;
+        ApplyTopActionMark();
     }
 
     public void ActivatePrevious()
