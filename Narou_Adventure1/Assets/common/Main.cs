@@ -15,7 +15,7 @@ public class Main : MonoBehaviour
         set { S.birthDate = value.ToBinary().ToString(); }
     }
     [NonSerialized]
-    public DateTime ReleaseTime = DateTime.Parse("8/21/2019 7:00:00 AM");
+    public DateTime ReleaseTime = DateTime.Parse("1/20/2020 7:00:00 AM");
     public DateTime lastTime//最後にプレイした時間。
     {
         get { return DateTime.FromBinary(Convert.ToInt64(S.lastTime)); }
@@ -90,7 +90,7 @@ public class Main : MonoBehaviour
         {
             analytics.StartGame(); //analyticsに送信
             StartCoroutine(NewInvokeCor(() => announce.ResetText(), 0.1f));  //最初だけテキストを全て消す
-            //StartCoroutine(NewInvokeCor(() => announce.Add("<b><i>Start training! And listen to my father.</i></b>"), 0.1f));  //最初の文章を出す
+            StartCoroutine(NewInvokeCor(() => announce.Add("<b><i>Start training. And listen to your father.</i></b>"), 0.1f));  //最初の文章を出す
             birthTime = DateTime.Now;
             lastTime = DateTime.Now;
             S.isContinuePlay = true;

@@ -24,7 +24,7 @@ public class MentalTraining : UPGRADE_ACTION
             main.rsc.Max_Base[(int)ResourceKind.focus] = 1;
             main.rsc.Value[(int)ResourceKind.focus] = 1;
             StartCoroutine(NewInvokeCor(() => //1秒遅れでアナウンスする。
-            main.announce.Add("<b><i>By using mp, you can use focus function. Making action progress faster by focusing.</i></b>", Color.black),0.1f));
+            main.announce.Add("<b><i>By using mp, you can use \"focus\". Focus makes the progress of your actions speed up.</i></b>"),0.1f));
         }
     }
 

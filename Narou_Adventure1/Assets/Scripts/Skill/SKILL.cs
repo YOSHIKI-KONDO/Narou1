@@ -164,7 +164,7 @@ public class SKILL : BASE, INeed, ISetSource
         foreach (var atk in warriorAtks)
         {
             if(sum_str != "") { sum_str += "\n"; }
-            sum_str += "Phisical damage:" + tDigit(atk.Damage * comboFactor_effect(), 1);
+            sum_str += "Physical damage:" + tDigit(atk.Damage * comboFactor_effect(), 1);
         }
         return sum_str;
     }
@@ -287,7 +287,9 @@ public class SKILL : BASE, INeed, ISetSource
         //Description_str = "Lv." + level.ToString() + "/" + MaxLevel() + "(exp:" + tDigit(exp,1) + "/" + tDigit(MaxExp(),1) + ")";
         UseCost_str = ProgressDetail(useCosts, comboFactor_cost());
         UseEffect_str = WarriorDetail();
+        UseEffect_str += UseEffect_str == "" ? "" : "\n";
         UseEffect_str += SorcererDetail();
+        UseEffect_str += UseEffect_str == "" ? "" : "\n";
         UseEffect_str += ProgressDetail(useEffects, comboFactor_effect());
         Interval_str = tDigit(Duration(),1) + "s";
         LearnCost_str = main.SR.learnt_Skill[(int)kind] ? "" : learnF.ProgressDetail(learnF.initCostList);

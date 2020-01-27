@@ -29,6 +29,7 @@ public class ResourceTextControll : BASE {
         /* ここから設定してね */
         points[(int)focus].ChangeAllPoint(1, 1, 2, 1, 1, 2); //一括で変える時
         points[(int)anchovy_sandwich].current_deal = 0;      //一つだけ変えるとき
+        points[(int)herb].current_deal = 2;
     }
 
     List<ResourceKind> energies = new List<ResourceKind>

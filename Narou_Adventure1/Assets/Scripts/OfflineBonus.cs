@@ -63,7 +63,7 @@ public class OfflineBonus : BASE {
 			{
 				continue;
 			}
-			sum += (sum == "") ? "You are left for " + DoubleTimeToDate(elapsedTime) + "\n" : "\n";
+			sum += (sum == "") ? "You were offline for " + DoubleTimeToDate(elapsedTime) + "\n" : "\n";
 			sum += main.enumCtrl.resources[i].Name() + "\t" + tDigit(plusValue[i], 2);
 		}
 		return sum;
