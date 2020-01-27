@@ -66,14 +66,24 @@ public class Setting : BASE {
         Load();
         StartCoroutine(FixedUpdateCor());
         restartButton.onClick.AddListener(() =>LoadNewScene("main"));
+
+        //UIを変更するたびにsaveされるようにする
+        //NOTE:FixedUpdateCorがなくてもいいかも
+        buttonHighLightToggle.onValueChanged.AddListener((x) => Save());
+        resourceHighLightToggle.onValueChanged.AddListener((x) => Save());
+        announce_resourceMaxLack.onValueChanged.AddListener((x) => Save());
+        darkModeToggle.onValueChanged.AddListener((x) => Save());
+        //SESlider.onValueChanged.AddListener((x) => Save());
+        //BGMSlider.onValueChanged.AddListener((x) => Save());
     }
+
 
     IEnumerator FixedUpdateCor()
     {
         while (true)
         {
             Save();
-            yield return new WaitForSeconds(main.tick);
+            yield return new WaitForSeconds(1.0f);
         }
     }
 

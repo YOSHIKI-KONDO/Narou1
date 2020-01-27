@@ -28,7 +28,9 @@ public class PunishTheBadKids : UPGRADE_ACTION
     void Awake () {
         AwakeUpgradeAction(MainAction.ActionEnum.Upgrade.punish_the_bad_kids, 1, 0, null, false, false);
         progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 100));
-	}
+
+        LockOtherAction = true; //他の選択肢をロックする
+    }
 
 	// Use this for initialization
 	void Start () {

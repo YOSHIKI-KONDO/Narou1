@@ -31,6 +31,8 @@ public class WarriorSchool : UPGRADE_ACTION
         progress.completeEffectList.Add(new Dealing(ResourceKind.ap, Dealing.R_ParaKind.current, 200));
         progress.completeEffectList.Add(new Dealing(ResourceKind.inventorySpace, Dealing.R_ParaKind.max, 1));
         progress.completeEffectList.Add(new Item_Dealing(ItemKind.warrior_textbook));
+
+        LockOtherAction = true; //他の選択肢をロックする
     }
 
 	// Use this for initialization

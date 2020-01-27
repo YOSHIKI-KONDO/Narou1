@@ -638,7 +638,7 @@ public class EnumCtrl : BASE {
         dungeons.Add(new template(DungeonKind.edge_of_town, "Edge of Town", "村の外れ", "Let brats come here", "悪ガキを呼び出した。"));
         dungeons.Add(new template(DungeonKind.small_hill, "Small Hill", "小高い丘", "It is said that beautiful flowers are blooming at the top of the hill.", "丘の頂上に綺麗な花が咲いているらしい。"));
         dungeons.Add(new template(DungeonKind.plain, "Plain", "平原", "You need to go over the plains to get to the city", "都市へ向かうには平原を超える必要がある。"));
-        dungeons.Add(new template(DungeonKind.lost_forest, "Lostlorn Forest", "迷いの森", "A lot of people get lost here every year, so the rumors say...", "毎年、そこそこの人がそこそこ迷うらしい。と、噂で聞いた気がする。"));
+        dungeons.Add(new template(DungeonKind.lost_forest, "Lostlorn Forest", "迷いの森", "A lot of people get lost here every year, or so the rumors say...", "毎年、そこそこの人がそこそこ迷うらしい。と、噂で聞いた気がする。"));
         dungeons.Add(new template(DungeonKind.oak_forest, "Oak Forest", "オークの森", "Orc doesn't live here.", "楢の森。オークは住んでいない。"));
         dungeons.Add(new template(DungeonKind.moor, "Moor", "湿原", "Wetlands beyond the Oak Forest", "オークの森を抜けた先にある湿原"));
         dungeons.Add(new template(DungeonKind.hoarding_house, "Hoarding House", "ゴミ屋敷", "", "都内で噂のゴミ屋敷。"));

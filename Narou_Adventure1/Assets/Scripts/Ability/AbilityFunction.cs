@@ -54,6 +54,7 @@ public class AbilityFunction : ProgressFunction {
         {
             unlockButton.interactable = false;
         }
+
         /* ******** */
         if (condition && CanPurchase(initCostList) && CanPurchase(progressCostList))
         {
@@ -62,6 +63,22 @@ public class AbilityFunction : ProgressFunction {
         else
         {
             button.interactable = false;
+        }
+    }
+
+    //途中で条件を満たさなくなった時にtrainをやめるための関数
+    //Abilityのupdate or fixedupdate から呼ぶ
+    public void CheckTrain()
+    {
+        if (isOn == false) { return; }
+        if(Need != null && Need() == false)
+        {
+            main.progressCtrl.DontDoAnything();
+        }
+
+        if (IsMax())
+        {
+            main.progressCtrl.DontDoAnything();
         }
     }
 

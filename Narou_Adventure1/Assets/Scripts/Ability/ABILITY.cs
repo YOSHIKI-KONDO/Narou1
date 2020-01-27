@@ -124,6 +124,7 @@ public class ABILITY : BASE, INeed, ISetSource
     protected void FixedUpdateAbility()
     {
         progress.Progress(AbilityRate(), MaxExp());
+        progress.CheckTrain();
 
         ApplyPopUp();
         ApplyComponents();
